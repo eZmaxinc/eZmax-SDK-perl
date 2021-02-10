@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**ezsignfolder_create_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_create_object_v1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
 [**ezsignfolder_delete_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_delete_object_v1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
 [**ezsignfolder_edit_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder
-[**ezsignfolder_get_object_get_children_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_object_get_children_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
+[**ezsignfolder_get_children_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_children_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
 [**ezsignfolder_get_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_object_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
 [**ezsignfolder_send_v1**](ObjectEzsignfolderApi.md#ezsignfolder_send_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 
@@ -168,8 +168,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ezsignfolder_get_object_get_children_v1**
-> ezsignfolder_get_object_get_children_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id)
+# **ezsignfolder_get_children_v1**
+> ezsignfolder_get_children_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id)
 
 Retrieve an existing Ezsignfolder's children IDs
 
@@ -188,10 +188,10 @@ my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
 my $pki_ezsignfolder_id = 56; # int | The unique ID of the Ezsignfolder
 
 eval { 
-    $api_instance->ezsignfolder_get_object_get_children_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id);
+    $api_instance->ezsignfolder_get_children_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id);
 };
 if ($@) {
-    warn "Exception when calling ObjectEzsignfolderApi->ezsignfolder_get_object_get_children_v1: $@\n";
+    warn "Exception when calling ObjectEzsignfolderApi->ezsignfolder_get_children_v1: $@\n";
 }
 ```
 

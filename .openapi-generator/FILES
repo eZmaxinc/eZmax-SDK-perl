@@ -93,6 +93,8 @@ docs/FranchisereferalincomeCreateObjectV1Response.md
 docs/FranchisereferalincomeCreateObjectV1ResponseMPayload.md
 docs/FranchisereferalincomeRequest.md
 docs/FranchisereferalincomeRequestCompound.md
+docs/GlobalCustomerApi.md
+docs/GlobalCustomerGetEndpointV1Response.md
 docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
 docs/ObjectActivesessionApi.md
@@ -123,6 +125,7 @@ git_push.sh
 lib/EzmaxApi/ApiClient.pm
 lib/EzmaxApi/ApiFactory.pm
 lib/EzmaxApi/Configuration.pm
+lib/EzmaxApi/GlobalCustomerApi.pm
 lib/EzmaxApi/ModuleUserApi.pm
 lib/EzmaxApi/Object/ActivesessionGetCurrentV1Response.pm
 lib/EzmaxApi/Object/ActivesessionGetCurrentV1ResponseMPayload.pm
@@ -214,6 +217,7 @@ lib/EzmaxApi/Object/FranchisereferalincomeCreateObjectV1Response.pm
 lib/EzmaxApi/Object/FranchisereferalincomeCreateObjectV1ResponseMPayload.pm
 lib/EzmaxApi/Object/FranchisereferalincomeRequest.pm
 lib/EzmaxApi/Object/FranchisereferalincomeRequestCompound.pm
+lib/EzmaxApi/Object/GlobalCustomerGetEndpointV1Response.pm
 lib/EzmaxApi/Object/MultilingualApikeyDescription.pm
 lib/EzmaxApi/Object/PhoneRequest.pm
 lib/EzmaxApi/Object/UserCreateEzsignuserV1Request.pm
@@ -331,6 +335,8 @@ t/FranchisereferalincomeCreateObjectV1ResponseMPayloadTest.t
 t/FranchisereferalincomeCreateObjectV1ResponseTest.t
 t/FranchisereferalincomeRequestCompoundTest.t
 t/FranchisereferalincomeRequestTest.t
+t/GlobalCustomerApiTest.t
+t/GlobalCustomerGetEndpointV1ResponseTest.t
 t/ModuleUserApiTest.t
 t/MultilingualApikeyDescriptionTest.t
 t/ObjectActivesessionApiTest.t

@@ -12,8 +12,8 @@ Method | HTTP request | Description
 [**ezsignfoldersignerassociation_create_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_create_object_v1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation
 [**ezsignfoldersignerassociation_delete_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_delete_object_v1) | **DELETE** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Delete an existing Ezsignfoldersignerassociation
 [**ezsignfoldersignerassociation_edit_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_edit_object_v1) | **PUT** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Modify an existing Ezsignfoldersignerassociation
+[**ezsignfoldersignerassociation_get_children_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_children_v1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getChildren | Retrieve an existing Ezsignfoldersignerassociation&#39;s children IDs
 [**ezsignfoldersignerassociation_get_in_person_login_url_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_in_person_login_url_v1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getInPersonLoginUrl | Retrieve a Login Url to allow In-Person signing
-[**ezsignfoldersignerassociation_get_object_get_children_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_object_get_children_v1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getChildren | Retrieve an existing Ezsignfoldersignerassociation&#39;s children IDs
 [**ezsignfoldersignerassociation_get_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_object_v1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation
 
 
@@ -168,6 +168,54 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ezsignfoldersignerassociation_get_children_v1**
+> ezsignfoldersignerassociation_get_children_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id)
+
+Retrieve an existing Ezsignfoldersignerassociation's children IDs
+
+### Example 
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignfoldersignerassociationApi;
+my $api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsignfoldersignerassociation_id = 56; # int | The unique ID of the Ezsignfoldersignerassociation
+
+eval { 
+    $api_instance->ezsignfoldersignerassociation_get_children_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_get_children_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsignfoldersignerassociation_id** | **int**| The unique ID of the Ezsignfoldersignerassociation | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ezsignfoldersignerassociation_get_in_person_login_url_v1**
 > EzsignfoldersignerassociationGetInPersonLoginUrlV1Response ezsignfoldersignerassociation_get_in_person_login_url_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id)
 
@@ -207,54 +255,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsignfoldersignerassociationGetInPersonLoginUrlV1Response**](EzsignfoldersignerassociationGetInPersonLoginUrlV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ezsignfoldersignerassociation_get_object_get_children_v1**
-> ezsignfoldersignerassociation_get_object_get_children_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id)
-
-Retrieve an existing Ezsignfoldersignerassociation's children IDs
-
-### Example 
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectEzsignfoldersignerassociationApi;
-my $api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $pki_ezsignfoldersignerassociation_id = 56; # int | The unique ID of the Ezsignfoldersignerassociation
-
-eval { 
-    $api_instance->ezsignfoldersignerassociation_get_object_get_children_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id);
-};
-if ($@) {
-    warn "Exception when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_get_object_get_children_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pki_ezsignfoldersignerassociation_id** | **int**| The unique ID of the Ezsignfoldersignerassociation | 
-
-### Return type
-
-void (empty response body)
 
 ### Authorization
 
