@@ -95,6 +95,7 @@ docs/FranchisereferalincomeRequest.md
 docs/FranchisereferalincomeRequestCompound.md
 docs/GlobalCustomerApi.md
 docs/GlobalCustomerGetEndpointV1Response.md
+docs/ModuleSsprApi.md
 docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
 docs/ObjectActivesessionApi.md
@@ -126,6 +127,7 @@ lib/EzmaxApi/ApiClient.pm
 lib/EzmaxApi/ApiFactory.pm
 lib/EzmaxApi/Configuration.pm
 lib/EzmaxApi/GlobalCustomerApi.pm
+lib/EzmaxApi/ModuleSsprApi.pm
 lib/EzmaxApi/ModuleUserApi.pm
 lib/EzmaxApi/Object/ActivesessionGetCurrentV1Response.pm
 lib/EzmaxApi/Object/ActivesessionGetCurrentV1ResponseMPayload.pm
@@ -337,6 +339,7 @@ t/FranchisereferalincomeRequestCompoundTest.t
 t/FranchisereferalincomeRequestTest.t
 t/GlobalCustomerApiTest.t
 t/GlobalCustomerGetEndpointV1ResponseTest.t
+t/ModuleSsprApiTest.t
 t/ModuleUserApiTest.t
 t/MultilingualApikeyDescriptionTest.t
 t/ObjectActivesessionApiTest.t

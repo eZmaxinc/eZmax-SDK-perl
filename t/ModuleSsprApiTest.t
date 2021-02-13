@@ -24,17 +24,16 @@ use lib 'lib';
 use strict;
 use warnings;
 
-use_ok('EzmaxApi::ObjectFranchisereferalincomeApi');
+use_ok('EzmaxApi::ModuleSsprApi');
 
-my $api = EzmaxApi::ObjectFranchisereferalincomeApi->new();
-isa_ok($api, 'EzmaxApi::ObjectFranchisereferalincomeApi');
+my $api = EzmaxApi::ModuleSsprApi->new();
+isa_ok($api, 'EzmaxApi::ModuleSsprApi');
 
 #
-# franchisereferalincome_create_object_v1 test
+# sspr_remind_usernames_v1 test
 #
 {
-    my $franchisereferalincome_create_object_v1_request = undef; # replace NULL with a proper value
-    my $result = $api->franchisereferalincome_create_object_v1(franchisereferalincome_create_object_v1_request => $franchisereferalincome_create_object_v1_request);
+    my $result = $api->sspr_remind_usernames_v1();
 }
 
 
