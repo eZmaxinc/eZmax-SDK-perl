@@ -25,9 +25,9 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::EzsigndocumentDeleteObjectV1Response');
+use_ok('EzmaxApi::Object::UNUSEDEzsignfoldersignerassociationEditObjectV1Request');
 
-my $instance = EzmaxApi::Object::EzsigndocumentDeleteObjectV1Response->new();
+my $instance = EzmaxApi::Object::UNUSEDEzsignfoldersignerassociationEditObjectV1Request->new();
 
-isa_ok($instance, 'EzmaxApi::Object::EzsigndocumentDeleteObjectV1Response');
+isa_ok($instance, 'EzmaxApi::Object::UNUSEDEzsignfoldersignerassociationEditObjectV1Request');
 

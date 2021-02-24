@@ -1,8 +1,8 @@
-# EzmaxApi::Object::EzsigndocumentEditObjectV1Response
+# EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Response
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::EzsigndocumentEditObjectV1Response;
+use EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Response;
 ```
 
 ## Properties

@@ -34,8 +34,6 @@ docs/EzsigndocumentCreateObjectV1Request.md
 docs/EzsigndocumentCreateObjectV1Response.md
 docs/EzsigndocumentCreateObjectV1ResponseMPayload.md
 docs/EzsigndocumentDeleteObjectV1Response.md
-docs/EzsigndocumentEditObjectV1Request.md
-docs/EzsigndocumentEditObjectV1Response.md
 docs/EzsigndocumentGetDownloadUrlV1Response.md
 docs/EzsigndocumentGetDownloadUrlV1ResponseMPayload.md
 docs/EzsigndocumentGetObjectV1Response.md
@@ -49,8 +47,6 @@ docs/EzsignfolderCreateObjectV1Request.md
 docs/EzsignfolderCreateObjectV1Response.md
 docs/EzsignfolderCreateObjectV1ResponseMPayload.md
 docs/EzsignfolderDeleteObjectV1Response.md
-docs/EzsignfolderEditObjectV1Request.md
-docs/EzsignfolderEditObjectV1Response.md
 docs/EzsignfolderGetObjectV1Response.md
 docs/EzsignfolderGetObjectV1ResponseMPayload.md
 docs/EzsignfolderRequest.md
@@ -64,8 +60,6 @@ docs/EzsignfoldersignerassociationCreateObjectV1Request.md
 docs/EzsignfoldersignerassociationCreateObjectV1Response.md
 docs/EzsignfoldersignerassociationCreateObjectV1ResponseMPayload.md
 docs/EzsignfoldersignerassociationDeleteObjectV1Response.md
-docs/EzsignfoldersignerassociationEditObjectV1Request.md
-docs/EzsignfoldersignerassociationEditObjectV1Response.md
 docs/EzsignfoldersignerassociationGetInPersonLoginUrlV1Response.md
 docs/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload.md
 docs/EzsignfoldersignerassociationGetObjectV1Response.md
@@ -75,8 +69,6 @@ docs/EzsignsignatureCreateObjectV1Request.md
 docs/EzsignsignatureCreateObjectV1Response.md
 docs/EzsignsignatureCreateObjectV1ResponseMPayload.md
 docs/EzsignsignatureDeleteObjectV1Response.md
-docs/EzsignsignatureEditObjectV1Request.md
-docs/EzsignsignatureEditObjectV1Response.md
 docs/EzsignsignatureGetObjectV1Response.md
 docs/EzsignsignatureRequest.md
 docs/EzsignsignatureRequestCompound.md
@@ -109,6 +101,14 @@ docs/ObjectFranchiseofficeApi.md
 docs/ObjectFranchisereferalincomeApi.md
 docs/ObjectPeriodApi.md
 docs/PhoneRequest.md
+docs/UNUSEDEzsigndocumentEditObjectV1Request.md
+docs/UNUSEDEzsigndocumentEditObjectV1Response.md
+docs/UNUSEDEzsignfolderEditObjectV1Request.md
+docs/UNUSEDEzsignfolderEditObjectV1Response.md
+docs/UNUSEDEzsignfoldersignerassociationEditObjectV1Request.md
+docs/UNUSEDEzsignfoldersignerassociationEditObjectV1Response.md
+docs/UNUSEDEzsignsignatureEditObjectV1Request.md
+docs/UNUSEDEzsignsignatureEditObjectV1Response.md
 docs/UserCreateEzsignuserV1Request.md
 docs/UserCreateEzsignuserV1Response.md
 docs/UserCreateEzsignuserV1ResponseMPayload.md
@@ -160,8 +160,6 @@ lib/EzmaxApi/Object/EzsigndocumentCreateObjectV1Request.pm
 lib/EzmaxApi/Object/EzsigndocumentCreateObjectV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentCreateObjectV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigndocumentDeleteObjectV1Response.pm
-lib/EzmaxApi/Object/EzsigndocumentEditObjectV1Request.pm
-lib/EzmaxApi/Object/EzsigndocumentEditObjectV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentGetDownloadUrlV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentGetDownloadUrlV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigndocumentGetObjectV1Response.pm
@@ -175,8 +173,6 @@ lib/EzmaxApi/Object/EzsignfolderCreateObjectV1Request.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignfolderDeleteObjectV1Response.pm
-lib/EzmaxApi/Object/EzsignfolderEditObjectV1Request.pm
-lib/EzmaxApi/Object/EzsignfolderEditObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderGetObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderGetObjectV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignfolderRequest.pm
@@ -190,8 +186,6 @@ lib/EzmaxApi/Object/EzsignfoldersignerassociationCreateObjectV1Request.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationCreateObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationCreateObjectV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationDeleteObjectV1Response.pm
-lib/EzmaxApi/Object/EzsignfoldersignerassociationEditObjectV1Request.pm
-lib/EzmaxApi/Object/EzsignfoldersignerassociationEditObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationGetInPersonLoginUrlV1Response.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationGetObjectV1Response.pm
@@ -201,8 +195,6 @@ lib/EzmaxApi/Object/EzsignsignatureCreateObjectV1Request.pm
 lib/EzmaxApi/Object/EzsignsignatureCreateObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignsignatureCreateObjectV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignsignatureDeleteObjectV1Response.pm
-lib/EzmaxApi/Object/EzsignsignatureEditObjectV1Request.pm
-lib/EzmaxApi/Object/EzsignsignatureEditObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignsignatureGetObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignsignatureRequest.pm
 lib/EzmaxApi/Object/EzsignsignatureRequestCompound.pm
@@ -222,6 +214,14 @@ lib/EzmaxApi/Object/FranchisereferalincomeRequestCompound.pm
 lib/EzmaxApi/Object/GlobalCustomerGetEndpointV1Response.pm
 lib/EzmaxApi/Object/MultilingualApikeyDescription.pm
 lib/EzmaxApi/Object/PhoneRequest.pm
+lib/EzmaxApi/Object/UNUSEDEzsigndocumentEditObjectV1Request.pm
+lib/EzmaxApi/Object/UNUSEDEzsigndocumentEditObjectV1Response.pm
+lib/EzmaxApi/Object/UNUSEDEzsignfolderEditObjectV1Request.pm
+lib/EzmaxApi/Object/UNUSEDEzsignfolderEditObjectV1Response.pm
+lib/EzmaxApi/Object/UNUSEDEzsignfoldersignerassociationEditObjectV1Request.pm
+lib/EzmaxApi/Object/UNUSEDEzsignfoldersignerassociationEditObjectV1Response.pm
+lib/EzmaxApi/Object/UNUSEDEzsignsignatureEditObjectV1Request.pm
+lib/EzmaxApi/Object/UNUSEDEzsignsignatureEditObjectV1Response.pm
 lib/EzmaxApi/Object/UserCreateEzsignuserV1Request.pm
 lib/EzmaxApi/Object/UserCreateEzsignuserV1Response.pm
 lib/EzmaxApi/Object/UserCreateEzsignuserV1ResponseMPayload.pm
@@ -278,8 +278,6 @@ t/EzsigndocumentCreateObjectV1RequestTest.t
 t/EzsigndocumentCreateObjectV1ResponseMPayloadTest.t
 t/EzsigndocumentCreateObjectV1ResponseTest.t
 t/EzsigndocumentDeleteObjectV1ResponseTest.t
-t/EzsigndocumentEditObjectV1RequestTest.t
-t/EzsigndocumentEditObjectV1ResponseTest.t
 t/EzsigndocumentGetDownloadUrlV1ResponseMPayloadTest.t
 t/EzsigndocumentGetDownloadUrlV1ResponseTest.t
 t/EzsigndocumentGetObjectV1ResponseMPayloadTest.t
@@ -293,8 +291,6 @@ t/EzsignfolderCreateObjectV1RequestTest.t
 t/EzsignfolderCreateObjectV1ResponseMPayloadTest.t
 t/EzsignfolderCreateObjectV1ResponseTest.t
 t/EzsignfolderDeleteObjectV1ResponseTest.t
-t/EzsignfolderEditObjectV1RequestTest.t
-t/EzsignfolderEditObjectV1ResponseTest.t
 t/EzsignfolderGetObjectV1ResponseMPayloadTest.t
 t/EzsignfolderGetObjectV1ResponseTest.t
 t/EzsignfolderRequestCompoundTest.t
@@ -308,8 +304,6 @@ t/EzsignfoldersignerassociationCreateObjectV1RequestTest.t
 t/EzsignfoldersignerassociationCreateObjectV1ResponseMPayloadTest.t
 t/EzsignfoldersignerassociationCreateObjectV1ResponseTest.t
 t/EzsignfoldersignerassociationDeleteObjectV1ResponseTest.t
-t/EzsignfoldersignerassociationEditObjectV1RequestTest.t
-t/EzsignfoldersignerassociationEditObjectV1ResponseTest.t
 t/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayloadTest.t
 t/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseTest.t
 t/EzsignfoldersignerassociationGetObjectV1ResponseTest.t
@@ -319,8 +313,6 @@ t/EzsignsignatureCreateObjectV1RequestTest.t
 t/EzsignsignatureCreateObjectV1ResponseMPayloadTest.t
 t/EzsignsignatureCreateObjectV1ResponseTest.t
 t/EzsignsignatureDeleteObjectV1ResponseTest.t
-t/EzsignsignatureEditObjectV1RequestTest.t
-t/EzsignsignatureEditObjectV1ResponseTest.t
 t/EzsignsignatureGetObjectV1ResponseTest.t
 t/EzsignsignatureRequestCompoundTest.t
 t/EzsignsignatureRequestTest.t
@@ -353,6 +345,14 @@ t/ObjectFranchiseofficeApiTest.t
 t/ObjectFranchisereferalincomeApiTest.t
 t/ObjectPeriodApiTest.t
 t/PhoneRequestTest.t
+t/UNUSEDEzsigndocumentEditObjectV1RequestTest.t
+t/UNUSEDEzsigndocumentEditObjectV1ResponseTest.t
+t/UNUSEDEzsignfolderEditObjectV1RequestTest.t
+t/UNUSEDEzsignfolderEditObjectV1ResponseTest.t
+t/UNUSEDEzsignfoldersignerassociationEditObjectV1RequestTest.t
+t/UNUSEDEzsignfoldersignerassociationEditObjectV1ResponseTest.t
+t/UNUSEDEzsignsignatureEditObjectV1RequestTest.t
+t/UNUSEDEzsignsignatureEditObjectV1ResponseTest.t
 t/UserCreateEzsignuserV1RequestTest.t
 t/UserCreateEzsignuserV1ResponseMPayloadTest.t
 t/UserCreateEzsignuserV1ResponseTest.t

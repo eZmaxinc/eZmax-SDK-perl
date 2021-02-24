@@ -1,14 +1,14 @@
-# EzmaxApi::Object::EzsignfolderEditObjectV1Request
+# EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Request
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::EzsignfolderEditObjectV1Request;
+use EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Request;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**obj_ezsignfolder** | [**EzsignfolderRequest**](EzsignfolderRequest.md) |  | [optional] 
+**obj_ezsignsignature** | [**EzsignsignatureRequest**](EzsignsignatureRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

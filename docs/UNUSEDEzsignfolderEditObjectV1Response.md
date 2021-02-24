@@ -1,8 +1,8 @@
-# EzmaxApi::Object::EzsignfoldersignerassociationEditObjectV1Response
+# EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Response
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::EzsignfoldersignerassociationEditObjectV1Response;
+use EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Response;
 ```
 
 ## Properties
