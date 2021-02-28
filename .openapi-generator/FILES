@@ -80,6 +80,7 @@ docs/FieldEEzsignfolderSendreminderfrequency.md
 docs/FieldEEzsignfolderStep.md
 docs/FieldEPhoneType.md
 docs/FieldEUserType.md
+docs/FieldEUserTypeSSPR.md
 docs/FranchisereferalincomeCreateObjectV1Request.md
 docs/FranchisereferalincomeCreateObjectV1Response.md
 docs/FranchisereferalincomeCreateObjectV1ResponseMPayload.md
@@ -101,6 +102,11 @@ docs/ObjectFranchiseofficeApi.md
 docs/ObjectFranchisereferalincomeApi.md
 docs/ObjectPeriodApi.md
 docs/PhoneRequest.md
+docs/SsprResetPasswordRequestV1Request.md
+docs/SsprResetPasswordV1Request.md
+docs/SsprSendUsernamesV1Request.md
+docs/SsprUnlockAccountRequestV1Request.md
+docs/SsprUnlockAccountV1Request.md
 docs/UNUSEDEzsigndocumentEditObjectV1Request.md
 docs/UNUSEDEzsigndocumentEditObjectV1Response.md
 docs/UNUSEDEzsignfolderEditObjectV1Request.md
@@ -206,6 +212,7 @@ lib/EzmaxApi/Object/FieldEEzsignfolderSendreminderfrequency.pm
 lib/EzmaxApi/Object/FieldEEzsignfolderStep.pm
 lib/EzmaxApi/Object/FieldEPhoneType.pm
 lib/EzmaxApi/Object/FieldEUserType.pm
+lib/EzmaxApi/Object/FieldEUserTypeSSPR.pm
 lib/EzmaxApi/Object/FranchisereferalincomeCreateObjectV1Request.pm
 lib/EzmaxApi/Object/FranchisereferalincomeCreateObjectV1Response.pm
 lib/EzmaxApi/Object/FranchisereferalincomeCreateObjectV1ResponseMPayload.pm
@@ -214,6 +221,11 @@ lib/EzmaxApi/Object/FranchisereferalincomeRequestCompound.pm
 lib/EzmaxApi/Object/GlobalCustomerGetEndpointV1Response.pm
 lib/EzmaxApi/Object/MultilingualApikeyDescription.pm
 lib/EzmaxApi/Object/PhoneRequest.pm
+lib/EzmaxApi/Object/SsprResetPasswordRequestV1Request.pm
+lib/EzmaxApi/Object/SsprResetPasswordV1Request.pm
+lib/EzmaxApi/Object/SsprSendUsernamesV1Request.pm
+lib/EzmaxApi/Object/SsprUnlockAccountRequestV1Request.pm
+lib/EzmaxApi/Object/SsprUnlockAccountV1Request.pm
 lib/EzmaxApi/Object/UNUSEDEzsigndocumentEditObjectV1Request.pm
 lib/EzmaxApi/Object/UNUSEDEzsigndocumentEditObjectV1Response.pm
 lib/EzmaxApi/Object/UNUSEDEzsignfolderEditObjectV1Request.pm
@@ -323,6 +335,7 @@ t/FieldEEzsigndocumentStepTest.t
 t/FieldEEzsignfolderSendreminderfrequencyTest.t
 t/FieldEEzsignfolderStepTest.t
 t/FieldEPhoneTypeTest.t
+t/FieldEUserTypeSSPRTest.t
 t/FieldEUserTypeTest.t
 t/FranchisereferalincomeCreateObjectV1RequestTest.t
 t/FranchisereferalincomeCreateObjectV1ResponseMPayloadTest.t
@@ -345,6 +358,11 @@ t/ObjectFranchiseofficeApiTest.t
 t/ObjectFranchisereferalincomeApiTest.t
 t/ObjectPeriodApiTest.t
 t/PhoneRequestTest.t
+t/SsprResetPasswordRequestV1RequestTest.t
+t/SsprResetPasswordV1RequestTest.t
+t/SsprSendUsernamesV1RequestTest.t
+t/SsprUnlockAccountRequestV1RequestTest.t
+t/SsprUnlockAccountV1RequestTest.t
 t/UNUSEDEzsigndocumentEditObjectV1RequestTest.t
 t/UNUSEDEzsigndocumentEditObjectV1ResponseTest.t
 t/UNUSEDEzsignfolderEditObjectV1RequestTest.t

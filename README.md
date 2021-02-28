@@ -317,6 +317,7 @@ use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 use EzmaxApi::Object::FieldEPhoneType;
 use EzmaxApi::Object::FieldEUserType;
+use EzmaxApi::Object::FieldEUserTypeSSPR;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1Request;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1Response;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1ResponseMPayload;
@@ -325,6 +326,11 @@ use EzmaxApi::Object::FranchisereferalincomeRequestCompound;
 use EzmaxApi::Object::GlobalCustomerGetEndpointV1Response;
 use EzmaxApi::Object::MultilingualApikeyDescription;
 use EzmaxApi::Object::PhoneRequest;
+use EzmaxApi::Object::SsprResetPasswordRequestV1Request;
+use EzmaxApi::Object::SsprResetPasswordV1Request;
+use EzmaxApi::Object::SsprSendUsernamesV1Request;
+use EzmaxApi::Object::SsprUnlockAccountRequestV1Request;
+use EzmaxApi::Object::SsprUnlockAccountV1Request;
 use EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Request;
 use EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Response;
 use EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Request;
@@ -449,6 +455,7 @@ use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 use EzmaxApi::Object::FieldEPhoneType;
 use EzmaxApi::Object::FieldEUserType;
+use EzmaxApi::Object::FieldEUserTypeSSPR;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1Request;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1Response;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1ResponseMPayload;
@@ -457,6 +464,11 @@ use EzmaxApi::Object::FranchisereferalincomeRequestCompound;
 use EzmaxApi::Object::GlobalCustomerGetEndpointV1Response;
 use EzmaxApi::Object::MultilingualApikeyDescription;
 use EzmaxApi::Object::PhoneRequest;
+use EzmaxApi::Object::SsprResetPasswordRequestV1Request;
+use EzmaxApi::Object::SsprResetPasswordV1Request;
+use EzmaxApi::Object::SsprSendUsernamesV1Request;
+use EzmaxApi::Object::SsprUnlockAccountRequestV1Request;
+use EzmaxApi::Object::SsprUnlockAccountV1Request;
 use EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Request;
 use EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Response;
 use EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Request;
@@ -511,7 +523,11 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *GlobalCustomerApi* | [**global_customer_get_endpoint_v1**](docs/GlobalCustomerApi.md#global_customer_get_endpoint_v1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
-*ModuleSsprApi* | [**sspr_remind_usernames_v1**](docs/ModuleSsprApi.md#sspr_remind_usernames_v1) | **POST** /1/module/sspr/remindUsernames | Remind of forgotten username(s)
+*ModuleSsprApi* | [**sspr_reset_password_request_v1**](docs/ModuleSsprApi.md#sspr_reset_password_request_v1) | **POST** /1/module/sspr/resetPasswordRequest/ | Reset Password Request
+*ModuleSsprApi* | [**sspr_reset_password_v1**](docs/ModuleSsprApi.md#sspr_reset_password_v1) | **POST** /1/module/sspr/resetPassword | Reset Password
+*ModuleSsprApi* | [**sspr_send_usernames_v1**](docs/ModuleSsprApi.md#sspr_send_usernames_v1) | **POST** /1/module/sspr/sendUsernames | Send username(s)
+*ModuleSsprApi* | [**sspr_unlock_account_request_v1**](docs/ModuleSsprApi.md#sspr_unlock_account_request_v1) | **POST** /1/module/sspr/unlockAccountRequest | Unlock Account Request
+*ModuleSsprApi* | [**sspr_unlock_account_v1**](docs/ModuleSsprApi.md#sspr_unlock_account_v1) | **POST** /1/module/sspr/unlockAccount | Unlock Account
 *ModuleUserApi* | [**user_create_ezsignuser_v1**](docs/ModuleUserApi.md#user_create_ezsignuser_v1) | **POST** /1/module/user/createezsignuser | Create a new User of type Ezsignuser
 *ObjectActivesessionApi* | [**activesession_get_current_v1**](docs/ObjectActivesessionApi.md#activesession_get_current_v1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
 *ObjectApikeyApi* | [**apikey_create_object_v1**](docs/ObjectApikeyApi.md#apikey_create_object_v1) | **POST** /1/object/apikey | Create a new Apikey
@@ -619,6 +635,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::FieldEEzsignfolderStep](docs/FieldEEzsignfolderStep.md)
  - [EzmaxApi::Object::FieldEPhoneType](docs/FieldEPhoneType.md)
  - [EzmaxApi::Object::FieldEUserType](docs/FieldEUserType.md)
+ - [EzmaxApi::Object::FieldEUserTypeSSPR](docs/FieldEUserTypeSSPR.md)
  - [EzmaxApi::Object::FranchisereferalincomeCreateObjectV1Request](docs/FranchisereferalincomeCreateObjectV1Request.md)
  - [EzmaxApi::Object::FranchisereferalincomeCreateObjectV1Response](docs/FranchisereferalincomeCreateObjectV1Response.md)
  - [EzmaxApi::Object::FranchisereferalincomeCreateObjectV1ResponseMPayload](docs/FranchisereferalincomeCreateObjectV1ResponseMPayload.md)
@@ -627,6 +644,11 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::GlobalCustomerGetEndpointV1Response](docs/GlobalCustomerGetEndpointV1Response.md)
  - [EzmaxApi::Object::MultilingualApikeyDescription](docs/MultilingualApikeyDescription.md)
  - [EzmaxApi::Object::PhoneRequest](docs/PhoneRequest.md)
+ - [EzmaxApi::Object::SsprResetPasswordRequestV1Request](docs/SsprResetPasswordRequestV1Request.md)
+ - [EzmaxApi::Object::SsprResetPasswordV1Request](docs/SsprResetPasswordV1Request.md)
+ - [EzmaxApi::Object::SsprSendUsernamesV1Request](docs/SsprSendUsernamesV1Request.md)
+ - [EzmaxApi::Object::SsprUnlockAccountRequestV1Request](docs/SsprUnlockAccountRequestV1Request.md)
+ - [EzmaxApi::Object::SsprUnlockAccountV1Request](docs/SsprUnlockAccountV1Request.md)
  - [EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Request](docs/UNUSEDEzsigndocumentEditObjectV1Request.md)
  - [EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Response](docs/UNUSEDEzsigndocumentEditObjectV1Response.md)
  - [EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Request](docs/UNUSEDEzsignfolderEditObjectV1Request.md)

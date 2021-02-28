@@ -30,10 +30,43 @@ my $api = EzmaxApi::ModuleSsprApi->new();
 isa_ok($api, 'EzmaxApi::ModuleSsprApi');
 
 #
-# sspr_remind_usernames_v1 test
+# sspr_reset_password_request_v1 test
 #
 {
-    my $result = $api->sspr_remind_usernames_v1();
+    my $sspr_reset_password_request_v1_request = undef; # replace NULL with a proper value
+    my $result = $api->sspr_reset_password_request_v1(sspr_reset_password_request_v1_request => $sspr_reset_password_request_v1_request);
+}
+
+#
+# sspr_reset_password_v1 test
+#
+{
+    my $sspr_reset_password_v1_request = undef; # replace NULL with a proper value
+    my $result = $api->sspr_reset_password_v1(sspr_reset_password_v1_request => $sspr_reset_password_v1_request);
+}
+
+#
+# sspr_send_usernames_v1 test
+#
+{
+    my $sspr_send_usernames_v1_request = undef; # replace NULL with a proper value
+    my $result = $api->sspr_send_usernames_v1(sspr_send_usernames_v1_request => $sspr_send_usernames_v1_request);
+}
+
+#
+# sspr_unlock_account_request_v1 test
+#
+{
+    my $sspr_unlock_account_request_v1_request = undef; # replace NULL with a proper value
+    my $result = $api->sspr_unlock_account_request_v1(sspr_unlock_account_request_v1_request => $sspr_unlock_account_request_v1_request);
+}
+
+#
+# sspr_unlock_account_v1 test
+#
+{
+    my $sspr_unlock_account_v1_request = undef; # replace NULL with a proper value
+    my $result = $api->sspr_unlock_account_v1(sspr_unlock_account_v1_request => $sspr_unlock_account_v1_request);
 }
 
 
