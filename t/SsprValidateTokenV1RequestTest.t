@@ -25,9 +25,9 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::EzsignfolderResponseAllOf');
+use_ok('EzmaxApi::Object::SsprValidateTokenV1Request');
 
-my $instance = EzmaxApi::Object::EzsignfolderResponseAllOf->new();
+my $instance = EzmaxApi::Object::SsprValidateTokenV1Request->new();
 
-isa_ok($instance, 'EzmaxApi::Object::EzsignfolderResponseAllOf');
+isa_ok($instance, 'EzmaxApi::Object::SsprValidateTokenV1Request');
 
