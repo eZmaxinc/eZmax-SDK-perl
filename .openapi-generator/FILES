@@ -13,6 +13,9 @@ docs/ApikeyRequest.md
 docs/ApikeyRequestCompound.md
 docs/ApikeyResponse.md
 docs/AttemptResponse.md
+docs/AuthenticateAuthenticateV2Request.md
+docs/AuthenticateAuthenticateV2Response.md
+docs/AuthenticateAuthenticateV2ResponseMPayload.md
 docs/CommonAudit.md
 docs/CommonGetAutocompleteV1Response.md
 docs/CommonGetAutocompleteV1ResponseMPayload.md
@@ -88,6 +91,7 @@ docs/FranchisereferalincomeRequest.md
 docs/FranchisereferalincomeRequestCompound.md
 docs/GlobalCustomerApi.md
 docs/GlobalCustomerGetEndpointV1Response.md
+docs/ModuleAuthenticateApi.md
 docs/ModuleSsprApi.md
 docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
@@ -134,6 +138,7 @@ lib/EzmaxApi/ApiClient.pm
 lib/EzmaxApi/ApiFactory.pm
 lib/EzmaxApi/Configuration.pm
 lib/EzmaxApi/GlobalCustomerApi.pm
+lib/EzmaxApi/ModuleAuthenticateApi.pm
 lib/EzmaxApi/ModuleSsprApi.pm
 lib/EzmaxApi/ModuleUserApi.pm
 lib/EzmaxApi/Object/ActivesessionGetCurrentV1Response.pm
@@ -146,6 +151,9 @@ lib/EzmaxApi/Object/ApikeyRequest.pm
 lib/EzmaxApi/Object/ApikeyRequestCompound.pm
 lib/EzmaxApi/Object/ApikeyResponse.pm
 lib/EzmaxApi/Object/AttemptResponse.pm
+lib/EzmaxApi/Object/AuthenticateAuthenticateV2Request.pm
+lib/EzmaxApi/Object/AuthenticateAuthenticateV2Response.pm
+lib/EzmaxApi/Object/AuthenticateAuthenticateV2ResponseMPayload.pm
 lib/EzmaxApi/Object/CommonAudit.pm
 lib/EzmaxApi/Object/CommonGetAutocompleteV1Response.pm
 lib/EzmaxApi/Object/CommonGetAutocompleteV1ResponseMPayload.pm
@@ -271,6 +279,9 @@ t/ApikeyRequestCompoundTest.t
 t/ApikeyRequestTest.t
 t/ApikeyResponseTest.t
 t/AttemptResponseTest.t
+t/AuthenticateAuthenticateV2RequestTest.t
+t/AuthenticateAuthenticateV2ResponseMPayloadTest.t
+t/AuthenticateAuthenticateV2ResponseTest.t
 t/CommonAuditTest.t
 t/CommonGetAutocompleteV1ResponseMPayloadTest.t
 t/CommonGetAutocompleteV1ResponseTest.t
@@ -346,6 +357,7 @@ t/FranchisereferalincomeRequestCompoundTest.t
 t/FranchisereferalincomeRequestTest.t
 t/GlobalCustomerApiTest.t
 t/GlobalCustomerGetEndpointV1ResponseTest.t
+t/ModuleAuthenticateApiTest.t
 t/ModuleSsprApiTest.t
 t/ModuleUserApiTest.t
 t/MultilingualApikeyDescriptionTest.t
