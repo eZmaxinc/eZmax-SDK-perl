@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request');
+use_ok('EzmaxApi::Object::FieldEEzsignsignatureType');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request->new();
+#my $instance = EzmaxApi::Object::FieldEEzsignsignatureType->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request');
+#isa_ok($instance, 'EzmaxApi::Object::FieldEEzsignsignatureType');
 
