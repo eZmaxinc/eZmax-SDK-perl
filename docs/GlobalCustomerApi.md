@@ -19,7 +19,7 @@ Get customer endpoint
 
 Retrieve the customer's specific server endpoint where to send requests. This will help locate the proper region (ie: sInfrastructureregionCode) and the proper environment (ie: sInfrastructureenvironmenttypeDescription) where the customer's data is stored.
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::GlobalCustomerApi;
@@ -34,7 +34,7 @@ my $api_instance = EzmaxApi::GlobalCustomerApi->new(
 my $pks_customer_code = "pks_customer_code_example"; # string | The customer code assigned to your account
 my $s_infrastructureproduct_code = "s_infrastructureproduct_code_example"; # string | The infrastructure product Code  If undefined, \"appcluster01\" is assumed
 
-eval { 
+eval {
     my $result = $api_instance->global_customer_get_endpoint_v1(pks_customer_code => $pks_customer_code, s_infrastructureproduct_code => $s_infrastructureproduct_code);
     print Dumper($result);
 };

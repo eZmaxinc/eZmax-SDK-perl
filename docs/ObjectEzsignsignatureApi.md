@@ -22,7 +22,7 @@ Create a new Ezsignsignature
 
 The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignsignatureApi;
@@ -36,7 +36,7 @@ my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
 
 my $ezsignsignature_create_object_v1_request = [EzmaxApi::Object::ARRAY[EzsignsignatureCreateObjectV1Request]->new()]; # ARRAY[EzsignsignatureCreateObjectV1Request] | 
 
-eval { 
+eval {
     my $result = $api_instance->ezsignsignature_create_object_v1(ezsignsignature_create_object_v1_request => $ezsignsignature_create_object_v1_request);
     print Dumper($result);
 };
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 Delete an existing Ezsignsignature
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignsignatureApi;
@@ -85,7 +85,7 @@ my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
 
 my $pki_ezsignsignature_id = 56; # int | The unique ID of the Ezsignsignature
 
-eval { 
+eval {
     my $result = $api_instance->ezsignsignature_delete_object_v1(pki_ezsignsignature_id => $pki_ezsignsignature_id);
     print Dumper($result);
 };
@@ -120,7 +120,9 @@ Name | Type | Description  | Notes
 
 Retrieve an existing Ezsignsignature's children IDs
 
-### Example 
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignsignatureApi;
@@ -134,7 +136,7 @@ my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
 
 my $pki_ezsignsignature_id = 56; # int | The unique ID of the Ezsignsignature
 
-eval { 
+eval {
     $api_instance->ezsignsignature_get_children_v1(pki_ezsignsignature_id => $pki_ezsignsignature_id);
 };
 if ($@) {
@@ -168,7 +170,9 @@ void (empty response body)
 
 Retrieve an existing Ezsignsignature
 
-### Example 
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignsignatureApi;
@@ -182,7 +186,7 @@ my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
 
 my $pki_ezsignsignature_id = 56; # int | The unique ID of the Ezsignsignature
 
-eval { 
+eval {
     my $result = $api_instance->ezsignsignature_get_object_v1(pki_ezsignsignature_id => $pki_ezsignsignature_id);
     print Dumper($result);
 };

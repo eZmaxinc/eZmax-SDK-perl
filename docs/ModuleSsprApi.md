@@ -24,7 +24,7 @@ Reset Password Request
 
 This endpoint sends an email with a link to reset the user's password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ModuleSsprApi;
@@ -38,7 +38,7 @@ my $api_instance = EzmaxApi::ModuleSsprApi->new(
 
 my $sspr_reset_password_request_v1_request = EzmaxApi::Object::SsprResetPasswordRequestV1Request->new(); # SsprResetPasswordRequestV1Request | 
 
-eval { 
+eval {
     $api_instance->sspr_reset_password_request_v1(sspr_reset_password_request_v1_request => $sspr_reset_password_request_v1_request);
 };
 if ($@) {
@@ -74,7 +74,7 @@ Reset Password
 
 This endpoint resets the user's password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ModuleSsprApi;
@@ -88,7 +88,7 @@ my $api_instance = EzmaxApi::ModuleSsprApi->new(
 
 my $sspr_reset_password_v1_request = EzmaxApi::Object::SsprResetPasswordV1Request->new(); # SsprResetPasswordV1Request | 
 
-eval { 
+eval {
     $api_instance->sspr_reset_password_v1(sspr_reset_password_v1_request => $sspr_reset_password_v1_request);
 };
 if ($@) {
@@ -124,7 +124,7 @@ Send username(s)
 
 This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ModuleSsprApi;
@@ -138,7 +138,7 @@ my $api_instance = EzmaxApi::ModuleSsprApi->new(
 
 my $sspr_send_usernames_v1_request = EzmaxApi::Object::SsprSendUsernamesV1Request->new(); # SsprSendUsernamesV1Request | 
 
-eval { 
+eval {
     $api_instance->sspr_send_usernames_v1(sspr_send_usernames_v1_request => $sspr_send_usernames_v1_request);
 };
 if ($@) {
@@ -174,7 +174,7 @@ Unlock Account Request
 
 This endpoint sends an email with a link to unlock the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ModuleSsprApi;
@@ -188,7 +188,7 @@ my $api_instance = EzmaxApi::ModuleSsprApi->new(
 
 my $sspr_unlock_account_request_v1_request = EzmaxApi::Object::SsprUnlockAccountRequestV1Request->new(); # SsprUnlockAccountRequestV1Request | 
 
-eval { 
+eval {
     $api_instance->sspr_unlock_account_request_v1(sspr_unlock_account_request_v1_request => $sspr_unlock_account_request_v1_request);
 };
 if ($@) {
@@ -224,7 +224,7 @@ Unlock Account
 
 This endpoint unlocks the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ModuleSsprApi;
@@ -238,7 +238,7 @@ my $api_instance = EzmaxApi::ModuleSsprApi->new(
 
 my $sspr_unlock_account_v1_request = EzmaxApi::Object::SsprUnlockAccountV1Request->new(); # SsprUnlockAccountV1Request | 
 
-eval { 
+eval {
     $api_instance->sspr_unlock_account_v1(sspr_unlock_account_v1_request => $sspr_unlock_account_v1_request);
 };
 if ($@) {
@@ -274,7 +274,7 @@ Validate Token
 
 This endpoint validates if a Token is valid and not expired.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ModuleSsprApi;
@@ -288,7 +288,7 @@ my $api_instance = EzmaxApi::ModuleSsprApi->new(
 
 my $sspr_validate_token_v1_request = EzmaxApi::Object::SsprValidateTokenV1Request->new(); # SsprValidateTokenV1Request | 
 
-eval { 
+eval {
     $api_instance->sspr_validate_token_v1(sspr_validate_token_v1_request => $sspr_validate_token_v1_request);
 };
 if ($@) {

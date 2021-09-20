@@ -19,7 +19,7 @@ Create a new Franchisereferalincome
 
 The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectFranchisereferalincomeApi;
@@ -33,7 +33,7 @@ my $api_instance = EzmaxApi::ObjectFranchisereferalincomeApi->new(
 
 my $franchisereferalincome_create_object_v1_request = [EzmaxApi::Object::ARRAY[FranchisereferalincomeCreateObjectV1Request]->new()]; # ARRAY[FranchisereferalincomeCreateObjectV1Request] | 
 
-eval { 
+eval {
     my $result = $api_instance->franchisereferalincome_create_object_v1(franchisereferalincome_create_object_v1_request => $franchisereferalincome_create_object_v1_request);
     print Dumper($result);
 };

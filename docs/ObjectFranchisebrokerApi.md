@@ -19,7 +19,7 @@ Retrieve Franchisebrokers and IDs
 
 Get the list of Franchisebrokers to be used in a dropdown or autocomplete control.
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectFranchisebrokerApi;
@@ -34,7 +34,7 @@ my $api_instance = EzmaxApi::ObjectFranchisebrokerApi->new(
 my $s_selector = "s_selector_example"; # string | The type of Franchisebrokers to return
 my $s_query = "s_query_example"; # string | Allow to filter on the option value
 
-eval { 
+eval {
     my $result = $api_instance->franchisebroker_get_autocomplete_v1(s_selector => $s_selector, s_query => $s_query);
     print Dumper($result);
 };

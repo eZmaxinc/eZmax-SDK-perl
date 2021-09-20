@@ -23,7 +23,7 @@ Create a new Ezsignfolder
 
 The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignfolderApi;
@@ -37,7 +37,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
 
 my $ezsignfolder_create_object_v1_request = [EzmaxApi::Object::ARRAY[EzsignfolderCreateObjectV1Request]->new()]; # ARRAY[EzsignfolderCreateObjectV1Request] | 
 
-eval { 
+eval {
     my $result = $api_instance->ezsignfolder_create_object_v1(ezsignfolder_create_object_v1_request => $ezsignfolder_create_object_v1_request);
     print Dumper($result);
 };
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 Delete an existing Ezsignfolder
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignfolderApi;
@@ -86,7 +86,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
 
 my $pki_ezsignfolder_id = 56; # int | The unique ID of the Ezsignfolder
 
-eval { 
+eval {
     my $result = $api_instance->ezsignfolder_delete_object_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id);
     print Dumper($result);
 };
@@ -121,7 +121,9 @@ Name | Type | Description  | Notes
 
 Retrieve an existing Ezsignfolder's children IDs
 
-### Example 
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignfolderApi;
@@ -135,7 +137,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
 
 my $pki_ezsignfolder_id = 56; # int | The unique ID of the Ezsignfolder
 
-eval { 
+eval {
     $api_instance->ezsignfolder_get_children_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id);
 };
 if ($@) {
@@ -169,7 +171,9 @@ void (empty response body)
 
 Retrieve an existing Ezsignfolder
 
-### Example 
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignfolderApi;
@@ -183,7 +187,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
 
 my $pki_ezsignfolder_id = 56; # int | The unique ID of the Ezsignfolder
 
-eval { 
+eval {
     my $result = $api_instance->ezsignfolder_get_object_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id);
     print Dumper($result);
 };
@@ -218,7 +222,7 @@ Name | Type | Description  | Notes
 
 Send the Ezsignfolder to the signatories for signature
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignfolderApi;
@@ -233,7 +237,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
 my $pki_ezsignfolder_id = 56; # int | The unique ID of the Ezsignfolder
 my $ezsignfolder_send_v1_request = EzmaxApi::Object::EzsignfolderSendV1Request->new(); # EzsignfolderSendV1Request | 
 
-eval { 
+eval {
     my $result = $api_instance->ezsignfolder_send_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_send_v1_request => $ezsignfolder_send_v1_request);
     print Dumper($result);
 };

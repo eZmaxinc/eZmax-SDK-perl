@@ -19,7 +19,7 @@ Authenticate a user
 
 This endpoint authenticates a user.
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ModuleAuthenticateApi;
@@ -34,7 +34,7 @@ my $api_instance = EzmaxApi::ModuleAuthenticateApi->new(
 my $e_session_type = "e_session_type_example"; # string | 
 my $authenticate_authenticate_v2_request = EzmaxApi::Object::AuthenticateAuthenticateV2Request->new(); # AuthenticateAuthenticateV2Request | 
 
-eval { 
+eval {
     my $result = $api_instance->authenticate_authenticate_v2(e_session_type => $e_session_type, authenticate_authenticate_v2_request => $authenticate_authenticate_v2_request);
     print Dumper($result);
 };

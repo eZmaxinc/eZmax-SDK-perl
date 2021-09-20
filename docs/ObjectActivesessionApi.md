@@ -19,7 +19,7 @@ Get Current Activesession
 
 Retrieve the details about the current activesession
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectActivesessionApi;
@@ -32,7 +32,7 @@ my $api_instance = EzmaxApi::ObjectActivesessionApi->new(
 );
 
 
-eval { 
+eval {
     my $result = $api_instance->activesession_get_current_v1();
     print Dumper($result);
 };

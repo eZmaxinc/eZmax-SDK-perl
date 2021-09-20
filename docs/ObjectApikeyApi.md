@@ -19,7 +19,7 @@ Create a new Apikey
 
 The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectApikeyApi;
@@ -33,7 +33,7 @@ my $api_instance = EzmaxApi::ObjectApikeyApi->new(
 
 my $apikey_create_object_v1_request = [EzmaxApi::Object::ARRAY[ApikeyCreateObjectV1Request]->new()]; # ARRAY[ApikeyCreateObjectV1Request] | 
 
-eval { 
+eval {
     my $result = $api_instance->apikey_create_object_v1(apikey_create_object_v1_request => $apikey_create_object_v1_request);
     print Dumper($result);
 };

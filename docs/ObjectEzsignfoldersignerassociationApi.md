@@ -23,7 +23,7 @@ Create a new Ezsignfoldersignerassociation
 
 The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignfoldersignerassociationApi;
@@ -37,7 +37,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi->new(
 
 my $ezsignfoldersignerassociation_create_object_v1_request = [EzmaxApi::Object::ARRAY[EzsignfoldersignerassociationCreateObjectV1Request]->new()]; # ARRAY[EzsignfoldersignerassociationCreateObjectV1Request] | 
 
-eval { 
+eval {
     my $result = $api_instance->ezsignfoldersignerassociation_create_object_v1(ezsignfoldersignerassociation_create_object_v1_request => $ezsignfoldersignerassociation_create_object_v1_request);
     print Dumper($result);
 };
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 Delete an existing Ezsignfoldersignerassociation
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignfoldersignerassociationApi;
@@ -86,7 +86,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi->new(
 
 my $pki_ezsignfoldersignerassociation_id = 56; # int | The unique ID of the Ezsignfoldersignerassociation
 
-eval { 
+eval {
     my $result = $api_instance->ezsignfoldersignerassociation_delete_object_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id);
     print Dumper($result);
 };
@@ -121,7 +121,9 @@ Name | Type | Description  | Notes
 
 Retrieve an existing Ezsignfoldersignerassociation's children IDs
 
-### Example 
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignfoldersignerassociationApi;
@@ -135,7 +137,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi->new(
 
 my $pki_ezsignfoldersignerassociation_id = 56; # int | The unique ID of the Ezsignfoldersignerassociation
 
-eval { 
+eval {
     $api_instance->ezsignfoldersignerassociation_get_children_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id);
 };
 if ($@) {
@@ -171,7 +173,7 @@ Retrieve a Login Url to allow In-Person signing
 
 This endpoint returns a Login Url that can be used in a browser or embedded in an I-Frame to allow in person signing.  The signer Login type must be configured as In-Person.
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignfoldersignerassociationApi;
@@ -185,7 +187,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi->new(
 
 my $pki_ezsignfoldersignerassociation_id = 56; # int | The unique ID of the Ezsignfoldersignerassociation
 
-eval { 
+eval {
     my $result = $api_instance->ezsignfoldersignerassociation_get_in_person_login_url_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id);
     print Dumper($result);
 };
@@ -220,7 +222,9 @@ Name | Type | Description  | Notes
 
 Retrieve an existing Ezsignfoldersignerassociation
 
-### Example 
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectEzsignfoldersignerassociationApi;
@@ -234,7 +238,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi->new(
 
 my $pki_ezsignfoldersignerassociation_id = 56; # int | The unique ID of the Ezsignfoldersignerassociation
 
-eval { 
+eval {
     my $result = $api_instance->ezsignfoldersignerassociation_get_object_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id);
     print Dumper($result);
 };

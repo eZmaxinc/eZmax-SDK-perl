@@ -19,7 +19,7 @@ Create a new User of type Ezsignuser
 
 The endpoint allows to initiate the creation or a user of type Ezsignuser.  The user will be created only once the email verification process will be completed
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ModuleUserApi;
@@ -33,7 +33,7 @@ my $api_instance = EzmaxApi::ModuleUserApi->new(
 
 my $user_create_ezsignuser_v1_request = [EzmaxApi::Object::ARRAY[UserCreateEzsignuserV1Request]->new()]; # ARRAY[UserCreateEzsignuserV1Request] | 
 
-eval { 
+eval {
     my $result = $api_instance->user_create_ezsignuser_v1(user_create_ezsignuser_v1_request => $user_create_ezsignuser_v1_request);
     print Dumper($result);
 };

@@ -8,7 +8,7 @@ use EzmaxApi::Object::FranchisereferalincomeRequestCompound;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**obj_address** | [**AddressRequest**](AddressRequest.md) |  | [optional] 
+**obj_address** | [**AddressRequest**](AddressRequest.md) |  | 
 **a_obj_contact** | [**ARRAY[ContactRequestCompound]**](ContactRequestCompound.md) |  | 
 **fki_franchisebroker_id** | **int** | The unique ID of the Franchisebroker | 
 **fki_franchisereferalincomeprogram_id** | **int** | The unique ID of the Franchisereferalincomeprogram | 

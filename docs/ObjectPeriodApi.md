@@ -19,7 +19,7 @@ Retrieve Periods and IDs
 
 Get the list of Periods to be used in a dropdown or autocomplete control.
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use EzmaxApi::ObjectPeriodApi;
@@ -34,7 +34,7 @@ my $api_instance = EzmaxApi::ObjectPeriodApi->new(
 my $s_selector = "s_selector_example"; # string | The types of Periods to return
 my $s_query = "s_query_example"; # string | Allow to filter on the option value
 
-eval { 
+eval {
     my $result = $api_instance->period_get_autocomplete_v1(s_selector => $s_selector, s_query => $s_query);
     print Dumper($result);
 };
