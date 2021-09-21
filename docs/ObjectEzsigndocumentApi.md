@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**ezsigndocument_delete_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_delete_object_v1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
 [**ezsigndocument_get_children_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_children_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren | Retrieve an existing Ezsigndocument&#39;s children IDs
 [**ezsigndocument_get_download_url_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_download_url_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
+[**ezsigndocument_get_ezsignpages_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_ezsignpages_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages | Retrieve an existing Ezsigndocument&#39;s Ezsignpages
 [**ezsigndocument_get_form_data_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_form_data_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data
 [**ezsigndocument_get_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_object_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
 [**ezsigndocument_get_words_positions_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_words_positions_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument
@@ -38,7 +39,7 @@ my $api_instance = EzmaxApi::ObjectEzsigndocumentApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsigndocument_id = 56; # int | The unique ID of the Ezsigndocument
+my $pki_ezsigndocument_id = 56; # int | 
 my $ezsigndocument_apply_ezsigntemplate_v1_request = EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request->new(); # EzsigndocumentApplyEzsigntemplateV1Request | 
 
 eval {
@@ -54,7 +55,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsigndocument_id** | **int**| The unique ID of the Ezsigndocument | 
+ **pki_ezsigndocument_id** | **int**|  | 
  **ezsigndocument_apply_ezsigntemplate_v1_request** | [**EzsigndocumentApplyEzsigntemplateV1Request**](EzsigndocumentApplyEzsigntemplateV1Request.md)|  | 
 
 ### Return type
@@ -140,7 +141,7 @@ my $api_instance = EzmaxApi::ObjectEzsigndocumentApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsigndocument_id = 56; # int | The unique ID of the Ezsigndocument
+my $pki_ezsigndocument_id = 56; # int | 
 
 eval {
     my $result = $api_instance->ezsigndocument_delete_object_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id);
@@ -155,7 +156,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsigndocument_id** | **int**| The unique ID of the Ezsigndocument | 
+ **pki_ezsigndocument_id** | **int**|  | 
 
 ### Return type
 
@@ -191,7 +192,7 @@ my $api_instance = EzmaxApi::ObjectEzsigndocumentApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsigndocument_id = 56; # int | The unique ID of the Ezsigndocument
+my $pki_ezsigndocument_id = 56; # int | 
 
 eval {
     $api_instance->ezsigndocument_get_children_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id);
@@ -205,7 +206,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsigndocument_id** | **int**| The unique ID of the Ezsigndocument | 
+ **pki_ezsigndocument_id** | **int**|  | 
 
 ### Return type
 
@@ -241,7 +242,7 @@ my $api_instance = EzmaxApi::ObjectEzsigndocumentApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsigndocument_id = 56; # int | The unique ID of the Ezsigndocument
+my $pki_ezsigndocument_id = 56; # int | 
 my $e_document_type = "e_document_type_example"; # string | The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. 
 
 eval {
@@ -257,12 +258,63 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsigndocument_id** | **int**| The unique ID of the Ezsigndocument | 
+ **pki_ezsigndocument_id** | **int**|  | 
  **e_document_type** | **string**| The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more.  | 
 
 ### Return type
 
 [**EzsigndocumentGetDownloadUrlV1Response**](EzsigndocumentGetDownloadUrlV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigndocument_get_ezsignpages_v1**
+> EzsigndocumentGetEzsignpagesV1Response ezsigndocument_get_ezsignpages_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id)
+
+Retrieve an existing Ezsigndocument's Ezsignpages
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsigndocumentApi;
+my $api_instance = EzmaxApi::ObjectEzsigndocumentApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsigndocument_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->ezsigndocument_get_ezsignpages_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsigndocumentApi->ezsigndocument_get_ezsignpages_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsigndocument_id** | **int**|  | 
+
+### Return type
+
+[**EzsigndocumentGetEzsignpagesV1Response**](EzsigndocumentGetEzsignpagesV1Response.md)
 
 ### Authorization
 
@@ -294,7 +346,7 @@ my $api_instance = EzmaxApi::ObjectEzsigndocumentApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsigndocument_id = 56; # int | The unique ID of the Ezsigndocument
+my $pki_ezsigndocument_id = 56; # int | 
 
 eval {
     my $result = $api_instance->ezsigndocument_get_form_data_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id);
@@ -309,7 +361,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsigndocument_id** | **int**| The unique ID of the Ezsigndocument | 
+ **pki_ezsigndocument_id** | **int**|  | 
 
 ### Return type
 
@@ -345,7 +397,7 @@ my $api_instance = EzmaxApi::ObjectEzsigndocumentApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsigndocument_id = 56; # int | The unique ID of the Ezsigndocument
+my $pki_ezsigndocument_id = 56; # int | 
 
 eval {
     my $result = $api_instance->ezsigndocument_get_object_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id);
@@ -360,7 +412,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsigndocument_id** | **int**| The unique ID of the Ezsigndocument | 
+ **pki_ezsigndocument_id** | **int**|  | 
 
 ### Return type
 
@@ -396,7 +448,7 @@ my $api_instance = EzmaxApi::ObjectEzsigndocumentApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsigndocument_id = 56; # int | The unique ID of the Ezsigndocument
+my $pki_ezsigndocument_id = 56; # int | 
 my $ezsigndocument_get_words_positions_v1_request = EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Request->new(); # EzsigndocumentGetWordsPositionsV1Request | 
 
 eval {
@@ -412,7 +464,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsigndocument_id** | **int**| The unique ID of the Ezsigndocument | 
+ **pki_ezsigndocument_id** | **int**|  | 
  **ezsigndocument_get_words_positions_v1_request** | [**EzsigndocumentGetWordsPositionsV1Request**](EzsigndocumentGetWordsPositionsV1Request.md)|  | 
 
 ### Return type

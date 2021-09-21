@@ -194,7 +194,7 @@ __PACKAGE__->method_documentation({
     'pki_ezsigndocument_id' => {
         datatype => 'int',
         base_name => 'pkiEzsigndocumentID',
-        description => 'The unique ID of the Ezsigntemplate',
+        description => 'The unique ID of the Ezsigndocument',
         format => '',
         read_only => '',
             },

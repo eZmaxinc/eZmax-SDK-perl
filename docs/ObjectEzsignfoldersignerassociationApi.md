@@ -84,7 +84,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsignfoldersignerassociation_id = 56; # int | The unique ID of the Ezsignfoldersignerassociation
+my $pki_ezsignfoldersignerassociation_id = 56; # int | 
 
 eval {
     my $result = $api_instance->ezsignfoldersignerassociation_delete_object_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id);
@@ -99,7 +99,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsignfoldersignerassociation_id** | **int**| The unique ID of the Ezsignfoldersignerassociation | 
+ **pki_ezsignfoldersignerassociation_id** | **int**|  | 
 
 ### Return type
 
@@ -135,7 +135,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsignfoldersignerassociation_id = 56; # int | The unique ID of the Ezsignfoldersignerassociation
+my $pki_ezsignfoldersignerassociation_id = 56; # int | 
 
 eval {
     $api_instance->ezsignfoldersignerassociation_get_children_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id);
@@ -149,7 +149,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsignfoldersignerassociation_id** | **int**| The unique ID of the Ezsignfoldersignerassociation | 
+ **pki_ezsignfoldersignerassociation_id** | **int**|  | 
 
 ### Return type
 
@@ -185,7 +185,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsignfoldersignerassociation_id = 56; # int | The unique ID of the Ezsignfoldersignerassociation
+my $pki_ezsignfoldersignerassociation_id = 56; # int | 
 
 eval {
     my $result = $api_instance->ezsignfoldersignerassociation_get_in_person_login_url_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id);
@@ -200,7 +200,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsignfoldersignerassociation_id** | **int**| The unique ID of the Ezsignfoldersignerassociation | 
+ **pki_ezsignfoldersignerassociation_id** | **int**|  | 
 
 ### Return type
 
@@ -236,7 +236,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsignfoldersignerassociation_id = 56; # int | The unique ID of the Ezsignfoldersignerassociation
+my $pki_ezsignfoldersignerassociation_id = 56; # int | 
 
 eval {
     my $result = $api_instance->ezsignfoldersignerassociation_get_object_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id);
@@ -251,7 +251,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsignfoldersignerassociation_id** | **int**| The unique ID of the Ezsignfoldersignerassociation | 
+ **pki_ezsignfoldersignerassociation_id** | **int**|  | 
 
 ### Return type
 

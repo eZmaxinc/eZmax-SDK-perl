@@ -118,12 +118,12 @@ sub ezsignfoldersignerassociation_create_object_v1 {
 #
 # Delete an existing Ezsignfoldersignerassociation
 #
-# @param int $pki_ezsignfoldersignerassociation_id The unique ID of the Ezsignfoldersignerassociation (required)
+# @param int $pki_ezsignfoldersignerassociation_id  (required)
 {
     my $params = {
     'pki_ezsignfoldersignerassociation_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsignfoldersignerassociation',
+        description => '',
         required => '1',
     },
     };
@@ -185,12 +185,12 @@ sub ezsignfoldersignerassociation_delete_object_v1 {
 #
 # Retrieve an existing Ezsignfoldersignerassociation's children IDs
 #
-# @param int $pki_ezsignfoldersignerassociation_id The unique ID of the Ezsignfoldersignerassociation (required)
+# @param int $pki_ezsignfoldersignerassociation_id  (required)
 {
     my $params = {
     'pki_ezsignfoldersignerassociation_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsignfoldersignerassociation',
+        description => '',
         required => '1',
     },
     };
@@ -248,12 +248,12 @@ sub ezsignfoldersignerassociation_get_children_v1 {
 #
 # Retrieve a Login Url to allow In-Person signing
 #
-# @param int $pki_ezsignfoldersignerassociation_id The unique ID of the Ezsignfoldersignerassociation (required)
+# @param int $pki_ezsignfoldersignerassociation_id  (required)
 {
     my $params = {
     'pki_ezsignfoldersignerassociation_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsignfoldersignerassociation',
+        description => '',
         required => '1',
     },
     };
@@ -315,12 +315,12 @@ sub ezsignfoldersignerassociation_get_in_person_login_url_v1 {
 #
 # Retrieve an existing Ezsignfoldersignerassociation
 #
-# @param int $pki_ezsignfoldersignerassociation_id The unique ID of the Ezsignfoldersignerassociation (required)
+# @param int $pki_ezsignfoldersignerassociation_id  (required)
 {
     my $params = {
     'pki_ezsignfoldersignerassociation_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsignfoldersignerassociation',
+        description => '',
         required => '1',
     },
     };

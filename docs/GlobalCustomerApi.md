@@ -31,7 +31,7 @@ my $api_instance = EzmaxApi::GlobalCustomerApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pks_customer_code = "pks_customer_code_example"; # string | The customer code assigned to your account
+my $pks_customer_code = "pks_customer_code_example"; # string | 
 my $s_infrastructureproduct_code = "s_infrastructureproduct_code_example"; # string | The infrastructure product Code  If undefined, \"appcluster01\" is assumed
 
 eval {
@@ -47,7 +47,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pks_customer_code** | **string**| The customer code assigned to your account | 
+ **pks_customer_code** | **string**|  | 
  **s_infrastructureproduct_code** | **string**| The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed | [optional] 
 
 ### Return type

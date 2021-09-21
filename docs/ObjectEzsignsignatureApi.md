@@ -83,7 +83,7 @@ my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsignsignature_id = 56; # int | The unique ID of the Ezsignsignature
+my $pki_ezsignsignature_id = 56; # int | 
 
 eval {
     my $result = $api_instance->ezsignsignature_delete_object_v1(pki_ezsignsignature_id => $pki_ezsignsignature_id);
@@ -98,7 +98,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsignsignature_id** | **int**| The unique ID of the Ezsignsignature | 
+ **pki_ezsignsignature_id** | **int**|  | 
 
 ### Return type
 
@@ -134,7 +134,7 @@ my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsignsignature_id = 56; # int | The unique ID of the Ezsignsignature
+my $pki_ezsignsignature_id = 56; # int | 
 
 eval {
     $api_instance->ezsignsignature_get_children_v1(pki_ezsignsignature_id => $pki_ezsignsignature_id);
@@ -148,7 +148,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsignsignature_id** | **int**| The unique ID of the Ezsignsignature | 
+ **pki_ezsignsignature_id** | **int**|  | 
 
 ### Return type
 
@@ -184,7 +184,7 @@ my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_ezsignsignature_id = 56; # int | The unique ID of the Ezsignsignature
+my $pki_ezsignsignature_id = 56; # int | 
 
 eval {
     my $result = $api_instance->ezsignsignature_get_object_v1(pki_ezsignsignature_id => $pki_ezsignsignature_id);
@@ -199,7 +199,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_ezsignsignature_id** | **int**| The unique ID of the Ezsignsignature | 
+ **pki_ezsignsignature_id** | **int**|  | 
 
 ### Return type
 

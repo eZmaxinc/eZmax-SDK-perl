@@ -53,13 +53,13 @@ sub new {
 #
 # Get customer endpoint
 #
-# @param string $pks_customer_code The customer code assigned to your account (required)
+# @param string $pks_customer_code  (required)
 # @param string $s_infrastructureproduct_code The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed (optional)
 {
     my $params = {
     'pks_customer_code' => {
         data_type => 'string',
-        description => 'The customer code assigned to your account',
+        description => '',
         required => '1',
     },
     's_infrastructureproduct_code' => {

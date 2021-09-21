@@ -171,7 +171,7 @@ __PACKAGE__->method_documentation({
     'i_ezsignpage_pagenumber' => {
         datatype => 'int',
         base_name => 'iEzsignpagePagenumber',
-        description => 'The page number in the document where to apply the signature',
+        description => 'The page number in the Ezsigndocument',
         format => '',
         read_only => '',
             },
@@ -206,7 +206,7 @@ __PACKAGE__->method_documentation({
     'fki_ezsigndocument_id' => {
         datatype => 'int',
         base_name => 'fkiEzsigndocumentID',
-        description => 'The unique ID of the Ezsigntemplate',
+        description => 'The unique ID of the Ezsigndocument',
         format => '',
         read_only => '',
             },

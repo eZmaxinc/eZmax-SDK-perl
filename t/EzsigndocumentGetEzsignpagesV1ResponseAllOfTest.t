@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::EzsigndocumentResponseAllOf');
+use_ok('EzmaxApi::Object::EzsigndocumentGetEzsignpagesV1ResponseAllOf');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::EzsigndocumentResponseAllOf->new();
+#my $instance = EzmaxApi::Object::EzsigndocumentGetEzsignpagesV1ResponseAllOf->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::EzsigndocumentResponseAllOf');
+#isa_ok($instance, 'EzmaxApi::Object::EzsigndocumentGetEzsignpagesV1ResponseAllOf');
 

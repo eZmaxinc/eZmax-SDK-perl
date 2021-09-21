@@ -118,12 +118,12 @@ sub ezsignfolder_create_object_v1 {
 #
 # Delete an existing Ezsignfolder
 #
-# @param int $pki_ezsignfolder_id The unique ID of the Ezsignfolder (required)
+# @param int $pki_ezsignfolder_id  (required)
 {
     my $params = {
     'pki_ezsignfolder_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsignfolder',
+        description => '',
         required => '1',
     },
     };
@@ -185,12 +185,12 @@ sub ezsignfolder_delete_object_v1 {
 #
 # Retrieve an existing Ezsignfolder's children IDs
 #
-# @param int $pki_ezsignfolder_id The unique ID of the Ezsignfolder (required)
+# @param int $pki_ezsignfolder_id  (required)
 {
     my $params = {
     'pki_ezsignfolder_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsignfolder',
+        description => '',
         required => '1',
     },
     };
@@ -244,16 +244,83 @@ sub ezsignfolder_get_children_v1 {
 }
 
 #
-# ezsignfolder_get_object_v1
+# ezsignfolder_get_forms_data_v1
 #
-# Retrieve an existing Ezsignfolder
+# Retrieve an existing Ezsignfolder's forms data
 #
-# @param int $pki_ezsignfolder_id The unique ID of the Ezsignfolder (required)
+# @param int $pki_ezsignfolder_id  (required)
 {
     my $params = {
     'pki_ezsignfolder_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsignfolder',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignfolder_get_forms_data_v1' } = {
+        summary => 'Retrieve an existing Ezsignfolder&#39;s forms data',
+        params => $params,
+        returns => 'string',
+        };
+}
+# @return string
+#
+sub ezsignfolder_get_forms_data_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignfolder_id' is set
+    unless (exists $args{'pki_ezsignfolder_id'}) {
+      croak("Missing the required parameter 'pki_ezsignfolder_id' when calling ezsignfolder_get_forms_data_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/zip', 'application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsignfolder_id'}) {
+        my $_base_variable = "{" . "pkiEzsignfolderID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignfolder_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# ezsignfolder_get_object_v1
+#
+# Retrieve an existing Ezsignfolder
+#
+# @param int $pki_ezsignfolder_id  (required)
+{
+    my $params = {
+    'pki_ezsignfolder_id' => {
+        data_type => 'int',
+        description => '',
         required => '1',
     },
     };
@@ -315,13 +382,13 @@ sub ezsignfolder_get_object_v1 {
 #
 # Send the Ezsignfolder to the signatories for signature
 #
-# @param int $pki_ezsignfolder_id The unique ID of the Ezsignfolder (required)
+# @param int $pki_ezsignfolder_id  (required)
 # @param EzsignfolderSendV1Request $ezsignfolder_send_v1_request  (required)
 {
     my $params = {
     'pki_ezsignfolder_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsignfolder',
+        description => '',
         required => '1',
     },
     'ezsignfolder_send_v1_request' => {

@@ -51,6 +51,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfolderApi');
 #my $ezsignfolder_get_children_v1_result = $api->ezsignfolder_get_children_v1(pki_ezsignfolder_id => $ezsignfolder_get_children_v1_pki_ezsignfolder_id);
 
 #
+# ezsignfolder_get_forms_data_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_get_forms_data_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_forms_data_v1_result = $api->ezsignfolder_get_forms_data_v1(pki_ezsignfolder_id => $ezsignfolder_get_forms_data_v1_pki_ezsignfolder_id);
+
+#
 # ezsignfolder_get_object_v1 test
 #
 # uncomment below and update the test

@@ -46,6 +46,9 @@ docs/EzsigndocumentDeleteObjectV1Response.md
 docs/EzsigndocumentGetDownloadUrlV1Response.md
 docs/EzsigndocumentGetDownloadUrlV1ResponseAllOf.md
 docs/EzsigndocumentGetDownloadUrlV1ResponseMPayload.md
+docs/EzsigndocumentGetEzsignpagesV1Response.md
+docs/EzsigndocumentGetEzsignpagesV1ResponseAllOf.md
+docs/EzsigndocumentGetEzsignpagesV1ResponseMPayload.md
 docs/EzsigndocumentGetObjectV1Response.md
 docs/EzsigndocumentGetObjectV1ResponseAllOf.md
 docs/EzsigndocumentGetObjectV1ResponseMPayload.md
@@ -56,7 +59,6 @@ docs/EzsigndocumentGetWordsPositionsV1ResponseMPayload.md
 docs/EzsigndocumentRequest.md
 docs/EzsigndocumentRequestCompound.md
 docs/EzsigndocumentResponse.md
-docs/EzsigndocumentResponseAllOf.md
 docs/EzsigndocumentResponseCompound.md
 docs/EzsignfolderCreateObjectV1Request.md
 docs/EzsignfolderCreateObjectV1Response.md
@@ -85,6 +87,7 @@ docs/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.md
 docs/EzsignfoldersignerassociationRequest.md
 docs/EzsignfoldersignerassociationRequestCompound.md
 docs/EzsignfoldersignerassociationRequestCompoundAllOf.md
+docs/EzsignpageResponse.md
 docs/EzsignsignatureCreateObjectV1Request.md
 docs/EzsignsignatureCreateObjectV1Response.md
 docs/EzsignsignatureCreateObjectV1ResponseAllOf.md
@@ -208,6 +211,9 @@ lib/EzmaxApi/Object/EzsigndocumentDeleteObjectV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentGetDownloadUrlV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentGetDownloadUrlV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsigndocumentGetDownloadUrlV1ResponseMPayload.pm
+lib/EzmaxApi/Object/EzsigndocumentGetEzsignpagesV1Response.pm
+lib/EzmaxApi/Object/EzsigndocumentGetEzsignpagesV1ResponseAllOf.pm
+lib/EzmaxApi/Object/EzsigndocumentGetEzsignpagesV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigndocumentGetObjectV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentGetObjectV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsigndocumentGetObjectV1ResponseMPayload.pm
@@ -218,7 +224,6 @@ lib/EzmaxApi/Object/EzsigndocumentGetWordsPositionsV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigndocumentRequest.pm
 lib/EzmaxApi/Object/EzsigndocumentRequestCompound.pm
 lib/EzmaxApi/Object/EzsigndocumentResponse.pm
-lib/EzmaxApi/Object/EzsigndocumentResponseAllOf.pm
 lib/EzmaxApi/Object/EzsigndocumentResponseCompound.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV1Request.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV1Response.pm
@@ -247,6 +252,7 @@ lib/EzmaxApi/Object/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationRequest.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationRequestCompound.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationRequestCompoundAllOf.pm
+lib/EzmaxApi/Object/EzsignpageResponse.pm
 lib/EzmaxApi/Object/EzsignsignatureCreateObjectV1Request.pm
 lib/EzmaxApi/Object/EzsignsignatureCreateObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignsignatureCreateObjectV1ResponseAllOf.pm
@@ -360,6 +366,9 @@ t/EzsigndocumentDeleteObjectV1ResponseTest.t
 t/EzsigndocumentGetDownloadUrlV1ResponseAllOfTest.t
 t/EzsigndocumentGetDownloadUrlV1ResponseMPayloadTest.t
 t/EzsigndocumentGetDownloadUrlV1ResponseTest.t
+t/EzsigndocumentGetEzsignpagesV1ResponseAllOfTest.t
+t/EzsigndocumentGetEzsignpagesV1ResponseMPayloadTest.t
+t/EzsigndocumentGetEzsignpagesV1ResponseTest.t
 t/EzsigndocumentGetObjectV1ResponseAllOfTest.t
 t/EzsigndocumentGetObjectV1ResponseMPayloadTest.t
 t/EzsigndocumentGetObjectV1ResponseTest.t
@@ -369,7 +378,6 @@ t/EzsigndocumentGetWordsPositionsV1ResponseMPayloadTest.t
 t/EzsigndocumentGetWordsPositionsV1ResponseTest.t
 t/EzsigndocumentRequestCompoundTest.t
 t/EzsigndocumentRequestTest.t
-t/EzsigndocumentResponseAllOfTest.t
 t/EzsigndocumentResponseCompoundTest.t
 t/EzsigndocumentResponseTest.t
 t/EzsignfolderCreateObjectV1RequestTest.t
@@ -399,6 +407,7 @@ t/EzsignfoldersignerassociationGetObjectV1ResponseTest.t
 t/EzsignfoldersignerassociationRequestCompoundAllOfTest.t
 t/EzsignfoldersignerassociationRequestCompoundTest.t
 t/EzsignfoldersignerassociationRequestTest.t
+t/EzsignpageResponseTest.t
 t/EzsignsignatureCreateObjectV1RequestTest.t
 t/EzsignsignatureCreateObjectV1ResponseAllOfTest.t
 t/EzsignsignatureCreateObjectV1ResponseMPayloadTest.t

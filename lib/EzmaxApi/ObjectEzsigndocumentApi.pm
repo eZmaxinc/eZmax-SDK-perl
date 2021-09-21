@@ -53,13 +53,13 @@ sub new {
 #
 # Apply an Ezsign Template to the Ezsigndocument.
 #
-# @param int $pki_ezsigndocument_id The unique ID of the Ezsigndocument (required)
+# @param int $pki_ezsigndocument_id  (required)
 # @param EzsigndocumentApplyEzsigntemplateV1Request $ezsigndocument_apply_ezsigntemplate_v1_request  (required)
 {
     my $params = {
     'pki_ezsigndocument_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsigndocument',
+        description => '',
         required => '1',
     },
     'ezsigndocument_apply_ezsigntemplate_v1_request' => {
@@ -201,12 +201,12 @@ sub ezsigndocument_create_object_v1 {
 #
 # Delete an existing Ezsigndocument
 #
-# @param int $pki_ezsigndocument_id The unique ID of the Ezsigndocument (required)
+# @param int $pki_ezsigndocument_id  (required)
 {
     my $params = {
     'pki_ezsigndocument_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsigndocument',
+        description => '',
         required => '1',
     },
     };
@@ -268,12 +268,12 @@ sub ezsigndocument_delete_object_v1 {
 #
 # Retrieve an existing Ezsigndocument's children IDs
 #
-# @param int $pki_ezsigndocument_id The unique ID of the Ezsigndocument (required)
+# @param int $pki_ezsigndocument_id  (required)
 {
     my $params = {
     'pki_ezsigndocument_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsigndocument',
+        description => '',
         required => '1',
     },
     };
@@ -331,13 +331,13 @@ sub ezsigndocument_get_children_v1 {
 #
 # Retrieve a URL to download documents.
 #
-# @param int $pki_ezsigndocument_id The unique ID of the Ezsigndocument (required)
+# @param int $pki_ezsigndocument_id  (required)
 # @param string $e_document_type The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more.  (required)
 {
     my $params = {
     'pki_ezsigndocument_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsigndocument',
+        description => '',
         required => '1',
     },
     'e_document_type' => {
@@ -412,16 +412,83 @@ sub ezsigndocument_get_download_url_v1 {
 }
 
 #
-# ezsigndocument_get_form_data_v1
+# ezsigndocument_get_ezsignpages_v1
 #
-# Retrieve an existing Ezsigndocument's Form Data
+# Retrieve an existing Ezsigndocument's Ezsignpages
 #
-# @param int $pki_ezsigndocument_id The unique ID of the Ezsigndocument (required)
+# @param int $pki_ezsigndocument_id  (required)
 {
     my $params = {
     'pki_ezsigndocument_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsigndocument',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_get_ezsignpages_v1' } = {
+        summary => 'Retrieve an existing Ezsigndocument&#39;s Ezsignpages',
+        params => $params,
+        returns => 'EzsigndocumentGetEzsignpagesV1Response',
+        };
+}
+# @return EzsigndocumentGetEzsignpagesV1Response
+#
+sub ezsigndocument_get_ezsignpages_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigndocument_id' is set
+    unless (exists $args{'pki_ezsigndocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_get_ezsignpages_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsigndocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigndocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigndocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentGetEzsignpagesV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsigndocument_get_form_data_v1
+#
+# Retrieve an existing Ezsigndocument's Form Data
+#
+# @param int $pki_ezsigndocument_id  (required)
+{
+    my $params = {
+    'pki_ezsigndocument_id' => {
+        data_type => 'int',
+        description => '',
         required => '1',
     },
     };
@@ -483,12 +550,12 @@ sub ezsigndocument_get_form_data_v1 {
 #
 # Retrieve an existing Ezsigndocument
 #
-# @param int $pki_ezsigndocument_id The unique ID of the Ezsigndocument (required)
+# @param int $pki_ezsigndocument_id  (required)
 {
     my $params = {
     'pki_ezsigndocument_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsigndocument',
+        description => '',
         required => '1',
     },
     };
@@ -550,13 +617,13 @@ sub ezsigndocument_get_object_v1 {
 #
 # Retrieve positions X,Y of given words from a Ezsigndocument
 #
-# @param int $pki_ezsigndocument_id The unique ID of the Ezsigndocument (required)
+# @param int $pki_ezsigndocument_id  (required)
 # @param EzsigndocumentGetWordsPositionsV1Request $ezsigndocument_get_words_positions_v1_request  (required)
 {
     my $params = {
     'pki_ezsigndocument_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsigndocument',
+        description => '',
         required => '1',
     },
     'ezsigndocument_get_words_positions_v1_request' => {

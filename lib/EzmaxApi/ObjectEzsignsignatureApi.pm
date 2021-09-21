@@ -118,12 +118,12 @@ sub ezsignsignature_create_object_v1 {
 #
 # Delete an existing Ezsignsignature
 #
-# @param int $pki_ezsignsignature_id The unique ID of the Ezsignsignature (required)
+# @param int $pki_ezsignsignature_id  (required)
 {
     my $params = {
     'pki_ezsignsignature_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsignsignature',
+        description => '',
         required => '1',
     },
     };
@@ -185,12 +185,12 @@ sub ezsignsignature_delete_object_v1 {
 #
 # Retrieve an existing Ezsignsignature's children IDs
 #
-# @param int $pki_ezsignsignature_id The unique ID of the Ezsignsignature (required)
+# @param int $pki_ezsignsignature_id  (required)
 {
     my $params = {
     'pki_ezsignsignature_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsignsignature',
+        description => '',
         required => '1',
     },
     };
@@ -248,12 +248,12 @@ sub ezsignsignature_get_children_v1 {
 #
 # Retrieve an existing Ezsignsignature
 #
-# @param int $pki_ezsignsignature_id The unique ID of the Ezsignsignature (required)
+# @param int $pki_ezsignsignature_id  (required)
 {
     my $params = {
     'pki_ezsignsignature_id' => {
         data_type => 'int',
-        description => 'The unique ID of the Ezsignsignature',
+        description => '',
         required => '1',
     },
     };
