@@ -1,8 +1,8 @@
-# EzmaxApi::Object::WordPositionResponse
+# EzmaxApi::Object::CustomWordPositionResponse
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::WordPositionResponse;
+use EzmaxApi::Object::CustomWordPositionResponse;
 ```
 
 ## Properties
