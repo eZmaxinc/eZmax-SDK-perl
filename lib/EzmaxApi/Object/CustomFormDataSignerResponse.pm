@@ -192,7 +192,7 @@ __PACKAGE__->method_documentation({
     'a_obj_ezsignformfieldgroup_compound' => {
         datatype => 'ARRAY[EzsignformfieldgroupResponseCompound]',
         base_name => 'a_objEzsignformfieldgroupCompound',
-        description => 'This array contains the labels or each Form fields in the form but WITHOUT the values',
+        description => '',
         format => '',
         read_only => '',
             },

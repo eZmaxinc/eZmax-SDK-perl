@@ -161,21 +161,14 @@ __PACKAGE__->class_documentation({description => 'Payload for the /1/object/ezsi
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'a_s_words' => {
-        datatype => 'ARRAY[CustomWordPositionResponse]',
-        base_name => 'a_sWords',
-        description => 'An array of words with an array of pages and positions X,Y  They are returned with the sames words that was sent in the request.',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'a_s_words' => 'ARRAY[CustomWordPositionResponse]'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'a_s_words' => 'a_sWords'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

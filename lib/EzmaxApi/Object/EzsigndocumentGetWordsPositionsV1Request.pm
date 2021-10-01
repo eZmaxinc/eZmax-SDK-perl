@@ -160,21 +160,30 @@ __PACKAGE__->class_documentation({description => 'Request for the /1/object/ezsi
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'a_s_words' => {
+    'e_get' => {
+        datatype => 'string',
+        base_name => 'eGet',
+        description => 'Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*.',
+        format => '',
+        read_only => '',
+            },
+    'a_s_word' => {
         datatype => 'ARRAY[string]',
-        base_name => 'a_sWords',
-        description => '',
+        base_name => 'a_sWord',
+        description => 'Array of words to find in the document',
         format => '',
         read_only => '',
             },
 });
 
 __PACKAGE__->openapi_types( {
-    'a_s_words' => 'ARRAY[string]'
+    'e_get' => 'string',
+    'a_s_word' => 'ARRAY[string]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'a_s_words' => 'a_sWords'
+    'e_get' => 'eGet',
+    'a_s_word' => 'a_sWord'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
