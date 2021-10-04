@@ -168,9 +168,9 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'obj_word_position_occurence' => {
+    'a_obj_word_position_occurence' => {
         datatype => 'ARRAY[CustomWordPositionOccurenceResponse]',
-        base_name => 'objWordPositionOccurence',
+        base_name => 'a_objWordPositionOccurence',
         description => 'The found occurences for the seached word',
         format => '',
         read_only => '',
@@ -179,12 +179,12 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     's_word' => 'string',
-    'obj_word_position_occurence' => 'ARRAY[CustomWordPositionOccurenceResponse]'
+    'a_obj_word_position_occurence' => 'ARRAY[CustomWordPositionOccurenceResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
     's_word' => 'sWord',
-    'obj_word_position_occurence' => 'objWordPositionOccurence'
+    'a_obj_word_position_occurence' => 'a_objWordPositionOccurence'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
