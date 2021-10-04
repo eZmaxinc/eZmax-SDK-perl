@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseMPayload');
+use_ok('EzmaxApi::Object::CustomWordPositionWordResponse');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseMPayload->new();
+#my $instance = EzmaxApi::Object::CustomWordPositionWordResponse->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseMPayload');
+#isa_ok($instance, 'EzmaxApi::Object::CustomWordPositionWordResponse');
 

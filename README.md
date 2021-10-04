@@ -285,7 +285,8 @@ use EzmaxApi::Object::ContactinformationsRequestCompoundAllOf;
 use EzmaxApi::Object::CustomFormDataDocumentResponse;
 use EzmaxApi::Object::CustomFormDataFolderResponse;
 use EzmaxApi::Object::CustomFormDataSignerResponse;
-use EzmaxApi::Object::CustomWordPositionResponse;
+use EzmaxApi::Object::CustomWordPositionOccurenceResponse;
+use EzmaxApi::Object::CustomWordPositionWordResponse;
 use EzmaxApi::Object::EmailRequest;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Response;
@@ -311,7 +312,6 @@ use EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Request;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Response;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseAllOf;
-use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentRequest;
 use EzmaxApi::Object::EzsigndocumentRequestCompound;
 use EzmaxApi::Object::EzsigndocumentResponse;
@@ -471,7 +471,8 @@ use EzmaxApi::Object::ContactinformationsRequestCompoundAllOf;
 use EzmaxApi::Object::CustomFormDataDocumentResponse;
 use EzmaxApi::Object::CustomFormDataFolderResponse;
 use EzmaxApi::Object::CustomFormDataSignerResponse;
-use EzmaxApi::Object::CustomWordPositionResponse;
+use EzmaxApi::Object::CustomWordPositionOccurenceResponse;
+use EzmaxApi::Object::CustomWordPositionWordResponse;
 use EzmaxApi::Object::EmailRequest;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Response;
@@ -497,7 +498,6 @@ use EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Request;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Response;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseAllOf;
-use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentRequest;
 use EzmaxApi::Object::EzsigndocumentRequestCompound;
 use EzmaxApi::Object::EzsigndocumentResponse;
@@ -704,7 +704,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CustomFormDataDocumentResponse](docs/CustomFormDataDocumentResponse.md)
  - [EzmaxApi::Object::CustomFormDataFolderResponse](docs/CustomFormDataFolderResponse.md)
  - [EzmaxApi::Object::CustomFormDataSignerResponse](docs/CustomFormDataSignerResponse.md)
- - [EzmaxApi::Object::CustomWordPositionResponse](docs/CustomWordPositionResponse.md)
+ - [EzmaxApi::Object::CustomWordPositionOccurenceResponse](docs/CustomWordPositionOccurenceResponse.md)
+ - [EzmaxApi::Object::CustomWordPositionWordResponse](docs/CustomWordPositionWordResponse.md)
  - [EzmaxApi::Object::EmailRequest](docs/EmailRequest.md)
  - [EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request](docs/EzsigndocumentApplyEzsigntemplateV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Response](docs/EzsigndocumentApplyEzsigntemplateV1Response.md)
@@ -730,7 +731,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Request](docs/EzsigndocumentGetWordsPositionsV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Response](docs/EzsigndocumentGetWordsPositionsV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseAllOf](docs/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md)
- - [EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseMPayload](docs/EzsigndocumentGetWordsPositionsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentRequest](docs/EzsigndocumentRequest.md)
  - [EzmaxApi::Object::EzsigndocumentRequestCompound](docs/EzsigndocumentRequestCompound.md)
  - [EzmaxApi::Object::EzsigndocumentResponse](docs/EzsigndocumentResponse.md)

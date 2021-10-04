@@ -38,7 +38,8 @@ docs/ContactinformationsRequestCompoundAllOf.md
 docs/CustomFormDataDocumentResponse.md
 docs/CustomFormDataFolderResponse.md
 docs/CustomFormDataSignerResponse.md
-docs/CustomWordPositionResponse.md
+docs/CustomWordPositionOccurenceResponse.md
+docs/CustomWordPositionWordResponse.md
 docs/EmailRequest.md
 docs/EzsigndocumentApplyEzsigntemplateV1Request.md
 docs/EzsigndocumentApplyEzsigntemplateV1Response.md
@@ -64,7 +65,6 @@ docs/EzsigndocumentGetObjectV1ResponseMPayload.md
 docs/EzsigndocumentGetWordsPositionsV1Request.md
 docs/EzsigndocumentGetWordsPositionsV1Response.md
 docs/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md
-docs/EzsigndocumentGetWordsPositionsV1ResponseMPayload.md
 docs/EzsigndocumentRequest.md
 docs/EzsigndocumentRequestCompound.md
 docs/EzsigndocumentResponse.md
@@ -219,7 +219,8 @@ lib/EzmaxApi/Object/ContactinformationsRequestCompoundAllOf.pm
 lib/EzmaxApi/Object/CustomFormDataDocumentResponse.pm
 lib/EzmaxApi/Object/CustomFormDataFolderResponse.pm
 lib/EzmaxApi/Object/CustomFormDataSignerResponse.pm
-lib/EzmaxApi/Object/CustomWordPositionResponse.pm
+lib/EzmaxApi/Object/CustomWordPositionOccurenceResponse.pm
+lib/EzmaxApi/Object/CustomWordPositionWordResponse.pm
 lib/EzmaxApi/Object/EmailRequest.pm
 lib/EzmaxApi/Object/EzsigndocumentApplyEzsigntemplateV1Request.pm
 lib/EzmaxApi/Object/EzsigndocumentApplyEzsigntemplateV1Response.pm
@@ -245,7 +246,6 @@ lib/EzmaxApi/Object/EzsigndocumentGetObjectV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigndocumentGetWordsPositionsV1Request.pm
 lib/EzmaxApi/Object/EzsigndocumentGetWordsPositionsV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentGetWordsPositionsV1ResponseAllOf.pm
-lib/EzmaxApi/Object/EzsigndocumentGetWordsPositionsV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigndocumentRequest.pm
 lib/EzmaxApi/Object/EzsigndocumentRequestCompound.pm
 lib/EzmaxApi/Object/EzsigndocumentResponse.pm
@@ -390,7 +390,8 @@ t/ContactinformationsRequestTest.t
 t/CustomFormDataDocumentResponseTest.t
 t/CustomFormDataFolderResponseTest.t
 t/CustomFormDataSignerResponseTest.t
-t/CustomWordPositionResponseTest.t
+t/CustomWordPositionOccurenceResponseTest.t
+t/CustomWordPositionWordResponseTest.t
 t/EmailRequestTest.t
 t/EzsigndocumentApplyEzsigntemplateV1RequestTest.t
 t/EzsigndocumentApplyEzsigntemplateV1ResponseTest.t
@@ -415,7 +416,6 @@ t/EzsigndocumentGetObjectV1ResponseMPayloadTest.t
 t/EzsigndocumentGetObjectV1ResponseTest.t
 t/EzsigndocumentGetWordsPositionsV1RequestTest.t
 t/EzsigndocumentGetWordsPositionsV1ResponseAllOfTest.t
-t/EzsigndocumentGetWordsPositionsV1ResponseMPayloadTest.t
 t/EzsigndocumentGetWordsPositionsV1ResponseTest.t
 t/EzsigndocumentRequestCompoundTest.t
 t/EzsigndocumentRequestTest.t

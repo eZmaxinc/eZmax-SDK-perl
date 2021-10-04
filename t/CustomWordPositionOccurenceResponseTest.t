@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::CustomWordPositionResponse');
+use_ok('EzmaxApi::Object::CustomWordPositionOccurenceResponse');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::CustomWordPositionResponse->new();
+#my $instance = EzmaxApi::Object::CustomWordPositionOccurenceResponse->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::CustomWordPositionResponse');
+#isa_ok($instance, 'EzmaxApi::Object::CustomWordPositionOccurenceResponse');
 

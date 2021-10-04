@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseMPayload;
+use EzmaxApi::Object::CustomWordPositionWordResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -162,16 +162,16 @@ __PACKAGE__->class_documentation({description => '',
 
 __PACKAGE__->method_documentation({
     'm_payload' => {
-        datatype => 'EzsigndocumentGetWordsPositionsV1ResponseMPayload',
+        datatype => 'ARRAY[CustomWordPositionWordResponse]',
         base_name => 'mPayload',
-        description => '',
+        description => 'Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request',
         format => '',
         read_only => '',
             },
 });
 
 __PACKAGE__->openapi_types( {
-    'm_payload' => 'EzsigndocumentGetWordsPositionsV1ResponseMPayload'
+    'm_payload' => 'ARRAY[CustomWordPositionWordResponse]'
 } );
 
 __PACKAGE__->attribute_map( {

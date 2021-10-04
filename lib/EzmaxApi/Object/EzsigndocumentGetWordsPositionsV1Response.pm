@@ -33,8 +33,8 @@ use DateTime;
 use EzmaxApi::Object::CommonResponse;
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
+use EzmaxApi::Object::CustomWordPositionWordResponse;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseAllOf;
-use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseMPayload;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -166,9 +166,9 @@ __PACKAGE__->class_documentation({description => 'Response for the /1/object/ezs
 
 __PACKAGE__->method_documentation({
     'm_payload' => {
-        datatype => 'EzsigndocumentGetWordsPositionsV1ResponseMPayload',
+        datatype => 'ARRAY[CustomWordPositionWordResponse]',
         base_name => 'mPayload',
-        description => '',
+        description => 'Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request',
         format => '',
         read_only => '',
             },
@@ -189,7 +189,7 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'm_payload' => 'EzsigndocumentGetWordsPositionsV1ResponseMPayload',
+    'm_payload' => 'ARRAY[CustomWordPositionWordResponse]',
     'obj_debug_payload' => 'CommonResponseObjDebugPayload',
     'obj_debug' => 'CommonResponseObjDebug'
 } );
