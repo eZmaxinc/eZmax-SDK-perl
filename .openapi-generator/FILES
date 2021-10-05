@@ -23,6 +23,7 @@ docs/CommonAudit.md
 docs/CommonGetAutocompleteV1Response.md
 docs/CommonGetAutocompleteV1ResponseAllOf.md
 docs/CommonGetAutocompleteV1ResponseMPayload.md
+docs/CommonGetListV1ResponseMPayload.md
 docs/CommonResponse.md
 docs/CommonResponseError.md
 docs/CommonResponseObjDebug.md
@@ -99,6 +100,11 @@ docs/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.md
 docs/EzsignfoldersignerassociationRequest.md
 docs/EzsignfoldersignerassociationRequestCompound.md
 docs/EzsignfoldersignerassociationRequestCompoundAllOf.md
+docs/EzsignfoldertypeGetListV1Response.md
+docs/EzsignfoldertypeGetListV1ResponseAllOf.md
+docs/EzsignfoldertypeGetListV1ResponseMPayload.md
+docs/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.md
+docs/EzsignfoldertypeListElement.md
 docs/EzsignformfieldResponse.md
 docs/EzsignformfieldResponseCompound.md
 docs/EzsignformfieldgroupResponse.md
@@ -143,6 +149,7 @@ docs/ObjectApikeyApi.md
 docs/ObjectEzsigndocumentApi.md
 docs/ObjectEzsignfolderApi.md
 docs/ObjectEzsignfoldersignerassociationApi.md
+docs/ObjectEzsignfoldertypeApi.md
 docs/ObjectEzsignsignatureApi.md
 docs/ObjectFranchisebrokerApi.md
 docs/ObjectFranchiseofficeApi.md
@@ -204,6 +211,7 @@ lib/EzmaxApi/Object/CommonAudit.pm
 lib/EzmaxApi/Object/CommonGetAutocompleteV1Response.pm
 lib/EzmaxApi/Object/CommonGetAutocompleteV1ResponseAllOf.pm
 lib/EzmaxApi/Object/CommonGetAutocompleteV1ResponseMPayload.pm
+lib/EzmaxApi/Object/CommonGetListV1ResponseMPayload.pm
 lib/EzmaxApi/Object/CommonResponse.pm
 lib/EzmaxApi/Object/CommonResponseError.pm
 lib/EzmaxApi/Object/CommonResponseObjDebug.pm
@@ -280,6 +288,11 @@ lib/EzmaxApi/Object/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationRequest.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationRequestCompound.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationRequestCompoundAllOf.pm
+lib/EzmaxApi/Object/EzsignfoldertypeGetListV1Response.pm
+lib/EzmaxApi/Object/EzsignfoldertypeGetListV1ResponseAllOf.pm
+lib/EzmaxApi/Object/EzsignfoldertypeGetListV1ResponseMPayload.pm
+lib/EzmaxApi/Object/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.pm
+lib/EzmaxApi/Object/EzsignfoldertypeListElement.pm
 lib/EzmaxApi/Object/EzsignformfieldResponse.pm
 lib/EzmaxApi/Object/EzsignformfieldResponseCompound.pm
 lib/EzmaxApi/Object/EzsignformfieldgroupResponse.pm
@@ -348,6 +361,7 @@ lib/EzmaxApi/ObjectApikeyApi.pm
 lib/EzmaxApi/ObjectEzsigndocumentApi.pm
 lib/EzmaxApi/ObjectEzsignfolderApi.pm
 lib/EzmaxApi/ObjectEzsignfoldersignerassociationApi.pm
+lib/EzmaxApi/ObjectEzsignfoldertypeApi.pm
 lib/EzmaxApi/ObjectEzsignsignatureApi.pm
 lib/EzmaxApi/ObjectFranchisebrokerApi.pm
 lib/EzmaxApi/ObjectFranchiseofficeApi.pm
@@ -375,6 +389,7 @@ t/CommonAuditTest.t
 t/CommonGetAutocompleteV1ResponseAllOfTest.t
 t/CommonGetAutocompleteV1ResponseMPayloadTest.t
 t/CommonGetAutocompleteV1ResponseTest.t
+t/CommonGetListV1ResponseMPayloadTest.t
 t/CommonResponseErrorTest.t
 t/CommonResponseObjDebugPayloadTest.t
 t/CommonResponseObjDebugTest.t
@@ -451,6 +466,11 @@ t/EzsignfoldersignerassociationGetObjectV1ResponseTest.t
 t/EzsignfoldersignerassociationRequestCompoundAllOfTest.t
 t/EzsignfoldersignerassociationRequestCompoundTest.t
 t/EzsignfoldersignerassociationRequestTest.t
+t/EzsignfoldertypeGetListV1ResponseAllOfTest.t
+t/EzsignfoldertypeGetListV1ResponseMPayloadAllOfTest.t
+t/EzsignfoldertypeGetListV1ResponseMPayloadTest.t
+t/EzsignfoldertypeGetListV1ResponseTest.t
+t/EzsignfoldertypeListElementTest.t
 t/EzsignformfieldResponseCompoundTest.t
 t/EzsignformfieldResponseTest.t
 t/EzsignformfieldgroupResponseCompoundAllOfTest.t
@@ -495,6 +515,7 @@ t/ObjectApikeyApiTest.t
 t/ObjectEzsigndocumentApiTest.t
 t/ObjectEzsignfolderApiTest.t
 t/ObjectEzsignfoldersignerassociationApiTest.t
+t/ObjectEzsignfoldertypeApiTest.t
 t/ObjectEzsignsignatureApiTest.t
 t/ObjectFranchisebrokerApiTest.t
 t/ObjectFranchiseofficeApiTest.t

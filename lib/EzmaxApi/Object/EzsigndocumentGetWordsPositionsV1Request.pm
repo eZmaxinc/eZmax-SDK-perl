@@ -163,7 +163,14 @@ __PACKAGE__->method_documentation({
     'e_get' => {
         datatype => 'string',
         base_name => 'eGet',
-        description => 'Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*.',
+        description => 'Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search for in *a_sWord*.',
+        format => '',
+        read_only => '',
+            },
+    'b_word_case_sensitive' => {
+        datatype => 'boolean',
+        base_name => 'bWordCaseSensitive',
+        description => 'IF *true*, words will be searched case-sensitive and results will be returned case-sensitive. IF *false*, words will be searched case-insensitive and results will be returned case-insensitive.',
         format => '',
         read_only => '',
             },
@@ -178,11 +185,13 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'e_get' => 'string',
+    'b_word_case_sensitive' => 'boolean',
     'a_s_word' => 'ARRAY[string]'
 } );
 
 __PACKAGE__->attribute_map( {
     'e_get' => 'eGet',
+    'b_word_case_sensitive' => 'bWordCaseSensitive',
     'a_s_word' => 'a_sWord'
 } );
 

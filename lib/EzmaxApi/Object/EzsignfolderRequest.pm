@@ -164,7 +164,7 @@ __PACKAGE__->method_documentation({
     'fki_ezsignfoldertype_id' => {
         datatype => 'int',
         base_name => 'fkiEzsignfoldertypeID',
-        description => 'The unique ID of the Ezsignfoldertype.    This value can be queried by the API and is also visible in the admin interface.    There are two types of Ezsignfoldertype. **User** and **Shared**. **User** can only be seen by the user who created the folder or its assistants. Access to **Shared** folders are configurable for access and email delivery. You should typically choose a **Shared** type here.',
+        description => 'The unique ID of the Ezsignfoldertype.',
         format => '',
         read_only => '',
             },

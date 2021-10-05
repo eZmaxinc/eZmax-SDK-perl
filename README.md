@@ -240,6 +240,7 @@ use EzmaxApi::ObjectApikeyApi;
 use EzmaxApi::ObjectEzsigndocumentApi;
 use EzmaxApi::ObjectEzsignfolderApi;
 use EzmaxApi::ObjectEzsignfoldersignerassociationApi;
+use EzmaxApi::ObjectEzsignfoldertypeApi;
 use EzmaxApi::ObjectEzsignsignatureApi;
 use EzmaxApi::ObjectFranchisebrokerApi;
 use EzmaxApi::ObjectFranchiseofficeApi;
@@ -270,6 +271,7 @@ use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::CommonGetAutocompleteV1Response;
 use EzmaxApi::Object::CommonGetAutocompleteV1ResponseAllOf;
 use EzmaxApi::Object::CommonGetAutocompleteV1ResponseMPayload;
+use EzmaxApi::Object::CommonGetListV1ResponseMPayload;
 use EzmaxApi::Object::CommonResponse;
 use EzmaxApi::Object::CommonResponseError;
 use EzmaxApi::Object::CommonResponseObjDebug;
@@ -346,6 +348,11 @@ use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequest;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompound;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompoundAllOf;
+use EzmaxApi::Object::EzsignfoldertypeGetListV1Response;
+use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseAllOf;
+use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayload;
+use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayloadAllOf;
+use EzmaxApi::Object::EzsignfoldertypeListElement;
 use EzmaxApi::Object::EzsignformfieldResponse;
 use EzmaxApi::Object::EzsignformfieldResponseCompound;
 use EzmaxApi::Object::EzsignformfieldgroupResponse;
@@ -429,6 +436,7 @@ use EzmaxApi::ObjectApikeyApi;
 use EzmaxApi::ObjectEzsigndocumentApi;
 use EzmaxApi::ObjectEzsignfolderApi;
 use EzmaxApi::ObjectEzsignfoldersignerassociationApi;
+use EzmaxApi::ObjectEzsignfoldertypeApi;
 use EzmaxApi::ObjectEzsignsignatureApi;
 use EzmaxApi::ObjectFranchisebrokerApi;
 use EzmaxApi::ObjectFranchiseofficeApi;
@@ -456,6 +464,7 @@ use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::CommonGetAutocompleteV1Response;
 use EzmaxApi::Object::CommonGetAutocompleteV1ResponseAllOf;
 use EzmaxApi::Object::CommonGetAutocompleteV1ResponseMPayload;
+use EzmaxApi::Object::CommonGetListV1ResponseMPayload;
 use EzmaxApi::Object::CommonResponse;
 use EzmaxApi::Object::CommonResponseError;
 use EzmaxApi::Object::CommonResponseObjDebug;
@@ -532,6 +541,11 @@ use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequest;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompound;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompoundAllOf;
+use EzmaxApi::Object::EzsignfoldertypeGetListV1Response;
+use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseAllOf;
+use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayload;
+use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayloadAllOf;
+use EzmaxApi::Object::EzsignfoldertypeListElement;
 use EzmaxApi::Object::EzsignformfieldResponse;
 use EzmaxApi::Object::EzsignformfieldResponseCompound;
 use EzmaxApi::Object::EzsignformfieldgroupResponse;
@@ -658,6 +672,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociation_get_children_v1**](docs/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_children_v1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getChildren | Retrieve an existing Ezsignfoldersignerassociation&#39;s children IDs
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociation_get_in_person_login_url_v1**](docs/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_in_person_login_url_v1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getInPersonLoginUrl | Retrieve a Login Url to allow In-Person signing
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociation_get_object_v1**](docs/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_object_v1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation
+*ObjectEzsignfoldertypeApi* | [**ezsignfoldertype_get_list_v1**](docs/ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_list_v1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list
 *ObjectEzsignsignatureApi* | [**ezsignsignature_create_object_v1**](docs/ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature
 *ObjectEzsignsignatureApi* | [**ezsignsignature_delete_object_v1**](docs/ObjectEzsignsignatureApi.md#ezsignsignature_delete_object_v1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
 *ObjectEzsignsignatureApi* | [**ezsignsignature_get_children_v1**](docs/ObjectEzsignsignatureApi.md#ezsignsignature_get_children_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren | Retrieve an existing Ezsignsignature&#39;s children IDs
@@ -689,6 +704,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CommonGetAutocompleteV1Response](docs/CommonGetAutocompleteV1Response.md)
  - [EzmaxApi::Object::CommonGetAutocompleteV1ResponseAllOf](docs/CommonGetAutocompleteV1ResponseAllOf.md)
  - [EzmaxApi::Object::CommonGetAutocompleteV1ResponseMPayload](docs/CommonGetAutocompleteV1ResponseMPayload.md)
+ - [EzmaxApi::Object::CommonGetListV1ResponseMPayload](docs/CommonGetListV1ResponseMPayload.md)
  - [EzmaxApi::Object::CommonResponse](docs/CommonResponse.md)
  - [EzmaxApi::Object::CommonResponseError](docs/CommonResponseError.md)
  - [EzmaxApi::Object::CommonResponseObjDebug](docs/CommonResponseObjDebug.md)
@@ -765,6 +781,11 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignfoldersignerassociationRequest](docs/EzsignfoldersignerassociationRequest.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationRequestCompound](docs/EzsignfoldersignerassociationRequestCompound.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationRequestCompoundAllOf](docs/EzsignfoldersignerassociationRequestCompoundAllOf.md)
+ - [EzmaxApi::Object::EzsignfoldertypeGetListV1Response](docs/EzsignfoldertypeGetListV1Response.md)
+ - [EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseAllOf](docs/EzsignfoldertypeGetListV1ResponseAllOf.md)
+ - [EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayload](docs/EzsignfoldertypeGetListV1ResponseMPayload.md)
+ - [EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayloadAllOf](docs/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.md)
+ - [EzmaxApi::Object::EzsignfoldertypeListElement](docs/EzsignfoldertypeListElement.md)
  - [EzmaxApi::Object::EzsignformfieldResponse](docs/EzsignformfieldResponse.md)
  - [EzmaxApi::Object::EzsignformfieldResponseCompound](docs/EzsignformfieldResponseCompound.md)
  - [EzmaxApi::Object::EzsignformfieldgroupResponse](docs/EzsignformfieldgroupResponse.md)
