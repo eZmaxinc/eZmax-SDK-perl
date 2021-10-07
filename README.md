@@ -320,6 +320,7 @@ use EzmaxApi::Object::EzsigndocumentResponse;
 use EzmaxApi::Object::EzsigndocumentResponseCompound;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Response;
+use EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1Response;
@@ -514,6 +515,7 @@ use EzmaxApi::Object::EzsigndocumentResponse;
 use EzmaxApi::Object::EzsigndocumentResponseCompound;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Response;
+use EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1Response;
@@ -755,6 +757,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigndocumentResponseCompound](docs/EzsigndocumentResponseCompound.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV1Request](docs/EzsignfolderCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV1Response](docs/EzsignfolderCreateObjectV1Response.md)
+ - [EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseAllOf](docs/EzsignfolderCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseMPayload](docs/EzsignfolderCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderDeleteObjectV1Response](docs/EzsignfolderDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsignfolderGetFormsDataV1Response](docs/EzsignfolderGetFormsDataV1Response.md)

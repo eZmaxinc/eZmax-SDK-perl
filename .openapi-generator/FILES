@@ -72,6 +72,7 @@ docs/EzsigndocumentResponse.md
 docs/EzsigndocumentResponseCompound.md
 docs/EzsignfolderCreateObjectV1Request.md
 docs/EzsignfolderCreateObjectV1Response.md
+docs/EzsignfolderCreateObjectV1ResponseAllOf.md
 docs/EzsignfolderCreateObjectV1ResponseMPayload.md
 docs/EzsignfolderDeleteObjectV1Response.md
 docs/EzsignfolderGetFormsDataV1Response.md
@@ -261,6 +262,7 @@ lib/EzmaxApi/Object/EzsigndocumentResponse.pm
 lib/EzmaxApi/Object/EzsigndocumentResponseCompound.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV1Request.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV1Response.pm
+lib/EzmaxApi/Object/EzsignfolderCreateObjectV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignfolderDeleteObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderGetFormsDataV1Response.pm
@@ -439,6 +441,7 @@ t/EzsigndocumentRequestTest.t
 t/EzsigndocumentResponseCompoundTest.t
 t/EzsigndocumentResponseTest.t
 t/EzsignfolderCreateObjectV1RequestTest.t
+t/EzsignfolderCreateObjectV1ResponseAllOfTest.t
 t/EzsignfolderCreateObjectV1ResponseMPayloadTest.t
 t/EzsignfolderCreateObjectV1ResponseTest.t
 t/EzsignfolderDeleteObjectV1ResponseTest.t
