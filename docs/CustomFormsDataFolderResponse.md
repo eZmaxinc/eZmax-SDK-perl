@@ -1,8 +1,8 @@
-# EzmaxApi::Object::CustomFormDataFolderResponse
+# EzmaxApi::Object::CustomFormsDataFolderResponse
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::CustomFormDataFolderResponse;
+use EzmaxApi::Object::CustomFormsDataFolderResponse;
 ```
 
 ## Properties

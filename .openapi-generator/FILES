@@ -37,8 +37,8 @@ docs/ContactinformationsRequest.md
 docs/ContactinformationsRequestCompound.md
 docs/ContactinformationsRequestCompoundAllOf.md
 docs/CustomFormDataDocumentResponse.md
-docs/CustomFormDataFolderResponse.md
 docs/CustomFormDataSignerResponse.md
+docs/CustomFormsDataFolderResponse.md
 docs/CustomWordPositionOccurenceResponse.md
 docs/CustomWordPositionWordResponse.md
 docs/EmailRequest.md
@@ -140,6 +140,7 @@ docs/FranchisereferalincomeRequestCompound.md
 docs/FranchisereferalincomeRequestCompoundAllOf.md
 docs/GlobalCustomerApi.md
 docs/GlobalCustomerGetEndpointV1Response.md
+docs/HeaderAcceptLanguage.md
 docs/ModuleAuthenticateApi.md
 docs/ModuleSsprApi.md
 docs/ModuleUserApi.md
@@ -225,8 +226,8 @@ lib/EzmaxApi/Object/ContactinformationsRequest.pm
 lib/EzmaxApi/Object/ContactinformationsRequestCompound.pm
 lib/EzmaxApi/Object/ContactinformationsRequestCompoundAllOf.pm
 lib/EzmaxApi/Object/CustomFormDataDocumentResponse.pm
-lib/EzmaxApi/Object/CustomFormDataFolderResponse.pm
 lib/EzmaxApi/Object/CustomFormDataSignerResponse.pm
+lib/EzmaxApi/Object/CustomFormsDataFolderResponse.pm
 lib/EzmaxApi/Object/CustomWordPositionOccurenceResponse.pm
 lib/EzmaxApi/Object/CustomWordPositionWordResponse.pm
 lib/EzmaxApi/Object/EmailRequest.pm
@@ -327,6 +328,7 @@ lib/EzmaxApi/Object/FranchisereferalincomeRequest.pm
 lib/EzmaxApi/Object/FranchisereferalincomeRequestCompound.pm
 lib/EzmaxApi/Object/FranchisereferalincomeRequestCompoundAllOf.pm
 lib/EzmaxApi/Object/GlobalCustomerGetEndpointV1Response.pm
+lib/EzmaxApi/Object/HeaderAcceptLanguage.pm
 lib/EzmaxApi/Object/MultilingualApikeyDescription.pm
 lib/EzmaxApi/Object/PhoneRequest.pm
 lib/EzmaxApi/Object/SsprResetPasswordRequestV1Request.pm
@@ -403,8 +405,8 @@ t/ContactinformationsRequestCompoundAllOfTest.t
 t/ContactinformationsRequestCompoundTest.t
 t/ContactinformationsRequestTest.t
 t/CustomFormDataDocumentResponseTest.t
-t/CustomFormDataFolderResponseTest.t
 t/CustomFormDataSignerResponseTest.t
+t/CustomFormsDataFolderResponseTest.t
 t/CustomWordPositionOccurenceResponseTest.t
 t/CustomWordPositionWordResponseTest.t
 t/EmailRequestTest.t
@@ -506,6 +508,7 @@ t/FranchisereferalincomeRequestCompoundTest.t
 t/FranchisereferalincomeRequestTest.t
 t/GlobalCustomerApiTest.t
 t/GlobalCustomerGetEndpointV1ResponseTest.t
+t/HeaderAcceptLanguageTest.t
 t/ModuleAuthenticateApiTest.t
 t/ModuleSsprApiTest.t
 t/ModuleUserApiTest.t

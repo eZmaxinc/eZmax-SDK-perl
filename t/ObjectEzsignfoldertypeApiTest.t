@@ -33,5 +33,10 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfoldertypeApi');
 # ezsignfoldertype_get_list_v1 test
 #
 # uncomment below and update the test
-#my $ezsignfoldertype_get_list_v1_result = $api->ezsignfoldertype_get_list_v1();
+#my $ezsignfoldertype_get_list_v1_e_order_by = undef; # replace NULL with a proper value
+#my $ezsignfoldertype_get_list_v1_i_row_max = undef; # replace NULL with a proper value
+#my $ezsignfoldertype_get_list_v1_i_row_offset = undef; # replace NULL with a proper value
+#my $ezsignfoldertype_get_list_v1_accept_language = undef; # replace NULL with a proper value
+#my $ezsignfoldertype_get_list_v1_s_filter = undef; # replace NULL with a proper value
+#my $ezsignfoldertype_get_list_v1_result = $api->ezsignfoldertype_get_list_v1(e_order_by => $ezsignfoldertype_get_list_v1_e_order_by, i_row_max => $ezsignfoldertype_get_list_v1_i_row_max, i_row_offset => $ezsignfoldertype_get_list_v1_i_row_offset, accept_language => $ezsignfoldertype_get_list_v1_accept_language, s_filter => $ezsignfoldertype_get_list_v1_s_filter);
 

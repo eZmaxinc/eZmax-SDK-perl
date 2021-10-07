@@ -285,8 +285,8 @@ use EzmaxApi::Object::ContactinformationsRequest;
 use EzmaxApi::Object::ContactinformationsRequestCompound;
 use EzmaxApi::Object::ContactinformationsRequestCompoundAllOf;
 use EzmaxApi::Object::CustomFormDataDocumentResponse;
-use EzmaxApi::Object::CustomFormDataFolderResponse;
 use EzmaxApi::Object::CustomFormDataSignerResponse;
+use EzmaxApi::Object::CustomFormsDataFolderResponse;
 use EzmaxApi::Object::CustomWordPositionOccurenceResponse;
 use EzmaxApi::Object::CustomWordPositionWordResponse;
 use EzmaxApi::Object::EmailRequest;
@@ -387,6 +387,7 @@ use EzmaxApi::Object::FranchisereferalincomeRequest;
 use EzmaxApi::Object::FranchisereferalincomeRequestCompound;
 use EzmaxApi::Object::FranchisereferalincomeRequestCompoundAllOf;
 use EzmaxApi::Object::GlobalCustomerGetEndpointV1Response;
+use EzmaxApi::Object::HeaderAcceptLanguage;
 use EzmaxApi::Object::MultilingualApikeyDescription;
 use EzmaxApi::Object::PhoneRequest;
 use EzmaxApi::Object::SsprResetPasswordRequestV1Request;
@@ -478,8 +479,8 @@ use EzmaxApi::Object::ContactinformationsRequest;
 use EzmaxApi::Object::ContactinformationsRequestCompound;
 use EzmaxApi::Object::ContactinformationsRequestCompoundAllOf;
 use EzmaxApi::Object::CustomFormDataDocumentResponse;
-use EzmaxApi::Object::CustomFormDataFolderResponse;
 use EzmaxApi::Object::CustomFormDataSignerResponse;
+use EzmaxApi::Object::CustomFormsDataFolderResponse;
 use EzmaxApi::Object::CustomWordPositionOccurenceResponse;
 use EzmaxApi::Object::CustomWordPositionWordResponse;
 use EzmaxApi::Object::EmailRequest;
@@ -580,6 +581,7 @@ use EzmaxApi::Object::FranchisereferalincomeRequest;
 use EzmaxApi::Object::FranchisereferalincomeRequestCompound;
 use EzmaxApi::Object::FranchisereferalincomeRequestCompoundAllOf;
 use EzmaxApi::Object::GlobalCustomerGetEndpointV1Response;
+use EzmaxApi::Object::HeaderAcceptLanguage;
 use EzmaxApi::Object::MultilingualApikeyDescription;
 use EzmaxApi::Object::PhoneRequest;
 use EzmaxApi::Object::SsprResetPasswordRequestV1Request;
@@ -718,8 +720,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::ContactinformationsRequestCompound](docs/ContactinformationsRequestCompound.md)
  - [EzmaxApi::Object::ContactinformationsRequestCompoundAllOf](docs/ContactinformationsRequestCompoundAllOf.md)
  - [EzmaxApi::Object::CustomFormDataDocumentResponse](docs/CustomFormDataDocumentResponse.md)
- - [EzmaxApi::Object::CustomFormDataFolderResponse](docs/CustomFormDataFolderResponse.md)
  - [EzmaxApi::Object::CustomFormDataSignerResponse](docs/CustomFormDataSignerResponse.md)
+ - [EzmaxApi::Object::CustomFormsDataFolderResponse](docs/CustomFormsDataFolderResponse.md)
  - [EzmaxApi::Object::CustomWordPositionOccurenceResponse](docs/CustomWordPositionOccurenceResponse.md)
  - [EzmaxApi::Object::CustomWordPositionWordResponse](docs/CustomWordPositionWordResponse.md)
  - [EzmaxApi::Object::EmailRequest](docs/EmailRequest.md)
@@ -820,6 +822,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::FranchisereferalincomeRequestCompound](docs/FranchisereferalincomeRequestCompound.md)
  - [EzmaxApi::Object::FranchisereferalincomeRequestCompoundAllOf](docs/FranchisereferalincomeRequestCompoundAllOf.md)
  - [EzmaxApi::Object::GlobalCustomerGetEndpointV1Response](docs/GlobalCustomerGetEndpointV1Response.md)
+ - [EzmaxApi::Object::HeaderAcceptLanguage](docs/HeaderAcceptLanguage.md)
  - [EzmaxApi::Object::MultilingualApikeyDescription](docs/MultilingualApikeyDescription.md)
  - [EzmaxApi::Object::PhoneRequest](docs/PhoneRequest.md)
  - [EzmaxApi::Object::SsprResetPasswordRequestV1Request](docs/SsprResetPasswordRequestV1Request.md)

@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::CustomFormDataFolderResponse');
+use_ok('EzmaxApi::Object::CustomFormsDataFolderResponse');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::CustomFormDataFolderResponse->new();
+#my $instance = EzmaxApi::Object::CustomFormsDataFolderResponse->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::CustomFormDataFolderResponse');
+#isa_ok($instance, 'EzmaxApi::Object::CustomFormsDataFolderResponse');
 
