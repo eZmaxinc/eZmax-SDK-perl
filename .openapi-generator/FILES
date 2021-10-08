@@ -26,8 +26,12 @@ docs/CommonGetAutocompleteV1ResponseMPayload.md
 docs/CommonGetListV1ResponseMPayload.md
 docs/CommonResponse.md
 docs/CommonResponseError.md
+docs/CommonResponseFilter.md
+docs/CommonResponseGetList.md
 docs/CommonResponseObjDebug.md
 docs/CommonResponseObjDebugPayload.md
+docs/CommonResponseObjDebugPayloadGetList.md
+docs/CommonResponseObjDebugPayloadGetListAllOf.md
 docs/CommonResponseObjSQLQuery.md
 docs/CommonWebhook.md
 docs/ContactRequest.md
@@ -128,6 +132,7 @@ docs/EzsignsignerRequestCompoundContact.md
 docs/FieldEEzsigndocumentStep.md
 docs/FieldEEzsignfolderSendreminderfrequency.md
 docs/FieldEEzsignfolderStep.md
+docs/FieldEEzsignfoldertypePrivacylevel.md
 docs/FieldEEzsignsignatureType.md
 docs/FieldEPhoneType.md
 docs/FieldEUserType.md
@@ -216,8 +221,12 @@ lib/EzmaxApi/Object/CommonGetAutocompleteV1ResponseMPayload.pm
 lib/EzmaxApi/Object/CommonGetListV1ResponseMPayload.pm
 lib/EzmaxApi/Object/CommonResponse.pm
 lib/EzmaxApi/Object/CommonResponseError.pm
+lib/EzmaxApi/Object/CommonResponseFilter.pm
+lib/EzmaxApi/Object/CommonResponseGetList.pm
 lib/EzmaxApi/Object/CommonResponseObjDebug.pm
 lib/EzmaxApi/Object/CommonResponseObjDebugPayload.pm
+lib/EzmaxApi/Object/CommonResponseObjDebugPayloadGetList.pm
+lib/EzmaxApi/Object/CommonResponseObjDebugPayloadGetListAllOf.pm
 lib/EzmaxApi/Object/CommonResponseObjSQLQuery.pm
 lib/EzmaxApi/Object/CommonWebhook.pm
 lib/EzmaxApi/Object/ContactRequest.pm
@@ -318,6 +327,7 @@ lib/EzmaxApi/Object/EzsignsignerRequestCompoundContact.pm
 lib/EzmaxApi/Object/FieldEEzsigndocumentStep.pm
 lib/EzmaxApi/Object/FieldEEzsignfolderSendreminderfrequency.pm
 lib/EzmaxApi/Object/FieldEEzsignfolderStep.pm
+lib/EzmaxApi/Object/FieldEEzsignfoldertypePrivacylevel.pm
 lib/EzmaxApi/Object/FieldEEzsignsignatureType.pm
 lib/EzmaxApi/Object/FieldEPhoneType.pm
 lib/EzmaxApi/Object/FieldEUserType.pm
@@ -395,6 +405,10 @@ t/CommonGetAutocompleteV1ResponseMPayloadTest.t
 t/CommonGetAutocompleteV1ResponseTest.t
 t/CommonGetListV1ResponseMPayloadTest.t
 t/CommonResponseErrorTest.t
+t/CommonResponseFilterTest.t
+t/CommonResponseGetListTest.t
+t/CommonResponseObjDebugPayloadGetListAllOfTest.t
+t/CommonResponseObjDebugPayloadGetListTest.t
 t/CommonResponseObjDebugPayloadTest.t
 t/CommonResponseObjDebugTest.t
 t/CommonResponseObjSQLQueryTest.t
@@ -498,6 +512,7 @@ t/EzsignsignerRequestTest.t
 t/FieldEEzsigndocumentStepTest.t
 t/FieldEEzsignfolderSendreminderfrequencyTest.t
 t/FieldEEzsignfolderStepTest.t
+t/FieldEEzsignfoldertypePrivacylevelTest.t
 t/FieldEEzsignsignatureTypeTest.t
 t/FieldEPhoneTypeTest.t
 t/FieldEUserTypeSSPRTest.t

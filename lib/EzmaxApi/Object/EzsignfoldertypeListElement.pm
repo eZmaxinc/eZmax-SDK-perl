@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -167,6 +168,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignfoldertype_privacylevel' => {
+        datatype => 'FieldEEzsignfoldertypePrivacylevel',
+        base_name => 'eEzsignfoldertypePrivacylevel',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     's_ezsignfoldertype_name_x' => {
         datatype => 'string',
         base_name => 'sEzsignfoldertypeNameX',
@@ -174,16 +182,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsignfoldertype_isactive' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeIsactive',
+        description => 'Whether the Ezsignfoldertype is active or not',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_ezsignfoldertype_id' => 'int',
-    's_ezsignfoldertype_name_x' => 'string'
+    'e_ezsignfoldertype_privacylevel' => 'FieldEEzsignfoldertypePrivacylevel',
+    's_ezsignfoldertype_name_x' => 'string',
+    'b_ezsignfoldertype_isactive' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_ezsignfoldertype_id' => 'pkiEzsignfoldertypeID',
-    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX'
+    'e_ezsignfoldertype_privacylevel' => 'eEzsignfoldertypePrivacylevel',
+    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
+    'b_ezsignfoldertype_isactive' => 'bEzsignfoldertypeIsactive'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

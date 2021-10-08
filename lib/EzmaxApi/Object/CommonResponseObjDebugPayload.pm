@@ -174,9 +174,9 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'a_required_permissions' => {
+    'a_required_permission' => {
         datatype => 'ARRAY[int]',
-        base_name => 'a_RequiredPermissions',
+        base_name => 'a_RequiredPermission',
         description => 'An array of permissions required to access this function.  If the value \&quot;0\&quot; is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don&#39;t need to have all of them.',
         format => '',
         read_only => '',
@@ -186,13 +186,13 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'i_version_min' => 'int',
     'i_version_max' => 'int',
-    'a_required_permissions' => 'ARRAY[int]'
+    'a_required_permission' => 'ARRAY[int]'
 } );
 
 __PACKAGE__->attribute_map( {
     'i_version_min' => 'iVersionMin',
     'i_version_max' => 'iVersionMax',
-    'a_required_permissions' => 'a_RequiredPermissions'
+    'a_required_permission' => 'a_RequiredPermission'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

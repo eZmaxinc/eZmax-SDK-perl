@@ -1,14 +1,13 @@
-# EzmaxApi::Object::EzsignfoldertypeGetListV1Response
+# EzmaxApi::Object::CommonResponseGetList
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::EzsignfoldertypeGetListV1Response;
+use EzmaxApi::Object::CommonResponseGetList;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**m_payload** | [**EzsignfoldertypeGetListV1ResponseMPayload**](EzsignfoldertypeGetListV1ResponseMPayload.md) |  | 
 **obj_debug_payload** | [**CommonResponseObjDebugPayloadGetList**](CommonResponseObjDebugPayloadGetList.md) |  | [optional] 
 **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
 

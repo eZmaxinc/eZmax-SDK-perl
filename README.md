@@ -274,8 +274,12 @@ use EzmaxApi::Object::CommonGetAutocompleteV1ResponseMPayload;
 use EzmaxApi::Object::CommonGetListV1ResponseMPayload;
 use EzmaxApi::Object::CommonResponse;
 use EzmaxApi::Object::CommonResponseError;
+use EzmaxApi::Object::CommonResponseFilter;
+use EzmaxApi::Object::CommonResponseGetList;
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
+use EzmaxApi::Object::CommonResponseObjDebugPayloadGetList;
+use EzmaxApi::Object::CommonResponseObjDebugPayloadGetListAllOf;
 use EzmaxApi::Object::CommonResponseObjSQLQuery;
 use EzmaxApi::Object::CommonWebhook;
 use EzmaxApi::Object::ContactRequest;
@@ -376,6 +380,7 @@ use EzmaxApi::Object::EzsignsignerRequestCompoundContact;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
+use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
 use EzmaxApi::Object::FieldEPhoneType;
 use EzmaxApi::Object::FieldEUserType;
@@ -469,8 +474,12 @@ use EzmaxApi::Object::CommonGetAutocompleteV1ResponseMPayload;
 use EzmaxApi::Object::CommonGetListV1ResponseMPayload;
 use EzmaxApi::Object::CommonResponse;
 use EzmaxApi::Object::CommonResponseError;
+use EzmaxApi::Object::CommonResponseFilter;
+use EzmaxApi::Object::CommonResponseGetList;
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
+use EzmaxApi::Object::CommonResponseObjDebugPayloadGetList;
+use EzmaxApi::Object::CommonResponseObjDebugPayloadGetListAllOf;
 use EzmaxApi::Object::CommonResponseObjSQLQuery;
 use EzmaxApi::Object::CommonWebhook;
 use EzmaxApi::Object::ContactRequest;
@@ -571,6 +580,7 @@ use EzmaxApi::Object::EzsignsignerRequestCompoundContact;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
+use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
 use EzmaxApi::Object::FieldEPhoneType;
 use EzmaxApi::Object::FieldEUserType;
@@ -711,8 +721,12 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CommonGetListV1ResponseMPayload](docs/CommonGetListV1ResponseMPayload.md)
  - [EzmaxApi::Object::CommonResponse](docs/CommonResponse.md)
  - [EzmaxApi::Object::CommonResponseError](docs/CommonResponseError.md)
+ - [EzmaxApi::Object::CommonResponseFilter](docs/CommonResponseFilter.md)
+ - [EzmaxApi::Object::CommonResponseGetList](docs/CommonResponseGetList.md)
  - [EzmaxApi::Object::CommonResponseObjDebug](docs/CommonResponseObjDebug.md)
  - [EzmaxApi::Object::CommonResponseObjDebugPayload](docs/CommonResponseObjDebugPayload.md)
+ - [EzmaxApi::Object::CommonResponseObjDebugPayloadGetList](docs/CommonResponseObjDebugPayloadGetList.md)
+ - [EzmaxApi::Object::CommonResponseObjDebugPayloadGetListAllOf](docs/CommonResponseObjDebugPayloadGetListAllOf.md)
  - [EzmaxApi::Object::CommonResponseObjSQLQuery](docs/CommonResponseObjSQLQuery.md)
  - [EzmaxApi::Object::CommonWebhook](docs/CommonWebhook.md)
  - [EzmaxApi::Object::ContactRequest](docs/ContactRequest.md)
@@ -813,6 +827,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::FieldEEzsigndocumentStep](docs/FieldEEzsigndocumentStep.md)
  - [EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency](docs/FieldEEzsignfolderSendreminderfrequency.md)
  - [EzmaxApi::Object::FieldEEzsignfolderStep](docs/FieldEEzsignfolderStep.md)
+ - [EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel](docs/FieldEEzsignfoldertypePrivacylevel.md)
  - [EzmaxApi::Object::FieldEEzsignsignatureType](docs/FieldEEzsignsignatureType.md)
  - [EzmaxApi::Object::FieldEPhoneType](docs/FieldEPhoneType.md)
  - [EzmaxApi::Object::FieldEUserType](docs/FieldEUserType.md)
