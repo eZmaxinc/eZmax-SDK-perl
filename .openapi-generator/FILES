@@ -22,7 +22,6 @@ docs/AuthenticateAuthenticateV2ResponseMPayload.md
 docs/CommonAudit.md
 docs/CommonGetAutocompleteV1Response.md
 docs/CommonGetAutocompleteV1ResponseAllOf.md
-docs/CommonGetAutocompleteV1ResponseMPayload.md
 docs/CommonGetListV1ResponseMPayload.md
 docs/CommonResponse.md
 docs/CommonResponseError.md
@@ -40,6 +39,7 @@ docs/ContactRequestCompoundAllOf.md
 docs/ContactinformationsRequest.md
 docs/ContactinformationsRequestCompound.md
 docs/ContactinformationsRequestCompoundAllOf.md
+docs/CustomAutocompleteElementResponse.md
 docs/CustomFormDataDocumentResponse.md
 docs/CustomFormDataSignerResponse.md
 docs/CustomFormsDataFolderResponse.md
@@ -82,9 +82,14 @@ docs/EzsignfolderDeleteObjectV1Response.md
 docs/EzsignfolderGetFormsDataV1Response.md
 docs/EzsignfolderGetFormsDataV1ResponseAllOf.md
 docs/EzsignfolderGetFormsDataV1ResponseMPayload.md
+docs/EzsignfolderGetListV1Response.md
+docs/EzsignfolderGetListV1ResponseAllOf.md
+docs/EzsignfolderGetListV1ResponseMPayload.md
+docs/EzsignfolderGetListV1ResponseMPayloadAllOf.md
 docs/EzsignfolderGetObjectV1Response.md
 docs/EzsignfolderGetObjectV1ResponseAllOf.md
 docs/EzsignfolderGetObjectV1ResponseMPayload.md
+docs/EzsignfolderListElement.md
 docs/EzsignfolderRequest.md
 docs/EzsignfolderRequestCompound.md
 docs/EzsignfolderRequestCompoundAllOf.md
@@ -217,7 +222,6 @@ lib/EzmaxApi/Object/AuthenticateAuthenticateV2ResponseMPayload.pm
 lib/EzmaxApi/Object/CommonAudit.pm
 lib/EzmaxApi/Object/CommonGetAutocompleteV1Response.pm
 lib/EzmaxApi/Object/CommonGetAutocompleteV1ResponseAllOf.pm
-lib/EzmaxApi/Object/CommonGetAutocompleteV1ResponseMPayload.pm
 lib/EzmaxApi/Object/CommonGetListV1ResponseMPayload.pm
 lib/EzmaxApi/Object/CommonResponse.pm
 lib/EzmaxApi/Object/CommonResponseError.pm
@@ -235,6 +239,7 @@ lib/EzmaxApi/Object/ContactRequestCompoundAllOf.pm
 lib/EzmaxApi/Object/ContactinformationsRequest.pm
 lib/EzmaxApi/Object/ContactinformationsRequestCompound.pm
 lib/EzmaxApi/Object/ContactinformationsRequestCompoundAllOf.pm
+lib/EzmaxApi/Object/CustomAutocompleteElementResponse.pm
 lib/EzmaxApi/Object/CustomFormDataDocumentResponse.pm
 lib/EzmaxApi/Object/CustomFormDataSignerResponse.pm
 lib/EzmaxApi/Object/CustomFormsDataFolderResponse.pm
@@ -277,9 +282,14 @@ lib/EzmaxApi/Object/EzsignfolderDeleteObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderGetFormsDataV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderGetFormsDataV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignfolderGetFormsDataV1ResponseMPayload.pm
+lib/EzmaxApi/Object/EzsignfolderGetListV1Response.pm
+lib/EzmaxApi/Object/EzsignfolderGetListV1ResponseAllOf.pm
+lib/EzmaxApi/Object/EzsignfolderGetListV1ResponseMPayload.pm
+lib/EzmaxApi/Object/EzsignfolderGetListV1ResponseMPayloadAllOf.pm
 lib/EzmaxApi/Object/EzsignfolderGetObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderGetObjectV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignfolderGetObjectV1ResponseMPayload.pm
+lib/EzmaxApi/Object/EzsignfolderListElement.pm
 lib/EzmaxApi/Object/EzsignfolderRequest.pm
 lib/EzmaxApi/Object/EzsignfolderRequestCompound.pm
 lib/EzmaxApi/Object/EzsignfolderRequestCompoundAllOf.pm
@@ -401,7 +411,6 @@ t/AuthenticateAuthenticateV2ResponseMPayloadTest.t
 t/AuthenticateAuthenticateV2ResponseTest.t
 t/CommonAuditTest.t
 t/CommonGetAutocompleteV1ResponseAllOfTest.t
-t/CommonGetAutocompleteV1ResponseMPayloadTest.t
 t/CommonGetAutocompleteV1ResponseTest.t
 t/CommonGetListV1ResponseMPayloadTest.t
 t/CommonResponseErrorTest.t
@@ -420,6 +429,7 @@ t/ContactRequestTest.t
 t/ContactinformationsRequestCompoundAllOfTest.t
 t/ContactinformationsRequestCompoundTest.t
 t/ContactinformationsRequestTest.t
+t/CustomAutocompleteElementResponseTest.t
 t/CustomFormDataDocumentResponseTest.t
 t/CustomFormDataSignerResponseTest.t
 t/CustomFormsDataFolderResponseTest.t
@@ -462,9 +472,14 @@ t/EzsignfolderDeleteObjectV1ResponseTest.t
 t/EzsignfolderGetFormsDataV1ResponseAllOfTest.t
 t/EzsignfolderGetFormsDataV1ResponseMPayloadTest.t
 t/EzsignfolderGetFormsDataV1ResponseTest.t
+t/EzsignfolderGetListV1ResponseAllOfTest.t
+t/EzsignfolderGetListV1ResponseMPayloadAllOfTest.t
+t/EzsignfolderGetListV1ResponseMPayloadTest.t
+t/EzsignfolderGetListV1ResponseTest.t
 t/EzsignfolderGetObjectV1ResponseAllOfTest.t
 t/EzsignfolderGetObjectV1ResponseMPayloadTest.t
 t/EzsignfolderGetObjectV1ResponseTest.t
+t/EzsignfolderListElementTest.t
 t/EzsignfolderRequestCompoundAllOfTest.t
 t/EzsignfolderRequestCompoundTest.t
 t/EzsignfolderRequestTest.t

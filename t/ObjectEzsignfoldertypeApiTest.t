@@ -30,6 +30,15 @@ my $api = EzmaxApi::ObjectEzsignfoldertypeApi->new();
 isa_ok($api, 'EzmaxApi::ObjectEzsignfoldertypeApi');
 
 #
+# ezsignfoldertype_get_autocomplete_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfoldertype_get_autocomplete_v1_s_selector = undef; # replace NULL with a proper value
+#my $ezsignfoldertype_get_autocomplete_v1_accept_language = undef; # replace NULL with a proper value
+#my $ezsignfoldertype_get_autocomplete_v1_s_query = undef; # replace NULL with a proper value
+#my $ezsignfoldertype_get_autocomplete_v1_result = $api->ezsignfoldertype_get_autocomplete_v1(s_selector => $ezsignfoldertype_get_autocomplete_v1_s_selector, accept_language => $ezsignfoldertype_get_autocomplete_v1_accept_language, s_query => $ezsignfoldertype_get_autocomplete_v1_s_query);
+
+#
 # ezsignfoldertype_get_list_v1 test
 #
 # uncomment below and update the test

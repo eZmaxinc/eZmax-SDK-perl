@@ -58,6 +58,17 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfolderApi');
 #my $ezsignfolder_get_forms_data_v1_result = $api->ezsignfolder_get_forms_data_v1(pki_ezsignfolder_id => $ezsignfolder_get_forms_data_v1_pki_ezsignfolder_id);
 
 #
+# ezsignfolder_get_list_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_get_list_v1_e_order_by = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_list_v1_i_row_max = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_list_v1_i_row_offset = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_list_v1_accept_language = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_list_v1_s_filter = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_list_v1_result = $api->ezsignfolder_get_list_v1(e_order_by => $ezsignfolder_get_list_v1_e_order_by, i_row_max => $ezsignfolder_get_list_v1_i_row_max, i_row_offset => $ezsignfolder_get_list_v1_i_row_offset, accept_language => $ezsignfolder_get_list_v1_accept_language, s_filter => $ezsignfolder_get_list_v1_s_filter);
+
+#
 # ezsignfolder_get_object_v1 test
 #
 # uncomment below and update the test

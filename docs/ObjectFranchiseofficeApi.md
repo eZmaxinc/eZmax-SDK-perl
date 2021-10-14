@@ -32,7 +32,7 @@ my $api_instance = EzmaxApi::ObjectFranchiseofficeApi->new(
 );
 
 my $s_selector = "s_selector_example"; # string | The type of Franchiseoffices to return
-my $s_query = "s_query_example"; # string | Allow to filter on the option value
+my $s_query = "s_query_example"; # string | Allow to filter the returned results
 
 eval {
     my $result = $api_instance->franchiseoffice_get_autocomplete_v1(s_selector => $s_selector, s_query => $s_query);
@@ -48,7 +48,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **s_selector** | **string**| The type of Franchiseoffices to return | 
- **s_query** | **string**| Allow to filter on the option value | [optional] 
+ **s_query** | **string**| Allow to filter the returned results | [optional] 
 
 ### Return type
 

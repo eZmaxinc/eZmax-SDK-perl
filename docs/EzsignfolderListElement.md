@@ -1,14 +1,15 @@
-# EzmaxApi::Object::CommonGetAutocompleteV1ResponseAllOf
+# EzmaxApi::Object::EzsignfolderListElement
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::CommonGetAutocompleteV1ResponseAllOf;
+use EzmaxApi::Object::EzsignfolderListElement;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**m_payload** | [**ARRAY[CustomAutocompleteElementResponse]**](CustomAutocompleteElementResponse.md) | Generic Autocomplete Response | 
+**pki_ezsignfolder_id** | **int** | The unique ID of the Ezsignfolder | 
+**s_ezsignfolder_description** | **string** | The description of the Ezsign Folder | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

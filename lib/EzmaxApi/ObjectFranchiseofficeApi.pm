@@ -54,7 +54,7 @@ sub new {
 # Retrieve Franchiseoffices and IDs
 #
 # @param string $s_selector The type of Franchiseoffices to return (required)
-# @param string $s_query Allow to filter on the option value (optional)
+# @param string $s_query Allow to filter the returned results (optional)
 {
     my $params = {
     's_selector' => {
@@ -64,7 +64,7 @@ sub new {
     },
     's_query' => {
         data_type => 'string',
-        description => 'Allow to filter on the option value',
+        description => 'Allow to filter the returned results',
         required => '0',
     },
     };

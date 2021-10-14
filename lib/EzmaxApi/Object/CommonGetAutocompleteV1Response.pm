@@ -31,10 +31,10 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonGetAutocompleteV1ResponseAllOf;
-use EzmaxApi::Object::CommonGetAutocompleteV1ResponseMPayload;
 use EzmaxApi::Object::CommonResponse;
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
+use EzmaxApi::Object::CustomAutocompleteElementResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -166,9 +166,9 @@ __PACKAGE__->class_documentation({description => 'Response for the /1/object/xxx
 
 __PACKAGE__->method_documentation({
     'm_payload' => {
-        datatype => 'ARRAY[CommonGetAutocompleteV1ResponseMPayload]',
+        datatype => 'ARRAY[CustomAutocompleteElementResponse]',
         base_name => 'mPayload',
-        description => '',
+        description => 'Generic Autocomplete Response',
         format => '',
         read_only => '',
             },
@@ -189,7 +189,7 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'm_payload' => 'ARRAY[CommonGetAutocompleteV1ResponseMPayload]',
+    'm_payload' => 'ARRAY[CustomAutocompleteElementResponse]',
     'obj_debug_payload' => 'CommonResponseObjDebugPayload',
     'obj_debug' => 'CommonResponseObjDebug'
 } );

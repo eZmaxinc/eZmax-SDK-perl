@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::CommonGetAutocompleteV1ResponseMPayload');
+use_ok('EzmaxApi::Object::CustomAutocompleteElementResponse');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::CommonGetAutocompleteV1ResponseMPayload->new();
+#my $instance = EzmaxApi::Object::CustomAutocompleteElementResponse->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::CommonGetAutocompleteV1ResponseMPayload');
+#isa_ok($instance, 'EzmaxApi::Object::CustomAutocompleteElementResponse');
 
