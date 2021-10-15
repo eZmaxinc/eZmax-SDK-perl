@@ -91,7 +91,7 @@ sub ezsignfoldertype_get_autocomplete_v1 {
     }
 
     # parse inputs
-    my $_resource_path = '/1/object/ezsignfoldertype/getAutocomplete/{sSelector}/';
+    my $_resource_path = '/1/object/ezsignfoldertype/getAutocomplete/{sSelector}';
 
     my $_method = 'GET';
     my $query_params = {};
