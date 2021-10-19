@@ -31,7 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::FieldEEzsignfolderStep;
-use EzmaxApi::Object::OneOfstringnull;
+use EzmaxApi::Object::OneOfstringobject;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -205,14 +205,14 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'dt_ezsignfolder_sentdate' => {
-        datatype => 'OneOfstringnull',
+        datatype => 'OneOfstringobject',
         base_name => 'dtEzsignfolderSentdate',
         description => '',
         format => '',
         read_only => '',
             },
     'dt_due_date' => {
-        datatype => 'OneOfstringnull',
+        datatype => 'OneOfstringobject',
         base_name => 'dtDueDate',
         description => 'The date at which no more signature will be accepted on the folder',
         format => '',
@@ -255,8 +255,8 @@ __PACKAGE__->openapi_types( {
     's_ezsignfolder_description' => 'string',
     'e_ezsignfolder_step' => 'FieldEEzsignfolderStep',
     'dt_created_date' => 'string',
-    'dt_ezsignfolder_sentdate' => 'OneOfstringnull',
-    'dt_due_date' => 'OneOfstringnull',
+    'dt_ezsignfolder_sentdate' => 'OneOfstringobject',
+    'dt_due_date' => 'OneOfstringobject',
     'i_total_document' => 'int',
     'i_total_document_edm' => 'int',
     'i_total_signature' => 'int',

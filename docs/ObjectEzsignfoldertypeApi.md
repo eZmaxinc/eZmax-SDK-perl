@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **ezsignfoldertype_get_autocomplete_v1**
-> CommonGetAutocompleteV1Response ezsignfoldertype_get_autocomplete_v1(s_selector => $s_selector, accept_language => $accept_language, s_query => $s_query)
+> CommonGetAutocompleteV1Response ezsignfoldertype_get_autocomplete_v1(s_selector => $s_selector, s_query => $s_query, accept_language => $accept_language)
 
 Retrieve Ezsignfoldertypes and IDs
 
@@ -33,11 +33,11 @@ my $api_instance = EzmaxApi::ObjectEzsignfoldertypeApi->new(
 );
 
 my $s_selector = "s_selector_example"; # string | The type of Ezsignfoldertypes to return
-my $accept_language = new EzmaxApi.HeaderAcceptLanguage(); # HeaderAcceptLanguage | 
 my $s_query = "s_query_example"; # string | Allow to filter the returned results
+my $accept_language = new EzmaxApi.HeaderAcceptLanguage(); # HeaderAcceptLanguage | 
 
 eval {
-    my $result = $api_instance->ezsignfoldertype_get_autocomplete_v1(s_selector => $s_selector, accept_language => $accept_language, s_query => $s_query);
+    my $result = $api_instance->ezsignfoldertype_get_autocomplete_v1(s_selector => $s_selector, s_query => $s_query, accept_language => $accept_language);
     print Dumper($result);
 };
 if ($@) {
@@ -50,8 +50,8 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **s_selector** | **string**| The type of Ezsignfoldertypes to return | 
- **accept_language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
  **s_query** | **string**| Allow to filter the returned results | [optional] 
+ **accept_language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
 
 ### Return type
 

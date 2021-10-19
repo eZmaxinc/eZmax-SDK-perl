@@ -54,8 +54,8 @@ sub new {
 # Retrieve Ezsignfoldertypes and IDs
 #
 # @param string $s_selector The type of Ezsignfoldertypes to return (required)
-# @param HeaderAcceptLanguage $accept_language  (optional)
 # @param string $s_query Allow to filter the returned results (optional)
+# @param HeaderAcceptLanguage $accept_language  (optional)
 {
     my $params = {
     's_selector' => {
@@ -63,14 +63,14 @@ sub new {
         description => 'The type of Ezsignfoldertypes to return',
         required => '1',
     },
-    'accept_language' => {
-        data_type => 'HeaderAcceptLanguage',
-        description => '',
-        required => '0',
-    },
     's_query' => {
         data_type => 'string',
         description => 'Allow to filter the returned results',
+        required => '0',
+    },
+    'accept_language' => {
+        data_type => 'HeaderAcceptLanguage',
+        description => '',
         required => '0',
     },
     };
