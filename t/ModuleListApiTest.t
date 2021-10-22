@@ -30,10 +30,17 @@ my $api = EzmaxApi::ModuleListApi->new();
 isa_ok($api, 'EzmaxApi::ModuleListApi');
 
 #
-# list_listpresentation_v1 test
+# list_get_listpresentation_v1 test
 #
 # uncomment below and update the test
-#my $list_listpresentation_v1_s_list_name = undef; # replace NULL with a proper value
-#my $list_listpresentation_v1_list_save_listpresentation_v1_request = undef; # replace NULL with a proper value
-#my $list_listpresentation_v1_result = $api->list_listpresentation_v1(s_list_name => $list_listpresentation_v1_s_list_name, list_save_listpresentation_v1_request => $list_listpresentation_v1_list_save_listpresentation_v1_request);
+#my $list_get_listpresentation_v1_s_list_name = undef; # replace NULL with a proper value
+#my $list_get_listpresentation_v1_result = $api->list_get_listpresentation_v1(s_list_name => $list_get_listpresentation_v1_s_list_name);
+
+#
+# list_save_listpresentation_v1 test
+#
+# uncomment below and update the test
+#my $list_save_listpresentation_v1_s_list_name = undef; # replace NULL with a proper value
+#my $list_save_listpresentation_v1_list_save_listpresentation_v1_request = undef; # replace NULL with a proper value
+#my $list_save_listpresentation_v1_result = $api->list_save_listpresentation_v1(s_list_name => $list_save_listpresentation_v1_s_list_name, list_save_listpresentation_v1_request => $list_save_listpresentation_v1_list_save_listpresentation_v1_request);
 

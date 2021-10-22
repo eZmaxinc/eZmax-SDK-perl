@@ -1,13 +1,14 @@
-# EzmaxApi::Object::ListSaveListpresentationV1Response
+# EzmaxApi::Object::ListGetListpresentationV1Response
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::ListSaveListpresentationV1Response;
+use EzmaxApi::Object::ListGetListpresentationV1Response;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**m_payload** | [**ListGetListpresentationV1ResponseMPayload**](ListGetListpresentationV1ResponseMPayload.md) |  | 
 **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
 **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
 

@@ -49,7 +49,74 @@ sub new {
 
 
 #
-# list_listpresentation_v1
+# list_get_listpresentation_v1
+#
+# Get all Listpresentation for a specific list
+#
+# @param string $s_list_name The list Name (required)
+{
+    my $params = {
+    's_list_name' => {
+        data_type => 'string',
+        description => 'The list Name',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'list_get_listpresentation_v1' } = {
+        summary => 'Get all Listpresentation for a specific list',
+        params => $params,
+        returns => 'ListGetListpresentationV1Response',
+        };
+}
+# @return ListGetListpresentationV1Response
+#
+sub list_get_listpresentation_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 's_list_name' is set
+    unless (exists $args{'s_list_name'}) {
+      croak("Missing the required parameter 's_list_name' when calling list_get_listpresentation_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/module/list/listpresentation/{sListName}';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'s_list_name'}) {
+        my $_base_variable = "{" . "sListName" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'s_list_name'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('ListGetListpresentationV1Response', $response);
+    return $_response_object;
+}
+
+#
+# list_save_listpresentation_v1
 #
 # Save all Listpresentation for a specific list
 #
@@ -68,7 +135,7 @@ sub new {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'list_listpresentation_v1' } = {
+    __PACKAGE__->method_documentation->{ 'list_save_listpresentation_v1' } = {
         summary => 'Save all Listpresentation for a specific list',
         params => $params,
         returns => 'ListSaveListpresentationV1Response',
@@ -76,17 +143,17 @@ sub new {
 }
 # @return ListSaveListpresentationV1Response
 #
-sub list_listpresentation_v1 {
+sub list_save_listpresentation_v1 {
     my ($self, %args) = @_;
 
     # verify the required parameter 's_list_name' is set
     unless (exists $args{'s_list_name'}) {
-      croak("Missing the required parameter 's_list_name' when calling list_listpresentation_v1");
+      croak("Missing the required parameter 's_list_name' when calling list_save_listpresentation_v1");
     }
 
     # verify the required parameter 'list_save_listpresentation_v1_request' is set
     unless (exists $args{'list_save_listpresentation_v1_request'}) {
-      croak("Missing the required parameter 'list_save_listpresentation_v1_request' when calling list_listpresentation_v1");
+      croak("Missing the required parameter 'list_save_listpresentation_v1_request' when calling list_save_listpresentation_v1");
     }
 
     # parse inputs

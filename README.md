@@ -401,10 +401,11 @@ use EzmaxApi::Object::FranchisereferalincomeRequestCompound;
 use EzmaxApi::Object::FranchisereferalincomeRequestCompoundAllOf;
 use EzmaxApi::Object::GlobalCustomerGetEndpointV1Response;
 use EzmaxApi::Object::HeaderAcceptLanguage;
+use EzmaxApi::Object::ListGetListpresentationV1Response;
+use EzmaxApi::Object::ListGetListpresentationV1ResponseAllOf;
+use EzmaxApi::Object::ListGetListpresentationV1ResponseMPayload;
 use EzmaxApi::Object::ListSaveListpresentationV1Request;
 use EzmaxApi::Object::ListSaveListpresentationV1Response;
-use EzmaxApi::Object::ListSaveListpresentationV1ResponseAllOf;
-use EzmaxApi::Object::ListSaveListpresentationV1ResponseMPayload;
 use EzmaxApi::Object::ListpresentationRequest;
 use EzmaxApi::Object::MultilingualApikeyDescription;
 use EzmaxApi::Object::PhoneRequest;
@@ -613,10 +614,11 @@ use EzmaxApi::Object::FranchisereferalincomeRequestCompound;
 use EzmaxApi::Object::FranchisereferalincomeRequestCompoundAllOf;
 use EzmaxApi::Object::GlobalCustomerGetEndpointV1Response;
 use EzmaxApi::Object::HeaderAcceptLanguage;
+use EzmaxApi::Object::ListGetListpresentationV1Response;
+use EzmaxApi::Object::ListGetListpresentationV1ResponseAllOf;
+use EzmaxApi::Object::ListGetListpresentationV1ResponseMPayload;
 use EzmaxApi::Object::ListSaveListpresentationV1Request;
 use EzmaxApi::Object::ListSaveListpresentationV1Response;
-use EzmaxApi::Object::ListSaveListpresentationV1ResponseAllOf;
-use EzmaxApi::Object::ListSaveListpresentationV1ResponseMPayload;
 use EzmaxApi::Object::ListpresentationRequest;
 use EzmaxApi::Object::MultilingualApikeyDescription;
 use EzmaxApi::Object::PhoneRequest;
@@ -680,7 +682,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *GlobalCustomerApi* | [**global_customer_get_endpoint_v1**](docs/GlobalCustomerApi.md#global_customer_get_endpoint_v1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
 *ModuleAuthenticateApi* | [**authenticate_authenticate_v2**](docs/ModuleAuthenticateApi.md#authenticate_authenticate_v2) | **POST** /2/module/authenticate/authenticate/{eSessionType} | Authenticate a user
-*ModuleListApi* | [**list_listpresentation_v1**](docs/ModuleListApi.md#list_listpresentation_v1) | **POST** /1/module/list/listpresentation/{sListName} | Save all Listpresentation for a specific list
+*ModuleListApi* | [**list_get_listpresentation_v1**](docs/ModuleListApi.md#list_get_listpresentation_v1) | **GET** /1/module/list/listpresentation/{sListName} | Get all Listpresentation for a specific list
+*ModuleListApi* | [**list_save_listpresentation_v1**](docs/ModuleListApi.md#list_save_listpresentation_v1) | **POST** /1/module/list/listpresentation/{sListName} | Save all Listpresentation for a specific list
 *ModuleSsprApi* | [**sspr_reset_password_request_v1**](docs/ModuleSsprApi.md#sspr_reset_password_request_v1) | **POST** /1/module/sspr/resetPasswordRequest | Reset Password Request
 *ModuleSsprApi* | [**sspr_reset_password_v1**](docs/ModuleSsprApi.md#sspr_reset_password_v1) | **POST** /1/module/sspr/resetPassword | Reset Password
 *ModuleSsprApi* | [**sspr_send_usernames_v1**](docs/ModuleSsprApi.md#sspr_send_usernames_v1) | **POST** /1/module/sspr/sendUsernames | Send username(s)
@@ -875,10 +878,11 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::FranchisereferalincomeRequestCompoundAllOf](docs/FranchisereferalincomeRequestCompoundAllOf.md)
  - [EzmaxApi::Object::GlobalCustomerGetEndpointV1Response](docs/GlobalCustomerGetEndpointV1Response.md)
  - [EzmaxApi::Object::HeaderAcceptLanguage](docs/HeaderAcceptLanguage.md)
+ - [EzmaxApi::Object::ListGetListpresentationV1Response](docs/ListGetListpresentationV1Response.md)
+ - [EzmaxApi::Object::ListGetListpresentationV1ResponseAllOf](docs/ListGetListpresentationV1ResponseAllOf.md)
+ - [EzmaxApi::Object::ListGetListpresentationV1ResponseMPayload](docs/ListGetListpresentationV1ResponseMPayload.md)
  - [EzmaxApi::Object::ListSaveListpresentationV1Request](docs/ListSaveListpresentationV1Request.md)
  - [EzmaxApi::Object::ListSaveListpresentationV1Response](docs/ListSaveListpresentationV1Response.md)
- - [EzmaxApi::Object::ListSaveListpresentationV1ResponseAllOf](docs/ListSaveListpresentationV1ResponseAllOf.md)
- - [EzmaxApi::Object::ListSaveListpresentationV1ResponseMPayload](docs/ListSaveListpresentationV1ResponseMPayload.md)
  - [EzmaxApi::Object::ListpresentationRequest](docs/ListpresentationRequest.md)
  - [EzmaxApi::Object::MultilingualApikeyDescription](docs/MultilingualApikeyDescription.md)
  - [EzmaxApi::Object::PhoneRequest](docs/PhoneRequest.md)

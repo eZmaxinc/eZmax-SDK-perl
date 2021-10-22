@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::ListSaveListpresentationV1ResponseAllOf');
+use_ok('EzmaxApi::Object::ListGetListpresentationV1ResponseAllOf');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::ListSaveListpresentationV1ResponseAllOf->new();
+#my $instance = EzmaxApi::Object::ListGetListpresentationV1ResponseAllOf->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::ListSaveListpresentationV1ResponseAllOf');
+#isa_ok($instance, 'EzmaxApi::Object::ListGetListpresentationV1ResponseAllOf');
 
