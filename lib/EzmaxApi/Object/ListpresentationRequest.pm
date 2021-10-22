@@ -202,6 +202,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_listpresentation_default' => {
+        datatype => 'boolean',
+        base_name => 'bListpresentationDefault',
+        description => 'Set to true if the user chose this Listpresentation as the default one. A single element should be set to true',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -210,7 +217,8 @@ __PACKAGE__->openapi_types( {
     's_listpresentation_orderby' => 'string',
     'a_s_column_name' => 'ARRAY[string]',
     'i_listpresentation_row_max' => 'int',
-    'i_listpresentation_row_offset' => 'int'
+    'i_listpresentation_row_offset' => 'int',
+    'b_listpresentation_default' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -219,7 +227,8 @@ __PACKAGE__->attribute_map( {
     's_listpresentation_orderby' => 'sListpresentationOrderby',
     'a_s_column_name' => 'a_sColumnName',
     'i_listpresentation_row_max' => 'iListpresentationRowMax',
-    'i_listpresentation_row_offset' => 'iListpresentationRowOffset'
+    'i_listpresentation_row_offset' => 'iListpresentationRowOffset',
+    'b_listpresentation_default' => 'bListpresentationDefault'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
