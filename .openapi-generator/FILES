@@ -25,6 +25,8 @@ docs/CommonGetAutocompleteV1ResponseAllOf.md
 docs/CommonGetListV1ResponseMPayload.md
 docs/CommonResponse.md
 docs/CommonResponseError.md
+docs/CommonResponseErrorSTemporaryFileUrl.md
+docs/CommonResponseErrorSTemporaryFileUrlAllOf.md
 docs/CommonResponseFilter.md
 docs/CommonResponseGetList.md
 docs/CommonResponseObjDebug.md
@@ -234,6 +236,8 @@ lib/EzmaxApi/Object/CommonGetAutocompleteV1ResponseAllOf.pm
 lib/EzmaxApi/Object/CommonGetListV1ResponseMPayload.pm
 lib/EzmaxApi/Object/CommonResponse.pm
 lib/EzmaxApi/Object/CommonResponseError.pm
+lib/EzmaxApi/Object/CommonResponseErrorSTemporaryFileUrl.pm
+lib/EzmaxApi/Object/CommonResponseErrorSTemporaryFileUrlAllOf.pm
 lib/EzmaxApi/Object/CommonResponseFilter.pm
 lib/EzmaxApi/Object/CommonResponseGetList.pm
 lib/EzmaxApi/Object/CommonResponseObjDebug.pm
@@ -429,6 +433,8 @@ t/CommonAuditTest.t
 t/CommonGetAutocompleteV1ResponseAllOfTest.t
 t/CommonGetAutocompleteV1ResponseTest.t
 t/CommonGetListV1ResponseMPayloadTest.t
+t/CommonResponseErrorSTemporaryFileUrlAllOfTest.t
+t/CommonResponseErrorSTemporaryFileUrlTest.t
 t/CommonResponseErrorTest.t
 t/CommonResponseFilterTest.t
 t/CommonResponseGetListTest.t

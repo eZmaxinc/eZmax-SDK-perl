@@ -274,6 +274,8 @@ use EzmaxApi::Object::CommonGetAutocompleteV1ResponseAllOf;
 use EzmaxApi::Object::CommonGetListV1ResponseMPayload;
 use EzmaxApi::Object::CommonResponse;
 use EzmaxApi::Object::CommonResponseError;
+use EzmaxApi::Object::CommonResponseErrorSTemporaryFileUrl;
+use EzmaxApi::Object::CommonResponseErrorSTemporaryFileUrlAllOf;
 use EzmaxApi::Object::CommonResponseFilter;
 use EzmaxApi::Object::CommonResponseGetList;
 use EzmaxApi::Object::CommonResponseObjDebug;
@@ -487,6 +489,8 @@ use EzmaxApi::Object::CommonGetAutocompleteV1ResponseAllOf;
 use EzmaxApi::Object::CommonGetListV1ResponseMPayload;
 use EzmaxApi::Object::CommonResponse;
 use EzmaxApi::Object::CommonResponseError;
+use EzmaxApi::Object::CommonResponseErrorSTemporaryFileUrl;
+use EzmaxApi::Object::CommonResponseErrorSTemporaryFileUrlAllOf;
 use EzmaxApi::Object::CommonResponseFilter;
 use EzmaxApi::Object::CommonResponseGetList;
 use EzmaxApi::Object::CommonResponseObjDebug;
@@ -751,6 +755,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CommonGetListV1ResponseMPayload](docs/CommonGetListV1ResponseMPayload.md)
  - [EzmaxApi::Object::CommonResponse](docs/CommonResponse.md)
  - [EzmaxApi::Object::CommonResponseError](docs/CommonResponseError.md)
+ - [EzmaxApi::Object::CommonResponseErrorSTemporaryFileUrl](docs/CommonResponseErrorSTemporaryFileUrl.md)
+ - [EzmaxApi::Object::CommonResponseErrorSTemporaryFileUrlAllOf](docs/CommonResponseErrorSTemporaryFileUrlAllOf.md)
  - [EzmaxApi::Object::CommonResponseFilter](docs/CommonResponseFilter.md)
  - [EzmaxApi::Object::CommonResponseGetList](docs/CommonResponseGetList.md)
  - [EzmaxApi::Object::CommonResponseObjDebug](docs/CommonResponseObjDebug.md)
