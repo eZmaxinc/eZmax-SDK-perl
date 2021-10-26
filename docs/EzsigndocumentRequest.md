@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **e_ezsigndocument_source** | **string** | Indicates where to look for the document binary content. | 
 **e_ezsigndocument_format** | **string** | Indicates the format of the document. | 
 **s_ezsigndocument_base64** | **string** | The Base64 encoded binary content of the document.  This field is Required when eEzsigndocumentSource &#x3D; Base64. | [optional] 
+**s_ezsigndocument_url** | **string** | The url where the document content resides.  This field is Required when eEzsigndocumentSource &#x3D; Url. | [optional] 
+**b_ezsigndocument_forcerepair** | **boolean** | Try to repair the document or flatten it if it cannot be used for electronic signature.  | [optional] [default to true]
 **s_ezsigndocument_password** | **string** | If the source document is password protected, the password to open/modify it. | [optional] [default to &#39;&#39;]
 **fki_ezsignfolder_id** | **int** | The unique ID of the Ezsignfolder | 
 **dt_ezsigndocument_duedate** | **string** | The maximum date and time at which the document can be signed. | 
