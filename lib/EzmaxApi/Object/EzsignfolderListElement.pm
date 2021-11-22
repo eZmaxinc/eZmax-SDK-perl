@@ -194,7 +194,7 @@ __PACKAGE__->method_documentation({
     's_ezsignfolder_description' => {
         datatype => 'string',
         base_name => 'sEzsignfolderDescription',
-        description => 'The description of the Ezsign Folder',
+        description => 'The description of the Ezsignfolder',
         format => '',
         read_only => '',
             },
@@ -226,30 +226,30 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'i_total_document' => {
+    'i_ezsigndocument' => {
         datatype => 'int',
-        base_name => 'iTotalDocument',
+        base_name => 'iEzsigndocument',
         description => 'The total number of Ezsigndocument in the folder',
         format => '',
         read_only => '',
             },
-    'i_total_document_edm' => {
+    'i_ezsigndocument_edm' => {
         datatype => 'int',
-        base_name => 'iTotalDocumentEdm',
+        base_name => 'iEzsigndocumentEdm',
         description => 'The total number of Ezsigndocument in the folder that were saved in the edm system',
         format => '',
         read_only => '',
             },
-    'i_total_signature' => {
+    'i_ezsignsignature' => {
         datatype => 'int',
-        base_name => 'iTotalSignature',
+        base_name => 'iEzsignsignature',
         description => 'The total number of signature blocks in all Ezsigndocuments in the folder',
         format => '',
         read_only => '',
             },
-    'i_total_signature_signed' => {
+    'i_ezsignsignature_signed' => {
         datatype => 'int',
-        base_name => 'iTotalSignatureSigned',
+        base_name => 'iEzsignsignatureSigned',
         description => 'The total number of already signed signature blocks in all Ezsigndocuments in the folder',
         format => '',
         read_only => '',
@@ -266,10 +266,10 @@ __PACKAGE__->openapi_types( {
     'dt_created_date' => 'string',
     'dt_ezsignfolder_sentdate' => 'OneOfstringobject',
     'dt_due_date' => 'OneOfstringobject',
-    'i_total_document' => 'int',
-    'i_total_document_edm' => 'int',
-    'i_total_signature' => 'int',
-    'i_total_signature_signed' => 'int'
+    'i_ezsigndocument' => 'int',
+    'i_ezsigndocument_edm' => 'int',
+    'i_ezsignsignature' => 'int',
+    'i_ezsignsignature_signed' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -282,10 +282,10 @@ __PACKAGE__->attribute_map( {
     'dt_created_date' => 'dtCreatedDate',
     'dt_ezsignfolder_sentdate' => 'dtEzsignfolderSentdate',
     'dt_due_date' => 'dtDueDate',
-    'i_total_document' => 'iTotalDocument',
-    'i_total_document_edm' => 'iTotalDocumentEdm',
-    'i_total_signature' => 'iTotalSignature',
-    'i_total_signature_signed' => 'iTotalSignatureSigned'
+    'i_ezsigndocument' => 'iEzsigndocument',
+    'i_ezsigndocument_edm' => 'iEzsigndocumentEdm',
+    'i_ezsignsignature' => 'iEzsignsignature',
+    'i_ezsignsignature_signed' => 'iEzsignsignatureSigned'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

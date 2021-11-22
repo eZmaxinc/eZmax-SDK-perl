@@ -171,7 +171,7 @@ __PACKAGE__->method_documentation({
     's_ezsignfolder_description' => {
         datatype => 'string',
         base_name => 'sEzsignfolderDescription',
-        description => 'The description of the Ezsign Folder',
+        description => 'The description of the Ezsignfolder',
         format => '',
         read_only => '',
             },

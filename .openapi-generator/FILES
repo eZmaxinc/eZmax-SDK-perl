@@ -48,6 +48,11 @@ docs/CustomFormsDataFolderResponse.md
 docs/CustomWordPositionOccurenceResponse.md
 docs/CustomWordPositionWordResponse.md
 docs/EmailRequest.md
+docs/EzsignbulksendGetListV1Response.md
+docs/EzsignbulksendGetListV1ResponseAllOf.md
+docs/EzsignbulksendGetListV1ResponseMPayload.md
+docs/EzsignbulksendGetListV1ResponseMPayloadAllOf.md
+docs/EzsignbulksendListElement.md
 docs/EzsigndocumentApplyEzsigntemplateV1Request.md
 docs/EzsigndocumentApplyEzsigntemplateV1Response.md
 docs/EzsigndocumentApplyEzsigntemplateV2Request.md
@@ -168,6 +173,7 @@ docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
 docs/ObjectActivesessionApi.md
 docs/ObjectApikeyApi.md
+docs/ObjectEzsignbulksendApi.md
 docs/ObjectEzsigndocumentApi.md
 docs/ObjectEzsignfolderApi.md
 docs/ObjectEzsignfoldersignerassociationApi.md
@@ -259,6 +265,11 @@ lib/EzmaxApi/Object/CustomFormsDataFolderResponse.pm
 lib/EzmaxApi/Object/CustomWordPositionOccurenceResponse.pm
 lib/EzmaxApi/Object/CustomWordPositionWordResponse.pm
 lib/EzmaxApi/Object/EmailRequest.pm
+lib/EzmaxApi/Object/EzsignbulksendGetListV1Response.pm
+lib/EzmaxApi/Object/EzsignbulksendGetListV1ResponseAllOf.pm
+lib/EzmaxApi/Object/EzsignbulksendGetListV1ResponseMPayload.pm
+lib/EzmaxApi/Object/EzsignbulksendGetListV1ResponseMPayloadAllOf.pm
+lib/EzmaxApi/Object/EzsignbulksendListElement.pm
 lib/EzmaxApi/Object/EzsigndocumentApplyEzsigntemplateV1Request.pm
 lib/EzmaxApi/Object/EzsigndocumentApplyEzsigntemplateV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentApplyEzsigntemplateV2Request.pm
@@ -402,6 +413,7 @@ lib/EzmaxApi/Object/WebhookUserUserCreatedAllOf.pm
 lib/EzmaxApi/Object/WebsiteRequest.pm
 lib/EzmaxApi/ObjectActivesessionApi.pm
 lib/EzmaxApi/ObjectApikeyApi.pm
+lib/EzmaxApi/ObjectEzsignbulksendApi.pm
 lib/EzmaxApi/ObjectEzsigndocumentApi.pm
 lib/EzmaxApi/ObjectEzsignfolderApi.pm
 lib/EzmaxApi/ObjectEzsignfoldersignerassociationApi.pm
@@ -458,6 +470,11 @@ t/CustomFormsDataFolderResponseTest.t
 t/CustomWordPositionOccurenceResponseTest.t
 t/CustomWordPositionWordResponseTest.t
 t/EmailRequestTest.t
+t/EzsignbulksendGetListV1ResponseAllOfTest.t
+t/EzsignbulksendGetListV1ResponseMPayloadAllOfTest.t
+t/EzsignbulksendGetListV1ResponseMPayloadTest.t
+t/EzsignbulksendGetListV1ResponseTest.t
+t/EzsignbulksendListElementTest.t
 t/EzsigndocumentApplyEzsigntemplateV1RequestTest.t
 t/EzsigndocumentApplyEzsigntemplateV1ResponseTest.t
 t/EzsigndocumentApplyEzsigntemplateV2RequestTest.t
@@ -578,6 +595,7 @@ t/ModuleUserApiTest.t
 t/MultilingualApikeyDescriptionTest.t
 t/ObjectActivesessionApiTest.t
 t/ObjectApikeyApiTest.t
+t/ObjectEzsignbulksendApiTest.t
 t/ObjectEzsigndocumentApiTest.t
 t/ObjectEzsignfolderApiTest.t
 t/ObjectEzsignfoldersignerassociationApiTest.t
