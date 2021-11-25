@@ -244,6 +244,7 @@ use EzmaxApi::ObjectEzsignfolderApi;
 use EzmaxApi::ObjectEzsignfoldersignerassociationApi;
 use EzmaxApi::ObjectEzsignfoldertypeApi;
 use EzmaxApi::ObjectEzsignsignatureApi;
+use EzmaxApi::ObjectEzsigntemplatepackageApi;
 use EzmaxApi::ObjectFranchisebrokerApi;
 use EzmaxApi::ObjectFranchiseofficeApi;
 use EzmaxApi::ObjectFranchisereferalincomeApi;
@@ -392,11 +393,17 @@ use EzmaxApi::Object::EzsignsignerRequest;
 use EzmaxApi::Object::EzsignsignerRequestCompound;
 use EzmaxApi::Object::EzsignsignerRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignsignerRequestCompoundContact;
+use EzmaxApi::Object::EzsigntemplatepackageGetListV1Response;
+use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseAllOf;
+use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload;
+use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayloadAllOf;
+use EzmaxApi::Object::EzsigntemplatepackageListElement;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
+use EzmaxApi::Object::FieldEEzsigntemplatepackageType;
 use EzmaxApi::Object::FieldEPhoneType;
 use EzmaxApi::Object::FieldEUserType;
 use EzmaxApi::Object::FieldEUserTypeSSPR;
@@ -468,6 +475,7 @@ use EzmaxApi::ObjectEzsignfolderApi;
 use EzmaxApi::ObjectEzsignfoldersignerassociationApi;
 use EzmaxApi::ObjectEzsignfoldertypeApi;
 use EzmaxApi::ObjectEzsignsignatureApi;
+use EzmaxApi::ObjectEzsigntemplatepackageApi;
 use EzmaxApi::ObjectFranchisebrokerApi;
 use EzmaxApi::ObjectFranchiseofficeApi;
 use EzmaxApi::ObjectFranchisereferalincomeApi;
@@ -613,11 +621,17 @@ use EzmaxApi::Object::EzsignsignerRequest;
 use EzmaxApi::Object::EzsignsignerRequestCompound;
 use EzmaxApi::Object::EzsignsignerRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignsignerRequestCompoundContact;
+use EzmaxApi::Object::EzsigntemplatepackageGetListV1Response;
+use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseAllOf;
+use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload;
+use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayloadAllOf;
+use EzmaxApi::Object::EzsigntemplatepackageListElement;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
+use EzmaxApi::Object::FieldEEzsigntemplatepackageType;
 use EzmaxApi::Object::FieldEPhoneType;
 use EzmaxApi::Object::FieldEUserType;
 use EzmaxApi::Object::FieldEUserTypeSSPR;
@@ -739,6 +753,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsignsignatureApi* | [**ezsignsignature_delete_object_v1**](docs/ObjectEzsignsignatureApi.md#ezsignsignature_delete_object_v1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
 *ObjectEzsignsignatureApi* | [**ezsignsignature_get_children_v1**](docs/ObjectEzsignsignatureApi.md#ezsignsignature_get_children_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren | Retrieve an existing Ezsignsignature&#39;s children IDs
 *ObjectEzsignsignatureApi* | [**ezsignsignature_get_object_v1**](docs/ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
+*ObjectEzsigntemplatepackageApi* | [**ezsigntemplatepackage_get_list_v1**](docs/ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_get_list_v1) | **GET** /1/object/ezsigntemplatepackage/getList | Retrieve Ezsigntemplatepackage list
 *ObjectFranchisebrokerApi* | [**franchisebroker_get_autocomplete_v1**](docs/ObjectFranchisebrokerApi.md#franchisebroker_get_autocomplete_v1) | **GET** /1/object/franchisebroker/getAutocomplete/{sSelector} | Retrieve Franchisebrokers and IDs
 *ObjectFranchiseofficeApi* | [**franchiseoffice_get_autocomplete_v1**](docs/ObjectFranchiseofficeApi.md#franchiseoffice_get_autocomplete_v1) | **GET** /1/object/franchiseoffice/getAutocomplete/{sSelector} | Retrieve Franchiseoffices and IDs
 *ObjectFranchisereferalincomeApi* | [**franchisereferalincome_create_object_v1**](docs/ObjectFranchisereferalincomeApi.md#franchisereferalincome_create_object_v1) | **POST** /1/object/franchisereferalincome | Create a new Franchisereferalincome
@@ -885,11 +900,17 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignsignerRequestCompound](docs/EzsignsignerRequestCompound.md)
  - [EzmaxApi::Object::EzsignsignerRequestCompoundAllOf](docs/EzsignsignerRequestCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignsignerRequestCompoundContact](docs/EzsignsignerRequestCompoundContact.md)
+ - [EzmaxApi::Object::EzsigntemplatepackageGetListV1Response](docs/EzsigntemplatepackageGetListV1Response.md)
+ - [EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseAllOf](docs/EzsigntemplatepackageGetListV1ResponseAllOf.md)
+ - [EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload](docs/EzsigntemplatepackageGetListV1ResponseMPayload.md)
+ - [EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayloadAllOf](docs/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md)
+ - [EzmaxApi::Object::EzsigntemplatepackageListElement](docs/EzsigntemplatepackageListElement.md)
  - [EzmaxApi::Object::FieldEEzsigndocumentStep](docs/FieldEEzsigndocumentStep.md)
  - [EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency](docs/FieldEEzsignfolderSendreminderfrequency.md)
  - [EzmaxApi::Object::FieldEEzsignfolderStep](docs/FieldEEzsignfolderStep.md)
  - [EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel](docs/FieldEEzsignfoldertypePrivacylevel.md)
  - [EzmaxApi::Object::FieldEEzsignsignatureType](docs/FieldEEzsignsignatureType.md)
+ - [EzmaxApi::Object::FieldEEzsigntemplatepackageType](docs/FieldEEzsigntemplatepackageType.md)
  - [EzmaxApi::Object::FieldEPhoneType](docs/FieldEPhoneType.md)
  - [EzmaxApi::Object::FieldEUserType](docs/FieldEUserType.md)
  - [EzmaxApi::Object::FieldEUserTypeSSPR](docs/FieldEUserTypeSSPR.md)
