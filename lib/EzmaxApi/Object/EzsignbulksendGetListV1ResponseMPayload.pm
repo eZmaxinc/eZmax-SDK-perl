@@ -163,9 +163,9 @@ __PACKAGE__->class_documentation({description => 'Payload for the /1/object/ezsi
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'a_obj_ezsignfolder' => {
+    'a_obj_ezsignbulksend' => {
         datatype => 'ARRAY[EzsignbulksendListElement]',
-        base_name => 'a_objEzsignfolder',
+        base_name => 'a_objEzsignbulksend',
         description => '',
         format => '',
         read_only => '',
@@ -187,13 +187,13 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'a_obj_ezsignfolder' => 'ARRAY[EzsignbulksendListElement]',
+    'a_obj_ezsignbulksend' => 'ARRAY[EzsignbulksendListElement]',
     'i_row_returned' => 'int',
     'i_row_filtered' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
-    'a_obj_ezsignfolder' => 'a_objEzsignfolder',
+    'a_obj_ezsignbulksend' => 'a_objEzsignbulksend',
     'i_row_returned' => 'iRowReturned',
     'i_row_filtered' => 'iRowFiltered'
 } );

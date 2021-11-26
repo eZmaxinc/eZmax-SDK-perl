@@ -161,9 +161,9 @@ __PACKAGE__->class_documentation({description => '',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'a_obj_ezsignfolder' => {
+    'a_obj_ezsignbulksend' => {
         datatype => 'ARRAY[EzsignbulksendListElement]',
-        base_name => 'a_objEzsignfolder',
+        base_name => 'a_objEzsignbulksend',
         description => '',
         format => '',
         read_only => '',
@@ -171,11 +171,11 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'a_obj_ezsignfolder' => 'ARRAY[EzsignbulksendListElement]'
+    'a_obj_ezsignbulksend' => 'ARRAY[EzsignbulksendListElement]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'a_obj_ezsignfolder' => 'a_objEzsignfolder'
+    'a_obj_ezsignbulksend' => 'a_objEzsignbulksend'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

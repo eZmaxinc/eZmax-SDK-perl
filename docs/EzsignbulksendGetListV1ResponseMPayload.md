@@ -8,7 +8,7 @@ use EzmaxApi::Object::EzsignbulksendGetListV1ResponseMPayload;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_obj_ezsignfolder** | [**ARRAY[EzsignbulksendListElement]**](EzsignbulksendListElement.md) |  | [optional] 
+**a_obj_ezsignbulksend** | [**ARRAY[EzsignbulksendListElement]**](EzsignbulksendListElement.md) |  | 
 **i_row_returned** | **int** | The number of rows returned | 
 **i_row_filtered** | **int** | The number of rows matching your filters (if any) or the total number of rows | 
 
