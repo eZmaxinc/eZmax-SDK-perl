@@ -30,7 +30,6 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::OneOfintegerstring;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -176,7 +175,7 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'm_value' => {
-        datatype => 'OneOfintegerstring',
+        datatype => 'string',
         base_name => 'mValue',
         description => 'The Unique ID of the element',
         format => '',
@@ -187,7 +186,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     's_category' => 'string',
     's_label' => 'string',
-    'm_value' => 'OneOfintegerstring'
+    'm_value' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {

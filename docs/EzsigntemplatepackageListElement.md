@@ -9,9 +9,9 @@ use EzmaxApi::Object::EzsigntemplatepackageListElement;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pki_ezsigntemplatepackage_id** | **int** | The unique ID of the Ezsigntemplatepackage | 
-**fki_department_id** | [**OneOfintegerobject**](OneOfintegerobject.md) |  | 
-**fki_team_id** | [**OneOfintegerobject**](OneOfintegerobject.md) |  | 
-**fki_ezsignfoldertype_id** | [**OneOfintegerobject**](OneOfintegerobject.md) |  | 
+**fki_department_id** | **int** | The unique ID of the Department. | 
+**fki_team_id** | **int** | The unique ID of the Team | 
+**fki_ezsignfoldertype_id** | **int** | The unique ID of the Ezsignfoldertype. | 
 **fki_language_id** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | 
 **e_ezsigntemplatepackage_type** | [**FieldEEzsigntemplatepackageType**](FieldEEzsigntemplatepackageType.md) |  | 
 **s_ezsigntemplatepackage_description** | **string** | The description of the Ezsigntemplatepackage | 

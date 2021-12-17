@@ -31,7 +31,6 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::FieldEEzsigntemplatepackageType;
-use EzmaxApi::Object::OneOfintegerobject;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -170,23 +169,23 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'fki_department_id' => {
-        datatype => 'OneOfintegerobject',
+        datatype => 'int',
         base_name => 'fkiDepartmentID',
-        description => '',
+        description => 'The unique ID of the Department.',
         format => '',
         read_only => '',
             },
     'fki_team_id' => {
-        datatype => 'OneOfintegerobject',
+        datatype => 'int',
         base_name => 'fkiTeamID',
-        description => '',
+        description => 'The unique ID of the Team',
         format => '',
         read_only => '',
             },
     'fki_ezsignfoldertype_id' => {
-        datatype => 'OneOfintegerobject',
+        datatype => 'int',
         base_name => 'fkiEzsignfoldertypeID',
-        description => '',
+        description => 'The unique ID of the Ezsignfoldertype.',
         format => '',
         read_only => '',
             },
@@ -229,9 +228,9 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'pki_ezsigntemplatepackage_id' => 'int',
-    'fki_department_id' => 'OneOfintegerobject',
-    'fki_team_id' => 'OneOfintegerobject',
-    'fki_ezsignfoldertype_id' => 'OneOfintegerobject',
+    'fki_department_id' => 'int',
+    'fki_team_id' => 'int',
+    'fki_ezsignfoldertype_id' => 'int',
     'fki_language_id' => 'int',
     'e_ezsigntemplatepackage_type' => 'FieldEEzsigntemplatepackageType',
     's_ezsigntemplatepackage_description' => 'string',

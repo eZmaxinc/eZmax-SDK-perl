@@ -32,7 +32,6 @@ use DateTime;
 
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
-use EzmaxApi::Object::OneOfstringobject;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -213,16 +212,16 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'dt_ezsignfolder_sentdate' => {
-        datatype => 'OneOfstringobject',
+        datatype => 'string',
         base_name => 'dtEzsignfolderSentdate',
-        description => '',
+        description => 'The date and time at which the Ezsign folder was sent the last time.',
         format => '',
         read_only => '',
             },
     'dt_due_date' => {
-        datatype => 'OneOfstringobject',
+        datatype => 'string',
         base_name => 'dtDueDate',
-        description => 'The date at which no more signature will be accepted on the folder',
+        description => 'Represent a Date Time. The timezone is the one configured in the User&#39;s profile.',
         format => '',
         read_only => '',
             },
@@ -264,8 +263,8 @@ __PACKAGE__->openapi_types( {
     's_ezsignfolder_description' => 'string',
     'e_ezsignfolder_step' => 'FieldEEzsignfolderStep',
     'dt_created_date' => 'string',
-    'dt_ezsignfolder_sentdate' => 'OneOfstringobject',
-    'dt_due_date' => 'OneOfstringobject',
+    'dt_ezsignfolder_sentdate' => 'string',
+    'dt_due_date' => 'string',
     'i_ezsigndocument' => 'int',
     'i_ezsigndocument_edm' => 'int',
     'i_ezsignsignature' => 'int',
