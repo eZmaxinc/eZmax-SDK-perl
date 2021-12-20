@@ -11,7 +11,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ezsignsignature_create_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature
 [**ezsignsignature_delete_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_delete_object_v1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
-[**ezsignsignature_get_children_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_children_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren | Retrieve an existing Ezsignsignature&#39;s children IDs
 [**ezsignsignature_get_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
 
 
@@ -103,56 +102,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsignsignatureDeleteObjectV1Response**](EzsignsignatureDeleteObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ezsignsignature_get_children_v1**
-> ezsignsignature_get_children_v1(pki_ezsignsignature_id => $pki_ezsignsignature_id)
-
-Retrieve an existing Ezsignsignature's children IDs
-
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-
-### Example
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectEzsignsignatureApi;
-my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $pki_ezsignsignature_id = 56; # int | 
-
-eval {
-    $api_instance->ezsignsignature_get_children_v1(pki_ezsignsignature_id => $pki_ezsignsignature_id);
-};
-if ($@) {
-    warn "Exception when calling ObjectEzsignsignatureApi->ezsignsignature_get_children_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pki_ezsignsignature_id** | **int**|  | 
-
-### Return type
-
-void (empty response body)
 
 ### Authorization
 

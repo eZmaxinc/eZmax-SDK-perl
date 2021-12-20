@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ezsignfolder_create_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_create_object_v1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
 [**ezsignfolder_delete_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_delete_object_v1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
-[**ezsignfolder_get_children_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_children_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
+[**ezsignfolder_get_ezsigndocuments_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_ezsigndocuments_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
 [**ezsignfolder_get_forms_data_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_forms_data_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data
 [**ezsignfolder_get_list_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_list_v1) | **GET** /1/object/ezsignfolder/getList | Retrieve Ezsignfolder list
 [**ezsignfolder_get_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_object_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
@@ -119,12 +119,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ezsignfolder_get_children_v1**
-> ezsignfolder_get_children_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id)
+# **ezsignfolder_get_ezsigndocuments_v1**
+> EzsignfolderGetEzsigndocumentsV1Response ezsignfolder_get_ezsigndocuments_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id)
 
-Retrieve an existing Ezsignfolder's children IDs
-
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+Retrieve an existing Ezsignfolder's Ezsigndocuments
 
 ### Example
 ```perl
@@ -141,10 +139,11 @@ my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
 my $pki_ezsignfolder_id = 56; # int | 
 
 eval {
-    $api_instance->ezsignfolder_get_children_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id);
+    my $result = $api_instance->ezsignfolder_get_ezsigndocuments_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id);
+    print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ObjectEzsignfolderApi->ezsignfolder_get_children_v1: $@\n";
+    warn "Exception when calling ObjectEzsignfolderApi->ezsignfolder_get_ezsigndocuments_v1: $@\n";
 }
 ```
 
@@ -156,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**EzsignfolderGetEzsigndocumentsV1Response**](EzsignfolderGetEzsigndocumentsV1Response.md)
 
 ### Authorization
 
@@ -281,8 +280,6 @@ Name | Type | Description  | Notes
 > EzsignfolderGetObjectV1Response ezsignfolder_get_object_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id)
 
 Retrieve an existing Ezsignfolder
-
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
 
 ### Example
 ```perl
