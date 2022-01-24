@@ -31,7 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
-use EzmaxApi::Object::EzsigndocumentResponse;
+use EzmaxApi::Object::EzsigndocumentResponseCompound;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");

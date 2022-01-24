@@ -293,6 +293,8 @@ use EzmaxApi::Object::ContactinformationsRequest;
 use EzmaxApi::Object::ContactinformationsRequestCompound;
 use EzmaxApi::Object::ContactinformationsRequestCompoundAllOf;
 use EzmaxApi::Object::CustomAutocompleteElementResponse;
+use EzmaxApi::Object::CustomEzsignfoldersignerassociationstatusResponse;
+use EzmaxApi::Object::CustomEzsignsignaturestatusResponse;
 use EzmaxApi::Object::CustomFormDataDocumentResponse;
 use EzmaxApi::Object::CustomFormDataSignerResponse;
 use EzmaxApi::Object::CustomFormsDataFolderResponse;
@@ -340,6 +342,9 @@ use EzmaxApi::Object::EzsignfolderDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1Response;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseMPayload;
+use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1Response;
+use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf;
+use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1Response;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1ResponseMPayload;
@@ -353,7 +358,6 @@ use EzmaxApi::Object::EzsignfolderGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderListElement;
 use EzmaxApi::Object::EzsignfolderRequest;
 use EzmaxApi::Object::EzsignfolderRequestCompound;
-use EzmaxApi::Object::EzsignfolderRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignfolderResponse;
 use EzmaxApi::Object::EzsignfolderResponseCompound;
 use EzmaxApi::Object::EzsignfolderSendV1Request;
@@ -399,6 +403,10 @@ use EzmaxApi::Object::EzsignsignerRequest;
 use EzmaxApi::Object::EzsignsignerRequestCompound;
 use EzmaxApi::Object::EzsignsignerRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignsignerRequestCompoundContact;
+use EzmaxApi::Object::EzsignsignerResponse;
+use EzmaxApi::Object::EzsignsignerResponseCompound;
+use EzmaxApi::Object::EzsignsignerResponseCompoundAllOf;
+use EzmaxApi::Object::EzsignsignerResponseCompoundContact;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1Response;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload;
@@ -527,6 +535,8 @@ use EzmaxApi::Object::ContactinformationsRequest;
 use EzmaxApi::Object::ContactinformationsRequestCompound;
 use EzmaxApi::Object::ContactinformationsRequestCompoundAllOf;
 use EzmaxApi::Object::CustomAutocompleteElementResponse;
+use EzmaxApi::Object::CustomEzsignfoldersignerassociationstatusResponse;
+use EzmaxApi::Object::CustomEzsignsignaturestatusResponse;
 use EzmaxApi::Object::CustomFormDataDocumentResponse;
 use EzmaxApi::Object::CustomFormDataSignerResponse;
 use EzmaxApi::Object::CustomFormsDataFolderResponse;
@@ -574,6 +584,9 @@ use EzmaxApi::Object::EzsignfolderDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1Response;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseMPayload;
+use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1Response;
+use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf;
+use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1Response;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1ResponseMPayload;
@@ -587,7 +600,6 @@ use EzmaxApi::Object::EzsignfolderGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderListElement;
 use EzmaxApi::Object::EzsignfolderRequest;
 use EzmaxApi::Object::EzsignfolderRequestCompound;
-use EzmaxApi::Object::EzsignfolderRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignfolderResponse;
 use EzmaxApi::Object::EzsignfolderResponseCompound;
 use EzmaxApi::Object::EzsignfolderSendV1Request;
@@ -633,6 +645,10 @@ use EzmaxApi::Object::EzsignsignerRequest;
 use EzmaxApi::Object::EzsignsignerRequestCompound;
 use EzmaxApi::Object::EzsignsignerRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignsignerRequestCompoundContact;
+use EzmaxApi::Object::EzsignsignerResponse;
+use EzmaxApi::Object::EzsignsignerResponseCompound;
+use EzmaxApi::Object::EzsignsignerResponseCompoundAllOf;
+use EzmaxApi::Object::EzsignsignerResponseCompoundContact;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1Response;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload;
@@ -748,6 +764,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfolderApi* | [**ezsignfolder_create_object_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_create_object_v1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolder_delete_object_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_delete_object_v1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_ezsigndocuments_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_ezsigndocuments_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
+*ObjectEzsignfolderApi* | [**ezsignfolder_get_ezsignfoldersignerassociations_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_ezsignfoldersignerassociations_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations | Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_forms_data_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_forms_data_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_list_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_list_v1) | **GET** /1/object/ezsignfolder/getList | Retrieve Ezsignfolder list
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_object_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_object_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
@@ -809,6 +826,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::ContactinformationsRequestCompound](docs/ContactinformationsRequestCompound.md)
  - [EzmaxApi::Object::ContactinformationsRequestCompoundAllOf](docs/ContactinformationsRequestCompoundAllOf.md)
  - [EzmaxApi::Object::CustomAutocompleteElementResponse](docs/CustomAutocompleteElementResponse.md)
+ - [EzmaxApi::Object::CustomEzsignfoldersignerassociationstatusResponse](docs/CustomEzsignfoldersignerassociationstatusResponse.md)
+ - [EzmaxApi::Object::CustomEzsignsignaturestatusResponse](docs/CustomEzsignsignaturestatusResponse.md)
  - [EzmaxApi::Object::CustomFormDataDocumentResponse](docs/CustomFormDataDocumentResponse.md)
  - [EzmaxApi::Object::CustomFormDataSignerResponse](docs/CustomFormDataSignerResponse.md)
  - [EzmaxApi::Object::CustomFormsDataFolderResponse](docs/CustomFormsDataFolderResponse.md)
@@ -856,6 +875,9 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1Response](docs/EzsignfolderGetEzsigndocumentsV1Response.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseAllOf](docs/EzsignfolderGetEzsigndocumentsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseMPayload](docs/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.md)
+ - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1Response](docs/EzsignfolderGetEzsignfoldersignerassociationsV1Response.md)
+ - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf](docs/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf.md)
+ - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload](docs/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetFormsDataV1Response](docs/EzsignfolderGetFormsDataV1Response.md)
  - [EzmaxApi::Object::EzsignfolderGetFormsDataV1ResponseAllOf](docs/EzsignfolderGetFormsDataV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetFormsDataV1ResponseMPayload](docs/EzsignfolderGetFormsDataV1ResponseMPayload.md)
@@ -869,7 +891,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignfolderListElement](docs/EzsignfolderListElement.md)
  - [EzmaxApi::Object::EzsignfolderRequest](docs/EzsignfolderRequest.md)
  - [EzmaxApi::Object::EzsignfolderRequestCompound](docs/EzsignfolderRequestCompound.md)
- - [EzmaxApi::Object::EzsignfolderRequestCompoundAllOf](docs/EzsignfolderRequestCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignfolderResponse](docs/EzsignfolderResponse.md)
  - [EzmaxApi::Object::EzsignfolderResponseCompound](docs/EzsignfolderResponseCompound.md)
  - [EzmaxApi::Object::EzsignfolderSendV1Request](docs/EzsignfolderSendV1Request.md)
@@ -915,6 +936,10 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignsignerRequestCompound](docs/EzsignsignerRequestCompound.md)
  - [EzmaxApi::Object::EzsignsignerRequestCompoundAllOf](docs/EzsignsignerRequestCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignsignerRequestCompoundContact](docs/EzsignsignerRequestCompoundContact.md)
+ - [EzmaxApi::Object::EzsignsignerResponse](docs/EzsignsignerResponse.md)
+ - [EzmaxApi::Object::EzsignsignerResponseCompound](docs/EzsignsignerResponseCompound.md)
+ - [EzmaxApi::Object::EzsignsignerResponseCompoundAllOf](docs/EzsignsignerResponseCompoundAllOf.md)
+ - [EzmaxApi::Object::EzsignsignerResponseCompoundContact](docs/EzsignsignerResponseCompoundContact.md)
  - [EzmaxApi::Object::EzsigntemplatepackageGetListV1Response](docs/EzsigntemplatepackageGetListV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseAllOf](docs/EzsigntemplatepackageGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload](docs/EzsigntemplatepackageGetListV1ResponseMPayload.md)

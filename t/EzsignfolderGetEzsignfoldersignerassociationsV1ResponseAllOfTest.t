@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::EzsignfolderRequestCompoundAllOf');
+use_ok('EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::EzsignfolderRequestCompoundAllOf->new();
+#my $instance = EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::EzsignfolderRequestCompoundAllOf');
+#isa_ok($instance, 'EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf');
 

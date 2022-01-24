@@ -42,6 +42,8 @@ docs/ContactinformationsRequest.md
 docs/ContactinformationsRequestCompound.md
 docs/ContactinformationsRequestCompoundAllOf.md
 docs/CustomAutocompleteElementResponse.md
+docs/CustomEzsignfoldersignerassociationstatusResponse.md
+docs/CustomEzsignsignaturestatusResponse.md
 docs/CustomFormDataDocumentResponse.md
 docs/CustomFormDataSignerResponse.md
 docs/CustomFormsDataFolderResponse.md
@@ -89,6 +91,9 @@ docs/EzsignfolderDeleteObjectV1Response.md
 docs/EzsignfolderGetEzsigndocumentsV1Response.md
 docs/EzsignfolderGetEzsigndocumentsV1ResponseAllOf.md
 docs/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.md
+docs/EzsignfolderGetEzsignfoldersignerassociationsV1Response.md
+docs/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf.md
+docs/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload.md
 docs/EzsignfolderGetFormsDataV1Response.md
 docs/EzsignfolderGetFormsDataV1ResponseAllOf.md
 docs/EzsignfolderGetFormsDataV1ResponseMPayload.md
@@ -102,7 +107,6 @@ docs/EzsignfolderGetObjectV1ResponseMPayload.md
 docs/EzsignfolderListElement.md
 docs/EzsignfolderRequest.md
 docs/EzsignfolderRequestCompound.md
-docs/EzsignfolderRequestCompoundAllOf.md
 docs/EzsignfolderResponse.md
 docs/EzsignfolderResponseCompound.md
 docs/EzsignfolderSendV1Request.md
@@ -148,6 +152,10 @@ docs/EzsignsignerRequest.md
 docs/EzsignsignerRequestCompound.md
 docs/EzsignsignerRequestCompoundAllOf.md
 docs/EzsignsignerRequestCompoundContact.md
+docs/EzsignsignerResponse.md
+docs/EzsignsignerResponseCompound.md
+docs/EzsignsignerResponseCompoundAllOf.md
+docs/EzsignsignerResponseCompoundContact.md
 docs/EzsigntemplatepackageGetListV1Response.md
 docs/EzsigntemplatepackageGetListV1ResponseAllOf.md
 docs/EzsigntemplatepackageGetListV1ResponseMPayload.md
@@ -272,6 +280,8 @@ lib/EzmaxApi/Object/ContactinformationsRequest.pm
 lib/EzmaxApi/Object/ContactinformationsRequestCompound.pm
 lib/EzmaxApi/Object/ContactinformationsRequestCompoundAllOf.pm
 lib/EzmaxApi/Object/CustomAutocompleteElementResponse.pm
+lib/EzmaxApi/Object/CustomEzsignfoldersignerassociationstatusResponse.pm
+lib/EzmaxApi/Object/CustomEzsignsignaturestatusResponse.pm
 lib/EzmaxApi/Object/CustomFormDataDocumentResponse.pm
 lib/EzmaxApi/Object/CustomFormDataSignerResponse.pm
 lib/EzmaxApi/Object/CustomFormsDataFolderResponse.pm
@@ -319,6 +329,9 @@ lib/EzmaxApi/Object/EzsignfolderDeleteObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderGetEzsigndocumentsV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderGetEzsigndocumentsV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.pm
+lib/EzmaxApi/Object/EzsignfolderGetEzsignfoldersignerassociationsV1Response.pm
+lib/EzmaxApi/Object/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf.pm
+lib/EzmaxApi/Object/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignfolderGetFormsDataV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderGetFormsDataV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignfolderGetFormsDataV1ResponseMPayload.pm
@@ -332,7 +345,6 @@ lib/EzmaxApi/Object/EzsignfolderGetObjectV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignfolderListElement.pm
 lib/EzmaxApi/Object/EzsignfolderRequest.pm
 lib/EzmaxApi/Object/EzsignfolderRequestCompound.pm
-lib/EzmaxApi/Object/EzsignfolderRequestCompoundAllOf.pm
 lib/EzmaxApi/Object/EzsignfolderResponse.pm
 lib/EzmaxApi/Object/EzsignfolderResponseCompound.pm
 lib/EzmaxApi/Object/EzsignfolderSendV1Request.pm
@@ -378,6 +390,10 @@ lib/EzmaxApi/Object/EzsignsignerRequest.pm
 lib/EzmaxApi/Object/EzsignsignerRequestCompound.pm
 lib/EzmaxApi/Object/EzsignsignerRequestCompoundAllOf.pm
 lib/EzmaxApi/Object/EzsignsignerRequestCompoundContact.pm
+lib/EzmaxApi/Object/EzsignsignerResponse.pm
+lib/EzmaxApi/Object/EzsignsignerResponseCompound.pm
+lib/EzmaxApi/Object/EzsignsignerResponseCompoundAllOf.pm
+lib/EzmaxApi/Object/EzsignsignerResponseCompoundContact.pm
 lib/EzmaxApi/Object/EzsigntemplatepackageGetListV1Response.pm
 lib/EzmaxApi/Object/EzsigntemplatepackageGetListV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsigntemplatepackageGetListV1ResponseMPayload.pm
@@ -490,6 +506,8 @@ t/ContactinformationsRequestCompoundAllOfTest.t
 t/ContactinformationsRequestCompoundTest.t
 t/ContactinformationsRequestTest.t
 t/CustomAutocompleteElementResponseTest.t
+t/CustomEzsignfoldersignerassociationstatusResponseTest.t
+t/CustomEzsignsignaturestatusResponseTest.t
 t/CustomFormDataDocumentResponseTest.t
 t/CustomFormDataSignerResponseTest.t
 t/CustomFormsDataFolderResponseTest.t
@@ -537,6 +555,9 @@ t/EzsignfolderDeleteObjectV1ResponseTest.t
 t/EzsignfolderGetEzsigndocumentsV1ResponseAllOfTest.t
 t/EzsignfolderGetEzsigndocumentsV1ResponseMPayloadTest.t
 t/EzsignfolderGetEzsigndocumentsV1ResponseTest.t
+t/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOfTest.t
+t/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayloadTest.t
+t/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseTest.t
 t/EzsignfolderGetFormsDataV1ResponseAllOfTest.t
 t/EzsignfolderGetFormsDataV1ResponseMPayloadTest.t
 t/EzsignfolderGetFormsDataV1ResponseTest.t
@@ -548,7 +569,6 @@ t/EzsignfolderGetObjectV1ResponseAllOfTest.t
 t/EzsignfolderGetObjectV1ResponseMPayloadTest.t
 t/EzsignfolderGetObjectV1ResponseTest.t
 t/EzsignfolderListElementTest.t
-t/EzsignfolderRequestCompoundAllOfTest.t
 t/EzsignfolderRequestCompoundTest.t
 t/EzsignfolderRequestTest.t
 t/EzsignfolderResponseCompoundTest.t
@@ -596,6 +616,10 @@ t/EzsignsignerRequestCompoundAllOfTest.t
 t/EzsignsignerRequestCompoundContactTest.t
 t/EzsignsignerRequestCompoundTest.t
 t/EzsignsignerRequestTest.t
+t/EzsignsignerResponseCompoundAllOfTest.t
+t/EzsignsignerResponseCompoundContactTest.t
+t/EzsignsignerResponseCompoundTest.t
+t/EzsignsignerResponseTest.t
 t/EzsigntemplatepackageGetListV1ResponseAllOfTest.t
 t/EzsigntemplatepackageGetListV1ResponseMPayloadAllOfTest.t
 t/EzsigntemplatepackageGetListV1ResponseMPayloadTest.t

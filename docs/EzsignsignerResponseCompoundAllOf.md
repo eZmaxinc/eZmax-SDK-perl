@@ -1,14 +1,14 @@
-# EzmaxApi::Object::EzsignfolderRequestCompoundAllOf
+# EzmaxApi::Object::EzsignsignerResponseCompoundAllOf
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::EzsignfolderRequestCompoundAllOf;
+use EzmaxApi::Object::EzsignsignerResponseCompoundAllOf;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_ezsignfoldersignerassociation** | [**ARRAY[EzsignfoldersignerassociationRequest]**](EzsignfoldersignerassociationRequest.md) | An array of signers that will be invited to sign the Ezsigndocuments | 
+**obj_contact** | [**EzsignsignerResponseCompoundContact**](EzsignsignerResponseCompoundContact.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **e_ezsignfolder_sendreminderfrequency** | [**FieldEEzsignfolderSendreminderfrequency**](FieldEEzsignfolderSendreminderfrequency.md) |  | 
 **dt_ezsignfolder_duedate** | **string** | The maximum date and time at which the Ezsignfolder can be signed. | 
 **dt_ezsignfolder_sentdate** | **string** | The date and time at which the Ezsign folder was sent the last time. | 
+**dt_ezsignfolder_scheduledarchive** | **string** | The scheduled date and time at which the Ezsignfolder should be archived. | 
+**dt_ezsignfolder_scheduleddestruction** | **string** | The scheduled date and time at which the Ezsignfolder should be Destroyed. | 
 **e_ezsignfolder_step** | [**FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  | 
 **dt_ezsignfolder_close** | **string** | The date and time at which the folder was closed. Either by applying the last signature or by completing it prematurely. | 
 **obj_audit** | [**CommonAudit**](CommonAudit.md) |  | 

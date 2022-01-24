@@ -8,6 +8,11 @@ use EzmaxApi::Object::EzsigndocumentResponseCompound;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**i_ezsigndocument_stepformtotal** | **int** | The total number of steps in the form filling phase | 
+**i_ezsigndocument_stepformcurrent** | **int** | The current step in the form filling phase | 
+**i_ezsigndocument_stepsignaturetotal** | **int** | The total number of steps in the signature filling phase | 
+**i_ezsigndocument_stepsignature_current** | **int** | The current step in the signature phase | 
+**a_obj_ezsignfoldersignerassociationstatus** | [**ARRAY[CustomEzsignfoldersignerassociationstatusResponse]**](CustomEzsignfoldersignerassociationstatusResponse.md) |  | 
 **fki_ezsignfolder_id** | **int** | The unique ID of the Ezsignfolder | 
 **dt_ezsigndocument_duedate** | **string** | The maximum date and time at which the Ezsigndocument can be signed. | 
 **fki_language_id** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | 

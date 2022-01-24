@@ -192,7 +192,7 @@ __PACKAGE__->method_documentation({
     'i_ezsignsignature_step' => {
         datatype => 'int',
         base_name => 'iEzsignsignatureStep',
-        description => 'The step when the Ezsignsigner will be invited to sign.',
+        description => 'The step when the Ezsignsigner will be invited to sign or fill form fields',
         format => '',
         read_only => '',
             },

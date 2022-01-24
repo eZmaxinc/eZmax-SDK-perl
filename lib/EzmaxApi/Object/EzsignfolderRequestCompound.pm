@@ -31,8 +31,6 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::EzsignfolderRequest;
-use EzmaxApi::Object::EzsignfolderRequestCompoundAllOf;
-use EzmaxApi::Object::EzsignfoldersignerassociationRequest;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -164,13 +162,6 @@ __PACKAGE__->class_documentation({description => 'An Ezsignfolder Object and chi
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'a_ezsignfoldersignerassociation' => {
-        datatype => 'ARRAY[EzsignfoldersignerassociationRequest]',
-        base_name => 'a_Ezsignfoldersignerassociation',
-        description => 'An array of signers that will be invited to sign the Ezsigndocuments',
-        format => '',
-        read_only => '',
-            },
     'fki_ezsignfoldertype_id' => {
         datatype => 'int',
         base_name => 'fkiEzsignfoldertypeID',
@@ -209,7 +200,6 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'a_ezsignfoldersignerassociation' => 'ARRAY[EzsignfoldersignerassociationRequest]',
     'fki_ezsignfoldertype_id' => 'int',
     'fki_ezsigntsarequirement_id' => 'int',
     's_ezsignfolder_description' => 'string',
@@ -218,7 +208,6 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
-    'a_ezsignfoldersignerassociation' => 'a_Ezsignfoldersignerassociation',
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
     'fki_ezsigntsarequirement_id' => 'fkiEzsigntsarequirementID',
     's_ezsignfolder_description' => 'sEzsignfolderDescription',

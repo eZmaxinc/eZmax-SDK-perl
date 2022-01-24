@@ -1,8 +1,8 @@
-# EzmaxApi::Object::EzsignsignerRequestCompoundContact
+# EzmaxApi::Object::EzsignsignerResponseCompoundContact
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::EzsignsignerRequestCompoundContact;
+use EzmaxApi::Object::EzsignsignerResponseCompoundContact;
 ```
 
 ## Properties

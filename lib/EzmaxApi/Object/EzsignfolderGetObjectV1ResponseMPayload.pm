@@ -248,6 +248,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'dt_ezsignfolder_scheduledarchive' => {
+        datatype => 'string',
+        base_name => 'dtEzsignfolderScheduledarchive',
+        description => 'The scheduled date and time at which the Ezsignfolder should be archived.',
+        format => '',
+        read_only => '',
+            },
+    'dt_ezsignfolder_scheduleddestruction' => {
+        datatype => 'string',
+        base_name => 'dtEzsignfolderScheduleddestruction',
+        description => 'The scheduled date and time at which the Ezsignfolder should be Destroyed.',
+        format => '',
+        read_only => '',
+            },
     'e_ezsignfolder_step' => {
         datatype => 'FieldEEzsignfolderStep',
         base_name => 'eEzsignfolderStep',
@@ -284,6 +298,8 @@ __PACKAGE__->openapi_types( {
     'e_ezsignfolder_sendreminderfrequency' => 'FieldEEzsignfolderSendreminderfrequency',
     'dt_ezsignfolder_duedate' => 'string',
     'dt_ezsignfolder_sentdate' => 'string',
+    'dt_ezsignfolder_scheduledarchive' => 'string',
+    'dt_ezsignfolder_scheduleddestruction' => 'string',
     'e_ezsignfolder_step' => 'FieldEEzsignfolderStep',
     'dt_ezsignfolder_close' => 'string',
     'obj_audit' => 'CommonAudit'
@@ -302,6 +318,8 @@ __PACKAGE__->attribute_map( {
     'e_ezsignfolder_sendreminderfrequency' => 'eEzsignfolderSendreminderfrequency',
     'dt_ezsignfolder_duedate' => 'dtEzsignfolderDuedate',
     'dt_ezsignfolder_sentdate' => 'dtEzsignfolderSentdate',
+    'dt_ezsignfolder_scheduledarchive' => 'dtEzsignfolderScheduledarchive',
+    'dt_ezsignfolder_scheduleddestruction' => 'dtEzsignfolderScheduleddestruction',
     'e_ezsignfolder_step' => 'eEzsignfolderStep',
     'dt_ezsignfolder_close' => 'dtEzsignfolderClose',
     'obj_audit' => 'objAudit'
