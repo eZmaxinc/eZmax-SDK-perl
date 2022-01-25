@@ -31,7 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
-use EzmaxApi::Object::EzsignfolderResponse;
+use EzmaxApi::Object::EzsignfolderResponseCompound;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 
