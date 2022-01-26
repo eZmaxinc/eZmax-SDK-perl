@@ -399,6 +399,7 @@ use EzmaxApi::Object::EzsignsignatureGetObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureRequest;
 use EzmaxApi::Object::EzsignsignatureRequestCompound;
+use EzmaxApi::Object::EzsignsignaturecustomdateRequest;
 use EzmaxApi::Object::EzsignsignerRequest;
 use EzmaxApi::Object::EzsignsignerRequestCompound;
 use EzmaxApi::Object::EzsignsignerRequestCompoundAllOf;
@@ -641,6 +642,7 @@ use EzmaxApi::Object::EzsignsignatureGetObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureRequest;
 use EzmaxApi::Object::EzsignsignatureRequestCompound;
+use EzmaxApi::Object::EzsignsignaturecustomdateRequest;
 use EzmaxApi::Object::EzsignsignerRequest;
 use EzmaxApi::Object::EzsignsignerRequestCompound;
 use EzmaxApi::Object::EzsignsignerRequestCompoundAllOf;
@@ -932,6 +934,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignsignatureGetObjectV1ResponseAllOf](docs/EzsignsignatureGetObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignatureRequest](docs/EzsignsignatureRequest.md)
  - [EzmaxApi::Object::EzsignsignatureRequestCompound](docs/EzsignsignatureRequestCompound.md)
+ - [EzmaxApi::Object::EzsignsignaturecustomdateRequest](docs/EzsignsignaturecustomdateRequest.md)
  - [EzmaxApi::Object::EzsignsignerRequest](docs/EzsignsignerRequest.md)
  - [EzmaxApi::Object::EzsignsignerRequestCompound](docs/EzsignsignerRequestCompound.md)
  - [EzmaxApi::Object::EzsignsignerRequestCompoundAllOf](docs/EzsignsignerRequestCompoundAllOf.md)
