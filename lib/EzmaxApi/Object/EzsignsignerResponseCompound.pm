@@ -170,6 +170,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'pki_ezsignsigner_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignsignerID',
+        description => 'The unique ID of the Ezsignsigner',
+        format => '',
+        read_only => '',
+            },
     'fki_taxassignment_id' => {
         datatype => 'int',
         base_name => 'fkiTaxassignmentID',
@@ -184,17 +191,17 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'e_ezsignsigner_logintype' => {
-        datatype => 'string',
-        base_name => 'eEzsignsignerLogintype',
-        description => 'The method the Ezsignsigner will authenticate to the signing platform.  1. **Password** means the Ezsignsigner will receive a secure link by email. 2. **PasswordPhone** means the Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**. 3. **PasswordQuestion** means the Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer. 4. **InPersonPhone** means the Ezsignsigner will only be able to sign \&quot;In-Person\&quot; and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**. 5. **InPerson** means the Ezsignsigner will only be able to sign \&quot;In-Person\&quot; and there won&#39;t be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type.',
+    'fki_userlogintype_id' => {
+        datatype => 'int',
+        base_name => 'fkiUserlogintypeID',
+        description => 'The unique ID of the Userlogintype',
         format => '',
         read_only => '',
             },
-    's_ezsignsigner_secretanswer' => {
+    's_userlogintype_description_x' => {
         datatype => 'string',
-        base_name => 'sEzsignsignerSecretanswer',
-        description => 'The predefined answer to the secret question the Ezsignsigner will need to provide to successfully authenticate.',
+        base_name => 'sUserlogintypeDescriptionX',
+        description => 'The description of the Userlogintype in the language of the requester',
         format => '',
         read_only => '',
             },
@@ -202,18 +209,20 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'obj_contact' => 'EzsignsignerResponseCompoundContact',
+    'pki_ezsignsigner_id' => 'int',
     'fki_taxassignment_id' => 'int',
     'fki_secretquestion_id' => 'int',
-    'e_ezsignsigner_logintype' => 'string',
-    's_ezsignsigner_secretanswer' => 'string'
+    'fki_userlogintype_id' => 'int',
+    's_userlogintype_description_x' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'obj_contact' => 'objContact',
+    'pki_ezsignsigner_id' => 'pkiEzsignsignerID',
     'fki_taxassignment_id' => 'fkiTaxassignmentID',
     'fki_secretquestion_id' => 'fkiSecretquestionID',
-    'e_ezsignsigner_logintype' => 'eEzsignsignerLogintype',
-    's_ezsignsigner_secretanswer' => 'sEzsignsignerSecretanswer'
+    'fki_userlogintype_id' => 'fkiUserlogintypeID',
+    's_userlogintype_description_x' => 'sUserlogintypeDescriptionX'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

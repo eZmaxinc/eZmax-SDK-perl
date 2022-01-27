@@ -31,6 +31,8 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::EzsignfoldersignerassociationResponse;
+use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundUser;
+use EzmaxApi::Object::EzsignsignerResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -161,6 +163,20 @@ __PACKAGE__->class_documentation({description => 'An Ezsignfoldersignerassociati
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'obj_user' => {
+        datatype => 'EzsignfoldersignerassociationResponseCompoundUser',
+        base_name => 'objUser',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_ezsignsigner' => {
+        datatype => 'EzsignsignerResponseCompound',
+        base_name => 'objEzsignsigner',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'pki_ezsignfoldersignerassociation_id' => {
         datatype => 'int',
         base_name => 'pkiEzsignfoldersignerassociationID',
@@ -175,20 +191,6 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'fki_ezsignsigner_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsignsignerID',
-        description => 'The unique ID of the Ezsignsigner',
-        format => '',
-        read_only => '',
-            },
-    'fki_user_id' => {
-        datatype => 'int',
-        base_name => 'fkiUserID',
-        description => 'The unique ID of the User',
-        format => '',
-        read_only => '',
-            },
     'b_ezsignfoldersignerassociation_receivecopy' => {
         datatype => 'boolean',
         base_name => 'bEzsignfoldersignerassociationReceivecopy',
@@ -199,18 +201,18 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'obj_user' => 'EzsignfoldersignerassociationResponseCompoundUser',
+    'obj_ezsignsigner' => 'EzsignsignerResponseCompound',
     'pki_ezsignfoldersignerassociation_id' => 'int',
     'fki_ezsignfolder_id' => 'int',
-    'fki_ezsignsigner_id' => 'int',
-    'fki_user_id' => 'int',
     'b_ezsignfoldersignerassociation_receivecopy' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
+    'obj_user' => 'objUser',
+    'obj_ezsignsigner' => 'objEzsignsigner',
     'pki_ezsignfoldersignerassociation_id' => 'pkiEzsignfoldersignerassociationID',
     'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
-    'fki_ezsignsigner_id' => 'fkiEzsignsignerID',
-    'fki_user_id' => 'fkiUserID',
     'b_ezsignfoldersignerassociation_receivecopy' => 'bEzsignfoldersignerassociationReceivecopy'
 } );
 

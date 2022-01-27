@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsignfoldersignerassociationResponse;
+use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -162,7 +162,7 @@ __PACKAGE__->class_documentation({description => 'Payload for the /1/object/ezsi
 
 __PACKAGE__->method_documentation({
     'a_obj_ezsignfoldersignerassociation' => {
-        datatype => 'ARRAY[EzsignfoldersignerassociationResponse]',
+        datatype => 'ARRAY[EzsignfoldersignerassociationResponseCompound]',
         base_name => 'a_objEzsignfoldersignerassociation',
         description => '',
         format => '',
@@ -171,7 +171,7 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'a_obj_ezsignfoldersignerassociation' => 'ARRAY[EzsignfoldersignerassociationResponse]'
+    'a_obj_ezsignfoldersignerassociation' => 'ARRAY[EzsignfoldersignerassociationResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {

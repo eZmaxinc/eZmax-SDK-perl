@@ -128,6 +128,7 @@ docs/EzsignfoldersignerassociationRequestCompound.md
 docs/EzsignfoldersignerassociationRequestCompoundAllOf.md
 docs/EzsignfoldersignerassociationResponse.md
 docs/EzsignfoldersignerassociationResponseCompound.md
+docs/EzsignfoldersignerassociationResponseCompoundUser.md
 docs/EzsignfoldertypeGetListV1Response.md
 docs/EzsignfoldertypeGetListV1ResponseAllOf.md
 docs/EzsignfoldertypeGetListV1ResponseMPayload.md
@@ -367,6 +368,7 @@ lib/EzmaxApi/Object/EzsignfoldersignerassociationRequestCompound.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationRequestCompoundAllOf.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationResponse.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationResponseCompound.pm
+lib/EzmaxApi/Object/EzsignfoldersignerassociationResponseCompoundUser.pm
 lib/EzmaxApi/Object/EzsignfoldertypeGetListV1Response.pm
 lib/EzmaxApi/Object/EzsignfoldertypeGetListV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignfoldertypeGetListV1ResponseMPayload.pm
@@ -593,6 +595,7 @@ t/EzsignfoldersignerassociationRequestCompoundAllOfTest.t
 t/EzsignfoldersignerassociationRequestCompoundTest.t
 t/EzsignfoldersignerassociationRequestTest.t
 t/EzsignfoldersignerassociationResponseCompoundTest.t
+t/EzsignfoldersignerassociationResponseCompoundUserTest.t
 t/EzsignfoldersignerassociationResponseTest.t
 t/EzsignfoldertypeGetListV1ResponseAllOfTest.t
 t/EzsignfoldertypeGetListV1ResponseMPayloadAllOfTest.t

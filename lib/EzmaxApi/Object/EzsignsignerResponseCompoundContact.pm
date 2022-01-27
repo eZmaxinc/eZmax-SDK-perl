@@ -188,17 +188,17 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    's_phone_number' => {
+    's_phone_e164' => {
         datatype => 'string',
-        base_name => 'sPhoneNumber',
-        description => 'The Phone number of the contact. Use format \&quot;5149901516\&quot; for North American Numbers (Without \&quot;1\&quot; for long distance code) you would dial like this: 1-514-990-1516. Use format \&quot;498945233886\&quot; for international numbers (Without \&quot;011\&quot;) you would dial like this: +49 89 452 33 88-6. In this example \&quot;49\&quot; is the country code of Germany.',
+        base_name => 'sPhoneE164',
+        description => 'A phone number in E.164 Format',
         format => '',
         read_only => '',
             },
-    's_phone_number_cell' => {
+    's_phone_e164_cell' => {
         datatype => 'string',
-        base_name => 'sPhoneNumberCell',
-        description => 'The Cell Phone number of the contact. Use format \&quot;5149901516\&quot; for North American Numbers (Without \&quot;1\&quot; for long distance code) you would dial like this: 1-514-990-1516. Use format \&quot;498945233886\&quot; for international numbers (Without \&quot;011\&quot;) you would dial like this: +49 89 452 33 88-6. In this example \&quot;49\&quot; is the country code of Germany.',
+        base_name => 'sPhoneE164Cell',
+        description => 'A phone number in E.164 Format',
         format => '',
         read_only => '',
             },
@@ -209,8 +209,8 @@ __PACKAGE__->openapi_types( {
     's_contact_lastname' => 'string',
     'fki_language_id' => 'int',
     's_email_address' => 'string',
-    's_phone_number' => 'string',
-    's_phone_number_cell' => 'string'
+    's_phone_e164' => 'string',
+    's_phone_e164_cell' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -218,8 +218,8 @@ __PACKAGE__->attribute_map( {
     's_contact_lastname' => 'sContactLastname',
     'fki_language_id' => 'fkiLanguageID',
     's_email_address' => 'sEmailAddress',
-    's_phone_number' => 'sPhoneNumber',
-    's_phone_number_cell' => 'sPhoneNumberCell'
+    's_phone_e164' => 'sPhoneE164',
+    's_phone_e164_cell' => 'sPhoneE164Cell'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

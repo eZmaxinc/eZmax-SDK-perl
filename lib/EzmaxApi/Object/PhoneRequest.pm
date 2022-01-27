@@ -199,7 +199,7 @@ __PACKAGE__->method_documentation({
     's_phone_international' => {
         datatype => 'string',
         base_name => 'sPhoneInternational',
-        description => 'The international phone number. (For phone numbers outside of North)  Do not specify the \&quot;011\&quot; part of the phone number used to dial an international phone number from North America.  For example for this sample phone number \&quot;+442071838750\&quot;, you would send \&quot;442071838750\&quot; without the \&quot;+\&quot; sign.',
+        description => 'A phone number in E.164 Format',
         format => '',
         read_only => '',
             },

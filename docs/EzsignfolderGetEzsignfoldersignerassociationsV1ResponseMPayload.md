@@ -8,7 +8,7 @@ use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPa
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_obj_ezsignfoldersignerassociation** | [**ARRAY[EzsignfoldersignerassociationResponse]**](EzsignfoldersignerassociationResponse.md) |  | 
+**a_obj_ezsignfoldersignerassociation** | [**ARRAY[EzsignfoldersignerassociationResponseCompound]**](EzsignfoldersignerassociationResponseCompound.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

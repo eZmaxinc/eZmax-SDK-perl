@@ -379,6 +379,7 @@ use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompound;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponse;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompound;
+use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundUser;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1Response;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayload;
@@ -622,6 +623,7 @@ use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompound;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponse;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompound;
+use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundUser;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1Response;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayload;
@@ -914,6 +916,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignfoldersignerassociationRequestCompoundAllOf](docs/EzsignfoldersignerassociationRequestCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationResponse](docs/EzsignfoldersignerassociationResponse.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationResponseCompound](docs/EzsignfoldersignerassociationResponseCompound.md)
+ - [EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundUser](docs/EzsignfoldersignerassociationResponseCompoundUser.md)
  - [EzmaxApi::Object::EzsignfoldertypeGetListV1Response](docs/EzsignfoldertypeGetListV1Response.md)
  - [EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseAllOf](docs/EzsignfoldertypeGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayload](docs/EzsignfoldertypeGetListV1ResponseMPayload.md)
