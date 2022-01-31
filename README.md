@@ -467,6 +467,7 @@ use EzmaxApi::Object::WebhookResponse;
 use EzmaxApi::Object::WebhookUserUserCreated;
 use EzmaxApi::Object::WebhookUserUserCreatedAllOf;
 use EzmaxApi::Object::WebsiteRequest;
+use EzmaxApi::Object::Xxxx;
 
 ````
 
@@ -711,6 +712,7 @@ use EzmaxApi::Object::WebhookResponse;
 use EzmaxApi::Object::WebhookUserUserCreated;
 use EzmaxApi::Object::WebhookUserUserCreatedAllOf;
 use EzmaxApi::Object::WebsiteRequest;
+use EzmaxApi::Object::Xxxx;
 
 # for displaying the API response data
 use Data::Dumper;
@@ -1004,6 +1006,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::WebhookUserUserCreated](docs/WebhookUserUserCreated.md)
  - [EzmaxApi::Object::WebhookUserUserCreatedAllOf](docs/WebhookUserUserCreatedAllOf.md)
  - [EzmaxApi::Object::WebsiteRequest](docs/WebsiteRequest.md)
+ - [EzmaxApi::Object::Xxxx](docs/Xxxx.md)
 
 
 # DOCUMENTATION FOR AUTHORIZATION

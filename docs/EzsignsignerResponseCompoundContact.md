@@ -8,6 +8,7 @@ use EzmaxApi::Object::EzsignsignerResponseCompoundContact;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pki_contact_id** | **int** | The unique ID of the Contact | 
 **s_contact_firstname** | **string** | The First name of the contact | 
 **s_contact_lastname** | **string** | The Last name of the contact | 
 **fki_language_id** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | 

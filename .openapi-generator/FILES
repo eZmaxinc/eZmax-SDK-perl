@@ -234,6 +234,7 @@ docs/WebhookResponse.md
 docs/WebhookUserUserCreated.md
 docs/WebhookUserUserCreatedAllOf.md
 docs/WebsiteRequest.md
+docs/Xxxx.md
 git_push.sh
 lib/EzmaxApi/ApiClient.pm
 lib/EzmaxApi/ApiFactory.pm
@@ -456,6 +457,7 @@ lib/EzmaxApi/Object/WebhookResponse.pm
 lib/EzmaxApi/Object/WebhookUserUserCreated.pm
 lib/EzmaxApi/Object/WebhookUserUserCreatedAllOf.pm
 lib/EzmaxApi/Object/WebsiteRequest.pm
+lib/EzmaxApi/Object/Xxxx.pm
 lib/EzmaxApi/ObjectActivesessionApi.pm
 lib/EzmaxApi/ObjectApikeyApi.pm
 lib/EzmaxApi/ObjectEzsignbulksendApi.pm
@@ -702,3 +704,4 @@ t/WebhookResponseTest.t
 t/WebhookUserUserCreatedAllOfTest.t
 t/WebhookUserUserCreatedTest.t
 t/WebsiteRequestTest.t
+t/XxxxTest.t
