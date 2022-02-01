@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldEActivesessionWeekdaystart;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -174,6 +175,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_activesession_weekdaystart' => {
+        datatype => 'FieldEActivesessionWeekdaystart',
+        base_name => 'eActivesessionWeekdaystart',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'fki_language_id' => {
         datatype => 'int',
         base_name => 'fkiLanguageID',
@@ -228,6 +236,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     's_customer_code' => 'string',
     'e_activesession_sessiontype' => 'string',
+    'e_activesession_weekdaystart' => 'FieldEActivesessionWeekdaystart',
     'fki_language_id' => 'int',
     's_company_name_x' => 'string',
     's_department_name_x' => 'string',
@@ -240,6 +249,7 @@ __PACKAGE__->openapi_types( {
 __PACKAGE__->attribute_map( {
     's_customer_code' => 'sCustomerCode',
     'e_activesession_sessiontype' => 'eActivesessionSessiontype',
+    'e_activesession_weekdaystart' => 'eActivesessionWeekdaystart',
     'fki_language_id' => 'fkiLanguageID',
     's_company_name_x' => 'sCompanyNameX',
     's_department_name_x' => 'sDepartmentNameX',

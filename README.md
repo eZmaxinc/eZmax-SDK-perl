@@ -334,6 +334,7 @@ use EzmaxApi::Object::EzsigndocumentRequest;
 use EzmaxApi::Object::EzsigndocumentRequestCompound;
 use EzmaxApi::Object::EzsigndocumentResponse;
 use EzmaxApi::Object::EzsigndocumentResponseCompound;
+use EzmaxApi::Object::EzsigndocumentResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Response;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseAllOf;
@@ -379,6 +380,7 @@ use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompound;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponse;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompound;
+use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundUser;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1Response;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseAllOf;
@@ -400,6 +402,7 @@ use EzmaxApi::Object::EzsignsignatureGetObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureRequest;
 use EzmaxApi::Object::EzsignsignatureRequestCompound;
+use EzmaxApi::Object::EzsignsignatureRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignsignaturecustomdateRequest;
 use EzmaxApi::Object::EzsignsignerRequest;
 use EzmaxApi::Object::EzsignsignerRequestCompound;
@@ -414,6 +417,7 @@ use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageListElement;
+use EzmaxApi::Object::FieldEActivesessionWeekdaystart;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
@@ -579,6 +583,7 @@ use EzmaxApi::Object::EzsigndocumentRequest;
 use EzmaxApi::Object::EzsigndocumentRequestCompound;
 use EzmaxApi::Object::EzsigndocumentResponse;
 use EzmaxApi::Object::EzsigndocumentResponseCompound;
+use EzmaxApi::Object::EzsigndocumentResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Response;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseAllOf;
@@ -624,6 +629,7 @@ use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompound;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponse;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompound;
+use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundUser;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1Response;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseAllOf;
@@ -645,6 +651,7 @@ use EzmaxApi::Object::EzsignsignatureGetObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureRequest;
 use EzmaxApi::Object::EzsignsignatureRequestCompound;
+use EzmaxApi::Object::EzsignsignatureRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignsignaturecustomdateRequest;
 use EzmaxApi::Object::EzsignsignerRequest;
 use EzmaxApi::Object::EzsignsignerRequestCompound;
@@ -659,6 +666,7 @@ use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageListElement;
+use EzmaxApi::Object::FieldEActivesessionWeekdaystart;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
@@ -873,6 +881,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigndocumentRequestCompound](docs/EzsigndocumentRequestCompound.md)
  - [EzmaxApi::Object::EzsigndocumentResponse](docs/EzsigndocumentResponse.md)
  - [EzmaxApi::Object::EzsigndocumentResponseCompound](docs/EzsigndocumentResponseCompound.md)
+ - [EzmaxApi::Object::EzsigndocumentResponseCompoundAllOf](docs/EzsigndocumentResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV1Request](docs/EzsignfolderCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV1Response](docs/EzsignfolderCreateObjectV1Response.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseAllOf](docs/EzsignfolderCreateObjectV1ResponseAllOf.md)
@@ -918,6 +927,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignfoldersignerassociationRequestCompoundAllOf](docs/EzsignfoldersignerassociationRequestCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationResponse](docs/EzsignfoldersignerassociationResponse.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationResponseCompound](docs/EzsignfoldersignerassociationResponseCompound.md)
+ - [EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundAllOf](docs/EzsignfoldersignerassociationResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundUser](docs/EzsignfoldersignerassociationResponseCompoundUser.md)
  - [EzmaxApi::Object::EzsignfoldertypeGetListV1Response](docs/EzsignfoldertypeGetListV1Response.md)
  - [EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseAllOf](docs/EzsignfoldertypeGetListV1ResponseAllOf.md)
@@ -939,6 +949,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignsignatureGetObjectV1ResponseAllOf](docs/EzsignsignatureGetObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignatureRequest](docs/EzsignsignatureRequest.md)
  - [EzmaxApi::Object::EzsignsignatureRequestCompound](docs/EzsignsignatureRequestCompound.md)
+ - [EzmaxApi::Object::EzsignsignatureRequestCompoundAllOf](docs/EzsignsignatureRequestCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignsignaturecustomdateRequest](docs/EzsignsignaturecustomdateRequest.md)
  - [EzmaxApi::Object::EzsignsignerRequest](docs/EzsignsignerRequest.md)
  - [EzmaxApi::Object::EzsignsignerRequestCompound](docs/EzsignsignerRequestCompound.md)
@@ -953,6 +964,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload](docs/EzsigntemplatepackageGetListV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayloadAllOf](docs/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackageListElement](docs/EzsigntemplatepackageListElement.md)
+ - [EzmaxApi::Object::FieldEActivesessionWeekdaystart](docs/FieldEActivesessionWeekdaystart.md)
  - [EzmaxApi::Object::FieldEEzsigndocumentStep](docs/FieldEEzsigndocumentStep.md)
  - [EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency](docs/FieldEEzsignfolderSendreminderfrequency.md)
  - [EzmaxApi::Object::FieldEEzsignfolderStep](docs/FieldEEzsignfolderStep.md)

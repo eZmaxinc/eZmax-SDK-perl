@@ -33,6 +33,7 @@ use DateTime;
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationstatusResponse;
 use EzmaxApi::Object::EzsigndocumentResponse;
+use EzmaxApi::Object::EzsigndocumentResponseCompoundAllOf;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");

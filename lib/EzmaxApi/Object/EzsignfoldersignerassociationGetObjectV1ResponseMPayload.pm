@@ -31,6 +31,8 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompound;
+use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundUser;
+use EzmaxApi::Object::EzsignsignerResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -161,6 +163,20 @@ __PACKAGE__->class_documentation({description => 'Payload for the /1/object/ezsi
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'obj_user' => {
+        datatype => 'EzsignfoldersignerassociationResponseCompoundUser',
+        base_name => 'objUser',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_ezsignsigner' => {
+        datatype => 'EzsignsignerResponseCompound',
+        base_name => 'objEzsignsigner',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'pki_ezsignfoldersignerassociation_id' => {
         datatype => 'int',
         base_name => 'pkiEzsignfoldersignerassociationID',
@@ -185,12 +201,16 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'obj_user' => 'EzsignfoldersignerassociationResponseCompoundUser',
+    'obj_ezsignsigner' => 'EzsignsignerResponseCompound',
     'pki_ezsignfoldersignerassociation_id' => 'int',
     'fki_ezsignfolder_id' => 'int',
     'b_ezsignfoldersignerassociation_receivecopy' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
+    'obj_user' => 'objUser',
+    'obj_ezsignsigner' => 'objEzsignsigner',
     'pki_ezsignfoldersignerassociation_id' => 'pkiEzsignfoldersignerassociationID',
     'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
     'b_ezsignfoldersignerassociation_receivecopy' => 'bEzsignfoldersignerassociationReceivecopy'

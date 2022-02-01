@@ -83,6 +83,7 @@ docs/EzsigndocumentRequest.md
 docs/EzsigndocumentRequestCompound.md
 docs/EzsigndocumentResponse.md
 docs/EzsigndocumentResponseCompound.md
+docs/EzsigndocumentResponseCompoundAllOf.md
 docs/EzsignfolderCreateObjectV1Request.md
 docs/EzsignfolderCreateObjectV1Response.md
 docs/EzsignfolderCreateObjectV1ResponseAllOf.md
@@ -128,6 +129,7 @@ docs/EzsignfoldersignerassociationRequestCompound.md
 docs/EzsignfoldersignerassociationRequestCompoundAllOf.md
 docs/EzsignfoldersignerassociationResponse.md
 docs/EzsignfoldersignerassociationResponseCompound.md
+docs/EzsignfoldersignerassociationResponseCompoundAllOf.md
 docs/EzsignfoldersignerassociationResponseCompoundUser.md
 docs/EzsignfoldertypeGetListV1Response.md
 docs/EzsignfoldertypeGetListV1ResponseAllOf.md
@@ -149,6 +151,7 @@ docs/EzsignsignatureGetObjectV1Response.md
 docs/EzsignsignatureGetObjectV1ResponseAllOf.md
 docs/EzsignsignatureRequest.md
 docs/EzsignsignatureRequestCompound.md
+docs/EzsignsignatureRequestCompoundAllOf.md
 docs/EzsignsignaturecustomdateRequest.md
 docs/EzsignsignerRequest.md
 docs/EzsignsignerRequestCompound.md
@@ -163,6 +166,7 @@ docs/EzsigntemplatepackageGetListV1ResponseAllOf.md
 docs/EzsigntemplatepackageGetListV1ResponseMPayload.md
 docs/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md
 docs/EzsigntemplatepackageListElement.md
+docs/FieldEActivesessionWeekdaystart.md
 docs/FieldEEzsigndocumentStep.md
 docs/FieldEEzsignfolderSendreminderfrequency.md
 docs/FieldEEzsignfolderStep.md
@@ -324,6 +328,7 @@ lib/EzmaxApi/Object/EzsigndocumentRequest.pm
 lib/EzmaxApi/Object/EzsigndocumentRequestCompound.pm
 lib/EzmaxApi/Object/EzsigndocumentResponse.pm
 lib/EzmaxApi/Object/EzsigndocumentResponseCompound.pm
+lib/EzmaxApi/Object/EzsigndocumentResponseCompoundAllOf.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV1Request.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV1ResponseAllOf.pm
@@ -369,6 +374,7 @@ lib/EzmaxApi/Object/EzsignfoldersignerassociationRequestCompound.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationRequestCompoundAllOf.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationResponse.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationResponseCompound.pm
+lib/EzmaxApi/Object/EzsignfoldersignerassociationResponseCompoundAllOf.pm
 lib/EzmaxApi/Object/EzsignfoldersignerassociationResponseCompoundUser.pm
 lib/EzmaxApi/Object/EzsignfoldertypeGetListV1Response.pm
 lib/EzmaxApi/Object/EzsignfoldertypeGetListV1ResponseAllOf.pm
@@ -390,6 +396,7 @@ lib/EzmaxApi/Object/EzsignsignatureGetObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignsignatureGetObjectV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignsignatureRequest.pm
 lib/EzmaxApi/Object/EzsignsignatureRequestCompound.pm
+lib/EzmaxApi/Object/EzsignsignatureRequestCompoundAllOf.pm
 lib/EzmaxApi/Object/EzsignsignaturecustomdateRequest.pm
 lib/EzmaxApi/Object/EzsignsignerRequest.pm
 lib/EzmaxApi/Object/EzsignsignerRequestCompound.pm
@@ -404,6 +411,7 @@ lib/EzmaxApi/Object/EzsigntemplatepackageGetListV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsigntemplatepackageGetListV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.pm
 lib/EzmaxApi/Object/EzsigntemplatepackageListElement.pm
+lib/EzmaxApi/Object/FieldEActivesessionWeekdaystart.pm
 lib/EzmaxApi/Object/FieldEEzsigndocumentStep.pm
 lib/EzmaxApi/Object/FieldEEzsignfolderSendreminderfrequency.pm
 lib/EzmaxApi/Object/FieldEEzsignfolderStep.pm
@@ -551,6 +559,7 @@ t/EzsigndocumentGetWordsPositionsV1ResponseAllOfTest.t
 t/EzsigndocumentGetWordsPositionsV1ResponseTest.t
 t/EzsigndocumentRequestCompoundTest.t
 t/EzsigndocumentRequestTest.t
+t/EzsigndocumentResponseCompoundAllOfTest.t
 t/EzsigndocumentResponseCompoundTest.t
 t/EzsigndocumentResponseTest.t
 t/EzsignfolderCreateObjectV1RequestTest.t
@@ -596,6 +605,7 @@ t/EzsignfoldersignerassociationGetObjectV1ResponseTest.t
 t/EzsignfoldersignerassociationRequestCompoundAllOfTest.t
 t/EzsignfoldersignerassociationRequestCompoundTest.t
 t/EzsignfoldersignerassociationRequestTest.t
+t/EzsignfoldersignerassociationResponseCompoundAllOfTest.t
 t/EzsignfoldersignerassociationResponseCompoundTest.t
 t/EzsignfoldersignerassociationResponseCompoundUserTest.t
 t/EzsignfoldersignerassociationResponseTest.t
@@ -617,6 +627,7 @@ t/EzsignsignatureCreateObjectV1ResponseTest.t
 t/EzsignsignatureDeleteObjectV1ResponseTest.t
 t/EzsignsignatureGetObjectV1ResponseAllOfTest.t
 t/EzsignsignatureGetObjectV1ResponseTest.t
+t/EzsignsignatureRequestCompoundAllOfTest.t
 t/EzsignsignatureRequestCompoundTest.t
 t/EzsignsignatureRequestTest.t
 t/EzsignsignaturecustomdateRequestTest.t
@@ -633,6 +644,7 @@ t/EzsigntemplatepackageGetListV1ResponseMPayloadAllOfTest.t
 t/EzsigntemplatepackageGetListV1ResponseMPayloadTest.t
 t/EzsigntemplatepackageGetListV1ResponseTest.t
 t/EzsigntemplatepackageListElementTest.t
+t/FieldEActivesessionWeekdaystartTest.t
 t/FieldEEzsigndocumentStepTest.t
 t/FieldEEzsignfolderSendreminderfrequencyTest.t
 t/FieldEEzsignfolderStepTest.t

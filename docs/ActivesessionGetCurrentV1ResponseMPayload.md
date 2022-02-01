@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **s_customer_code** | **string** | The customer code specific to the client in which the API request is being made | 
 **e_activesession_sessiontype** | **string** | The type of session used for the API request call | 
+**e_activesession_weekdaystart** | [**FieldEActivesessionWeekdaystart**](FieldEActivesessionWeekdaystart.md) |  | 
 **fki_language_id** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | 
 **s_company_name_x** | **string** | The name of the active Company in the current language | 
 **s_department_name_x** | **string** | The name of the active Department in the current language | 
