@@ -1,18 +1,13 @@
-# EzmaxApi::Object::ActivesessionGetCurrentV1ResponseMPayload
+# EzmaxApi::Object::ActivesessionResponse
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::ActivesessionGetCurrentV1ResponseMPayload;
+use EzmaxApi::Object::ActivesessionResponse;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_pki_permission_id** | **ARRAY[int]** | An array of permissions granted to the user or api key | 
-**obj_user_real** | [**ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  | 
-**obj_user_cloned** | [**ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  | [optional] 
-**obj_apikey** | [**ActivesessionResponseCompoundApikey**](ActivesessionResponseCompoundApikey.md) |  | [optional] 
-**a_e_module_internalname** | **ARRAY[string]** | An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key. | 
 **e_activesession_sessiontype** | [**FieldEActivesessionSessiontype**](FieldEActivesessionSessiontype.md) |  | 
 **e_activesession_weekdaystart** | [**FieldEActivesessionWeekdaystart**](FieldEActivesessionWeekdaystart.md) |  | 
 **fki_language_id** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | 

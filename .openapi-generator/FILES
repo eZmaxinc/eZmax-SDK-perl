@@ -6,6 +6,11 @@ bin/autodoc
 docs/ActivesessionGetCurrentV1Response.md
 docs/ActivesessionGetCurrentV1ResponseAllOf.md
 docs/ActivesessionGetCurrentV1ResponseMPayload.md
+docs/ActivesessionResponse.md
+docs/ActivesessionResponseCompound.md
+docs/ActivesessionResponseCompoundAllOf.md
+docs/ActivesessionResponseCompoundApikey.md
+docs/ActivesessionResponseCompoundUser.md
 docs/AddressRequest.md
 docs/ApikeyCreateObjectV1Request.md
 docs/ApikeyCreateObjectV1Response.md
@@ -166,6 +171,7 @@ docs/EzsigntemplatepackageGetListV1ResponseAllOf.md
 docs/EzsigntemplatepackageGetListV1ResponseMPayload.md
 docs/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md
 docs/EzsigntemplatepackageListElement.md
+docs/FieldEActivesessionSessiontype.md
 docs/FieldEActivesessionWeekdaystart.md
 docs/FieldEEzsigndocumentStep.md
 docs/FieldEEzsignfolderSendreminderfrequency.md
@@ -238,7 +244,6 @@ docs/WebhookResponse.md
 docs/WebhookUserUserCreated.md
 docs/WebhookUserUserCreatedAllOf.md
 docs/WebsiteRequest.md
-docs/Xxxx.md
 git_push.sh
 lib/EzmaxApi/ApiClient.pm
 lib/EzmaxApi/ApiFactory.pm
@@ -251,6 +256,11 @@ lib/EzmaxApi/ModuleUserApi.pm
 lib/EzmaxApi/Object/ActivesessionGetCurrentV1Response.pm
 lib/EzmaxApi/Object/ActivesessionGetCurrentV1ResponseAllOf.pm
 lib/EzmaxApi/Object/ActivesessionGetCurrentV1ResponseMPayload.pm
+lib/EzmaxApi/Object/ActivesessionResponse.pm
+lib/EzmaxApi/Object/ActivesessionResponseCompound.pm
+lib/EzmaxApi/Object/ActivesessionResponseCompoundAllOf.pm
+lib/EzmaxApi/Object/ActivesessionResponseCompoundApikey.pm
+lib/EzmaxApi/Object/ActivesessionResponseCompoundUser.pm
 lib/EzmaxApi/Object/AddressRequest.pm
 lib/EzmaxApi/Object/ApikeyCreateObjectV1Request.pm
 lib/EzmaxApi/Object/ApikeyCreateObjectV1Response.pm
@@ -411,6 +421,7 @@ lib/EzmaxApi/Object/EzsigntemplatepackageGetListV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsigntemplatepackageGetListV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.pm
 lib/EzmaxApi/Object/EzsigntemplatepackageListElement.pm
+lib/EzmaxApi/Object/FieldEActivesessionSessiontype.pm
 lib/EzmaxApi/Object/FieldEActivesessionWeekdaystart.pm
 lib/EzmaxApi/Object/FieldEEzsigndocumentStep.pm
 lib/EzmaxApi/Object/FieldEEzsignfolderSendreminderfrequency.pm
@@ -465,7 +476,6 @@ lib/EzmaxApi/Object/WebhookResponse.pm
 lib/EzmaxApi/Object/WebhookUserUserCreated.pm
 lib/EzmaxApi/Object/WebhookUserUserCreatedAllOf.pm
 lib/EzmaxApi/Object/WebsiteRequest.pm
-lib/EzmaxApi/Object/Xxxx.pm
 lib/EzmaxApi/ObjectActivesessionApi.pm
 lib/EzmaxApi/ObjectApikeyApi.pm
 lib/EzmaxApi/ObjectEzsignbulksendApi.pm
@@ -484,6 +494,11 @@ lib/EzmaxApi/Role/AutoDoc.pm
 t/ActivesessionGetCurrentV1ResponseAllOfTest.t
 t/ActivesessionGetCurrentV1ResponseMPayloadTest.t
 t/ActivesessionGetCurrentV1ResponseTest.t
+t/ActivesessionResponseCompoundAllOfTest.t
+t/ActivesessionResponseCompoundApikeyTest.t
+t/ActivesessionResponseCompoundTest.t
+t/ActivesessionResponseCompoundUserTest.t
+t/ActivesessionResponseTest.t
 t/AddressRequestTest.t
 t/ApikeyCreateObjectV1RequestTest.t
 t/ApikeyCreateObjectV1ResponseAllOfTest.t
@@ -644,6 +659,7 @@ t/EzsigntemplatepackageGetListV1ResponseMPayloadAllOfTest.t
 t/EzsigntemplatepackageGetListV1ResponseMPayloadTest.t
 t/EzsigntemplatepackageGetListV1ResponseTest.t
 t/EzsigntemplatepackageListElementTest.t
+t/FieldEActivesessionSessiontypeTest.t
 t/FieldEActivesessionWeekdaystartTest.t
 t/FieldEEzsigndocumentStepTest.t
 t/FieldEEzsignfolderSendreminderfrequencyTest.t
@@ -716,4 +732,3 @@ t/WebhookResponseTest.t
 t/WebhookUserUserCreatedAllOfTest.t
 t/WebhookUserUserCreatedTest.t
 t/WebsiteRequestTest.t
-t/XxxxTest.t

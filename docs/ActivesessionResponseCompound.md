@@ -1,8 +1,8 @@
-# EzmaxApi::Object::ActivesessionGetCurrentV1ResponseMPayload
+# EzmaxApi::Object::ActivesessionResponseCompound
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::ActivesessionGetCurrentV1ResponseMPayload;
+use EzmaxApi::Object::ActivesessionResponseCompound;
 ```
 
 ## Properties

@@ -257,6 +257,11 @@ To load the models:
 use EzmaxApi::Object::ActivesessionGetCurrentV1Response;
 use EzmaxApi::Object::ActivesessionGetCurrentV1ResponseAllOf;
 use EzmaxApi::Object::ActivesessionGetCurrentV1ResponseMPayload;
+use EzmaxApi::Object::ActivesessionResponse;
+use EzmaxApi::Object::ActivesessionResponseCompound;
+use EzmaxApi::Object::ActivesessionResponseCompoundAllOf;
+use EzmaxApi::Object::ActivesessionResponseCompoundApikey;
+use EzmaxApi::Object::ActivesessionResponseCompoundUser;
 use EzmaxApi::Object::AddressRequest;
 use EzmaxApi::Object::ApikeyCreateObjectV1Request;
 use EzmaxApi::Object::ApikeyCreateObjectV1Response;
@@ -417,6 +422,7 @@ use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageListElement;
+use EzmaxApi::Object::FieldEActivesessionSessiontype;
 use EzmaxApi::Object::FieldEActivesessionWeekdaystart;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
@@ -471,7 +477,6 @@ use EzmaxApi::Object::WebhookResponse;
 use EzmaxApi::Object::WebhookUserUserCreated;
 use EzmaxApi::Object::WebhookUserUserCreatedAllOf;
 use EzmaxApi::Object::WebsiteRequest;
-use EzmaxApi::Object::Xxxx;
 
 ````
 
@@ -506,6 +511,11 @@ use EzmaxApi::ObjectPeriodApi;
 use EzmaxApi::Object::ActivesessionGetCurrentV1Response;
 use EzmaxApi::Object::ActivesessionGetCurrentV1ResponseAllOf;
 use EzmaxApi::Object::ActivesessionGetCurrentV1ResponseMPayload;
+use EzmaxApi::Object::ActivesessionResponse;
+use EzmaxApi::Object::ActivesessionResponseCompound;
+use EzmaxApi::Object::ActivesessionResponseCompoundAllOf;
+use EzmaxApi::Object::ActivesessionResponseCompoundApikey;
+use EzmaxApi::Object::ActivesessionResponseCompoundUser;
 use EzmaxApi::Object::AddressRequest;
 use EzmaxApi::Object::ApikeyCreateObjectV1Request;
 use EzmaxApi::Object::ApikeyCreateObjectV1Response;
@@ -666,6 +676,7 @@ use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageListElement;
+use EzmaxApi::Object::FieldEActivesessionSessiontype;
 use EzmaxApi::Object::FieldEActivesessionWeekdaystart;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
@@ -720,7 +731,6 @@ use EzmaxApi::Object::WebhookResponse;
 use EzmaxApi::Object::WebhookUserUserCreated;
 use EzmaxApi::Object::WebhookUserUserCreatedAllOf;
 use EzmaxApi::Object::WebsiteRequest;
-use EzmaxApi::Object::Xxxx;
 
 # for displaying the API response data
 use Data::Dumper;
@@ -804,6 +814,11 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::ActivesessionGetCurrentV1Response](docs/ActivesessionGetCurrentV1Response.md)
  - [EzmaxApi::Object::ActivesessionGetCurrentV1ResponseAllOf](docs/ActivesessionGetCurrentV1ResponseAllOf.md)
  - [EzmaxApi::Object::ActivesessionGetCurrentV1ResponseMPayload](docs/ActivesessionGetCurrentV1ResponseMPayload.md)
+ - [EzmaxApi::Object::ActivesessionResponse](docs/ActivesessionResponse.md)
+ - [EzmaxApi::Object::ActivesessionResponseCompound](docs/ActivesessionResponseCompound.md)
+ - [EzmaxApi::Object::ActivesessionResponseCompoundAllOf](docs/ActivesessionResponseCompoundAllOf.md)
+ - [EzmaxApi::Object::ActivesessionResponseCompoundApikey](docs/ActivesessionResponseCompoundApikey.md)
+ - [EzmaxApi::Object::ActivesessionResponseCompoundUser](docs/ActivesessionResponseCompoundUser.md)
  - [EzmaxApi::Object::AddressRequest](docs/AddressRequest.md)
  - [EzmaxApi::Object::ApikeyCreateObjectV1Request](docs/ApikeyCreateObjectV1Request.md)
  - [EzmaxApi::Object::ApikeyCreateObjectV1Response](docs/ApikeyCreateObjectV1Response.md)
@@ -964,6 +979,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload](docs/EzsigntemplatepackageGetListV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayloadAllOf](docs/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackageListElement](docs/EzsigntemplatepackageListElement.md)
+ - [EzmaxApi::Object::FieldEActivesessionSessiontype](docs/FieldEActivesessionSessiontype.md)
  - [EzmaxApi::Object::FieldEActivesessionWeekdaystart](docs/FieldEActivesessionWeekdaystart.md)
  - [EzmaxApi::Object::FieldEEzsigndocumentStep](docs/FieldEEzsigndocumentStep.md)
  - [EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency](docs/FieldEEzsignfolderSendreminderfrequency.md)
@@ -1018,7 +1034,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::WebhookUserUserCreated](docs/WebhookUserUserCreated.md)
  - [EzmaxApi::Object::WebhookUserUserCreatedAllOf](docs/WebhookUserUserCreatedAllOf.md)
  - [EzmaxApi::Object::WebsiteRequest](docs/WebsiteRequest.md)
- - [EzmaxApi::Object::Xxxx](docs/Xxxx.md)
 
 
 # DOCUMENTATION FOR AUTHORIZATION

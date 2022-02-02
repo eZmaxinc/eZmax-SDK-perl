@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::Xxxx');
+use_ok('EzmaxApi::Object::ActivesessionResponseCompoundUser');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::Xxxx->new();
+#my $instance = EzmaxApi::Object::ActivesessionResponseCompoundUser->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::Xxxx');
+#isa_ok($instance, 'EzmaxApi::Object::ActivesessionResponseCompoundUser');
 
