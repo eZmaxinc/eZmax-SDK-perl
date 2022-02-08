@@ -160,6 +160,13 @@ __PACKAGE__->class_documentation({description => 'An Franchisereferalincome Obje
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_franchisereferalincome_id' => {
+        datatype => 'int',
+        base_name => 'pkiFranchisereferalincomeID',
+        description => 'The unique ID of the Franchisereferalincome',
+        format => '',
+        read_only => '',
+            },
     'fki_franchisebroker_id' => {
         datatype => 'int',
         base_name => 'fkiFranchisebrokerID',
@@ -240,6 +247,7 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_franchisereferalincome_id' => 'int',
     'fki_franchisebroker_id' => 'int',
     'fki_franchisereferalincomeprogram_id' => 'int',
     'fki_period_id' => 'int',
@@ -254,6 +262,7 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_franchisereferalincome_id' => 'pkiFranchisereferalincomeID',
     'fki_franchisebroker_id' => 'fkiFranchisebrokerID',
     'fki_franchisereferalincomeprogram_id' => 'fkiFranchisereferalincomeprogramID',
     'fki_period_id' => 'fkiPeriodID',

@@ -94,6 +94,8 @@ docs/EzsignfolderCreateObjectV1Response.md
 docs/EzsignfolderCreateObjectV1ResponseAllOf.md
 docs/EzsignfolderCreateObjectV1ResponseMPayload.md
 docs/EzsignfolderDeleteObjectV1Response.md
+docs/EzsignfolderEditObjectV1Request.md
+docs/EzsignfolderEditObjectV1Response.md
 docs/EzsignfolderGetEzsigndocumentsV1Response.md
 docs/EzsignfolderGetEzsigndocumentsV1ResponseAllOf.md
 docs/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.md
@@ -344,6 +346,8 @@ lib/EzmaxApi/Object/EzsignfolderCreateObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignfolderDeleteObjectV1Response.pm
+lib/EzmaxApi/Object/EzsignfolderEditObjectV1Request.pm
+lib/EzmaxApi/Object/EzsignfolderEditObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderGetEzsigndocumentsV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderGetEzsigndocumentsV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.pm
@@ -582,6 +586,8 @@ t/EzsignfolderCreateObjectV1ResponseAllOfTest.t
 t/EzsignfolderCreateObjectV1ResponseMPayloadTest.t
 t/EzsignfolderCreateObjectV1ResponseTest.t
 t/EzsignfolderDeleteObjectV1ResponseTest.t
+t/EzsignfolderEditObjectV1RequestTest.t
+t/EzsignfolderEditObjectV1ResponseTest.t
 t/EzsignfolderGetEzsigndocumentsV1ResponseAllOfTest.t
 t/EzsignfolderGetEzsigndocumentsV1ResponseMPayloadTest.t
 t/EzsignfolderGetEzsigndocumentsV1ResponseTest.t

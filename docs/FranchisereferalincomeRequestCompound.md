@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **obj_address** | [**AddressRequest**](AddressRequest.md) |  | 
 **a_obj_contact** | [**ARRAY[ContactRequestCompound]**](ContactRequestCompound.md) |  | 
+**pki_franchisereferalincome_id** | **int** | The unique ID of the Franchisereferalincome | [optional] 
 **fki_franchisebroker_id** | **int** | The unique ID of the Franchisebroker | 
 **fki_franchisereferalincomeprogram_id** | **int** | The unique ID of the Franchisereferalincomeprogram | 
 **fki_period_id** | **int** | The unique ID of the Period | 

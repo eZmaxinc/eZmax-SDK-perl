@@ -162,6 +162,13 @@ __PACKAGE__->class_documentation({description => 'An Apikey Object and children 
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_apikey_id' => {
+        datatype => 'int',
+        base_name => 'pkiApikeyID',
+        description => 'The unique ID of the Apikey',
+        format => '',
+        read_only => '',
+            },
     'fki_user_id' => {
         datatype => 'int',
         base_name => 'fkiUserID',
@@ -179,11 +186,13 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_apikey_id' => 'int',
     'fki_user_id' => 'int',
     'obj_apikey_description' => 'MultilingualApikeyDescription'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_apikey_id' => 'pkiApikeyID',
     'fki_user_id' => 'fkiUserID',
     'obj_apikey_description' => 'objApikeyDescription'
 } );

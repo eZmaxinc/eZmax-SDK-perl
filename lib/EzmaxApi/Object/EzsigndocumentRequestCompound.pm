@@ -161,6 +161,13 @@ __PACKAGE__->class_documentation({description => 'An Ezsigndocument Object and c
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsigndocument_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsigndocumentID',
+        description => 'The unique ID of the Ezsigndocument',
+        format => '',
+        read_only => '',
+            },
     'e_ezsigndocument_source' => {
         datatype => 'string',
         base_name => 'eEzsigndocumentSource',
@@ -234,6 +241,7 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezsigndocument_id' => 'int',
     'e_ezsigndocument_source' => 'string',
     'e_ezsigndocument_format' => 'string',
     's_ezsigndocument_base64' => 'string',
@@ -247,6 +255,7 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezsigndocument_id' => 'pkiEzsigndocumentID',
     'e_ezsigndocument_source' => 'eEzsigndocumentSource',
     'e_ezsigndocument_format' => 'eEzsigndocumentFormat',
     's_ezsigndocument_base64' => 'sEzsigndocumentBase64',

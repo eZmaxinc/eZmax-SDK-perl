@@ -8,6 +8,7 @@ use EzmaxApi::Object::FranchisereferalincomeRequest;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pki_franchisereferalincome_id** | **int** | The unique ID of the Franchisereferalincome | [optional] 
 **fki_franchisebroker_id** | **int** | The unique ID of the Franchisebroker | 
 **fki_franchisereferalincomeprogram_id** | **int** | The unique ID of the Franchisereferalincomeprogram | 
 **fki_period_id** | **int** | The unique ID of the Period | 

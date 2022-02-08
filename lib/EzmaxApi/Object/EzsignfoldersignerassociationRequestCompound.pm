@@ -170,6 +170,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'pki_ezsignfoldersignerassociation_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignfoldersignerassociationID',
+        description => 'The unique ID of the Ezsignfoldersignerassociation',
+        format => '',
+        read_only => '',
+            },
     'fki_user_id' => {
         datatype => 'int',
         base_name => 'fkiUserID',
@@ -195,6 +202,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'obj_ezsignsigner' => 'EzsignsignerRequestCompound',
+    'pki_ezsignfoldersignerassociation_id' => 'int',
     'fki_user_id' => 'int',
     'fki_ezsignfolder_id' => 'int',
     'b_ezsignfoldersignerassociation_receivecopy' => 'boolean'
@@ -202,6 +210,7 @@ __PACKAGE__->openapi_types( {
 
 __PACKAGE__->attribute_map( {
     'obj_ezsignsigner' => 'objEzsignsigner',
+    'pki_ezsignfoldersignerassociation_id' => 'pkiEzsignfoldersignerassociationID',
     'fki_user_id' => 'fkiUserID',
     'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
     'b_ezsignfoldersignerassociation_receivecopy' => 'bEzsignfoldersignerassociationReceivecopy'

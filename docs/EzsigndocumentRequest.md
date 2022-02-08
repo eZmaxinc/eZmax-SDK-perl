@@ -8,6 +8,7 @@ use EzmaxApi::Object::EzsigndocumentRequest;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pki_ezsigndocument_id** | **int** | The unique ID of the Ezsigndocument | [optional] 
 **e_ezsigndocument_source** | **string** | Indicates where to look for the document binary content. | 
 **e_ezsigndocument_format** | **string** | Indicates the format of the document. | 
 **s_ezsigndocument_base64** | **string** | The Base64 encoded binary content of the document.  This field is Required when eEzsigndocumentSource &#x3D; Base64. | [optional] 

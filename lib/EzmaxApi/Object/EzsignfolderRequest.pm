@@ -161,6 +161,13 @@ __PACKAGE__->class_documentation({description => 'An Ezsignfolder Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignfolder_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignfolderID',
+        description => 'The unique ID of the Ezsignfolder',
+        format => '',
+        read_only => '',
+            },
     'fki_ezsignfoldertype_id' => {
         datatype => 'int',
         base_name => 'fkiEzsignfoldertypeID',
@@ -199,6 +206,7 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezsignfolder_id' => 'int',
     'fki_ezsignfoldertype_id' => 'int',
     'fki_ezsigntsarequirement_id' => 'int',
     's_ezsignfolder_description' => 'string',
@@ -207,6 +215,7 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezsignfolder_id' => 'pkiEzsignfolderID',
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
     'fki_ezsigntsarequirement_id' => 'fkiEzsigntsarequirementID',
     's_ezsignfolder_description' => 'sEzsignfolderDescription',

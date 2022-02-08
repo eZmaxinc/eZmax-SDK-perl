@@ -44,6 +44,14 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfolderApi');
 #my $ezsignfolder_delete_object_v1_result = $api->ezsignfolder_delete_object_v1(pki_ezsignfolder_id => $ezsignfolder_delete_object_v1_pki_ezsignfolder_id);
 
 #
+# ezsignfolder_edit_object_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_edit_object_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_edit_object_v1_ezsignfolder_edit_object_v1_request = undef; # replace NULL with a proper value
+#my $ezsignfolder_edit_object_v1_result = $api->ezsignfolder_edit_object_v1(pki_ezsignfolder_id => $ezsignfolder_edit_object_v1_pki_ezsignfolder_id, ezsignfolder_edit_object_v1_request => $ezsignfolder_edit_object_v1_ezsignfolder_edit_object_v1_request);
+
+#
 # ezsignfolder_get_ezsigndocuments_v1 test
 #
 # uncomment below and update the test

@@ -161,6 +161,13 @@ __PACKAGE__->class_documentation({description => 'An Ezsignsignature Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignsignature_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignsignatureID',
+        description => 'The unique ID of the Ezsignsignature',
+        format => '',
+        read_only => '',
+            },
     'fki_ezsignfoldersignerassociation_id' => {
         datatype => 'int',
         base_name => 'fkiEzsignfoldersignerassociationID',
@@ -213,6 +220,7 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezsignsignature_id' => 'int',
     'fki_ezsignfoldersignerassociation_id' => 'int',
     'i_ezsignpage_pagenumber' => 'int',
     'i_ezsignsignature_x' => 'int',
@@ -223,6 +231,7 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezsignsignature_id' => 'pkiEzsignsignatureID',
     'fki_ezsignfoldersignerassociation_id' => 'fkiEzsignfoldersignerassociationID',
     'i_ezsignpage_pagenumber' => 'iEzsignpagePagenumber',
     'i_ezsignsignature_x' => 'iEzsignsignatureX',

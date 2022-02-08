@@ -1,16 +1,15 @@
-# EzmaxApi::Object::ApikeyRequest
+# EzmaxApi::Object::EzsignfolderEditObjectV1Response
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::ApikeyRequest;
+use EzmaxApi::Object::EzsignfolderEditObjectV1Response;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pki_apikey_id** | **int** | The unique ID of the Apikey | [optional] 
-**fki_user_id** | **int** | The unique ID of the User | 
-**obj_apikey_description** | [**MultilingualApikeyDescription**](MultilingualApikeyDescription.md) |  | 
+**obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
+**obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
