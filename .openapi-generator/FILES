@@ -84,8 +84,11 @@ docs/EzsigndocumentGetObjectV1ResponseMPayload.md
 docs/EzsigndocumentGetWordsPositionsV1Request.md
 docs/EzsigndocumentGetWordsPositionsV1Response.md
 docs/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md
+docs/EzsigndocumentPatchObjectV1Request.md
+docs/EzsigndocumentPatchObjectV1Response.md
 docs/EzsigndocumentRequest.md
 docs/EzsigndocumentRequestCompound.md
+docs/EzsigndocumentRequestPatch.md
 docs/EzsigndocumentResponse.md
 docs/EzsigndocumentResponseCompound.md
 docs/EzsigndocumentResponseCompoundAllOf.md
@@ -336,8 +339,11 @@ lib/EzmaxApi/Object/EzsigndocumentGetObjectV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigndocumentGetWordsPositionsV1Request.pm
 lib/EzmaxApi/Object/EzsigndocumentGetWordsPositionsV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentGetWordsPositionsV1ResponseAllOf.pm
+lib/EzmaxApi/Object/EzsigndocumentPatchObjectV1Request.pm
+lib/EzmaxApi/Object/EzsigndocumentPatchObjectV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentRequest.pm
 lib/EzmaxApi/Object/EzsigndocumentRequestCompound.pm
+lib/EzmaxApi/Object/EzsigndocumentRequestPatch.pm
 lib/EzmaxApi/Object/EzsigndocumentResponse.pm
 lib/EzmaxApi/Object/EzsigndocumentResponseCompound.pm
 lib/EzmaxApi/Object/EzsigndocumentResponseCompoundAllOf.pm
@@ -576,7 +582,10 @@ t/EzsigndocumentGetObjectV1ResponseTest.t
 t/EzsigndocumentGetWordsPositionsV1RequestTest.t
 t/EzsigndocumentGetWordsPositionsV1ResponseAllOfTest.t
 t/EzsigndocumentGetWordsPositionsV1ResponseTest.t
+t/EzsigndocumentPatchObjectV1RequestTest.t
+t/EzsigndocumentPatchObjectV1ResponseTest.t
 t/EzsigndocumentRequestCompoundTest.t
+t/EzsigndocumentRequestPatchTest.t
 t/EzsigndocumentRequestTest.t
 t/EzsigndocumentResponseCompoundAllOfTest.t
 t/EzsigndocumentResponseCompoundTest.t

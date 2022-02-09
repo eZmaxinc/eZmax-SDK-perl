@@ -335,8 +335,11 @@ use EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Request;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Response;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseAllOf;
+use EzmaxApi::Object::EzsigndocumentPatchObjectV1Request;
+use EzmaxApi::Object::EzsigndocumentPatchObjectV1Response;
 use EzmaxApi::Object::EzsigndocumentRequest;
 use EzmaxApi::Object::EzsigndocumentRequestCompound;
+use EzmaxApi::Object::EzsigndocumentRequestPatch;
 use EzmaxApi::Object::EzsigndocumentResponse;
 use EzmaxApi::Object::EzsigndocumentResponseCompound;
 use EzmaxApi::Object::EzsigndocumentResponseCompoundAllOf;
@@ -591,8 +594,11 @@ use EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Request;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Response;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseAllOf;
+use EzmaxApi::Object::EzsigndocumentPatchObjectV1Request;
+use EzmaxApi::Object::EzsigndocumentPatchObjectV1Response;
 use EzmaxApi::Object::EzsigndocumentRequest;
 use EzmaxApi::Object::EzsigndocumentRequestCompound;
+use EzmaxApi::Object::EzsigndocumentRequestPatch;
 use EzmaxApi::Object::EzsigndocumentResponse;
 use EzmaxApi::Object::EzsigndocumentResponseCompound;
 use EzmaxApi::Object::EzsigndocumentResponseCompoundAllOf;
@@ -789,9 +795,10 @@ Class | Method | HTTP request | Description
 *ObjectEzsigndocumentApi* | [**ezsigndocument_get_form_data_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_form_data_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data
 *ObjectEzsigndocumentApi* | [**ezsigndocument_get_object_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_object_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocument_get_words_positions_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_words_positions_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument
+*ObjectEzsigndocumentApi* | [**ezsigndocument_patch_object_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_patch_object_v1) | **PATCH** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Patch an existing Ezsigndocument
 *ObjectEzsignfolderApi* | [**ezsignfolder_create_object_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_create_object_v1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolder_delete_object_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_delete_object_v1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
-*ObjectEzsignfolderApi* | [**ezsignfolder_edit_object_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Edit an Ezsignfolder
+*ObjectEzsignfolderApi* | [**ezsignfolder_edit_object_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_ezsigndocuments_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_ezsigndocuments_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_ezsignfoldersignerassociations_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_ezsignfoldersignerassociations_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations | Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_forms_data_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_forms_data_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data
@@ -897,8 +904,11 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Request](docs/EzsigndocumentGetWordsPositionsV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Response](docs/EzsigndocumentGetWordsPositionsV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseAllOf](docs/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md)
+ - [EzmaxApi::Object::EzsigndocumentPatchObjectV1Request](docs/EzsigndocumentPatchObjectV1Request.md)
+ - [EzmaxApi::Object::EzsigndocumentPatchObjectV1Response](docs/EzsigndocumentPatchObjectV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentRequest](docs/EzsigndocumentRequest.md)
  - [EzmaxApi::Object::EzsigndocumentRequestCompound](docs/EzsigndocumentRequestCompound.md)
+ - [EzmaxApi::Object::EzsigndocumentRequestPatch](docs/EzsigndocumentRequestPatch.md)
  - [EzmaxApi::Object::EzsigndocumentResponse](docs/EzsigndocumentResponse.md)
  - [EzmaxApi::Object::EzsigndocumentResponseCompound](docs/EzsigndocumentResponseCompound.md)
  - [EzmaxApi::Object::EzsigndocumentResponseCompoundAllOf](docs/EzsigndocumentResponseCompoundAllOf.md)

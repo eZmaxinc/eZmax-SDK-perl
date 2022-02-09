@@ -183,7 +183,7 @@ sub ezsignfolder_delete_object_v1 {
 #
 # ezsignfolder_edit_object_v1
 #
-# Edit an Ezsignfolder
+# Modify an existing Ezsignfolder
 #
 # @param int $pki_ezsignfolder_id  (required)
 # @param EzsignfolderEditObjectV1Request $ezsignfolder_edit_object_v1_request  (required)
@@ -201,7 +201,7 @@ sub ezsignfolder_delete_object_v1 {
     },
     };
     __PACKAGE__->method_documentation->{ 'ezsignfolder_edit_object_v1' } = {
-        summary => 'Edit an Ezsignfolder',
+        summary => 'Modify an existing Ezsignfolder',
         params => $params,
         returns => 'EzsignfolderEditObjectV1Response',
         };
