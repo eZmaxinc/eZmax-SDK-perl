@@ -181,6 +181,89 @@ sub ezsignsignature_delete_object_v1 {
 }
 
 #
+# ezsignsignature_edit_object_v1
+#
+# Edit an existing Ezsignsignature
+#
+# @param int $pki_ezsignsignature_id  (required)
+# @param EzsignsignatureEditObjectV1Request $ezsignsignature_edit_object_v1_request  (required)
+{
+    my $params = {
+    'pki_ezsignsignature_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsignsignature_edit_object_v1_request' => {
+        data_type => 'EzsignsignatureEditObjectV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignsignature_edit_object_v1' } = {
+        summary => 'Edit an existing Ezsignsignature',
+        params => $params,
+        returns => 'EzsignsignatureEditObjectV1Response',
+        };
+}
+# @return EzsignsignatureEditObjectV1Response
+#
+sub ezsignsignature_edit_object_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignsignature_id' is set
+    unless (exists $args{'pki_ezsignsignature_id'}) {
+      croak("Missing the required parameter 'pki_ezsignsignature_id' when calling ezsignsignature_edit_object_v1");
+    }
+
+    # verify the required parameter 'ezsignsignature_edit_object_v1_request' is set
+    unless (exists $args{'ezsignsignature_edit_object_v1_request'}) {
+      croak("Missing the required parameter 'ezsignsignature_edit_object_v1_request' when calling ezsignsignature_edit_object_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignsignature/{pkiEzsignsignatureID}';
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsignsignature_id'}) {
+        my $_base_variable = "{" . "pkiEzsignsignatureID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignsignature_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsignsignature_edit_object_v1_request'}) {
+        $_body_data = $args{'ezsignsignature_edit_object_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignsignatureEditObjectV1Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsignsignature_get_object_v1
 #
 # Retrieve an existing Ezsignsignature

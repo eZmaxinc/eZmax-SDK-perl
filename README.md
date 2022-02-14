@@ -408,6 +408,8 @@ use EzmaxApi::Object::EzsignsignatureCreateObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignatureDeleteObjectV1Response;
+use EzmaxApi::Object::EzsignsignatureEditObjectV1Request;
+use EzmaxApi::Object::EzsignsignatureEditObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureGetObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureRequest;
@@ -667,6 +669,8 @@ use EzmaxApi::Object::EzsignsignatureCreateObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignatureDeleteObjectV1Response;
+use EzmaxApi::Object::EzsignsignatureEditObjectV1Request;
+use EzmaxApi::Object::EzsignsignatureEditObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureGetObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureRequest;
@@ -814,6 +818,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfoldertypeApi* | [**ezsignfoldertype_get_list_v1**](docs/ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_list_v1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list
 *ObjectEzsignsignatureApi* | [**ezsignsignature_create_object_v1**](docs/ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature
 *ObjectEzsignsignatureApi* | [**ezsignsignature_delete_object_v1**](docs/ObjectEzsignsignatureApi.md#ezsignsignature_delete_object_v1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
+*ObjectEzsignsignatureApi* | [**ezsignsignature_edit_object_v1**](docs/ObjectEzsignsignatureApi.md#ezsignsignature_edit_object_v1) | **PUT** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature
 *ObjectEzsignsignatureApi* | [**ezsignsignature_get_object_v1**](docs/ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
 *ObjectEzsigntemplatepackageApi* | [**ezsigntemplatepackage_get_list_v1**](docs/ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_get_list_v1) | **GET** /1/object/ezsigntemplatepackage/getList | Retrieve Ezsigntemplatepackage list
 *ObjectFranchisebrokerApi* | [**franchisebroker_get_autocomplete_v1**](docs/ObjectFranchisebrokerApi.md#franchisebroker_get_autocomplete_v1) | **GET** /1/object/franchisebroker/getAutocomplete/{sSelector} | Retrieve Franchisebrokers and IDs
@@ -977,6 +982,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignsignatureCreateObjectV1ResponseAllOf](docs/EzsignsignatureCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignatureCreateObjectV1ResponseMPayload](docs/EzsignsignatureCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignsignatureDeleteObjectV1Response](docs/EzsignsignatureDeleteObjectV1Response.md)
+ - [EzmaxApi::Object::EzsignsignatureEditObjectV1Request](docs/EzsignsignatureEditObjectV1Request.md)
+ - [EzmaxApi::Object::EzsignsignatureEditObjectV1Response](docs/EzsignsignatureEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsignsignatureGetObjectV1Response](docs/EzsignsignatureGetObjectV1Response.md)
  - [EzmaxApi::Object::EzsignsignatureGetObjectV1ResponseAllOf](docs/EzsignsignatureGetObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignatureRequest](docs/EzsignsignatureRequest.md)

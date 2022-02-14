@@ -157,6 +157,8 @@ docs/EzsignsignatureCreateObjectV1Response.md
 docs/EzsignsignatureCreateObjectV1ResponseAllOf.md
 docs/EzsignsignatureCreateObjectV1ResponseMPayload.md
 docs/EzsignsignatureDeleteObjectV1Response.md
+docs/EzsignsignatureEditObjectV1Request.md
+docs/EzsignsignatureEditObjectV1Response.md
 docs/EzsignsignatureGetObjectV1Response.md
 docs/EzsignsignatureGetObjectV1ResponseAllOf.md
 docs/EzsignsignatureRequest.md
@@ -412,6 +414,8 @@ lib/EzmaxApi/Object/EzsignsignatureCreateObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignsignatureCreateObjectV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignsignatureCreateObjectV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignsignatureDeleteObjectV1Response.pm
+lib/EzmaxApi/Object/EzsignsignatureEditObjectV1Request.pm
+lib/EzmaxApi/Object/EzsignsignatureEditObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignsignatureGetObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignsignatureGetObjectV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignsignatureRequest.pm
@@ -655,6 +659,8 @@ t/EzsignsignatureCreateObjectV1ResponseAllOfTest.t
 t/EzsignsignatureCreateObjectV1ResponseMPayloadTest.t
 t/EzsignsignatureCreateObjectV1ResponseTest.t
 t/EzsignsignatureDeleteObjectV1ResponseTest.t
+t/EzsignsignatureEditObjectV1RequestTest.t
+t/EzsignsignatureEditObjectV1ResponseTest.t
 t/EzsignsignatureGetObjectV1ResponseAllOfTest.t
 t/EzsignsignatureGetObjectV1ResponseTest.t
 t/EzsignsignatureRequestCompoundAllOfTest.t
