@@ -160,6 +160,13 @@ __PACKAGE__->class_documentation({description => 'An Ezsignsignaturecustomdate O
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignsignaturecustomdate_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignsignaturecustomdateID',
+        description => 'The unique ID of the Ezsignsignaturecustomdate',
+        format => '',
+        read_only => '',
+            },
     'i_ezsignsignaturecustomdate_x' => {
         datatype => 'int',
         base_name => 'iEzsignsignaturecustomdateX',
@@ -184,12 +191,14 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezsignsignaturecustomdate_id' => 'int',
     'i_ezsignsignaturecustomdate_x' => 'int',
     'i_ezsignsignaturecustomdate_y' => 'int',
     's_ezsignsignaturecustomdate_format' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezsignsignaturecustomdate_id' => 'pkiEzsignsignaturecustomdateID',
     'i_ezsignsignaturecustomdate_x' => 'iEzsignsignaturecustomdateX',
     'i_ezsignsignaturecustomdate_y' => 'iEzsignsignaturecustomdateY',
     's_ezsignsignaturecustomdate_format' => 'sEzsignsignaturecustomdateFormat'
