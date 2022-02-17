@@ -347,6 +347,89 @@ sub ezsigndocument_delete_object_v1 {
 }
 
 #
+# ezsigndocument_edit_ezsignsignatures_v1
+#
+# Edit multiple ezsignsignatures
+#
+# @param int $pki_ezsigndocument_id  (required)
+# @param ARRAY[EzsignsignatureRequestCompound] $ezsignsignature_request_compound  (required)
+{
+    my $params = {
+    'pki_ezsigndocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsignsignature_request_compound' => {
+        data_type => 'ARRAY[EzsignsignatureRequestCompound]',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_edit_ezsignsignatures_v1' } = {
+        summary => 'Edit multiple ezsignsignatures',
+        params => $params,
+        returns => 'EzsigndocumentEditEzsignsignaturesV1Response',
+        };
+}
+# @return EzsigndocumentEditEzsignsignaturesV1Response
+#
+sub ezsigndocument_edit_ezsignsignatures_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigndocument_id' is set
+    unless (exists $args{'pki_ezsigndocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_edit_ezsignsignatures_v1");
+    }
+
+    # verify the required parameter 'ezsignsignature_request_compound' is set
+    unless (exists $args{'ezsignsignature_request_compound'}) {
+      croak("Missing the required parameter 'ezsignsignature_request_compound' when calling ezsigndocument_edit_ezsignsignatures_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures';
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsigndocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigndocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigndocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsignsignature_request_compound'}) {
+        $_body_data = $args{'ezsignsignature_request_compound'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentEditEzsignsignaturesV1Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsigndocument_get_download_url_v1
 #
 # Retrieve a URL to download documents.

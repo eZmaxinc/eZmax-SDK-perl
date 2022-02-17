@@ -69,6 +69,7 @@ docs/EzsigndocumentCreateObjectV1Response.md
 docs/EzsigndocumentCreateObjectV1ResponseAllOf.md
 docs/EzsigndocumentCreateObjectV1ResponseMPayload.md
 docs/EzsigndocumentDeleteObjectV1Response.md
+docs/EzsigndocumentEditEzsignsignaturesV1Response.md
 docs/EzsigndocumentGetDownloadUrlV1Response.md
 docs/EzsigndocumentGetDownloadUrlV1ResponseAllOf.md
 docs/EzsigndocumentGetDownloadUrlV1ResponseMPayload.md
@@ -326,6 +327,7 @@ lib/EzmaxApi/Object/EzsigndocumentCreateObjectV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentCreateObjectV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsigndocumentCreateObjectV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigndocumentDeleteObjectV1Response.pm
+lib/EzmaxApi/Object/EzsigndocumentEditEzsignsignaturesV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentGetDownloadUrlV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentGetDownloadUrlV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsigndocumentGetDownloadUrlV1ResponseMPayload.pm
@@ -571,6 +573,7 @@ t/EzsigndocumentCreateObjectV1ResponseAllOfTest.t
 t/EzsigndocumentCreateObjectV1ResponseMPayloadTest.t
 t/EzsigndocumentCreateObjectV1ResponseTest.t
 t/EzsigndocumentDeleteObjectV1ResponseTest.t
+t/EzsigndocumentEditEzsignsignaturesV1ResponseTest.t
 t/EzsigndocumentGetDownloadUrlV1ResponseAllOfTest.t
 t/EzsigndocumentGetDownloadUrlV1ResponseMPayloadTest.t
 t/EzsigndocumentGetDownloadUrlV1ResponseTest.t
