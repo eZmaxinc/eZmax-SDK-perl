@@ -352,7 +352,7 @@ sub ezsigndocument_delete_object_v1 {
 # Edit multiple ezsignsignatures
 #
 # @param int $pki_ezsigndocument_id  (required)
-# @param ARRAY[EzsignsignatureRequestCompound] $ezsignsignature_request_compound  (required)
+# @param EzsigndocumentEditEzsignsignaturesV1Request $ezsigndocument_edit_ezsignsignatures_v1_request  (required)
 {
     my $params = {
     'pki_ezsigndocument_id' => {
@@ -360,8 +360,8 @@ sub ezsigndocument_delete_object_v1 {
         description => '',
         required => '1',
     },
-    'ezsignsignature_request_compound' => {
-        data_type => 'ARRAY[EzsignsignatureRequestCompound]',
+    'ezsigndocument_edit_ezsignsignatures_v1_request' => {
+        data_type => 'EzsigndocumentEditEzsignsignaturesV1Request',
         description => '',
         required => '1',
     },
@@ -382,9 +382,9 @@ sub ezsigndocument_edit_ezsignsignatures_v1 {
       croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_edit_ezsignsignatures_v1");
     }
 
-    # verify the required parameter 'ezsignsignature_request_compound' is set
-    unless (exists $args{'ezsignsignature_request_compound'}) {
-      croak("Missing the required parameter 'ezsignsignature_request_compound' when calling ezsigndocument_edit_ezsignsignatures_v1");
+    # verify the required parameter 'ezsigndocument_edit_ezsignsignatures_v1_request' is set
+    unless (exists $args{'ezsigndocument_edit_ezsignsignatures_v1_request'}) {
+      croak("Missing the required parameter 'ezsigndocument_edit_ezsignsignatures_v1_request' when calling ezsigndocument_edit_ezsignsignatures_v1");
     }
 
     # parse inputs
@@ -411,8 +411,8 @@ sub ezsigndocument_edit_ezsignsignatures_v1 {
 
     my $_body_data;
     # body params
-    if ( exists $args{'ezsignsignature_request_compound'}) {
-        $_body_data = $args{'ezsignsignature_request_compound'};
+    if ( exists $args{'ezsigndocument_edit_ezsignsignatures_v1_request'}) {
+        $_body_data = $args{'ezsigndocument_edit_ezsignsignatures_v1_request'};
     }
 
     # authentication setting, if any

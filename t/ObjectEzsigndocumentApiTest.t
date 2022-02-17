@@ -64,8 +64,8 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #
 # uncomment below and update the test
 #my $ezsigndocument_edit_ezsignsignatures_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
-#my $ezsigndocument_edit_ezsignsignatures_v1_ezsignsignature_request_compound = undef; # replace NULL with a proper value
-#my $ezsigndocument_edit_ezsignsignatures_v1_result = $api->ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id => $ezsigndocument_edit_ezsignsignatures_v1_pki_ezsigndocument_id, ezsignsignature_request_compound => $ezsigndocument_edit_ezsignsignatures_v1_ezsignsignature_request_compound);
+#my $ezsigndocument_edit_ezsignsignatures_v1_ezsigndocument_edit_ezsignsignatures_v1_request = undef; # replace NULL with a proper value
+#my $ezsigndocument_edit_ezsignsignatures_v1_result = $api->ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id => $ezsigndocument_edit_ezsignsignatures_v1_pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request => $ezsigndocument_edit_ezsignsignatures_v1_ezsigndocument_edit_ezsignsignatures_v1_request);
 
 #
 # ezsigndocument_get_download_url_v1 test

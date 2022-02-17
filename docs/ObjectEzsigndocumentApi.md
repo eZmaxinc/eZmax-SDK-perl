@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigndocument_edit_ezsignsignatures_v1**
-> EzsigndocumentEditEzsignsignaturesV1Response ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsignsignature_request_compound => $ezsignsignature_request_compound)
+> EzsigndocumentEditEzsignsignaturesV1Response ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request => $ezsigndocument_edit_ezsignsignatures_v1_request)
 
 Edit multiple ezsignsignatures
 
@@ -248,10 +248,10 @@ my $api_instance = EzmaxApi::ObjectEzsigndocumentApi->new(
 );
 
 my $pki_ezsigndocument_id = 56; # int | 
-my $ezsignsignature_request_compound = [EzmaxApi::Object::ARRAY[EzsignsignatureRequestCompound]->new()]; # ARRAY[EzsignsignatureRequestCompound] | 
+my $ezsigndocument_edit_ezsignsignatures_v1_request = EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Request->new(); # EzsigndocumentEditEzsignsignaturesV1Request | 
 
 eval {
-    my $result = $api_instance->ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsignsignature_request_compound => $ezsignsignature_request_compound);
+    my $result = $api_instance->ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request => $ezsigndocument_edit_ezsignsignatures_v1_request);
     print Dumper($result);
 };
 if ($@) {
@@ -264,7 +264,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pki_ezsigndocument_id** | **int**|  | 
- **ezsignsignature_request_compound** | [**ARRAY[EzsignsignatureRequestCompound]**](EzsignsignatureRequestCompound.md)|  | 
+ **ezsigndocument_edit_ezsignsignatures_v1_request** | [**EzsigndocumentEditEzsignsignaturesV1Request**](EzsigndocumentEditEzsignsignaturesV1Request.md)|  | 
 
 ### Return type
 

@@ -320,6 +320,7 @@ use EzmaxApi::Object::EzsigndocumentCreateObjectV1Response;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentDeleteObjectV1Response;
+use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Request;
 use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Response;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1Response;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseAllOf;
@@ -582,6 +583,7 @@ use EzmaxApi::Object::EzsigndocumentCreateObjectV1Response;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentDeleteObjectV1Response;
+use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Request;
 use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Response;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1Response;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseAllOf;
@@ -897,6 +899,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseAllOf](docs/EzsigndocumentCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseMPayload](docs/EzsigndocumentCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentDeleteObjectV1Response](docs/EzsigndocumentDeleteObjectV1Response.md)
+ - [EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Request](docs/EzsigndocumentEditEzsignsignaturesV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Response](docs/EzsigndocumentEditEzsignsignaturesV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1Response](docs/EzsigndocumentGetDownloadUrlV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseAllOf](docs/EzsigndocumentGetDownloadUrlV1ResponseAllOf.md)
