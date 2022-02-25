@@ -1,13 +1,14 @@
-# EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Response
+# EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1Response
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Response;
+use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1Response;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**m_payload** | [**EzsigndocumentGetTemporaryProofV1ResponseMPayload**](EzsigndocumentGetTemporaryProofV1ResponseMPayload.md) |  | 
 **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
 **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
 

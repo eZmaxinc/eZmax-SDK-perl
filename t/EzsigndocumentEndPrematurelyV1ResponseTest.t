@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Response');
+use_ok('EzmaxApi::Object::EzsigndocumentEndPrematurelyV1Response');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Response->new();
+#my $instance = EzmaxApi::Object::EzsigndocumentEndPrematurelyV1Response->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Response');
+#isa_ok($instance, 'EzmaxApi::Object::EzsigndocumentEndPrematurelyV1Response');
 

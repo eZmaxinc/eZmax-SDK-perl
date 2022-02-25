@@ -1,14 +1,13 @@
-# EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Request
+# EzmaxApi::Object::FieldEEzsigndocumentlogType
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Request;
+use EzmaxApi::Object::FieldEEzsigndocumentlogType;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**obj_ezsigndocument** | [**EzsigndocumentRequest**](EzsigndocumentRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,13 +1,14 @@
-# EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Response
+# EzmaxApi::Object::EzsignbulksendGetObjectV1Response
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Response;
+use EzmaxApi::Object::EzsignbulksendGetObjectV1Response;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**m_payload** | [**EzsignbulksendGetObjectV1ResponseMPayload**](EzsignbulksendGetObjectV1ResponseMPayload.md) |  | 
 **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
 **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
 

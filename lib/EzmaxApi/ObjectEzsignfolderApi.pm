@@ -724,7 +724,7 @@ sub ezsignfolder_send_v1 {
 # Unsend the Ezsignfolder
 #
 # @param int $pki_ezsignfolder_id  (required)
-# @param string $body  (required)
+# @param object $body  (required)
 {
     my $params = {
     'pki_ezsignfolder_id' => {
@@ -733,7 +733,7 @@ sub ezsignfolder_send_v1 {
         required => '1',
     },
     'body' => {
-        data_type => 'string',
+        data_type => 'object',
         description => '',
         required => '1',
     },

@@ -222,7 +222,7 @@ __PACKAGE__->method_documentation({
     't_ezsignfolder_note' => {
         datatype => 'string',
         base_name => 'tEzsignfolderNote',
-        description => 'Somes extra notes about the eZsign Folder',
+        description => 'Note about the Ezsignfolder',
         format => '',
         read_only => '',
             },

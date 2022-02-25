@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::UNUSEDEzsignfoldersignerassociationEditObjectV1Request');
+use_ok('EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseAllOf');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::UNUSEDEzsignfoldersignerassociationEditObjectV1Request->new();
+#my $instance = EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseAllOf->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::UNUSEDEzsignfoldersignerassociationEditObjectV1Request');
+#isa_ok($instance, 'EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseAllOf');
 

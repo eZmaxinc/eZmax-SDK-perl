@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Request');
+use_ok('EzmaxApi::Object::FieldEEzsigndocumentlogType');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Request->new();
+#my $instance = EzmaxApi::Object::FieldEEzsigndocumentlogType->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Request');
+#isa_ok($instance, 'EzmaxApi::Object::FieldEEzsigndocumentlogType');
 

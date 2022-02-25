@@ -1,14 +1,14 @@
-# EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Request
+# EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseMPayload
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Request;
+use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseMPayload;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**obj_ezsignsignature** | [**EzsignsignatureRequest**](EzsignsignatureRequest.md) |  | [optional] 
+**a_obj_ezsigndocumentlog** | [**EzsigndocumentlogResponse**](EzsigndocumentlogResponse.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

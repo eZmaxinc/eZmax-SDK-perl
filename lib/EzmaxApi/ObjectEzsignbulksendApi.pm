@@ -152,4 +152,71 @@ sub ezsignbulksend_get_list_v1 {
     return $_response_object;
 }
 
+#
+# ezsignbulksend_get_object_v1
+#
+# Retrieve an existing Ezsignbulksend
+#
+# @param int $pki_ezsignbulksend_id  (required)
+{
+    my $params = {
+    'pki_ezsignbulksend_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignbulksend_get_object_v1' } = {
+        summary => 'Retrieve an existing Ezsignbulksend',
+        params => $params,
+        returns => 'EzsignbulksendGetObjectV1Response',
+        };
+}
+# @return EzsignbulksendGetObjectV1Response
+#
+sub ezsignbulksend_get_object_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignbulksend_id' is set
+    unless (exists $args{'pki_ezsignbulksend_id'}) {
+      croak("Missing the required parameter 'pki_ezsignbulksend_id' when calling ezsignbulksend_get_object_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignbulksend/{pkiEzsignbulksendID}';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsignbulksend_id'}) {
+        my $_base_variable = "{" . "pkiEzsignbulksendID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignbulksend_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignbulksendGetObjectV1Response', $response);
+    return $_response_object;
+}
+
 1;

@@ -68,6 +68,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #my $ezsigndocument_edit_ezsignsignatures_v1_result = $api->ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id => $ezsigndocument_edit_ezsignsignatures_v1_pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request => $ezsigndocument_edit_ezsignsignatures_v1_ezsigndocument_edit_ezsignsignatures_v1_request);
 
 #
+# ezsigndocument_end_prematurely_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_end_prematurely_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_end_prematurely_v1_result = $api->ezsigndocument_end_prematurely_v1(pki_ezsigndocument_id => $ezsigndocument_end_prematurely_v1_pki_ezsigndocument_id);
+
+#
 # ezsigndocument_get_download_url_v1 test
 #
 # uncomment below and update the test
@@ -95,6 +102,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 # uncomment below and update the test
 #my $ezsigndocument_get_object_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
 #my $ezsigndocument_get_object_v1_result = $api->ezsigndocument_get_object_v1(pki_ezsigndocument_id => $ezsigndocument_get_object_v1_pki_ezsigndocument_id);
+
+#
+# ezsigndocument_get_temporary_proof_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_get_temporary_proof_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_get_temporary_proof_v1_result = $api->ezsigndocument_get_temporary_proof_v1(pki_ezsigndocument_id => $ezsigndocument_get_temporary_proof_v1_pki_ezsigndocument_id);
 
 #
 # ezsigndocument_get_words_positions_v1 test

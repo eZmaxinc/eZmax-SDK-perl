@@ -77,6 +77,8 @@ Name | Type | Description  | Notes
 
 Delete an existing Ezsignfolder
 
+
+
 ### Example
 ```perl
 use Data::Dumper;
@@ -125,6 +127,8 @@ Name | Type | Description  | Notes
 > EzsignfolderEditObjectV1Response ezsignfolder_edit_object_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_edit_object_v1_request => $ezsignfolder_edit_object_v1_request)
 
 Edit an existing Ezsignfolder
+
+
 
 ### Example
 ```perl
@@ -177,6 +181,8 @@ Name | Type | Description  | Notes
 
 Retrieve an existing Ezsignfolder's Ezsigndocuments
 
+
+
 ### Example
 ```perl
 use Data::Dumper;
@@ -226,6 +232,8 @@ Name | Type | Description  | Notes
 
 Retrieve an existing Ezsignfolder's Ezsignfoldersignerassociations
 
+
+
 ### Example
 ```perl
 use Data::Dumper;
@@ -274,6 +282,8 @@ Name | Type | Description  | Notes
 > EzsignfolderGetFormsDataV1Response ezsignfolder_get_forms_data_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id)
 
 Retrieve an existing Ezsignfolder's forms data
+
+
 
 ### Example
 ```perl
@@ -383,6 +393,8 @@ Name | Type | Description  | Notes
 
 Retrieve an existing Ezsignfolder
 
+
+
 ### Example
 ```perl
 use Data::Dumper;
@@ -431,6 +443,8 @@ Name | Type | Description  | Notes
 > EzsignfolderSendV1Response ezsignfolder_send_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_send_v1_request => $ezsignfolder_send_v1_request)
 
 Send the Ezsignfolder to the signatories for signature
+
+
 
 ### Example
 ```perl
@@ -498,7 +512,7 @@ my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
 );
 
 my $pki_ezsignfolder_id = 56; # int | 
-my $body = EzmaxApi::Object::string->new(); # string | 
+my $body = EzmaxApi::Object::object->new(); # object | 
 
 eval {
     my $result = $api_instance->ezsignfolder_unsend_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, body => $body);
@@ -514,7 +528,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pki_ezsignfolder_id** | **int**|  | 
- **body** | **string**|  | 
+ **body** | **object**|  | 
 
 ### Return type
 

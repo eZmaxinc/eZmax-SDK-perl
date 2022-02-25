@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Request');
+use_ok('EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseMPayload');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Request->new();
+#my $instance = EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseMPayload->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Request');
+#isa_ok($instance, 'EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseMPayload');
 

@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Response');
+use_ok('EzmaxApi::Object::EzsignbulksendResponse');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Response->new();
+#my $instance = EzmaxApi::Object::EzsignbulksendResponse->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Response');
+#isa_ok($instance, 'EzmaxApi::Object::EzsignbulksendResponse');
 

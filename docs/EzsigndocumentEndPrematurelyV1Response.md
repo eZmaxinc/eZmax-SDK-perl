@@ -1,8 +1,8 @@
-# EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Response
+# EzmaxApi::Object::EzsigndocumentEndPrematurelyV1Response
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Response;
+use EzmaxApi::Object::EzsigndocumentEndPrematurelyV1Response;
 ```
 
 ## Properties

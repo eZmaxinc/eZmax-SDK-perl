@@ -234,7 +234,6 @@ To load the API packages:
 use EzmaxApi::GlobalCustomerApi;
 use EzmaxApi::ModuleAuthenticateApi;
 use EzmaxApi::ModuleListApi;
-use EzmaxApi::ModuleSsprApi;
 use EzmaxApi::ModuleUserApi;
 use EzmaxApi::ObjectActivesessionApi;
 use EzmaxApi::ObjectApikeyApi;
@@ -310,7 +309,12 @@ use EzmaxApi::Object::EzsignbulksendGetListV1Response;
 use EzmaxApi::Object::EzsignbulksendGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendGetListV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendGetListV1ResponseMPayloadAllOf;
+use EzmaxApi::Object::EzsignbulksendGetObjectV1Response;
+use EzmaxApi::Object::EzsignbulksendGetObjectV1ResponseAllOf;
+use EzmaxApi::Object::EzsignbulksendGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendListElement;
+use EzmaxApi::Object::EzsignbulksendResponse;
+use EzmaxApi::Object::EzsignbulksendResponseCompound;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Response;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV2Request;
@@ -322,6 +326,7 @@ use EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Request;
 use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Response;
+use EzmaxApi::Object::EzsigndocumentEndPrematurelyV1Response;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1Response;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseMPayload;
@@ -334,6 +339,9 @@ use EzmaxApi::Object::EzsigndocumentGetFormDataV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetObjectV1Response;
 use EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseMPayload;
+use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1Response;
+use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseAllOf;
+use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Request;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Response;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseAllOf;
@@ -345,6 +353,7 @@ use EzmaxApi::Object::EzsigndocumentRequestPatch;
 use EzmaxApi::Object::EzsigndocumentResponse;
 use EzmaxApi::Object::EzsigndocumentResponseCompound;
 use EzmaxApi::Object::EzsigndocumentResponseCompoundAllOf;
+use EzmaxApi::Object::EzsigndocumentlogResponse;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Response;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseAllOf;
@@ -434,6 +443,7 @@ use EzmaxApi::Object::EzsigntemplatepackageListElement;
 use EzmaxApi::Object::FieldEActivesessionSessiontype;
 use EzmaxApi::Object::FieldEActivesessionWeekdaystart;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
+use EzmaxApi::Object::FieldEEzsigndocumentlogType;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
@@ -465,14 +475,6 @@ use EzmaxApi::Object::SsprSendUsernamesV1Request;
 use EzmaxApi::Object::SsprUnlockAccountRequestV1Request;
 use EzmaxApi::Object::SsprUnlockAccountV1Request;
 use EzmaxApi::Object::SsprValidateTokenV1Request;
-use EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Request;
-use EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Response;
-use EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Request;
-use EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Response;
-use EzmaxApi::Object::UNUSEDEzsignfoldersignerassociationEditObjectV1Request;
-use EzmaxApi::Object::UNUSEDEzsignfoldersignerassociationEditObjectV1Response;
-use EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Request;
-use EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Response;
 use EzmaxApi::Object::UserCreateEzsignuserV1Request;
 use EzmaxApi::Object::UserCreateEzsignuserV1Response;
 use EzmaxApi::Object::UserCreateEzsignuserV1ResponseAllOf;
@@ -500,7 +502,6 @@ use warnings;
 use EzmaxApi::GlobalCustomerApi;
 use EzmaxApi::ModuleAuthenticateApi;
 use EzmaxApi::ModuleListApi;
-use EzmaxApi::ModuleSsprApi;
 use EzmaxApi::ModuleUserApi;
 use EzmaxApi::ObjectActivesessionApi;
 use EzmaxApi::ObjectApikeyApi;
@@ -573,7 +574,12 @@ use EzmaxApi::Object::EzsignbulksendGetListV1Response;
 use EzmaxApi::Object::EzsignbulksendGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendGetListV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendGetListV1ResponseMPayloadAllOf;
+use EzmaxApi::Object::EzsignbulksendGetObjectV1Response;
+use EzmaxApi::Object::EzsignbulksendGetObjectV1ResponseAllOf;
+use EzmaxApi::Object::EzsignbulksendGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendListElement;
+use EzmaxApi::Object::EzsignbulksendResponse;
+use EzmaxApi::Object::EzsignbulksendResponseCompound;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Response;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV2Request;
@@ -585,6 +591,7 @@ use EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Request;
 use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Response;
+use EzmaxApi::Object::EzsigndocumentEndPrematurelyV1Response;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1Response;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseMPayload;
@@ -597,6 +604,9 @@ use EzmaxApi::Object::EzsigndocumentGetFormDataV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetObjectV1Response;
 use EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseMPayload;
+use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1Response;
+use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseAllOf;
+use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Request;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Response;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseAllOf;
@@ -608,6 +618,7 @@ use EzmaxApi::Object::EzsigndocumentRequestPatch;
 use EzmaxApi::Object::EzsigndocumentResponse;
 use EzmaxApi::Object::EzsigndocumentResponseCompound;
 use EzmaxApi::Object::EzsigndocumentResponseCompoundAllOf;
+use EzmaxApi::Object::EzsigndocumentlogResponse;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Response;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseAllOf;
@@ -697,6 +708,7 @@ use EzmaxApi::Object::EzsigntemplatepackageListElement;
 use EzmaxApi::Object::FieldEActivesessionSessiontype;
 use EzmaxApi::Object::FieldEActivesessionWeekdaystart;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
+use EzmaxApi::Object::FieldEEzsigndocumentlogType;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
@@ -728,14 +740,6 @@ use EzmaxApi::Object::SsprSendUsernamesV1Request;
 use EzmaxApi::Object::SsprUnlockAccountRequestV1Request;
 use EzmaxApi::Object::SsprUnlockAccountV1Request;
 use EzmaxApi::Object::SsprValidateTokenV1Request;
-use EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Request;
-use EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Response;
-use EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Request;
-use EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Response;
-use EzmaxApi::Object::UNUSEDEzsignfoldersignerassociationEditObjectV1Request;
-use EzmaxApi::Object::UNUSEDEzsignfoldersignerassociationEditObjectV1Response;
-use EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Request;
-use EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Response;
 use EzmaxApi::Object::UserCreateEzsignuserV1Request;
 use EzmaxApi::Object::UserCreateEzsignuserV1Response;
 use EzmaxApi::Object::UserCreateEzsignuserV1ResponseAllOf;
@@ -784,25 +788,22 @@ Class | Method | HTTP request | Description
 *ModuleAuthenticateApi* | [**authenticate_authenticate_v2**](docs/ModuleAuthenticateApi.md#authenticate_authenticate_v2) | **POST** /2/module/authenticate/authenticate/{eSessionType} | Authenticate a user
 *ModuleListApi* | [**list_get_listpresentation_v1**](docs/ModuleListApi.md#list_get_listpresentation_v1) | **GET** /1/module/list/listpresentation/{sListName} | Get all Listpresentation for a specific list
 *ModuleListApi* | [**list_save_listpresentation_v1**](docs/ModuleListApi.md#list_save_listpresentation_v1) | **POST** /1/module/list/listpresentation/{sListName} | Save all Listpresentation for a specific list
-*ModuleSsprApi* | [**sspr_reset_password_request_v1**](docs/ModuleSsprApi.md#sspr_reset_password_request_v1) | **POST** /1/module/sspr/resetPasswordRequest | Reset Password Request
-*ModuleSsprApi* | [**sspr_reset_password_v1**](docs/ModuleSsprApi.md#sspr_reset_password_v1) | **POST** /1/module/sspr/resetPassword | Reset Password
-*ModuleSsprApi* | [**sspr_send_usernames_v1**](docs/ModuleSsprApi.md#sspr_send_usernames_v1) | **POST** /1/module/sspr/sendUsernames | Send username(s)
-*ModuleSsprApi* | [**sspr_unlock_account_request_v1**](docs/ModuleSsprApi.md#sspr_unlock_account_request_v1) | **POST** /1/module/sspr/unlockAccountRequest | Unlock Account Request
-*ModuleSsprApi* | [**sspr_unlock_account_v1**](docs/ModuleSsprApi.md#sspr_unlock_account_v1) | **POST** /1/module/sspr/unlockAccount | Unlock Account
-*ModuleSsprApi* | [**sspr_validate_token_v1**](docs/ModuleSsprApi.md#sspr_validate_token_v1) | **POST** /1/module/sspr/validateToken | Validate Token
 *ModuleUserApi* | [**user_create_ezsignuser_v1**](docs/ModuleUserApi.md#user_create_ezsignuser_v1) | **POST** /1/module/user/createezsignuser | Create a new User of type Ezsignuser
 *ObjectActivesessionApi* | [**activesession_get_current_v1**](docs/ObjectActivesessionApi.md#activesession_get_current_v1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
 *ObjectApikeyApi* | [**apikey_create_object_v1**](docs/ObjectApikeyApi.md#apikey_create_object_v1) | **POST** /1/object/apikey | Create a new Apikey
 *ObjectEzsignbulksendApi* | [**ezsignbulksend_get_list_v1**](docs/ObjectEzsignbulksendApi.md#ezsignbulksend_get_list_v1) | **GET** /1/object/ezsignbulksend/getList | Retrieve Ezsignbulksend list
+*ObjectEzsignbulksendApi* | [**ezsignbulksend_get_object_v1**](docs/ObjectEzsignbulksendApi.md#ezsignbulksend_get_object_v1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Retrieve an existing Ezsignbulksend
 *ObjectEzsigndocumentApi* | [**ezsigndocument_apply_ezsigntemplate_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplate_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsign Template to the Ezsigndocument.
 *ObjectEzsigndocumentApi* | [**ezsigndocument_apply_ezsigntemplate_v2**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_apply_ezsigntemplate_v2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsign Template to the Ezsigndocument.
 *ObjectEzsigndocumentApi* | [**ezsigndocument_create_object_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_create_object_v1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocument_delete_object_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_delete_object_v1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocument_edit_ezsignsignatures_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignsignatures_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple ezsignsignatures
+*ObjectEzsigndocumentApi* | [**ezsigndocument_end_prematurely_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_end_prematurely_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely
 *ObjectEzsigndocumentApi* | [**ezsigndocument_get_download_url_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_download_url_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
 *ObjectEzsigndocumentApi* | [**ezsigndocument_get_ezsignpages_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_ezsignpages_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages | Retrieve an existing Ezsigndocument&#39;s Ezsignpages
 *ObjectEzsigndocumentApi* | [**ezsigndocument_get_form_data_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_form_data_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data
 *ObjectEzsigndocumentApi* | [**ezsigndocument_get_object_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_object_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
+*ObjectEzsigndocumentApi* | [**ezsigndocument_get_temporary_proof_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_temporary_proof_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof | Retrieve the temporary proof
 *ObjectEzsigndocumentApi* | [**ezsigndocument_get_words_positions_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_words_positions_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocument_patch_object_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_patch_object_v1) | **PATCH** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Patch an existing Ezsigndocument
 *ObjectEzsignfolderApi* | [**ezsignfolder_create_object_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_create_object_v1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
@@ -889,7 +890,12 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignbulksendGetListV1ResponseAllOf](docs/EzsignbulksendGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendGetListV1ResponseMPayload](docs/EzsignbulksendGetListV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksendGetListV1ResponseMPayloadAllOf](docs/EzsignbulksendGetListV1ResponseMPayloadAllOf.md)
+ - [EzmaxApi::Object::EzsignbulksendGetObjectV1Response](docs/EzsignbulksendGetObjectV1Response.md)
+ - [EzmaxApi::Object::EzsignbulksendGetObjectV1ResponseAllOf](docs/EzsignbulksendGetObjectV1ResponseAllOf.md)
+ - [EzmaxApi::Object::EzsignbulksendGetObjectV1ResponseMPayload](docs/EzsignbulksendGetObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksendListElement](docs/EzsignbulksendListElement.md)
+ - [EzmaxApi::Object::EzsignbulksendResponse](docs/EzsignbulksendResponse.md)
+ - [EzmaxApi::Object::EzsignbulksendResponseCompound](docs/EzsignbulksendResponseCompound.md)
  - [EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request](docs/EzsigndocumentApplyEzsigntemplateV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Response](docs/EzsigndocumentApplyEzsigntemplateV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV2Request](docs/EzsigndocumentApplyEzsigntemplateV2Request.md)
@@ -901,6 +907,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigndocumentDeleteObjectV1Response](docs/EzsigndocumentDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Request](docs/EzsigndocumentEditEzsignsignaturesV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Response](docs/EzsigndocumentEditEzsignsignaturesV1Response.md)
+ - [EzmaxApi::Object::EzsigndocumentEndPrematurelyV1Response](docs/EzsigndocumentEndPrematurelyV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1Response](docs/EzsigndocumentGetDownloadUrlV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseAllOf](docs/EzsigndocumentGetDownloadUrlV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseMPayload](docs/EzsigndocumentGetDownloadUrlV1ResponseMPayload.md)
@@ -913,6 +920,9 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigndocumentGetObjectV1Response](docs/EzsigndocumentGetObjectV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseAllOf](docs/EzsigndocumentGetObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseMPayload](docs/EzsigndocumentGetObjectV1ResponseMPayload.md)
+ - [EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1Response](docs/EzsigndocumentGetTemporaryProofV1Response.md)
+ - [EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseAllOf](docs/EzsigndocumentGetTemporaryProofV1ResponseAllOf.md)
+ - [EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseMPayload](docs/EzsigndocumentGetTemporaryProofV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Request](docs/EzsigndocumentGetWordsPositionsV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Response](docs/EzsigndocumentGetWordsPositionsV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseAllOf](docs/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md)
@@ -924,6 +934,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigndocumentResponse](docs/EzsigndocumentResponse.md)
  - [EzmaxApi::Object::EzsigndocumentResponseCompound](docs/EzsigndocumentResponseCompound.md)
  - [EzmaxApi::Object::EzsigndocumentResponseCompoundAllOf](docs/EzsigndocumentResponseCompoundAllOf.md)
+ - [EzmaxApi::Object::EzsigndocumentlogResponse](docs/EzsigndocumentlogResponse.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV1Request](docs/EzsignfolderCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV1Response](docs/EzsignfolderCreateObjectV1Response.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseAllOf](docs/EzsignfolderCreateObjectV1ResponseAllOf.md)
@@ -1013,6 +1024,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::FieldEActivesessionSessiontype](docs/FieldEActivesessionSessiontype.md)
  - [EzmaxApi::Object::FieldEActivesessionWeekdaystart](docs/FieldEActivesessionWeekdaystart.md)
  - [EzmaxApi::Object::FieldEEzsigndocumentStep](docs/FieldEEzsigndocumentStep.md)
+ - [EzmaxApi::Object::FieldEEzsigndocumentlogType](docs/FieldEEzsigndocumentlogType.md)
  - [EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency](docs/FieldEEzsignfolderSendreminderfrequency.md)
  - [EzmaxApi::Object::FieldEEzsignfolderStep](docs/FieldEEzsignfolderStep.md)
  - [EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel](docs/FieldEEzsignfoldertypePrivacylevel.md)
@@ -1044,14 +1056,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::SsprUnlockAccountRequestV1Request](docs/SsprUnlockAccountRequestV1Request.md)
  - [EzmaxApi::Object::SsprUnlockAccountV1Request](docs/SsprUnlockAccountV1Request.md)
  - [EzmaxApi::Object::SsprValidateTokenV1Request](docs/SsprValidateTokenV1Request.md)
- - [EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Request](docs/UNUSEDEzsigndocumentEditObjectV1Request.md)
- - [EzmaxApi::Object::UNUSEDEzsigndocumentEditObjectV1Response](docs/UNUSEDEzsigndocumentEditObjectV1Response.md)
- - [EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Request](docs/UNUSEDEzsignfolderEditObjectV1Request.md)
- - [EzmaxApi::Object::UNUSEDEzsignfolderEditObjectV1Response](docs/UNUSEDEzsignfolderEditObjectV1Response.md)
- - [EzmaxApi::Object::UNUSEDEzsignfoldersignerassociationEditObjectV1Request](docs/UNUSEDEzsignfoldersignerassociationEditObjectV1Request.md)
- - [EzmaxApi::Object::UNUSEDEzsignfoldersignerassociationEditObjectV1Response](docs/UNUSEDEzsignfoldersignerassociationEditObjectV1Response.md)
- - [EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Request](docs/UNUSEDEzsignsignatureEditObjectV1Request.md)
- - [EzmaxApi::Object::UNUSEDEzsignsignatureEditObjectV1Response](docs/UNUSEDEzsignsignatureEditObjectV1Response.md)
  - [EzmaxApi::Object::UserCreateEzsignuserV1Request](docs/UserCreateEzsignuserV1Request.md)
  - [EzmaxApi::Object::UserCreateEzsignuserV1Response](docs/UserCreateEzsignuserV1Response.md)
  - [EzmaxApi::Object::UserCreateEzsignuserV1ResponseAllOf](docs/UserCreateEzsignuserV1ResponseAllOf.md)

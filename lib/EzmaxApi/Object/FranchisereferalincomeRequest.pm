@@ -226,7 +226,7 @@ __PACKAGE__->method_documentation({
     't_franchisereferalincome_comment' => {
         datatype => 'string',
         base_name => 'tFranchisereferalincomeComment',
-        description => 'A comment about the transaction',
+        description => 'Comment about the transaction',
         format => '',
         read_only => '',
             },
