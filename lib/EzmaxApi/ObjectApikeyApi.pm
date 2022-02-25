@@ -113,4 +113,69 @@ sub apikey_create_object_v1 {
     return $_response_object;
 }
 
+#
+# apikey_create_object_v2
+#
+# Create a new Apikey
+#
+# @param ApikeyCreateObjectV2Request $apikey_create_object_v2_request  (required)
+{
+    my $params = {
+    'apikey_create_object_v2_request' => {
+        data_type => 'ApikeyCreateObjectV2Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'apikey_create_object_v2' } = {
+        summary => 'Create a new Apikey',
+        params => $params,
+        returns => 'ApikeyCreateObjectV2Response',
+        };
+}
+# @return ApikeyCreateObjectV2Response
+#
+sub apikey_create_object_v2 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'apikey_create_object_v2_request' is set
+    unless (exists $args{'apikey_create_object_v2_request'}) {
+      croak("Missing the required parameter 'apikey_create_object_v2_request' when calling apikey_create_object_v2");
+    }
+
+    # parse inputs
+    my $_resource_path = '/2/object/apikey';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'apikey_create_object_v2_request'}) {
+        $_body_data = $args{'apikey_create_object_v2_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('ApikeyCreateObjectV2Response', $response);
+    return $_response_object;
+}
+
 1;

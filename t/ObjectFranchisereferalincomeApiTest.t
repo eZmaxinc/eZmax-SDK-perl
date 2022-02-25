@@ -36,3 +36,10 @@ isa_ok($api, 'EzmaxApi::ObjectFranchisereferalincomeApi');
 #my $franchisereferalincome_create_object_v1_franchisereferalincome_create_object_v1_request = undef; # replace NULL with a proper value
 #my $franchisereferalincome_create_object_v1_result = $api->franchisereferalincome_create_object_v1(franchisereferalincome_create_object_v1_request => $franchisereferalincome_create_object_v1_franchisereferalincome_create_object_v1_request);
 
+#
+# franchisereferalincome_create_object_v2 test
+#
+# uncomment below and update the test
+#my $franchisereferalincome_create_object_v2_franchisereferalincome_create_object_v2_request = undef; # replace NULL with a proper value
+#my $franchisereferalincome_create_object_v2_result = $api->franchisereferalincome_create_object_v2(franchisereferalincome_create_object_v2_request => $franchisereferalincome_create_object_v2_franchisereferalincome_create_object_v2_request);
+

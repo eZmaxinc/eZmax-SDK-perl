@@ -53,6 +53,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #my $ezsigndocument_create_object_v1_result = $api->ezsigndocument_create_object_v1(ezsigndocument_create_object_v1_request => $ezsigndocument_create_object_v1_ezsigndocument_create_object_v1_request);
 
 #
+# ezsigndocument_create_object_v2 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_create_object_v2_ezsigndocument_create_object_v2_request = undef; # replace NULL with a proper value
+#my $ezsigndocument_create_object_v2_result = $api->ezsigndocument_create_object_v2(ezsigndocument_create_object_v2_request => $ezsigndocument_create_object_v2_ezsigndocument_create_object_v2_request);
+
+#
 # ezsigndocument_delete_object_v1 test
 #
 # uncomment below and update the test

@@ -280,6 +280,71 @@ sub ezsigndocument_create_object_v1 {
 }
 
 #
+# ezsigndocument_create_object_v2
+#
+# Create a new Ezsigndocument
+#
+# @param EzsigndocumentCreateObjectV2Request $ezsigndocument_create_object_v2_request  (required)
+{
+    my $params = {
+    'ezsigndocument_create_object_v2_request' => {
+        data_type => 'EzsigndocumentCreateObjectV2Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_create_object_v2' } = {
+        summary => 'Create a new Ezsigndocument',
+        params => $params,
+        returns => 'EzsigndocumentCreateObjectV2Response',
+        };
+}
+# @return EzsigndocumentCreateObjectV2Response
+#
+sub ezsigndocument_create_object_v2 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'ezsigndocument_create_object_v2_request' is set
+    unless (exists $args{'ezsigndocument_create_object_v2_request'}) {
+      croak("Missing the required parameter 'ezsigndocument_create_object_v2_request' when calling ezsigndocument_create_object_v2");
+    }
+
+    # parse inputs
+    my $_resource_path = '/2/object/ezsigndocument';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsigndocument_create_object_v2_request'}) {
+        $_body_data = $args{'ezsigndocument_create_object_v2_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentCreateObjectV2Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsigndocument_delete_object_v1
 #
 # Delete an existing Ezsigndocument

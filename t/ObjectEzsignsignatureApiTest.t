@@ -37,6 +37,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignsignatureApi');
 #my $ezsignsignature_create_object_v1_result = $api->ezsignsignature_create_object_v1(ezsignsignature_create_object_v1_request => $ezsignsignature_create_object_v1_ezsignsignature_create_object_v1_request);
 
 #
+# ezsignsignature_create_object_v2 test
+#
+# uncomment below and update the test
+#my $ezsignsignature_create_object_v2_ezsignsignature_create_object_v2_request = undef; # replace NULL with a proper value
+#my $ezsignsignature_create_object_v2_result = $api->ezsignsignature_create_object_v2(ezsignsignature_create_object_v2_request => $ezsignsignature_create_object_v2_ezsignsignature_create_object_v2_request);
+
+#
 # ezsignsignature_delete_object_v1 test
 #
 # uncomment below and update the test

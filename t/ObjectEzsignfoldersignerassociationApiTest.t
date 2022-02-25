@@ -37,6 +37,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfoldersignerassociationApi');
 #my $ezsignfoldersignerassociation_create_object_v1_result = $api->ezsignfoldersignerassociation_create_object_v1(ezsignfoldersignerassociation_create_object_v1_request => $ezsignfoldersignerassociation_create_object_v1_ezsignfoldersignerassociation_create_object_v1_request);
 
 #
+# ezsignfoldersignerassociation_create_object_v2 test
+#
+# uncomment below and update the test
+#my $ezsignfoldersignerassociation_create_object_v2_ezsignfoldersignerassociation_create_object_v2_request = undef; # replace NULL with a proper value
+#my $ezsignfoldersignerassociation_create_object_v2_result = $api->ezsignfoldersignerassociation_create_object_v2(ezsignfoldersignerassociation_create_object_v2_request => $ezsignfoldersignerassociation_create_object_v2_ezsignfoldersignerassociation_create_object_v2_request);
+
+#
 # ezsignfoldersignerassociation_delete_object_v1 test
 #
 # uncomment below and update the test
