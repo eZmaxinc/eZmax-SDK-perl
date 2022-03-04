@@ -165,41 +165,6 @@ __PACKAGE__->class_documentation({description => 'An Ezsigndocument Object and c
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'i_ezsigndocument_stepformtotal' => {
-        datatype => 'int',
-        base_name => 'iEzsigndocumentStepformtotal',
-        description => 'The total number of steps in the form filling phase',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigndocument_stepformcurrent' => {
-        datatype => 'int',
-        base_name => 'iEzsigndocumentStepformcurrent',
-        description => 'The current step in the form filling phase',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigndocument_stepsignaturetotal' => {
-        datatype => 'int',
-        base_name => 'iEzsigndocumentStepsignaturetotal',
-        description => 'The total number of steps in the signature filling phase',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigndocument_stepsignature_current' => {
-        datatype => 'int',
-        base_name => 'iEzsigndocumentStepsignatureCurrent',
-        description => 'The current step in the signature phase',
-        format => '',
-        read_only => '',
-            },
-    'a_obj_ezsignfoldersignerassociationstatus' => {
-        datatype => 'ARRAY[CustomEzsignfoldersignerassociationstatusResponse]',
-        base_name => 'a_objEzsignfoldersignerassociationstatus',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'fki_ezsignfolder_id' => {
         datatype => 'int',
         base_name => 'fkiEzsignfolderID',
@@ -305,14 +270,44 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_ezsigndocument_stepformtotal' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentStepformtotal',
+        description => 'The total number of steps in the form filling phase',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_stepformcurrent' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentStepformcurrent',
+        description => 'The current step in the form filling phase',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_stepsignaturetotal' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentStepsignaturetotal',
+        description => 'The total number of steps in the signature filling phase',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_stepsignature_current' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentStepsignatureCurrent',
+        description => 'The current step in the signature phase',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_ezsignfoldersignerassociationstatus' => {
+        datatype => 'ARRAY[CustomEzsignfoldersignerassociationstatusResponse]',
+        base_name => 'a_objEzsignfoldersignerassociationstatus',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'i_ezsigndocument_stepformtotal' => 'int',
-    'i_ezsigndocument_stepformcurrent' => 'int',
-    'i_ezsigndocument_stepsignaturetotal' => 'int',
-    'i_ezsigndocument_stepsignature_current' => 'int',
-    'a_obj_ezsignfoldersignerassociationstatus' => 'ARRAY[CustomEzsignfoldersignerassociationstatusResponse]',
     'fki_ezsignfolder_id' => 'int',
     'dt_ezsigndocument_duedate' => 'string',
     'fki_language_id' => 'int',
@@ -327,15 +322,15 @@ __PACKAGE__->openapi_types( {
     'i_ezsigndocument_signaturetotal' => 'int',
     's_ezsigndocument_md5initial' => 'string',
     's_ezsigndocument_md5signed' => 'string',
-    'obj_audit' => 'CommonAudit'
+    'obj_audit' => 'CommonAudit',
+    'i_ezsigndocument_stepformtotal' => 'int',
+    'i_ezsigndocument_stepformcurrent' => 'int',
+    'i_ezsigndocument_stepsignaturetotal' => 'int',
+    'i_ezsigndocument_stepsignature_current' => 'int',
+    'a_obj_ezsignfoldersignerassociationstatus' => 'ARRAY[CustomEzsignfoldersignerassociationstatusResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'i_ezsigndocument_stepformtotal' => 'iEzsigndocumentStepformtotal',
-    'i_ezsigndocument_stepformcurrent' => 'iEzsigndocumentStepformcurrent',
-    'i_ezsigndocument_stepsignaturetotal' => 'iEzsigndocumentStepsignaturetotal',
-    'i_ezsigndocument_stepsignature_current' => 'iEzsigndocumentStepsignatureCurrent',
-    'a_obj_ezsignfoldersignerassociationstatus' => 'a_objEzsignfoldersignerassociationstatus',
     'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
     'dt_ezsigndocument_duedate' => 'dtEzsigndocumentDuedate',
     'fki_language_id' => 'fkiLanguageID',
@@ -350,7 +345,12 @@ __PACKAGE__->attribute_map( {
     'i_ezsigndocument_signaturetotal' => 'iEzsigndocumentSignaturetotal',
     's_ezsigndocument_md5initial' => 'sEzsigndocumentMD5initial',
     's_ezsigndocument_md5signed' => 'sEzsigndocumentMD5signed',
-    'obj_audit' => 'objAudit'
+    'obj_audit' => 'objAudit',
+    'i_ezsigndocument_stepformtotal' => 'iEzsigndocumentStepformtotal',
+    'i_ezsigndocument_stepformcurrent' => 'iEzsigndocumentStepformcurrent',
+    'i_ezsigndocument_stepsignaturetotal' => 'iEzsigndocumentStepsignaturetotal',
+    'i_ezsigndocument_stepsignature_current' => 'iEzsigndocumentStepsignatureCurrent',
+    'a_obj_ezsignfoldersignerassociationstatus' => 'a_objEzsignfoldersignerassociationstatus'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

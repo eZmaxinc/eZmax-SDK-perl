@@ -67,6 +67,14 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #my $ezsigndocument_delete_object_v1_result = $api->ezsigndocument_delete_object_v1(pki_ezsigndocument_id => $ezsigndocument_delete_object_v1_pki_ezsigndocument_id);
 
 #
+# ezsigndocument_edit_ezsignformfieldgroups_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_edit_ezsignformfieldgroups_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_edit_ezsignformfieldgroups_v1_ezsigndocument_edit_ezsignformfieldgroups_v1_request = undef; # replace NULL with a proper value
+#my $ezsigndocument_edit_ezsignformfieldgroups_v1_result = $api->ezsigndocument_edit_ezsignformfieldgroups_v1(pki_ezsigndocument_id => $ezsigndocument_edit_ezsignformfieldgroups_v1_pki_ezsigndocument_id, ezsigndocument_edit_ezsignformfieldgroups_v1_request => $ezsigndocument_edit_ezsignformfieldgroups_v1_ezsigndocument_edit_ezsignformfieldgroups_v1_request);
+
+#
 # ezsigndocument_edit_ezsignsignatures_v1 test
 #
 # uncomment below and update the test
@@ -79,7 +87,8 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #
 # uncomment below and update the test
 #my $ezsigndocument_end_prematurely_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
-#my $ezsigndocument_end_prematurely_v1_result = $api->ezsigndocument_end_prematurely_v1(pki_ezsigndocument_id => $ezsigndocument_end_prematurely_v1_pki_ezsigndocument_id);
+#my $ezsigndocument_end_prematurely_v1_body = undef; # replace NULL with a proper value
+#my $ezsigndocument_end_prematurely_v1_result = $api->ezsigndocument_end_prematurely_v1(pki_ezsigndocument_id => $ezsigndocument_end_prematurely_v1_pki_ezsigndocument_id, body => $ezsigndocument_end_prematurely_v1_body);
 
 #
 # ezsigndocument_get_download_url_v1 test
@@ -90,11 +99,25 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #my $ezsigndocument_get_download_url_v1_result = $api->ezsigndocument_get_download_url_v1(pki_ezsigndocument_id => $ezsigndocument_get_download_url_v1_pki_ezsigndocument_id, e_document_type => $ezsigndocument_get_download_url_v1_e_document_type);
 
 #
+# ezsigndocument_get_ezsignformfieldgroups_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_get_ezsignformfieldgroups_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_get_ezsignformfieldgroups_v1_result = $api->ezsigndocument_get_ezsignformfieldgroups_v1(pki_ezsigndocument_id => $ezsigndocument_get_ezsignformfieldgroups_v1_pki_ezsigndocument_id);
+
+#
 # ezsigndocument_get_ezsignpages_v1 test
 #
 # uncomment below and update the test
 #my $ezsigndocument_get_ezsignpages_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
 #my $ezsigndocument_get_ezsignpages_v1_result = $api->ezsigndocument_get_ezsignpages_v1(pki_ezsigndocument_id => $ezsigndocument_get_ezsignpages_v1_pki_ezsigndocument_id);
+
+#
+# ezsigndocument_get_ezsignsignatures_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_get_ezsignsignatures_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_get_ezsignsignatures_v1_result = $api->ezsigndocument_get_ezsignsignatures_v1(pki_ezsigndocument_id => $ezsigndocument_get_ezsignsignatures_v1_pki_ezsigndocument_id);
 
 #
 # ezsigndocument_get_form_data_v1 test

@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EzsignsignatureGetObjectV1ResponseMPayload;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -161,16 +162,16 @@ __PACKAGE__->class_documentation({description => '',
 
 __PACKAGE__->method_documentation({
     'm_payload' => {
-        datatype => 'object',
+        datatype => 'EzsignsignatureGetObjectV1ResponseMPayload',
         base_name => 'mPayload',
-        description => 'Payload for the /1/object/ezsignsignature/getObject API Request',
+        description => '',
         format => '',
         read_only => '',
             },
 });
 
 __PACKAGE__->openapi_types( {
-    'm_payload' => 'object'
+    'm_payload' => 'EzsignsignatureGetObjectV1ResponseMPayload'
 } );
 
 __PACKAGE__->attribute_map( {

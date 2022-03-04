@@ -30,10 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::AddressRequest;
-use EzmaxApi::Object::EmailRequest;
-use EzmaxApi::Object::PhoneRequest;
-use EzmaxApi::Object::WebsiteRequest;
+use EzmaxApi::Object::AddressRequestCompound;
+use EzmaxApi::Object::EmailRequestCompound;
+use EzmaxApi::Object::PhoneRequestCompound;
+use EzmaxApi::Object::WebsiteRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -165,28 +165,28 @@ __PACKAGE__->class_documentation({description => '',
 
 __PACKAGE__->method_documentation({
     'a_obj_address' => {
-        datatype => 'ARRAY[AddressRequest]',
+        datatype => 'ARRAY[AddressRequestCompound]',
         base_name => 'a_objAddress',
         description => '',
         format => '',
         read_only => '',
             },
     'a_obj_phone' => {
-        datatype => 'ARRAY[PhoneRequest]',
+        datatype => 'ARRAY[PhoneRequestCompound]',
         base_name => 'a_objPhone',
         description => '',
         format => '',
         read_only => '',
             },
     'a_obj_email' => {
-        datatype => 'ARRAY[EmailRequest]',
+        datatype => 'ARRAY[EmailRequestCompound]',
         base_name => 'a_objEmail',
         description => '',
         format => '',
         read_only => '',
             },
     'a_obj_website' => {
-        datatype => 'ARRAY[WebsiteRequest]',
+        datatype => 'ARRAY[WebsiteRequestCompound]',
         base_name => 'a_objWebsite',
         description => '',
         format => '',
@@ -195,10 +195,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'a_obj_address' => 'ARRAY[AddressRequest]',
-    'a_obj_phone' => 'ARRAY[PhoneRequest]',
-    'a_obj_email' => 'ARRAY[EmailRequest]',
-    'a_obj_website' => 'ARRAY[WebsiteRequest]'
+    'a_obj_address' => 'ARRAY[AddressRequestCompound]',
+    'a_obj_phone' => 'ARRAY[PhoneRequestCompound]',
+    'a_obj_email' => 'ARRAY[EmailRequestCompound]',
+    'a_obj_website' => 'ARRAY[WebsiteRequestCompound]'
 } );
 
 __PACKAGE__->attribute_map( {

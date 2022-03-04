@@ -165,41 +165,6 @@ __PACKAGE__->class_documentation({description => 'Payload for the /1/object/acti
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'a_pki_permission_id' => {
-        datatype => 'ARRAY[int]',
-        base_name => 'a_pkiPermissionID',
-        description => 'An array of permissions granted to the user or api key',
-        format => '',
-        read_only => '',
-            },
-    'obj_user_real' => {
-        datatype => 'ActivesessionResponseCompoundUser',
-        base_name => 'objUserReal',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'obj_user_cloned' => {
-        datatype => 'ActivesessionResponseCompoundUser',
-        base_name => 'objUserCloned',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'obj_apikey' => {
-        datatype => 'ActivesessionResponseCompoundApikey',
-        base_name => 'objApikey',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'a_e_module_internalname' => {
-        datatype => 'ARRAY[string]',
-        base_name => 'a_eModuleInternalname',
-        description => 'An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.',
-        format => '',
-        read_only => '',
-            },
     'e_activesession_sessiontype' => {
         datatype => 'FieldEActivesessionSessiontype',
         base_name => 'eActivesessionSessiontype',
@@ -249,36 +214,71 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_pki_permission_id' => {
+        datatype => 'ARRAY[int]',
+        base_name => 'a_pkiPermissionID',
+        description => 'An array of permissions granted to the user or api key',
+        format => '',
+        read_only => '',
+            },
+    'obj_user_real' => {
+        datatype => 'ActivesessionResponseCompoundUser',
+        base_name => 'objUserReal',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_user_cloned' => {
+        datatype => 'ActivesessionResponseCompoundUser',
+        base_name => 'objUserCloned',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_apikey' => {
+        datatype => 'ActivesessionResponseCompoundApikey',
+        base_name => 'objApikey',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'a_e_module_internalname' => {
+        datatype => 'ARRAY[string]',
+        base_name => 'a_eModuleInternalname',
+        description => 'An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'a_pki_permission_id' => 'ARRAY[int]',
-    'obj_user_real' => 'ActivesessionResponseCompoundUser',
-    'obj_user_cloned' => 'ActivesessionResponseCompoundUser',
-    'obj_apikey' => 'ActivesessionResponseCompoundApikey',
-    'a_e_module_internalname' => 'ARRAY[string]',
     'e_activesession_sessiontype' => 'FieldEActivesessionSessiontype',
     'e_activesession_weekdaystart' => 'FieldEActivesessionWeekdaystart',
     'fki_language_id' => 'int',
     's_company_name_x' => 'string',
     's_department_name_x' => 'string',
     'b_activesession_debug' => 'boolean',
-    'pks_customer_code' => 'string'
+    'pks_customer_code' => 'string',
+    'a_pki_permission_id' => 'ARRAY[int]',
+    'obj_user_real' => 'ActivesessionResponseCompoundUser',
+    'obj_user_cloned' => 'ActivesessionResponseCompoundUser',
+    'obj_apikey' => 'ActivesessionResponseCompoundApikey',
+    'a_e_module_internalname' => 'ARRAY[string]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'a_pki_permission_id' => 'a_pkiPermissionID',
-    'obj_user_real' => 'objUserReal',
-    'obj_user_cloned' => 'objUserCloned',
-    'obj_apikey' => 'objApikey',
-    'a_e_module_internalname' => 'a_eModuleInternalname',
     'e_activesession_sessiontype' => 'eActivesessionSessiontype',
     'e_activesession_weekdaystart' => 'eActivesessionWeekdaystart',
     'fki_language_id' => 'fkiLanguageID',
     's_company_name_x' => 'sCompanyNameX',
     's_department_name_x' => 'sDepartmentNameX',
     'b_activesession_debug' => 'bActivesessionDebug',
-    'pks_customer_code' => 'pksCustomerCode'
+    'pks_customer_code' => 'pksCustomerCode',
+    'a_pki_permission_id' => 'a_pkiPermissionID',
+    'obj_user_real' => 'objUserReal',
+    'obj_user_cloned' => 'objUserCloned',
+    'obj_apikey' => 'objApikey',
+    'a_e_module_internalname' => 'a_eModuleInternalname'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

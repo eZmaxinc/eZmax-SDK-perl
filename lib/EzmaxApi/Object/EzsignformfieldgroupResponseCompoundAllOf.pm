@@ -30,7 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsignformfieldResponse;
+use EzmaxApi::Object::CustomDropdownElementResponseCompound;
+use EzmaxApi::Object::EzsignformfieldResponseCompound;
+use EzmaxApi::Object::EzsignformfieldgroupsignerResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -162,8 +164,22 @@ __PACKAGE__->class_documentation({description => '',
 
 __PACKAGE__->method_documentation({
     'a_obj_ezsignformfield' => {
-        datatype => 'ARRAY[EzsignformfieldResponse]',
+        datatype => 'ARRAY[EzsignformfieldResponseCompound]',
         base_name => 'a_objEzsignformfield',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_dropdown_element' => {
+        datatype => 'ARRAY[CustomDropdownElementResponseCompound]',
+        base_name => 'a_objDropdownElement',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_ezsignformfieldgroupsigner' => {
+        datatype => 'EzsignformfieldgroupsignerResponseCompound',
+        base_name => 'a_objEzsignformfieldgroupsigner',
         description => '',
         format => '',
         read_only => '',
@@ -171,11 +187,15 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'a_obj_ezsignformfield' => 'ARRAY[EzsignformfieldResponse]'
+    'a_obj_ezsignformfield' => 'ARRAY[EzsignformfieldResponseCompound]',
+    'a_obj_dropdown_element' => 'ARRAY[CustomDropdownElementResponseCompound]',
+    'a_obj_ezsignformfieldgroupsigner' => 'EzsignformfieldgroupsignerResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {
-    'a_obj_ezsignformfield' => 'a_objEzsignformfield'
+    'a_obj_ezsignformfield' => 'a_objEzsignformfield',
+    'a_obj_dropdown_element' => 'a_objDropdownElement',
+    'a_obj_ezsignformfieldgroupsigner' => 'a_objEzsignformfieldgroupsigner'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

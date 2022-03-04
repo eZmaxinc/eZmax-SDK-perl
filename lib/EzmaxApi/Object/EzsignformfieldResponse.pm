@@ -160,6 +160,20 @@ __PACKAGE__->class_documentation({description => 'An Ezsignformfield Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignformfield_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignformfieldID',
+        description => 'The unique ID of the Ezsignformfield',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignpage_pagenumber' => {
+        datatype => 'int',
+        base_name => 'iEzsignpagePagenumber',
+        description => 'The page number in the Ezsigndocument',
+        format => '',
+        read_only => '',
+            },
     's_ezsignformfield_label' => {
         datatype => 'string',
         base_name => 'sEzsignformfieldLabel',
@@ -170,20 +184,78 @@ __PACKAGE__->method_documentation({
     's_ezsignformfield_value' => {
         datatype => 'string',
         base_name => 'sEzsignformfieldValue',
-        description => 'The Value for the Ezsignformfield',
+        description => 'The value for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is Checkbox or Radio',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignformfield_x' => {
+        datatype => 'int',
+        base_name => 'iEzsignformfieldX',
+        description => 'The X coordinate (Horizontal) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignformfield_y' => {
+        datatype => 'int',
+        base_name => 'iEzsignformfieldY',
+        description => 'The Y coordinate (Vertical) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 3 inches from the top border of the page, you would use \&quot;300\&quot; for the Y coordinate.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignformfield_width' => {
+        datatype => 'int',
+        base_name => 'iEzsignformfieldWidth',
+        description => 'The Width of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignformfield_height' => {
+        datatype => 'int',
+        base_name => 'iEzsignformfieldHeight',
+        description => 'The Height of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | ',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignformfield_selected' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignformfieldSelected',
+        description => 'Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignformfield_enteredvalue' => {
+        datatype => 'string',
+        base_name => 'sEzsignformfieldEnteredvalue',
+        description => 'This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea**',
         format => '',
         read_only => '',
             },
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezsignformfield_id' => 'int',
+    'i_ezsignpage_pagenumber' => 'int',
     's_ezsignformfield_label' => 'string',
-    's_ezsignformfield_value' => 'string'
+    's_ezsignformfield_value' => 'string',
+    'i_ezsignformfield_x' => 'int',
+    'i_ezsignformfield_y' => 'int',
+    'i_ezsignformfield_width' => 'int',
+    'i_ezsignformfield_height' => 'int',
+    'b_ezsignformfield_selected' => 'boolean',
+    's_ezsignformfield_enteredvalue' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezsignformfield_id' => 'pkiEzsignformfieldID',
+    'i_ezsignpage_pagenumber' => 'iEzsignpagePagenumber',
     's_ezsignformfield_label' => 'sEzsignformfieldLabel',
-    's_ezsignformfield_value' => 'sEzsignformfieldValue'
+    's_ezsignformfield_value' => 'sEzsignformfieldValue',
+    'i_ezsignformfield_x' => 'iEzsignformfieldX',
+    'i_ezsignformfield_y' => 'iEzsignformfieldY',
+    'i_ezsignformfield_width' => 'iEzsignformfieldWidth',
+    'i_ezsignformfield_height' => 'iEzsignformfieldHeight',
+    'b_ezsignformfield_selected' => 'bEzsignformfieldSelected',
+    's_ezsignformfield_enteredvalue' => 'sEzsignformfieldEnteredvalue'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

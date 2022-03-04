@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::ListpresentationRequest;
+use EzmaxApi::Object::ListpresentationRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -162,7 +162,7 @@ __PACKAGE__->class_documentation({description => 'Request for the POST /1/module
 
 __PACKAGE__->method_documentation({
     'a_obj_listpresentation' => {
-        datatype => 'ARRAY[ListpresentationRequest]',
+        datatype => 'ARRAY[ListpresentationRequestCompound]',
         base_name => 'a_objListpresentation',
         description => '',
         format => '',
@@ -171,7 +171,7 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'a_obj_listpresentation' => 'ARRAY[ListpresentationRequest]'
+    'a_obj_listpresentation' => 'ARRAY[ListpresentationRequestCompound]'
 } );
 
 __PACKAGE__->attribute_map( {

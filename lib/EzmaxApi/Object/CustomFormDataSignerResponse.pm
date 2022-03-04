@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsignformfieldgroupResponseCompound;
+use EzmaxApi::Object::CustomFormDataEzsignformfieldgroupResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -189,9 +189,9 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'a_obj_ezsignformfieldgroup_compound' => {
-        datatype => 'ARRAY[EzsignformfieldgroupResponseCompound]',
-        base_name => 'a_objEzsignformfieldgroupCompound',
+    'a_obj_ezsignformfieldgroup' => {
+        datatype => 'ARRAY[CustomFormDataEzsignformfieldgroupResponse]',
+        base_name => 'a_objEzsignformfieldgroup',
         description => '',
         format => '',
         read_only => '',
@@ -203,7 +203,7 @@ __PACKAGE__->openapi_types( {
     'fki_user_id' => 'int',
     's_contact_firstname' => 'string',
     's_contact_lastname' => 'string',
-    'a_obj_ezsignformfieldgroup_compound' => 'ARRAY[EzsignformfieldgroupResponseCompound]'
+    'a_obj_ezsignformfieldgroup' => 'ARRAY[CustomFormDataEzsignformfieldgroupResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -211,7 +211,7 @@ __PACKAGE__->attribute_map( {
     'fki_user_id' => 'fkiUserID',
     's_contact_firstname' => 'sContactFirstname',
     's_contact_lastname' => 'sContactLastname',
-    'a_obj_ezsignformfieldgroup_compound' => 'a_objEzsignformfieldgroupCompound'
+    'a_obj_ezsignformfieldgroup' => 'a_objEzsignformfieldgroup'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

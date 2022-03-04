@@ -8,7 +8,7 @@ use EzmaxApi::Object::EzsignsignatureGetObjectV1Response;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**m_payload** | **object** | Payload for the /1/object/ezsignsignature/getObject API Request | 
+**m_payload** | [**EzsignsignatureGetObjectV1ResponseMPayload**](EzsignsignatureGetObjectV1ResponseMPayload.md) |  | 
 **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
 **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
 

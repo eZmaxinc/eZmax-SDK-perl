@@ -8,7 +8,7 @@ use EzmaxApi::Object::ListGetListpresentationV1ResponseMPayload;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_obj_listpresentation** | [**ARRAY[ListpresentationRequest]**](ListpresentationRequest.md) |  | 
+**a_obj_listpresentation** | [**ARRAY[ListpresentationResponseCompound]**](ListpresentationResponseCompound.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

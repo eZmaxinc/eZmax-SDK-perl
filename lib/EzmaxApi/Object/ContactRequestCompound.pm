@@ -163,13 +163,6 @@ __PACKAGE__->class_documentation({description => 'A Contact Object and children 
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'obj_contactinformations' => {
-        datatype => 'ContactinformationsRequestCompound',
-        base_name => 'objContactinformations',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'fki_contacttitle_id' => {
         datatype => 'int',
         base_name => 'fkiContacttitleID',
@@ -212,26 +205,33 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_contactinformations' => {
+        datatype => 'ContactinformationsRequestCompound',
+        base_name => 'objContactinformations',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_contactinformations' => 'ContactinformationsRequestCompound',
     'fki_contacttitle_id' => 'int',
     'fki_language_id' => 'int',
     's_contact_firstname' => 'string',
     's_contact_lastname' => 'string',
     's_contact_company' => 'string',
-    'dt_contact_birthdate' => 'string'
+    'dt_contact_birthdate' => 'string',
+    'obj_contactinformations' => 'ContactinformationsRequestCompound'
 } );
 
 __PACKAGE__->attribute_map( {
-    'obj_contactinformations' => 'objContactinformations',
     'fki_contacttitle_id' => 'fkiContacttitleID',
     'fki_language_id' => 'fkiLanguageID',
     's_contact_firstname' => 'sContactFirstname',
     's_contact_lastname' => 'sContactLastname',
     's_contact_company' => 'sContactCompany',
-    'dt_contact_birthdate' => 'dtContactBirthdate'
+    'dt_contact_birthdate' => 'dtContactBirthdate',
+    'obj_contactinformations' => 'objContactinformations'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

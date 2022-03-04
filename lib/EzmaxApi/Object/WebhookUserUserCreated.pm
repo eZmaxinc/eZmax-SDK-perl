@@ -30,9 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::AttemptResponse;
+use EzmaxApi::Object::AttemptResponseCompound;
 use EzmaxApi::Object::CommonWebhook;
-use EzmaxApi::Object::UserResponse;
+use EzmaxApi::Object::UserResponseCompound;
 use EzmaxApi::Object::WebhookResponse;
 use EzmaxApi::Object::WebhookUserUserCreatedAllOf;
 
@@ -166,7 +166,7 @@ __PACKAGE__->class_documentation({description => 'This is the base Webhook objec
 
 __PACKAGE__->method_documentation({
     'obj_user' => {
-        datatype => 'UserResponse',
+        datatype => 'UserResponseCompound',
         base_name => 'objUser',
         description => '',
         format => '',
@@ -180,7 +180,7 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'a_obj_attempt' => {
-        datatype => 'ARRAY[AttemptResponse]',
+        datatype => 'ARRAY[AttemptResponseCompound]',
         base_name => 'a_objAttempt',
         description => 'An array containing details of previous attempts that were made to deliver the message. The array is empty if it&#39;s the first attempt.',
         format => '',
@@ -189,9 +189,9 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_user' => 'UserResponse',
+    'obj_user' => 'UserResponseCompound',
     'obj_webhook' => 'WebhookResponse',
-    'a_obj_attempt' => 'ARRAY[AttemptResponse]'
+    'a_obj_attempt' => 'ARRAY[AttemptResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {

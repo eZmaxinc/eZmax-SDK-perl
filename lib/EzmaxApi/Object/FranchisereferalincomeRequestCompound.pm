@@ -164,20 +164,6 @@ __PACKAGE__->class_documentation({description => 'A Franchisereferalincome Objec
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'obj_address' => {
-        datatype => 'AddressRequest',
-        base_name => 'objAddress',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'a_obj_contact' => {
-        datatype => 'ARRAY[ContactRequestCompound]',
-        base_name => 'a_objContact',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'pki_franchisereferalincome_id' => {
         datatype => 'int',
         base_name => 'pkiFranchisereferalincomeID',
@@ -262,11 +248,23 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_address' => {
+        datatype => 'AddressRequest',
+        base_name => 'objAddress',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_contact' => {
+        datatype => 'ARRAY[ContactRequestCompound]',
+        base_name => 'a_objContact',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_address' => 'AddressRequest',
-    'a_obj_contact' => 'ARRAY[ContactRequestCompound]',
     'pki_franchisereferalincome_id' => 'int',
     'fki_franchisebroker_id' => 'int',
     'fki_franchisereferalincomeprogram_id' => 'int',
@@ -278,12 +276,12 @@ __PACKAGE__->openapi_types( {
     'dt_franchisereferalincome_disbursed' => 'string',
     't_franchisereferalincome_comment' => 'string',
     'fki_franchiseoffice_id' => 'int',
-    's_franchisereferalincome_remoteid' => 'string'
+    's_franchisereferalincome_remoteid' => 'string',
+    'obj_address' => 'AddressRequest',
+    'a_obj_contact' => 'ARRAY[ContactRequestCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'obj_address' => 'objAddress',
-    'a_obj_contact' => 'a_objContact',
     'pki_franchisereferalincome_id' => 'pkiFranchisereferalincomeID',
     'fki_franchisebroker_id' => 'fkiFranchisebrokerID',
     'fki_franchisereferalincomeprogram_id' => 'fkiFranchisereferalincomeprogramID',
@@ -295,7 +293,9 @@ __PACKAGE__->attribute_map( {
     'dt_franchisereferalincome_disbursed' => 'dtFranchisereferalincomeDisbursed',
     't_franchisereferalincome_comment' => 'tFranchisereferalincomeComment',
     'fki_franchiseoffice_id' => 'fkiFranchiseofficeID',
-    's_franchisereferalincome_remoteid' => 'sFranchisereferalincomeRemoteid'
+    's_franchisereferalincome_remoteid' => 'sFranchisereferalincomeRemoteid',
+    'obj_address' => 'objAddress',
+    'a_obj_contact' => 'a_objContact'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -8,8 +8,6 @@ use EzmaxApi::Object::FranchisereferalincomeRequestCompound;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**obj_address** | [**AddressRequest**](AddressRequest.md) |  | 
-**a_obj_contact** | [**ARRAY[ContactRequestCompound]**](ContactRequestCompound.md) |  | 
 **pki_franchisereferalincome_id** | **int** | The unique ID of the Franchisereferalincome | [optional] 
 **fki_franchisebroker_id** | **int** | The unique ID of the Franchisebroker | 
 **fki_franchisereferalincomeprogram_id** | **int** | The unique ID of the Franchisereferalincomeprogram | 
@@ -22,6 +20,8 @@ Name | Type | Description | Notes
 **t_franchisereferalincome_comment** | **string** | Comment about the transaction | 
 **fki_franchiseoffice_id** | **int** | The unique ID of the Franchisereoffice | 
 **s_franchisereferalincome_remoteid** | **string** |  | 
+**obj_address** | [**AddressRequest**](AddressRequest.md) |  | 
+**a_obj_contact** | [**ARRAY[ContactRequestCompound]**](ContactRequestCompound.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

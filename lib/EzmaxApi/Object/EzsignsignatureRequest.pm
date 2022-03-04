@@ -185,7 +185,7 @@ __PACKAGE__->method_documentation({
     'i_ezsignsignature_x' => {
         datatype => 'int',
         base_name => 'iEzsignsignatureX',
-        description => 'The X coordinate (Horizontal) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate.',
+        description => 'The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate.',
         format => '',
         read_only => '',
             },
@@ -199,7 +199,7 @@ __PACKAGE__->method_documentation({
     'i_ezsignsignature_step' => {
         datatype => 'int',
         base_name => 'iEzsignsignatureStep',
-        description => 'The step when the Ezsignsigner will be invited to sign or fill form fields',
+        description => 'The step when the Ezsignsigner will be invited to sign',
         format => '',
         read_only => '',
             },

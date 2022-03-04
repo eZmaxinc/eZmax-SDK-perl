@@ -32,7 +32,7 @@ use DateTime;
 
 use EzmaxApi::Object::EzsignsignatureRequest;
 use EzmaxApi::Object::EzsignsignatureRequestCompoundAllOf;
-use EzmaxApi::Object::EzsignsignaturecustomdateRequest;
+use EzmaxApi::Object::EzsignsignaturecustomdateRequestCompound;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -164,20 +164,6 @@ __PACKAGE__->class_documentation({description => 'An Ezsignsignature Object and 
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'b_ezsignsignature_customdate' => {
-        datatype => 'boolean',
-        base_name => 'bEzsignsignatureCustomdate',
-        description => 'Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \&quot;Name\&quot; or \&quot;Handwritten\&quot;)',
-        format => '',
-        read_only => '',
-            },
-    'a_obj_ezsignsignaturecustomdate' => {
-        datatype => 'ARRAY[EzsignsignaturecustomdateRequest]',
-        base_name => 'a_objEzsignsignaturecustomdate',
-        description => 'An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all.',
-        format => '',
-        read_only => '',
-            },
     'pki_ezsignsignature_id' => {
         datatype => 'int',
         base_name => 'pkiEzsignsignatureID',
@@ -202,7 +188,7 @@ __PACKAGE__->method_documentation({
     'i_ezsignsignature_x' => {
         datatype => 'int',
         base_name => 'iEzsignsignatureX',
-        description => 'The X coordinate (Horizontal) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate.',
+        description => 'The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate.',
         format => '',
         read_only => '',
             },
@@ -216,7 +202,7 @@ __PACKAGE__->method_documentation({
     'i_ezsignsignature_step' => {
         datatype => 'int',
         base_name => 'iEzsignsignatureStep',
-        description => 'The step when the Ezsignsigner will be invited to sign or fill form fields',
+        description => 'The step when the Ezsignsigner will be invited to sign',
         format => '',
         read_only => '',
             },
@@ -234,11 +220,23 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsignsignature_customdate' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignsignatureCustomdate',
+        description => 'Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \&quot;Name\&quot; or \&quot;Handwritten\&quot;)',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_ezsignsignaturecustomdate' => {
+        datatype => 'ARRAY[EzsignsignaturecustomdateRequestCompound]',
+        base_name => 'a_objEzsignsignaturecustomdate',
+        description => 'An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all.',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'b_ezsignsignature_customdate' => 'boolean',
-    'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateRequest]',
     'pki_ezsignsignature_id' => 'int',
     'fki_ezsignfoldersignerassociation_id' => 'int',
     'i_ezsignpage_pagenumber' => 'int',
@@ -246,12 +244,12 @@ __PACKAGE__->openapi_types( {
     'i_ezsignsignature_y' => 'int',
     'i_ezsignsignature_step' => 'int',
     'e_ezsignsignature_type' => 'FieldEEzsignsignatureType',
-    'fki_ezsigndocument_id' => 'int'
+    'fki_ezsigndocument_id' => 'int',
+    'b_ezsignsignature_customdate' => 'boolean',
+    'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateRequestCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'b_ezsignsignature_customdate' => 'bEzsignsignatureCustomdate',
-    'a_obj_ezsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate',
     'pki_ezsignsignature_id' => 'pkiEzsignsignatureID',
     'fki_ezsignfoldersignerassociation_id' => 'fkiEzsignfoldersignerassociationID',
     'i_ezsignpage_pagenumber' => 'iEzsignpagePagenumber',
@@ -259,7 +257,9 @@ __PACKAGE__->attribute_map( {
     'i_ezsignsignature_y' => 'iEzsignsignatureY',
     'i_ezsignsignature_step' => 'iEzsignsignatureStep',
     'e_ezsignsignature_type' => 'eEzsignsignatureType',
-    'fki_ezsigndocument_id' => 'fkiEzsigndocumentID'
+    'fki_ezsigndocument_id' => 'fkiEzsigndocumentID',
+    'b_ezsignsignature_customdate' => 'bEzsignsignatureCustomdate',
+    'a_obj_ezsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

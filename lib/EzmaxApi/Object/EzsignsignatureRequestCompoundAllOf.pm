@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsignsignaturecustomdateRequest;
+use EzmaxApi::Object::EzsignsignaturecustomdateRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -169,7 +169,7 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'a_obj_ezsignsignaturecustomdate' => {
-        datatype => 'ARRAY[EzsignsignaturecustomdateRequest]',
+        datatype => 'ARRAY[EzsignsignaturecustomdateRequestCompound]',
         base_name => 'a_objEzsignsignaturecustomdate',
         description => 'An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all.',
         format => '',
@@ -179,7 +179,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'b_ezsignsignature_customdate' => 'boolean',
-    'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateRequest]'
+    'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateRequestCompound]'
 } );
 
 __PACKAGE__->attribute_map( {

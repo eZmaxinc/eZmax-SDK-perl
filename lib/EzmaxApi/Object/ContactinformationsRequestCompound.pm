@@ -30,12 +30,12 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::AddressRequest;
+use EzmaxApi::Object::AddressRequestCompound;
 use EzmaxApi::Object::ContactinformationsRequest;
 use EzmaxApi::Object::ContactinformationsRequestCompoundAllOf;
-use EzmaxApi::Object::EmailRequest;
-use EzmaxApi::Object::PhoneRequest;
-use EzmaxApi::Object::WebsiteRequest;
+use EzmaxApi::Object::EmailRequestCompound;
+use EzmaxApi::Object::PhoneRequestCompound;
+use EzmaxApi::Object::WebsiteRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -166,34 +166,6 @@ __PACKAGE__->class_documentation({description => 'A Contactinformations Object a
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'a_obj_address' => {
-        datatype => 'ARRAY[AddressRequest]',
-        base_name => 'a_objAddress',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'a_obj_phone' => {
-        datatype => 'ARRAY[PhoneRequest]',
-        base_name => 'a_objPhone',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'a_obj_email' => {
-        datatype => 'ARRAY[EmailRequest]',
-        base_name => 'a_objEmail',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'a_obj_website' => {
-        datatype => 'ARRAY[WebsiteRequest]',
-        base_name => 'a_objWebsite',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'i_address_default' => {
         datatype => 'int',
         base_name => 'iAddressDefault',
@@ -222,28 +194,56 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_address' => {
+        datatype => 'ARRAY[AddressRequestCompound]',
+        base_name => 'a_objAddress',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_phone' => {
+        datatype => 'ARRAY[PhoneRequestCompound]',
+        base_name => 'a_objPhone',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_email' => {
+        datatype => 'ARRAY[EmailRequestCompound]',
+        base_name => 'a_objEmail',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_website' => {
+        datatype => 'ARRAY[WebsiteRequestCompound]',
+        base_name => 'a_objWebsite',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'a_obj_address' => 'ARRAY[AddressRequest]',
-    'a_obj_phone' => 'ARRAY[PhoneRequest]',
-    'a_obj_email' => 'ARRAY[EmailRequest]',
-    'a_obj_website' => 'ARRAY[WebsiteRequest]',
     'i_address_default' => 'int',
     'i_phone_default' => 'int',
     'i_email_default' => 'int',
-    'i_website_default' => 'int'
+    'i_website_default' => 'int',
+    'a_obj_address' => 'ARRAY[AddressRequestCompound]',
+    'a_obj_phone' => 'ARRAY[PhoneRequestCompound]',
+    'a_obj_email' => 'ARRAY[EmailRequestCompound]',
+    'a_obj_website' => 'ARRAY[WebsiteRequestCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'a_obj_address' => 'a_objAddress',
-    'a_obj_phone' => 'a_objPhone',
-    'a_obj_email' => 'a_objEmail',
-    'a_obj_website' => 'a_objWebsite',
     'i_address_default' => 'iAddressDefault',
     'i_phone_default' => 'iPhoneDefault',
     'i_email_default' => 'iEmailDefault',
-    'i_website_default' => 'iWebsiteDefault'
+    'i_website_default' => 'iWebsiteDefault',
+    'a_obj_address' => 'a_objAddress',
+    'a_obj_phone' => 'a_objPhone',
+    'a_obj_email' => 'a_objEmail',
+    'a_obj_website' => 'a_objWebsite'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

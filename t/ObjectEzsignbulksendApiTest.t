@@ -30,6 +30,13 @@ my $api = EzmaxApi::ObjectEzsignbulksendApi->new();
 isa_ok($api, 'EzmaxApi::ObjectEzsignbulksendApi');
 
 #
+# ezsignbulksend_get_ezsignbulksendtransmissions_v1 test
+#
+# uncomment below and update the test
+#my $ezsignbulksend_get_ezsignbulksendtransmissions_v1_pki_ezsignbulksend_id = undef; # replace NULL with a proper value
+#my $ezsignbulksend_get_ezsignbulksendtransmissions_v1_result = $api->ezsignbulksend_get_ezsignbulksendtransmissions_v1(pki_ezsignbulksend_id => $ezsignbulksend_get_ezsignbulksendtransmissions_v1_pki_ezsignbulksend_id);
+
+#
 # ezsignbulksend_get_list_v1 test
 #
 # uncomment below and update the test

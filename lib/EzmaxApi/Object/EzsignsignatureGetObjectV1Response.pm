@@ -34,6 +34,7 @@ use EzmaxApi::Object::CommonResponse;
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
 use EzmaxApi::Object::EzsignsignatureGetObjectV1ResponseAllOf;
+use EzmaxApi::Object::EzsignsignatureGetObjectV1ResponseMPayload;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -165,9 +166,9 @@ __PACKAGE__->class_documentation({description => 'Response for the /1/object/ezs
 
 __PACKAGE__->method_documentation({
     'm_payload' => {
-        datatype => 'object',
+        datatype => 'EzsignsignatureGetObjectV1ResponseMPayload',
         base_name => 'mPayload',
-        description => 'Payload for the /1/object/ezsignsignature/getObject API Request',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -188,7 +189,7 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'm_payload' => 'object',
+    'm_payload' => 'EzsignsignatureGetObjectV1ResponseMPayload',
     'obj_debug_payload' => 'CommonResponseObjDebugPayload',
     'obj_debug' => 'CommonResponseObjDebug'
 } );
