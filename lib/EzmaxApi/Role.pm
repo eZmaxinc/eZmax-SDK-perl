@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -54,7 +54,7 @@ has _cfg => ( is => 'ro',
 has version_info => ( is => 'ro',
                       isa => 'HashRef',
                       default => sub { {
-                          app_name => 'eZmax API Definition',
+                          app_name => 'eZmax API Definition (Full)',
                           app_version => '1.1.7',
                           generator_class => 'org.openapitools.codegen.languages.PerlClientCodegen',
                       } },
@@ -111,9 +111,9 @@ sub _build_af {
 
 =head1 NAME
 
-EzmaxApi::Role - a Moose role for the eZmax API Definition
+EzmaxApi::Role - a Moose role for the eZmax API Definition (Full)
 
-=head2 eZmax API Definition version: 1.1.7
+=head2 eZmax API Definition (Full) version: 1.1.7
 
 =head1 VERSION
 

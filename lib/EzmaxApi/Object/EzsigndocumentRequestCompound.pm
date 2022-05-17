@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -43,7 +43,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -168,6 +168,34 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_ezsignfolder_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignfolderID',
+        description => 'The unique ID of the Ezsignfolder',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigntemplate_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigntemplateID',
+        description => 'The unique ID of the Ezsigntemplate',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignfoldersignerassociation_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignfoldersignerassociationID',
+        description => 'The unique ID of the Ezsignfoldersignerassociation',
+        format => '',
+        read_only => '',
+            },
+    'fki_language_id' => {
+        datatype => 'int',
+        base_name => 'fkiLanguageID',
+        description => 'The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|',
+        format => '',
+        read_only => '',
+            },
     'e_ezsigndocument_source' => {
         datatype => 'string',
         base_name => 'eEzsigndocumentSource',
@@ -210,10 +238,10 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'fki_ezsignfolder_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsignfolderID',
-        description => 'The unique ID of the Ezsignfolder',
+    'e_ezsigndocument_form' => {
+        datatype => 'string',
+        base_name => 'eEzsigndocumentForm',
+        description => 'If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**',
         format => '',
         read_only => '',
             },
@@ -221,13 +249,6 @@ __PACKAGE__->method_documentation({
         datatype => 'string',
         base_name => 'dtEzsigndocumentDuedate',
         description => 'The maximum date and time at which the Ezsigndocument can be signed.',
-        format => '',
-        read_only => '',
-            },
-    'fki_language_id' => {
-        datatype => 'int',
-        base_name => 'fkiLanguageID',
-        description => 'The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|',
         format => '',
         read_only => '',
             },
@@ -242,29 +263,35 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'pki_ezsigndocument_id' => 'int',
+    'fki_ezsignfolder_id' => 'int',
+    'fki_ezsigntemplate_id' => 'int',
+    'fki_ezsignfoldersignerassociation_id' => 'int',
+    'fki_language_id' => 'int',
     'e_ezsigndocument_source' => 'string',
     'e_ezsigndocument_format' => 'string',
     's_ezsigndocument_base64' => 'string',
     's_ezsigndocument_url' => 'string',
     'b_ezsigndocument_forcerepair' => 'boolean',
     's_ezsigndocument_password' => 'string',
-    'fki_ezsignfolder_id' => 'int',
+    'e_ezsigndocument_form' => 'string',
     'dt_ezsigndocument_duedate' => 'string',
-    'fki_language_id' => 'int',
     's_ezsigndocument_name' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_ezsigndocument_id' => 'pkiEzsigndocumentID',
+    'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
+    'fki_ezsigntemplate_id' => 'fkiEzsigntemplateID',
+    'fki_ezsignfoldersignerassociation_id' => 'fkiEzsignfoldersignerassociationID',
+    'fki_language_id' => 'fkiLanguageID',
     'e_ezsigndocument_source' => 'eEzsigndocumentSource',
     'e_ezsigndocument_format' => 'eEzsigndocumentFormat',
     's_ezsigndocument_base64' => 'sEzsigndocumentBase64',
     's_ezsigndocument_url' => 'sEzsigndocumentUrl',
     'b_ezsigndocument_forcerepair' => 'bEzsigndocumentForcerepair',
     's_ezsigndocument_password' => 'sEzsigndocumentPassword',
-    'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
+    'e_ezsigndocument_form' => 'eEzsigndocumentForm',
     'dt_ezsigndocument_duedate' => 'dtEzsigndocumentDuedate',
-    'fki_language_id' => 'fkiLanguageID',
     's_ezsigndocument_name' => 'sEzsigndocumentName'
 } );
 

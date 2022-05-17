@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::FieldEActivesessionSessiontype;
+use EzmaxApi::Object::FieldEActivesessionUsertype;
 use EzmaxApi::Object::FieldEActivesessionWeekdaystart;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -44,7 +44,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -162,9 +162,9 @@ __PACKAGE__->class_documentation({description => 'An Activesession Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'e_activesession_sessiontype' => {
-        datatype => 'FieldEActivesessionSessiontype',
-        base_name => 'eActivesessionSessiontype',
+    'e_activesession_usertype' => {
+        datatype => 'FieldEActivesessionUsertype',
+        base_name => 'eActivesessionUsertype',
         description => '',
         format => '',
         read_only => '',
@@ -214,7 +214,7 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'e_activesession_sessiontype' => 'FieldEActivesessionSessiontype',
+    'e_activesession_usertype' => 'FieldEActivesessionUsertype',
     'e_activesession_weekdaystart' => 'FieldEActivesessionWeekdaystart',
     'fki_language_id' => 'int',
     's_company_name_x' => 'string',
@@ -224,7 +224,7 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
-    'e_activesession_sessiontype' => 'eActivesessionSessiontype',
+    'e_activesession_usertype' => 'eActivesessionUsertype',
     'e_activesession_weekdaystart' => 'eActivesessionWeekdaystart',
     'fki_language_id' => 'fkiLanguageID',
     's_company_name_x' => 'sCompanyNameX',

@@ -8,8 +8,8 @@ use EzmaxApi::Object::EzsigndocumentlogResponseCompound;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fki_user_id** | **int** | The unique ID of the User | 
-**fki_ezsignsigner_id** | **int** | The unique ID of the Ezsignsigner | 
+**fki_user_id** | **int** | The unique ID of the User | [optional] 
+**fki_ezsignsigner_id** | **int** | The unique ID of the Ezsignsigner | [optional] 
 **dt_ezsigndocumentlog_datetime** | **string** | The date and time at which the event was logged | 
 **e_ezsigndocumentlog_type** | [**FieldEEzsigndocumentlogType**](FieldEEzsigndocumentlogType.md) |  | 
 **s_ezsigndocumentlog_detail** | **string** | The detail of the Ezsigndocumentlog | 

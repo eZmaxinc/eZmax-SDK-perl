@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -50,7 +50,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -288,7 +288,7 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'a_obj_ezsignformfieldgroupsigner' => {
-        datatype => 'EzsignformfieldgroupsignerResponseCompound',
+        datatype => 'ARRAY[EzsignformfieldgroupsignerResponseCompound]',
         base_name => 'a_objEzsignformfieldgroupsigner',
         description => '',
         format => '',
@@ -314,7 +314,7 @@ __PACKAGE__->openapi_types( {
     'e_ezsignformfieldgroup_tooltipposition' => 'FieldEEzsignformfieldgroupTooltipposition',
     'a_obj_ezsignformfield' => 'ARRAY[EzsignformfieldResponseCompound]',
     'a_obj_dropdown_element' => 'ARRAY[CustomDropdownElementResponseCompound]',
-    'a_obj_ezsignformfieldgroupsigner' => 'EzsignformfieldgroupsignerResponseCompound'
+    'a_obj_ezsignformfieldgroupsigner' => 'ARRAY[EzsignformfieldgroupsignerResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {

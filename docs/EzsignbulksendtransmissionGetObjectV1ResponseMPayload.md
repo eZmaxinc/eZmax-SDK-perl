@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **s_ezsignbulksendtransmission_description** | **string** | The description of the Ezsignbulksendtransmission | 
 **i_ezsignbulksendtransmission_errors** | **int** | The number of errors during the Ezsignbulksendtransmission | 
 **obj_audit** | [**CommonAudit**](CommonAudit.md) |  | 
+**a_obj_ezsignfoldertransmission** | [**ARRAY[CustomEzsignfoldertransmissionResponse]**](CustomEzsignfoldertransmissionResponse.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

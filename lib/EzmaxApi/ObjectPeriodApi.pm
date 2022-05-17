@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -55,6 +55,7 @@ sub new {
 #
 # @param string $s_selector The types of Periods to return (required)
 # @param string $s_query Allow to filter the returned results (optional)
+# @param HeaderAcceptLanguage $accept_language  (optional)
 {
     my $params = {
     's_selector' => {
@@ -65,6 +66,11 @@ sub new {
     's_query' => {
         data_type => 'string',
         description => 'Allow to filter the returned results',
+        required => '0',
+    },
+    'accept_language' => {
+        data_type => 'HeaderAcceptLanguage',
+        description => '',
         required => '0',
     },
     };
@@ -102,6 +108,11 @@ sub period_get_autocomplete_v1 {
     # query params
     if ( exists $args{'s_query'}) {
         $query_params->{'sQuery'} = $self->{api_client}->to_query_value($args{'s_query'});
+    }
+
+    # header params
+    if ( exists $args{'accept_language'}) {
+        $header_params->{'Accept-Language'} = $self->{api_client}->to_header_value($args{'accept_language'});
     }
 
     # path params

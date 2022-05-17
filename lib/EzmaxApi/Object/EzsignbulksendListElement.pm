@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -30,7 +30,6 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -43,7 +42,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -189,10 +188,10 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'e_ezsignfoldertype_privacylevel' => {
-        datatype => 'FieldEEzsignfoldertypePrivacylevel',
-        base_name => 'eEzsignfoldertypePrivacylevel',
-        description => '',
+    'b_ezsignbulksend_needvalidation' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignbulksendNeedvalidation',
+        description => 'Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation',
         format => '',
         read_only => '',
             },
@@ -245,7 +244,7 @@ __PACKAGE__->openapi_types( {
     'fki_ezsignfoldertype_id' => 'int',
     's_ezsignbulksend_description' => 'string',
     's_ezsignfoldertype_name_x' => 'string',
-    'e_ezsignfoldertype_privacylevel' => 'FieldEEzsignfoldertypePrivacylevel',
+    'b_ezsignbulksend_needvalidation' => 'boolean',
     'b_ezsignbulksend_isactive' => 'boolean',
     'i_ezsignbulksendtransmission' => 'int',
     'i_ezsignfolder' => 'int',
@@ -259,7 +258,7 @@ __PACKAGE__->attribute_map( {
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
     's_ezsignbulksend_description' => 'sEzsignbulksendDescription',
     's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
-    'e_ezsignfoldertype_privacylevel' => 'eEzsignfoldertypePrivacylevel',
+    'b_ezsignbulksend_needvalidation' => 'bEzsignbulksendNeedvalidation',
     'b_ezsignbulksend_isactive' => 'bEzsignbulksendIsactive',
     'i_ezsignbulksendtransmission' => 'iEzsignbulksendtransmission',
     'i_ezsignfolder' => 'iEzsignfolder',

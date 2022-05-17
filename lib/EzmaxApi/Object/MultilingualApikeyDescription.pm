@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -42,7 +42,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -163,14 +163,14 @@ __PACKAGE__->method_documentation({
     's_apikey_description1' => {
         datatype => 'string',
         base_name => 'sApikeyDescription1',
-        description => 'Value in French',
+        description => 'The description of the Apikey in French',
         format => '',
         read_only => '',
             },
     's_apikey_description2' => {
         datatype => 'string',
         base_name => 'sApikeyDescription2',
-        description => 'Value in English',
+        description => 'The description of the Apikey in English',
         format => '',
         read_only => '',
             },

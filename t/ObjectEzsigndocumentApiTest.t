@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -91,6 +91,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #my $ezsigndocument_end_prematurely_v1_result = $api->ezsigndocument_end_prematurely_v1(pki_ezsigndocument_id => $ezsigndocument_end_prematurely_v1_pki_ezsigndocument_id, body => $ezsigndocument_end_prematurely_v1_body);
 
 #
+# ezsigndocument_get_actionable_elements_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_get_actionable_elements_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_get_actionable_elements_v1_result = $api->ezsigndocument_get_actionable_elements_v1(pki_ezsigndocument_id => $ezsigndocument_get_actionable_elements_v1_pki_ezsigndocument_id);
+
+#
 # ezsigndocument_get_download_url_v1 test
 #
 # uncomment below and update the test
@@ -155,4 +162,12 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #my $ezsigndocument_patch_object_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
 #my $ezsigndocument_patch_object_v1_ezsigndocument_patch_object_v1_request = undef; # replace NULL with a proper value
 #my $ezsigndocument_patch_object_v1_result = $api->ezsigndocument_patch_object_v1(pki_ezsigndocument_id => $ezsigndocument_patch_object_v1_pki_ezsigndocument_id, ezsigndocument_patch_object_v1_request => $ezsigndocument_patch_object_v1_ezsigndocument_patch_object_v1_request);
+
+#
+# ezsigndocument_unsend_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_unsend_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_unsend_v1_body = undef; # replace NULL with a proper value
+#my $ezsigndocument_unsend_v1_result = $api->ezsigndocument_unsend_v1(pki_ezsigndocument_id => $ezsigndocument_unsend_v1_pki_ezsigndocument_id, body => $ezsigndocument_unsend_v1_body);
 

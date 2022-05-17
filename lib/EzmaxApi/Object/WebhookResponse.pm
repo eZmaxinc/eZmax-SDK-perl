@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -42,7 +42,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -160,6 +160,13 @@ __PACKAGE__->class_documentation({description => 'A webhook object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pks_customer_code' => {
+        datatype => 'string',
+        base_name => 'pksCustomerCode',
+        description => 'The customer code assigned to your account',
+        format => '',
+        read_only => '',
+            },
     'pki_webhook_id' => {
         datatype => 'int',
         base_name => 'pkiWebhookID',
@@ -181,10 +188,10 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'pks_customer_code' => {
+    'e_webhook_managementevent' => {
         datatype => 'string',
-        base_name => 'pksCustomerCode',
-        description => 'The customer code assigned to your account',
+        base_name => 'eWebhookManagementevent',
+        description => 'This Management Event. This property will be set only if the Module is \&quot;Management\&quot;.',
         format => '',
         read_only => '',
             },
@@ -195,6 +202,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_webhook_test' => {
+        datatype => 'boolean',
+        base_name => 'bWebhookTest',
+        description => 'Wheter the webhook received is a manual test or a real event',
+        format => '',
+        read_only => '',
+            },
+    'b_webhook_skipsslvalidation' => {
+        datatype => 'boolean',
+        base_name => 'bWebhookSkipsslvalidation',
+        description => 'Wheter the server&#39;s SSL certificate should be validated or not. Not recommended for production use.',
+        format => '',
+        read_only => '',
+            },
     's_webhook_emailfailed' => {
         datatype => 'string',
         base_name => 'sWebhookEmailfailed',
@@ -202,33 +223,30 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'e_webhook_managementevent' => {
-        datatype => 'string',
-        base_name => 'eWebhookManagementevent',
-        description => 'This Management Event. This property will be set only if the Module is \&quot;Management\&quot;.',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
+    'pks_customer_code' => 'string',
     'pki_webhook_id' => 'int',
     'e_webhook_module' => 'string',
     'e_webhook_ezsignevent' => 'string',
-    'pks_customer_code' => 'string',
+    'e_webhook_managementevent' => 'string',
     's_webhook_url' => 'string',
-    's_webhook_emailfailed' => 'string',
-    'e_webhook_managementevent' => 'string'
+    'b_webhook_test' => 'boolean',
+    'b_webhook_skipsslvalidation' => 'boolean',
+    's_webhook_emailfailed' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pks_customer_code' => 'pksCustomerCode',
     'pki_webhook_id' => 'pkiWebhookID',
     'e_webhook_module' => 'eWebhookModule',
     'e_webhook_ezsignevent' => 'eWebhookEzsignevent',
-    'pks_customer_code' => 'pksCustomerCode',
+    'e_webhook_managementevent' => 'eWebhookManagementevent',
     's_webhook_url' => 'sWebhookUrl',
-    's_webhook_emailfailed' => 'sWebhookEmailfailed',
-    'e_webhook_managementevent' => 'eWebhookManagementevent'
+    'b_webhook_test' => 'bWebhookTest',
+    'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation',
+    's_webhook_emailfailed' => 'sWebhookEmailfailed'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

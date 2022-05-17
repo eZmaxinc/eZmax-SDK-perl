@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -49,6 +49,14 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfoldersignerassociationApi');
 # uncomment below and update the test
 #my $ezsignfoldersignerassociation_delete_object_v1_pki_ezsignfoldersignerassociation_id = undef; # replace NULL with a proper value
 #my $ezsignfoldersignerassociation_delete_object_v1_result = $api->ezsignfoldersignerassociation_delete_object_v1(pki_ezsignfoldersignerassociation_id => $ezsignfoldersignerassociation_delete_object_v1_pki_ezsignfoldersignerassociation_id);
+
+#
+# ezsignfoldersignerassociation_edit_object_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfoldersignerassociation_edit_object_v1_pki_ezsignfoldersignerassociation_id = undef; # replace NULL with a proper value
+#my $ezsignfoldersignerassociation_edit_object_v1_ezsignfoldersignerassociation_edit_object_v1_request = undef; # replace NULL with a proper value
+#my $ezsignfoldersignerassociation_edit_object_v1_result = $api->ezsignfoldersignerassociation_edit_object_v1(pki_ezsignfoldersignerassociation_id => $ezsignfoldersignerassociation_edit_object_v1_pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_edit_object_v1_request => $ezsignfoldersignerassociation_edit_object_v1_ezsignfoldersignerassociation_edit_object_v1_request);
 
 #
 # ezsignfoldersignerassociation_get_in_person_login_url_v1 test

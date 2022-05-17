@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -47,6 +47,387 @@ sub new {
 
 }
 
+
+#
+# ezsignbulksend_create_ezsignbulksendtransmission_v1
+#
+# Create a new Ezsignbulksendtransmission in the Ezsignbulksend
+#
+# @param int $pki_ezsignbulksend_id  (required)
+# @param EzsignbulksendCreateEzsignbulksendtransmissionV1Request $ezsignbulksend_create_ezsignbulksendtransmission_v1_request  (required)
+{
+    my $params = {
+    'pki_ezsignbulksend_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsignbulksend_create_ezsignbulksendtransmission_v1_request' => {
+        data_type => 'EzsignbulksendCreateEzsignbulksendtransmissionV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignbulksend_create_ezsignbulksendtransmission_v1' } = {
+        summary => 'Create a new Ezsignbulksendtransmission in the Ezsignbulksend',
+        params => $params,
+        returns => 'EzsignbulksendCreateEzsignbulksendtransmissionV1Response',
+        };
+}
+# @return EzsignbulksendCreateEzsignbulksendtransmissionV1Response
+#
+sub ezsignbulksend_create_ezsignbulksendtransmission_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignbulksend_id' is set
+    unless (exists $args{'pki_ezsignbulksend_id'}) {
+      croak("Missing the required parameter 'pki_ezsignbulksend_id' when calling ezsignbulksend_create_ezsignbulksendtransmission_v1");
+    }
+
+    # verify the required parameter 'ezsignbulksend_create_ezsignbulksendtransmission_v1_request' is set
+    unless (exists $args{'ezsignbulksend_create_ezsignbulksendtransmission_v1_request'}) {
+      croak("Missing the required parameter 'ezsignbulksend_create_ezsignbulksendtransmission_v1_request' when calling ezsignbulksend_create_ezsignbulksendtransmission_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsignbulksend_id'}) {
+        my $_base_variable = "{" . "pkiEzsignbulksendID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignbulksend_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsignbulksend_create_ezsignbulksendtransmission_v1_request'}) {
+        $_body_data = $args{'ezsignbulksend_create_ezsignbulksendtransmission_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignbulksendCreateEzsignbulksendtransmissionV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsignbulksend_create_object_v1
+#
+# Create a new Ezsignbulksend
+#
+# @param EzsignbulksendCreateObjectV1Request $ezsignbulksend_create_object_v1_request  (required)
+{
+    my $params = {
+    'ezsignbulksend_create_object_v1_request' => {
+        data_type => 'EzsignbulksendCreateObjectV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignbulksend_create_object_v1' } = {
+        summary => 'Create a new Ezsignbulksend',
+        params => $params,
+        returns => 'EzsignbulksendCreateObjectV1Response',
+        };
+}
+# @return EzsignbulksendCreateObjectV1Response
+#
+sub ezsignbulksend_create_object_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'ezsignbulksend_create_object_v1_request' is set
+    unless (exists $args{'ezsignbulksend_create_object_v1_request'}) {
+      croak("Missing the required parameter 'ezsignbulksend_create_object_v1_request' when calling ezsignbulksend_create_object_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignbulksend';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsignbulksend_create_object_v1_request'}) {
+        $_body_data = $args{'ezsignbulksend_create_object_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignbulksendCreateObjectV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsignbulksend_delete_object_v1
+#
+# Delete an existing Ezsignbulksend
+#
+# @param int $pki_ezsignbulksend_id  (required)
+{
+    my $params = {
+    'pki_ezsignbulksend_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignbulksend_delete_object_v1' } = {
+        summary => 'Delete an existing Ezsignbulksend',
+        params => $params,
+        returns => 'EzsignbulksendDeleteObjectV1Response',
+        };
+}
+# @return EzsignbulksendDeleteObjectV1Response
+#
+sub ezsignbulksend_delete_object_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignbulksend_id' is set
+    unless (exists $args{'pki_ezsignbulksend_id'}) {
+      croak("Missing the required parameter 'pki_ezsignbulksend_id' when calling ezsignbulksend_delete_object_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignbulksend/{pkiEzsignbulksendID}';
+
+    my $_method = 'DELETE';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsignbulksend_id'}) {
+        my $_base_variable = "{" . "pkiEzsignbulksendID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignbulksend_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignbulksendDeleteObjectV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsignbulksend_edit_object_v1
+#
+# Edit an existing Ezsignbulksend
+#
+# @param int $pki_ezsignbulksend_id  (required)
+# @param EzsignbulksendEditObjectV1Request $ezsignbulksend_edit_object_v1_request  (required)
+{
+    my $params = {
+    'pki_ezsignbulksend_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsignbulksend_edit_object_v1_request' => {
+        data_type => 'EzsignbulksendEditObjectV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignbulksend_edit_object_v1' } = {
+        summary => 'Edit an existing Ezsignbulksend',
+        params => $params,
+        returns => 'EzsignbulksendEditObjectV1Response',
+        };
+}
+# @return EzsignbulksendEditObjectV1Response
+#
+sub ezsignbulksend_edit_object_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignbulksend_id' is set
+    unless (exists $args{'pki_ezsignbulksend_id'}) {
+      croak("Missing the required parameter 'pki_ezsignbulksend_id' when calling ezsignbulksend_edit_object_v1");
+    }
+
+    # verify the required parameter 'ezsignbulksend_edit_object_v1_request' is set
+    unless (exists $args{'ezsignbulksend_edit_object_v1_request'}) {
+      croak("Missing the required parameter 'ezsignbulksend_edit_object_v1_request' when calling ezsignbulksend_edit_object_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignbulksend/{pkiEzsignbulksendID}';
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsignbulksend_id'}) {
+        my $_base_variable = "{" . "pkiEzsignbulksendID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignbulksend_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsignbulksend_edit_object_v1_request'}) {
+        $_body_data = $args{'ezsignbulksend_edit_object_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignbulksendEditObjectV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsignbulksend_get_csv_template_v1
+#
+# Retrieve an existing Ezsignbulksend's empty Csv template
+#
+# @param int $pki_ezsignbulksend_id  (required)
+# @param string $e_csv_separator Separator that will be used to separate fields (required)
+{
+    my $params = {
+    'pki_ezsignbulksend_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'e_csv_separator' => {
+        data_type => 'string',
+        description => 'Separator that will be used to separate fields',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignbulksend_get_csv_template_v1' } = {
+        summary => 'Retrieve an existing Ezsignbulksend&#39;s empty Csv template',
+        params => $params,
+        returns => 'string',
+        };
+}
+# @return string
+#
+sub ezsignbulksend_get_csv_template_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignbulksend_id' is set
+    unless (exists $args{'pki_ezsignbulksend_id'}) {
+      croak("Missing the required parameter 'pki_ezsignbulksend_id' when calling ezsignbulksend_get_csv_template_v1");
+    }
+
+    # verify the required parameter 'e_csv_separator' is set
+    unless (exists $args{'e_csv_separator'}) {
+      croak("Missing the required parameter 'e_csv_separator' when calling ezsignbulksend_get_csv_template_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getCsvTemplate';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('text/csv', 'application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # query params
+    if ( exists $args{'e_csv_separator'}) {
+        $query_params->{'eCsvSeparator'} = $self->{api_client}->to_query_value($args{'e_csv_separator'});
+    }
+
+    # path params
+    if ( exists $args{'pki_ezsignbulksend_id'}) {
+        my $_base_variable = "{" . "pkiEzsignbulksendID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignbulksend_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
 
 #
 # ezsignbulksend_get_ezsignbulksendtransmissions_v1
@@ -112,6 +493,73 @@ sub ezsignbulksend_get_ezsignbulksendtransmissions_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('EzsignbulksendGetEzsignbulksendtransmissionsV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsignbulksend_get_forms_data_v1
+#
+# Retrieve an existing Ezsignbulksend's forms data
+#
+# @param int $pki_ezsignbulksend_id  (required)
+{
+    my $params = {
+    'pki_ezsignbulksend_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignbulksend_get_forms_data_v1' } = {
+        summary => 'Retrieve an existing Ezsignbulksend&#39;s forms data',
+        params => $params,
+        returns => 'EzsignbulksendGetFormsDataV1Response',
+        };
+}
+# @return EzsignbulksendGetFormsDataV1Response
+#
+sub ezsignbulksend_get_forms_data_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignbulksend_id' is set
+    unless (exists $args{'pki_ezsignbulksend_id'}) {
+      croak("Missing the required parameter 'pki_ezsignbulksend_id' when calling ezsignbulksend_get_forms_data_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getFormsData';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json', 'application/zip');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsignbulksend_id'}) {
+        my $_base_variable = "{" . "pkiEzsignbulksendID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignbulksend_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignbulksendGetFormsDataV1Response', $response);
     return $_response_object;
 }
 
@@ -283,6 +731,89 @@ sub ezsignbulksend_get_object_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('EzsignbulksendGetObjectV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsignbulksend_reorder_v1
+#
+# Reorder Ezsignbulksenddocumentmappings in the Ezsignbulksend
+#
+# @param int $pki_ezsignbulksend_id  (required)
+# @param EzsignbulksendReorderV1Request $ezsignbulksend_reorder_v1_request  (required)
+{
+    my $params = {
+    'pki_ezsignbulksend_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsignbulksend_reorder_v1_request' => {
+        data_type => 'EzsignbulksendReorderV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignbulksend_reorder_v1' } = {
+        summary => 'Reorder Ezsignbulksenddocumentmappings in the Ezsignbulksend',
+        params => $params,
+        returns => 'EzsignbulksendReorderV1Response',
+        };
+}
+# @return EzsignbulksendReorderV1Response
+#
+sub ezsignbulksend_reorder_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignbulksend_id' is set
+    unless (exists $args{'pki_ezsignbulksend_id'}) {
+      croak("Missing the required parameter 'pki_ezsignbulksend_id' when calling ezsignbulksend_reorder_v1");
+    }
+
+    # verify the required parameter 'ezsignbulksend_reorder_v1_request' is set
+    unless (exists $args{'ezsignbulksend_reorder_v1_request'}) {
+      croak("Missing the required parameter 'ezsignbulksend_reorder_v1_request' when calling ezsignbulksend_reorder_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignbulksend/{pkiEzsignbulksendID}/reorder';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsignbulksend_id'}) {
+        my $_base_variable = "{" . "pkiEzsignbulksendID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignbulksend_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsignbulksend_reorder_v1_request'}) {
+        $_body_data = $args{'ezsignbulksend_reorder_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignbulksendReorderV1Response', $response);
     return $_response_object;
 }
 

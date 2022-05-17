@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -43,7 +43,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -182,6 +182,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_language_name_x' => {
+        datatype => 'string',
+        base_name => 'sLanguageNameX',
+        description => 'The Name of the Language in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignfoldertype_name_x' => {
+        datatype => 'string',
+        base_name => 'sEzsignfoldertypeNameX',
+        description => 'The name of the Ezsignfoldertype in the language of the requester',
+        format => '',
+        read_only => '',
+            },
     's_ezsignbulksend_description' => {
         datatype => 'string',
         base_name => 'sEzsignbulksendDescription',
@@ -193,6 +207,13 @@ __PACKAGE__->method_documentation({
         datatype => 'string',
         base_name => 'tEzsignbulksendNote',
         description => 'Note about the Ezsignbulksend',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignbulksend_needvalidation' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignbulksendNeedvalidation',
+        description => 'Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation',
         format => '',
         read_only => '',
             },
@@ -216,8 +237,11 @@ __PACKAGE__->openapi_types( {
     'pki_ezsignbulksend_id' => 'int',
     'fki_ezsignfoldertype_id' => 'int',
     'fki_language_id' => 'int',
+    's_language_name_x' => 'string',
+    's_ezsignfoldertype_name_x' => 'string',
     's_ezsignbulksend_description' => 'string',
     't_ezsignbulksend_note' => 'string',
+    'b_ezsignbulksend_needvalidation' => 'boolean',
     'b_ezsignbulksend_isactive' => 'boolean',
     'obj_audit' => 'CommonAudit'
 } );
@@ -226,8 +250,11 @@ __PACKAGE__->attribute_map( {
     'pki_ezsignbulksend_id' => 'pkiEzsignbulksendID',
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
     'fki_language_id' => 'fkiLanguageID',
+    's_language_name_x' => 'sLanguageNameX',
+    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
     's_ezsignbulksend_description' => 'sEzsignbulksendDescription',
     't_ezsignbulksend_note' => 'tEzsignbulksendNote',
+    'b_ezsignbulksend_needvalidation' => 'bEzsignbulksendNeedvalidation',
     'b_ezsignbulksend_isactive' => 'bEzsignbulksendIsactive',
     'obj_audit' => 'objAudit'
 } );

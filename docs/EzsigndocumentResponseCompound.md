@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **i_ezsigndocument_signaturetotal** | **int** | The number of total signatures that were requested in the Ezsigndocument. | 
 **s_ezsigndocument_md5initial** | **string** | MD5 Hash of the initial PDF Document before signatures were applied to it. | 
 **s_ezsigndocument_md5signed** | **string** | MD5 Hash of the final PDF Document after all signatures were applied to it. | 
+**b_ezsigndocument_ezsignform** | **boolean** | If the Ezsigndocument contains an Ezsignform or not | 
 **obj_audit** | [**CommonAudit**](CommonAudit.md) |  | 
 **i_ezsigndocument_stepformtotal** | **int** | The total number of steps in the form filling phase | 
 **i_ezsigndocument_stepformcurrent** | **int** | The current step in the form filling phase | 

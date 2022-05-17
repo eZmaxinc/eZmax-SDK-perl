@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -31,7 +31,9 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
+use EzmaxApi::Object::CustomEzsignfoldertransmissionResponse;
 use EzmaxApi::Object::EzsignbulksendtransmissionResponse;
+use EzmaxApi::Object::EzsignbulksendtransmissionResponseCompoundAllOf;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -44,7 +46,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -197,6 +199,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_ezsignfoldertransmission' => {
+        datatype => 'ARRAY[CustomEzsignfoldertransmissionResponse]',
+        base_name => 'a_objEzsignfoldertransmission',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -204,7 +213,8 @@ __PACKAGE__->openapi_types( {
     'fki_ezsignbulksend_id' => 'int',
     's_ezsignbulksendtransmission_description' => 'string',
     'i_ezsignbulksendtransmission_errors' => 'int',
-    'obj_audit' => 'CommonAudit'
+    'obj_audit' => 'CommonAudit',
+    'a_obj_ezsignfoldertransmission' => 'ARRAY[CustomEzsignfoldertransmissionResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -212,7 +222,8 @@ __PACKAGE__->attribute_map( {
     'fki_ezsignbulksend_id' => 'fkiEzsignbulksendID',
     's_ezsignbulksendtransmission_description' => 'sEzsignbulksendtransmissionDescription',
     'i_ezsignbulksendtransmission_errors' => 'iEzsignbulksendtransmissionErrors',
-    'obj_audit' => 'objAudit'
+    'obj_audit' => 'objAudit',
+    'a_obj_ezsignfoldertransmission' => 'a_objEzsignfoldertransmission'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

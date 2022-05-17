@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -43,7 +43,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -164,7 +164,7 @@ __PACKAGE__->method_documentation({
     'm_payload' => {
         datatype => 'ARRAY[CustomWordPositionWordResponse]',
         base_name => 'mPayload',
-        description => 'Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request',
+        description => 'Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions',
         format => '',
         read_only => '',
             },

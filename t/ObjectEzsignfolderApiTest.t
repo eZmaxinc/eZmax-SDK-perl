@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -30,6 +30,22 @@ my $api = EzmaxApi::ObjectEzsignfolderApi->new();
 isa_ok($api, 'EzmaxApi::ObjectEzsignfolderApi');
 
 #
+# ezsignfolder_archive_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_archive_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_archive_v1_body = undef; # replace NULL with a proper value
+#my $ezsignfolder_archive_v1_result = $api->ezsignfolder_archive_v1(pki_ezsignfolder_id => $ezsignfolder_archive_v1_pki_ezsignfolder_id, body => $ezsignfolder_archive_v1_body);
+
+#
+# ezsignfolder_batch_download_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_batch_download_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_batch_download_v1_ezsignfolder_batch_download_v1_request = undef; # replace NULL with a proper value
+#my $ezsignfolder_batch_download_v1_result = $api->ezsignfolder_batch_download_v1(pki_ezsignfolder_id => $ezsignfolder_batch_download_v1_pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request => $ezsignfolder_batch_download_v1_ezsignfolder_batch_download_v1_request);
+
+#
 # ezsignfolder_create_object_v1 test
 #
 # uncomment below and update the test
@@ -57,6 +73,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfolderApi');
 #my $ezsignfolder_edit_object_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
 #my $ezsignfolder_edit_object_v1_ezsignfolder_edit_object_v1_request = undef; # replace NULL with a proper value
 #my $ezsignfolder_edit_object_v1_result = $api->ezsignfolder_edit_object_v1(pki_ezsignfolder_id => $ezsignfolder_edit_object_v1_pki_ezsignfolder_id, ezsignfolder_edit_object_v1_request => $ezsignfolder_edit_object_v1_ezsignfolder_edit_object_v1_request);
+
+#
+# ezsignfolder_get_actionable_elements_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_get_actionable_elements_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_actionable_elements_v1_result = $api->ezsignfolder_get_actionable_elements_v1(pki_ezsignfolder_id => $ezsignfolder_get_actionable_elements_v1_pki_ezsignfolder_id);
 
 #
 # ezsignfolder_get_ezsigndocuments_v1 test
@@ -96,6 +119,22 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfolderApi');
 # uncomment below and update the test
 #my $ezsignfolder_get_object_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
 #my $ezsignfolder_get_object_v1_result = $api->ezsignfolder_get_object_v1(pki_ezsignfolder_id => $ezsignfolder_get_object_v1_pki_ezsignfolder_id);
+
+#
+# ezsignfolder_import_ezsigntemplatepackage_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_import_ezsigntemplatepackage_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_import_ezsigntemplatepackage_v1_ezsignfolder_import_ezsigntemplatepackage_v1_request = undef; # replace NULL with a proper value
+#my $ezsignfolder_import_ezsigntemplatepackage_v1_result = $api->ezsignfolder_import_ezsigntemplatepackage_v1(pki_ezsignfolder_id => $ezsignfolder_import_ezsigntemplatepackage_v1_pki_ezsignfolder_id, ezsignfolder_import_ezsigntemplatepackage_v1_request => $ezsignfolder_import_ezsigntemplatepackage_v1_ezsignfolder_import_ezsigntemplatepackage_v1_request);
+
+#
+# ezsignfolder_reorder_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_reorder_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_reorder_v1_ezsignfolder_reorder_v1_request = undef; # replace NULL with a proper value
+#my $ezsignfolder_reorder_v1_result = $api->ezsignfolder_reorder_v1(pki_ezsignfolder_id => $ezsignfolder_reorder_v1_pki_ezsignfolder_id, ezsignfolder_reorder_v1_request => $ezsignfolder_reorder_v1_ezsignfolder_reorder_v1_request);
 
 #
 # ezsignfolder_send_v1 test

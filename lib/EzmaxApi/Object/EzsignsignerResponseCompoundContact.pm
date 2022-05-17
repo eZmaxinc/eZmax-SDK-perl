@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -42,7 +42,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -202,6 +202,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_phone_extension' => {
+        datatype => 'string',
+        base_name => 'sPhoneExtension',
+        description => 'The extension of the phone number.  The extension is the \&quot;123\&quot; section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers',
+        format => '',
+        read_only => '',
+            },
     's_phone_e164_cell' => {
         datatype => 'string',
         base_name => 'sPhoneE164Cell',
@@ -218,6 +225,7 @@ __PACKAGE__->openapi_types( {
     'fki_language_id' => 'int',
     's_email_address' => 'string',
     's_phone_e164' => 'string',
+    's_phone_extension' => 'string',
     's_phone_e164_cell' => 'string'
 } );
 
@@ -228,6 +236,7 @@ __PACKAGE__->attribute_map( {
     'fki_language_id' => 'fkiLanguageID',
     's_email_address' => 'sEmailAddress',
     's_phone_e164' => 'sPhoneE164',
+    's_phone_extension' => 'sPhoneExtension',
     's_phone_e164_cell' => 'sPhoneE164Cell'
 } );
 

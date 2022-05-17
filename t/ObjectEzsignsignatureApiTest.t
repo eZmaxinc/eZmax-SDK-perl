@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -64,4 +64,12 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignsignatureApi');
 # uncomment below and update the test
 #my $ezsignsignature_get_object_v1_pki_ezsignsignature_id = undef; # replace NULL with a proper value
 #my $ezsignsignature_get_object_v1_result = $api->ezsignsignature_get_object_v1(pki_ezsignsignature_id => $ezsignsignature_get_object_v1_pki_ezsignsignature_id);
+
+#
+# ezsignsignature_sign_v1 test
+#
+# uncomment below and update the test
+#my $ezsignsignature_sign_v1_pki_ezsignsignature_id = undef; # replace NULL with a proper value
+#my $ezsignsignature_sign_v1_ezsignsignature_sign_v1_request = undef; # replace NULL with a proper value
+#my $ezsignsignature_sign_v1_result = $api->ezsignsignature_sign_v1(pki_ezsignsignature_id => $ezsignsignature_sign_v1_pki_ezsignsignature_id, ezsignsignature_sign_v1_request => $ezsignsignature_sign_v1_ezsignsignature_sign_v1_request);
 

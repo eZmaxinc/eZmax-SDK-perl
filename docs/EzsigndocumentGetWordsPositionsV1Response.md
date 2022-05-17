@@ -8,7 +8,7 @@ use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Response;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**m_payload** | [**ARRAY[CustomWordPositionWordResponse]**](CustomWordPositionWordResponse.md) | Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request | 
+**m_payload** | [**ARRAY[CustomWordPositionWordResponse]**](CustomWordPositionWordResponse.md) | Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | 
 **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
 **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
 

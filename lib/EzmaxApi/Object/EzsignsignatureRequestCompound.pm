@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -33,6 +33,8 @@ use DateTime;
 use EzmaxApi::Object::EzsignsignatureRequest;
 use EzmaxApi::Object::EzsignsignatureRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignsignaturecustomdateRequestCompound;
+use EzmaxApi::Object::FieldEEzsignsignatureFont;
+use EzmaxApi::Object::FieldEEzsignsignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -46,7 +48,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -195,7 +197,7 @@ __PACKAGE__->method_documentation({
     'i_ezsignsignature_y' => {
         datatype => 'int',
         base_name => 'iEzsignsignatureY',
-        description => 'The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \&quot;300\&quot; for the Y coordinate.',
+        description => 'The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \&quot;300\&quot; for the Y coordinate.',
         format => '',
         read_only => '',
             },
@@ -220,10 +222,31 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    't_ezsignsignature_tooltip' => {
+        datatype => 'string',
+        base_name => 'tEzsignsignatureTooltip',
+        description => 'A tooltip that will be presented to Ezsignsigner about the Ezsignsignature',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignsignature_tooltipposition' => {
+        datatype => 'FieldEEzsignsignatureTooltipposition',
+        base_name => 'eEzsignsignatureTooltipposition',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignsignature_font' => {
+        datatype => 'FieldEEzsignsignatureFont',
+        base_name => 'eEzsignsignatureFont',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'b_ezsignsignature_customdate' => {
         datatype => 'boolean',
         base_name => 'bEzsignsignatureCustomdate',
-        description => 'Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \&quot;Name\&quot; or \&quot;Handwritten\&quot;)',
+        description => 'Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)',
         format => '',
         read_only => '',
             },
@@ -245,6 +268,9 @@ __PACKAGE__->openapi_types( {
     'i_ezsignsignature_step' => 'int',
     'e_ezsignsignature_type' => 'FieldEEzsignsignatureType',
     'fki_ezsigndocument_id' => 'int',
+    't_ezsignsignature_tooltip' => 'string',
+    'e_ezsignsignature_tooltipposition' => 'FieldEEzsignsignatureTooltipposition',
+    'e_ezsignsignature_font' => 'FieldEEzsignsignatureFont',
     'b_ezsignsignature_customdate' => 'boolean',
     'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateRequestCompound]'
 } );
@@ -258,6 +284,9 @@ __PACKAGE__->attribute_map( {
     'i_ezsignsignature_step' => 'iEzsignsignatureStep',
     'e_ezsignsignature_type' => 'eEzsignsignatureType',
     'fki_ezsigndocument_id' => 'fkiEzsigndocumentID',
+    't_ezsignsignature_tooltip' => 'tEzsignsignatureTooltip',
+    'e_ezsignsignature_tooltipposition' => 'eEzsignsignatureTooltipposition',
+    'e_ezsignsignature_font' => 'eEzsignsignatureFont',
     'b_ezsignsignature_customdate' => 'bEzsignsignatureCustomdate',
     'a_obj_ezsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate'
 } );

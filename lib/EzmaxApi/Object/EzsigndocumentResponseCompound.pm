@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -47,7 +47,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -263,6 +263,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsigndocument_ezsignform' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigndocumentEzsignform',
+        description => 'If the Ezsigndocument contains an Ezsignform or not',
+        format => '',
+        read_only => '',
+            },
     'obj_audit' => {
         datatype => 'CommonAudit',
         base_name => 'objAudit',
@@ -322,6 +329,7 @@ __PACKAGE__->openapi_types( {
     'i_ezsigndocument_signaturetotal' => 'int',
     's_ezsigndocument_md5initial' => 'string',
     's_ezsigndocument_md5signed' => 'string',
+    'b_ezsigndocument_ezsignform' => 'boolean',
     'obj_audit' => 'CommonAudit',
     'i_ezsigndocument_stepformtotal' => 'int',
     'i_ezsigndocument_stepformcurrent' => 'int',
@@ -345,6 +353,7 @@ __PACKAGE__->attribute_map( {
     'i_ezsigndocument_signaturetotal' => 'iEzsigndocumentSignaturetotal',
     's_ezsigndocument_md5initial' => 'sEzsigndocumentMD5initial',
     's_ezsigndocument_md5signed' => 'sEzsigndocumentMD5signed',
+    'b_ezsigndocument_ezsignform' => 'bEzsigndocumentEzsignform',
     'obj_audit' => 'objAudit',
     'i_ezsigndocument_stepformtotal' => 'iEzsigndocumentStepformtotal',
     'i_ezsigndocument_stepformcurrent' => 'iEzsigndocumentStepformcurrent',

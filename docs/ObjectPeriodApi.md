@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **period_get_autocomplete_v1**
-> CommonGetAutocompleteV1Response period_get_autocomplete_v1(s_selector => $s_selector, s_query => $s_query)
+> CommonGetAutocompleteV1Response period_get_autocomplete_v1(s_selector => $s_selector, s_query => $s_query, accept_language => $accept_language)
 
 Retrieve Periods and IDs
 
@@ -33,9 +33,10 @@ my $api_instance = EzmaxApi::ObjectPeriodApi->new(
 
 my $s_selector = "s_selector_example"; # string | The types of Periods to return
 my $s_query = "s_query_example"; # string | Allow to filter the returned results
+my $accept_language = new EzmaxApi.HeaderAcceptLanguage(); # HeaderAcceptLanguage | 
 
 eval {
-    my $result = $api_instance->period_get_autocomplete_v1(s_selector => $s_selector, s_query => $s_query);
+    my $result = $api_instance->period_get_autocomplete_v1(s_selector => $s_selector, s_query => $s_query, accept_language => $accept_language);
     print Dumper($result);
 };
 if ($@) {
@@ -49,6 +50,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **s_selector** | **string**| The types of Periods to return | 
  **s_query** | **string**| Allow to filter the returned results | [optional] 
+ **accept_language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
 
 ### Return type
 

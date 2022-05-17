@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -35,5 +35,6 @@ isa_ok($api, 'EzmaxApi::ObjectPeriodApi');
 # uncomment below and update the test
 #my $period_get_autocomplete_v1_s_selector = undef; # replace NULL with a proper value
 #my $period_get_autocomplete_v1_s_query = undef; # replace NULL with a proper value
-#my $period_get_autocomplete_v1_result = $api->period_get_autocomplete_v1(s_selector => $period_get_autocomplete_v1_s_selector, s_query => $period_get_autocomplete_v1_s_query);
+#my $period_get_autocomplete_v1_accept_language = undef; # replace NULL with a proper value
+#my $period_get_autocomplete_v1_result = $api->period_get_autocomplete_v1(s_selector => $period_get_autocomplete_v1_s_selector, s_query => $period_get_autocomplete_v1_s_query, accept_language => $period_get_autocomplete_v1_accept_language);
 

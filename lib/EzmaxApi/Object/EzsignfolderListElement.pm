@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -44,7 +44,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -218,10 +218,10 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'dt_due_date' => {
+    'dt_ezsignfolder_duedate' => {
         datatype => 'string',
-        base_name => 'dtDueDate',
-        description => 'Represent a Date Time. The timezone is the one configured in the User&#39;s profile.',
+        base_name => 'dtEzsignfolderDuedate',
+        description => 'The maximum date and time at which the Ezsignfolder can be signed.',
         format => '',
         read_only => '',
             },
@@ -264,7 +264,7 @@ __PACKAGE__->openapi_types( {
     'e_ezsignfolder_step' => 'FieldEEzsignfolderStep',
     'dt_created_date' => 'string',
     'dt_ezsignfolder_sentdate' => 'string',
-    'dt_due_date' => 'string',
+    'dt_ezsignfolder_duedate' => 'string',
     'i_ezsigndocument' => 'int',
     'i_ezsigndocument_edm' => 'int',
     'i_ezsignsignature' => 'int',
@@ -280,7 +280,7 @@ __PACKAGE__->attribute_map( {
     'e_ezsignfolder_step' => 'eEzsignfolderStep',
     'dt_created_date' => 'dtCreatedDate',
     'dt_ezsignfolder_sentdate' => 'dtEzsignfolderSentdate',
-    'dt_due_date' => 'dtDueDate',
+    'dt_ezsignfolder_duedate' => 'dtEzsignfolderDuedate',
     'i_ezsigndocument' => 'iEzsigndocument',
     'i_ezsigndocument_edm' => 'iEzsigndocumentEdm',
     'i_ezsignsignature' => 'iEzsignsignature',

@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -35,5 +35,6 @@ isa_ok($api, 'EzmaxApi::ObjectFranchiseofficeApi');
 # uncomment below and update the test
 #my $franchiseoffice_get_autocomplete_v1_s_selector = undef; # replace NULL with a proper value
 #my $franchiseoffice_get_autocomplete_v1_s_query = undef; # replace NULL with a proper value
-#my $franchiseoffice_get_autocomplete_v1_result = $api->franchiseoffice_get_autocomplete_v1(s_selector => $franchiseoffice_get_autocomplete_v1_s_selector, s_query => $franchiseoffice_get_autocomplete_v1_s_query);
+#my $franchiseoffice_get_autocomplete_v1_accept_language = undef; # replace NULL with a proper value
+#my $franchiseoffice_get_autocomplete_v1_result = $api->franchiseoffice_get_autocomplete_v1(s_selector => $franchiseoffice_get_autocomplete_v1_s_selector, s_query => $franchiseoffice_get_autocomplete_v1_s_query, accept_language => $franchiseoffice_get_autocomplete_v1_accept_language);
 

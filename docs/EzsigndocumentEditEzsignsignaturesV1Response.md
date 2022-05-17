@@ -8,6 +8,7 @@ use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Response;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**m_payload** | [**EzsigndocumentEditEzsignsignaturesV1ResponseMPayload**](EzsigndocumentEditEzsignsignaturesV1ResponseMPayload.md) |  | 
 **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
 **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
 

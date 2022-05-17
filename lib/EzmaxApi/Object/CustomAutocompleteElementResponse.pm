@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -42,7 +42,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -174,6 +174,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_value' => {
+        datatype => 'string',
+        base_name => 'sValue',
+        description => 'The Unique ID of the element',
+        format => '',
+        read_only => '',
+            },
     'm_value' => {
         datatype => 'string',
         base_name => 'mValue',
@@ -186,12 +193,14 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     's_category' => 'string',
     's_label' => 'string',
+    's_value' => 'string',
     'm_value' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     's_category' => 'sCategory',
     's_label' => 'sLabel',
+    's_value' => 'sValue',
     'm_value' => 'mValue'
 } );
 

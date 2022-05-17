@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -32,6 +32,9 @@ use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::EzsignbulksendResponse;
+use EzmaxApi::Object::EzsignbulksendResponseCompoundAllOf;
+use EzmaxApi::Object::EzsignbulksenddocumentmappingResponseCompound;
+use EzmaxApi::Object::EzsignbulksendsignermappingResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -44,7 +47,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -183,6 +186,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_language_name_x' => {
+        datatype => 'string',
+        base_name => 'sLanguageNameX',
+        description => 'The Name of the Language in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignfoldertype_name_x' => {
+        datatype => 'string',
+        base_name => 'sEzsignfoldertypeNameX',
+        description => 'The name of the Ezsignfoldertype in the language of the requester',
+        format => '',
+        read_only => '',
+            },
     's_ezsignbulksend_description' => {
         datatype => 'string',
         base_name => 'sEzsignbulksendDescription',
@@ -194,6 +211,13 @@ __PACKAGE__->method_documentation({
         datatype => 'string',
         base_name => 'tEzsignbulksendNote',
         description => 'Note about the Ezsignbulksend',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignbulksend_needvalidation' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignbulksendNeedvalidation',
+        description => 'Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation',
         format => '',
         read_only => '',
             },
@@ -211,26 +235,50 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_ezsignbulksenddocumentmapping' => {
+        datatype => 'ARRAY[EzsignbulksenddocumentmappingResponseCompound]',
+        base_name => 'a_objEzsignbulksenddocumentmapping',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_ezsignbulksendsignermapping' => {
+        datatype => 'ARRAY[EzsignbulksendsignermappingResponse]',
+        base_name => 'a_objEzsignbulksendsignermapping',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_ezsignbulksend_id' => 'int',
     'fki_ezsignfoldertype_id' => 'int',
     'fki_language_id' => 'int',
+    's_language_name_x' => 'string',
+    's_ezsignfoldertype_name_x' => 'string',
     's_ezsignbulksend_description' => 'string',
     't_ezsignbulksend_note' => 'string',
+    'b_ezsignbulksend_needvalidation' => 'boolean',
     'b_ezsignbulksend_isactive' => 'boolean',
-    'obj_audit' => 'CommonAudit'
+    'obj_audit' => 'CommonAudit',
+    'a_obj_ezsignbulksenddocumentmapping' => 'ARRAY[EzsignbulksenddocumentmappingResponseCompound]',
+    'a_obj_ezsignbulksendsignermapping' => 'ARRAY[EzsignbulksendsignermappingResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_ezsignbulksend_id' => 'pkiEzsignbulksendID',
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
     'fki_language_id' => 'fkiLanguageID',
+    's_language_name_x' => 'sLanguageNameX',
+    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
     's_ezsignbulksend_description' => 'sEzsignbulksendDescription',
     't_ezsignbulksend_note' => 'tEzsignbulksendNote',
+    'b_ezsignbulksend_needvalidation' => 'bEzsignbulksendNeedvalidation',
     'b_ezsignbulksend_isactive' => 'bEzsignbulksendIsactive',
-    'obj_audit' => 'objAudit'
+    'obj_audit' => 'objAudit',
+    'a_obj_ezsignbulksenddocumentmapping' => 'a_objEzsignbulksenddocumentmapping',
+    'a_obj_ezsignbulksendsignermapping' => 'a_objEzsignbulksendsignermapping'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

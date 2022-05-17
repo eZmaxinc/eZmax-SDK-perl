@@ -8,6 +8,7 @@ use EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV1Response;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**m_payload** | [**EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload**](EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload.md) |  | 
 **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
 **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
 

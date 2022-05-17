@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -30,7 +30,6 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::FieldEEzsigntemplatepackageType;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -43,7 +42,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -168,20 +167,6 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'fki_department_id' => {
-        datatype => 'int',
-        base_name => 'fkiDepartmentID',
-        description => 'The unique ID of the Department.',
-        format => '',
-        read_only => '',
-            },
-    'fki_team_id' => {
-        datatype => 'int',
-        base_name => 'fkiTeamID',
-        description => 'The unique ID of the Team',
-        format => '',
-        read_only => '',
-            },
     'fki_ezsignfoldertype_id' => {
         datatype => 'int',
         base_name => 'fkiEzsignfoldertypeID',
@@ -193,13 +178,6 @@ __PACKAGE__->method_documentation({
         datatype => 'int',
         base_name => 'fkiLanguageID',
         description => 'The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsigntemplatepackage_type' => {
-        datatype => 'FieldEEzsigntemplatepackageType',
-        base_name => 'eEzsigntemplatepackageType',
-        description => '',
         format => '',
         read_only => '',
             },
@@ -217,6 +195,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsigntemplatepackage_needvalidation' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplatepackageNeedvalidation',
+        description => 'Whether the Ezsignbulksend was automatically modified and needs a manual validation',
+        format => '',
+        read_only => '',
+            },
     'i_ezsigntemplatepackagemembership' => {
         datatype => 'int',
         base_name => 'iEzsigntemplatepackagemembership',
@@ -224,30 +209,35 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsignfoldertype_name_x' => {
+        datatype => 'string',
+        base_name => 'sEzsignfoldertypeNameX',
+        description => 'The name of the Ezsignfoldertype in the language of the requester',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_ezsigntemplatepackage_id' => 'int',
-    'fki_department_id' => 'int',
-    'fki_team_id' => 'int',
     'fki_ezsignfoldertype_id' => 'int',
     'fki_language_id' => 'int',
-    'e_ezsigntemplatepackage_type' => 'FieldEEzsigntemplatepackageType',
     's_ezsigntemplatepackage_description' => 'string',
     'b_ezsigntemplatepackage_isactive' => 'boolean',
-    'i_ezsigntemplatepackagemembership' => 'int'
+    'b_ezsigntemplatepackage_needvalidation' => 'boolean',
+    'i_ezsigntemplatepackagemembership' => 'int',
+    's_ezsignfoldertype_name_x' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_ezsigntemplatepackage_id' => 'pkiEzsigntemplatepackageID',
-    'fki_department_id' => 'fkiDepartmentID',
-    'fki_team_id' => 'fkiTeamID',
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
     'fki_language_id' => 'fkiLanguageID',
-    'e_ezsigntemplatepackage_type' => 'eEzsigntemplatepackageType',
     's_ezsigntemplatepackage_description' => 'sEzsigntemplatepackageDescription',
     'b_ezsigntemplatepackage_isactive' => 'bEzsigntemplatepackageIsactive',
-    'i_ezsigntemplatepackagemembership' => 'iEzsigntemplatepackagemembership'
+    'b_ezsigntemplatepackage_needvalidation' => 'bEzsigntemplatepackageNeedvalidation',
+    'i_ezsigntemplatepackagemembership' => 'iEzsigntemplatepackagemembership',
+    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

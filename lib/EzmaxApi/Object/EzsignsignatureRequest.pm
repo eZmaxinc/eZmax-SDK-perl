@@ -1,6 +1,6 @@
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -30,6 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldEEzsignsignatureFont;
+use EzmaxApi::Object::FieldEEzsignsignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -43,7 +45,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-eZmax API Definition
+eZmax API Definition (Full)
 
 This API expose all the functionnalities for the eZmax and eZsign applications.
 
@@ -192,7 +194,7 @@ __PACKAGE__->method_documentation({
     'i_ezsignsignature_y' => {
         datatype => 'int',
         base_name => 'iEzsignsignatureY',
-        description => 'The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \&quot;300\&quot; for the Y coordinate.',
+        description => 'The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \&quot;300\&quot; for the Y coordinate.',
         format => '',
         read_only => '',
             },
@@ -217,6 +219,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    't_ezsignsignature_tooltip' => {
+        datatype => 'string',
+        base_name => 'tEzsignsignatureTooltip',
+        description => 'A tooltip that will be presented to Ezsignsigner about the Ezsignsignature',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignsignature_tooltipposition' => {
+        datatype => 'FieldEEzsignsignatureTooltipposition',
+        base_name => 'eEzsignsignatureTooltipposition',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignsignature_font' => {
+        datatype => 'FieldEEzsignsignatureFont',
+        base_name => 'eEzsignsignatureFont',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -227,7 +250,10 @@ __PACKAGE__->openapi_types( {
     'i_ezsignsignature_y' => 'int',
     'i_ezsignsignature_step' => 'int',
     'e_ezsignsignature_type' => 'FieldEEzsignsignatureType',
-    'fki_ezsigndocument_id' => 'int'
+    'fki_ezsigndocument_id' => 'int',
+    't_ezsignsignature_tooltip' => 'string',
+    'e_ezsignsignature_tooltipposition' => 'FieldEEzsignsignatureTooltipposition',
+    'e_ezsignsignature_font' => 'FieldEEzsignsignatureFont'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -238,7 +264,10 @@ __PACKAGE__->attribute_map( {
     'i_ezsignsignature_y' => 'iEzsignsignatureY',
     'i_ezsignsignature_step' => 'iEzsignsignatureStep',
     'e_ezsignsignature_type' => 'eEzsignsignatureType',
-    'fki_ezsigndocument_id' => 'fkiEzsigndocumentID'
+    'fki_ezsigndocument_id' => 'fkiEzsigndocumentID',
+    't_ezsignsignature_tooltip' => 'tEzsignsignatureTooltip',
+    'e_ezsignsignature_tooltipposition' => 'eEzsignsignatureTooltipposition',
+    'e_ezsignsignature_font' => 'eEzsignsignatureFont'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

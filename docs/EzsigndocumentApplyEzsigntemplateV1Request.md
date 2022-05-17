@@ -8,7 +8,7 @@ use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fki_ezsigntemplate_id** | **int** | The unique ID of the Ezsigndocument | 
+**fki_ezsigntemplate_id** | **int** | The unique ID of the Ezsigntemplate | 
 **a_s_ezsigntemplatesigner** | **ARRAY[string]** |  | 
 **a_pki_ezsignfoldersignerassociation_id** | **ARRAY[int]** |  | 
 
