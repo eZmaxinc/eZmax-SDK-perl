@@ -45,6 +45,8 @@ docs/CommonResponseObjDebugPayload.md
 docs/CommonResponseObjDebugPayloadGetList.md
 docs/CommonResponseObjDebugPayloadGetListAllOf.md
 docs/CommonResponseObjSQLQuery.md
+docs/CommonResponseRedirectSSecretquestionTextX.md
+docs/CommonResponseWarning.md
 docs/CommonWebhook.md
 docs/ContactRequest.md
 docs/ContactRequestCompound.md
@@ -221,6 +223,9 @@ docs/EzsignfolderCreateObjectV2Response.md
 docs/EzsignfolderCreateObjectV2ResponseAllOf.md
 docs/EzsignfolderCreateObjectV2ResponseMPayload.md
 docs/EzsignfolderDeleteObjectV1Response.md
+docs/EzsignfolderDisposeEzsignfoldersV1Request.md
+docs/EzsignfolderDisposeEzsignfoldersV1Response.md
+docs/EzsignfolderDisposeV1Response.md
 docs/EzsignfolderEditObjectV1Request.md
 docs/EzsignfolderEditObjectV1Response.md
 docs/EzsignfolderGetActionableElementsV1Response.md
@@ -380,6 +385,7 @@ docs/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseAllOf.md
 docs/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload.md
 docs/EzsigntemplatedocumentEditObjectV1Request.md
 docs/EzsigntemplatedocumentEditObjectV1Response.md
+docs/EzsigntemplatedocumentEditObjectV1ResponseAllOf.md
 docs/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response.md
 docs/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOf.md
 docs/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload.md
@@ -550,6 +556,7 @@ docs/FieldEEzsigntemplatesignatureTooltipposition.md
 docs/FieldEEzsigntemplatesignatureType.md
 docs/FieldENotificationpreferenceStatus.md
 docs/FieldEPhoneType.md
+docs/FieldEUserEzsignsendreminderfrequency.md
 docs/FieldEUserType.md
 docs/FranchisereferalincomeCreateObjectV1Request.md
 docs/FranchisereferalincomeCreateObjectV1Response.md
@@ -572,9 +579,14 @@ docs/NotificationsectionGetNotificationtestsV1Response.md
 docs/NotificationsectionGetNotificationtestsV1ResponseAllOf.md
 docs/NotificationsectionGetNotificationtestsV1ResponseMPayload.md
 docs/NotificationsubsectionResponse.md
+docs/NotificationtestGetElementsV1Response.md
+docs/NotificationtestGetElementsV1ResponseAllOf.md
+docs/NotificationtestGetElementsV1ResponseMPayload.md
 docs/NotificationtestResponse.md
 docs/ObjectActivesessionApi.md
 docs/ObjectApikeyApi.md
+docs/ObjectBillingentityinternalApi.md
+docs/ObjectBrandingApi.md
 docs/ObjectEzsignbulksendApi.md
 docs/ObjectEzsignbulksenddocumentmappingApi.md
 docs/ObjectEzsignbulksendsignermappingApi.md
@@ -599,8 +611,13 @@ docs/ObjectFranchisebrokerApi.md
 docs/ObjectFranchiseofficeApi.md
 docs/ObjectFranchisereferalincomeApi.md
 docs/ObjectNotificationsectionApi.md
+docs/ObjectNotificationtestApi.md
 docs/ObjectPeriodApi.md
 docs/ObjectSecretquestionApi.md
+docs/ObjectTaxassignmentApi.md
+docs/ObjectTimezoneApi.md
+docs/ObjectUserApi.md
+docs/ObjectUsergroupApi.md
 docs/PhoneRequest.md
 docs/PhoneRequestCompound.md
 docs/UserCreateEzsignuserV1Request.md
@@ -667,6 +684,8 @@ lib/EzmaxApi/Object/CommonResponseObjDebugPayload.pm
 lib/EzmaxApi/Object/CommonResponseObjDebugPayloadGetList.pm
 lib/EzmaxApi/Object/CommonResponseObjDebugPayloadGetListAllOf.pm
 lib/EzmaxApi/Object/CommonResponseObjSQLQuery.pm
+lib/EzmaxApi/Object/CommonResponseRedirectSSecretquestionTextX.pm
+lib/EzmaxApi/Object/CommonResponseWarning.pm
 lib/EzmaxApi/Object/CommonWebhook.pm
 lib/EzmaxApi/Object/ContactRequest.pm
 lib/EzmaxApi/Object/ContactRequestCompound.pm
@@ -843,6 +862,9 @@ lib/EzmaxApi/Object/EzsignfolderCreateObjectV2Response.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV2ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsignfolderCreateObjectV2ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignfolderDeleteObjectV1Response.pm
+lib/EzmaxApi/Object/EzsignfolderDisposeEzsignfoldersV1Request.pm
+lib/EzmaxApi/Object/EzsignfolderDisposeEzsignfoldersV1Response.pm
+lib/EzmaxApi/Object/EzsignfolderDisposeV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderEditObjectV1Request.pm
 lib/EzmaxApi/Object/EzsignfolderEditObjectV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderGetActionableElementsV1Response.pm
@@ -1002,6 +1024,7 @@ lib/EzmaxApi/Object/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response
 lib/EzmaxApi/Object/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigntemplatedocumentEditObjectV1Request.pm
 lib/EzmaxApi/Object/EzsigntemplatedocumentEditObjectV1Response.pm
+lib/EzmaxApi/Object/EzsigntemplatedocumentEditObjectV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response.pm
 lib/EzmaxApi/Object/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOf.pm
 lib/EzmaxApi/Object/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload.pm
@@ -1172,6 +1195,7 @@ lib/EzmaxApi/Object/FieldEEzsigntemplatesignatureTooltipposition.pm
 lib/EzmaxApi/Object/FieldEEzsigntemplatesignatureType.pm
 lib/EzmaxApi/Object/FieldENotificationpreferenceStatus.pm
 lib/EzmaxApi/Object/FieldEPhoneType.pm
+lib/EzmaxApi/Object/FieldEUserEzsignsendreminderfrequency.pm
 lib/EzmaxApi/Object/FieldEUserType.pm
 lib/EzmaxApi/Object/FranchisereferalincomeCreateObjectV1Request.pm
 lib/EzmaxApi/Object/FranchisereferalincomeCreateObjectV1Response.pm
@@ -1191,6 +1215,9 @@ lib/EzmaxApi/Object/NotificationsectionGetNotificationtestsV1Response.pm
 lib/EzmaxApi/Object/NotificationsectionGetNotificationtestsV1ResponseAllOf.pm
 lib/EzmaxApi/Object/NotificationsectionGetNotificationtestsV1ResponseMPayload.pm
 lib/EzmaxApi/Object/NotificationsubsectionResponse.pm
+lib/EzmaxApi/Object/NotificationtestGetElementsV1Response.pm
+lib/EzmaxApi/Object/NotificationtestGetElementsV1ResponseAllOf.pm
+lib/EzmaxApi/Object/NotificationtestGetElementsV1ResponseMPayload.pm
 lib/EzmaxApi/Object/NotificationtestResponse.pm
 lib/EzmaxApi/Object/PhoneRequest.pm
 lib/EzmaxApi/Object/PhoneRequestCompound.pm
@@ -1211,6 +1238,8 @@ lib/EzmaxApi/Object/WebsiteRequest.pm
 lib/EzmaxApi/Object/WebsiteRequestCompound.pm
 lib/EzmaxApi/ObjectActivesessionApi.pm
 lib/EzmaxApi/ObjectApikeyApi.pm
+lib/EzmaxApi/ObjectBillingentityinternalApi.pm
+lib/EzmaxApi/ObjectBrandingApi.pm
 lib/EzmaxApi/ObjectEzsignbulksendApi.pm
 lib/EzmaxApi/ObjectEzsignbulksenddocumentmappingApi.pm
 lib/EzmaxApi/ObjectEzsignbulksendsignermappingApi.pm
@@ -1235,8 +1264,13 @@ lib/EzmaxApi/ObjectFranchisebrokerApi.pm
 lib/EzmaxApi/ObjectFranchiseofficeApi.pm
 lib/EzmaxApi/ObjectFranchisereferalincomeApi.pm
 lib/EzmaxApi/ObjectNotificationsectionApi.pm
+lib/EzmaxApi/ObjectNotificationtestApi.pm
 lib/EzmaxApi/ObjectPeriodApi.pm
 lib/EzmaxApi/ObjectSecretquestionApi.pm
+lib/EzmaxApi/ObjectTaxassignmentApi.pm
+lib/EzmaxApi/ObjectTimezoneApi.pm
+lib/EzmaxApi/ObjectUserApi.pm
+lib/EzmaxApi/ObjectUsergroupApi.pm
 lib/EzmaxApi/Role.pm
 lib/EzmaxApi/Role/AutoDoc.pm
 t/ActivesessionGetCurrentV1ResponseAllOfTest.t
@@ -1280,7 +1314,9 @@ t/CommonResponseObjDebugPayloadGetListTest.t
 t/CommonResponseObjDebugPayloadTest.t
 t/CommonResponseObjDebugTest.t
 t/CommonResponseObjSQLQueryTest.t
+t/CommonResponseRedirectSSecretquestionTextXTest.t
 t/CommonResponseTest.t
+t/CommonResponseWarningTest.t
 t/CommonWebhookTest.t
 t/ContactRequestCompoundAllOfTest.t
 t/ContactRequestCompoundTest.t
@@ -1457,6 +1493,9 @@ t/EzsignfolderCreateObjectV2ResponseAllOfTest.t
 t/EzsignfolderCreateObjectV2ResponseMPayloadTest.t
 t/EzsignfolderCreateObjectV2ResponseTest.t
 t/EzsignfolderDeleteObjectV1ResponseTest.t
+t/EzsignfolderDisposeEzsignfoldersV1RequestTest.t
+t/EzsignfolderDisposeEzsignfoldersV1ResponseTest.t
+t/EzsignfolderDisposeV1ResponseTest.t
 t/EzsignfolderEditObjectV1RequestTest.t
 t/EzsignfolderEditObjectV1ResponseTest.t
 t/EzsignfolderGetActionableElementsV1ResponseAllOfTest.t
@@ -1615,6 +1654,7 @@ t/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseAllOfTest.t
 t/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayloadTest.t
 t/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseTest.t
 t/EzsigntemplatedocumentEditObjectV1RequestTest.t
+t/EzsigntemplatedocumentEditObjectV1ResponseAllOfTest.t
 t/EzsigntemplatedocumentEditObjectV1ResponseTest.t
 t/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOfTest.t
 t/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayloadTest.t
@@ -1786,6 +1826,7 @@ t/FieldEEzsigntemplatesignatureTooltippositionTest.t
 t/FieldEEzsigntemplatesignatureTypeTest.t
 t/FieldENotificationpreferenceStatusTest.t
 t/FieldEPhoneTypeTest.t
+t/FieldEUserEzsignsendreminderfrequencyTest.t
 t/FieldEUserTypeTest.t
 t/FranchisereferalincomeCreateObjectV1RequestTest.t
 t/FranchisereferalincomeCreateObjectV1ResponseAllOfTest.t
@@ -1808,9 +1849,14 @@ t/NotificationsectionGetNotificationtestsV1ResponseAllOfTest.t
 t/NotificationsectionGetNotificationtestsV1ResponseMPayloadTest.t
 t/NotificationsectionGetNotificationtestsV1ResponseTest.t
 t/NotificationsubsectionResponseTest.t
+t/NotificationtestGetElementsV1ResponseAllOfTest.t
+t/NotificationtestGetElementsV1ResponseMPayloadTest.t
+t/NotificationtestGetElementsV1ResponseTest.t
 t/NotificationtestResponseTest.t
 t/ObjectActivesessionApiTest.t
 t/ObjectApikeyApiTest.t
+t/ObjectBillingentityinternalApiTest.t
+t/ObjectBrandingApiTest.t
 t/ObjectEzsignbulksendApiTest.t
 t/ObjectEzsignbulksenddocumentmappingApiTest.t
 t/ObjectEzsignbulksendsignermappingApiTest.t
@@ -1835,8 +1881,13 @@ t/ObjectFranchisebrokerApiTest.t
 t/ObjectFranchiseofficeApiTest.t
 t/ObjectFranchisereferalincomeApiTest.t
 t/ObjectNotificationsectionApiTest.t
+t/ObjectNotificationtestApiTest.t
 t/ObjectPeriodApiTest.t
 t/ObjectSecretquestionApiTest.t
+t/ObjectTaxassignmentApiTest.t
+t/ObjectTimezoneApiTest.t
+t/ObjectUserApiTest.t
+t/ObjectUsergroupApiTest.t
 t/PhoneRequestCompoundTest.t
 t/PhoneRequestTest.t
 t/UserCreateEzsignuserV1RequestTest.t
