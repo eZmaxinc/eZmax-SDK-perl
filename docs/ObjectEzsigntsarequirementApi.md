@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **ezsigntsarequirement_get_autocomplete_v1**
-> CommonGetAutocompleteDisabledV1Response ezsigntsarequirement_get_autocomplete_v1(s_selector => $s_selector, fki_ezsignfoldertype_id => $fki_ezsignfoldertype_id, s_query => $s_query, accept_language => $accept_language)
+> CommonGetAutocompleteDisabledV1Response ezsigntsarequirement_get_autocomplete_v1(s_selector => $s_selector, fki_ezsignfoldertype_id => $fki_ezsignfoldertype_id, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language)
 
 Retrieve Ezsigntsarequirements and IDs
 
@@ -33,11 +33,12 @@ my $api_instance = EzmaxApi::ObjectEzsigntsarequirementApi->new(
 
 my $s_selector = "s_selector_example"; # string | The type of Ezsigntsarequirements to return
 my $fki_ezsignfoldertype_id = 56; # int | 
+my $e_filter_active = 'Active'; # string | Specify which results we want to display.
 my $s_query = "s_query_example"; # string | Allow to filter the returned results
 my $accept_language = new EzmaxApi.HeaderAcceptLanguage(); # HeaderAcceptLanguage | 
 
 eval {
-    my $result = $api_instance->ezsigntsarequirement_get_autocomplete_v1(s_selector => $s_selector, fki_ezsignfoldertype_id => $fki_ezsignfoldertype_id, s_query => $s_query, accept_language => $accept_language);
+    my $result = $api_instance->ezsigntsarequirement_get_autocomplete_v1(s_selector => $s_selector, fki_ezsignfoldertype_id => $fki_ezsignfoldertype_id, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language);
     print Dumper($result);
 };
 if ($@) {
@@ -51,6 +52,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **s_selector** | **string**| The type of Ezsigntsarequirements to return | 
  **fki_ezsignfoldertype_id** | **int**|  | [optional] 
+ **e_filter_active** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
  **s_query** | **string**| Allow to filter the returned results | [optional] 
  **accept_language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
 

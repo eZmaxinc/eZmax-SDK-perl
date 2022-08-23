@@ -8,15 +8,17 @@ use EzmaxApi::Object::WebhookResponse;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pks_customer_code** | **string** | The customer code assigned to your account | 
-**pki_webhook_id** | **int** | The Webhook ID. This value is visible in the admin interface. | 
-**e_webhook_module** | **string** | The Module generating the Event. | 
-**e_webhook_ezsignevent** | **string** | This Ezsign Event. This property will be set only if the Module is \&quot;Ezsign\&quot;. | [optional] 
-**e_webhook_managementevent** | **string** | This Management Event. This property will be set only if the Module is \&quot;Management\&quot;. | [optional] 
-**s_webhook_url** | **string** | The url being called | 
-**b_webhook_test** | **boolean** | Wheter the webhook received is a manual test or a real event | 
-**b_webhook_skipsslvalidation** | **boolean** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended for production use. | 
-**s_webhook_emailfailed** | **string** | The email that will receive the webhook in case all attempts fail. | 
+**pki_webhook_id** | **int** | The unique ID of the Webhook | 
+**s_webhook_description** | **string** | The description of the Webhook | 
+**fki_ezsignfoldertype_id** | **int** | The unique ID of the Ezsignfoldertype. | [optional] 
+**s_ezsignfoldertype_name_x** | **string** | The name of the Ezsignfoldertype in the language of the requester | [optional] 
+**e_webhook_module** | [**FieldEWebhookModule**](FieldEWebhookModule.md) |  | 
+**e_webhook_ezsignevent** | [**FieldEWebhookEzsignevent**](FieldEWebhookEzsignevent.md) |  | [optional] 
+**e_webhook_managementevent** | [**FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional] 
+**s_webhook_url** | **string** | The URL of the Webhook callback | 
+**s_webhook_emailfailed** | **string** | The email that will receive the Webhook in case all attempts fail | 
+**b_webhook_isactive** | **boolean** | Whether the Webhook is active or not | [optional] 
+**b_webhook_skipsslvalidation** | **boolean** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigntemplate_get_autocomplete_v1**
-> CommonGetAutocompleteV1Response ezsigntemplate_get_autocomplete_v1(s_selector => $s_selector, s_query => $s_query, accept_language => $accept_language)
+> CommonGetAutocompleteV1Response ezsigntemplate_get_autocomplete_v1(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language)
 
 Retrieve Ezsigntemplate and IDs
 
@@ -192,11 +192,12 @@ my $api_instance = EzmaxApi::ObjectEzsigntemplateApi->new(
 );
 
 my $s_selector = "s_selector_example"; # string | The type of Ezsigntemplate to return
+my $e_filter_active = 'Active'; # string | Specify which results we want to display.
 my $s_query = "s_query_example"; # string | Allow to filter the returned results
 my $accept_language = new EzmaxApi.HeaderAcceptLanguage(); # HeaderAcceptLanguage | 
 
 eval {
-    my $result = $api_instance->ezsigntemplate_get_autocomplete_v1(s_selector => $s_selector, s_query => $s_query, accept_language => $accept_language);
+    my $result = $api_instance->ezsigntemplate_get_autocomplete_v1(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language);
     print Dumper($result);
 };
 if ($@) {
@@ -209,6 +210,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **s_selector** | **string**| The type of Ezsigntemplate to return | 
+ **e_filter_active** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
  **s_query** | **string**| Allow to filter the returned results | [optional] 
  **accept_language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
 

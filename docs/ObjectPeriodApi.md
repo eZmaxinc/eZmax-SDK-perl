@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **period_get_autocomplete_v1**
-> CommonGetAutocompleteV1Response period_get_autocomplete_v1(s_selector => $s_selector, s_query => $s_query, accept_language => $accept_language)
+> CommonGetAutocompleteV1Response period_get_autocomplete_v1(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language)
 
 Retrieve Periods and IDs
 
@@ -32,11 +32,12 @@ my $api_instance = EzmaxApi::ObjectPeriodApi->new(
 );
 
 my $s_selector = "s_selector_example"; # string | The types of Periods to return
+my $e_filter_active = 'Active'; # string | Specify which results we want to display.
 my $s_query = "s_query_example"; # string | Allow to filter the returned results
 my $accept_language = new EzmaxApi.HeaderAcceptLanguage(); # HeaderAcceptLanguage | 
 
 eval {
-    my $result = $api_instance->period_get_autocomplete_v1(s_selector => $s_selector, s_query => $s_query, accept_language => $accept_language);
+    my $result = $api_instance->period_get_autocomplete_v1(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language);
     print Dumper($result);
 };
 if ($@) {
@@ -49,6 +50,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **s_selector** | **string**| The types of Periods to return | 
+ **e_filter_active** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
  **s_query** | **string**| Allow to filter the returned results | [optional] 
  **accept_language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
 

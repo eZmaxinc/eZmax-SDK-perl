@@ -9,6 +9,7 @@ use EzmaxApi::Object::NotificationtestResponse;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pki_notificationtest_id** | **int** | The unique ID of the Notificationtest | 
+**obj_notificationtest_name** | [**MultilingualNotificationtestName**](MultilingualNotificationtestName.md) |  | 
 **fki_notificationsubsection_id** | **int** | The unique ID of the Notificationsubsection | 
 **s_notificationtest_function** | **string** | The function name of the Notificationtest | 
 **s_notificationtest_name_x** | **string** | The name of the Notificationtest in the language of the requester | 
