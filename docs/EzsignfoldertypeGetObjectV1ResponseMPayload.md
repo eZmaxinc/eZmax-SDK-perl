@@ -39,6 +39,8 @@ Name | Type | Description | Notes
 **b_ezsignfoldertype_sendsummarytofullgroup** | **boolean** | Whether we send the summary to the Usergroup that has acces to all Ezsignfolders | [optional] 
 **b_ezsignfoldertype_sendsummarytolimitedgroup** | **boolean** | Whether we send the summary to the Usergroup that has acces to only their own Ezsignfolders | [optional] 
 **b_ezsignfoldertype_sendsummarytocolleague** | **boolean** | Whether we send the summary to the colleagues | 
+**b_ezsignfoldertype_includeproofsigner** | **boolean** | Whether we include the proof with the signed Ezsigndocument for Ezsignsigners | 
+**b_ezsignfoldertype_includeproofuser** | **boolean** | Whether we include the proof with the signed Ezsigndocument for users | 
 **b_ezsignfoldertype_isactive** | **boolean** | Whether the Ezsignfoldertype is active or not | 
 **a_fki_user_id_signed** | **ARRAY[int]** |  | [optional] 
 **a_fki_user_id_summary** | **ARRAY[int]** |  | [optional] 

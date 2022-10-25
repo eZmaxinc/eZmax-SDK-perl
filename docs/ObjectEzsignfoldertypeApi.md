@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**ezsignfoldertype_create_object_v1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_create_object_v1) | **POST** /1/object/ezsignfoldertype | Create a new Ezsignfoldertype
 [**ezsignfoldertype_edit_object_v1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_edit_object_v1) | **PUT** /1/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype
 [**ezsignfoldertype_get_autocomplete_v1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_autocomplete_v1) | **GET** /1/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs
+[**ezsignfoldertype_get_autocomplete_v2**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_autocomplete_v2) | **GET** /2/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs
 [**ezsignfoldertype_get_list_v1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_list_v1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list
 [**ezsignfoldertype_get_object_v1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_object_v1) | **GET** /1/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype
 
@@ -165,6 +166,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CommonGetAutocompleteV1Response**](CommonGetAutocompleteV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignfoldertype_get_autocomplete_v2**
+> EzsignfoldertypeGetAutocompleteV2Response ezsignfoldertype_get_autocomplete_v2(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language)
+
+Retrieve Ezsignfoldertypes and IDs
+
+Get the list of Ezsignfoldertype to be used in a dropdown or autocomplete control.
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignfoldertypeApi;
+my $api_instance = EzmaxApi::ObjectEzsignfoldertypeApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $s_selector = "s_selector_example"; # string | The type of Ezsignfoldertypes to return
+my $e_filter_active = 'Active'; # string | Specify which results we want to display.
+my $s_query = "s_query_example"; # string | Allow to filter the returned results
+my $accept_language = new EzmaxApi.HeaderAcceptLanguage(); # HeaderAcceptLanguage | 
+
+eval {
+    my $result = $api_instance->ezsignfoldertype_get_autocomplete_v2(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_get_autocomplete_v2: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **s_selector** | **string**| The type of Ezsignfoldertypes to return | 
+ **e_filter_active** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
+ **s_query** | **string**| Allow to filter the returned results | [optional] 
+ **accept_language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
+
+### Return type
+
+[**EzsignfoldertypeGetAutocompleteV2Response**](EzsignfoldertypeGetAutocompleteV2Response.md)
 
 ### Authorization
 

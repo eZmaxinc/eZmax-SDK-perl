@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **s_department_name_x** | **string** | The Name of the Department in the language of the requester | 
 **b_activesession_debug** | **boolean** | Whether the active session is in debug or not | 
 **pks_customer_code** | **string** | The customer code assigned to your account | 
+**fki_systemconfigurationtype_id** | **int** | The unique ID of the Systemconfigurationtype | [optional] 
 **a_pki_permission_id** | **ARRAY[int]** | An array of permissions granted to the user or api key | 
 **obj_user_real** | [**ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  | 
 **obj_user_cloned** | [**ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  | [optional] 

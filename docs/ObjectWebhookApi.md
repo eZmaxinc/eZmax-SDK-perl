@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**webhook_get_history_v1**](ObjectWebhookApi.md#webhook_get_history_v1) | **GET** /1/object/webhook/{pkiWebhookID}/getHistory | Retrieve the logs for recent Webhook calls
 [**webhook_get_list_v1**](ObjectWebhookApi.md#webhook_get_list_v1) | **GET** /1/object/webhook/getList | Retrieve Webhook list
 [**webhook_get_object_v1**](ObjectWebhookApi.md#webhook_get_object_v1) | **GET** /1/object/webhook/{pkiWebhookID} | Retrieve an existing Webhook
-[**webhook_test_url_v1**](ObjectWebhookApi.md#webhook_test_url_v1) | **POST** /1/object/webhook/{pkiWebhookID}/test | Test the Webhook by calling the Url
+[**webhook_test_v1**](ObjectWebhookApi.md#webhook_test_v1) | **POST** /1/object/webhook/{pkiWebhookID}/test | Test the Webhook by calling the Url
 
 
 # **webhook_create_object_v1**
@@ -336,8 +336,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **webhook_test_url_v1**
-> WebhookTestV1Response webhook_test_url_v1(pki_webhook_id => $pki_webhook_id)
+# **webhook_test_v1**
+> WebhookTestV1Response webhook_test_v1(pki_webhook_id => $pki_webhook_id, body => $body)
 
 Test the Webhook by calling the Url
 
@@ -356,13 +356,14 @@ my $api_instance = EzmaxApi::ObjectWebhookApi->new(
 );
 
 my $pki_webhook_id = 56; # int | 
+my $body = EzmaxApi::Object::object->new(); # object | 
 
 eval {
-    my $result = $api_instance->webhook_test_url_v1(pki_webhook_id => $pki_webhook_id);
+    my $result = $api_instance->webhook_test_v1(pki_webhook_id => $pki_webhook_id, body => $body);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ObjectWebhookApi->webhook_test_url_v1: $@\n";
+    warn "Exception when calling ObjectWebhookApi->webhook_test_v1: $@\n";
 }
 ```
 
@@ -371,6 +372,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pki_webhook_id** | **int**|  | 
+ **body** | **object**|  | 
 
 ### Return type
 
@@ -382,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
