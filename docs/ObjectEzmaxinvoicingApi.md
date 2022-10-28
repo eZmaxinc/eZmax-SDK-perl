@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**ezmaxinvoicing_get_autocomplete_v1**](ObjectEzmaxinvoicingApi.md#ezmaxinvoicing_get_autocomplete_v1) | **GET** /1/object/ezmaxinvoicing/getAutocomplete/{sSelector} | Retrieve Ezmaxinvoicings and IDs
 [**ezmaxinvoicing_get_autocomplete_v2**](ObjectEzmaxinvoicingApi.md#ezmaxinvoicing_get_autocomplete_v2) | **GET** /2/object/ezmaxinvoicing/getAutocomplete/{sSelector} | Retrieve Ezmaxinvoicings and IDs
 [**ezmaxinvoicing_get_object_v1**](ObjectEzmaxinvoicingApi.md#ezmaxinvoicing_get_object_v1) | **GET** /1/object/ezmaxinvoicing/{pkiEzmaxinvoicingID} | Retrieve an existing Ezmaxinvoicing
+[**ezmaxinvoicing_get_object_v2**](ObjectEzmaxinvoicingApi.md#ezmaxinvoicing_get_object_v2) | **GET** /2/object/ezmaxinvoicing/{pkiEzmaxinvoicingID} | Retrieve an existing Ezmaxinvoicing
 [**ezmaxinvoicing_get_provisional_v1**](ObjectEzmaxinvoicingApi.md#ezmaxinvoicing_get_provisional_v1) | **GET** /1/object/ezmaxinvoicing/getProvisional | Retrieve provisional Ezmaxinvoicing
 
 
@@ -168,6 +169,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzmaxinvoicingGetObjectV1Response**](EzmaxinvoicingGetObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezmaxinvoicing_get_object_v2**
+> EzmaxinvoicingGetObjectV2Response ezmaxinvoicing_get_object_v2(pki_ezmaxinvoicing_id => $pki_ezmaxinvoicing_id)
+
+Retrieve an existing Ezmaxinvoicing
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzmaxinvoicingApi;
+my $api_instance = EzmaxApi::ObjectEzmaxinvoicingApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezmaxinvoicing_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->ezmaxinvoicing_get_object_v2(pki_ezmaxinvoicing_id => $pki_ezmaxinvoicing_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzmaxinvoicingApi->ezmaxinvoicing_get_object_v2: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezmaxinvoicing_id** | **int**|  | 
+
+### Return type
+
+[**EzmaxinvoicingGetObjectV2Response**](EzmaxinvoicingGetObjectV2Response.md)
 
 ### Authorization
 

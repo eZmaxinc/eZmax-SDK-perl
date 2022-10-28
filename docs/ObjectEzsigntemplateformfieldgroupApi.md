@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**ezsigntemplateformfieldgroup_delete_object_v1**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroup_delete_object_v1) | **DELETE** /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Delete an existing Ezsigntemplateformfieldgroup
 [**ezsigntemplateformfieldgroup_edit_object_v1**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroup_edit_object_v1) | **PUT** /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Edit an existing Ezsigntemplateformfieldgroup
 [**ezsigntemplateformfieldgroup_get_object_v1**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroup_get_object_v1) | **GET** /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Retrieve an existing Ezsigntemplateformfieldgroup
+[**ezsigntemplateformfieldgroup_get_object_v2**](ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroup_get_object_v2) | **GET** /2/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Retrieve an existing Ezsigntemplateformfieldgroup
 
 
 # **ezsigntemplateformfieldgroup_create_object_v1**
@@ -209,6 +210,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsigntemplateformfieldgroupGetObjectV1Response**](EzsigntemplateformfieldgroupGetObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigntemplateformfieldgroup_get_object_v2**
+> EzsigntemplateformfieldgroupGetObjectV2Response ezsigntemplateformfieldgroup_get_object_v2(pki_ezsigntemplateformfieldgroup_id => $pki_ezsigntemplateformfieldgroup_id)
+
+Retrieve an existing Ezsigntemplateformfieldgroup
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsigntemplateformfieldgroupApi;
+my $api_instance = EzmaxApi::ObjectEzsigntemplateformfieldgroupApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsigntemplateformfieldgroup_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->ezsigntemplateformfieldgroup_get_object_v2(pki_ezsigntemplateformfieldgroup_id => $pki_ezsigntemplateformfieldgroup_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsigntemplateformfieldgroupApi->ezsigntemplateformfieldgroup_get_object_v2: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsigntemplateformfieldgroup_id** | **int**|  | 
+
+### Return type
+
+[**EzsigntemplateformfieldgroupGetObjectV2Response**](EzsigntemplateformfieldgroupGetObjectV2Response.md)
 
 ### Authorization
 

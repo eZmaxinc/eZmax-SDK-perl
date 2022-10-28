@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**webhook_get_history_v1**](ObjectWebhookApi.md#webhook_get_history_v1) | **GET** /1/object/webhook/{pkiWebhookID}/getHistory | Retrieve the logs for recent Webhook calls
 [**webhook_get_list_v1**](ObjectWebhookApi.md#webhook_get_list_v1) | **GET** /1/object/webhook/getList | Retrieve Webhook list
 [**webhook_get_object_v1**](ObjectWebhookApi.md#webhook_get_object_v1) | **GET** /1/object/webhook/{pkiWebhookID} | Retrieve an existing Webhook
+[**webhook_get_object_v2**](ObjectWebhookApi.md#webhook_get_object_v2) | **GET** /2/object/webhook/{pkiWebhookID} | Retrieve an existing Webhook
 [**webhook_test_v1**](ObjectWebhookApi.md#webhook_test_v1) | **POST** /1/object/webhook/{pkiWebhookID}/test | Test the Webhook by calling the Url
 
 
@@ -324,6 +325,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WebhookGetObjectV1Response**](WebhookGetObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **webhook_get_object_v2**
+> WebhookGetObjectV2Response webhook_get_object_v2(pki_webhook_id => $pki_webhook_id)
+
+Retrieve an existing Webhook
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectWebhookApi;
+my $api_instance = EzmaxApi::ObjectWebhookApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_webhook_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->webhook_get_object_v2(pki_webhook_id => $pki_webhook_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectWebhookApi->webhook_get_object_v2: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_webhook_id** | **int**|  | 
+
+### Return type
+
+[**WebhookGetObjectV2Response**](WebhookGetObjectV2Response.md)
 
 ### Authorization
 

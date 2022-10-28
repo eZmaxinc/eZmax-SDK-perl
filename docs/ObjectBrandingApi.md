@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**branding_get_autocomplete_v2**](ObjectBrandingApi.md#branding_get_autocomplete_v2) | **GET** /2/object/branding/getAutocomplete/{sSelector} | Retrieve Brandings and IDs
 [**branding_get_list_v1**](ObjectBrandingApi.md#branding_get_list_v1) | **GET** /1/object/branding/getList | Retrieve Branding list
 [**branding_get_object_v1**](ObjectBrandingApi.md#branding_get_object_v1) | **GET** /1/object/branding/{pkiBrandingID} | Retrieve an existing Branding
+[**branding_get_object_v2**](ObjectBrandingApi.md#branding_get_object_v2) | **GET** /2/object/branding/{pkiBrandingID} | Retrieve an existing Branding
 
 
 # **branding_create_object_v1**
@@ -333,6 +334,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BrandingGetObjectV1Response**](BrandingGetObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **branding_get_object_v2**
+> BrandingGetObjectV2Response branding_get_object_v2(pki_branding_id => $pki_branding_id)
+
+Retrieve an existing Branding
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectBrandingApi;
+my $api_instance = EzmaxApi::ObjectBrandingApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_branding_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->branding_get_object_v2(pki_branding_id => $pki_branding_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectBrandingApi->branding_get_object_v2: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_branding_id** | **int**|  | 
+
+### Return type
+
+[**BrandingGetObjectV2Response**](BrandingGetObjectV2Response.md)
 
 ### Authorization
 

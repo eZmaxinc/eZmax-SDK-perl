@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**ezsignbulksendsignermapping_create_object_v1**](ObjectEzsignbulksendsignermappingApi.md#ezsignbulksendsignermapping_create_object_v1) | **POST** /1/object/ezsignbulksendsignermapping | Create a new Ezsignbulksendsignermapping
 [**ezsignbulksendsignermapping_delete_object_v1**](ObjectEzsignbulksendsignermappingApi.md#ezsignbulksendsignermapping_delete_object_v1) | **DELETE** /1/object/ezsignbulksendsignermapping/{pkiEzsignbulksendsignermappingID} | Delete an existing Ezsignbulksendsignermapping
 [**ezsignbulksendsignermapping_get_object_v1**](ObjectEzsignbulksendsignermappingApi.md#ezsignbulksendsignermapping_get_object_v1) | **GET** /1/object/ezsignbulksendsignermapping/{pkiEzsignbulksendsignermappingID} | Retrieve an existing Ezsignbulksendsignermapping
+[**ezsignbulksendsignermapping_get_object_v2**](ObjectEzsignbulksendsignermappingApi.md#ezsignbulksendsignermapping_get_object_v2) | **GET** /2/object/ezsignbulksendsignermapping/{pkiEzsignbulksendsignermappingID} | Retrieve an existing Ezsignbulksendsignermapping
 
 
 # **ezsignbulksendsignermapping_create_object_v1**
@@ -155,6 +156,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsignbulksendsignermappingGetObjectV1Response**](EzsignbulksendsignermappingGetObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignbulksendsignermapping_get_object_v2**
+> EzsignbulksendsignermappingGetObjectV2Response ezsignbulksendsignermapping_get_object_v2(pki_ezsignbulksendsignermapping_id => $pki_ezsignbulksendsignermapping_id)
+
+Retrieve an existing Ezsignbulksendsignermapping
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignbulksendsignermappingApi;
+my $api_instance = EzmaxApi::ObjectEzsignbulksendsignermappingApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsignbulksendsignermapping_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->ezsignbulksendsignermapping_get_object_v2(pki_ezsignbulksendsignermapping_id => $pki_ezsignbulksendsignermapping_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignbulksendsignermappingApi->ezsignbulksendsignermapping_get_object_v2: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsignbulksendsignermapping_id** | **int**|  | 
+
+### Return type
+
+[**EzsignbulksendsignermappingGetObjectV2Response**](EzsignbulksendsignermappingGetObjectV2Response.md)
 
 ### Authorization
 
