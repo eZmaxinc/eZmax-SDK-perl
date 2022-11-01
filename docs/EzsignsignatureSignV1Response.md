@@ -8,7 +8,6 @@ use EzmaxApi::Object::EzsignsignatureSignV1Response;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**m_payload** | **object** | Payload for POST /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign | 
 **obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
 **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
 
