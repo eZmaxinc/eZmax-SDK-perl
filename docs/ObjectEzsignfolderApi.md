@@ -29,6 +29,7 @@ Method | HTTP request | Description
 [**ezsignfolder_reorder_v1**](ObjectEzsignfolderApi.md#ezsignfolder_reorder_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/reorder | Reorder Ezsigndocuments in the Ezsignfolder
 [**ezsignfolder_send_v1**](ObjectEzsignfolderApi.md#ezsignfolder_send_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 [**ezsignfolder_send_v2**](ObjectEzsignfolderApi.md#ezsignfolder_send_v2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
+[**ezsignfolder_send_v3**](ObjectEzsignfolderApi.md#ezsignfolder_send_v3) | **POST** /3/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 [**ezsignfolder_unsend_v1**](ObjectEzsignfolderApi.md#ezsignfolder_unsend_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/unsend | Unsend the Ezsignfolder
 
 
@@ -1058,6 +1059,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsignfolderSendV2Response**](EzsignfolderSendV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignfolder_send_v3**
+> EzsignfolderSendV3Response ezsignfolder_send_v3(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_send_v3_request => $ezsignfolder_send_v3_request)
+
+Send the Ezsignfolder to the signatories for signature
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignfolderApi;
+my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsignfolder_id = 56; # int | 
+my $ezsignfolder_send_v3_request = EzmaxApi::Object::EzsignfolderSendV3Request->new(); # EzsignfolderSendV3Request | 
+
+eval {
+    my $result = $api_instance->ezsignfolder_send_v3(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_send_v3_request => $ezsignfolder_send_v3_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignfolderApi->ezsignfolder_send_v3: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsignfolder_id** | **int**|  | 
+ **ezsignfolder_send_v3_request** | [**EzsignfolderSendV3Request**](EzsignfolderSendV3Request.md)|  | 
+
+### Return type
+
+[**EzsignfolderSendV3Response**](EzsignfolderSendV3Response.md)
 
 ### Authorization
 
