@@ -9,6 +9,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**ezsigntemplate_copy_v1**](ObjectEzsigntemplateApi.md#ezsigntemplate_copy_v1) | **POST** /1/object/ezsigntemplate/{pkiEzsigntemplateID}/copy | Copy the Ezsigntemplate
 [**ezsigntemplate_create_object_v1**](ObjectEzsigntemplateApi.md#ezsigntemplate_create_object_v1) | **POST** /1/object/ezsigntemplate | Create a new Ezsigntemplate
 [**ezsigntemplate_delete_object_v1**](ObjectEzsigntemplateApi.md#ezsigntemplate_delete_object_v1) | **DELETE** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Delete an existing Ezsigntemplate
 [**ezsigntemplate_edit_object_v1**](ObjectEzsigntemplateApi.md#ezsigntemplate_edit_object_v1) | **PUT** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Edit an existing Ezsigntemplate
@@ -18,6 +19,59 @@ Method | HTTP request | Description
 [**ezsigntemplate_get_object_v1**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_object_v1) | **GET** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate
 [**ezsigntemplate_get_object_v2**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_object_v2) | **GET** /2/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate
 
+
+# **ezsigntemplate_copy_v1**
+> EzsigntemplateCopyV1Response ezsigntemplate_copy_v1(pki_ezsigntemplate_id => $pki_ezsigntemplate_id, ezsigntemplate_copy_v1_request => $ezsigntemplate_copy_v1_request)
+
+Copy the Ezsigntemplate
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsigntemplateApi;
+my $api_instance = EzmaxApi::ObjectEzsigntemplateApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsigntemplate_id = 56; # int | 
+my $ezsigntemplate_copy_v1_request = EzmaxApi::Object::EzsigntemplateCopyV1Request->new(); # EzsigntemplateCopyV1Request | 
+
+eval {
+    my $result = $api_instance->ezsigntemplate_copy_v1(pki_ezsigntemplate_id => $pki_ezsigntemplate_id, ezsigntemplate_copy_v1_request => $ezsigntemplate_copy_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsigntemplateApi->ezsigntemplate_copy_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsigntemplate_id** | **int**|  | 
+ **ezsigntemplate_copy_v1_request** | [**EzsigntemplateCopyV1Request**](EzsigntemplateCopyV1Request.md)|  | 
+
+### Return type
+
+[**EzsigntemplateCopyV1Response**](EzsigntemplateCopyV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigntemplate_create_object_v1**
 > EzsigntemplateCreateObjectV1Response ezsigntemplate_create_object_v1(ezsigntemplate_create_object_v1_request => $ezsigntemplate_create_object_v1_request)
