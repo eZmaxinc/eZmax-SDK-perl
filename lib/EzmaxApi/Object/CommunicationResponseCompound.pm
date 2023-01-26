@@ -30,13 +30,13 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::CommunicationattachmentResponseCompound;
-use EzmaxApi::Object::CommunicationexternalimageResponseCompound;
 use EzmaxApi::Object::CommunicationexternalrecipientResponseCompound;
-use EzmaxApi::Object::CommunicationimageResponseCompound;
 use EzmaxApi::Object::CommunicationrecipientResponseCompound;
+use EzmaxApi::Object::ComputedECommunicationDirection;
 use EzmaxApi::Object::CustomContactNameResponse;
-use EzmaxApi::Object::FieldECommunicationEmailimportance;
+use EzmaxApi::Object::FieldECommunicationImportance;
 use EzmaxApi::Object::FieldECommunicationType;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -234,9 +234,9 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'e_communication_emailimportance' => {
-        datatype => 'FieldECommunicationEmailimportance',
-        base_name => 'eCommunicationEmailimportance',
+    'e_communication_importance' => {
+        datatype => 'FieldECommunicationImportance',
+        base_name => 'eCommunicationImportance',
         description => '',
         format => '',
         read_only => '',
@@ -251,20 +251,34 @@ __PACKAGE__->method_documentation({
     's_communication_subject' => {
         datatype => 'string',
         base_name => 'sCommunicationSubject',
-        description => 'The Subject of the Communication',
+        description => 'The subject of the Communication',
         format => '',
         read_only => '',
             },
-    'dt_communication_sentdate' => {
-        datatype => 'string',
-        base_name => 'dtCommunicationSentdate',
-        description => 'The send date and time at which the Communication was sent.',
+    'e_communication_direction' => {
+        datatype => 'ComputedECommunicationDirection',
+        base_name => 'eCommunicationDirection',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'i_communicationrecipient_count' => {
+        datatype => 'int',
+        base_name => 'iCommunicationrecipientCount',
+        description => 'The count of Communicationrecipient',
         format => '',
         read_only => '',
             },
     'obj_contact_from' => {
         datatype => 'CustomContactNameResponse',
         base_name => 'objContactFrom',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_audit' => {
+        datatype => 'CommonAudit',
+        base_name => 'objAudit',
         description => '',
         format => '',
         read_only => '',
@@ -290,48 +304,34 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'a_obj_communicationimage' => {
-        datatype => 'ARRAY[CommunicationimageResponseCompound]',
-        base_name => 'a_objCommunicationimage',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'a_obj_communicationexternalimage' => {
-        datatype => 'ARRAY[CommunicationexternalimageResponseCompound]',
-        base_name => 'a_objCommunicationexternalimage',
-        description => '',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_communication_id' => 'int',
-    'e_communication_emailimportance' => 'FieldECommunicationEmailimportance',
+    'e_communication_importance' => 'FieldECommunicationImportance',
     'e_communication_type' => 'FieldECommunicationType',
     's_communication_subject' => 'string',
-    'dt_communication_sentdate' => 'string',
+    'e_communication_direction' => 'ComputedECommunicationDirection',
+    'i_communicationrecipient_count' => 'int',
     'obj_contact_from' => 'CustomContactNameResponse',
+    'obj_audit' => 'CommonAudit',
     'a_obj_communicationattachment' => 'ARRAY[CommunicationattachmentResponseCompound]',
     'a_obj_communicationrecipient' => 'ARRAY[CommunicationrecipientResponseCompound]',
-    'a_obj_communicationexternalrecipient' => 'ARRAY[CommunicationexternalrecipientResponseCompound]',
-    'a_obj_communicationimage' => 'ARRAY[CommunicationimageResponseCompound]',
-    'a_obj_communicationexternalimage' => 'ARRAY[CommunicationexternalimageResponseCompound]'
+    'a_obj_communicationexternalrecipient' => 'ARRAY[CommunicationexternalrecipientResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_communication_id' => 'pkiCommunicationID',
-    'e_communication_emailimportance' => 'eCommunicationEmailimportance',
+    'e_communication_importance' => 'eCommunicationImportance',
     'e_communication_type' => 'eCommunicationType',
     's_communication_subject' => 'sCommunicationSubject',
-    'dt_communication_sentdate' => 'dtCommunicationSentdate',
+    'e_communication_direction' => 'eCommunicationDirection',
+    'i_communicationrecipient_count' => 'iCommunicationrecipientCount',
     'obj_contact_from' => 'objContactFrom',
+    'obj_audit' => 'objAudit',
     'a_obj_communicationattachment' => 'a_objCommunicationattachment',
     'a_obj_communicationrecipient' => 'a_objCommunicationrecipient',
-    'a_obj_communicationexternalrecipient' => 'a_objCommunicationexternalrecipient',
-    'a_obj_communicationimage' => 'a_objCommunicationimage',
-    'a_obj_communicationexternalimage' => 'a_objCommunicationexternalimage'
+    'a_obj_communicationexternalrecipient' => 'a_objCommunicationexternalrecipient'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

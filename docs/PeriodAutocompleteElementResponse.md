@@ -8,7 +8,7 @@ use EzmaxApi::Object::PeriodAutocompleteElementResponse;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**s_period_yyyymm** | **string** | The period YYYYMM | 
+**s_period_yyyymm** | **string** | The YYYYMM of the Period | 
 **pki_period_id** | **int** | The unique ID of the Period | 
 **b_period_isactive** | **boolean** | Whether the Period is active or not | 
 

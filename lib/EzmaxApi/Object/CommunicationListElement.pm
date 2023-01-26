@@ -30,8 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::CustomContactNameResponse;
-use EzmaxApi::Object::FieldECommunicationEmailimportance;
+use EzmaxApi::Object::ComputedECommunicationDirection;
+use EzmaxApi::Object::FieldECommunicationImportance;
 use EzmaxApi::Object::FieldECommunicationType;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -229,9 +229,44 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'e_communication_emailimportance' => {
-        datatype => 'FieldECommunicationEmailimportance',
-        base_name => 'eCommunicationEmailimportance',
+    'fki_ezsignfolder_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignfolderID',
+        description => 'The unique ID of the Ezsignfolder',
+        format => '',
+        read_only => '',
+            },
+    'fki_inscription_id' => {
+        datatype => 'int',
+        base_name => 'fkiInscriptionID',
+        description => 'The unique ID of the Inscription.',
+        format => '',
+        read_only => '',
+            },
+    'fki_inscriptionnotauthenticated_id' => {
+        datatype => 'int',
+        base_name => 'fkiInscriptionnotauthenticatedID',
+        description => 'The unique ID of the Inscriptionnotauthenticated.',
+        format => '',
+        read_only => '',
+            },
+    'dt_created_date' => {
+        datatype => 'string',
+        base_name => 'dtCreatedDate',
+        description => 'The date and time at which the object was created',
+        format => '',
+        read_only => '',
+            },
+    'e_communication_direction' => {
+        datatype => 'ComputedECommunicationDirection',
+        base_name => 'eCommunicationDirection',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_communication_importance' => {
+        datatype => 'FieldECommunicationImportance',
+        base_name => 'eCommunicationImportance',
         description => '',
         format => '',
         read_only => '',
@@ -243,24 +278,31 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_communicationrecipient_count' => {
+        datatype => 'int',
+        base_name => 'iCommunicationrecipientCount',
+        description => 'The count of Communicationrecipient',
+        format => '',
+        read_only => '',
+            },
     's_communication_subject' => {
         datatype => 'string',
         base_name => 'sCommunicationSubject',
-        description => 'The Subject of the Communication',
+        description => 'The subject of the Communication',
         format => '',
         read_only => '',
             },
-    'dt_communication_sentdate' => {
+    's_communication_sender' => {
         datatype => 'string',
-        base_name => 'dtCommunicationSentdate',
-        description => 'The send date and time at which the Communication was sent.',
+        base_name => 'sCommunicationSender',
+        description => 'The sender name of the Communication',
         format => '',
         read_only => '',
             },
-    'obj_contact_from' => {
-        datatype => 'CustomContactNameResponse',
-        base_name => 'objContactFrom',
-        description => '',
+    's_communication_recipient' => {
+        datatype => 'string',
+        base_name => 'sCommunicationRecipient',
+        description => 'The recipients&#39; name of the Communication',
         format => '',
         read_only => '',
             },
@@ -268,20 +310,32 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'pki_communication_id' => 'int',
-    'e_communication_emailimportance' => 'FieldECommunicationEmailimportance',
+    'fki_ezsignfolder_id' => 'int',
+    'fki_inscription_id' => 'int',
+    'fki_inscriptionnotauthenticated_id' => 'int',
+    'dt_created_date' => 'string',
+    'e_communication_direction' => 'ComputedECommunicationDirection',
+    'e_communication_importance' => 'FieldECommunicationImportance',
     'e_communication_type' => 'FieldECommunicationType',
+    'i_communicationrecipient_count' => 'int',
     's_communication_subject' => 'string',
-    'dt_communication_sentdate' => 'string',
-    'obj_contact_from' => 'CustomContactNameResponse'
+    's_communication_sender' => 'string',
+    's_communication_recipient' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_communication_id' => 'pkiCommunicationID',
-    'e_communication_emailimportance' => 'eCommunicationEmailimportance',
+    'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
+    'fki_inscription_id' => 'fkiInscriptionID',
+    'fki_inscriptionnotauthenticated_id' => 'fkiInscriptionnotauthenticatedID',
+    'dt_created_date' => 'dtCreatedDate',
+    'e_communication_direction' => 'eCommunicationDirection',
+    'e_communication_importance' => 'eCommunicationImportance',
     'e_communication_type' => 'eCommunicationType',
+    'i_communicationrecipient_count' => 'iCommunicationrecipientCount',
     's_communication_subject' => 'sCommunicationSubject',
-    'dt_communication_sentdate' => 'dtCommunicationSentdate',
-    'obj_contact_from' => 'objContactFrom'
+    's_communication_sender' => 'sCommunicationSender',
+    's_communication_recipient' => 'sCommunicationRecipient'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

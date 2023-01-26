@@ -222,7 +222,7 @@ __PACKAGE__->method_documentation({
     's_period_yyyymm' => {
         datatype => 'string',
         base_name => 'sPeriodYYYYMM',
-        description => 'The period YYYYMM',
+        description => 'The YYYYMM of the Period',
         format => '',
         read_only => '',
             },

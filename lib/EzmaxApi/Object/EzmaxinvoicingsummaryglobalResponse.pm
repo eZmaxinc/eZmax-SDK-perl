@@ -271,14 +271,14 @@ __PACKAGE__->method_documentation({
     'd_ezmaxinvoicingsummaryglobal_countreal' => {
         datatype => 'string',
         base_name => 'dEzmaxinvoicingsummaryglobalCountreal',
-        description => 'The The count item calculated',
+        description => 'The count item calculated',
         format => '',
         read_only => '',
             },
     'd_ezmaxinvoicingsummaryglobal_countbilled' => {
         datatype => 'string',
         base_name => 'dEzmaxinvoicingsummaryglobalCountbilled',
-        description => 'The The count item billed',
+        description => 'The count item billed',
         format => '',
         read_only => '',
             },
@@ -345,6 +345,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    't_ezmaxproduct_help_x' => {
+        datatype => 'string',
+        base_name => 'tEzmaxproductHelpX',
+        description => 'The help message of the Ezmaxproduct in the language of the requester',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -365,7 +372,8 @@ __PACKAGE__->openapi_types( {
     'd_ezmaxinvoicingsummaryglobal_representative' => 'string',
     'd_ezmaxinvoicingsummaryglobal_partner' => 'string',
     'd_ezmaxinvoicingsummaryglobal_net' => 'string',
-    'b_ezmaxinvoicingsummaryglobal_adjustment' => 'boolean'
+    'b_ezmaxinvoicingsummaryglobal_adjustment' => 'boolean',
+    't_ezmaxproduct_help_x' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -386,7 +394,8 @@ __PACKAGE__->attribute_map( {
     'd_ezmaxinvoicingsummaryglobal_representative' => 'dEzmaxinvoicingsummaryglobalRepresentative',
     'd_ezmaxinvoicingsummaryglobal_partner' => 'dEzmaxinvoicingsummaryglobalPartner',
     'd_ezmaxinvoicingsummaryglobal_net' => 'dEzmaxinvoicingsummaryglobalNet',
-    'b_ezmaxinvoicingsummaryglobal_adjustment' => 'bEzmaxinvoicingsummaryglobalAdjustment'
+    'b_ezmaxinvoicingsummaryglobal_adjustment' => 'bEzmaxinvoicingsummaryglobalAdjustment',
+    't_ezmaxproduct_help_x' => 'tEzmaxproductHelpX'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

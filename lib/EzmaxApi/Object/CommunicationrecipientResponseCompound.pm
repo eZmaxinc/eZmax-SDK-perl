@@ -30,8 +30,11 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::DescriptionstaticResponseCompound;
+use EzmaxApi::Object::EmailstaticResponseCompound;
+use EzmaxApi::Object::FieldECommunicationrecipientObjecttype;
 use EzmaxApi::Object::FieldECommunicationrecipientType;
-use EzmaxApi::Object::PhoneResponseCompound;
+use EzmaxApi::Object::PhonestaticResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -228,6 +231,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_communicationrecipient_objecttype' => {
+        datatype => 'FieldECommunicationrecipientObjecttype',
+        base_name => 'eCommunicationrecipientObjecttype',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'fki_agent_id' => {
         datatype => 'int',
         base_name => 'fkiAgentID',
@@ -284,20 +294,6 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    's_email_address' => {
-        datatype => 'string',
-        base_name => 'sEmailAddress',
-        description => 'The email address.',
-        format => '',
-        read_only => '',
-            },
-    'e_communicationrecipient_type' => {
-        datatype => 'FieldECommunicationrecipientType',
-        base_name => 'eCommunicationrecipientType',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'fki_agentincorporation_id' => {
         datatype => 'int',
         base_name => 'fkiAgentincorporationID',
@@ -347,9 +343,30 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'obj_phone_sms' => {
-        datatype => 'PhoneResponseCompound',
-        base_name => 'objPhoneSms',
+    'e_communicationrecipient_type' => {
+        datatype => 'FieldECommunicationrecipientType',
+        base_name => 'eCommunicationrecipientType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_descriptionstatic' => {
+        datatype => 'DescriptionstaticResponseCompound',
+        base_name => 'objDescriptionstatic',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_emailstatic' => {
+        datatype => 'EmailstaticResponseCompound',
+        base_name => 'objEmailstatic',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_phonestatic' => {
+        datatype => 'PhonestaticResponseCompound',
+        base_name => 'objPhonestatic',
         description => '',
         format => '',
         read_only => '',
@@ -358,6 +375,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'pki_communicationrecipient_id' => 'int',
+    'e_communicationrecipient_objecttype' => 'FieldECommunicationrecipientObjecttype',
     'fki_agent_id' => 'int',
     'fki_broker_id' => 'int',
     'fki_contact_id' => 'int',
@@ -366,8 +384,6 @@ __PACKAGE__->openapi_types( {
     'fki_ezsignsigner_id' => 'int',
     'fki_franchiseoffice_id' => 'int',
     'fki_user_id' => 'int',
-    's_email_address' => 'string',
-    'e_communicationrecipient_type' => 'FieldECommunicationrecipientType',
     'fki_agentincorporation_id' => 'int',
     'fki_assistant_id' => 'int',
     'fki_externalbroker_id' => 'int',
@@ -375,11 +391,15 @@ __PACKAGE__->openapi_types( {
     'fki_notary_id' => 'int',
     'fki_rewardmember_id' => 'int',
     'fki_supplier_id' => 'int',
-    'obj_phone_sms' => 'PhoneResponseCompound'
+    'e_communicationrecipient_type' => 'FieldECommunicationrecipientType',
+    'obj_descriptionstatic' => 'DescriptionstaticResponseCompound',
+    'obj_emailstatic' => 'EmailstaticResponseCompound',
+    'obj_phonestatic' => 'PhonestaticResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_communicationrecipient_id' => 'pkiCommunicationrecipientID',
+    'e_communicationrecipient_objecttype' => 'eCommunicationrecipientObjecttype',
     'fki_agent_id' => 'fkiAgentID',
     'fki_broker_id' => 'fkiBrokerID',
     'fki_contact_id' => 'fkiContactID',
@@ -388,8 +408,6 @@ __PACKAGE__->attribute_map( {
     'fki_ezsignsigner_id' => 'fkiEzsignsignerID',
     'fki_franchiseoffice_id' => 'fkiFranchiseofficeID',
     'fki_user_id' => 'fkiUserID',
-    's_email_address' => 'sEmailAddress',
-    'e_communicationrecipient_type' => 'eCommunicationrecipientType',
     'fki_agentincorporation_id' => 'fkiAgentincorporationID',
     'fki_assistant_id' => 'fkiAssistantID',
     'fki_externalbroker_id' => 'fkiExternalbrokerID',
@@ -397,7 +415,10 @@ __PACKAGE__->attribute_map( {
     'fki_notary_id' => 'fkiNotaryID',
     'fki_rewardmember_id' => 'fkiRewardmemberID',
     'fki_supplier_id' => 'fkiSupplierID',
-    'obj_phone_sms' => 'objPhoneSms'
+    'e_communicationrecipient_type' => 'eCommunicationrecipientType',
+    'obj_descriptionstatic' => 'objDescriptionstatic',
+    'obj_emailstatic' => 'objEmailstatic',
+    'obj_phonestatic' => 'objPhonestatic'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

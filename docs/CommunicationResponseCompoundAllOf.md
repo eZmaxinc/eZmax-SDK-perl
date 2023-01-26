@@ -11,8 +11,6 @@ Name | Type | Description | Notes
 **a_obj_communicationattachment** | [**ARRAY[CommunicationattachmentResponseCompound]**](CommunicationattachmentResponseCompound.md) |  | 
 **a_obj_communicationrecipient** | [**ARRAY[CommunicationrecipientResponseCompound]**](CommunicationrecipientResponseCompound.md) |  | 
 **a_obj_communicationexternalrecipient** | [**ARRAY[CommunicationexternalrecipientResponseCompound]**](CommunicationexternalrecipientResponseCompound.md) |  | 
-**a_obj_communicationimage** | [**ARRAY[CommunicationimageResponseCompound]**](CommunicationimageResponseCompound.md) |  | 
-**a_obj_communicationexternalimage** | [**ARRAY[CommunicationexternalimageResponseCompound]**](CommunicationexternalimageResponseCompound.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -9,11 +9,13 @@ use EzmaxApi::Object::CommunicationResponse;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pki_communication_id** | **int** | The unique ID of the Communication. | 
-**e_communication_emailimportance** | [**FieldECommunicationEmailimportance**](FieldECommunicationEmailimportance.md) |  | [optional] 
+**e_communication_importance** | [**FieldECommunicationImportance**](FieldECommunicationImportance.md) |  | 
 **e_communication_type** | [**FieldECommunicationType**](FieldECommunicationType.md) |  | 
-**s_communication_subject** | **string** | The Subject of the Communication | 
-**dt_communication_sentdate** | **string** | The send date and time at which the Communication was sent. | 
+**s_communication_subject** | **string** | The subject of the Communication | 
+**e_communication_direction** | [**ComputedECommunicationDirection**](ComputedECommunicationDirection.md) |  | 
+**i_communicationrecipient_count** | **int** | The count of Communicationrecipient | 
 **obj_contact_from** | [**CustomContactNameResponse**](CustomContactNameResponse.md) |  | 
+**obj_audit** | [**CommonAudit**](CommonAudit.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

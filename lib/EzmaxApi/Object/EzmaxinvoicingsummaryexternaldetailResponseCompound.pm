@@ -282,6 +282,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    't_ezmaxproduct_help_x' => {
+        datatype => 'string',
+        base_name => 'tEzmaxproductHelpX',
+        description => 'The help message of the Ezmaxproduct in the language of the requester',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -293,7 +300,8 @@ __PACKAGE__->openapi_types( {
     'd_ezmaxinvoicingsummaryexternaldetail_subtotal' => 'string',
     'd_ezmaxinvoicingsummaryexternaldetail_rebate' => 'string',
     'd_ezmaxinvoicingsummaryexternaldetail_total' => 'string',
-    'b_ezmaxinvoicingsummaryexternaldetail_adjustment' => 'boolean'
+    'b_ezmaxinvoicingsummaryexternaldetail_adjustment' => 'boolean',
+    't_ezmaxproduct_help_x' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -305,7 +313,8 @@ __PACKAGE__->attribute_map( {
     'd_ezmaxinvoicingsummaryexternaldetail_subtotal' => 'dEzmaxinvoicingsummaryexternaldetailSubtotal',
     'd_ezmaxinvoicingsummaryexternaldetail_rebate' => 'dEzmaxinvoicingsummaryexternaldetailRebate',
     'd_ezmaxinvoicingsummaryexternaldetail_total' => 'dEzmaxinvoicingsummaryexternaldetailTotal',
-    'b_ezmaxinvoicingsummaryexternaldetail_adjustment' => 'bEzmaxinvoicingsummaryexternaldetailAdjustment'
+    'b_ezmaxinvoicingsummaryexternaldetail_adjustment' => 'bEzmaxinvoicingsummaryexternaldetailAdjustment',
+    't_ezmaxproduct_help_x' => 'tEzmaxproductHelpX'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

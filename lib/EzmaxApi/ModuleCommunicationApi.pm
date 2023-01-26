@@ -51,15 +51,15 @@ sub new {
 #
 # communication_get_communication_count_v1
 #
-# Get the number of communication
+# Retrieve Communication count
 #
-# @param string $e_communication_module Specify the requested module (required)
+# @param string $e_communication_objecttype The object type for the Communication (required)
 # @param int $pki_ezsignfolder_id The unique ID of the Ezsignfolder (optional)
 {
     my $params = {
-    'e_communication_module' => {
+    'e_communication_objecttype' => {
         data_type => 'string',
-        description => 'Specify the requested module',
+        description => 'The object type for the Communication',
         required => '1',
     },
     'pki_ezsignfolder_id' => {
@@ -69,7 +69,7 @@ sub new {
     },
     };
     __PACKAGE__->method_documentation->{ 'communication_get_communication_count_v1' } = {
-        summary => 'Get the number of communication',
+        summary => 'Retrieve Communication count',
         params => $params,
         returns => 'CommunicationGetCountV1Response',
         };
@@ -79,13 +79,13 @@ sub new {
 sub communication_get_communication_count_v1 {
     my ($self, %args) = @_;
 
-    # verify the required parameter 'e_communication_module' is set
-    unless (exists $args{'e_communication_module'}) {
-      croak("Missing the required parameter 'e_communication_module' when calling communication_get_communication_count_v1");
+    # verify the required parameter 'e_communication_objecttype' is set
+    unless (exists $args{'e_communication_objecttype'}) {
+      croak("Missing the required parameter 'e_communication_objecttype' when calling communication_get_communication_count_v1");
     }
 
     # parse inputs
-    my $_resource_path = '/1/module/communication/getCommunicationCount';
+    my $_resource_path = '/1/module/communication/getCount';
 
     my $_method = 'GET';
     my $query_params = {};
@@ -100,8 +100,8 @@ sub communication_get_communication_count_v1 {
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
 
     # query params
-    if ( exists $args{'e_communication_module'}) {
-        $query_params->{'eCommunicationModule'} = $self->{api_client}->to_query_value($args{'e_communication_module'});
+    if ( exists $args{'e_communication_objecttype'}) {
+        $query_params->{'eCommunicationObjecttype'} = $self->{api_client}->to_query_value($args{'e_communication_objecttype'});
     }
 
     # query params
@@ -121,82 +121,6 @@ sub communication_get_communication_count_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('CommunicationGetCountV1Response', $response);
-    return $_response_object;
-}
-
-#
-# communication_get_communication_list_v1
-#
-# Retrieve communication list
-#
-# @param string $e_communication_module Specify the requested module (required)
-# @param int $pki_ezsignfolder_id The unique ID of the Ezsignfolder (optional)
-{
-    my $params = {
-    'e_communication_module' => {
-        data_type => 'string',
-        description => 'Specify the requested module',
-        required => '1',
-    },
-    'pki_ezsignfolder_id' => {
-        data_type => 'int',
-        description => 'The unique ID of the Ezsignfolder',
-        required => '0',
-    },
-    };
-    __PACKAGE__->method_documentation->{ 'communication_get_communication_list_v1' } = {
-        summary => 'Retrieve communication list',
-        params => $params,
-        returns => 'CommunicationGetListV1Response',
-        };
-}
-# @return CommunicationGetListV1Response
-#
-sub communication_get_communication_list_v1 {
-    my ($self, %args) = @_;
-
-    # verify the required parameter 'e_communication_module' is set
-    unless (exists $args{'e_communication_module'}) {
-      croak("Missing the required parameter 'e_communication_module' when calling communication_get_communication_list_v1");
-    }
-
-    # parse inputs
-    my $_resource_path = '/1/module/communication/getCommunicationList';
-
-    my $_method = 'GET';
-    my $query_params = {};
-    my $header_params = {};
-    my $form_params = {};
-
-    # 'Accept' and 'Content-Type' header
-    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
-    if ($_header_accept) {
-        $header_params->{'Accept'} = $_header_accept;
-    }
-    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
-
-    # query params
-    if ( exists $args{'e_communication_module'}) {
-        $query_params->{'eCommunicationModule'} = $self->{api_client}->to_query_value($args{'e_communication_module'});
-    }
-
-    # query params
-    if ( exists $args{'pki_ezsignfolder_id'}) {
-        $query_params->{'pkiEzsignfolderID'} = $self->{api_client}->to_query_value($args{'pki_ezsignfolder_id'});
-    }
-
-    my $_body_data;
-    # authentication setting, if any
-    my $auth_settings = [qw(Authorization )];
-
-    # make the API Call
-    my $response = $self->{api_client}->call_api($_resource_path, $_method,
-                                           $query_params, $form_params,
-                                           $header_params, $_body_data, $auth_settings);
-    if (!$response) {
-        return;
-    }
-    my $_response_object = $self->{api_client}->deserialize('CommunicationGetListV1Response', $response);
     return $_response_object;
 }
 

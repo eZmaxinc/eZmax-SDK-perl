@@ -250,7 +250,7 @@ __PACKAGE__->method_documentation({
     'b_ezsignfolder_allowed' => {
         datatype => 'boolean',
         base_name => 'bEzsignfolderAllowed',
-        description => '',
+        description => 'Whether you have access to the Ezsignfolder or not',
         format => '',
         read_only => '',
             },

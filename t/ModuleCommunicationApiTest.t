@@ -33,15 +33,7 @@ isa_ok($api, 'EzmaxApi::ModuleCommunicationApi');
 # communication_get_communication_count_v1 test
 #
 # uncomment below and update the test
-#my $communication_get_communication_count_v1_e_communication_module = undef; # replace NULL with a proper value
+#my $communication_get_communication_count_v1_e_communication_objecttype = undef; # replace NULL with a proper value
 #my $communication_get_communication_count_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
-#my $communication_get_communication_count_v1_result = $api->communication_get_communication_count_v1(e_communication_module => $communication_get_communication_count_v1_e_communication_module, pki_ezsignfolder_id => $communication_get_communication_count_v1_pki_ezsignfolder_id);
-
-#
-# communication_get_communication_list_v1 test
-#
-# uncomment below and update the test
-#my $communication_get_communication_list_v1_e_communication_module = undef; # replace NULL with a proper value
-#my $communication_get_communication_list_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
-#my $communication_get_communication_list_v1_result = $api->communication_get_communication_list_v1(e_communication_module => $communication_get_communication_list_v1_e_communication_module, pki_ezsignfolder_id => $communication_get_communication_list_v1_pki_ezsignfolder_id);
+#my $communication_get_communication_count_v1_result = $api->communication_get_communication_count_v1(e_communication_objecttype => $communication_get_communication_count_v1_e_communication_objecttype, pki_ezsignfolder_id => $communication_get_communication_count_v1_pki_ezsignfolder_id);
 

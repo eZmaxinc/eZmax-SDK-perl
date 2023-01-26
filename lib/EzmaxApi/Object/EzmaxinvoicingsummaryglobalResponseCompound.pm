@@ -272,14 +272,14 @@ __PACKAGE__->method_documentation({
     'd_ezmaxinvoicingsummaryglobal_countreal' => {
         datatype => 'string',
         base_name => 'dEzmaxinvoicingsummaryglobalCountreal',
-        description => 'The The count item calculated',
+        description => 'The count item calculated',
         format => '',
         read_only => '',
             },
     'd_ezmaxinvoicingsummaryglobal_countbilled' => {
         datatype => 'string',
         base_name => 'dEzmaxinvoicingsummaryglobalCountbilled',
-        description => 'The The count item billed',
+        description => 'The count item billed',
         format => '',
         read_only => '',
             },
@@ -346,6 +346,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    't_ezmaxproduct_help_x' => {
+        datatype => 'string',
+        base_name => 'tEzmaxproductHelpX',
+        description => 'The help message of the Ezmaxproduct in the language of the requester',
+        format => '',
+        read_only => '',
+            },
     'a_obj_ezmaxinvoicingcommission' => {
         datatype => 'ARRAY[EzmaxinvoicingcommissionResponseCompound]',
         base_name => 'a_objEzmaxinvoicingcommission',
@@ -374,6 +381,7 @@ __PACKAGE__->openapi_types( {
     'd_ezmaxinvoicingsummaryglobal_partner' => 'string',
     'd_ezmaxinvoicingsummaryglobal_net' => 'string',
     'b_ezmaxinvoicingsummaryglobal_adjustment' => 'boolean',
+    't_ezmaxproduct_help_x' => 'string',
     'a_obj_ezmaxinvoicingcommission' => 'ARRAY[EzmaxinvoicingcommissionResponseCompound]'
 } );
 
@@ -396,6 +404,7 @@ __PACKAGE__->attribute_map( {
     'd_ezmaxinvoicingsummaryglobal_partner' => 'dEzmaxinvoicingsummaryglobalPartner',
     'd_ezmaxinvoicingsummaryglobal_net' => 'dEzmaxinvoicingsummaryglobalNet',
     'b_ezmaxinvoicingsummaryglobal_adjustment' => 'bEzmaxinvoicingsummaryglobalAdjustment',
+    't_ezmaxproduct_help_x' => 'tEzmaxproductHelpX',
     'a_obj_ezmaxinvoicingcommission' => 'a_objEzmaxinvoicingcommission'
 } );
 

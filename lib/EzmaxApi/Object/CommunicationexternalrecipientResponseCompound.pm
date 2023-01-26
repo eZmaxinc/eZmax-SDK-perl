@@ -30,8 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::DescriptionstaticResponseCompound;
+use EzmaxApi::Object::EmailstaticResponseCompound;
 use EzmaxApi::Object::FieldECommunicationexternalrecipientType;
-use EzmaxApi::Object::PhoneResponseCompound;
+use EzmaxApi::Object::PhonestaticResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -228,20 +230,6 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    's_email_address' => {
-        datatype => 'string',
-        base_name => 'sEmailAddress',
-        description => 'The email address.',
-        format => '',
-        read_only => '',
-            },
-    'obj_phone_sms' => {
-        datatype => 'PhoneResponseCompound',
-        base_name => 'objPhoneSms',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'e_communicationexternalrecipient_type' => {
         datatype => 'FieldECommunicationexternalrecipientType',
         base_name => 'eCommunicationexternalrecipientType',
@@ -249,10 +237,24 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    's_communicationexternalrecipient_name' => {
-        datatype => 'string',
-        base_name => 'sCommunicationexternalrecipientName',
-        description => 'The Name of the Communicationexternalrecipient',
+    'obj_descriptionstatic' => {
+        datatype => 'DescriptionstaticResponseCompound',
+        base_name => 'objDescriptionstatic',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_emailstatic' => {
+        datatype => 'EmailstaticResponseCompound',
+        base_name => 'objEmailstatic',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_phonestatic' => {
+        datatype => 'PhonestaticResponseCompound',
+        base_name => 'objPhonestatic',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -260,18 +262,18 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'pki_communicationexternalrecipient_id' => 'int',
-    's_email_address' => 'string',
-    'obj_phone_sms' => 'PhoneResponseCompound',
     'e_communicationexternalrecipient_type' => 'FieldECommunicationexternalrecipientType',
-    's_communicationexternalrecipient_name' => 'string'
+    'obj_descriptionstatic' => 'DescriptionstaticResponseCompound',
+    'obj_emailstatic' => 'EmailstaticResponseCompound',
+    'obj_phonestatic' => 'PhonestaticResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_communicationexternalrecipient_id' => 'pkiCommunicationexternalrecipientID',
-    's_email_address' => 'sEmailAddress',
-    'obj_phone_sms' => 'objPhoneSms',
     'e_communicationexternalrecipient_type' => 'eCommunicationexternalrecipientType',
-    's_communicationexternalrecipient_name' => 'sCommunicationexternalrecipientName'
+    'obj_descriptionstatic' => 'objDescriptionstatic',
+    'obj_emailstatic' => 'objEmailstatic',
+    'obj_phonestatic' => 'objPhonestatic'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

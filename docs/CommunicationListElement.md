@@ -9,11 +9,17 @@ use EzmaxApi::Object::CommunicationListElement;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pki_communication_id** | **int** | The unique ID of the Communication. | 
-**e_communication_emailimportance** | [**FieldECommunicationEmailimportance**](FieldECommunicationEmailimportance.md) |  | [optional] 
+**fki_ezsignfolder_id** | **int** | The unique ID of the Ezsignfolder | [optional] 
+**fki_inscription_id** | **int** | The unique ID of the Inscription. | [optional] 
+**fki_inscriptionnotauthenticated_id** | **int** | The unique ID of the Inscriptionnotauthenticated. | [optional] 
+**dt_created_date** | **string** | The date and time at which the object was created | 
+**e_communication_direction** | [**ComputedECommunicationDirection**](ComputedECommunicationDirection.md) |  | 
+**e_communication_importance** | [**FieldECommunicationImportance**](FieldECommunicationImportance.md) |  | 
 **e_communication_type** | [**FieldECommunicationType**](FieldECommunicationType.md) |  | 
-**s_communication_subject** | **string** | The Subject of the Communication | 
-**dt_communication_sentdate** | **string** | The send date and time at which the Communication was sent. | 
-**obj_contact_from** | [**CustomContactNameResponse**](CustomContactNameResponse.md) |  | 
+**i_communicationrecipient_count** | **int** | The count of Communicationrecipient | 
+**s_communication_subject** | **string** | The subject of the Communication | 
+**s_communication_sender** | **string** | The sender name of the Communication | 
+**s_communication_recipient** | **string** | The recipients&#39; name of the Communication | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -31,9 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommunicationattachmentResponseCompound;
-use EzmaxApi::Object::CommunicationexternalimageResponseCompound;
 use EzmaxApi::Object::CommunicationexternalrecipientResponseCompound;
-use EzmaxApi::Object::CommunicationimageResponseCompound;
 use EzmaxApi::Object::CommunicationrecipientResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -245,36 +243,18 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'a_obj_communicationimage' => {
-        datatype => 'ARRAY[CommunicationimageResponseCompound]',
-        base_name => 'a_objCommunicationimage',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'a_obj_communicationexternalimage' => {
-        datatype => 'ARRAY[CommunicationexternalimageResponseCompound]',
-        base_name => 'a_objCommunicationexternalimage',
-        description => '',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
     'a_obj_communicationattachment' => 'ARRAY[CommunicationattachmentResponseCompound]',
     'a_obj_communicationrecipient' => 'ARRAY[CommunicationrecipientResponseCompound]',
-    'a_obj_communicationexternalrecipient' => 'ARRAY[CommunicationexternalrecipientResponseCompound]',
-    'a_obj_communicationimage' => 'ARRAY[CommunicationimageResponseCompound]',
-    'a_obj_communicationexternalimage' => 'ARRAY[CommunicationexternalimageResponseCompound]'
+    'a_obj_communicationexternalrecipient' => 'ARRAY[CommunicationexternalrecipientResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
     'a_obj_communicationattachment' => 'a_objCommunicationattachment',
     'a_obj_communicationrecipient' => 'a_objCommunicationrecipient',
-    'a_obj_communicationexternalrecipient' => 'a_objCommunicationexternalrecipient',
-    'a_obj_communicationimage' => 'a_objCommunicationimage',
-    'a_obj_communicationexternalimage' => 'a_objCommunicationexternalimage'
+    'a_obj_communicationexternalrecipient' => 'a_objCommunicationexternalrecipient'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
