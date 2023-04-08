@@ -30,14 +30,26 @@ my $api = EzmaxApi::ObjectUsergroupApi->new();
 isa_ok($api, 'EzmaxApi::ObjectUsergroupApi');
 
 #
-# usergroup_get_autocomplete_v1 test
+# usergroup_create_object_v1 test
 #
 # uncomment below and update the test
-#my $usergroup_get_autocomplete_v1_s_selector = undef; # replace NULL with a proper value
-#my $usergroup_get_autocomplete_v1_e_filter_active = undef; # replace NULL with a proper value
-#my $usergroup_get_autocomplete_v1_s_query = undef; # replace NULL with a proper value
-#my $usergroup_get_autocomplete_v1_accept_language = undef; # replace NULL with a proper value
-#my $usergroup_get_autocomplete_v1_result = $api->usergroup_get_autocomplete_v1(s_selector => $usergroup_get_autocomplete_v1_s_selector, e_filter_active => $usergroup_get_autocomplete_v1_e_filter_active, s_query => $usergroup_get_autocomplete_v1_s_query, accept_language => $usergroup_get_autocomplete_v1_accept_language);
+#my $usergroup_create_object_v1_usergroup_create_object_v1_request = undef; # replace NULL with a proper value
+#my $usergroup_create_object_v1_result = $api->usergroup_create_object_v1(usergroup_create_object_v1_request => $usergroup_create_object_v1_usergroup_create_object_v1_request);
+
+#
+# usergroup_delete_object_v1 test
+#
+# uncomment below and update the test
+#my $usergroup_delete_object_v1_pki_usergroup_id = undef; # replace NULL with a proper value
+#my $usergroup_delete_object_v1_result = $api->usergroup_delete_object_v1(pki_usergroup_id => $usergroup_delete_object_v1_pki_usergroup_id);
+
+#
+# usergroup_edit_object_v1 test
+#
+# uncomment below and update the test
+#my $usergroup_edit_object_v1_pki_usergroup_id = undef; # replace NULL with a proper value
+#my $usergroup_edit_object_v1_usergroup_edit_object_v1_request = undef; # replace NULL with a proper value
+#my $usergroup_edit_object_v1_result = $api->usergroup_edit_object_v1(pki_usergroup_id => $usergroup_edit_object_v1_pki_usergroup_id, usergroup_edit_object_v1_request => $usergroup_edit_object_v1_usergroup_edit_object_v1_request);
 
 #
 # usergroup_get_autocomplete_v2 test
@@ -48,4 +60,29 @@ isa_ok($api, 'EzmaxApi::ObjectUsergroupApi');
 #my $usergroup_get_autocomplete_v2_s_query = undef; # replace NULL with a proper value
 #my $usergroup_get_autocomplete_v2_accept_language = undef; # replace NULL with a proper value
 #my $usergroup_get_autocomplete_v2_result = $api->usergroup_get_autocomplete_v2(s_selector => $usergroup_get_autocomplete_v2_s_selector, e_filter_active => $usergroup_get_autocomplete_v2_e_filter_active, s_query => $usergroup_get_autocomplete_v2_s_query, accept_language => $usergroup_get_autocomplete_v2_accept_language);
+
+#
+# usergroup_get_list_v1 test
+#
+# uncomment below and update the test
+#my $usergroup_get_list_v1_e_order_by = undef; # replace NULL with a proper value
+#my $usergroup_get_list_v1_i_row_max = undef; # replace NULL with a proper value
+#my $usergroup_get_list_v1_i_row_offset = undef; # replace NULL with a proper value
+#my $usergroup_get_list_v1_accept_language = undef; # replace NULL with a proper value
+#my $usergroup_get_list_v1_s_filter = undef; # replace NULL with a proper value
+#my $usergroup_get_list_v1_result = $api->usergroup_get_list_v1(e_order_by => $usergroup_get_list_v1_e_order_by, i_row_max => $usergroup_get_list_v1_i_row_max, i_row_offset => $usergroup_get_list_v1_i_row_offset, accept_language => $usergroup_get_list_v1_accept_language, s_filter => $usergroup_get_list_v1_s_filter);
+
+#
+# usergroup_get_members_v1 test
+#
+# uncomment below and update the test
+#my $usergroup_get_members_v1_pki_usergroup_id = undef; # replace NULL with a proper value
+#my $usergroup_get_members_v1_result = $api->usergroup_get_members_v1(pki_usergroup_id => $usergroup_get_members_v1_pki_usergroup_id);
+
+#
+# usergroup_get_object_v2 test
+#
+# uncomment below and update the test
+#my $usergroup_get_object_v2_pki_usergroup_id = undef; # replace NULL with a proper value
+#my $usergroup_get_object_v2_result = $api->usergroup_get_object_v2(pki_usergroup_id => $usergroup_get_object_v2_pki_usergroup_id);
 

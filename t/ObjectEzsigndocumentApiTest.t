@@ -91,6 +91,14 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #my $ezsigndocument_end_prematurely_v1_result = $api->ezsigndocument_end_prematurely_v1(pki_ezsigndocument_id => $ezsigndocument_end_prematurely_v1_pki_ezsigndocument_id, body => $ezsigndocument_end_prematurely_v1_body);
 
 #
+# ezsigndocument_flatten_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_flatten_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_flatten_v1_body = undef; # replace NULL with a proper value
+#my $ezsigndocument_flatten_v1_result = $api->ezsigndocument_flatten_v1(pki_ezsigndocument_id => $ezsigndocument_flatten_v1_pki_ezsigndocument_id, body => $ezsigndocument_flatten_v1_body);
+
+#
 # ezsigndocument_get_actionable_elements_v1 test
 #
 # uncomment below and update the test
@@ -106,6 +114,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #my $ezsigndocument_get_download_url_v1_result = $api->ezsigndocument_get_download_url_v1(pki_ezsigndocument_id => $ezsigndocument_get_download_url_v1_pki_ezsigndocument_id, e_document_type => $ezsigndocument_get_download_url_v1_e_document_type);
 
 #
+# ezsigndocument_get_ezsignannotations_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_get_ezsignannotations_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_get_ezsignannotations_v1_result = $api->ezsigndocument_get_ezsignannotations_v1(pki_ezsigndocument_id => $ezsigndocument_get_ezsignannotations_v1_pki_ezsigndocument_id);
+
+#
 # ezsigndocument_get_ezsignformfieldgroups_v1 test
 #
 # uncomment below and update the test
@@ -118,6 +133,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 # uncomment below and update the test
 #my $ezsigndocument_get_ezsignpages_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
 #my $ezsigndocument_get_ezsignpages_v1_result = $api->ezsigndocument_get_ezsignpages_v1(pki_ezsigndocument_id => $ezsigndocument_get_ezsignpages_v1_pki_ezsigndocument_id);
+
+#
+# ezsigndocument_get_ezsignsignatures_automatic_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_get_ezsignsignatures_automatic_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_get_ezsignsignatures_automatic_v1_result = $api->ezsigndocument_get_ezsignsignatures_automatic_v1(pki_ezsigndocument_id => $ezsigndocument_get_ezsignsignatures_automatic_v1_pki_ezsigndocument_id);
 
 #
 # ezsigndocument_get_ezsignsignatures_v1 test

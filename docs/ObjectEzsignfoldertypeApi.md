@@ -14,7 +14,6 @@ Method | HTTP request | Description
 [**ezsignfoldertype_get_autocomplete_v1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_autocomplete_v1) | **GET** /1/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs
 [**ezsignfoldertype_get_autocomplete_v2**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_autocomplete_v2) | **GET** /2/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs
 [**ezsignfoldertype_get_list_v1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_list_v1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list
-[**ezsignfoldertype_get_object_v1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_object_v1) | **GET** /1/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype
 [**ezsignfoldertype_get_object_v2**](ObjectEzsignfoldertypeApi.md#ezsignfoldertype_get_object_v2) | **GET** /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype
 
 
@@ -292,57 +291,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ezsignfoldertype_get_object_v1**
-> EzsignfoldertypeGetObjectV1Response ezsignfoldertype_get_object_v1(pki_ezsignfoldertype_id => $pki_ezsignfoldertype_id)
-
-Retrieve an existing Ezsignfoldertype
-
-
-
-### Example
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectEzsignfoldertypeApi;
-my $api_instance = EzmaxApi::ObjectEzsignfoldertypeApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $pki_ezsignfoldertype_id = 56; # int | 
-
-eval {
-    my $result = $api_instance->ezsignfoldertype_get_object_v1(pki_ezsignfoldertype_id => $pki_ezsignfoldertype_id);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling ObjectEzsignfoldertypeApi->ezsignfoldertype_get_object_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pki_ezsignfoldertype_id** | **int**|  | 
-
-### Return type
-
-[**EzsignfoldertypeGetObjectV1Response**](EzsignfoldertypeGetObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -44,13 +44,6 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignbulksendsignermappingApi');
 #my $ezsignbulksendsignermapping_delete_object_v1_result = $api->ezsignbulksendsignermapping_delete_object_v1(pki_ezsignbulksendsignermapping_id => $ezsignbulksendsignermapping_delete_object_v1_pki_ezsignbulksendsignermapping_id);
 
 #
-# ezsignbulksendsignermapping_get_object_v1 test
-#
-# uncomment below and update the test
-#my $ezsignbulksendsignermapping_get_object_v1_pki_ezsignbulksendsignermapping_id = undef; # replace NULL with a proper value
-#my $ezsignbulksendsignermapping_get_object_v1_result = $api->ezsignbulksendsignermapping_get_object_v1(pki_ezsignbulksendsignermapping_id => $ezsignbulksendsignermapping_get_object_v1_pki_ezsignbulksendsignermapping_id);
-
-#
 # ezsignbulksendsignermapping_get_object_v2 test
 #
 # uncomment below and update the test

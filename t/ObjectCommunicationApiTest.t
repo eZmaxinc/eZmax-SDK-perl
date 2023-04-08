@@ -30,17 +30,6 @@ my $api = EzmaxApi::ObjectCommunicationApi->new();
 isa_ok($api, 'EzmaxApi::ObjectCommunicationApi');
 
 #
-# communication_get_list_v1 test
-#
-# uncomment below and update the test
-#my $communication_get_list_v1_e_order_by = undef; # replace NULL with a proper value
-#my $communication_get_list_v1_i_row_max = undef; # replace NULL with a proper value
-#my $communication_get_list_v1_i_row_offset = undef; # replace NULL with a proper value
-#my $communication_get_list_v1_accept_language = undef; # replace NULL with a proper value
-#my $communication_get_list_v1_s_filter = undef; # replace NULL with a proper value
-#my $communication_get_list_v1_result = $api->communication_get_list_v1(e_order_by => $communication_get_list_v1_e_order_by, i_row_max => $communication_get_list_v1_i_row_max, i_row_offset => $communication_get_list_v1_i_row_offset, accept_language => $communication_get_list_v1_accept_language, s_filter => $communication_get_list_v1_s_filter);
-
-#
 # communication_get_object_v2 test
 #
 # uncomment below and update the test

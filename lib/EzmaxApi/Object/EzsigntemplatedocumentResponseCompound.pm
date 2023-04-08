@@ -254,6 +254,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsigntemplatedocument_hassignedsignatures' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplatedocumentHassignedsignatures',
+        description => 'If the Ezsigntemplatedocument contains signed signatures (From internal or external sources)',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -261,7 +268,8 @@ __PACKAGE__->openapi_types( {
     'fki_ezsigntemplate_id' => 'int',
     's_ezsigntemplatedocument_name' => 'string',
     'i_ezsigntemplatedocument_pagetotal' => 'int',
-    'i_ezsigntemplatedocument_signaturetotal' => 'int'
+    'i_ezsigntemplatedocument_signaturetotal' => 'int',
+    'b_ezsigntemplatedocument_hassignedsignatures' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -269,7 +277,8 @@ __PACKAGE__->attribute_map( {
     'fki_ezsigntemplate_id' => 'fkiEzsigntemplateID',
     's_ezsigntemplatedocument_name' => 'sEzsigntemplatedocumentName',
     'i_ezsigntemplatedocument_pagetotal' => 'iEzsigntemplatedocumentPagetotal',
-    'i_ezsigntemplatedocument_signaturetotal' => 'iEzsigntemplatedocumentSignaturetotal'
+    'i_ezsigntemplatedocument_signaturetotal' => 'iEzsigntemplatedocumentSignaturetotal',
+    'b_ezsigntemplatedocument_hassignedsignatures' => 'bEzsigntemplatedocumentHassignedsignatures'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

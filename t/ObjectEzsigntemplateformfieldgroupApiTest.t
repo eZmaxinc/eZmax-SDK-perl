@@ -52,13 +52,6 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplateformfieldgroupApi');
 #my $ezsigntemplateformfieldgroup_edit_object_v1_result = $api->ezsigntemplateformfieldgroup_edit_object_v1(pki_ezsigntemplateformfieldgroup_id => $ezsigntemplateformfieldgroup_edit_object_v1_pki_ezsigntemplateformfieldgroup_id, ezsigntemplateformfieldgroup_edit_object_v1_request => $ezsigntemplateformfieldgroup_edit_object_v1_ezsigntemplateformfieldgroup_edit_object_v1_request);
 
 #
-# ezsigntemplateformfieldgroup_get_object_v1 test
-#
-# uncomment below and update the test
-#my $ezsigntemplateformfieldgroup_get_object_v1_pki_ezsigntemplateformfieldgroup_id = undef; # replace NULL with a proper value
-#my $ezsigntemplateformfieldgroup_get_object_v1_result = $api->ezsigntemplateformfieldgroup_get_object_v1(pki_ezsigntemplateformfieldgroup_id => $ezsigntemplateformfieldgroup_get_object_v1_pki_ezsigntemplateformfieldgroup_id);
-
-#
 # ezsigntemplateformfieldgroup_get_object_v2 test
 #
 # uncomment below and update the test

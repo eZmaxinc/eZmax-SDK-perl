@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**ezsigntemplate_create_object_v1**](ObjectEzsigntemplateApi.md#ezsigntemplate_create_object_v1) | **POST** /1/object/ezsigntemplate | Create a new Ezsigntemplate
 [**ezsigntemplate_delete_object_v1**](ObjectEzsigntemplateApi.md#ezsigntemplate_delete_object_v1) | **DELETE** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Delete an existing Ezsigntemplate
 [**ezsigntemplate_edit_object_v1**](ObjectEzsigntemplateApi.md#ezsigntemplate_edit_object_v1) | **PUT** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Edit an existing Ezsigntemplate
-[**ezsigntemplate_get_autocomplete_v1**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_autocomplete_v1) | **GET** /1/object/ezsigntemplate/getAutocomplete/{sSelector} | Retrieve Ezsigntemplate and IDs
 [**ezsigntemplate_get_autocomplete_v2**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_autocomplete_v2) | **GET** /2/object/ezsigntemplate/getAutocomplete/{sSelector} | Retrieve Ezsigntemplates and IDs
 [**ezsigntemplate_get_list_v1**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_list_v1) | **GET** /1/object/ezsigntemplate/getList | Retrieve Ezsigntemplate list
 [**ezsigntemplate_get_object_v1**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_object_v1) | **GET** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate
@@ -224,63 +223,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ezsigntemplate_get_autocomplete_v1**
-> CommonGetAutocompleteV1Response ezsigntemplate_get_autocomplete_v1(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language)
-
-Retrieve Ezsigntemplate and IDs
-
-Get the list of Ezsigntemplate to be used in a dropdown or autocomplete control.
-
-### Example
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectEzsigntemplateApi;
-my $api_instance = EzmaxApi::ObjectEzsigntemplateApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $s_selector = "s_selector_example"; # string | The type of Ezsigntemplate to return
-my $e_filter_active = 'Active'; # string | Specify which results we want to display.
-my $s_query = "s_query_example"; # string | Allow to filter the returned results
-my $accept_language = new EzmaxApi.HeaderAcceptLanguage(); # HeaderAcceptLanguage | 
-
-eval {
-    my $result = $api_instance->ezsigntemplate_get_autocomplete_v1(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling ObjectEzsigntemplateApi->ezsigntemplate_get_autocomplete_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **s_selector** | **string**| The type of Ezsigntemplate to return | 
- **e_filter_active** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
- **s_query** | **string**| Allow to filter the returned results | [optional] 
- **accept_language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
-
-### Return type
-
-[**CommonGetAutocompleteV1Response**](CommonGetAutocompleteV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

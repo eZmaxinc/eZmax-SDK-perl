@@ -30,16 +30,6 @@ my $api = EzmaxApi::ObjectDepartmentApi->new();
 isa_ok($api, 'EzmaxApi::ObjectDepartmentApi');
 
 #
-# department_get_autocomplete_v1 test
-#
-# uncomment below and update the test
-#my $department_get_autocomplete_v1_s_selector = undef; # replace NULL with a proper value
-#my $department_get_autocomplete_v1_e_filter_active = undef; # replace NULL with a proper value
-#my $department_get_autocomplete_v1_s_query = undef; # replace NULL with a proper value
-#my $department_get_autocomplete_v1_accept_language = undef; # replace NULL with a proper value
-#my $department_get_autocomplete_v1_result = $api->department_get_autocomplete_v1(s_selector => $department_get_autocomplete_v1_s_selector, e_filter_active => $department_get_autocomplete_v1_e_filter_active, s_query => $department_get_autocomplete_v1_s_query, accept_language => $department_get_autocomplete_v1_accept_language);
-
-#
 # department_get_autocomplete_v2 test
 #
 # uncomment below and update the test

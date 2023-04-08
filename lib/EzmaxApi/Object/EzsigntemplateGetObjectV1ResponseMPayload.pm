@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::EzsigntemplatedocumentResponse;
 use EzmaxApi::Object::EzsigntemplatesignerResponseCompound;
 
@@ -277,6 +278,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_audit' => {
+        datatype => 'CommonAudit',
+        base_name => 'objAudit',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'obj_ezsigntemplatedocument' => {
         datatype => 'EzsigntemplatedocumentResponse',
         base_name => 'objEzsigntemplatedocument',
@@ -302,6 +310,7 @@ __PACKAGE__->openapi_types( {
     's_ezsigntemplate_description' => 'string',
     'b_ezsigntemplate_adminonly' => 'boolean',
     's_ezsignfoldertype_name_x' => 'string',
+    'obj_audit' => 'CommonAudit',
     'obj_ezsigntemplatedocument' => 'EzsigntemplatedocumentResponse',
     'a_obj_ezsigntemplatesigner' => 'ARRAY[EzsigntemplatesignerResponseCompound]'
 } );
@@ -315,6 +324,7 @@ __PACKAGE__->attribute_map( {
     's_ezsigntemplate_description' => 'sEzsigntemplateDescription',
     'b_ezsigntemplate_adminonly' => 'bEzsigntemplateAdminonly',
     's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
+    'obj_audit' => 'objAudit',
     'obj_ezsigntemplatedocument' => 'objEzsigntemplatedocument',
     'a_obj_ezsigntemplatesigner' => 'a_objEzsigntemplatesigner'
 } );

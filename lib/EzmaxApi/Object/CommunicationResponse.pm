@@ -32,9 +32,11 @@ use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::ComputedECommunicationDirection;
-use EzmaxApi::Object::CustomContactNameResponse;
+use EzmaxApi::Object::DescriptionstaticResponse;
+use EzmaxApi::Object::EmailstaticResponse;
 use EzmaxApi::Object::FieldECommunicationImportance;
 use EzmaxApi::Object::FieldECommunicationType;
+use EzmaxApi::Object::PhonestaticResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -252,6 +254,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_communication_bodyurl' => {
+        datatype => 'string',
+        base_name => 'sCommunicationBodyurl',
+        description => 'The url of the body used as body in the Communication',
+        format => '',
+        read_only => '',
+            },
     'e_communication_direction' => {
         datatype => 'ComputedECommunicationDirection',
         base_name => 'eCommunicationDirection',
@@ -266,9 +275,23 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'obj_contact_from' => {
-        datatype => 'CustomContactNameResponse',
-        base_name => 'objContactFrom',
+    'obj_descriptionstatic_sender' => {
+        datatype => 'DescriptionstaticResponse',
+        base_name => 'objDescriptionstaticSender',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_emailstatic_sender' => {
+        datatype => 'EmailstaticResponse',
+        base_name => 'objEmailstaticSender',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_phonestatic_sender' => {
+        datatype => 'PhonestaticResponse',
+        base_name => 'objPhonestaticSender',
         description => '',
         format => '',
         read_only => '',
@@ -287,9 +310,12 @@ __PACKAGE__->openapi_types( {
     'e_communication_importance' => 'FieldECommunicationImportance',
     'e_communication_type' => 'FieldECommunicationType',
     's_communication_subject' => 'string',
+    's_communication_bodyurl' => 'string',
     'e_communication_direction' => 'ComputedECommunicationDirection',
     'i_communicationrecipient_count' => 'int',
-    'obj_contact_from' => 'CustomContactNameResponse',
+    'obj_descriptionstatic_sender' => 'DescriptionstaticResponse',
+    'obj_emailstatic_sender' => 'EmailstaticResponse',
+    'obj_phonestatic_sender' => 'PhonestaticResponse',
     'obj_audit' => 'CommonAudit'
 } );
 
@@ -298,9 +324,12 @@ __PACKAGE__->attribute_map( {
     'e_communication_importance' => 'eCommunicationImportance',
     'e_communication_type' => 'eCommunicationType',
     's_communication_subject' => 'sCommunicationSubject',
+    's_communication_bodyurl' => 'sCommunicationBodyurl',
     'e_communication_direction' => 'eCommunicationDirection',
     'i_communicationrecipient_count' => 'iCommunicationrecipientCount',
-    'obj_contact_from' => 'objContactFrom',
+    'obj_descriptionstatic_sender' => 'objDescriptionstaticSender',
+    'obj_emailstatic_sender' => 'objEmailstaticSender',
+    'obj_phonestatic_sender' => 'objPhonestaticSender',
     'obj_audit' => 'objAudit'
 } );
 

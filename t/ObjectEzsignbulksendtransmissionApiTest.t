@@ -37,18 +37,18 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignbulksendtransmissionApi');
 #my $ezsignbulksendtransmission_get_csv_errors_v1_result = $api->ezsignbulksendtransmission_get_csv_errors_v1(pki_ezsignbulksendtransmission_id => $ezsignbulksendtransmission_get_csv_errors_v1_pki_ezsignbulksendtransmission_id);
 
 #
+# ezsignbulksendtransmission_get_ezsignsignatures_automatic_v1 test
+#
+# uncomment below and update the test
+#my $ezsignbulksendtransmission_get_ezsignsignatures_automatic_v1_pki_ezsignbulksendtransmission_id = undef; # replace NULL with a proper value
+#my $ezsignbulksendtransmission_get_ezsignsignatures_automatic_v1_result = $api->ezsignbulksendtransmission_get_ezsignsignatures_automatic_v1(pki_ezsignbulksendtransmission_id => $ezsignbulksendtransmission_get_ezsignsignatures_automatic_v1_pki_ezsignbulksendtransmission_id);
+
+#
 # ezsignbulksendtransmission_get_forms_data_v1 test
 #
 # uncomment below and update the test
 #my $ezsignbulksendtransmission_get_forms_data_v1_pki_ezsignbulksendtransmission_id = undef; # replace NULL with a proper value
 #my $ezsignbulksendtransmission_get_forms_data_v1_result = $api->ezsignbulksendtransmission_get_forms_data_v1(pki_ezsignbulksendtransmission_id => $ezsignbulksendtransmission_get_forms_data_v1_pki_ezsignbulksendtransmission_id);
-
-#
-# ezsignbulksendtransmission_get_object_v1 test
-#
-# uncomment below and update the test
-#my $ezsignbulksendtransmission_get_object_v1_pki_ezsignbulksendtransmission_id = undef; # replace NULL with a proper value
-#my $ezsignbulksendtransmission_get_object_v1_result = $api->ezsignbulksendtransmission_get_object_v1(pki_ezsignbulksendtransmission_id => $ezsignbulksendtransmission_get_object_v1_pki_ezsignbulksendtransmission_id);
 
 #
 # ezsignbulksendtransmission_get_object_v2 test

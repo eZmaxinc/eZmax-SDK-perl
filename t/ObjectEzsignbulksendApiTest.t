@@ -75,6 +75,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignbulksendApi');
 #my $ezsignbulksend_get_ezsignbulksendtransmissions_v1_result = $api->ezsignbulksend_get_ezsignbulksendtransmissions_v1(pki_ezsignbulksend_id => $ezsignbulksend_get_ezsignbulksendtransmissions_v1_pki_ezsignbulksend_id);
 
 #
+# ezsignbulksend_get_ezsignsignatures_automatic_v1 test
+#
+# uncomment below and update the test
+#my $ezsignbulksend_get_ezsignsignatures_automatic_v1_pki_ezsignbulksend_id = undef; # replace NULL with a proper value
+#my $ezsignbulksend_get_ezsignsignatures_automatic_v1_result = $api->ezsignbulksend_get_ezsignsignatures_automatic_v1(pki_ezsignbulksend_id => $ezsignbulksend_get_ezsignsignatures_automatic_v1_pki_ezsignbulksend_id);
+
+#
 # ezsignbulksend_get_forms_data_v1 test
 #
 # uncomment below and update the test
@@ -91,13 +98,6 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignbulksendApi');
 #my $ezsignbulksend_get_list_v1_accept_language = undef; # replace NULL with a proper value
 #my $ezsignbulksend_get_list_v1_s_filter = undef; # replace NULL with a proper value
 #my $ezsignbulksend_get_list_v1_result = $api->ezsignbulksend_get_list_v1(e_order_by => $ezsignbulksend_get_list_v1_e_order_by, i_row_max => $ezsignbulksend_get_list_v1_i_row_max, i_row_offset => $ezsignbulksend_get_list_v1_i_row_offset, accept_language => $ezsignbulksend_get_list_v1_accept_language, s_filter => $ezsignbulksend_get_list_v1_s_filter);
-
-#
-# ezsignbulksend_get_object_v1 test
-#
-# uncomment below and update the test
-#my $ezsignbulksend_get_object_v1_pki_ezsignbulksend_id = undef; # replace NULL with a proper value
-#my $ezsignbulksend_get_object_v1_result = $api->ezsignbulksend_get_object_v1(pki_ezsignbulksend_id => $ezsignbulksend_get_object_v1_pki_ezsignbulksend_id);
 
 #
 # ezsignbulksend_get_object_v2 test

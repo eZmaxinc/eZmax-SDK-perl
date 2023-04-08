@@ -30,16 +30,6 @@ my $api = EzmaxApi::ObjectTimezoneApi->new();
 isa_ok($api, 'EzmaxApi::ObjectTimezoneApi');
 
 #
-# timezone_get_autocomplete_v1 test
-#
-# uncomment below and update the test
-#my $timezone_get_autocomplete_v1_s_selector = undef; # replace NULL with a proper value
-#my $timezone_get_autocomplete_v1_e_filter_active = undef; # replace NULL with a proper value
-#my $timezone_get_autocomplete_v1_s_query = undef; # replace NULL with a proper value
-#my $timezone_get_autocomplete_v1_accept_language = undef; # replace NULL with a proper value
-#my $timezone_get_autocomplete_v1_result = $api->timezone_get_autocomplete_v1(s_selector => $timezone_get_autocomplete_v1_s_selector, e_filter_active => $timezone_get_autocomplete_v1_e_filter_active, s_query => $timezone_get_autocomplete_v1_s_query, accept_language => $timezone_get_autocomplete_v1_accept_language);
-
-#
 # timezone_get_autocomplete_v2 test
 #
 # uncomment below and update the test

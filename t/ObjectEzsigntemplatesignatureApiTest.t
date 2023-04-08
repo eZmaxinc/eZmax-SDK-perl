@@ -52,13 +52,6 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplatesignatureApi');
 #my $ezsigntemplatesignature_edit_object_v1_result = $api->ezsigntemplatesignature_edit_object_v1(pki_ezsigntemplatesignature_id => $ezsigntemplatesignature_edit_object_v1_pki_ezsigntemplatesignature_id, ezsigntemplatesignature_edit_object_v1_request => $ezsigntemplatesignature_edit_object_v1_ezsigntemplatesignature_edit_object_v1_request);
 
 #
-# ezsigntemplatesignature_get_object_v1 test
-#
-# uncomment below and update the test
-#my $ezsigntemplatesignature_get_object_v1_pki_ezsigntemplatesignature_id = undef; # replace NULL with a proper value
-#my $ezsigntemplatesignature_get_object_v1_result = $api->ezsigntemplatesignature_get_object_v1(pki_ezsigntemplatesignature_id => $ezsigntemplatesignature_get_object_v1_pki_ezsigntemplatesignature_id);
-
-#
 # ezsigntemplatesignature_get_object_v2 test
 #
 # uncomment below and update the test

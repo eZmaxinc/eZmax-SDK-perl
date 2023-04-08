@@ -49,57 +49,104 @@ sub new {
 
 
 #
-# usergroup_get_autocomplete_v1
+# usergroup_create_object_v1
 #
-# Retrieve Usergroups and IDs
+# Create a new Usergroup
 #
-# @param string $s_selector The type of Usergroups to return (required)
-# @param string $e_filter_active Specify which results we want to display. (optional, default to 'Active')
-# @param string $s_query Allow to filter the returned results (optional)
-# @param HeaderAcceptLanguage $accept_language  (optional)
+# @param UsergroupCreateObjectV1Request $usergroup_create_object_v1_request  (required)
 {
     my $params = {
-    's_selector' => {
-        data_type => 'string',
-        description => 'The type of Usergroups to return',
+    'usergroup_create_object_v1_request' => {
+        data_type => 'UsergroupCreateObjectV1Request',
+        description => '',
         required => '1',
     },
-    'e_filter_active' => {
-        data_type => 'string',
-        description => 'Specify which results we want to display.',
-        required => '0',
-    },
-    's_query' => {
-        data_type => 'string',
-        description => 'Allow to filter the returned results',
-        required => '0',
-    },
-    'accept_language' => {
-        data_type => 'HeaderAcceptLanguage',
-        description => '',
-        required => '0',
-    },
     };
-    __PACKAGE__->method_documentation->{ 'usergroup_get_autocomplete_v1' } = {
-        summary => 'Retrieve Usergroups and IDs',
+    __PACKAGE__->method_documentation->{ 'usergroup_create_object_v1' } = {
+        summary => 'Create a new Usergroup',
         params => $params,
-        returns => 'CommonGetAutocompleteV1Response',
+        returns => 'UsergroupCreateObjectV1Response',
         };
 }
-# @return CommonGetAutocompleteV1Response
+# @return UsergroupCreateObjectV1Response
 #
-sub usergroup_get_autocomplete_v1 {
+sub usergroup_create_object_v1 {
     my ($self, %args) = @_;
 
-    # verify the required parameter 's_selector' is set
-    unless (exists $args{'s_selector'}) {
-      croak("Missing the required parameter 's_selector' when calling usergroup_get_autocomplete_v1");
+    # verify the required parameter 'usergroup_create_object_v1_request' is set
+    unless (exists $args{'usergroup_create_object_v1_request'}) {
+      croak("Missing the required parameter 'usergroup_create_object_v1_request' when calling usergroup_create_object_v1");
     }
 
     # parse inputs
-    my $_resource_path = '/1/object/usergroup/getAutocomplete/{sSelector}';
+    my $_resource_path = '/1/object/usergroup';
 
-    my $_method = 'GET';
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'usergroup_create_object_v1_request'}) {
+        $_body_data = $args{'usergroup_create_object_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('UsergroupCreateObjectV1Response', $response);
+    return $_response_object;
+}
+
+#
+# usergroup_delete_object_v1
+#
+# Delete an existing Usergroup
+#
+# @param int $pki_usergroup_id The unique ID of the Usergroup (required)
+{
+    my $params = {
+    'pki_usergroup_id' => {
+        data_type => 'int',
+        description => 'The unique ID of the Usergroup',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'usergroup_delete_object_v1' } = {
+        summary => 'Delete an existing Usergroup',
+        params => $params,
+        returns => 'UsergroupDeleteObjectV1Response',
+        };
+}
+# @return UsergroupDeleteObjectV1Response
+#
+sub usergroup_delete_object_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_usergroup_id' is set
+    unless (exists $args{'pki_usergroup_id'}) {
+      croak("Missing the required parameter 'pki_usergroup_id' when calling usergroup_delete_object_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/usergroup/{pkiUsergroupID}';
+
+    my $_method = 'DELETE';
     my $query_params = {};
     my $header_params = {};
     my $form_params = {};
@@ -111,25 +158,10 @@ sub usergroup_get_autocomplete_v1 {
     }
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
 
-    # query params
-    if ( exists $args{'e_filter_active'}) {
-        $query_params->{'eFilterActive'} = $self->{api_client}->to_query_value($args{'e_filter_active'});
-    }
-
-    # query params
-    if ( exists $args{'s_query'}) {
-        $query_params->{'sQuery'} = $self->{api_client}->to_query_value($args{'s_query'});
-    }
-
-    # header params
-    if ( exists $args{'accept_language'}) {
-        $header_params->{'Accept-Language'} = $self->{api_client}->to_header_value($args{'accept_language'});
-    }
-
     # path params
-    if ( exists $args{'s_selector'}) {
-        my $_base_variable = "{" . "sSelector" . "}";
-        my $_base_value = $self->{api_client}->to_path_value($args{'s_selector'});
+    if ( exists $args{'pki_usergroup_id'}) {
+        my $_base_variable = "{" . "pkiUsergroupID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_usergroup_id'});
         $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
@@ -144,7 +176,90 @@ sub usergroup_get_autocomplete_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonGetAutocompleteV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('UsergroupDeleteObjectV1Response', $response);
+    return $_response_object;
+}
+
+#
+# usergroup_edit_object_v1
+#
+# Edit an existing Usergroup
+#
+# @param int $pki_usergroup_id The unique ID of the Usergroup (required)
+# @param UsergroupEditObjectV1Request $usergroup_edit_object_v1_request  (required)
+{
+    my $params = {
+    'pki_usergroup_id' => {
+        data_type => 'int',
+        description => 'The unique ID of the Usergroup',
+        required => '1',
+    },
+    'usergroup_edit_object_v1_request' => {
+        data_type => 'UsergroupEditObjectV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'usergroup_edit_object_v1' } = {
+        summary => 'Edit an existing Usergroup',
+        params => $params,
+        returns => 'UsergroupEditObjectV1Response',
+        };
+}
+# @return UsergroupEditObjectV1Response
+#
+sub usergroup_edit_object_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_usergroup_id' is set
+    unless (exists $args{'pki_usergroup_id'}) {
+      croak("Missing the required parameter 'pki_usergroup_id' when calling usergroup_edit_object_v1");
+    }
+
+    # verify the required parameter 'usergroup_edit_object_v1_request' is set
+    unless (exists $args{'usergroup_edit_object_v1_request'}) {
+      croak("Missing the required parameter 'usergroup_edit_object_v1_request' when calling usergroup_edit_object_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/usergroup/{pkiUsergroupID}';
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_usergroup_id'}) {
+        my $_base_variable = "{" . "pkiUsergroupID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_usergroup_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'usergroup_edit_object_v1_request'}) {
+        $_body_data = $args{'usergroup_edit_object_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('UsergroupEditObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -245,6 +360,244 @@ sub usergroup_get_autocomplete_v2 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('UsergroupGetAutocompleteV2Response', $response);
+    return $_response_object;
+}
+
+#
+# usergroup_get_list_v1
+#
+# Retrieve Usergroup list
+#
+# @param string $e_order_by Specify how you want the results to be sorted (optional)
+# @param int $i_row_max  (optional)
+# @param int $i_row_offset  (optional)
+# @param HeaderAcceptLanguage $accept_language  (optional)
+# @param string $s_filter  (optional)
+{
+    my $params = {
+    'e_order_by' => {
+        data_type => 'string',
+        description => 'Specify how you want the results to be sorted',
+        required => '0',
+    },
+    'i_row_max' => {
+        data_type => 'int',
+        description => '',
+        required => '0',
+    },
+    'i_row_offset' => {
+        data_type => 'int',
+        description => '',
+        required => '0',
+    },
+    'accept_language' => {
+        data_type => 'HeaderAcceptLanguage',
+        description => '',
+        required => '0',
+    },
+    's_filter' => {
+        data_type => 'string',
+        description => '',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'usergroup_get_list_v1' } = {
+        summary => 'Retrieve Usergroup list',
+        params => $params,
+        returns => 'UsergroupGetListV1Response',
+        };
+}
+# @return UsergroupGetListV1Response
+#
+sub usergroup_get_list_v1 {
+    my ($self, %args) = @_;
+
+    # parse inputs
+    my $_resource_path = '/1/object/usergroup/getList';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # query params
+    if ( exists $args{'e_order_by'}) {
+        $query_params->{'eOrderBy'} = $self->{api_client}->to_query_value($args{'e_order_by'});
+    }
+
+    # query params
+    if ( exists $args{'i_row_max'}) {
+        $query_params->{'iRowMax'} = $self->{api_client}->to_query_value($args{'i_row_max'});
+    }
+
+    # query params
+    if ( exists $args{'i_row_offset'}) {
+        $query_params->{'iRowOffset'} = $self->{api_client}->to_query_value($args{'i_row_offset'});
+    }
+
+    # query params
+    if ( exists $args{'s_filter'}) {
+        $query_params->{'sFilter'} = $self->{api_client}->to_query_value($args{'s_filter'});
+    }
+
+    # header params
+    if ( exists $args{'accept_language'}) {
+        $header_params->{'Accept-Language'} = $self->{api_client}->to_header_value($args{'accept_language'});
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('UsergroupGetListV1Response', $response);
+    return $_response_object;
+}
+
+#
+# usergroup_get_members_v1
+#
+# Retrieve an existing Usergroup's members
+#
+# @param int $pki_usergroup_id The unique ID of the Usergroup (required)
+{
+    my $params = {
+    'pki_usergroup_id' => {
+        data_type => 'int',
+        description => 'The unique ID of the Usergroup',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'usergroup_get_members_v1' } = {
+        summary => 'Retrieve an existing Usergroup&#39;s members',
+        params => $params,
+        returns => 'UsergroupGetMembersV1Response',
+        };
+}
+# @return UsergroupGetMembersV1Response
+#
+sub usergroup_get_members_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_usergroup_id' is set
+    unless (exists $args{'pki_usergroup_id'}) {
+      croak("Missing the required parameter 'pki_usergroup_id' when calling usergroup_get_members_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/usergroup/{pkiUsergroupID}/getMembers';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_usergroup_id'}) {
+        my $_base_variable = "{" . "pkiUsergroupID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_usergroup_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('UsergroupGetMembersV1Response', $response);
+    return $_response_object;
+}
+
+#
+# usergroup_get_object_v2
+#
+# Retrieve an existing Usergroup
+#
+# @param int $pki_usergroup_id The unique ID of the Usergroup (required)
+{
+    my $params = {
+    'pki_usergroup_id' => {
+        data_type => 'int',
+        description => 'The unique ID of the Usergroup',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'usergroup_get_object_v2' } = {
+        summary => 'Retrieve an existing Usergroup',
+        params => $params,
+        returns => 'UsergroupGetObjectV2Response',
+        };
+}
+# @return UsergroupGetObjectV2Response
+#
+sub usergroup_get_object_v2 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_usergroup_id' is set
+    unless (exists $args{'pki_usergroup_id'}) {
+      croak("Missing the required parameter 'pki_usergroup_id' when calling usergroup_get_object_v2");
+    }
+
+    # parse inputs
+    my $_resource_path = '/2/object/usergroup/{pkiUsergroupID}';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_usergroup_id'}) {
+        my $_base_variable = "{" . "pkiUsergroupID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_usergroup_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('UsergroupGetObjectV2Response', $response);
     return $_response_object;
 }
 

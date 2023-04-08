@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **s_ezsigntemplate_description** | **string** | The description of the Ezsigntemplate | 
 **b_ezsigntemplate_adminonly** | **boolean** | Whether the Ezsigntemplate can be accessed by admin users only (eUserType&#x3D;Normal) | 
 **s_ezsignfoldertype_name_x** | **string** | The name of the Ezsignfoldertype in the language of the requester | 
+**obj_audit** | [**CommonAudit**](CommonAudit.md) |  | 
 **obj_ezsigntemplatedocument** | [**EzsigntemplatedocumentResponse**](EzsigntemplatedocumentResponse.md) |  | [optional] 
 **a_obj_ezsigntemplatesigner** | [**ARRAY[EzsigntemplatesignerResponseCompound]**](EzsigntemplatesignerResponseCompound.md) |  | 
 

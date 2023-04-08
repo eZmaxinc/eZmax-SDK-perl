@@ -30,16 +30,6 @@ my $api = EzmaxApi::ObjectTaxassignmentApi->new();
 isa_ok($api, 'EzmaxApi::ObjectTaxassignmentApi');
 
 #
-# taxassignment_get_autocomplete_v1 test
-#
-# uncomment below and update the test
-#my $taxassignment_get_autocomplete_v1_s_selector = undef; # replace NULL with a proper value
-#my $taxassignment_get_autocomplete_v1_e_filter_active = undef; # replace NULL with a proper value
-#my $taxassignment_get_autocomplete_v1_s_query = undef; # replace NULL with a proper value
-#my $taxassignment_get_autocomplete_v1_accept_language = undef; # replace NULL with a proper value
-#my $taxassignment_get_autocomplete_v1_result = $api->taxassignment_get_autocomplete_v1(s_selector => $taxassignment_get_autocomplete_v1_s_selector, e_filter_active => $taxassignment_get_autocomplete_v1_e_filter_active, s_query => $taxassignment_get_autocomplete_v1_s_query, accept_language => $taxassignment_get_autocomplete_v1_accept_language);
-
-#
 # taxassignment_get_autocomplete_v2 test
 #
 # uncomment below and update the test

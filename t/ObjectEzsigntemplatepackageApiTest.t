@@ -60,16 +60,6 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplatepackageApi');
 #my $ezsigntemplatepackage_edit_object_v1_result = $api->ezsigntemplatepackage_edit_object_v1(pki_ezsigntemplatepackage_id => $ezsigntemplatepackage_edit_object_v1_pki_ezsigntemplatepackage_id, ezsigntemplatepackage_edit_object_v1_request => $ezsigntemplatepackage_edit_object_v1_ezsigntemplatepackage_edit_object_v1_request);
 
 #
-# ezsigntemplatepackage_get_autocomplete_v1 test
-#
-# uncomment below and update the test
-#my $ezsigntemplatepackage_get_autocomplete_v1_s_selector = undef; # replace NULL with a proper value
-#my $ezsigntemplatepackage_get_autocomplete_v1_e_filter_active = undef; # replace NULL with a proper value
-#my $ezsigntemplatepackage_get_autocomplete_v1_s_query = undef; # replace NULL with a proper value
-#my $ezsigntemplatepackage_get_autocomplete_v1_accept_language = undef; # replace NULL with a proper value
-#my $ezsigntemplatepackage_get_autocomplete_v1_result = $api->ezsigntemplatepackage_get_autocomplete_v1(s_selector => $ezsigntemplatepackage_get_autocomplete_v1_s_selector, e_filter_active => $ezsigntemplatepackage_get_autocomplete_v1_e_filter_active, s_query => $ezsigntemplatepackage_get_autocomplete_v1_s_query, accept_language => $ezsigntemplatepackage_get_autocomplete_v1_accept_language);
-
-#
 # ezsigntemplatepackage_get_autocomplete_v2 test
 #
 # uncomment below and update the test
@@ -89,13 +79,6 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplatepackageApi');
 #my $ezsigntemplatepackage_get_list_v1_accept_language = undef; # replace NULL with a proper value
 #my $ezsigntemplatepackage_get_list_v1_s_filter = undef; # replace NULL with a proper value
 #my $ezsigntemplatepackage_get_list_v1_result = $api->ezsigntemplatepackage_get_list_v1(e_order_by => $ezsigntemplatepackage_get_list_v1_e_order_by, i_row_max => $ezsigntemplatepackage_get_list_v1_i_row_max, i_row_offset => $ezsigntemplatepackage_get_list_v1_i_row_offset, accept_language => $ezsigntemplatepackage_get_list_v1_accept_language, s_filter => $ezsigntemplatepackage_get_list_v1_s_filter);
-
-#
-# ezsigntemplatepackage_get_object_v1 test
-#
-# uncomment below and update the test
-#my $ezsigntemplatepackage_get_object_v1_pki_ezsigntemplatepackage_id = undef; # replace NULL with a proper value
-#my $ezsigntemplatepackage_get_object_v1_result = $api->ezsigntemplatepackage_get_object_v1(pki_ezsigntemplatepackage_id => $ezsigntemplatepackage_get_object_v1_pki_ezsigntemplatepackage_id);
 
 #
 # ezsigntemplatepackage_get_object_v2 test

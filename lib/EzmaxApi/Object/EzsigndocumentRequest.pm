@@ -317,6 +317,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsigndocument_externalid' => {
+        datatype => 'string',
+        base_name => 'sEzsigndocumentExternalid',
+        description => 'This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. ',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -333,7 +340,8 @@ __PACKAGE__->openapi_types( {
     's_ezsigndocument_password' => 'string',
     'e_ezsigndocument_form' => 'string',
     'dt_ezsigndocument_duedate' => 'string',
-    's_ezsigndocument_name' => 'string'
+    's_ezsigndocument_name' => 'string',
+    's_ezsigndocument_externalid' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -350,7 +358,8 @@ __PACKAGE__->attribute_map( {
     's_ezsigndocument_password' => 'sEzsigndocumentPassword',
     'e_ezsigndocument_form' => 'eEzsigndocumentForm',
     'dt_ezsigndocument_duedate' => 'dtEzsigndocumentDuedate',
-    's_ezsigndocument_name' => 'sEzsigndocumentName'
+    's_ezsigndocument_name' => 'sEzsigndocumentName',
+    's_ezsigndocument_externalid' => 'sEzsigndocumentExternalid'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -228,6 +228,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsignfolder_description' => {
+        datatype => 'string',
+        base_name => 'sEzsignfolderDescription',
+        description => 'The description of the Ezsignfolder',
+        format => '',
+        read_only => '',
+            },
     'e_ezsignfolder_step' => {
         datatype => 'FieldEEzsignfolderStep',
         base_name => 'eEzsignfolderStep',
@@ -260,6 +267,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'pki_ezsignfolder_id' => 'int',
+    's_ezsignfolder_description' => 'string',
     'e_ezsignfolder_step' => 'FieldEEzsignfolderStep',
     'i_ezsignfolder_signaturetotal' => 'int',
     'i_ezsignfolder_signaturesigned' => 'int',
@@ -268,6 +276,7 @@ __PACKAGE__->openapi_types( {
 
 __PACKAGE__->attribute_map( {
     'pki_ezsignfolder_id' => 'pkiEzsignfolderID',
+    's_ezsignfolder_description' => 'sEzsignfolderDescription',
     'e_ezsignfolder_step' => 'eEzsignfolderStep',
     'i_ezsignfolder_signaturetotal' => 'iEzsignfolderSignaturetotal',
     'i_ezsignfolder_signaturesigned' => 'iEzsignfolderSignaturesigned',

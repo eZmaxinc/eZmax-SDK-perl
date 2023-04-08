@@ -30,14 +30,26 @@ my $api = EzmaxApi::ObjectBillingentityinternalApi->new();
 isa_ok($api, 'EzmaxApi::ObjectBillingentityinternalApi');
 
 #
-# billingentityinternal_get_autocomplete_v1 test
+# billingentityinternal_create_object_v1 test
 #
 # uncomment below and update the test
-#my $billingentityinternal_get_autocomplete_v1_s_selector = undef; # replace NULL with a proper value
-#my $billingentityinternal_get_autocomplete_v1_e_filter_active = undef; # replace NULL with a proper value
-#my $billingentityinternal_get_autocomplete_v1_s_query = undef; # replace NULL with a proper value
-#my $billingentityinternal_get_autocomplete_v1_accept_language = undef; # replace NULL with a proper value
-#my $billingentityinternal_get_autocomplete_v1_result = $api->billingentityinternal_get_autocomplete_v1(s_selector => $billingentityinternal_get_autocomplete_v1_s_selector, e_filter_active => $billingentityinternal_get_autocomplete_v1_e_filter_active, s_query => $billingentityinternal_get_autocomplete_v1_s_query, accept_language => $billingentityinternal_get_autocomplete_v1_accept_language);
+#my $billingentityinternal_create_object_v1_billingentityinternal_create_object_v1_request = undef; # replace NULL with a proper value
+#my $billingentityinternal_create_object_v1_result = $api->billingentityinternal_create_object_v1(billingentityinternal_create_object_v1_request => $billingentityinternal_create_object_v1_billingentityinternal_create_object_v1_request);
+
+#
+# billingentityinternal_delete_object_v1 test
+#
+# uncomment below and update the test
+#my $billingentityinternal_delete_object_v1_pki_billingentityinternal_id = undef; # replace NULL with a proper value
+#my $billingentityinternal_delete_object_v1_result = $api->billingentityinternal_delete_object_v1(pki_billingentityinternal_id => $billingentityinternal_delete_object_v1_pki_billingentityinternal_id);
+
+#
+# billingentityinternal_edit_object_v1 test
+#
+# uncomment below and update the test
+#my $billingentityinternal_edit_object_v1_pki_billingentityinternal_id = undef; # replace NULL with a proper value
+#my $billingentityinternal_edit_object_v1_billingentityinternal_edit_object_v1_request = undef; # replace NULL with a proper value
+#my $billingentityinternal_edit_object_v1_result = $api->billingentityinternal_edit_object_v1(pki_billingentityinternal_id => $billingentityinternal_edit_object_v1_pki_billingentityinternal_id, billingentityinternal_edit_object_v1_request => $billingentityinternal_edit_object_v1_billingentityinternal_edit_object_v1_request);
 
 #
 # billingentityinternal_get_autocomplete_v2 test
@@ -48,4 +60,22 @@ isa_ok($api, 'EzmaxApi::ObjectBillingentityinternalApi');
 #my $billingentityinternal_get_autocomplete_v2_s_query = undef; # replace NULL with a proper value
 #my $billingentityinternal_get_autocomplete_v2_accept_language = undef; # replace NULL with a proper value
 #my $billingentityinternal_get_autocomplete_v2_result = $api->billingentityinternal_get_autocomplete_v2(s_selector => $billingentityinternal_get_autocomplete_v2_s_selector, e_filter_active => $billingentityinternal_get_autocomplete_v2_e_filter_active, s_query => $billingentityinternal_get_autocomplete_v2_s_query, accept_language => $billingentityinternal_get_autocomplete_v2_accept_language);
+
+#
+# billingentityinternal_get_list_v1 test
+#
+# uncomment below and update the test
+#my $billingentityinternal_get_list_v1_e_order_by = undef; # replace NULL with a proper value
+#my $billingentityinternal_get_list_v1_i_row_max = undef; # replace NULL with a proper value
+#my $billingentityinternal_get_list_v1_i_row_offset = undef; # replace NULL with a proper value
+#my $billingentityinternal_get_list_v1_accept_language = undef; # replace NULL with a proper value
+#my $billingentityinternal_get_list_v1_s_filter = undef; # replace NULL with a proper value
+#my $billingentityinternal_get_list_v1_result = $api->billingentityinternal_get_list_v1(e_order_by => $billingentityinternal_get_list_v1_e_order_by, i_row_max => $billingentityinternal_get_list_v1_i_row_max, i_row_offset => $billingentityinternal_get_list_v1_i_row_offset, accept_language => $billingentityinternal_get_list_v1_accept_language, s_filter => $billingentityinternal_get_list_v1_s_filter);
+
+#
+# billingentityinternal_get_object_v2 test
+#
+# uncomment below and update the test
+#my $billingentityinternal_get_object_v2_pki_billingentityinternal_id = undef; # replace NULL with a proper value
+#my $billingentityinternal_get_object_v2_result = $api->billingentityinternal_get_object_v2(pki_billingentityinternal_id => $billingentityinternal_get_object_v2_pki_billingentityinternal_id);
 

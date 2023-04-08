@@ -97,6 +97,20 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfolderApi');
 #my $ezsignfolder_get_actionable_elements_v1_result = $api->ezsignfolder_get_actionable_elements_v1(pki_ezsignfolder_id => $ezsignfolder_get_actionable_elements_v1_pki_ezsignfolder_id);
 
 #
+# ezsignfolder_get_communication_count_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_get_communication_count_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_communication_count_v1_result = $api->ezsignfolder_get_communication_count_v1(pki_ezsignfolder_id => $ezsignfolder_get_communication_count_v1_pki_ezsignfolder_id);
+
+#
+# ezsignfolder_get_communication_list_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_get_communication_list_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_communication_list_v1_result = $api->ezsignfolder_get_communication_list_v1(pki_ezsignfolder_id => $ezsignfolder_get_communication_list_v1_pki_ezsignfolder_id);
+
+#
 # ezsignfolder_get_ezsigndocuments_v1 test
 #
 # uncomment below and update the test
@@ -109,6 +123,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfolderApi');
 # uncomment below and update the test
 #my $ezsignfolder_get_ezsignfoldersignerassociations_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
 #my $ezsignfolder_get_ezsignfoldersignerassociations_v1_result = $api->ezsignfolder_get_ezsignfoldersignerassociations_v1(pki_ezsignfolder_id => $ezsignfolder_get_ezsignfoldersignerassociations_v1_pki_ezsignfolder_id);
+
+#
+# ezsignfolder_get_ezsignsignatures_automatic_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_get_ezsignsignatures_automatic_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_ezsignsignatures_automatic_v1_result = $api->ezsignfolder_get_ezsignsignatures_automatic_v1(pki_ezsignfolder_id => $ezsignfolder_get_ezsignsignatures_automatic_v1_pki_ezsignfolder_id);
 
 #
 # ezsignfolder_get_forms_data_v1 test

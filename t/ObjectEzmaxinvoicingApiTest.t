@@ -50,13 +50,6 @@ isa_ok($api, 'EzmaxApi::ObjectEzmaxinvoicingApi');
 #my $ezmaxinvoicing_get_autocomplete_v2_result = $api->ezmaxinvoicing_get_autocomplete_v2(s_selector => $ezmaxinvoicing_get_autocomplete_v2_s_selector, e_filter_active => $ezmaxinvoicing_get_autocomplete_v2_e_filter_active, s_query => $ezmaxinvoicing_get_autocomplete_v2_s_query, accept_language => $ezmaxinvoicing_get_autocomplete_v2_accept_language);
 
 #
-# ezmaxinvoicing_get_object_v1 test
-#
-# uncomment below and update the test
-#my $ezmaxinvoicing_get_object_v1_pki_ezmaxinvoicing_id = undef; # replace NULL with a proper value
-#my $ezmaxinvoicing_get_object_v1_result = $api->ezmaxinvoicing_get_object_v1(pki_ezmaxinvoicing_id => $ezmaxinvoicing_get_object_v1_pki_ezmaxinvoicing_id);
-
-#
 # ezmaxinvoicing_get_object_v2 test
 #
 # uncomment below and update the test

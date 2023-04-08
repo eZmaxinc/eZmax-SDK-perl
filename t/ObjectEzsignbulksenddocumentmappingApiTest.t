@@ -44,13 +44,6 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignbulksenddocumentmappingApi');
 #my $ezsignbulksenddocumentmapping_delete_object_v1_result = $api->ezsignbulksenddocumentmapping_delete_object_v1(pki_ezsignbulksenddocumentmapping_id => $ezsignbulksenddocumentmapping_delete_object_v1_pki_ezsignbulksenddocumentmapping_id);
 
 #
-# ezsignbulksenddocumentmapping_get_object_v1 test
-#
-# uncomment below and update the test
-#my $ezsignbulksenddocumentmapping_get_object_v1_pki_ezsignbulksenddocumentmapping_id = undef; # replace NULL with a proper value
-#my $ezsignbulksenddocumentmapping_get_object_v1_result = $api->ezsignbulksenddocumentmapping_get_object_v1(pki_ezsignbulksenddocumentmapping_id => $ezsignbulksenddocumentmapping_get_object_v1_pki_ezsignbulksenddocumentmapping_id);
-
-#
 # ezsignbulksenddocumentmapping_get_object_v2 test
 #
 # uncomment below and update the test

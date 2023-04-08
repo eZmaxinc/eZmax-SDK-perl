@@ -44,13 +44,6 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplatepackagesignermembershipApi');
 #my $ezsigntemplatepackagesignermembership_delete_object_v1_result = $api->ezsigntemplatepackagesignermembership_delete_object_v1(pki_ezsigntemplatepackagesignermembership_id => $ezsigntemplatepackagesignermembership_delete_object_v1_pki_ezsigntemplatepackagesignermembership_id);
 
 #
-# ezsigntemplatepackagesignermembership_get_object_v1 test
-#
-# uncomment below and update the test
-#my $ezsigntemplatepackagesignermembership_get_object_v1_pki_ezsigntemplatepackagesignermembership_id = undef; # replace NULL with a proper value
-#my $ezsigntemplatepackagesignermembership_get_object_v1_result = $api->ezsigntemplatepackagesignermembership_get_object_v1(pki_ezsigntemplatepackagesignermembership_id => $ezsigntemplatepackagesignermembership_get_object_v1_pki_ezsigntemplatepackagesignermembership_id);
-
-#
 # ezsigntemplatepackagesignermembership_get_object_v2 test
 #
 # uncomment below and update the test

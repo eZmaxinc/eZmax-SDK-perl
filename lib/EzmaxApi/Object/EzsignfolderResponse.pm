@@ -362,6 +362,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsignfolder_externalid' => {
+        datatype => 'string',
+        base_name => 'sEzsignfolderExternalid',
+        description => 'This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. ',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -384,7 +391,8 @@ __PACKAGE__->openapi_types( {
     'e_ezsignfolder_step' => 'FieldEEzsignfolderStep',
     'dt_ezsignfolder_close' => 'string',
     't_ezsignfolder_message' => 'string',
-    'obj_audit' => 'CommonAudit'
+    'obj_audit' => 'CommonAudit',
+    's_ezsignfolder_externalid' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -407,7 +415,8 @@ __PACKAGE__->attribute_map( {
     'e_ezsignfolder_step' => 'eEzsignfolderStep',
     'dt_ezsignfolder_close' => 'dtEzsignfolderClose',
     't_ezsignfolder_message' => 'tEzsignfolderMessage',
-    'obj_audit' => 'objAudit'
+    'obj_audit' => 'objAudit',
+    's_ezsignfolder_externalid' => 'sEzsignfolderExternalid'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pki_paymentterm_id** | **int** | The unique ID of the Paymentterm | 
 **s_paymentterm_code** | **string** | The code of the Paymentterm | 
+**e_paymentterm_type** | [**FieldEPaymenttermType**](FieldEPaymenttermType.md) |  | 
+**i_paymentterm_day** | **int** | The day of the Paymentterm | 
 **s_paymentterm_description_x** | **string** | The description of the Paymentterm in the language of the requester | 
 **b_paymentterm_isactive** | **boolean** | Whether the Paymentterm is active or not | 
 

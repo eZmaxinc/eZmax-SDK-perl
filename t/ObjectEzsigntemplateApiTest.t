@@ -60,16 +60,6 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplateApi');
 #my $ezsigntemplate_edit_object_v1_result = $api->ezsigntemplate_edit_object_v1(pki_ezsigntemplate_id => $ezsigntemplate_edit_object_v1_pki_ezsigntemplate_id, ezsigntemplate_edit_object_v1_request => $ezsigntemplate_edit_object_v1_ezsigntemplate_edit_object_v1_request);
 
 #
-# ezsigntemplate_get_autocomplete_v1 test
-#
-# uncomment below and update the test
-#my $ezsigntemplate_get_autocomplete_v1_s_selector = undef; # replace NULL with a proper value
-#my $ezsigntemplate_get_autocomplete_v1_e_filter_active = undef; # replace NULL with a proper value
-#my $ezsigntemplate_get_autocomplete_v1_s_query = undef; # replace NULL with a proper value
-#my $ezsigntemplate_get_autocomplete_v1_accept_language = undef; # replace NULL with a proper value
-#my $ezsigntemplate_get_autocomplete_v1_result = $api->ezsigntemplate_get_autocomplete_v1(s_selector => $ezsigntemplate_get_autocomplete_v1_s_selector, e_filter_active => $ezsigntemplate_get_autocomplete_v1_e_filter_active, s_query => $ezsigntemplate_get_autocomplete_v1_s_query, accept_language => $ezsigntemplate_get_autocomplete_v1_accept_language);
-
-#
 # ezsigntemplate_get_autocomplete_v2 test
 #
 # uncomment below and update the test

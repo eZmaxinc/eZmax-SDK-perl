@@ -71,13 +71,6 @@ isa_ok($api, 'EzmaxApi::ObjectWebhookApi');
 #my $webhook_get_list_v1_result = $api->webhook_get_list_v1(e_order_by => $webhook_get_list_v1_e_order_by, i_row_max => $webhook_get_list_v1_i_row_max, i_row_offset => $webhook_get_list_v1_i_row_offset, accept_language => $webhook_get_list_v1_accept_language, s_filter => $webhook_get_list_v1_s_filter);
 
 #
-# webhook_get_object_v1 test
-#
-# uncomment below and update the test
-#my $webhook_get_object_v1_pki_webhook_id = undef; # replace NULL with a proper value
-#my $webhook_get_object_v1_result = $api->webhook_get_object_v1(pki_webhook_id => $webhook_get_object_v1_pki_webhook_id);
-
-#
 # webhook_get_object_v2 test
 #
 # uncomment below and update the test

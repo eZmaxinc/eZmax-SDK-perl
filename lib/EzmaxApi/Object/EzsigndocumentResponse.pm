@@ -347,10 +347,24 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsigndocument_hassignedsignatures' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigndocumentHassignedsignatures',
+        description => 'If the Ezsigndocument contains signed signatures (From internal or external sources)',
+        format => '',
+        read_only => '',
+            },
     'obj_audit' => {
         datatype => 'CommonAudit',
         base_name => 'objAudit',
         description => '',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigndocument_externalid' => {
+        datatype => 'string',
+        base_name => 'sEzsigndocumentExternalid',
+        description => 'This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. ',
         format => '',
         read_only => '',
             },
@@ -375,7 +389,9 @@ __PACKAGE__->openapi_types( {
     't_ezsigndocument_declinedtosignreason' => 'string',
     's_ezsigndocument_md5signed' => 'string',
     'b_ezsigndocument_ezsignform' => 'boolean',
-    'obj_audit' => 'CommonAudit'
+    'b_ezsigndocument_hassignedsignatures' => 'boolean',
+    'obj_audit' => 'CommonAudit',
+    's_ezsigndocument_externalid' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -397,7 +413,9 @@ __PACKAGE__->attribute_map( {
     't_ezsigndocument_declinedtosignreason' => 'tEzsigndocumentDeclinedtosignreason',
     's_ezsigndocument_md5signed' => 'sEzsigndocumentMD5signed',
     'b_ezsigndocument_ezsignform' => 'bEzsigndocumentEzsignform',
-    'obj_audit' => 'objAudit'
+    'b_ezsigndocument_hassignedsignatures' => 'bEzsigndocumentHassignedsignatures',
+    'obj_audit' => 'objAudit',
+    's_ezsigndocument_externalid' => 'sEzsigndocumentExternalid'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

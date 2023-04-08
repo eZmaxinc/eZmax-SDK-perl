@@ -30,13 +30,6 @@ my $api = EzmaxApi::ObjectApikeyApi->new();
 isa_ok($api, 'EzmaxApi::ObjectApikeyApi');
 
 #
-# apikey_create_object_v1 test
-#
-# uncomment below and update the test
-#my $apikey_create_object_v1_apikey_create_object_v1_request = undef; # replace NULL with a proper value
-#my $apikey_create_object_v1_result = $api->apikey_create_object_v1(apikey_create_object_v1_request => $apikey_create_object_v1_apikey_create_object_v1_request);
-
-#
 # apikey_create_object_v2 test
 #
 # uncomment below and update the test

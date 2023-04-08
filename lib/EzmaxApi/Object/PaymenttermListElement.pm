@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldEPaymenttermType;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -233,6 +234,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_paymentterm_type' => {
+        datatype => 'FieldEPaymenttermType',
+        base_name => 'ePaymenttermType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'i_paymentterm_day' => {
+        datatype => 'int',
+        base_name => 'iPaymenttermDay',
+        description => 'The day of the Paymentterm',
+        format => '',
+        read_only => '',
+            },
     's_paymentterm_description_x' => {
         datatype => 'string',
         base_name => 'sPaymenttermDescriptionX',
@@ -252,6 +267,8 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'pki_paymentterm_id' => 'int',
     's_paymentterm_code' => 'string',
+    'e_paymentterm_type' => 'FieldEPaymenttermType',
+    'i_paymentterm_day' => 'int',
     's_paymentterm_description_x' => 'string',
     'b_paymentterm_isactive' => 'boolean'
 } );
@@ -259,6 +276,8 @@ __PACKAGE__->openapi_types( {
 __PACKAGE__->attribute_map( {
     'pki_paymentterm_id' => 'pkiPaymenttermID',
     's_paymentterm_code' => 'sPaymenttermCode',
+    'e_paymentterm_type' => 'ePaymenttermType',
+    'i_paymentterm_day' => 'iPaymenttermDay',
     's_paymentterm_description_x' => 'sPaymenttermDescriptionX',
     'b_paymentterm_isactive' => 'bPaymenttermIsactive'
 } );

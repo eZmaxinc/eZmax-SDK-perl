@@ -35,3 +35,14 @@ isa_ok($api, 'EzmaxApi::ObjectActivesessionApi');
 # uncomment below and update the test
 #my $activesession_get_current_v1_result = $api->activesession_get_current_v1();
 
+#
+# activesession_get_list_v1 test
+#
+# uncomment below and update the test
+#my $activesession_get_list_v1_e_order_by = undef; # replace NULL with a proper value
+#my $activesession_get_list_v1_i_row_max = undef; # replace NULL with a proper value
+#my $activesession_get_list_v1_i_row_offset = undef; # replace NULL with a proper value
+#my $activesession_get_list_v1_accept_language = undef; # replace NULL with a proper value
+#my $activesession_get_list_v1_s_filter = undef; # replace NULL with a proper value
+#my $activesession_get_list_v1_result = $api->activesession_get_list_v1(e_order_by => $activesession_get_list_v1_e_order_by, i_row_max => $activesession_get_list_v1_i_row_max, i_row_offset => $activesession_get_list_v1_i_row_offset, accept_language => $activesession_get_list_v1_accept_language, s_filter => $activesession_get_list_v1_s_filter);
+

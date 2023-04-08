@@ -30,17 +30,6 @@ my $api = EzmaxApi::ObjectEzsigntsarequirementApi->new();
 isa_ok($api, 'EzmaxApi::ObjectEzsigntsarequirementApi');
 
 #
-# ezsigntsarequirement_get_autocomplete_v1 test
-#
-# uncomment below and update the test
-#my $ezsigntsarequirement_get_autocomplete_v1_s_selector = undef; # replace NULL with a proper value
-#my $ezsigntsarequirement_get_autocomplete_v1_fki_ezsignfoldertype_id = undef; # replace NULL with a proper value
-#my $ezsigntsarequirement_get_autocomplete_v1_e_filter_active = undef; # replace NULL with a proper value
-#my $ezsigntsarequirement_get_autocomplete_v1_s_query = undef; # replace NULL with a proper value
-#my $ezsigntsarequirement_get_autocomplete_v1_accept_language = undef; # replace NULL with a proper value
-#my $ezsigntsarequirement_get_autocomplete_v1_result = $api->ezsigntsarequirement_get_autocomplete_v1(s_selector => $ezsigntsarequirement_get_autocomplete_v1_s_selector, fki_ezsignfoldertype_id => $ezsigntsarequirement_get_autocomplete_v1_fki_ezsignfoldertype_id, e_filter_active => $ezsigntsarequirement_get_autocomplete_v1_e_filter_active, s_query => $ezsigntsarequirement_get_autocomplete_v1_s_query, accept_language => $ezsigntsarequirement_get_autocomplete_v1_accept_language);
-
-#
 # ezsigntsarequirement_get_autocomplete_v2 test
 #
 # uncomment below and update the test

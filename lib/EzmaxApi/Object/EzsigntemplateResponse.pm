@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CommonAudit;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -275,6 +276,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_audit' => {
+        datatype => 'CommonAudit',
+        base_name => 'objAudit',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -285,7 +293,8 @@ __PACKAGE__->openapi_types( {
     's_language_name_x' => 'string',
     's_ezsigntemplate_description' => 'string',
     'b_ezsigntemplate_adminonly' => 'boolean',
-    's_ezsignfoldertype_name_x' => 'string'
+    's_ezsignfoldertype_name_x' => 'string',
+    'obj_audit' => 'CommonAudit'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -296,7 +305,8 @@ __PACKAGE__->attribute_map( {
     's_language_name_x' => 'sLanguageNameX',
     's_ezsigntemplate_description' => 'sEzsigntemplateDescription',
     'b_ezsigntemplate_adminonly' => 'bEzsigntemplateAdminonly',
-    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX'
+    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
+    'obj_audit' => 'objAudit'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

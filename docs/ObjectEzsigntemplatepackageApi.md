@@ -13,10 +13,8 @@ Method | HTTP request | Description
 [**ezsigntemplatepackage_delete_object_v1**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_delete_object_v1) | **DELETE** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Delete an existing Ezsigntemplatepackage
 [**ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v1**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v1) | **PUT** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners | Edit multiple Ezsigntemplatepackagesigners
 [**ezsigntemplatepackage_edit_object_v1**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_edit_object_v1) | **PUT** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Edit an existing Ezsigntemplatepackage
-[**ezsigntemplatepackage_get_autocomplete_v1**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_get_autocomplete_v1) | **GET** /1/object/ezsigntemplatepackage/getAutocomplete/{sSelector} | Retrieve Ezsigntemplatepackages and IDs
 [**ezsigntemplatepackage_get_autocomplete_v2**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_get_autocomplete_v2) | **GET** /2/object/ezsigntemplatepackage/getAutocomplete/{sSelector} | Retrieve Ezsigntemplatepackages and IDs
 [**ezsigntemplatepackage_get_list_v1**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_get_list_v1) | **GET** /1/object/ezsigntemplatepackage/getList | Retrieve Ezsigntemplatepackage list
-[**ezsigntemplatepackage_get_object_v1**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_get_object_v1) | **GET** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Retrieve an existing Ezsigntemplatepackage
 [**ezsigntemplatepackage_get_object_v2**](ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackage_get_object_v2) | **GET** /2/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Retrieve an existing Ezsigntemplatepackage
 
 
@@ -228,63 +226,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ezsigntemplatepackage_get_autocomplete_v1**
-> CommonGetAutocompleteDisabledV1Response ezsigntemplatepackage_get_autocomplete_v1(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language)
-
-Retrieve Ezsigntemplatepackages and IDs
-
-Get the list of Ezsigntemplatepackage to be used in a dropdown or autocomplete control.
-
-### Example
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectEzsigntemplatepackageApi;
-my $api_instance = EzmaxApi::ObjectEzsigntemplatepackageApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $s_selector = "s_selector_example"; # string | The type of Ezsigntemplatepackages to return
-my $e_filter_active = 'Active'; # string | Specify which results we want to display.
-my $s_query = "s_query_example"; # string | Allow to filter the returned results
-my $accept_language = new EzmaxApi.HeaderAcceptLanguage(); # HeaderAcceptLanguage | 
-
-eval {
-    my $result = $api_instance->ezsigntemplatepackage_get_autocomplete_v1(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling ObjectEzsigntemplatepackageApi->ezsigntemplatepackage_get_autocomplete_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **s_selector** | **string**| The type of Ezsigntemplatepackages to return | 
- **e_filter_active** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
- **s_query** | **string**| Allow to filter the returned results | [optional] 
- **accept_language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
-
-### Return type
-
-[**CommonGetAutocompleteDisabledV1Response**](CommonGetAutocompleteDisabledV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **ezsigntemplatepackage_get_autocomplete_v2**
 > EzsigntemplatepackageGetAutocompleteV2Response ezsigntemplatepackage_get_autocomplete_v2(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language)
 
@@ -398,57 +339,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ezsigntemplatepackage_get_object_v1**
-> EzsigntemplatepackageGetObjectV1Response ezsigntemplatepackage_get_object_v1(pki_ezsigntemplatepackage_id => $pki_ezsigntemplatepackage_id)
-
-Retrieve an existing Ezsigntemplatepackage
-
-
-
-### Example
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectEzsigntemplatepackageApi;
-my $api_instance = EzmaxApi::ObjectEzsigntemplatepackageApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $pki_ezsigntemplatepackage_id = 56; # int | 
-
-eval {
-    my $result = $api_instance->ezsigntemplatepackage_get_object_v1(pki_ezsigntemplatepackage_id => $pki_ezsigntemplatepackage_id);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling ObjectEzsigntemplatepackageApi->ezsigntemplatepackage_get_object_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pki_ezsigntemplatepackage_id** | **int**|  | 
-
-### Return type
-
-[**EzsigntemplatepackageGetObjectV1Response**](EzsigntemplatepackageGetObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
