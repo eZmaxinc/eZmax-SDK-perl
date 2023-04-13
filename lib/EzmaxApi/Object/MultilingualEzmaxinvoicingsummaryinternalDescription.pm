@@ -222,14 +222,14 @@ __PACKAGE__->method_documentation({
     's_ezmaxinvoicingsummaryinternal_description1' => {
         datatype => 'string',
         base_name => 'sEzmaxinvoicingsummaryinternalDescription1',
-        description => 'The Ezmaxinvoicingsummaryinternal description in french',
+        description => 'The Ezmaxinvoicingsummaryinternal description in French',
         format => '',
         read_only => '',
             },
     's_ezmaxinvoicingsummaryinternal_description2' => {
         datatype => 'string',
         base_name => 'sEzmaxinvoicingsummaryinternalDescription2',
-        description => 'The Ezmaxinvoicingsummaryinternal description in english',
+        description => 'The Ezmaxinvoicingsummaryinternal description in English',
         format => '',
         read_only => '',
             },

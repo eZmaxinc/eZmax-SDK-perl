@@ -222,14 +222,14 @@ __PACKAGE__->method_documentation({
     's_paymentterm_description1' => {
         datatype => 'string',
         base_name => 'sPaymenttermDescription1',
-        description => 'The description of the Paymentterm in french',
+        description => 'The description of the Paymentterm in French',
         format => '',
         read_only => '',
             },
     's_paymentterm_description2' => {
         datatype => 'string',
         base_name => 'sPaymenttermDescription2',
-        description => 'The description of the Paymentterm in english',
+        description => 'The description of the Paymentterm in English',
         format => '',
         read_only => '',
             },
