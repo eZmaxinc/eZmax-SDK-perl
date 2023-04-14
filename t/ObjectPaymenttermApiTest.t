@@ -37,13 +37,6 @@ isa_ok($api, 'EzmaxApi::ObjectPaymenttermApi');
 #my $paymentterm_create_object_v1_result = $api->paymentterm_create_object_v1(paymentterm_create_object_v1_request => $paymentterm_create_object_v1_paymentterm_create_object_v1_request);
 
 #
-# paymentterm_delete_object_v1 test
-#
-# uncomment below and update the test
-#my $paymentterm_delete_object_v1_pki_paymentterm_id = undef; # replace NULL with a proper value
-#my $paymentterm_delete_object_v1_result = $api->paymentterm_delete_object_v1(pki_paymentterm_id => $paymentterm_delete_object_v1_pki_paymentterm_id);
-
-#
 # paymentterm_edit_object_v1 test
 #
 # uncomment below and update the test

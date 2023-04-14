@@ -39,10 +39,3 @@ isa_ok($api, 'EzmaxApi::ObjectDepartmentApi');
 #my $department_get_autocomplete_v2_accept_language = undef; # replace NULL with a proper value
 #my $department_get_autocomplete_v2_result = $api->department_get_autocomplete_v2(s_selector => $department_get_autocomplete_v2_s_selector, e_filter_active => $department_get_autocomplete_v2_e_filter_active, s_query => $department_get_autocomplete_v2_s_query, accept_language => $department_get_autocomplete_v2_accept_language);
 
-#
-# department_get_members_v1 test
-#
-# uncomment below and update the test
-#my $department_get_members_v1_pki_department_id = undef; # replace NULL with a proper value
-#my $department_get_members_v1_result = $api->department_get_members_v1(pki_department_id => $department_get_members_v1_pki_department_id);
-

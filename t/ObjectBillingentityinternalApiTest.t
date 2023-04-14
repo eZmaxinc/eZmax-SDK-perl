@@ -37,13 +37,6 @@ isa_ok($api, 'EzmaxApi::ObjectBillingentityinternalApi');
 #my $billingentityinternal_create_object_v1_result = $api->billingentityinternal_create_object_v1(billingentityinternal_create_object_v1_request => $billingentityinternal_create_object_v1_billingentityinternal_create_object_v1_request);
 
 #
-# billingentityinternal_delete_object_v1 test
-#
-# uncomment below and update the test
-#my $billingentityinternal_delete_object_v1_pki_billingentityinternal_id = undef; # replace NULL with a proper value
-#my $billingentityinternal_delete_object_v1_result = $api->billingentityinternal_delete_object_v1(pki_billingentityinternal_id => $billingentityinternal_delete_object_v1_pki_billingentityinternal_id);
-
-#
 # billingentityinternal_edit_object_v1 test
 #
 # uncomment below and update the test

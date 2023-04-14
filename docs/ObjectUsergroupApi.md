@@ -10,11 +10,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**usergroup_create_object_v1**](ObjectUsergroupApi.md#usergroup_create_object_v1) | **POST** /1/object/usergroup | Create a new Usergroup
-[**usergroup_delete_object_v1**](ObjectUsergroupApi.md#usergroup_delete_object_v1) | **DELETE** /1/object/usergroup/{pkiUsergroupID} | Delete an existing Usergroup
 [**usergroup_edit_object_v1**](ObjectUsergroupApi.md#usergroup_edit_object_v1) | **PUT** /1/object/usergroup/{pkiUsergroupID} | Edit an existing Usergroup
 [**usergroup_get_autocomplete_v2**](ObjectUsergroupApi.md#usergroup_get_autocomplete_v2) | **GET** /2/object/usergroup/getAutocomplete/{sSelector} | Retrieve Usergroups and IDs
 [**usergroup_get_list_v1**](ObjectUsergroupApi.md#usergroup_get_list_v1) | **GET** /1/object/usergroup/getList | Retrieve Usergroup list
-[**usergroup_get_members_v1**](ObjectUsergroupApi.md#usergroup_get_members_v1) | **GET** /1/object/usergroup/{pkiUsergroupID}/getMembers | Retrieve an existing Usergroup&#39;s members
 [**usergroup_get_object_v2**](ObjectUsergroupApi.md#usergroup_get_object_v2) | **GET** /2/object/usergroup/{pkiUsergroupID} | Retrieve an existing Usergroup
 
 
@@ -65,57 +63,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **usergroup_delete_object_v1**
-> UsergroupDeleteObjectV1Response usergroup_delete_object_v1(pki_usergroup_id => $pki_usergroup_id)
-
-Delete an existing Usergroup
-
-
-
-### Example
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectUsergroupApi;
-my $api_instance = EzmaxApi::ObjectUsergroupApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $pki_usergroup_id = 56; # int | The unique ID of the Usergroup
-
-eval {
-    my $result = $api_instance->usergroup_delete_object_v1(pki_usergroup_id => $pki_usergroup_id);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling ObjectUsergroupApi->usergroup_delete_object_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pki_usergroup_id** | **int**| The unique ID of the Usergroup | 
-
-### Return type
-
-[**UsergroupDeleteObjectV1Response**](UsergroupDeleteObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -286,55 +233,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **usergroup_get_members_v1**
-> UsergroupGetMembersV1Response usergroup_get_members_v1(pki_usergroup_id => $pki_usergroup_id)
-
-Retrieve an existing Usergroup's members
-
-### Example
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectUsergroupApi;
-my $api_instance = EzmaxApi::ObjectUsergroupApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $pki_usergroup_id = 56; # int | The unique ID of the Usergroup
-
-eval {
-    my $result = $api_instance->usergroup_get_members_v1(pki_usergroup_id => $pki_usergroup_id);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling ObjectUsergroupApi->usergroup_get_members_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pki_usergroup_id** | **int**| The unique ID of the Usergroup | 
-
-### Return type
-
-[**UsergroupGetMembersV1Response**](UsergroupGetMembersV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

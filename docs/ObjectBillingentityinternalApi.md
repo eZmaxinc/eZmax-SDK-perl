@@ -10,7 +10,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**billingentityinternal_create_object_v1**](ObjectBillingentityinternalApi.md#billingentityinternal_create_object_v1) | **POST** /1/object/billingentityinternal | Create a new Billingentityinternal
-[**billingentityinternal_delete_object_v1**](ObjectBillingentityinternalApi.md#billingentityinternal_delete_object_v1) | **DELETE** /1/object/billingentityinternal/{pkiBillingentityinternalID} | Delete an existing Billingentityinternal
 [**billingentityinternal_edit_object_v1**](ObjectBillingentityinternalApi.md#billingentityinternal_edit_object_v1) | **PUT** /1/object/billingentityinternal/{pkiBillingentityinternalID} | Edit an existing Billingentityinternal
 [**billingentityinternal_get_autocomplete_v2**](ObjectBillingentityinternalApi.md#billingentityinternal_get_autocomplete_v2) | **GET** /2/object/billingentityinternal/getAutocomplete/{sSelector} | Retrieve Billingentityinternals and IDs
 [**billingentityinternal_get_list_v1**](ObjectBillingentityinternalApi.md#billingentityinternal_get_list_v1) | **GET** /1/object/billingentityinternal/getList | Retrieve Billingentityinternal list
@@ -64,57 +63,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **billingentityinternal_delete_object_v1**
-> BillingentityinternalDeleteObjectV1Response billingentityinternal_delete_object_v1(pki_billingentityinternal_id => $pki_billingentityinternal_id)
-
-Delete an existing Billingentityinternal
-
-
-
-### Example
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectBillingentityinternalApi;
-my $api_instance = EzmaxApi::ObjectBillingentityinternalApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $pki_billingentityinternal_id = 56; # int | The unique ID of the Billingentityinternal
-
-eval {
-    my $result = $api_instance->billingentityinternal_delete_object_v1(pki_billingentityinternal_id => $pki_billingentityinternal_id);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling ObjectBillingentityinternalApi->billingentityinternal_delete_object_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pki_billingentityinternal_id** | **int**| The unique ID of the Billingentityinternal | 
-
-### Return type
-
-[**BillingentityinternalDeleteObjectV1Response**](BillingentityinternalDeleteObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

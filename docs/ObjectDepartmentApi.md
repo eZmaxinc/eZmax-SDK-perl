@@ -10,7 +10,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**department_get_autocomplete_v2**](ObjectDepartmentApi.md#department_get_autocomplete_v2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
-[**department_get_members_v1**](ObjectDepartmentApi.md#department_get_members_v1) | **GET** /1/object/department/{pkiDepartmentID}/getMembers | Retrieve an existing Department&#39;s members
 
 
 # **department_get_autocomplete_v2**
@@ -58,57 +57,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DepartmentGetAutocompleteV2Response**](DepartmentGetAutocompleteV2Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **department_get_members_v1**
-> DepartmentGetMembersV1Response department_get_members_v1(pki_department_id => $pki_department_id)
-
-Retrieve an existing Department's members
-
-
-
-### Example
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectDepartmentApi;
-my $api_instance = EzmaxApi::ObjectDepartmentApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $pki_department_id = 56; # int | 
-
-eval {
-    my $result = $api_instance->department_get_members_v1(pki_department_id => $pki_department_id);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling ObjectDepartmentApi->department_get_members_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pki_department_id** | **int**|  | 
-
-### Return type
-
-[**DepartmentGetMembersV1Response**](DepartmentGetMembersV1Response.md)
 
 ### Authorization
 

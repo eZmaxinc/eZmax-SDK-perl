@@ -10,7 +10,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**variableexpense_create_object_v1**](ObjectVariableexpenseApi.md#variableexpense_create_object_v1) | **POST** /1/object/variableexpense | Create a new Variableexpense
-[**variableexpense_delete_object_v1**](ObjectVariableexpenseApi.md#variableexpense_delete_object_v1) | **DELETE** /1/object/variableexpense/{pkiVariableexpenseID} | Delete an existing Variableexpense
 [**variableexpense_edit_object_v1**](ObjectVariableexpenseApi.md#variableexpense_edit_object_v1) | **PUT** /1/object/variableexpense/{pkiVariableexpenseID} | Edit an existing Variableexpense
 [**variableexpense_get_autocomplete_v2**](ObjectVariableexpenseApi.md#variableexpense_get_autocomplete_v2) | **GET** /2/object/variableexpense/getAutocomplete/{sSelector} | Retrieve Variableexpenses and IDs
 [**variableexpense_get_list_v1**](ObjectVariableexpenseApi.md#variableexpense_get_list_v1) | **GET** /1/object/variableexpense/getList | Retrieve Variableexpense list
@@ -64,57 +63,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **variableexpense_delete_object_v1**
-> VariableexpenseDeleteObjectV1Response variableexpense_delete_object_v1(pki_variableexpense_id => $pki_variableexpense_id)
-
-Delete an existing Variableexpense
-
-
-
-### Example
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectVariableexpenseApi;
-my $api_instance = EzmaxApi::ObjectVariableexpenseApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $pki_variableexpense_id = 56; # int | The unique ID of the Variableexpense
-
-eval {
-    my $result = $api_instance->variableexpense_delete_object_v1(pki_variableexpense_id => $pki_variableexpense_id);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling ObjectVariableexpenseApi->variableexpense_delete_object_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pki_variableexpense_id** | **int**| The unique ID of the Variableexpense | 
-
-### Return type
-
-[**VariableexpenseDeleteObjectV1Response**](VariableexpenseDeleteObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

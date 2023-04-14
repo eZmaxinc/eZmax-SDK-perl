@@ -37,13 +37,6 @@ isa_ok($api, 'EzmaxApi::ObjectVariableexpenseApi');
 #my $variableexpense_create_object_v1_result = $api->variableexpense_create_object_v1(variableexpense_create_object_v1_request => $variableexpense_create_object_v1_variableexpense_create_object_v1_request);
 
 #
-# variableexpense_delete_object_v1 test
-#
-# uncomment below and update the test
-#my $variableexpense_delete_object_v1_pki_variableexpense_id = undef; # replace NULL with a proper value
-#my $variableexpense_delete_object_v1_result = $api->variableexpense_delete_object_v1(pki_variableexpense_id => $variableexpense_delete_object_v1_pki_variableexpense_id);
-
-#
 # variableexpense_edit_object_v1 test
 #
 # uncomment below and update the test

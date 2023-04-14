@@ -10,7 +10,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**paymentterm_create_object_v1**](ObjectPaymenttermApi.md#paymentterm_create_object_v1) | **POST** /1/object/paymentterm | Create a new Paymentterm
-[**paymentterm_delete_object_v1**](ObjectPaymenttermApi.md#paymentterm_delete_object_v1) | **DELETE** /1/object/paymentterm/{pkiPaymenttermID} | Delete an existing Paymentterm
 [**paymentterm_edit_object_v1**](ObjectPaymenttermApi.md#paymentterm_edit_object_v1) | **PUT** /1/object/paymentterm/{pkiPaymenttermID} | Edit an existing Paymentterm
 [**paymentterm_get_autocomplete_v2**](ObjectPaymenttermApi.md#paymentterm_get_autocomplete_v2) | **GET** /2/object/paymentterm/getAutocomplete/{sSelector} | Retrieve Paymentterms and IDs
 [**paymentterm_get_list_v1**](ObjectPaymenttermApi.md#paymentterm_get_list_v1) | **GET** /1/object/paymentterm/getList | Retrieve Paymentterm list
@@ -64,57 +63,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **paymentterm_delete_object_v1**
-> PaymenttermDeleteObjectV1Response paymentterm_delete_object_v1(pki_paymentterm_id => $pki_paymentterm_id)
-
-Delete an existing Paymentterm
-
-
-
-### Example
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectPaymenttermApi;
-my $api_instance = EzmaxApi::ObjectPaymenttermApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $pki_paymentterm_id = 56; # int | 
-
-eval {
-    my $result = $api_instance->paymentterm_delete_object_v1(pki_paymentterm_id => $pki_paymentterm_id);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling ObjectPaymenttermApi->paymentterm_delete_object_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pki_paymentterm_id** | **int**|  | 
-
-### Return type
-
-[**PaymenttermDeleteObjectV1Response**](PaymenttermDeleteObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
