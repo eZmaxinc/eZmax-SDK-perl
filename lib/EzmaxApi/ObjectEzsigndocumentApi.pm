@@ -811,6 +811,73 @@ sub ezsigndocument_get_actionable_elements_v1 {
 }
 
 #
+# ezsigndocument_get_completed_elements_v1
+#
+# Retrieve completed elements for the Ezsigndocument
+#
+# @param int $pki_ezsigndocument_id  (required)
+{
+    my $params = {
+    'pki_ezsigndocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_get_completed_elements_v1' } = {
+        summary => 'Retrieve completed elements for the Ezsigndocument',
+        params => $params,
+        returns => 'EzsigndocumentGetCompletedElementsV1Response',
+        };
+}
+# @return EzsigndocumentGetCompletedElementsV1Response
+#
+sub ezsigndocument_get_completed_elements_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigndocument_id' is set
+    unless (exists $args{'pki_ezsigndocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_get_completed_elements_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsigndocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigndocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigndocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentGetCompletedElementsV1Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsigndocument_get_download_url_v1
 #
 # Retrieve a URL to download documents.

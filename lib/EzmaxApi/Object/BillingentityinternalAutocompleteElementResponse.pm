@@ -219,17 +219,17 @@ __PACKAGE__->class_documentation({description => 'A Billingentityinternal Autoco
 }                                 );
 
 __PACKAGE__->method_documentation({
-    's_billingentityinternal_description_x' => {
-        datatype => 'string',
-        base_name => 'sBillingentityinternalDescriptionX',
-        description => 'The description of the Billingentityinternal in the language of the requester',
-        format => '',
-        read_only => '',
-            },
     'pki_billingentityinternal_id' => {
         datatype => 'int',
         base_name => 'pkiBillingentityinternalID',
         description => 'The unique ID of the Billingentityinternal.',
+        format => '',
+        read_only => '',
+            },
+    's_billingentityinternal_description_x' => {
+        datatype => 'string',
+        base_name => 'sBillingentityinternalDescriptionX',
+        description => 'The description of the Billingentityinternal in the language of the requester',
         format => '',
         read_only => '',
             },
@@ -243,14 +243,14 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    's_billingentityinternal_description_x' => 'string',
     'pki_billingentityinternal_id' => 'int',
+    's_billingentityinternal_description_x' => 'string',
     'b_billingentityinternal_isactive' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
-    's_billingentityinternal_description_x' => 'sBillingentityinternalDescriptionX',
     'pki_billingentityinternal_id' => 'pkiBillingentityinternalID',
+    's_billingentityinternal_description_x' => 'sBillingentityinternalDescriptionX',
     'b_billingentityinternal_isactive' => 'bBillingentityinternalIsactive'
 } );
 

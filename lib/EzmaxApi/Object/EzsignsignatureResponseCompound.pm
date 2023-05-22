@@ -30,6 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CustomContactNameResponse;
+use EzmaxApi::Object::CustomCreditcardtransactionResponse;
 use EzmaxApi::Object::EzsignsignaturecustomdateResponseCompound;
 use EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource;
 use EzmaxApi::Object::FieldEEzsignsignatureFont;
@@ -336,6 +338,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'dt_ezsignsignature_date' => {
+        datatype => 'string',
+        base_name => 'dtEzsignsignatureDate',
+        description => 'The date the Ezsignsignature was signed',
+        format => '',
+        read_only => '',
+            },
+    'obj_contact_name' => {
+        datatype => 'CustomContactNameResponse',
+        base_name => 'objContactName',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'b_ezsignsignature_customdate' => {
         datatype => 'boolean',
         base_name => 'bEzsignsignatureCustomdate',
@@ -347,6 +363,13 @@ __PACKAGE__->method_documentation({
         datatype => 'ARRAY[EzsignsignaturecustomdateResponseCompound]',
         base_name => 'a_objEzsignsignaturecustomdate',
         description => 'An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all.',
+        format => '',
+        read_only => '',
+            },
+    'obj_creditcardtransaction' => {
+        datatype => 'CustomCreditcardtransactionResponse',
+        base_name => 'objCreditcardtransaction',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -369,8 +392,11 @@ __PACKAGE__->openapi_types( {
     'e_ezsignsignature_attachmentnamesource' => 'FieldEEzsignsignatureAttachmentnamesource',
     'b_ezsignsignature_required' => 'boolean',
     'fki_ezsignfoldersignerassociation_id_validation' => 'int',
+    'dt_ezsignsignature_date' => 'string',
+    'obj_contact_name' => 'CustomContactNameResponse',
     'b_ezsignsignature_customdate' => 'boolean',
-    'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateResponseCompound]'
+    'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateResponseCompound]',
+    'obj_creditcardtransaction' => 'CustomCreditcardtransactionResponse'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -390,8 +416,11 @@ __PACKAGE__->attribute_map( {
     'e_ezsignsignature_attachmentnamesource' => 'eEzsignsignatureAttachmentnamesource',
     'b_ezsignsignature_required' => 'bEzsignsignatureRequired',
     'fki_ezsignfoldersignerassociation_id_validation' => 'fkiEzsignfoldersignerassociationIDValidation',
+    'dt_ezsignsignature_date' => 'dtEzsignsignatureDate',
+    'obj_contact_name' => 'objContactName',
     'b_ezsignsignature_customdate' => 'bEzsignsignatureCustomdate',
-    'a_obj_ezsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate'
+    'a_obj_ezsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate',
+    'obj_creditcardtransaction' => 'objCreditcardtransaction'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

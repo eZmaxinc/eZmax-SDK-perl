@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CustomContactNameResponse;
 use EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource;
 use EzmaxApi::Object::FieldEEzsignsignatureFont;
 use EzmaxApi::Object::FieldEEzsignsignatureTooltipposition;
@@ -335,6 +336,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'dt_ezsignsignature_date' => {
+        datatype => 'string',
+        base_name => 'dtEzsignsignatureDate',
+        description => 'The date the Ezsignsignature was signed',
+        format => '',
+        read_only => '',
+            },
+    'obj_contact_name' => {
+        datatype => 'CustomContactNameResponse',
+        base_name => 'objContactName',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -353,7 +368,9 @@ __PACKAGE__->openapi_types( {
     's_ezsignsignature_attachmentdescription' => 'string',
     'e_ezsignsignature_attachmentnamesource' => 'FieldEEzsignsignatureAttachmentnamesource',
     'b_ezsignsignature_required' => 'boolean',
-    'fki_ezsignfoldersignerassociation_id_validation' => 'int'
+    'fki_ezsignfoldersignerassociation_id_validation' => 'int',
+    'dt_ezsignsignature_date' => 'string',
+    'obj_contact_name' => 'CustomContactNameResponse'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -372,7 +389,9 @@ __PACKAGE__->attribute_map( {
     's_ezsignsignature_attachmentdescription' => 'sEzsignsignatureAttachmentdescription',
     'e_ezsignsignature_attachmentnamesource' => 'eEzsignsignatureAttachmentnamesource',
     'b_ezsignsignature_required' => 'bEzsignsignatureRequired',
-    'fki_ezsignfoldersignerassociation_id_validation' => 'fkiEzsignfoldersignerassociationIDValidation'
+    'fki_ezsignfoldersignerassociation_id_validation' => 'fkiEzsignfoldersignerassociationIDValidation',
+    'dt_ezsignsignature_date' => 'dtEzsignsignatureDate',
+    'obj_contact_name' => 'objContactName'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

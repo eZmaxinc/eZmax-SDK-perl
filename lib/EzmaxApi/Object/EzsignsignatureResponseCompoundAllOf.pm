@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CustomCreditcardtransactionResponse;
 use EzmaxApi::Object::EzsignsignaturecustomdateResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -234,16 +235,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_creditcardtransaction' => {
+        datatype => 'CustomCreditcardtransactionResponse',
+        base_name => 'objCreditcardtransaction',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'b_ezsignsignature_customdate' => 'boolean',
-    'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateResponseCompound]'
+    'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateResponseCompound]',
+    'obj_creditcardtransaction' => 'CustomCreditcardtransactionResponse'
 } );
 
 __PACKAGE__->attribute_map( {
     'b_ezsignsignature_customdate' => 'bEzsignsignatureCustomdate',
-    'a_obj_ezsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate'
+    'a_obj_ezsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate',
+    'obj_creditcardtransaction' => 'objCreditcardtransaction'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

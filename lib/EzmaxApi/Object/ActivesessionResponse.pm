@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldEActivesessionOrigin;
 use EzmaxApi::Object::FieldEActivesessionUsertype;
 use EzmaxApi::Object::FieldEActivesessionWeekdaystart;
 
@@ -228,6 +229,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_activesession_origin' => {
+        datatype => 'FieldEActivesessionOrigin',
+        base_name => 'eActivesessionOrigin',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'e_activesession_weekdaystart' => {
         datatype => 'FieldEActivesessionWeekdaystart',
         base_name => 'eActivesessionWeekdaystart',
@@ -288,6 +296,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'e_activesession_usertype' => 'FieldEActivesessionUsertype',
+    'e_activesession_origin' => 'FieldEActivesessionOrigin',
     'e_activesession_weekdaystart' => 'FieldEActivesessionWeekdaystart',
     'fki_language_id' => 'int',
     's_company_name_x' => 'string',
@@ -300,6 +309,7 @@ __PACKAGE__->openapi_types( {
 
 __PACKAGE__->attribute_map( {
     'e_activesession_usertype' => 'eActivesessionUsertype',
+    'e_activesession_origin' => 'eActivesessionOrigin',
     'e_activesession_weekdaystart' => 'eActivesessionWeekdaystart',
     'fki_language_id' => 'fkiLanguageID',
     's_company_name_x' => 'sCompanyNameX',

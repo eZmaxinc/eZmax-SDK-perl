@@ -233,16 +233,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_count_user' => {
+        datatype => 'int',
+        base_name => 'iCountUser',
+        description => 'Numer of user in group',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_usergroup_id' => 'int',
-    's_usergroup_name_x' => 'string'
+    's_usergroup_name_x' => 'string',
+    'i_count_user' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_usergroup_id' => 'pkiUsergroupID',
-    's_usergroup_name_x' => 'sUsergroupNameX'
+    's_usergroup_name_x' => 'sUsergroupNameX',
+    'i_count_user' => 'iCountUser'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
