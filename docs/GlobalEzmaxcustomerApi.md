@@ -24,11 +24,6 @@ Retrieve the ezmaxcustomer's specific configuration. This will help locate the p
 use Data::Dumper;
 use EzmaxApi::GlobalEzmaxcustomerApi;
 my $api_instance = EzmaxApi::GlobalEzmaxcustomerApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
 my $pks_ezmaxcustomer_code = "pks_ezmaxcustomer_code_example"; # string | 
@@ -54,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 

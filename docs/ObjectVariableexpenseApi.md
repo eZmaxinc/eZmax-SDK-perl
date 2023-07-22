@@ -86,7 +86,7 @@ my $api_instance = EzmaxApi::ObjectVariableexpenseApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_variableexpense_id = 56; # int | The unique ID of the Variableexpense
+my $pki_variableexpense_id = 56; # int | 
 my $variableexpense_edit_object_v1_request = EzmaxApi::Object::VariableexpenseEditObjectV1Request->new(); # VariableexpenseEditObjectV1Request | 
 
 eval {
@@ -102,7 +102,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_variableexpense_id** | **int**| The unique ID of the Variableexpense | 
+ **pki_variableexpense_id** | **int**|  | 
  **variableexpense_edit_object_v1_request** | [**VariableexpenseEditObjectV1Request**](VariableexpenseEditObjectV1Request.md)|  | 
 
 ### Return type
@@ -255,7 +255,7 @@ my $api_instance = EzmaxApi::ObjectVariableexpenseApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_variableexpense_id = 56; # int | The unique ID of the Variableexpense
+my $pki_variableexpense_id = 56; # int | 
 
 eval {
     my $result = $api_instance->variableexpense_get_object_v2(pki_variableexpense_id => $pki_variableexpense_id);
@@ -270,7 +270,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_variableexpense_id** | **int**| The unique ID of the Variableexpense | 
+ **pki_variableexpense_id** | **int**|  | 
 
 ### Return type
 

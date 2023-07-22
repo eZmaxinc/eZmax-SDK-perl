@@ -13,7 +13,9 @@ Name | Type | Description | Notes
 **b_ezsignfoldersignerassociation_delayedsend** | **boolean** | If this flag is true the signatory is part of a delayed send. | 
 **b_ezsignfoldersignerassociation_receivecopy** | **boolean** | If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain&#39;t required to sign the document. | 
 **t_ezsignfoldersignerassociation_message** | **string** | A custom text message that will be added to the email sent. | 
+**obj_ezsignsignergroup** | [**EzsignsignergroupResponseCompound**](EzsignsignergroupResponseCompound.md) |  | [optional] 
 **obj_user** | [**EzsignfoldersignerassociationResponseCompoundUser**](EzsignfoldersignerassociationResponseCompoundUser.md) |  | [optional] 
+**obj_usergroup** | [**UsergroupResponseCompound**](UsergroupResponseCompound.md) |  | [optional] 
 **obj_ezsignsigner** | [**EzsignsignerResponseCompound**](EzsignsignerResponseCompound.md) |  | [optional] 
 **b_ezsignfoldersignerassociation_hasactionableelements_current** | **boolean** | Indicates if the Ezsignfoldersignerassociation has actionable elements in the current step | 
 **b_ezsignfoldersignerassociation_hasactionableelements_future** | **boolean** | Indicates if the Ezsignfoldersignerassociation has actionable elements in a future step | [optional] 

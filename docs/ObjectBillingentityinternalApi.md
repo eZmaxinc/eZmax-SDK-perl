@@ -86,7 +86,7 @@ my $api_instance = EzmaxApi::ObjectBillingentityinternalApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_billingentityinternal_id = 56; # int | The unique ID of the Billingentityinternal
+my $pki_billingentityinternal_id = 56; # int | 
 my $billingentityinternal_edit_object_v1_request = EzmaxApi::Object::BillingentityinternalEditObjectV1Request->new(); # BillingentityinternalEditObjectV1Request | 
 
 eval {
@@ -102,7 +102,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_billingentityinternal_id** | **int**| The unique ID of the Billingentityinternal | 
+ **pki_billingentityinternal_id** | **int**|  | 
  **billingentityinternal_edit_object_v1_request** | [**BillingentityinternalEditObjectV1Request**](BillingentityinternalEditObjectV1Request.md)|  | 
 
 ### Return type
@@ -255,7 +255,7 @@ my $api_instance = EzmaxApi::ObjectBillingentityinternalApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_billingentityinternal_id = 56; # int | The unique ID of the Billingentityinternal
+my $pki_billingentityinternal_id = 56; # int | 
 
 eval {
     my $result = $api_instance->billingentityinternal_get_object_v2(pki_billingentityinternal_id => $pki_billingentityinternal_id);
@@ -270,7 +270,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_billingentityinternal_id** | **int**| The unique ID of the Billingentityinternal | 
+ **pki_billingentityinternal_id** | **int**|  | 
 
 ### Return type
 

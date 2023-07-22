@@ -8,7 +8,7 @@ use EzmaxApi::Object::CustomCreditcardtransactionResponse;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**s_creditcardtype_codename** | **string** | The codename of the Creditcardtype | 
+**e_creditcardtype_codename** | [**FieldECreditcardtypeCodename**](FieldECreditcardtypeCodename.md) |  | [optional] 
 **d_creditcardtransaction_amount** | **string** | The amount of the Creditcardtransaction | 
 **s_creditcardtransaction_partiallydecryptednumber** | **string** | The partially decrypted credit card number used in the Creditcardtransaction | 
 **s_creditcardtransaction_referencenumber** | **string** | The reference number on the creditcard service for the Creditcardtransaction | 

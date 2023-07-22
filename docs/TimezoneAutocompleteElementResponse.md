@@ -8,7 +8,7 @@ use EzmaxApi::Object::TimezoneAutocompleteElementResponse;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**s_timezone_name** | **string** | The description of the Timezone in the language of the requester | 
+**s_timezone_name** | **string** | The description of the Timezone | 
 **pki_timezone_id** | **int** | The unique ID of the Timezone | 
 **b_timezone_isactive** | **boolean** | Whether the Timezone is active or not | 
 

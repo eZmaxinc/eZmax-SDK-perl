@@ -24,11 +24,6 @@ Retrieve the customer's specific server endpoint where to send requests. This wi
 use Data::Dumper;
 use EzmaxApi::GlobalCustomerApi;
 my $api_instance = EzmaxApi::GlobalCustomerApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
 my $pks_customer_code = "pks_customer_code_example"; # string | 
@@ -56,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 

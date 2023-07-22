@@ -24,11 +24,6 @@ Retrieve the latest version of the Ezmaxclient that is available on the store.
 use Data::Dumper;
 use EzmaxApi::GlobalEzmaxclientApi;
 my $api_instance = EzmaxApi::GlobalEzmaxclientApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
 my $pks_ezmaxclient_os = new EzmaxApi.FieldPksEzmaxclientOs(); # FieldPksEzmaxclientOs | 
@@ -54,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+No authorization required
 
 ### HTTP request headers
 
