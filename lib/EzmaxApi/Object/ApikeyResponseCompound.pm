@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
+use EzmaxApi::Object::CustomContactNameResponse;
 use EzmaxApi::Object::MultilingualApikeyDescription;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -242,10 +243,24 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    's_computed_token' => {
+    'obj_contact_name' => {
+        datatype => 'CustomContactNameResponse',
+        base_name => 'objContactName',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_apikey_apikey' => {
         datatype => 'string',
-        base_name => 'sComputedToken',
-        description => 'The secret token for the API key.  This will be returned only on creation.',
+        base_name => 'sApikeyApikey',
+        description => 'The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey.',
+        format => '',
+        read_only => '',
+            },
+    's_apikey_secret' => {
+        datatype => 'string',
+        base_name => 'sApikeySecret',
+        description => 'The Secret for the API key.  This will be hidden if we are not creating or regenerating the Apikey.',
         format => '',
         read_only => '',
             },
@@ -253,6 +268,13 @@ __PACKAGE__->method_documentation({
         datatype => 'boolean',
         base_name => 'bApikeyIsactive',
         description => 'Whether the apikey is active or not',
+        format => '',
+        read_only => '',
+            },
+    'b_apikey_issigned' => {
+        datatype => 'boolean',
+        base_name => 'bApikeyIssigned',
+        description => 'Whether the apikey is signed or not',
         format => '',
         read_only => '',
             },
@@ -269,8 +291,11 @@ __PACKAGE__->openapi_types( {
     'pki_apikey_id' => 'int',
     'fki_user_id' => 'int',
     'obj_apikey_description' => 'MultilingualApikeyDescription',
-    's_computed_token' => 'string',
+    'obj_contact_name' => 'CustomContactNameResponse',
+    's_apikey_apikey' => 'string',
+    's_apikey_secret' => 'string',
     'b_apikey_isactive' => 'boolean',
+    'b_apikey_issigned' => 'boolean',
     'obj_audit' => 'CommonAudit'
 } );
 
@@ -278,8 +303,11 @@ __PACKAGE__->attribute_map( {
     'pki_apikey_id' => 'pkiApikeyID',
     'fki_user_id' => 'fkiUserID',
     'obj_apikey_description' => 'objApikeyDescription',
-    's_computed_token' => 'sComputedToken',
+    'obj_contact_name' => 'objContactName',
+    's_apikey_apikey' => 'sApikeyApikey',
+    's_apikey_secret' => 'sApikeySecret',
     'b_apikey_isactive' => 'bApikeyIsactive',
+    'b_apikey_issigned' => 'bApikeyIssigned',
     'obj_audit' => 'objAudit'
 } );
 

@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::MultilingualEzsignsignergroupDescription;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -226,14 +227,32 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_ezsignsignergroup_description' => {
+        datatype => 'MultilingualEzsignsignergroupDescription',
+        base_name => 'objEzsignsignergroupDescription',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignsignergroup_description_x' => {
+        datatype => 'string',
+        base_name => 'sEzsignsignergroupDescriptionX',
+        description => 'The Description of the Ezsignsignergroup in the language of the requester',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsignsignergroup_id' => 'int'
+    'pki_ezsignsignergroup_id' => 'int',
+    'obj_ezsignsignergroup_description' => 'MultilingualEzsignsignergroupDescription',
+    's_ezsignsignergroup_description_x' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsignsignergroup_id' => 'pkiEzsignsignergroupID'
+    'pki_ezsignsignergroup_id' => 'pkiEzsignsignergroupID',
+    'obj_ezsignsignergroup_description' => 'objEzsignsignergroupDescription',
+    's_ezsignsignergroup_description_x' => 'sEzsignsignergroupDescriptionX'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

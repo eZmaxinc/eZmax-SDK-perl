@@ -280,6 +280,177 @@ sub apikey_edit_permissions_v1 {
 }
 
 #
+# apikey_get_cors_v1
+#
+# Retrieve an existing Apikey's cors
+#
+# @param int $pki_apikey_id  (required)
+{
+    my $params = {
+    'pki_apikey_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'apikey_get_cors_v1' } = {
+        summary => 'Retrieve an existing Apikey&#39;s cors',
+        params => $params,
+        returns => 'ApikeyGetCorsV1Response',
+        };
+}
+# @return ApikeyGetCorsV1Response
+#
+sub apikey_get_cors_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_apikey_id' is set
+    unless (exists $args{'pki_apikey_id'}) {
+      croak("Missing the required parameter 'pki_apikey_id' when calling apikey_get_cors_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/apikey/{pkiApikeyID}/getCors';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_apikey_id'}) {
+        my $_base_variable = "{" . "pkiApikeyID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_apikey_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('ApikeyGetCorsV1Response', $response);
+    return $_response_object;
+}
+
+#
+# apikey_get_list_v1
+#
+# Retrieve Apikey list
+#
+# @param string $e_order_by Specify how you want the results to be sorted (optional)
+# @param int $i_row_max  (optional, default to 10000)
+# @param int $i_row_offset  (optional, default to 0)
+# @param HeaderAcceptLanguage $accept_language  (optional)
+# @param string $s_filter  (optional)
+{
+    my $params = {
+    'e_order_by' => {
+        data_type => 'string',
+        description => 'Specify how you want the results to be sorted',
+        required => '0',
+    },
+    'i_row_max' => {
+        data_type => 'int',
+        description => '',
+        required => '0',
+    },
+    'i_row_offset' => {
+        data_type => 'int',
+        description => '',
+        required => '0',
+    },
+    'accept_language' => {
+        data_type => 'HeaderAcceptLanguage',
+        description => '',
+        required => '0',
+    },
+    's_filter' => {
+        data_type => 'string',
+        description => '',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'apikey_get_list_v1' } = {
+        summary => 'Retrieve Apikey list',
+        params => $params,
+        returns => 'ApikeyGetListV1Response',
+        };
+}
+# @return ApikeyGetListV1Response
+#
+sub apikey_get_list_v1 {
+    my ($self, %args) = @_;
+
+    # parse inputs
+    my $_resource_path = '/1/object/apikey/getList';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # query params
+    if ( exists $args{'e_order_by'}) {
+        $query_params->{'eOrderBy'} = $self->{api_client}->to_query_value($args{'e_order_by'});
+    }
+
+    # query params
+    if ( exists $args{'i_row_max'}) {
+        $query_params->{'iRowMax'} = $self->{api_client}->to_query_value($args{'i_row_max'});
+    }
+
+    # query params
+    if ( exists $args{'i_row_offset'}) {
+        $query_params->{'iRowOffset'} = $self->{api_client}->to_query_value($args{'i_row_offset'});
+    }
+
+    # query params
+    if ( exists $args{'s_filter'}) {
+        $query_params->{'sFilter'} = $self->{api_client}->to_query_value($args{'s_filter'});
+    }
+
+    # header params
+    if ( exists $args{'accept_language'}) {
+        $header_params->{'Accept-Language'} = $self->{api_client}->to_header_value($args{'accept_language'});
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('ApikeyGetListV1Response', $response);
+    return $_response_object;
+}
+
+#
 # apikey_get_object_v2
 #
 # Retrieve an existing Apikey
@@ -477,6 +648,89 @@ sub apikey_get_subnets_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('ApikeyGetSubnetsV1Response', $response);
+    return $_response_object;
+}
+
+#
+# apikey_regenerate_v1
+#
+# Regenerate the Apikey
+#
+# @param int $pki_apikey_id  (required)
+# @param ApikeyRegenerateV1Request $apikey_regenerate_v1_request  (required)
+{
+    my $params = {
+    'pki_apikey_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'apikey_regenerate_v1_request' => {
+        data_type => 'ApikeyRegenerateV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'apikey_regenerate_v1' } = {
+        summary => 'Regenerate the Apikey',
+        params => $params,
+        returns => 'ApikeyRegenerateV1Response',
+        };
+}
+# @return ApikeyRegenerateV1Response
+#
+sub apikey_regenerate_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_apikey_id' is set
+    unless (exists $args{'pki_apikey_id'}) {
+      croak("Missing the required parameter 'pki_apikey_id' when calling apikey_regenerate_v1");
+    }
+
+    # verify the required parameter 'apikey_regenerate_v1_request' is set
+    unless (exists $args{'apikey_regenerate_v1_request'}) {
+      croak("Missing the required parameter 'apikey_regenerate_v1_request' when calling apikey_regenerate_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/apikey/{pkiApikeyID}/regenerate';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_apikey_id'}) {
+        my $_base_variable = "{" . "pkiApikeyID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_apikey_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'apikey_regenerate_v1_request'}) {
+        $_body_data = $args{'apikey_regenerate_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('ApikeyRegenerateV1Response', $response);
     return $_response_object;
 }
 

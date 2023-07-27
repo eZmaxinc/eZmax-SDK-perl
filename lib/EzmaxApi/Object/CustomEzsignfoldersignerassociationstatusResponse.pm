@@ -241,6 +241,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsignfoldersignerassociationstatus_description_x' => {
+        datatype => 'string',
+        base_name => 'sEzsignfoldersignerassociationstatusDescriptionX',
+        description => 'The description of the Ezsignsigner',
+        format => '',
+        read_only => '',
+            },
     'a_obj_ezsignsignaturestatus' => {
         datatype => 'ARRAY[CustomEzsignsignaturestatusResponse]',
         base_name => 'a_objEzsignsignaturestatus',
@@ -254,6 +261,7 @@ __PACKAGE__->openapi_types( {
     'fki_ezsignfoldersignerassociation_id' => 'int',
     's_ezsignfoldersignerassociationstatus_lastname' => 'string',
     's_ezsignfoldersignerassociationstatus_firstname' => 'string',
+    's_ezsignfoldersignerassociationstatus_description_x' => 'string',
     'a_obj_ezsignsignaturestatus' => 'ARRAY[CustomEzsignsignaturestatusResponse]'
 } );
 
@@ -261,6 +269,7 @@ __PACKAGE__->attribute_map( {
     'fki_ezsignfoldersignerassociation_id' => 'fkiEzsignfoldersignerassociationID',
     's_ezsignfoldersignerassociationstatus_lastname' => 'sEzsignfoldersignerassociationstatusLastname',
     's_ezsignfoldersignerassociationstatus_firstname' => 'sEzsignfoldersignerassociationstatusFirstname',
+    's_ezsignfoldersignerassociationstatus_description_x' => 'sEzsignfoldersignerassociationstatusDescriptionX',
     'a_obj_ezsignsignaturestatus' => 'a_objEzsignsignaturestatus'
 } );
 

@@ -33,7 +33,6 @@ use DateTime;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundUser;
 use EzmaxApi::Object::EzsignsignerResponseCompound;
 use EzmaxApi::Object::EzsignsignergroupResponseCompound;
-use EzmaxApi::Object::UsergroupResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -272,13 +271,6 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'obj_usergroup' => {
-        datatype => 'UsergroupResponseCompound',
-        base_name => 'objUsergroup',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'obj_ezsignsigner' => {
         datatype => 'EzsignsignerResponseCompound',
         base_name => 'objEzsignsigner',
@@ -296,7 +288,6 @@ __PACKAGE__->openapi_types( {
     't_ezsignfoldersignerassociation_message' => 'string',
     'obj_ezsignsignergroup' => 'EzsignsignergroupResponseCompound',
     'obj_user' => 'EzsignfoldersignerassociationResponseCompoundUser',
-    'obj_usergroup' => 'UsergroupResponseCompound',
     'obj_ezsignsigner' => 'EzsignsignerResponseCompound'
 } );
 
@@ -308,7 +299,6 @@ __PACKAGE__->attribute_map( {
     't_ezsignfoldersignerassociation_message' => 'tEzsignfoldersignerassociationMessage',
     'obj_ezsignsignergroup' => 'objEzsignsignergroup',
     'obj_user' => 'objUser',
-    'obj_usergroup' => 'objUsergroup',
     'obj_ezsignsigner' => 'objEzsignsigner'
 } );
 

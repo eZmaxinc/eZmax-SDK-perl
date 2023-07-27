@@ -12,9 +12,12 @@ Method | HTTP request | Description
 [**apikey_create_object_v2**](ObjectApikeyApi.md#apikey_create_object_v2) | **POST** /2/object/apikey | Create a new Apikey
 [**apikey_edit_object_v1**](ObjectApikeyApi.md#apikey_edit_object_v1) | **PUT** /1/object/apikey/{pkiApikeyID} | Edit an existing Apikey
 [**apikey_edit_permissions_v1**](ObjectApikeyApi.md#apikey_edit_permissions_v1) | **PUT** /1/object/apikey/{pkiApikeyID}/editPermissions | Edit multiple Permissions
+[**apikey_get_cors_v1**](ObjectApikeyApi.md#apikey_get_cors_v1) | **GET** /1/object/apikey/{pkiApikeyID}/getCors | Retrieve an existing Apikey&#39;s cors
+[**apikey_get_list_v1**](ObjectApikeyApi.md#apikey_get_list_v1) | **GET** /1/object/apikey/getList | Retrieve Apikey list
 [**apikey_get_object_v2**](ObjectApikeyApi.md#apikey_get_object_v2) | **GET** /2/object/apikey/{pkiApikeyID} | Retrieve an existing Apikey
 [**apikey_get_permissions_v1**](ObjectApikeyApi.md#apikey_get_permissions_v1) | **GET** /1/object/apikey/{pkiApikeyID}/getPermissions | Retrieve an existing Apikey&#39;s Permissions
 [**apikey_get_subnets_v1**](ObjectApikeyApi.md#apikey_get_subnets_v1) | **GET** /1/object/apikey/{pkiApikeyID}/getSubnets | Retrieve an existing Apikey&#39;s subnets
+[**apikey_regenerate_v1**](ObjectApikeyApi.md#apikey_regenerate_v1) | **POST** /1/object/apikey/{pkiApikeyID}/regenerate | Regenerate the Apikey
 
 
 # **apikey_create_object_v2**
@@ -174,6 +177,114 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **apikey_get_cors_v1**
+> ApikeyGetCorsV1Response apikey_get_cors_v1(pki_apikey_id => $pki_apikey_id)
+
+Retrieve an existing Apikey's cors
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectApikeyApi;
+my $api_instance = EzmaxApi::ObjectApikeyApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_apikey_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->apikey_get_cors_v1(pki_apikey_id => $pki_apikey_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectApikeyApi->apikey_get_cors_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_apikey_id** | **int**|  | 
+
+### Return type
+
+[**ApikeyGetCorsV1Response**](ApikeyGetCorsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apikey_get_list_v1**
+> ApikeyGetListV1Response apikey_get_list_v1(e_order_by => $e_order_by, i_row_max => $i_row_max, i_row_offset => $i_row_offset, accept_language => $accept_language, s_filter => $s_filter)
+
+Retrieve Apikey list
+
+Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---|
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectApikeyApi;
+my $api_instance = EzmaxApi::ObjectApikeyApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $e_order_by = "e_order_by_example"; # string | Specify how you want the results to be sorted
+my $i_row_max = 10000; # int | 
+my $i_row_offset = 0; # int | 
+my $accept_language = new EzmaxApi.HeaderAcceptLanguage(); # HeaderAcceptLanguage | 
+my $s_filter = "s_filter_example"; # string | 
+
+eval {
+    my $result = $api_instance->apikey_get_list_v1(e_order_by => $e_order_by, i_row_max => $i_row_max, i_row_offset => $i_row_offset, accept_language => $accept_language, s_filter => $s_filter);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectApikeyApi->apikey_get_list_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **e_order_by** | **string**| Specify how you want the results to be sorted | [optional] 
+ **i_row_max** | **int**|  | [optional] [default to 10000]
+ **i_row_offset** | **int**|  | [optional] [default to 0]
+ **accept_language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
+ **s_filter** | **string**|  | [optional] 
+
+### Return type
+
+[**ApikeyGetListV1Response**](ApikeyGetListV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **apikey_get_object_v2**
 > ApikeyGetObjectV2Response apikey_get_object_v2(pki_apikey_id => $pki_apikey_id)
 
@@ -319,6 +430,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apikey_regenerate_v1**
+> ApikeyRegenerateV1Response apikey_regenerate_v1(pki_apikey_id => $pki_apikey_id, apikey_regenerate_v1_request => $apikey_regenerate_v1_request)
+
+Regenerate the Apikey
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectApikeyApi;
+my $api_instance = EzmaxApi::ObjectApikeyApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_apikey_id = 56; # int | 
+my $apikey_regenerate_v1_request = EzmaxApi::Object::ApikeyRegenerateV1Request->new(); # ApikeyRegenerateV1Request | 
+
+eval {
+    my $result = $api_instance->apikey_regenerate_v1(pki_apikey_id => $pki_apikey_id, apikey_regenerate_v1_request => $apikey_regenerate_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectApikeyApi->apikey_regenerate_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_apikey_id** | **int**|  | 
+ **apikey_regenerate_v1_request** | [**ApikeyRegenerateV1Request**](ApikeyRegenerateV1Request.md)|  | 
+
+### Return type
+
+[**ApikeyRegenerateV1Response**](ApikeyRegenerateV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

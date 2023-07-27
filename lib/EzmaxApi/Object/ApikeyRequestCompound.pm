@@ -248,20 +248,29 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_apikey_issigned' => {
+        datatype => 'boolean',
+        base_name => 'bApikeyIssigned',
+        description => 'Whether the apikey is signed or not',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_apikey_id' => 'int',
     'fki_user_id' => 'int',
     'obj_apikey_description' => 'MultilingualApikeyDescription',
-    'b_apikey_isactive' => 'boolean'
+    'b_apikey_isactive' => 'boolean',
+    'b_apikey_issigned' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_apikey_id' => 'pkiApikeyID',
     'fki_user_id' => 'fkiUserID',
     'obj_apikey_description' => 'objApikeyDescription',
-    'b_apikey_isactive' => 'bApikeyIsactive'
+    'b_apikey_isactive' => 'bApikeyIsactive',
+    'b_apikey_issigned' => 'bApikeyIssigned'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

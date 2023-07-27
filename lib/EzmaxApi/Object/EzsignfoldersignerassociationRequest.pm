@@ -233,13 +233,6 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'fki_usergroup_id' => {
-        datatype => 'int',
-        base_name => 'fkiUsergroupID',
-        description => 'The unique ID of the Usergroup',
-        format => '',
-        read_only => '',
-            },
     'fki_ezsignsignergroup_id' => {
         datatype => 'int',
         base_name => 'fkiEzsignsignergroupID',
@@ -273,7 +266,6 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'pki_ezsignfoldersignerassociation_id' => 'int',
     'fki_user_id' => 'int',
-    'fki_usergroup_id' => 'int',
     'fki_ezsignsignergroup_id' => 'int',
     'fki_ezsignfolder_id' => 'int',
     'b_ezsignfoldersignerassociation_receivecopy' => 'boolean',
@@ -283,7 +275,6 @@ __PACKAGE__->openapi_types( {
 __PACKAGE__->attribute_map( {
     'pki_ezsignfoldersignerassociation_id' => 'pkiEzsignfoldersignerassociationID',
     'fki_user_id' => 'fkiUserID',
-    'fki_usergroup_id' => 'fkiUsergroupID',
     'fki_ezsignsignergroup_id' => 'fkiEzsignsignergroupID',
     'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
     'b_ezsignfoldersignerassociation_receivecopy' => 'bEzsignfoldersignerassociationReceivecopy',

@@ -53,6 +53,24 @@ isa_ok($api, 'EzmaxApi::ObjectApikeyApi');
 #my $apikey_edit_permissions_v1_result = $api->apikey_edit_permissions_v1(pki_apikey_id => $apikey_edit_permissions_v1_pki_apikey_id, apikey_edit_permissions_v1_request => $apikey_edit_permissions_v1_apikey_edit_permissions_v1_request);
 
 #
+# apikey_get_cors_v1 test
+#
+# uncomment below and update the test
+#my $apikey_get_cors_v1_pki_apikey_id = undef; # replace NULL with a proper value
+#my $apikey_get_cors_v1_result = $api->apikey_get_cors_v1(pki_apikey_id => $apikey_get_cors_v1_pki_apikey_id);
+
+#
+# apikey_get_list_v1 test
+#
+# uncomment below and update the test
+#my $apikey_get_list_v1_e_order_by = undef; # replace NULL with a proper value
+#my $apikey_get_list_v1_i_row_max = undef; # replace NULL with a proper value
+#my $apikey_get_list_v1_i_row_offset = undef; # replace NULL with a proper value
+#my $apikey_get_list_v1_accept_language = undef; # replace NULL with a proper value
+#my $apikey_get_list_v1_s_filter = undef; # replace NULL with a proper value
+#my $apikey_get_list_v1_result = $api->apikey_get_list_v1(e_order_by => $apikey_get_list_v1_e_order_by, i_row_max => $apikey_get_list_v1_i_row_max, i_row_offset => $apikey_get_list_v1_i_row_offset, accept_language => $apikey_get_list_v1_accept_language, s_filter => $apikey_get_list_v1_s_filter);
+
+#
 # apikey_get_object_v2 test
 #
 # uncomment below and update the test
@@ -72,4 +90,12 @@ isa_ok($api, 'EzmaxApi::ObjectApikeyApi');
 # uncomment below and update the test
 #my $apikey_get_subnets_v1_pki_apikey_id = undef; # replace NULL with a proper value
 #my $apikey_get_subnets_v1_result = $api->apikey_get_subnets_v1(pki_apikey_id => $apikey_get_subnets_v1_pki_apikey_id);
+
+#
+# apikey_regenerate_v1 test
+#
+# uncomment below and update the test
+#my $apikey_regenerate_v1_pki_apikey_id = undef; # replace NULL with a proper value
+#my $apikey_regenerate_v1_apikey_regenerate_v1_request = undef; # replace NULL with a proper value
+#my $apikey_regenerate_v1_result = $api->apikey_regenerate_v1(pki_apikey_id => $apikey_regenerate_v1_pki_apikey_id, apikey_regenerate_v1_request => $apikey_regenerate_v1_apikey_regenerate_v1_request);
 
