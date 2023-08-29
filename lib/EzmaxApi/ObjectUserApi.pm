@@ -280,6 +280,73 @@ sub user_edit_permissions_v1 {
 }
 
 #
+# user_get_apikeys_v1
+#
+# Retrieve an existing User's Apikeys
+#
+# @param int $pki_user_id  (required)
+{
+    my $params = {
+    'pki_user_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'user_get_apikeys_v1' } = {
+        summary => 'Retrieve an existing User&#39;s Apikeys',
+        params => $params,
+        returns => 'UserGetApikeysV1Response',
+        };
+}
+# @return UserGetApikeysV1Response
+#
+sub user_get_apikeys_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_user_id' is set
+    unless (exists $args{'pki_user_id'}) {
+      croak("Missing the required parameter 'pki_user_id' when calling user_get_apikeys_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/user/{pkiUserID}/getApikeys';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_user_id'}) {
+        my $_base_variable = "{" . "pkiUserID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_user_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('UserGetApikeysV1Response', $response);
+    return $_response_object;
+}
+
+#
 # user_get_autocomplete_v2
 #
 # Retrieve Users and IDs
@@ -748,6 +815,89 @@ sub user_get_subnets_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('UserGetSubnetsV1Response', $response);
+    return $_response_object;
+}
+
+#
+# user_send_password_reset_v1
+#
+# Send password reset
+#
+# @param int $pki_user_id  (required)
+# @param object $body  (required)
+{
+    my $params = {
+    'pki_user_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'body' => {
+        data_type => 'object',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'user_send_password_reset_v1' } = {
+        summary => 'Send password reset',
+        params => $params,
+        returns => 'UserSendPasswordResetV1Response',
+        };
+}
+# @return UserSendPasswordResetV1Response
+#
+sub user_send_password_reset_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_user_id' is set
+    unless (exists $args{'pki_user_id'}) {
+      croak("Missing the required parameter 'pki_user_id' when calling user_send_password_reset_v1");
+    }
+
+    # verify the required parameter 'body' is set
+    unless (exists $args{'body'}) {
+      croak("Missing the required parameter 'body' when calling user_send_password_reset_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/user/{pkiUserID}/sendPasswordReset';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_user_id'}) {
+        my $_base_variable = "{" . "pkiUserID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_user_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'body'}) {
+        $_body_data = $args{'body'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('UserSendPasswordResetV1Response', $response);
     return $_response_object;
 }
 

@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::EzsigntemplatesignaturecustomdateRequestCompound;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureAttachmentnamesource;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureFont;
@@ -273,6 +274,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_ezsigntemplatesignature_width' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatesignatureWidth',
+        description => 'The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \&quot;200\&quot; for the iEzsigntemplatesignatureWidth.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigntemplatesignature_height' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatesignatureHeight',
+        description => 'The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \&quot;200\&quot; for the iEzsigntemplatesignatureHeight.',
+        format => '',
+        read_only => '',
+            },
     'i_ezsigntemplatesignature_step' => {
         datatype => 'int',
         base_name => 'iEzsigntemplatesignatureStep',
@@ -336,6 +351,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_ezsigntemplatesignature_maxlength' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatesignatureMaxlength',
+        description => 'The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea**',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigntemplatesignature_regexp' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplatesignatureRegexp',
+        description => 'A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsigntemplatesignature_textvalidation' => {
+        datatype => 'EnumTextvalidation',
+        base_name => 'eEzsigntemplatesignatureTextvalidation',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'b_ezsigntemplatesignature_customdate' => {
         datatype => 'boolean',
         base_name => 'bEzsigntemplatesignatureCustomdate',
@@ -360,6 +396,8 @@ __PACKAGE__->openapi_types( {
     'i_ezsigntemplatedocumentpage_pagenumber' => 'int',
     'i_ezsigntemplatesignature_x' => 'int',
     'i_ezsigntemplatesignature_y' => 'int',
+    'i_ezsigntemplatesignature_width' => 'int',
+    'i_ezsigntemplatesignature_height' => 'int',
     'i_ezsigntemplatesignature_step' => 'int',
     'e_ezsigntemplatesignature_type' => 'FieldEEzsigntemplatesignatureType',
     't_ezsigntemplatesignature_tooltip' => 'string',
@@ -369,6 +407,9 @@ __PACKAGE__->openapi_types( {
     'e_ezsigntemplatesignature_attachmentnamesource' => 'FieldEEzsigntemplatesignatureAttachmentnamesource',
     's_ezsigntemplatesignature_attachmentdescription' => 'string',
     'i_ezsigntemplatesignature_validationstep' => 'int',
+    'i_ezsigntemplatesignature_maxlength' => 'int',
+    's_ezsigntemplatesignature_regexp' => 'string',
+    'e_ezsigntemplatesignature_textvalidation' => 'EnumTextvalidation',
     'b_ezsigntemplatesignature_customdate' => 'boolean',
     'a_obj_ezsigntemplatesignaturecustomdate' => 'ARRAY[EzsigntemplatesignaturecustomdateRequestCompound]'
 } );
@@ -381,6 +422,8 @@ __PACKAGE__->attribute_map( {
     'i_ezsigntemplatedocumentpage_pagenumber' => 'iEzsigntemplatedocumentpagePagenumber',
     'i_ezsigntemplatesignature_x' => 'iEzsigntemplatesignatureX',
     'i_ezsigntemplatesignature_y' => 'iEzsigntemplatesignatureY',
+    'i_ezsigntemplatesignature_width' => 'iEzsigntemplatesignatureWidth',
+    'i_ezsigntemplatesignature_height' => 'iEzsigntemplatesignatureHeight',
     'i_ezsigntemplatesignature_step' => 'iEzsigntemplatesignatureStep',
     'e_ezsigntemplatesignature_type' => 'eEzsigntemplatesignatureType',
     't_ezsigntemplatesignature_tooltip' => 'tEzsigntemplatesignatureTooltip',
@@ -390,6 +433,9 @@ __PACKAGE__->attribute_map( {
     'e_ezsigntemplatesignature_attachmentnamesource' => 'eEzsigntemplatesignatureAttachmentnamesource',
     's_ezsigntemplatesignature_attachmentdescription' => 'sEzsigntemplatesignatureAttachmentdescription',
     'i_ezsigntemplatesignature_validationstep' => 'iEzsigntemplatesignatureValidationstep',
+    'i_ezsigntemplatesignature_maxlength' => 'iEzsigntemplatesignatureMaxlength',
+    's_ezsigntemplatesignature_regexp' => 'sEzsigntemplatesignatureRegexp',
+    'e_ezsigntemplatesignature_textvalidation' => 'eEzsigntemplatesignatureTextvalidation',
     'b_ezsigntemplatesignature_customdate' => 'bEzsigntemplatesignatureCustomdate',
     'a_obj_ezsigntemplatesignaturecustomdate' => 'a_objEzsigntemplatesignaturecustomdate'
 } );

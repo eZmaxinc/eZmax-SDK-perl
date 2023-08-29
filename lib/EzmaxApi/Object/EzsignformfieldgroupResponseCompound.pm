@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CustomDropdownElementResponseCompound;
+use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::EzsignformfieldResponseCompound;
 use EzmaxApi::Object::EzsignformfieldgroupsignerResponseCompound;
 use EzmaxApi::Object::FieldEEzsignformfieldgroupSignerrequirement;
@@ -309,6 +310,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignformfieldgroup_textvalidation' => {
+        datatype => 'EnumTextvalidation',
+        base_name => 'eEzsignformfieldgroupTextvalidation',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     's_ezsignformfieldgroup_regexp' => {
         datatype => 'string',
         base_name => 'sEzsignformfieldgroupRegexp',
@@ -366,6 +374,7 @@ __PACKAGE__->openapi_types( {
     'b_ezsignformfieldgroup_readonly' => 'boolean',
     'i_ezsignformfieldgroup_maxlength' => 'int',
     'b_ezsignformfieldgroup_encrypted' => 'boolean',
+    'e_ezsignformfieldgroup_textvalidation' => 'EnumTextvalidation',
     's_ezsignformfieldgroup_regexp' => 'string',
     't_ezsignformfieldgroup_tooltip' => 'string',
     'e_ezsignformfieldgroup_tooltipposition' => 'FieldEEzsignformfieldgroupTooltipposition',
@@ -387,6 +396,7 @@ __PACKAGE__->attribute_map( {
     'b_ezsignformfieldgroup_readonly' => 'bEzsignformfieldgroupReadonly',
     'i_ezsignformfieldgroup_maxlength' => 'iEzsignformfieldgroupMaxlength',
     'b_ezsignformfieldgroup_encrypted' => 'bEzsignformfieldgroupEncrypted',
+    'e_ezsignformfieldgroup_textvalidation' => 'eEzsignformfieldgroupTextvalidation',
     's_ezsignformfieldgroup_regexp' => 'sEzsignformfieldgroupRegexp',
     't_ezsignformfieldgroup_tooltip' => 'tEzsignformfieldgroupTooltip',
     'e_ezsignformfieldgroup_tooltipposition' => 'eEzsignformfieldgroupTooltipposition',

@@ -222,13 +222,6 @@ __PACKAGE__->class_documentation({description => 'Response for GET /1/object/use
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'm_payload' => {
-        datatype => 'UserGetListV1ResponseMPayload',
-        base_name => 'mPayload',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'obj_debug_payload' => {
         datatype => 'CommonResponseObjDebugPayloadGetList',
         base_name => 'objDebugPayload',
@@ -243,18 +236,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'm_payload' => {
+        datatype => 'UserGetListV1ResponseMPayload',
+        base_name => 'mPayload',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'm_payload' => 'UserGetListV1ResponseMPayload',
     'obj_debug_payload' => 'CommonResponseObjDebugPayloadGetList',
-    'obj_debug' => 'CommonResponseObjDebug'
+    'obj_debug' => 'CommonResponseObjDebug',
+    'm_payload' => 'UserGetListV1ResponseMPayload'
 } );
 
 __PACKAGE__->attribute_map( {
-    'm_payload' => 'mPayload',
     'obj_debug_payload' => 'objDebugPayload',
-    'obj_debug' => 'objDebug'
+    'obj_debug' => 'objDebug',
+    'm_payload' => 'mPayload'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

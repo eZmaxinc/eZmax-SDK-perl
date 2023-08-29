@@ -12,11 +12,13 @@ Method | HTTP request | Description
 [**usergroup_create_object_v1**](ObjectUsergroupApi.md#usergroup_create_object_v1) | **POST** /1/object/usergroup | Create a new Usergroup
 [**usergroup_edit_object_v1**](ObjectUsergroupApi.md#usergroup_edit_object_v1) | **PUT** /1/object/usergroup/{pkiUsergroupID} | Edit an existing Usergroup
 [**usergroup_edit_permissions_v1**](ObjectUsergroupApi.md#usergroup_edit_permissions_v1) | **PUT** /1/object/usergroup/{pkiUsergroupID}/editPermissions | Edit multiple Permissions
+[**usergroup_edit_usergroupdelegations_v1**](ObjectUsergroupApi.md#usergroup_edit_usergroupdelegations_v1) | **PUT** /1/object/usergroup/{pkiUsergroupID}/editUsergroupdelegations | Edit multiple Usergroupdelegations
 [**usergroup_edit_usergroupmemberships_v1**](ObjectUsergroupApi.md#usergroup_edit_usergroupmemberships_v1) | **PUT** /1/object/usergroup/{pkiUsergroupID}/editUsergroupmemberships | Edit multiple Usergroupmemberships
 [**usergroup_get_autocomplete_v2**](ObjectUsergroupApi.md#usergroup_get_autocomplete_v2) | **GET** /2/object/usergroup/getAutocomplete/{sSelector} | Retrieve Usergroups and IDs
 [**usergroup_get_list_v1**](ObjectUsergroupApi.md#usergroup_get_list_v1) | **GET** /1/object/usergroup/getList | Retrieve Usergroup list
 [**usergroup_get_object_v2**](ObjectUsergroupApi.md#usergroup_get_object_v2) | **GET** /2/object/usergroup/{pkiUsergroupID} | Retrieve an existing Usergroup
 [**usergroup_get_permissions_v1**](ObjectUsergroupApi.md#usergroup_get_permissions_v1) | **GET** /1/object/usergroup/{pkiUsergroupID}/getPermissions | Retrieve an existing Usergroup&#39;s Permissions
+[**usergroup_get_usergroupdelegations_v1**](ObjectUsergroupApi.md#usergroup_get_usergroupdelegations_v1) | **GET** /1/object/usergroup/{pkiUsergroupID}/getUsergroupdelegations | Retrieve an existing Usergroup&#39;s Usergroupdelegations
 [**usergroup_get_usergroupmemberships_v1**](ObjectUsergroupApi.md#usergroup_get_usergroupmemberships_v1) | **GET** /1/object/usergroup/{pkiUsergroupID}/getUsergroupmemberships | Retrieve an existing Usergroup&#39;s Usergroupmemberships
 
 
@@ -165,6 +167,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UsergroupEditPermissionsV1Response**](UsergroupEditPermissionsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usergroup_edit_usergroupdelegations_v1**
+> UsergroupEditUsergroupdelegationsV1Response usergroup_edit_usergroupdelegations_v1(pki_usergroup_id => $pki_usergroup_id, usergroup_edit_usergroupdelegations_v1_request => $usergroup_edit_usergroupdelegations_v1_request)
+
+Edit multiple Usergroupdelegations
+
+Edit multiple Usergroupdelegations
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectUsergroupApi;
+my $api_instance = EzmaxApi::ObjectUsergroupApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_usergroup_id = 56; # int | 
+my $usergroup_edit_usergroupdelegations_v1_request = EzmaxApi::Object::UsergroupEditUsergroupdelegationsV1Request->new(); # UsergroupEditUsergroupdelegationsV1Request | 
+
+eval {
+    my $result = $api_instance->usergroup_edit_usergroupdelegations_v1(pki_usergroup_id => $pki_usergroup_id, usergroup_edit_usergroupdelegations_v1_request => $usergroup_edit_usergroupdelegations_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectUsergroupApi->usergroup_edit_usergroupdelegations_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_usergroup_id** | **int**|  | 
+ **usergroup_edit_usergroupdelegations_v1_request** | [**UsergroupEditUsergroupdelegationsV1Request**](UsergroupEditUsergroupdelegationsV1Request.md)|  | 
+
+### Return type
+
+[**UsergroupEditUsergroupdelegationsV1Response**](UsergroupEditUsergroupdelegationsV1Response.md)
 
 ### Authorization
 
@@ -434,6 +489,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UsergroupGetPermissionsV1Response**](UsergroupGetPermissionsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **usergroup_get_usergroupdelegations_v1**
+> UsergroupGetUsergroupdelegationsV1Response usergroup_get_usergroupdelegations_v1(pki_usergroup_id => $pki_usergroup_id)
+
+Retrieve an existing Usergroup's Usergroupdelegations
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectUsergroupApi;
+my $api_instance = EzmaxApi::ObjectUsergroupApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_usergroup_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->usergroup_get_usergroupdelegations_v1(pki_usergroup_id => $pki_usergroup_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectUsergroupApi->usergroup_get_usergroupdelegations_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_usergroup_id** | **int**|  | 
+
+### Return type
+
+[**UsergroupGetUsergroupdelegationsV1Response**](UsergroupGetUsergroupdelegationsV1Response.md)
 
 ### Authorization
 

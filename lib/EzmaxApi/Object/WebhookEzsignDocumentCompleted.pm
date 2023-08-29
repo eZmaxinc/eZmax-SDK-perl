@@ -222,13 +222,6 @@ __PACKAGE__->class_documentation({description => 'This is the base Webhook objec
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'obj_ezsigndocument' => {
-        datatype => 'EzsigndocumentResponse',
-        base_name => 'objEzsigndocument',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'obj_webhook' => {
         datatype => 'CustomWebhookResponse',
         base_name => 'objWebhook',
@@ -243,18 +236,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_ezsigndocument' => {
+        datatype => 'EzsigndocumentResponse',
+        base_name => 'objEzsigndocument',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_ezsigndocument' => 'EzsigndocumentResponse',
     'obj_webhook' => 'CustomWebhookResponse',
-    'a_obj_attempt' => 'ARRAY[AttemptResponseCompound]'
+    'a_obj_attempt' => 'ARRAY[AttemptResponseCompound]',
+    'obj_ezsigndocument' => 'EzsigndocumentResponse'
 } );
 
 __PACKAGE__->attribute_map( {
-    'obj_ezsigndocument' => 'objEzsigndocument',
     'obj_webhook' => 'objWebhook',
-    'a_obj_attempt' => 'a_objAttempt'
+    'a_obj_attempt' => 'a_objAttempt',
+    'obj_ezsigndocument' => 'objEzsigndocument'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

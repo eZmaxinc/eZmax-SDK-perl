@@ -220,13 +220,6 @@ __PACKAGE__->class_documentation({description => 'Payload for GET /1/object/bill
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'a_obj_billingentityinternal' => {
-        datatype => 'ARRAY[BillingentityinternalListElement]',
-        base_name => 'a_objBillingentityinternal',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'i_row_returned' => {
         datatype => 'int',
         base_name => 'iRowReturned',
@@ -241,18 +234,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_billingentityinternal' => {
+        datatype => 'ARRAY[BillingentityinternalListElement]',
+        base_name => 'a_objBillingentityinternal',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'a_obj_billingentityinternal' => 'ARRAY[BillingentityinternalListElement]',
     'i_row_returned' => 'int',
-    'i_row_filtered' => 'int'
+    'i_row_filtered' => 'int',
+    'a_obj_billingentityinternal' => 'ARRAY[BillingentityinternalListElement]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'a_obj_billingentityinternal' => 'a_objBillingentityinternal',
     'i_row_returned' => 'iRowReturned',
-    'i_row_filtered' => 'iRowFiltered'
+    'i_row_filtered' => 'iRowFiltered',
+    'a_obj_billingentityinternal' => 'a_objBillingentityinternal'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

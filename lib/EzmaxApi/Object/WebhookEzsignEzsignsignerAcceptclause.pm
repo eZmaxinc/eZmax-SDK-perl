@@ -223,20 +223,6 @@ __PACKAGE__->class_documentation({description => 'This is the base Webhook objec
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'obj_ezsignfolder' => {
-        datatype => 'EzsignfolderResponse',
-        base_name => 'objEzsignfolder',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'obj_ezsignfoldersignerassociation' => {
-        datatype => 'EzsignfoldersignerassociationResponseCompound',
-        base_name => 'objEzsignfoldersignerassociation',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'obj_webhook' => {
         datatype => 'CustomWebhookResponse',
         base_name => 'objWebhook',
@@ -251,20 +237,34 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_ezsignfolder' => {
+        datatype => 'EzsignfolderResponse',
+        base_name => 'objEzsignfolder',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_ezsignfoldersignerassociation' => {
+        datatype => 'EzsignfoldersignerassociationResponseCompound',
+        base_name => 'objEzsignfoldersignerassociation',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_ezsignfolder' => 'EzsignfolderResponse',
-    'obj_ezsignfoldersignerassociation' => 'EzsignfoldersignerassociationResponseCompound',
     'obj_webhook' => 'CustomWebhookResponse',
-    'a_obj_attempt' => 'ARRAY[AttemptResponseCompound]'
+    'a_obj_attempt' => 'ARRAY[AttemptResponseCompound]',
+    'obj_ezsignfolder' => 'EzsignfolderResponse',
+    'obj_ezsignfoldersignerassociation' => 'EzsignfoldersignerassociationResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {
-    'obj_ezsignfolder' => 'objEzsignfolder',
-    'obj_ezsignfoldersignerassociation' => 'objEzsignfoldersignerassociation',
     'obj_webhook' => 'objWebhook',
-    'a_obj_attempt' => 'a_objAttempt'
+    'a_obj_attempt' => 'a_objAttempt',
+    'obj_ezsignfolder' => 'objEzsignfolder',
+    'obj_ezsignfoldersignerassociation' => 'objEzsignfoldersignerassociation'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

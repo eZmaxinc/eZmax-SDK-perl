@@ -53,6 +53,13 @@ isa_ok($api, 'EzmaxApi::ObjectUserApi');
 #my $user_edit_permissions_v1_result = $api->user_edit_permissions_v1(pki_user_id => $user_edit_permissions_v1_pki_user_id, user_edit_permissions_v1_request => $user_edit_permissions_v1_user_edit_permissions_v1_request);
 
 #
+# user_get_apikeys_v1 test
+#
+# uncomment below and update the test
+#my $user_get_apikeys_v1_pki_user_id = undef; # replace NULL with a proper value
+#my $user_get_apikeys_v1_result = $api->user_get_apikeys_v1(pki_user_id => $user_get_apikeys_v1_pki_user_id);
+
+#
 # user_get_autocomplete_v2 test
 #
 # uncomment below and update the test
@@ -100,4 +107,12 @@ isa_ok($api, 'EzmaxApi::ObjectUserApi');
 # uncomment below and update the test
 #my $user_get_subnets_v1_pki_user_id = undef; # replace NULL with a proper value
 #my $user_get_subnets_v1_result = $api->user_get_subnets_v1(pki_user_id => $user_get_subnets_v1_pki_user_id);
+
+#
+# user_send_password_reset_v1 test
+#
+# uncomment below and update the test
+#my $user_send_password_reset_v1_pki_user_id = undef; # replace NULL with a proper value
+#my $user_send_password_reset_v1_body = undef; # replace NULL with a proper value
+#my $user_send_password_reset_v1_result = $api->user_send_password_reset_v1(pki_user_id => $user_send_password_reset_v1_pki_user_id, body => $user_send_password_reset_v1_body);
 

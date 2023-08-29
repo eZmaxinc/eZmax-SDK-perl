@@ -220,13 +220,6 @@ __PACKAGE__->class_documentation({description => 'Generic Error Message',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    's_temporary_file_url' => {
-        datatype => 'string',
-        base_name => 'sTemporaryFileUrl',
-        description => 'The Temporary File Url of the document that was uploaded. That url can be reused instead of uploading the file again.',
-        format => '',
-        read_only => '',
-            },
     's_error_message' => {
         datatype => 'string',
         base_name => 'sErrorMessage',
@@ -241,18 +234,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_temporary_file_url' => {
+        datatype => 'string',
+        base_name => 'sTemporaryFileUrl',
+        description => 'The Temporary File Url of the document that was uploaded. That url can be reused instead of uploading the file again.',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    's_temporary_file_url' => 'string',
     's_error_message' => 'string',
-    'e_error_code' => 'FieldEErrorCode'
+    'e_error_code' => 'FieldEErrorCode',
+    's_temporary_file_url' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    's_temporary_file_url' => 'sTemporaryFileUrl',
     's_error_message' => 'sErrorMessage',
-    'e_error_code' => 'eErrorCode'
+    'e_error_code' => 'eErrorCode',
+    's_temporary_file_url' => 'sTemporaryFileUrl'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

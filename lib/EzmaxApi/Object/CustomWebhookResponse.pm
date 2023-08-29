@@ -222,20 +222,6 @@ __PACKAGE__->class_documentation({description => 'A custom Webhook object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pks_customer_code' => {
-        datatype => 'string',
-        base_name => 'pksCustomerCode',
-        description => 'The customer code assigned to your account',
-        format => '',
-        read_only => '',
-            },
-    'b_webhook_test' => {
-        datatype => 'boolean',
-        base_name => 'bWebhookTest',
-        description => 'Wheter the webhook received is a manual test or a real event',
-        format => '',
-        read_only => '',
-            },
     'pki_webhook_id' => {
         datatype => 'int',
         base_name => 'pkiWebhookID',
@@ -313,11 +299,23 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'pks_customer_code' => {
+        datatype => 'string',
+        base_name => 'pksCustomerCode',
+        description => 'The customer code assigned to your account',
+        format => '',
+        read_only => '',
+            },
+    'b_webhook_test' => {
+        datatype => 'boolean',
+        base_name => 'bWebhookTest',
+        description => 'Wheter the webhook received is a manual test or a real event',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pks_customer_code' => 'string',
-    'b_webhook_test' => 'boolean',
     'pki_webhook_id' => 'int',
     's_webhook_description' => 'string',
     'fki_ezsignfoldertype_id' => 'int',
@@ -328,12 +326,12 @@ __PACKAGE__->openapi_types( {
     's_webhook_url' => 'string',
     's_webhook_emailfailed' => 'string',
     'b_webhook_isactive' => 'boolean',
-    'b_webhook_skipsslvalidation' => 'boolean'
+    'b_webhook_skipsslvalidation' => 'boolean',
+    'pks_customer_code' => 'string',
+    'b_webhook_test' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pks_customer_code' => 'pksCustomerCode',
-    'b_webhook_test' => 'bWebhookTest',
     'pki_webhook_id' => 'pkiWebhookID',
     's_webhook_description' => 'sWebhookDescription',
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
@@ -344,7 +342,9 @@ __PACKAGE__->attribute_map( {
     's_webhook_url' => 'sWebhookUrl',
     's_webhook_emailfailed' => 'sWebhookEmailfailed',
     'b_webhook_isactive' => 'bWebhookIsactive',
-    'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation'
+    'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation',
+    'pks_customer_code' => 'pksCustomerCode',
+    'b_webhook_test' => 'bWebhookTest'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

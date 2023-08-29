@@ -293,6 +293,7 @@ use EzmaxApi::ObjectTaxassignmentApi;
 use EzmaxApi::ObjectTimezoneApi;
 use EzmaxApi::ObjectUserApi;
 use EzmaxApi::ObjectUsergroupApi;
+use EzmaxApi::ObjectUsergroupdelegationApi;
 use EzmaxApi::ObjectUsergroupmembershipApi;
 use EzmaxApi::ObjectUserstagedApi;
 use EzmaxApi::ObjectVariableexpenseApi;
@@ -307,50 +308,37 @@ use EzmaxApi::ScimUsersApi;
 To load the models:
 ```perl
 use EzmaxApi::Object::ActivesessionGetCurrentV1Response;
-use EzmaxApi::Object::ActivesessionGetCurrentV1ResponseAllOf;
 use EzmaxApi::Object::ActivesessionGetCurrentV1ResponseMPayload;
 use EzmaxApi::Object::ActivesessionGetListV1Response;
-use EzmaxApi::Object::ActivesessionGetListV1ResponseAllOf;
 use EzmaxApi::Object::ActivesessionGetListV1ResponseMPayload;
-use EzmaxApi::Object::ActivesessionGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::ActivesessionListElement;
 use EzmaxApi::Object::ActivesessionResponse;
 use EzmaxApi::Object::ActivesessionResponseCompound;
-use EzmaxApi::Object::ActivesessionResponseCompoundAllOf;
 use EzmaxApi::Object::ActivesessionResponseCompoundApikey;
 use EzmaxApi::Object::ActivesessionResponseCompoundUser;
 use EzmaxApi::Object::AddressRequest;
 use EzmaxApi::Object::AddressRequestCompound;
 use EzmaxApi::Object::ApikeyCreateObjectV2Request;
 use EzmaxApi::Object::ApikeyCreateObjectV2Response;
-use EzmaxApi::Object::ApikeyCreateObjectV2ResponseAllOf;
 use EzmaxApi::Object::ApikeyCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::ApikeyEditObjectV1Request;
 use EzmaxApi::Object::ApikeyEditObjectV1Response;
 use EzmaxApi::Object::ApikeyEditPermissionsV1Request;
 use EzmaxApi::Object::ApikeyEditPermissionsV1Response;
-use EzmaxApi::Object::ApikeyEditPermissionsV1ResponseAllOf;
 use EzmaxApi::Object::ApikeyEditPermissionsV1ResponseMPayload;
 use EzmaxApi::Object::ApikeyGetCorsV1Response;
-use EzmaxApi::Object::ApikeyGetCorsV1ResponseAllOf;
 use EzmaxApi::Object::ApikeyGetCorsV1ResponseMPayload;
 use EzmaxApi::Object::ApikeyGetListV1Response;
-use EzmaxApi::Object::ApikeyGetListV1ResponseAllOf;
 use EzmaxApi::Object::ApikeyGetListV1ResponseMPayload;
-use EzmaxApi::Object::ApikeyGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::ApikeyGetObjectV2Response;
-use EzmaxApi::Object::ApikeyGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::ApikeyGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::ApikeyGetPermissionsV1Response;
-use EzmaxApi::Object::ApikeyGetPermissionsV1ResponseAllOf;
 use EzmaxApi::Object::ApikeyGetPermissionsV1ResponseMPayload;
 use EzmaxApi::Object::ApikeyGetSubnetsV1Response;
-use EzmaxApi::Object::ApikeyGetSubnetsV1ResponseAllOf;
 use EzmaxApi::Object::ApikeyGetSubnetsV1ResponseMPayload;
 use EzmaxApi::Object::ApikeyListElement;
 use EzmaxApi::Object::ApikeyRegenerateV1Request;
 use EzmaxApi::Object::ApikeyRegenerateV1Response;
-use EzmaxApi::Object::ApikeyRegenerateV1ResponseAllOf;
 use EzmaxApi::Object::ApikeyRegenerateV1ResponseMPayload;
 use EzmaxApi::Object::ApikeyRequest;
 use EzmaxApi::Object::ApikeyRequestCompound;
@@ -360,32 +348,24 @@ use EzmaxApi::Object::AttemptResponse;
 use EzmaxApi::Object::AttemptResponseCompound;
 use EzmaxApi::Object::BillingentityexternalAutocompleteElementResponse;
 use EzmaxApi::Object::BillingentityexternalGetAutocompleteV2Response;
-use EzmaxApi::Object::BillingentityexternalGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::BillingentityexternalGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::BillingentityinternalAutocompleteElementResponse;
 use EzmaxApi::Object::BillingentityinternalCreateObjectV1Request;
 use EzmaxApi::Object::BillingentityinternalCreateObjectV1Response;
-use EzmaxApi::Object::BillingentityinternalCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::BillingentityinternalCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::BillingentityinternalEditObjectV1Request;
 use EzmaxApi::Object::BillingentityinternalEditObjectV1Response;
 use EzmaxApi::Object::BillingentityinternalGetAutocompleteV2Response;
-use EzmaxApi::Object::BillingentityinternalGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::BillingentityinternalGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::BillingentityinternalGetListV1Response;
-use EzmaxApi::Object::BillingentityinternalGetListV1ResponseAllOf;
 use EzmaxApi::Object::BillingentityinternalGetListV1ResponseMPayload;
-use EzmaxApi::Object::BillingentityinternalGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::BillingentityinternalGetObjectV2Response;
-use EzmaxApi::Object::BillingentityinternalGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::BillingentityinternalGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::BillingentityinternalListElement;
 use EzmaxApi::Object::BillingentityinternalRequest;
 use EzmaxApi::Object::BillingentityinternalRequestCompound;
-use EzmaxApi::Object::BillingentityinternalRequestCompoundAllOf;
 use EzmaxApi::Object::BillingentityinternalResponse;
 use EzmaxApi::Object::BillingentityinternalResponseCompound;
-use EzmaxApi::Object::BillingentityinternalResponseCompoundAllOf;
 use EzmaxApi::Object::BillingentityinternalproductRequest;
 use EzmaxApi::Object::BillingentityinternalproductRequestCompound;
 use EzmaxApi::Object::BillingentityinternalproductResponse;
@@ -393,39 +373,29 @@ use EzmaxApi::Object::BillingentityinternalproductResponseCompound;
 use EzmaxApi::Object::BrandingAutocompleteElementResponse;
 use EzmaxApi::Object::BrandingCreateObjectV1Request;
 use EzmaxApi::Object::BrandingCreateObjectV1Response;
-use EzmaxApi::Object::BrandingCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::BrandingCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::BrandingEditObjectV1Request;
 use EzmaxApi::Object::BrandingEditObjectV1Response;
 use EzmaxApi::Object::BrandingGetAutocompleteV2Response;
-use EzmaxApi::Object::BrandingGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::BrandingGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::BrandingGetListV1Response;
-use EzmaxApi::Object::BrandingGetListV1ResponseAllOf;
 use EzmaxApi::Object::BrandingGetListV1ResponseMPayload;
-use EzmaxApi::Object::BrandingGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::BrandingGetObjectV2Response;
-use EzmaxApi::Object::BrandingGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::BrandingGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::BrandingListElement;
 use EzmaxApi::Object::BrandingRequest;
 use EzmaxApi::Object::BrandingRequestCompound;
 use EzmaxApi::Object::BrandingResponse;
 use EzmaxApi::Object::BrandingResponseCompound;
-use EzmaxApi::Object::BrandingResponseCompoundAllOf;
 use EzmaxApi::Object::ClonehistoryGetListV1Response;
-use EzmaxApi::Object::ClonehistoryGetListV1ResponseAllOf;
 use EzmaxApi::Object::ClonehistoryGetListV1ResponseMPayload;
-use EzmaxApi::Object::ClonehistoryGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::ClonehistoryListElement;
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::CommonAuditdetail;
 use EzmaxApi::Object::CommonFile;
 use EzmaxApi::Object::CommonGetAutocompleteV1Response;
-use EzmaxApi::Object::CommonGetAutocompleteV1ResponseAllOf;
 use EzmaxApi::Object::CommonGetListV1ResponseMPayload;
 use EzmaxApi::Object::CommonGetReportV1Response;
-use EzmaxApi::Object::CommonGetReportV1ResponseAllOf;
 use EzmaxApi::Object::CommonGetReportV1ResponseMPayload;
 use EzmaxApi::Object::CommonReport;
 use EzmaxApi::Object::CommonReportcell;
@@ -440,24 +410,20 @@ use EzmaxApi::Object::CommonResponse;
 use EzmaxApi::Object::CommonResponseError;
 use EzmaxApi::Object::CommonResponseErrorEzsignformValidation;
 use EzmaxApi::Object::CommonResponseErrorSTemporaryFileUrl;
-use EzmaxApi::Object::CommonResponseErrorSTemporaryFileUrlAllOf;
 use EzmaxApi::Object::CommonResponseErrorTooManyRequests;
 use EzmaxApi::Object::CommonResponseFilter;
 use EzmaxApi::Object::CommonResponseGetList;
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
 use EzmaxApi::Object::CommonResponseObjDebugPayloadGetList;
-use EzmaxApi::Object::CommonResponseObjDebugPayloadGetListAllOf;
 use EzmaxApi::Object::CommonResponseObjSQLQuery;
 use EzmaxApi::Object::CommonResponseRedirectSSecretquestionTextX;
 use EzmaxApi::Object::CommonResponseWarning;
 use EzmaxApi::Object::CommonWebhook;
 use EzmaxApi::Object::CommunicationGetObjectV2Response;
-use EzmaxApi::Object::CommunicationGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::CommunicationGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::CommunicationResponse;
 use EzmaxApi::Object::CommunicationResponseCompound;
-use EzmaxApi::Object::CommunicationResponseCompoundAllOf;
 use EzmaxApi::Object::CommunicationattachmentResponse;
 use EzmaxApi::Object::CommunicationattachmentResponseCompound;
 use EzmaxApi::Object::CommunicationexternalrecipientResponse;
@@ -466,24 +432,20 @@ use EzmaxApi::Object::CommunicationrecipientResponse;
 use EzmaxApi::Object::CommunicationrecipientResponseCompound;
 use EzmaxApi::Object::CompanyAutocompleteElementResponse;
 use EzmaxApi::Object::CompanyGetAutocompleteV2Response;
-use EzmaxApi::Object::CompanyGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::CompanyGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::ComputedECommunicationDirection;
+use EzmaxApi::Object::ComputedEEzsigndocumentSteptype;
 use EzmaxApi::Object::ContactRequest;
 use EzmaxApi::Object::ContactRequestCompound;
-use EzmaxApi::Object::ContactRequestCompoundAllOf;
 use EzmaxApi::Object::ContactinformationsRequest;
 use EzmaxApi::Object::ContactinformationsRequestCompound;
-use EzmaxApi::Object::ContactinformationsRequestCompoundAllOf;
 use EzmaxApi::Object::CorsCreateObjectV1Request;
 use EzmaxApi::Object::CorsCreateObjectV1Response;
-use EzmaxApi::Object::CorsCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::CorsCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::CorsDeleteObjectV1Response;
 use EzmaxApi::Object::CorsEditObjectV1Request;
 use EzmaxApi::Object::CorsEditObjectV1Response;
 use EzmaxApi::Object::CorsGetObjectV2Response;
-use EzmaxApi::Object::CorsGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::CorsGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::CorsRequest;
 use EzmaxApi::Object::CorsRequestCompound;
@@ -498,27 +460,20 @@ use EzmaxApi::Object::CustomDropdownElementRequestCompound;
 use EzmaxApi::Object::CustomDropdownElementResponse;
 use EzmaxApi::Object::CustomDropdownElementResponseCompound;
 use EzmaxApi::Object::CustomEzmaxinvoicingEzsigndocumentResponse;
-use EzmaxApi::Object::CustomEzmaxinvoicingEzsigndocumentResponseAllOf;
 use EzmaxApi::Object::CustomEzmaxinvoicingEzsignfolderResponse;
-use EzmaxApi::Object::CustomEzmaxinvoicingEzsignfolderResponseAllOf;
 use EzmaxApi::Object::CustomEzmaxpricingResponse;
 use EzmaxApi::Object::CustomEzsigndocumentEzsignsignaturesAutomaticResponse;
 use EzmaxApi::Object::CustomEzsignfolderEzsignsignaturesAutomaticResponse;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationActionableElementResponse;
-use EzmaxApi::Object::CustomEzsignfoldersignerassociationActionableElementResponseAllOf;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationmessageRequest;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationmineResponse;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationstatusResponse;
 use EzmaxApi::Object::CustomEzsignfoldertransmissionResponse;
 use EzmaxApi::Object::CustomEzsignfoldertransmissionSignerResponse;
 use EzmaxApi::Object::CustomEzsignformfieldRequest;
-use EzmaxApi::Object::CustomEzsignformfieldRequestAllOf;
 use EzmaxApi::Object::CustomEzsignformfielderrorResponse;
-use EzmaxApi::Object::CustomEzsignformfielderrorResponseAllOf;
 use EzmaxApi::Object::CustomEzsignformfielderrortestResponse;
-use EzmaxApi::Object::CustomEzsignformfielderrortestResponseAllOf;
 use EzmaxApi::Object::CustomEzsignformfieldgroupRequest;
-use EzmaxApi::Object::CustomEzsignformfieldgroupRequestAllOf;
 use EzmaxApi::Object::CustomEzsignsignatureEzsignsignaturesAutomaticResponse;
 use EzmaxApi::Object::CustomEzsignsignaturestatusResponse;
 use EzmaxApi::Object::CustomFormDataDocumentResponse;
@@ -528,19 +483,14 @@ use EzmaxApi::Object::CustomFormDataSignerResponse;
 use EzmaxApi::Object::CustomFormsDataFolderResponse;
 use EzmaxApi::Object::CustomImportEzsigntemplatepackageRelationRequest;
 use EzmaxApi::Object::CustomNotificationsubsectiongetnotificationtestsResponse;
-use EzmaxApi::Object::CustomNotificationsubsectiongetnotificationtestsResponseAllOf;
 use EzmaxApi::Object::CustomNotificationtestgetnotificationtestsResponse;
-use EzmaxApi::Object::CustomNotificationtestgetnotificationtestsResponseAllOf;
 use EzmaxApi::Object::CustomUserResponse;
 use EzmaxApi::Object::CustomWebhookResponse;
-use EzmaxApi::Object::CustomWebhookResponseAllOf;
 use EzmaxApi::Object::CustomWebhooklogResponse;
-use EzmaxApi::Object::CustomWebhooklogResponseAllOf;
 use EzmaxApi::Object::CustomWordPositionOccurenceResponse;
 use EzmaxApi::Object::CustomWordPositionWordResponse;
 use EzmaxApi::Object::DepartmentAutocompleteElementResponse;
 use EzmaxApi::Object::DepartmentGetAutocompleteV2Response;
-use EzmaxApi::Object::DepartmentGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::DepartmentGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::DescriptionstaticResponse;
 use EzmaxApi::Object::DescriptionstaticResponseCompound;
@@ -552,7 +502,6 @@ use EzmaxApi::Object::EmailstaticResponse;
 use EzmaxApi::Object::EmailstaticResponseCompound;
 use EzmaxApi::Object::EmailtypeAutocompleteElementResponse;
 use EzmaxApi::Object::EmailtypeGetAutocompleteV2Response;
-use EzmaxApi::Object::EmailtypeGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EmailtypeGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::EnumFontunderline;
 use EzmaxApi::Object::EnumFontweight;
@@ -561,79 +510,58 @@ use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::EnumVerticalalignment;
 use EzmaxApi::Object::EzmaxinvoicingAutocompleteElementResponse;
 use EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2Response;
-use EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::EzmaxinvoicingGetObjectV2Response;
-use EzmaxApi::Object::EzmaxinvoicingGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzmaxinvoicingGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzmaxinvoicingGetProvisionalV1Response;
-use EzmaxApi::Object::EzmaxinvoicingGetProvisionalV1ResponseAllOf;
 use EzmaxApi::Object::EzmaxinvoicingGetProvisionalV1ResponseMPayload;
 use EzmaxApi::Object::EzmaxinvoicingResponse;
 use EzmaxApi::Object::EzmaxinvoicingResponseCompound;
-use EzmaxApi::Object::EzmaxinvoicingResponseCompoundAllOf;
 use EzmaxApi::Object::EzmaxinvoicingagentResponse;
 use EzmaxApi::Object::EzmaxinvoicingagentResponseCompound;
-use EzmaxApi::Object::EzmaxinvoicingagentResponseCompoundAllOf;
 use EzmaxApi::Object::EzmaxinvoicingcommissionResponse;
 use EzmaxApi::Object::EzmaxinvoicingcommissionResponseCompound;
-use EzmaxApi::Object::EzmaxinvoicingcommissionResponseCompoundAllOf;
 use EzmaxApi::Object::EzmaxinvoicingcontractResponse;
 use EzmaxApi::Object::EzmaxinvoicingcontractResponseCompound;
 use EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponse;
 use EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponseCompound;
-use EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponseCompoundAllOf;
 use EzmaxApi::Object::EzmaxinvoicingsummaryexternaldetailResponse;
 use EzmaxApi::Object::EzmaxinvoicingsummaryexternaldetailResponseCompound;
 use EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponse;
 use EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponseCompound;
-use EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponseCompoundAllOf;
 use EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponse;
 use EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponseCompound;
-use EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponseCompoundAllOf;
 use EzmaxApi::Object::EzmaxinvoicingsummaryinternaldetailResponse;
 use EzmaxApi::Object::EzmaxinvoicingsummaryinternaldetailResponseCompound;
 use EzmaxApi::Object::EzmaxinvoicinguserResponse;
 use EzmaxApi::Object::EzmaxinvoicinguserResponseCompound;
 use EzmaxApi::Object::EzmaxproductAutocompleteElementResponse;
 use EzmaxApi::Object::EzmaxproductGetAutocompleteV2Response;
-use EzmaxApi::Object::EzmaxproductGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EzmaxproductGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::EzsignSuggestSignersV1Response;
-use EzmaxApi::Object::EzsignSuggestSignersV1ResponseAllOf;
 use EzmaxApi::Object::EzsignSuggestSignersV1ResponseMPayload;
 use EzmaxApi::Object::EzsignSuggestTemplatesV1Response;
-use EzmaxApi::Object::EzsignSuggestTemplatesV1ResponseAllOf;
 use EzmaxApi::Object::EzsignSuggestTemplatesV1ResponseMPayload;
 use EzmaxApi::Object::EzsignannotationResponse;
 use EzmaxApi::Object::EzsignannotationResponseCompound;
-use EzmaxApi::Object::EzsignannotationResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignbulksendCreateEzsignbulksendtransmissionV1Request;
 use EzmaxApi::Object::EzsignbulksendCreateEzsignbulksendtransmissionV1Response;
-use EzmaxApi::Object::EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendCreateObjectV1Request;
 use EzmaxApi::Object::EzsignbulksendCreateObjectV1Response;
-use EzmaxApi::Object::EzsignbulksendCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignbulksendEditObjectV1Request;
 use EzmaxApi::Object::EzsignbulksendEditObjectV1Response;
 use EzmaxApi::Object::EzsignbulksendGetEzsignbulksendtransmissionsV1Response;
-use EzmaxApi::Object::EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendGetEzsignsignaturesAutomaticV1Response;
-use EzmaxApi::Object::EzsignbulksendGetEzsignsignaturesAutomaticV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendGetEzsignsignaturesAutomaticV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendGetFormsDataV1Response;
-use EzmaxApi::Object::EzsignbulksendGetFormsDataV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendGetFormsDataV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendGetListV1Response;
-use EzmaxApi::Object::EzsignbulksendGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendGetListV1ResponseMPayload;
-use EzmaxApi::Object::EzsignbulksendGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsignbulksendGetObjectV2Response;
-use EzmaxApi::Object::EzsignbulksendGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendListElement;
 use EzmaxApi::Object::EzsignbulksendReorderV1Request;
@@ -642,108 +570,81 @@ use EzmaxApi::Object::EzsignbulksendRequest;
 use EzmaxApi::Object::EzsignbulksendRequestCompound;
 use EzmaxApi::Object::EzsignbulksendResponse;
 use EzmaxApi::Object::EzsignbulksendResponseCompound;
-use EzmaxApi::Object::EzsignbulksendResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingCreateObjectV1Request;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingCreateObjectV1Response;
-use EzmaxApi::Object::EzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingGetObjectV2Response;
-use EzmaxApi::Object::EzsignbulksenddocumentmappingGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingRequest;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingRequestCompound;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingResponse;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingResponseCompound;
-use EzmaxApi::Object::EzsignbulksenddocumentmappingResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignbulksendsignermappingCreateObjectV1Request;
 use EzmaxApi::Object::EzsignbulksendsignermappingCreateObjectV1Response;
-use EzmaxApi::Object::EzsignbulksendsignermappingCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendsignermappingCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendsignermappingDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignbulksendsignermappingGetObjectV2Response;
-use EzmaxApi::Object::EzsignbulksendsignermappingGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendsignermappingGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendsignermappingRequest;
 use EzmaxApi::Object::EzsignbulksendsignermappingRequestCompound;
 use EzmaxApi::Object::EzsignbulksendsignermappingResponse;
 use EzmaxApi::Object::EzsignbulksendsignermappingResponseCompound;
 use EzmaxApi::Object::EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response;
-use EzmaxApi::Object::EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendtransmissionGetFormsDataV1Response;
-use EzmaxApi::Object::EzsignbulksendtransmissionGetFormsDataV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendtransmissionGetFormsDataV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendtransmissionGetObjectV2Response;
-use EzmaxApi::Object::EzsignbulksendtransmissionGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendtransmissionGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendtransmissionResponse;
 use EzmaxApi::Object::EzsignbulksendtransmissionResponseCompound;
-use EzmaxApi::Object::EzsignbulksendtransmissionResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Response;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV2Request;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV2Response;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV1Request;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV1Response;
-use EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV2Request;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV2Response;
-use EzmaxApi::Object::EzsigndocumentCreateObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentDeclineToSignV1Request;
 use EzmaxApi::Object::EzsigndocumentDeclineToSignV1Response;
 use EzmaxApi::Object::EzsigndocumentDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV1Request;
 use EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV1Response;
-use EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Request;
 use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Response;
-use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentEndPrematurelyV1Response;
 use EzmaxApi::Object::EzsigndocumentFlattenV1Response;
 use EzmaxApi::Object::EzsigndocumentGetActionableElementsV1Response;
-use EzmaxApi::Object::EzsigndocumentGetActionableElementsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetActionableElementsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetCompletedElementsV1Response;
-use EzmaxApi::Object::EzsigndocumentGetCompletedElementsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetCompletedElementsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1Response;
-use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetEzsignannotationsV1Response;
-use EzmaxApi::Object::EzsigndocumentGetEzsignannotationsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetEzsignannotationsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetEzsignformfieldgroupsV1Response;
-use EzmaxApi::Object::EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetEzsignpagesV1Response;
-use EzmaxApi::Object::EzsigndocumentGetEzsignpagesV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetEzsignpagesV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesAutomaticV1Response;
-use EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesV1Response;
-use EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetFormDataV1Response;
-use EzmaxApi::Object::EzsigndocumentGetFormDataV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetFormDataV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetObjectV1Response;
-use EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetObjectV2Response;
-use EzmaxApi::Object::EzsigndocumentGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1Response;
-use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Request;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Response;
-use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentPatchObjectV1Request;
 use EzmaxApi::Object::EzsigndocumentPatchObjectV1Response;
 use EzmaxApi::Object::EzsigndocumentRequest;
@@ -751,7 +652,6 @@ use EzmaxApi::Object::EzsigndocumentRequestCompound;
 use EzmaxApi::Object::EzsigndocumentRequestPatch;
 use EzmaxApi::Object::EzsigndocumentResponse;
 use EzmaxApi::Object::EzsigndocumentResponseCompound;
-use EzmaxApi::Object::EzsigndocumentResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigndocumentSubmitEzsignformV1Request;
 use EzmaxApi::Object::EzsigndocumentSubmitEzsignformV1Response;
 use EzmaxApi::Object::EzsigndocumentUnsendV1Response;
@@ -761,11 +661,9 @@ use EzmaxApi::Object::EzsignfolderArchiveV1Response;
 use EzmaxApi::Object::EzsignfolderBatchDownloadV1Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Response;
-use EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderCreateObjectV2Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV2Response;
-use EzmaxApi::Object::EzsignfolderCreateObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignfolderDisposeEzsignfoldersV1Request;
@@ -774,47 +672,32 @@ use EzmaxApi::Object::EzsignfolderDisposeV1Response;
 use EzmaxApi::Object::EzsignfolderEditObjectV1Request;
 use EzmaxApi::Object::EzsignfolderEditObjectV1Response;
 use EzmaxApi::Object::EzsignfolderGetActionableElementsV1Response;
-use EzmaxApi::Object::EzsignfolderGetActionableElementsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetActionableElementsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetCommunicationCountV1Response;
-use EzmaxApi::Object::EzsignfolderGetCommunicationCountV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetCommunicationCountV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetCommunicationListV1Response;
-use EzmaxApi::Object::EzsignfolderGetCommunicationListV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetCommunicationListV1ResponseMPayload;
-use EzmaxApi::Object::EzsignfolderGetCommunicationListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1Response;
-use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1Response;
-use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1Response;
-use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1Response;
-use EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1Response;
-use EzmaxApi::Object::EzsignfolderGetFormsDataV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetListV1Response;
-use EzmaxApi::Object::EzsignfolderGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetListV1ResponseMPayload;
-use EzmaxApi::Object::EzsignfolderGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsignfolderGetObjectV1Response;
-use EzmaxApi::Object::EzsignfolderGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetObjectV2Response;
-use EzmaxApi::Object::EzsignfolderGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderImportEzsignfoldersignerassociationsV1Request;
 use EzmaxApi::Object::EzsignfolderImportEzsignfoldersignerassociationsV1Response;
-use EzmaxApi::Object::EzsignfolderImportEzsignfoldersignerassociationsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderImportEzsignfoldersignerassociationsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderImportEzsigntemplatepackageV1Request;
 use EzmaxApi::Object::EzsignfolderImportEzsigntemplatepackageV1Response;
-use EzmaxApi::Object::EzsignfolderImportEzsigntemplatepackageV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderListElement;
 use EzmaxApi::Object::EzsignfolderReorderV1Request;
@@ -832,56 +715,43 @@ use EzmaxApi::Object::EzsignfolderSendV3Response;
 use EzmaxApi::Object::EzsignfolderUnsendV1Response;
 use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV1Request;
 use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV1Response;
-use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV2Request;
 use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV2Response;
-use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldersignerassociationDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignfoldersignerassociationEditObjectV1Request;
 use EzmaxApi::Object::EzsignfoldersignerassociationEditObjectV1Response;
 use EzmaxApi::Object::EzsignfoldersignerassociationForceDisconnectV1Response;
 use EzmaxApi::Object::EzsignfoldersignerassociationGetInPersonLoginUrlV1Response;
-use EzmaxApi::Object::EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV1Response;
-use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV2Response;
-use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldersignerassociationPatchObjectV1Request;
 use EzmaxApi::Object::EzsignfoldersignerassociationPatchObjectV1Response;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequest;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompound;
-use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequestPatch;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponse;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompound;
-use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundUser;
 use EzmaxApi::Object::EzsignfoldertypeAutocompleteElementResponse;
 use EzmaxApi::Object::EzsignfoldertypeCreateObjectV1Request;
 use EzmaxApi::Object::EzsignfoldertypeCreateObjectV1Response;
-use EzmaxApi::Object::EzsignfoldertypeCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldertypeCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldertypeEditObjectV1Request;
 use EzmaxApi::Object::EzsignfoldertypeEditObjectV1Response;
 use EzmaxApi::Object::EzsignfoldertypeGetAutocompleteV2Response;
-use EzmaxApi::Object::EzsignfoldertypeGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldertypeGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1Response;
-use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayload;
-use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsignfoldertypeGetObjectV2Response;
-use EzmaxApi::Object::EzsignfoldertypeGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldertypeGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldertypeListElement;
 use EzmaxApi::Object::EzsignfoldertypeRequest;
 use EzmaxApi::Object::EzsignfoldertypeRequestCompound;
-use EzmaxApi::Object::EzsignfoldertypeRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignfoldertypeResponse;
 use EzmaxApi::Object::EzsignfoldertypeResponseCompound;
 use EzmaxApi::Object::EzsignformfieldRequest;
@@ -890,20 +760,16 @@ use EzmaxApi::Object::EzsignformfieldResponse;
 use EzmaxApi::Object::EzsignformfieldResponseCompound;
 use EzmaxApi::Object::EzsignformfieldgroupCreateObjectV1Request;
 use EzmaxApi::Object::EzsignformfieldgroupCreateObjectV1Response;
-use EzmaxApi::Object::EzsignformfieldgroupCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignformfieldgroupCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignformfieldgroupDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignformfieldgroupEditObjectV1Request;
 use EzmaxApi::Object::EzsignformfieldgroupEditObjectV1Response;
 use EzmaxApi::Object::EzsignformfieldgroupGetObjectV2Response;
-use EzmaxApi::Object::EzsignformfieldgroupGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignformfieldgroupGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignformfieldgroupRequest;
 use EzmaxApi::Object::EzsignformfieldgroupRequestCompound;
-use EzmaxApi::Object::EzsignformfieldgroupRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignformfieldgroupResponse;
 use EzmaxApi::Object::EzsignformfieldgroupResponseCompound;
-use EzmaxApi::Object::EzsignformfieldgroupResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignformfieldgroupsignerRequest;
 use EzmaxApi::Object::EzsignformfieldgroupsignerRequestCompound;
 use EzmaxApi::Object::EzsignformfieldgroupsignerResponse;
@@ -913,30 +779,23 @@ use EzmaxApi::Object::EzsignpageResponse;
 use EzmaxApi::Object::EzsignpageResponseCompound;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV1Request;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV1Response;
-use EzmaxApi::Object::EzsignsignatureCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV2Request;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV2Response;
-use EzmaxApi::Object::EzsignsignatureCreateObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignsignatureDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureEditObjectV1Request;
 use EzmaxApi::Object::EzsignsignatureEditObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureGetEzsignsignatureattachmentV1Response;
-use EzmaxApi::Object::EzsignsignatureGetEzsignsignatureattachmentV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureGetEzsignsignatureattachmentV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignatureGetEzsignsignaturesAutomaticV1Response;
-use EzmaxApi::Object::EzsignsignatureGetEzsignsignaturesAutomaticV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureGetEzsignsignaturesAutomaticV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignatureGetObjectV2Response;
-use EzmaxApi::Object::EzsignsignatureGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignsignatureRequest;
 use EzmaxApi::Object::EzsignsignatureRequestCompound;
-use EzmaxApi::Object::EzsignsignatureRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignsignatureResponse;
 use EzmaxApi::Object::EzsignsignatureResponseCompound;
-use EzmaxApi::Object::EzsignsignatureResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignsignatureSignV1Request;
 use EzmaxApi::Object::EzsignsignatureSignV1Response;
 use EzmaxApi::Object::EzsignsignatureattachmentResponse;
@@ -946,28 +805,22 @@ use EzmaxApi::Object::EzsignsignaturecustomdateResponse;
 use EzmaxApi::Object::EzsignsignaturecustomdateResponseCompound;
 use EzmaxApi::Object::EzsignsignerRequest;
 use EzmaxApi::Object::EzsignsignerRequestCompound;
-use EzmaxApi::Object::EzsignsignerRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignsignerRequestCompoundContact;
 use EzmaxApi::Object::EzsignsignerResponse;
 use EzmaxApi::Object::EzsignsignerResponseCompound;
-use EzmaxApi::Object::EzsignsignerResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignsignerResponseCompoundContact;
 use EzmaxApi::Object::EzsignsignergroupCreateObjectV1Request;
 use EzmaxApi::Object::EzsignsignergroupCreateObjectV1Response;
-use EzmaxApi::Object::EzsignsignergroupCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignergroupCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignergroupDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignsignergroupEditEzsignsignergroupmembershipsV1Request;
 use EzmaxApi::Object::EzsignsignergroupEditEzsignsignergroupmembershipsV1Response;
-use EzmaxApi::Object::EzsignsignergroupEditEzsignsignergroupmembershipsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignergroupEditEzsignsignergroupmembershipsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignergroupEditObjectV1Request;
 use EzmaxApi::Object::EzsignsignergroupEditObjectV1Response;
 use EzmaxApi::Object::EzsignsignergroupGetEzsignsignergroupmembershipsV1Response;
-use EzmaxApi::Object::EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignergroupGetObjectV2Response;
-use EzmaxApi::Object::EzsignsignergroupGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignsignergroupGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignsignergroupRequest;
 use EzmaxApi::Object::EzsignsignergroupRequestCompound;
@@ -975,11 +828,9 @@ use EzmaxApi::Object::EzsignsignergroupResponse;
 use EzmaxApi::Object::EzsignsignergroupResponseCompound;
 use EzmaxApi::Object::EzsignsignergroupmembershipCreateObjectV1Request;
 use EzmaxApi::Object::EzsignsignergroupmembershipCreateObjectV1Response;
-use EzmaxApi::Object::EzsignsignergroupmembershipCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignergroupmembershipCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignergroupmembershipDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignsignergroupmembershipGetObjectV2Response;
-use EzmaxApi::Object::EzsignsignergroupmembershipGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignsignergroupmembershipGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignsignergroupmembershipRequest;
 use EzmaxApi::Object::EzsignsignergroupmembershipRequestCompound;
@@ -988,65 +839,48 @@ use EzmaxApi::Object::EzsignsignergroupmembershipResponseCompound;
 use EzmaxApi::Object::EzsigntemplateAutocompleteElementResponse;
 use EzmaxApi::Object::EzsigntemplateCopyV1Request;
 use EzmaxApi::Object::EzsigntemplateCopyV1Response;
-use EzmaxApi::Object::EzsigntemplateCopyV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateCopyV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplateCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplateCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplateEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplateEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplateGetAutocompleteV2Response;
-use EzmaxApi::Object::EzsigntemplateGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateGetListV1Response;
-use EzmaxApi::Object::EzsigntemplateGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateGetListV1ResponseMPayload;
-use EzmaxApi::Object::EzsigntemplateGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsigntemplateGetObjectV1Response;
-use EzmaxApi::Object::EzsigntemplateGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplateGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateListElement;
 use EzmaxApi::Object::EzsigntemplateRequest;
 use EzmaxApi::Object::EzsigntemplateRequestCompound;
 use EzmaxApi::Object::EzsigntemplateResponse;
 use EzmaxApi::Object::EzsigntemplateResponseCompound;
-use EzmaxApi::Object::EzsigntemplateResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatedocumentCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request;
 use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request;
 use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatedocumentEditObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentEditObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentFlattenV1Response;
 use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatedocumentGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentGetWordsPositionsV1Request;
 use EzmaxApi::Object::EzsigntemplatedocumentGetWordsPositionsV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentGetWordsPositionsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentPatchObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatedocumentPatchObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatedocumentRequest;
@@ -1062,20 +896,16 @@ use EzmaxApi::Object::EzsigntemplateformfieldResponse;
 use EzmaxApi::Object::EzsigntemplateformfieldResponseCompound;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplateformfieldgroupCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplateformfieldgroupGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupRequest;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupRequestCompound;
-use EzmaxApi::Object::EzsigntemplateformfieldgroupRequestCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupResponse;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupResponseCompound;
-use EzmaxApi::Object::EzsigntemplateformfieldgroupResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupsignerRequest;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupsignerRequestCompound;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupsignerResponse;
@@ -1083,55 +913,42 @@ use EzmaxApi::Object::EzsigntemplateformfieldgroupsignerResponseCompound;
 use EzmaxApi::Object::EzsigntemplatepackageAutocompleteElementResponse;
 use EzmaxApi::Object::EzsigntemplatepackageCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepackageCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatepackageCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackageDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request;
 use EzmaxApi::Object::EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response;
-use EzmaxApi::Object::EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackageEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepackageEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepackageGetAutocompleteV2Response;
-use EzmaxApi::Object::EzsigntemplatepackageGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1Response;
-use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload;
-use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatepackageGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackageListElement;
 use EzmaxApi::Object::EzsigntemplatepackageRequest;
 use EzmaxApi::Object::EzsigntemplatepackageRequestCompound;
 use EzmaxApi::Object::EzsigntemplatepackageResponse;
 use EzmaxApi::Object::EzsigntemplatepackageResponseCompound;
-use EzmaxApi::Object::EzsigntemplatepackageResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatepackagemembershipGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipRequest;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipRequestCompound;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipResponse;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipResponseCompound;
-use EzmaxApi::Object::EzsigntemplatepackagemembershipResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignerCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepackagesignerCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatepackagesignerCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagesignerDeleteObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatepackagesignerDeleteObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagesignerEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepackagesignerEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepackagesignerGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatepackagesignerGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignerGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagesignerRequest;
 use EzmaxApi::Object::EzsigntemplatepackagesignerRequestCompound;
@@ -1139,13 +956,10 @@ use EzmaxApi::Object::EzsigntemplatepackagesignerResponse;
 use EzmaxApi::Object::EzsigntemplatepackagesignerResponseCompound;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatepackagesignermembershipCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipDeleteObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipRequest;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipRequestCompound;
@@ -1153,33 +967,27 @@ use EzmaxApi::Object::EzsigntemplatepackagesignermembershipResponse;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipResponseCompound;
 use EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatesignatureDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatesignatureEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatesignatureEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatesignatureGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatesignatureGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatesignatureGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatesignatureRequest;
 use EzmaxApi::Object::EzsigntemplatesignatureRequestCompound;
-use EzmaxApi::Object::EzsigntemplatesignatureRequestCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplatesignatureResponse;
 use EzmaxApi::Object::EzsigntemplatesignatureResponseCompound;
-use EzmaxApi::Object::EzsigntemplatesignatureResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplatesignaturecustomdateRequest;
 use EzmaxApi::Object::EzsigntemplatesignaturecustomdateRequestCompound;
 use EzmaxApi::Object::EzsigntemplatesignaturecustomdateResponse;
 use EzmaxApi::Object::EzsigntemplatesignaturecustomdateResponseCompound;
 use EzmaxApi::Object::EzsigntemplatesignerCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatesignerCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatesignerCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatesignerCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatesignerDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatesignerEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatesignerEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatesignerGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatesignerGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatesignerGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatesignerRequest;
 use EzmaxApi::Object::EzsigntemplatesignerRequestCompound;
@@ -1187,7 +995,6 @@ use EzmaxApi::Object::EzsigntemplatesignerResponse;
 use EzmaxApi::Object::EzsigntemplatesignerResponseCompound;
 use EzmaxApi::Object::EzsigntsarequirementAutocompleteElementResponse;
 use EzmaxApi::Object::EzsigntsarequirementGetAutocompleteV2Response;
-use EzmaxApi::Object::EzsigntsarequirementGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntsarequirementGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::FieldEActivesessionOrigin;
 use EzmaxApi::Object::FieldEActivesessionUsertype;
@@ -1249,43 +1056,33 @@ use EzmaxApi::Object::FieldEWebhookModule;
 use EzmaxApi::Object::FieldPksEzmaxclientOs;
 use EzmaxApi::Object::FontAutocompleteElementResponse;
 use EzmaxApi::Object::FontGetAutocompleteV2Response;
-use EzmaxApi::Object::FontGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::FontGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::FranchisebrokerAutocompleteElementResponse;
 use EzmaxApi::Object::FranchisebrokerGetAutocompleteV2Response;
-use EzmaxApi::Object::FranchisebrokerGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::FranchisebrokerGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::FranchiseofficeAutocompleteElementResponse;
 use EzmaxApi::Object::FranchiseofficeGetAutocompleteV2Response;
-use EzmaxApi::Object::FranchiseofficeGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::FranchiseofficeGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1Request;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1Response;
-use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV2Request;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV2Response;
-use EzmaxApi::Object::FranchisereferalincomeCreateObjectV2ResponseAllOf;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::FranchisereferalincomeRequest;
 use EzmaxApi::Object::FranchisereferalincomeRequestCompound;
-use EzmaxApi::Object::FranchisereferalincomeRequestCompoundAllOf;
 use EzmaxApi::Object::GlobalCustomerGetEndpointV1Response;
 use EzmaxApi::Object::GlobalEzmaxclientVersionV1Response;
 use EzmaxApi::Object::GlobalEzmaxcustomerGetConfigurationV1Response;
 use EzmaxApi::Object::HeaderAcceptLanguage;
 use EzmaxApi::Object::ModuleResponse;
 use EzmaxApi::Object::ModuleResponseCompound;
-use EzmaxApi::Object::ModuleResponseCompoundAllOf;
 use EzmaxApi::Object::ModulegroupGetAllV1Response;
-use EzmaxApi::Object::ModulegroupGetAllV1ResponseAllOf;
 use EzmaxApi::Object::ModulegroupGetAllV1ResponseMPayload;
 use EzmaxApi::Object::ModulegroupResponse;
 use EzmaxApi::Object::ModulegroupResponseCompound;
-use EzmaxApi::Object::ModulegroupResponseCompoundAllOf;
 use EzmaxApi::Object::ModulesectionResponse;
 use EzmaxApi::Object::ModulesectionResponseCompound;
-use EzmaxApi::Object::ModulesectionResponseCompoundAllOf;
 use EzmaxApi::Object::MultilingualApikeyDescription;
 use EzmaxApi::Object::MultilingualBillingentityinternalDescription;
 use EzmaxApi::Object::MultilingualBrandingDescription;
@@ -1300,29 +1097,22 @@ use EzmaxApi::Object::MultilingualUsergroupName;
 use EzmaxApi::Object::MultilingualVariableexpenseDescription;
 use EzmaxApi::Object::MultilingualVersionhistoryDetail;
 use EzmaxApi::Object::NotificationsectionGetNotificationtestsV1Response;
-use EzmaxApi::Object::NotificationsectionGetNotificationtestsV1ResponseAllOf;
 use EzmaxApi::Object::NotificationsectionGetNotificationtestsV1ResponseMPayload;
 use EzmaxApi::Object::NotificationsubsectionResponse;
 use EzmaxApi::Object::NotificationtestGetElementsV1Response;
-use EzmaxApi::Object::NotificationtestGetElementsV1ResponseAllOf;
 use EzmaxApi::Object::NotificationtestGetElementsV1ResponseMPayload;
 use EzmaxApi::Object::NotificationtestResponse;
 use EzmaxApi::Object::PaymenttermAutocompleteElementResponse;
 use EzmaxApi::Object::PaymenttermCreateObjectV1Request;
 use EzmaxApi::Object::PaymenttermCreateObjectV1Response;
-use EzmaxApi::Object::PaymenttermCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::PaymenttermCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::PaymenttermEditObjectV1Request;
 use EzmaxApi::Object::PaymenttermEditObjectV1Response;
 use EzmaxApi::Object::PaymenttermGetAutocompleteV2Response;
-use EzmaxApi::Object::PaymenttermGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::PaymenttermGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::PaymenttermGetListV1Response;
-use EzmaxApi::Object::PaymenttermGetListV1ResponseAllOf;
 use EzmaxApi::Object::PaymenttermGetListV1ResponseMPayload;
-use EzmaxApi::Object::PaymenttermGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::PaymenttermGetObjectV2Response;
-use EzmaxApi::Object::PaymenttermGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::PaymenttermGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::PaymenttermListElement;
 use EzmaxApi::Object::PaymenttermRequest;
@@ -1331,17 +1121,14 @@ use EzmaxApi::Object::PaymenttermResponse;
 use EzmaxApi::Object::PaymenttermResponseCompound;
 use EzmaxApi::Object::PeriodAutocompleteElementResponse;
 use EzmaxApi::Object::PeriodGetAutocompleteV2Response;
-use EzmaxApi::Object::PeriodGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::PeriodGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::PermissionCreateObjectV1Request;
 use EzmaxApi::Object::PermissionCreateObjectV1Response;
-use EzmaxApi::Object::PermissionCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::PermissionCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::PermissionDeleteObjectV1Response;
 use EzmaxApi::Object::PermissionEditObjectV1Request;
 use EzmaxApi::Object::PermissionEditObjectV1Response;
 use EzmaxApi::Object::PermissionGetObjectV2Response;
-use EzmaxApi::Object::PermissionGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::PermissionGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::PermissionRequest;
 use EzmaxApi::Object::PermissionRequestCompound;
@@ -1355,7 +1142,6 @@ use EzmaxApi::Object::PhonestaticResponse;
 use EzmaxApi::Object::PhonestaticResponseCompound;
 use EzmaxApi::Object::PhonetypeAutocompleteElementResponse;
 use EzmaxApi::Object::PhonetypeGetAutocompleteV2Response;
-use EzmaxApi::Object::PhonetypeGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::PhonetypeGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::ScimAuthenticationScheme;
 use EzmaxApi::Object::ScimEmail;
@@ -1372,22 +1158,17 @@ use EzmaxApi::Object::ScimUser;
 use EzmaxApi::Object::ScimUserList;
 use EzmaxApi::Object::SecretquestionAutocompleteElementResponse;
 use EzmaxApi::Object::SecretquestionGetAutocompleteV2Response;
-use EzmaxApi::Object::SecretquestionGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::SecretquestionGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::SessionhistoryGetListV1Response;
-use EzmaxApi::Object::SessionhistoryGetListV1ResponseAllOf;
 use EzmaxApi::Object::SessionhistoryGetListV1ResponseMPayload;
-use EzmaxApi::Object::SessionhistoryGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::SessionhistoryListElement;
 use EzmaxApi::Object::SignatureCreateObjectV1Request;
 use EzmaxApi::Object::SignatureCreateObjectV1Response;
-use EzmaxApi::Object::SignatureCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::SignatureCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::SignatureDeleteObjectV1Response;
 use EzmaxApi::Object::SignatureEditObjectV1Request;
 use EzmaxApi::Object::SignatureEditObjectV1Response;
 use EzmaxApi::Object::SignatureGetObjectV2Response;
-use EzmaxApi::Object::SignatureGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::SignatureGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::SignatureRequest;
 use EzmaxApi::Object::SignatureRequestCompound;
@@ -1395,13 +1176,11 @@ use EzmaxApi::Object::SignatureResponse;
 use EzmaxApi::Object::SignatureResponseCompound;
 use EzmaxApi::Object::SubnetCreateObjectV1Request;
 use EzmaxApi::Object::SubnetCreateObjectV1Response;
-use EzmaxApi::Object::SubnetCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::SubnetCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::SubnetDeleteObjectV1Response;
 use EzmaxApi::Object::SubnetEditObjectV1Request;
 use EzmaxApi::Object::SubnetEditObjectV1Response;
 use EzmaxApi::Object::SubnetGetObjectV2Response;
-use EzmaxApi::Object::SubnetGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::SubnetGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::SubnetRequest;
 use EzmaxApi::Object::SubnetRequestCompound;
@@ -1410,7 +1189,6 @@ use EzmaxApi::Object::SubnetResponseCompound;
 use EzmaxApi::Object::SystemconfigurationEditObjectV1Request;
 use EzmaxApi::Object::SystemconfigurationEditObjectV1Response;
 use EzmaxApi::Object::SystemconfigurationGetObjectV2Response;
-use EzmaxApi::Object::SystemconfigurationGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::SystemconfigurationGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::SystemconfigurationRequest;
 use EzmaxApi::Object::SystemconfigurationRequestCompound;
@@ -1418,113 +1196,106 @@ use EzmaxApi::Object::SystemconfigurationResponse;
 use EzmaxApi::Object::SystemconfigurationResponseCompound;
 use EzmaxApi::Object::TaxassignmentAutocompleteElementResponse;
 use EzmaxApi::Object::TaxassignmentGetAutocompleteV2Response;
-use EzmaxApi::Object::TaxassignmentGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::TaxassignmentGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::TextstylestaticResponse;
 use EzmaxApi::Object::TextstylestaticResponseCompound;
 use EzmaxApi::Object::TimezoneAutocompleteElementResponse;
 use EzmaxApi::Object::TimezoneGetAutocompleteV2Response;
-use EzmaxApi::Object::TimezoneGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::TimezoneGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::UserAutocompleteElementResponse;
 use EzmaxApi::Object::UserCreateEzsignuserV1Request;
 use EzmaxApi::Object::UserCreateEzsignuserV1Response;
-use EzmaxApi::Object::UserCreateEzsignuserV1ResponseAllOf;
 use EzmaxApi::Object::UserCreateEzsignuserV1ResponseMPayload;
 use EzmaxApi::Object::UserCreateObjectV1Request;
 use EzmaxApi::Object::UserCreateObjectV1Response;
-use EzmaxApi::Object::UserCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::UserCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::UserEditObjectV1Request;
 use EzmaxApi::Object::UserEditObjectV1Response;
 use EzmaxApi::Object::UserEditPermissionsV1Request;
 use EzmaxApi::Object::UserEditPermissionsV1Response;
-use EzmaxApi::Object::UserEditPermissionsV1ResponseAllOf;
 use EzmaxApi::Object::UserEditPermissionsV1ResponseMPayload;
+use EzmaxApi::Object::UserGetApikeysV1Response;
+use EzmaxApi::Object::UserGetApikeysV1ResponseMPayload;
 use EzmaxApi::Object::UserGetAutocompleteV2Response;
-use EzmaxApi::Object::UserGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::UserGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::UserGetEffectivePermissionsV1Response;
-use EzmaxApi::Object::UserGetEffectivePermissionsV1ResponseAllOf;
 use EzmaxApi::Object::UserGetEffectivePermissionsV1ResponseMPayload;
 use EzmaxApi::Object::UserGetListV1Response;
-use EzmaxApi::Object::UserGetListV1ResponseAllOf;
 use EzmaxApi::Object::UserGetListV1ResponseMPayload;
-use EzmaxApi::Object::UserGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::UserGetObjectV2Response;
-use EzmaxApi::Object::UserGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::UserGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::UserGetPermissionsV1Response;
-use EzmaxApi::Object::UserGetPermissionsV1ResponseAllOf;
 use EzmaxApi::Object::UserGetPermissionsV1ResponseMPayload;
 use EzmaxApi::Object::UserGetSubnetsV1Response;
-use EzmaxApi::Object::UserGetSubnetsV1ResponseAllOf;
 use EzmaxApi::Object::UserGetSubnetsV1ResponseMPayload;
 use EzmaxApi::Object::UserListElement;
 use EzmaxApi::Object::UserRequest;
 use EzmaxApi::Object::UserRequestCompound;
 use EzmaxApi::Object::UserResponse;
 use EzmaxApi::Object::UserResponseCompound;
+use EzmaxApi::Object::UserSendPasswordResetV1Response;
 use EzmaxApi::Object::UsergroupAutocompleteElementResponse;
 use EzmaxApi::Object::UsergroupCreateObjectV1Request;
 use EzmaxApi::Object::UsergroupCreateObjectV1Response;
-use EzmaxApi::Object::UsergroupCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::UsergroupEditObjectV1Request;
 use EzmaxApi::Object::UsergroupEditObjectV1Response;
 use EzmaxApi::Object::UsergroupEditPermissionsV1Request;
 use EzmaxApi::Object::UsergroupEditPermissionsV1Response;
-use EzmaxApi::Object::UsergroupEditPermissionsV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupEditPermissionsV1ResponseMPayload;
+use EzmaxApi::Object::UsergroupEditUsergroupdelegationsV1Request;
+use EzmaxApi::Object::UsergroupEditUsergroupdelegationsV1Response;
+use EzmaxApi::Object::UsergroupEditUsergroupdelegationsV1ResponseMPayload;
 use EzmaxApi::Object::UsergroupEditUsergroupmembershipsV1Request;
 use EzmaxApi::Object::UsergroupEditUsergroupmembershipsV1Response;
-use EzmaxApi::Object::UsergroupEditUsergroupmembershipsV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupEditUsergroupmembershipsV1ResponseMPayload;
 use EzmaxApi::Object::UsergroupGetAutocompleteV2Response;
-use EzmaxApi::Object::UsergroupGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::UsergroupGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::UsergroupGetListV1Response;
-use EzmaxApi::Object::UsergroupGetListV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupGetListV1ResponseMPayload;
-use EzmaxApi::Object::UsergroupGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::UsergroupGetObjectV2Response;
-use EzmaxApi::Object::UsergroupGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::UsergroupGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::UsergroupGetPermissionsV1Response;
-use EzmaxApi::Object::UsergroupGetPermissionsV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupGetPermissionsV1ResponseMPayload;
+use EzmaxApi::Object::UsergroupGetUsergroupdelegationsV1Response;
+use EzmaxApi::Object::UsergroupGetUsergroupdelegationsV1ResponseMPayload;
 use EzmaxApi::Object::UsergroupGetUsergroupmembershipsV1Response;
-use EzmaxApi::Object::UsergroupGetUsergroupmembershipsV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupGetUsergroupmembershipsV1ResponseMPayload;
 use EzmaxApi::Object::UsergroupListElement;
 use EzmaxApi::Object::UsergroupRequest;
 use EzmaxApi::Object::UsergroupRequestCompound;
 use EzmaxApi::Object::UsergroupResponse;
 use EzmaxApi::Object::UsergroupResponseCompound;
+use EzmaxApi::Object::UsergroupdelegationCreateObjectV1Request;
+use EzmaxApi::Object::UsergroupdelegationCreateObjectV1Response;
+use EzmaxApi::Object::UsergroupdelegationCreateObjectV1ResponseMPayload;
+use EzmaxApi::Object::UsergroupdelegationDeleteObjectV1Response;
+use EzmaxApi::Object::UsergroupdelegationEditObjectV1Request;
+use EzmaxApi::Object::UsergroupdelegationEditObjectV1Response;
+use EzmaxApi::Object::UsergroupdelegationGetObjectV2Response;
+use EzmaxApi::Object::UsergroupdelegationGetObjectV2ResponseMPayload;
+use EzmaxApi::Object::UsergroupdelegationRequest;
+use EzmaxApi::Object::UsergroupdelegationRequestCompound;
+use EzmaxApi::Object::UsergroupdelegationResponse;
+use EzmaxApi::Object::UsergroupdelegationResponseCompound;
 use EzmaxApi::Object::UsergroupmembershipCreateObjectV1Request;
 use EzmaxApi::Object::UsergroupmembershipCreateObjectV1Response;
-use EzmaxApi::Object::UsergroupmembershipCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupmembershipCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::UsergroupmembershipDeleteObjectV1Response;
 use EzmaxApi::Object::UsergroupmembershipEditObjectV1Request;
 use EzmaxApi::Object::UsergroupmembershipEditObjectV1Response;
 use EzmaxApi::Object::UsergroupmembershipGetObjectV2Response;
-use EzmaxApi::Object::UsergroupmembershipGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::UsergroupmembershipGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::UsergroupmembershipRequest;
 use EzmaxApi::Object::UsergroupmembershipRequestCompound;
 use EzmaxApi::Object::UsergroupmembershipResponse;
 use EzmaxApi::Object::UsergroupmembershipResponseCompound;
 use EzmaxApi::Object::UserstagedCreateUserV1Response;
-use EzmaxApi::Object::UserstagedCreateUserV1ResponseAllOf;
 use EzmaxApi::Object::UserstagedCreateUserV1ResponseMPayload;
 use EzmaxApi::Object::UserstagedDeleteObjectV1Response;
 use EzmaxApi::Object::UserstagedGetListV1Response;
-use EzmaxApi::Object::UserstagedGetListV1ResponseAllOf;
 use EzmaxApi::Object::UserstagedGetListV1ResponseMPayload;
-use EzmaxApi::Object::UserstagedGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::UserstagedGetObjectV2Response;
-use EzmaxApi::Object::UserstagedGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::UserstagedGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::UserstagedListElement;
 use EzmaxApi::Object::UserstagedMapV1Request;
@@ -1534,19 +1305,14 @@ use EzmaxApi::Object::UserstagedResponseCompound;
 use EzmaxApi::Object::VariableexpenseAutocompleteElementResponse;
 use EzmaxApi::Object::VariableexpenseCreateObjectV1Request;
 use EzmaxApi::Object::VariableexpenseCreateObjectV1Response;
-use EzmaxApi::Object::VariableexpenseCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::VariableexpenseCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::VariableexpenseEditObjectV1Request;
 use EzmaxApi::Object::VariableexpenseEditObjectV1Response;
 use EzmaxApi::Object::VariableexpenseGetAutocompleteV2Response;
-use EzmaxApi::Object::VariableexpenseGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::VariableexpenseGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::VariableexpenseGetListV1Response;
-use EzmaxApi::Object::VariableexpenseGetListV1ResponseAllOf;
 use EzmaxApi::Object::VariableexpenseGetListV1ResponseMPayload;
-use EzmaxApi::Object::VariableexpenseGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::VariableexpenseGetObjectV2Response;
-use EzmaxApi::Object::VariableexpenseGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::VariableexpenseGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::VariableexpenseListElement;
 use EzmaxApi::Object::VariableexpenseRequest;
@@ -1554,46 +1320,33 @@ use EzmaxApi::Object::VariableexpenseRequestCompound;
 use EzmaxApi::Object::VariableexpenseResponse;
 use EzmaxApi::Object::VariableexpenseResponseCompound;
 use EzmaxApi::Object::VersionhistoryGetObjectV2Response;
-use EzmaxApi::Object::VersionhistoryGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::VersionhistoryGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::VersionhistoryResponse;
 use EzmaxApi::Object::VersionhistoryResponseCompound;
 use EzmaxApi::Object::WebhookCreateObjectV1Request;
 use EzmaxApi::Object::WebhookCreateObjectV1Response;
-use EzmaxApi::Object::WebhookCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::WebhookCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::WebhookDeleteObjectV1Response;
 use EzmaxApi::Object::WebhookEditObjectV1Request;
 use EzmaxApi::Object::WebhookEditObjectV1Response;
 use EzmaxApi::Object::WebhookEzsignDocumentCompleted;
-use EzmaxApi::Object::WebhookEzsignDocumentCompletedAllOf;
 use EzmaxApi::Object::WebhookEzsignEzsignsignerAcceptclause;
-use EzmaxApi::Object::WebhookEzsignEzsignsignerAcceptclauseAllOf;
 use EzmaxApi::Object::WebhookEzsignEzsignsignerConnect;
 use EzmaxApi::Object::WebhookEzsignFolderCompleted;
-use EzmaxApi::Object::WebhookEzsignFolderCompletedAllOf;
 use EzmaxApi::Object::WebhookGetHistoryV1Response;
-use EzmaxApi::Object::WebhookGetHistoryV1ResponseAllOf;
 use EzmaxApi::Object::WebhookGetHistoryV1ResponseMPayload;
-use EzmaxApi::Object::WebhookGetHistoryV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::WebhookGetListV1Response;
-use EzmaxApi::Object::WebhookGetListV1ResponseAllOf;
 use EzmaxApi::Object::WebhookGetListV1ResponseMPayload;
-use EzmaxApi::Object::WebhookGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::WebhookGetObjectV2Response;
-use EzmaxApi::Object::WebhookGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::WebhookGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::WebhookListElement;
 use EzmaxApi::Object::WebhookRequest;
 use EzmaxApi::Object::WebhookRequestCompound;
 use EzmaxApi::Object::WebhookResponse;
 use EzmaxApi::Object::WebhookResponseCompound;
-use EzmaxApi::Object::WebhookResponseCompoundAllOf;
 use EzmaxApi::Object::WebhookTestV1Response;
 use EzmaxApi::Object::WebhookUserUserCreated;
-use EzmaxApi::Object::WebhookUserUserCreatedAllOf;
 use EzmaxApi::Object::WebhookUserstagedUserstagedCreated;
-use EzmaxApi::Object::WebhookUserstagedUserstagedCreatedAllOf;
 use EzmaxApi::Object::WebsiteRequest;
 use EzmaxApi::Object::WebsiteRequestCompound;
 use EzmaxApi::Object::WebsocketRequestServerGetWebsocketIDV1;
@@ -1676,6 +1429,7 @@ use EzmaxApi::ObjectTaxassignmentApi;
 use EzmaxApi::ObjectTimezoneApi;
 use EzmaxApi::ObjectUserApi;
 use EzmaxApi::ObjectUsergroupApi;
+use EzmaxApi::ObjectUsergroupdelegationApi;
 use EzmaxApi::ObjectUsergroupmembershipApi;
 use EzmaxApi::ObjectUserstagedApi;
 use EzmaxApi::ObjectVariableexpenseApi;
@@ -1687,50 +1441,37 @@ use EzmaxApi::ScimUsersApi;
 
 # load the models
 use EzmaxApi::Object::ActivesessionGetCurrentV1Response;
-use EzmaxApi::Object::ActivesessionGetCurrentV1ResponseAllOf;
 use EzmaxApi::Object::ActivesessionGetCurrentV1ResponseMPayload;
 use EzmaxApi::Object::ActivesessionGetListV1Response;
-use EzmaxApi::Object::ActivesessionGetListV1ResponseAllOf;
 use EzmaxApi::Object::ActivesessionGetListV1ResponseMPayload;
-use EzmaxApi::Object::ActivesessionGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::ActivesessionListElement;
 use EzmaxApi::Object::ActivesessionResponse;
 use EzmaxApi::Object::ActivesessionResponseCompound;
-use EzmaxApi::Object::ActivesessionResponseCompoundAllOf;
 use EzmaxApi::Object::ActivesessionResponseCompoundApikey;
 use EzmaxApi::Object::ActivesessionResponseCompoundUser;
 use EzmaxApi::Object::AddressRequest;
 use EzmaxApi::Object::AddressRequestCompound;
 use EzmaxApi::Object::ApikeyCreateObjectV2Request;
 use EzmaxApi::Object::ApikeyCreateObjectV2Response;
-use EzmaxApi::Object::ApikeyCreateObjectV2ResponseAllOf;
 use EzmaxApi::Object::ApikeyCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::ApikeyEditObjectV1Request;
 use EzmaxApi::Object::ApikeyEditObjectV1Response;
 use EzmaxApi::Object::ApikeyEditPermissionsV1Request;
 use EzmaxApi::Object::ApikeyEditPermissionsV1Response;
-use EzmaxApi::Object::ApikeyEditPermissionsV1ResponseAllOf;
 use EzmaxApi::Object::ApikeyEditPermissionsV1ResponseMPayload;
 use EzmaxApi::Object::ApikeyGetCorsV1Response;
-use EzmaxApi::Object::ApikeyGetCorsV1ResponseAllOf;
 use EzmaxApi::Object::ApikeyGetCorsV1ResponseMPayload;
 use EzmaxApi::Object::ApikeyGetListV1Response;
-use EzmaxApi::Object::ApikeyGetListV1ResponseAllOf;
 use EzmaxApi::Object::ApikeyGetListV1ResponseMPayload;
-use EzmaxApi::Object::ApikeyGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::ApikeyGetObjectV2Response;
-use EzmaxApi::Object::ApikeyGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::ApikeyGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::ApikeyGetPermissionsV1Response;
-use EzmaxApi::Object::ApikeyGetPermissionsV1ResponseAllOf;
 use EzmaxApi::Object::ApikeyGetPermissionsV1ResponseMPayload;
 use EzmaxApi::Object::ApikeyGetSubnetsV1Response;
-use EzmaxApi::Object::ApikeyGetSubnetsV1ResponseAllOf;
 use EzmaxApi::Object::ApikeyGetSubnetsV1ResponseMPayload;
 use EzmaxApi::Object::ApikeyListElement;
 use EzmaxApi::Object::ApikeyRegenerateV1Request;
 use EzmaxApi::Object::ApikeyRegenerateV1Response;
-use EzmaxApi::Object::ApikeyRegenerateV1ResponseAllOf;
 use EzmaxApi::Object::ApikeyRegenerateV1ResponseMPayload;
 use EzmaxApi::Object::ApikeyRequest;
 use EzmaxApi::Object::ApikeyRequestCompound;
@@ -1740,32 +1481,24 @@ use EzmaxApi::Object::AttemptResponse;
 use EzmaxApi::Object::AttemptResponseCompound;
 use EzmaxApi::Object::BillingentityexternalAutocompleteElementResponse;
 use EzmaxApi::Object::BillingentityexternalGetAutocompleteV2Response;
-use EzmaxApi::Object::BillingentityexternalGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::BillingentityexternalGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::BillingentityinternalAutocompleteElementResponse;
 use EzmaxApi::Object::BillingentityinternalCreateObjectV1Request;
 use EzmaxApi::Object::BillingentityinternalCreateObjectV1Response;
-use EzmaxApi::Object::BillingentityinternalCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::BillingentityinternalCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::BillingentityinternalEditObjectV1Request;
 use EzmaxApi::Object::BillingentityinternalEditObjectV1Response;
 use EzmaxApi::Object::BillingentityinternalGetAutocompleteV2Response;
-use EzmaxApi::Object::BillingentityinternalGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::BillingentityinternalGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::BillingentityinternalGetListV1Response;
-use EzmaxApi::Object::BillingentityinternalGetListV1ResponseAllOf;
 use EzmaxApi::Object::BillingentityinternalGetListV1ResponseMPayload;
-use EzmaxApi::Object::BillingentityinternalGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::BillingentityinternalGetObjectV2Response;
-use EzmaxApi::Object::BillingentityinternalGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::BillingentityinternalGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::BillingentityinternalListElement;
 use EzmaxApi::Object::BillingentityinternalRequest;
 use EzmaxApi::Object::BillingentityinternalRequestCompound;
-use EzmaxApi::Object::BillingentityinternalRequestCompoundAllOf;
 use EzmaxApi::Object::BillingentityinternalResponse;
 use EzmaxApi::Object::BillingentityinternalResponseCompound;
-use EzmaxApi::Object::BillingentityinternalResponseCompoundAllOf;
 use EzmaxApi::Object::BillingentityinternalproductRequest;
 use EzmaxApi::Object::BillingentityinternalproductRequestCompound;
 use EzmaxApi::Object::BillingentityinternalproductResponse;
@@ -1773,39 +1506,29 @@ use EzmaxApi::Object::BillingentityinternalproductResponseCompound;
 use EzmaxApi::Object::BrandingAutocompleteElementResponse;
 use EzmaxApi::Object::BrandingCreateObjectV1Request;
 use EzmaxApi::Object::BrandingCreateObjectV1Response;
-use EzmaxApi::Object::BrandingCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::BrandingCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::BrandingEditObjectV1Request;
 use EzmaxApi::Object::BrandingEditObjectV1Response;
 use EzmaxApi::Object::BrandingGetAutocompleteV2Response;
-use EzmaxApi::Object::BrandingGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::BrandingGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::BrandingGetListV1Response;
-use EzmaxApi::Object::BrandingGetListV1ResponseAllOf;
 use EzmaxApi::Object::BrandingGetListV1ResponseMPayload;
-use EzmaxApi::Object::BrandingGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::BrandingGetObjectV2Response;
-use EzmaxApi::Object::BrandingGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::BrandingGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::BrandingListElement;
 use EzmaxApi::Object::BrandingRequest;
 use EzmaxApi::Object::BrandingRequestCompound;
 use EzmaxApi::Object::BrandingResponse;
 use EzmaxApi::Object::BrandingResponseCompound;
-use EzmaxApi::Object::BrandingResponseCompoundAllOf;
 use EzmaxApi::Object::ClonehistoryGetListV1Response;
-use EzmaxApi::Object::ClonehistoryGetListV1ResponseAllOf;
 use EzmaxApi::Object::ClonehistoryGetListV1ResponseMPayload;
-use EzmaxApi::Object::ClonehistoryGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::ClonehistoryListElement;
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::CommonAuditdetail;
 use EzmaxApi::Object::CommonFile;
 use EzmaxApi::Object::CommonGetAutocompleteV1Response;
-use EzmaxApi::Object::CommonGetAutocompleteV1ResponseAllOf;
 use EzmaxApi::Object::CommonGetListV1ResponseMPayload;
 use EzmaxApi::Object::CommonGetReportV1Response;
-use EzmaxApi::Object::CommonGetReportV1ResponseAllOf;
 use EzmaxApi::Object::CommonGetReportV1ResponseMPayload;
 use EzmaxApi::Object::CommonReport;
 use EzmaxApi::Object::CommonReportcell;
@@ -1820,24 +1543,20 @@ use EzmaxApi::Object::CommonResponse;
 use EzmaxApi::Object::CommonResponseError;
 use EzmaxApi::Object::CommonResponseErrorEzsignformValidation;
 use EzmaxApi::Object::CommonResponseErrorSTemporaryFileUrl;
-use EzmaxApi::Object::CommonResponseErrorSTemporaryFileUrlAllOf;
 use EzmaxApi::Object::CommonResponseErrorTooManyRequests;
 use EzmaxApi::Object::CommonResponseFilter;
 use EzmaxApi::Object::CommonResponseGetList;
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
 use EzmaxApi::Object::CommonResponseObjDebugPayloadGetList;
-use EzmaxApi::Object::CommonResponseObjDebugPayloadGetListAllOf;
 use EzmaxApi::Object::CommonResponseObjSQLQuery;
 use EzmaxApi::Object::CommonResponseRedirectSSecretquestionTextX;
 use EzmaxApi::Object::CommonResponseWarning;
 use EzmaxApi::Object::CommonWebhook;
 use EzmaxApi::Object::CommunicationGetObjectV2Response;
-use EzmaxApi::Object::CommunicationGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::CommunicationGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::CommunicationResponse;
 use EzmaxApi::Object::CommunicationResponseCompound;
-use EzmaxApi::Object::CommunicationResponseCompoundAllOf;
 use EzmaxApi::Object::CommunicationattachmentResponse;
 use EzmaxApi::Object::CommunicationattachmentResponseCompound;
 use EzmaxApi::Object::CommunicationexternalrecipientResponse;
@@ -1846,24 +1565,20 @@ use EzmaxApi::Object::CommunicationrecipientResponse;
 use EzmaxApi::Object::CommunicationrecipientResponseCompound;
 use EzmaxApi::Object::CompanyAutocompleteElementResponse;
 use EzmaxApi::Object::CompanyGetAutocompleteV2Response;
-use EzmaxApi::Object::CompanyGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::CompanyGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::ComputedECommunicationDirection;
+use EzmaxApi::Object::ComputedEEzsigndocumentSteptype;
 use EzmaxApi::Object::ContactRequest;
 use EzmaxApi::Object::ContactRequestCompound;
-use EzmaxApi::Object::ContactRequestCompoundAllOf;
 use EzmaxApi::Object::ContactinformationsRequest;
 use EzmaxApi::Object::ContactinformationsRequestCompound;
-use EzmaxApi::Object::ContactinformationsRequestCompoundAllOf;
 use EzmaxApi::Object::CorsCreateObjectV1Request;
 use EzmaxApi::Object::CorsCreateObjectV1Response;
-use EzmaxApi::Object::CorsCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::CorsCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::CorsDeleteObjectV1Response;
 use EzmaxApi::Object::CorsEditObjectV1Request;
 use EzmaxApi::Object::CorsEditObjectV1Response;
 use EzmaxApi::Object::CorsGetObjectV2Response;
-use EzmaxApi::Object::CorsGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::CorsGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::CorsRequest;
 use EzmaxApi::Object::CorsRequestCompound;
@@ -1878,27 +1593,20 @@ use EzmaxApi::Object::CustomDropdownElementRequestCompound;
 use EzmaxApi::Object::CustomDropdownElementResponse;
 use EzmaxApi::Object::CustomDropdownElementResponseCompound;
 use EzmaxApi::Object::CustomEzmaxinvoicingEzsigndocumentResponse;
-use EzmaxApi::Object::CustomEzmaxinvoicingEzsigndocumentResponseAllOf;
 use EzmaxApi::Object::CustomEzmaxinvoicingEzsignfolderResponse;
-use EzmaxApi::Object::CustomEzmaxinvoicingEzsignfolderResponseAllOf;
 use EzmaxApi::Object::CustomEzmaxpricingResponse;
 use EzmaxApi::Object::CustomEzsigndocumentEzsignsignaturesAutomaticResponse;
 use EzmaxApi::Object::CustomEzsignfolderEzsignsignaturesAutomaticResponse;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationActionableElementResponse;
-use EzmaxApi::Object::CustomEzsignfoldersignerassociationActionableElementResponseAllOf;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationmessageRequest;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationmineResponse;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationstatusResponse;
 use EzmaxApi::Object::CustomEzsignfoldertransmissionResponse;
 use EzmaxApi::Object::CustomEzsignfoldertransmissionSignerResponse;
 use EzmaxApi::Object::CustomEzsignformfieldRequest;
-use EzmaxApi::Object::CustomEzsignformfieldRequestAllOf;
 use EzmaxApi::Object::CustomEzsignformfielderrorResponse;
-use EzmaxApi::Object::CustomEzsignformfielderrorResponseAllOf;
 use EzmaxApi::Object::CustomEzsignformfielderrortestResponse;
-use EzmaxApi::Object::CustomEzsignformfielderrortestResponseAllOf;
 use EzmaxApi::Object::CustomEzsignformfieldgroupRequest;
-use EzmaxApi::Object::CustomEzsignformfieldgroupRequestAllOf;
 use EzmaxApi::Object::CustomEzsignsignatureEzsignsignaturesAutomaticResponse;
 use EzmaxApi::Object::CustomEzsignsignaturestatusResponse;
 use EzmaxApi::Object::CustomFormDataDocumentResponse;
@@ -1908,19 +1616,14 @@ use EzmaxApi::Object::CustomFormDataSignerResponse;
 use EzmaxApi::Object::CustomFormsDataFolderResponse;
 use EzmaxApi::Object::CustomImportEzsigntemplatepackageRelationRequest;
 use EzmaxApi::Object::CustomNotificationsubsectiongetnotificationtestsResponse;
-use EzmaxApi::Object::CustomNotificationsubsectiongetnotificationtestsResponseAllOf;
 use EzmaxApi::Object::CustomNotificationtestgetnotificationtestsResponse;
-use EzmaxApi::Object::CustomNotificationtestgetnotificationtestsResponseAllOf;
 use EzmaxApi::Object::CustomUserResponse;
 use EzmaxApi::Object::CustomWebhookResponse;
-use EzmaxApi::Object::CustomWebhookResponseAllOf;
 use EzmaxApi::Object::CustomWebhooklogResponse;
-use EzmaxApi::Object::CustomWebhooklogResponseAllOf;
 use EzmaxApi::Object::CustomWordPositionOccurenceResponse;
 use EzmaxApi::Object::CustomWordPositionWordResponse;
 use EzmaxApi::Object::DepartmentAutocompleteElementResponse;
 use EzmaxApi::Object::DepartmentGetAutocompleteV2Response;
-use EzmaxApi::Object::DepartmentGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::DepartmentGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::DescriptionstaticResponse;
 use EzmaxApi::Object::DescriptionstaticResponseCompound;
@@ -1932,7 +1635,6 @@ use EzmaxApi::Object::EmailstaticResponse;
 use EzmaxApi::Object::EmailstaticResponseCompound;
 use EzmaxApi::Object::EmailtypeAutocompleteElementResponse;
 use EzmaxApi::Object::EmailtypeGetAutocompleteV2Response;
-use EzmaxApi::Object::EmailtypeGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EmailtypeGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::EnumFontunderline;
 use EzmaxApi::Object::EnumFontweight;
@@ -1941,79 +1643,58 @@ use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::EnumVerticalalignment;
 use EzmaxApi::Object::EzmaxinvoicingAutocompleteElementResponse;
 use EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2Response;
-use EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::EzmaxinvoicingGetObjectV2Response;
-use EzmaxApi::Object::EzmaxinvoicingGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzmaxinvoicingGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzmaxinvoicingGetProvisionalV1Response;
-use EzmaxApi::Object::EzmaxinvoicingGetProvisionalV1ResponseAllOf;
 use EzmaxApi::Object::EzmaxinvoicingGetProvisionalV1ResponseMPayload;
 use EzmaxApi::Object::EzmaxinvoicingResponse;
 use EzmaxApi::Object::EzmaxinvoicingResponseCompound;
-use EzmaxApi::Object::EzmaxinvoicingResponseCompoundAllOf;
 use EzmaxApi::Object::EzmaxinvoicingagentResponse;
 use EzmaxApi::Object::EzmaxinvoicingagentResponseCompound;
-use EzmaxApi::Object::EzmaxinvoicingagentResponseCompoundAllOf;
 use EzmaxApi::Object::EzmaxinvoicingcommissionResponse;
 use EzmaxApi::Object::EzmaxinvoicingcommissionResponseCompound;
-use EzmaxApi::Object::EzmaxinvoicingcommissionResponseCompoundAllOf;
 use EzmaxApi::Object::EzmaxinvoicingcontractResponse;
 use EzmaxApi::Object::EzmaxinvoicingcontractResponseCompound;
 use EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponse;
 use EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponseCompound;
-use EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponseCompoundAllOf;
 use EzmaxApi::Object::EzmaxinvoicingsummaryexternaldetailResponse;
 use EzmaxApi::Object::EzmaxinvoicingsummaryexternaldetailResponseCompound;
 use EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponse;
 use EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponseCompound;
-use EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponseCompoundAllOf;
 use EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponse;
 use EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponseCompound;
-use EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponseCompoundAllOf;
 use EzmaxApi::Object::EzmaxinvoicingsummaryinternaldetailResponse;
 use EzmaxApi::Object::EzmaxinvoicingsummaryinternaldetailResponseCompound;
 use EzmaxApi::Object::EzmaxinvoicinguserResponse;
 use EzmaxApi::Object::EzmaxinvoicinguserResponseCompound;
 use EzmaxApi::Object::EzmaxproductAutocompleteElementResponse;
 use EzmaxApi::Object::EzmaxproductGetAutocompleteV2Response;
-use EzmaxApi::Object::EzmaxproductGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EzmaxproductGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::EzsignSuggestSignersV1Response;
-use EzmaxApi::Object::EzsignSuggestSignersV1ResponseAllOf;
 use EzmaxApi::Object::EzsignSuggestSignersV1ResponseMPayload;
 use EzmaxApi::Object::EzsignSuggestTemplatesV1Response;
-use EzmaxApi::Object::EzsignSuggestTemplatesV1ResponseAllOf;
 use EzmaxApi::Object::EzsignSuggestTemplatesV1ResponseMPayload;
 use EzmaxApi::Object::EzsignannotationResponse;
 use EzmaxApi::Object::EzsignannotationResponseCompound;
-use EzmaxApi::Object::EzsignannotationResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignbulksendCreateEzsignbulksendtransmissionV1Request;
 use EzmaxApi::Object::EzsignbulksendCreateEzsignbulksendtransmissionV1Response;
-use EzmaxApi::Object::EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendCreateObjectV1Request;
 use EzmaxApi::Object::EzsignbulksendCreateObjectV1Response;
-use EzmaxApi::Object::EzsignbulksendCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignbulksendEditObjectV1Request;
 use EzmaxApi::Object::EzsignbulksendEditObjectV1Response;
 use EzmaxApi::Object::EzsignbulksendGetEzsignbulksendtransmissionsV1Response;
-use EzmaxApi::Object::EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendGetEzsignsignaturesAutomaticV1Response;
-use EzmaxApi::Object::EzsignbulksendGetEzsignsignaturesAutomaticV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendGetEzsignsignaturesAutomaticV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendGetFormsDataV1Response;
-use EzmaxApi::Object::EzsignbulksendGetFormsDataV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendGetFormsDataV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendGetListV1Response;
-use EzmaxApi::Object::EzsignbulksendGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendGetListV1ResponseMPayload;
-use EzmaxApi::Object::EzsignbulksendGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsignbulksendGetObjectV2Response;
-use EzmaxApi::Object::EzsignbulksendGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendListElement;
 use EzmaxApi::Object::EzsignbulksendReorderV1Request;
@@ -2022,108 +1703,81 @@ use EzmaxApi::Object::EzsignbulksendRequest;
 use EzmaxApi::Object::EzsignbulksendRequestCompound;
 use EzmaxApi::Object::EzsignbulksendResponse;
 use EzmaxApi::Object::EzsignbulksendResponseCompound;
-use EzmaxApi::Object::EzsignbulksendResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingCreateObjectV1Request;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingCreateObjectV1Response;
-use EzmaxApi::Object::EzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingGetObjectV2Response;
-use EzmaxApi::Object::EzsignbulksenddocumentmappingGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingRequest;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingRequestCompound;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingResponse;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingResponseCompound;
-use EzmaxApi::Object::EzsignbulksenddocumentmappingResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignbulksendsignermappingCreateObjectV1Request;
 use EzmaxApi::Object::EzsignbulksendsignermappingCreateObjectV1Response;
-use EzmaxApi::Object::EzsignbulksendsignermappingCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendsignermappingCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendsignermappingDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignbulksendsignermappingGetObjectV2Response;
-use EzmaxApi::Object::EzsignbulksendsignermappingGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendsignermappingGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendsignermappingRequest;
 use EzmaxApi::Object::EzsignbulksendsignermappingRequestCompound;
 use EzmaxApi::Object::EzsignbulksendsignermappingResponse;
 use EzmaxApi::Object::EzsignbulksendsignermappingResponseCompound;
 use EzmaxApi::Object::EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response;
-use EzmaxApi::Object::EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendtransmissionGetFormsDataV1Response;
-use EzmaxApi::Object::EzsignbulksendtransmissionGetFormsDataV1ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendtransmissionGetFormsDataV1ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendtransmissionGetObjectV2Response;
-use EzmaxApi::Object::EzsignbulksendtransmissionGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignbulksendtransmissionGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignbulksendtransmissionResponse;
 use EzmaxApi::Object::EzsignbulksendtransmissionResponseCompound;
-use EzmaxApi::Object::EzsignbulksendtransmissionResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Response;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV2Request;
 use EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV2Response;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV1Request;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV1Response;
-use EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV2Request;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV2Response;
-use EzmaxApi::Object::EzsigndocumentCreateObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentDeclineToSignV1Request;
 use EzmaxApi::Object::EzsigndocumentDeclineToSignV1Response;
 use EzmaxApi::Object::EzsigndocumentDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV1Request;
 use EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV1Response;
-use EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Request;
 use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Response;
-use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentEndPrematurelyV1Response;
 use EzmaxApi::Object::EzsigndocumentFlattenV1Response;
 use EzmaxApi::Object::EzsigndocumentGetActionableElementsV1Response;
-use EzmaxApi::Object::EzsigndocumentGetActionableElementsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetActionableElementsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetCompletedElementsV1Response;
-use EzmaxApi::Object::EzsigndocumentGetCompletedElementsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetCompletedElementsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1Response;
-use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetEzsignannotationsV1Response;
-use EzmaxApi::Object::EzsigndocumentGetEzsignannotationsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetEzsignannotationsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetEzsignformfieldgroupsV1Response;
-use EzmaxApi::Object::EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetEzsignpagesV1Response;
-use EzmaxApi::Object::EzsigndocumentGetEzsignpagesV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetEzsignpagesV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesAutomaticV1Response;
-use EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesV1Response;
-use EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetFormDataV1Response;
-use EzmaxApi::Object::EzsigndocumentGetFormDataV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetFormDataV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetObjectV1Response;
-use EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetObjectV2Response;
-use EzmaxApi::Object::EzsigndocumentGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1Response;
-use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Request;
 use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Response;
-use EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigndocumentPatchObjectV1Request;
 use EzmaxApi::Object::EzsigndocumentPatchObjectV1Response;
 use EzmaxApi::Object::EzsigndocumentRequest;
@@ -2131,7 +1785,6 @@ use EzmaxApi::Object::EzsigndocumentRequestCompound;
 use EzmaxApi::Object::EzsigndocumentRequestPatch;
 use EzmaxApi::Object::EzsigndocumentResponse;
 use EzmaxApi::Object::EzsigndocumentResponseCompound;
-use EzmaxApi::Object::EzsigndocumentResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigndocumentSubmitEzsignformV1Request;
 use EzmaxApi::Object::EzsigndocumentSubmitEzsignformV1Response;
 use EzmaxApi::Object::EzsigndocumentUnsendV1Response;
@@ -2141,11 +1794,9 @@ use EzmaxApi::Object::EzsignfolderArchiveV1Response;
 use EzmaxApi::Object::EzsignfolderBatchDownloadV1Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Response;
-use EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderCreateObjectV2Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV2Response;
-use EzmaxApi::Object::EzsignfolderCreateObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignfolderDisposeEzsignfoldersV1Request;
@@ -2154,47 +1805,32 @@ use EzmaxApi::Object::EzsignfolderDisposeV1Response;
 use EzmaxApi::Object::EzsignfolderEditObjectV1Request;
 use EzmaxApi::Object::EzsignfolderEditObjectV1Response;
 use EzmaxApi::Object::EzsignfolderGetActionableElementsV1Response;
-use EzmaxApi::Object::EzsignfolderGetActionableElementsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetActionableElementsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetCommunicationCountV1Response;
-use EzmaxApi::Object::EzsignfolderGetCommunicationCountV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetCommunicationCountV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetCommunicationListV1Response;
-use EzmaxApi::Object::EzsignfolderGetCommunicationListV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetCommunicationListV1ResponseMPayload;
-use EzmaxApi::Object::EzsignfolderGetCommunicationListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1Response;
-use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1Response;
-use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1Response;
-use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1Response;
-use EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1Response;
-use EzmaxApi::Object::EzsignfolderGetFormsDataV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetListV1Response;
-use EzmaxApi::Object::EzsignfolderGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetListV1ResponseMPayload;
-use EzmaxApi::Object::EzsignfolderGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsignfolderGetObjectV1Response;
-use EzmaxApi::Object::EzsignfolderGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetObjectV2Response;
-use EzmaxApi::Object::EzsignfolderGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderImportEzsignfoldersignerassociationsV1Request;
 use EzmaxApi::Object::EzsignfolderImportEzsignfoldersignerassociationsV1Response;
-use EzmaxApi::Object::EzsignfolderImportEzsignfoldersignerassociationsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderImportEzsignfoldersignerassociationsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderImportEzsigntemplatepackageV1Request;
 use EzmaxApi::Object::EzsignfolderImportEzsigntemplatepackageV1Response;
-use EzmaxApi::Object::EzsignfolderImportEzsigntemplatepackageV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderListElement;
 use EzmaxApi::Object::EzsignfolderReorderV1Request;
@@ -2212,56 +1848,43 @@ use EzmaxApi::Object::EzsignfolderSendV3Response;
 use EzmaxApi::Object::EzsignfolderUnsendV1Response;
 use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV1Request;
 use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV1Response;
-use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV2Request;
 use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV2Response;
-use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldersignerassociationDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignfoldersignerassociationEditObjectV1Request;
 use EzmaxApi::Object::EzsignfoldersignerassociationEditObjectV1Response;
 use EzmaxApi::Object::EzsignfoldersignerassociationForceDisconnectV1Response;
 use EzmaxApi::Object::EzsignfoldersignerassociationGetInPersonLoginUrlV1Response;
-use EzmaxApi::Object::EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV1Response;
-use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV2Response;
-use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldersignerassociationPatchObjectV1Request;
 use EzmaxApi::Object::EzsignfoldersignerassociationPatchObjectV1Response;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequest;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompound;
-use EzmaxApi::Object::EzsignfoldersignerassociationRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationRequestPatch;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponse;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompound;
-use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundUser;
 use EzmaxApi::Object::EzsignfoldertypeAutocompleteElementResponse;
 use EzmaxApi::Object::EzsignfoldertypeCreateObjectV1Request;
 use EzmaxApi::Object::EzsignfoldertypeCreateObjectV1Response;
-use EzmaxApi::Object::EzsignfoldertypeCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldertypeCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldertypeEditObjectV1Request;
 use EzmaxApi::Object::EzsignfoldertypeEditObjectV1Response;
 use EzmaxApi::Object::EzsignfoldertypeGetAutocompleteV2Response;
-use EzmaxApi::Object::EzsignfoldertypeGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldertypeGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1Response;
-use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayload;
-use EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsignfoldertypeGetObjectV2Response;
-use EzmaxApi::Object::EzsignfoldertypeGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignfoldertypeGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignfoldertypeListElement;
 use EzmaxApi::Object::EzsignfoldertypeRequest;
 use EzmaxApi::Object::EzsignfoldertypeRequestCompound;
-use EzmaxApi::Object::EzsignfoldertypeRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignfoldertypeResponse;
 use EzmaxApi::Object::EzsignfoldertypeResponseCompound;
 use EzmaxApi::Object::EzsignformfieldRequest;
@@ -2270,20 +1893,16 @@ use EzmaxApi::Object::EzsignformfieldResponse;
 use EzmaxApi::Object::EzsignformfieldResponseCompound;
 use EzmaxApi::Object::EzsignformfieldgroupCreateObjectV1Request;
 use EzmaxApi::Object::EzsignformfieldgroupCreateObjectV1Response;
-use EzmaxApi::Object::EzsignformfieldgroupCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignformfieldgroupCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignformfieldgroupDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignformfieldgroupEditObjectV1Request;
 use EzmaxApi::Object::EzsignformfieldgroupEditObjectV1Response;
 use EzmaxApi::Object::EzsignformfieldgroupGetObjectV2Response;
-use EzmaxApi::Object::EzsignformfieldgroupGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignformfieldgroupGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignformfieldgroupRequest;
 use EzmaxApi::Object::EzsignformfieldgroupRequestCompound;
-use EzmaxApi::Object::EzsignformfieldgroupRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignformfieldgroupResponse;
 use EzmaxApi::Object::EzsignformfieldgroupResponseCompound;
-use EzmaxApi::Object::EzsignformfieldgroupResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignformfieldgroupsignerRequest;
 use EzmaxApi::Object::EzsignformfieldgroupsignerRequestCompound;
 use EzmaxApi::Object::EzsignformfieldgroupsignerResponse;
@@ -2293,30 +1912,23 @@ use EzmaxApi::Object::EzsignpageResponse;
 use EzmaxApi::Object::EzsignpageResponseCompound;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV1Request;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV1Response;
-use EzmaxApi::Object::EzsignsignatureCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV2Request;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV2Response;
-use EzmaxApi::Object::EzsignsignatureCreateObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignsignatureDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureEditObjectV1Request;
 use EzmaxApi::Object::EzsignsignatureEditObjectV1Response;
 use EzmaxApi::Object::EzsignsignatureGetEzsignsignatureattachmentV1Response;
-use EzmaxApi::Object::EzsignsignatureGetEzsignsignatureattachmentV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureGetEzsignsignatureattachmentV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignatureGetEzsignsignaturesAutomaticV1Response;
-use EzmaxApi::Object::EzsignsignatureGetEzsignsignaturesAutomaticV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureGetEzsignsignaturesAutomaticV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignatureGetObjectV2Response;
-use EzmaxApi::Object::EzsignsignatureGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignsignatureGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignsignatureRequest;
 use EzmaxApi::Object::EzsignsignatureRequestCompound;
-use EzmaxApi::Object::EzsignsignatureRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignsignatureResponse;
 use EzmaxApi::Object::EzsignsignatureResponseCompound;
-use EzmaxApi::Object::EzsignsignatureResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignsignatureSignV1Request;
 use EzmaxApi::Object::EzsignsignatureSignV1Response;
 use EzmaxApi::Object::EzsignsignatureattachmentResponse;
@@ -2326,28 +1938,22 @@ use EzmaxApi::Object::EzsignsignaturecustomdateResponse;
 use EzmaxApi::Object::EzsignsignaturecustomdateResponseCompound;
 use EzmaxApi::Object::EzsignsignerRequest;
 use EzmaxApi::Object::EzsignsignerRequestCompound;
-use EzmaxApi::Object::EzsignsignerRequestCompoundAllOf;
 use EzmaxApi::Object::EzsignsignerRequestCompoundContact;
 use EzmaxApi::Object::EzsignsignerResponse;
 use EzmaxApi::Object::EzsignsignerResponseCompound;
-use EzmaxApi::Object::EzsignsignerResponseCompoundAllOf;
 use EzmaxApi::Object::EzsignsignerResponseCompoundContact;
 use EzmaxApi::Object::EzsignsignergroupCreateObjectV1Request;
 use EzmaxApi::Object::EzsignsignergroupCreateObjectV1Response;
-use EzmaxApi::Object::EzsignsignergroupCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignergroupCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignergroupDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignsignergroupEditEzsignsignergroupmembershipsV1Request;
 use EzmaxApi::Object::EzsignsignergroupEditEzsignsignergroupmembershipsV1Response;
-use EzmaxApi::Object::EzsignsignergroupEditEzsignsignergroupmembershipsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignergroupEditEzsignsignergroupmembershipsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignergroupEditObjectV1Request;
 use EzmaxApi::Object::EzsignsignergroupEditObjectV1Response;
 use EzmaxApi::Object::EzsignsignergroupGetEzsignsignergroupmembershipsV1Response;
-use EzmaxApi::Object::EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignergroupGetObjectV2Response;
-use EzmaxApi::Object::EzsignsignergroupGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignsignergroupGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignsignergroupRequest;
 use EzmaxApi::Object::EzsignsignergroupRequestCompound;
@@ -2355,11 +1961,9 @@ use EzmaxApi::Object::EzsignsignergroupResponse;
 use EzmaxApi::Object::EzsignsignergroupResponseCompound;
 use EzmaxApi::Object::EzsignsignergroupmembershipCreateObjectV1Request;
 use EzmaxApi::Object::EzsignsignergroupmembershipCreateObjectV1Response;
-use EzmaxApi::Object::EzsignsignergroupmembershipCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsignsignergroupmembershipCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsignsignergroupmembershipDeleteObjectV1Response;
 use EzmaxApi::Object::EzsignsignergroupmembershipGetObjectV2Response;
-use EzmaxApi::Object::EzsignsignergroupmembershipGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsignsignergroupmembershipGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsignsignergroupmembershipRequest;
 use EzmaxApi::Object::EzsignsignergroupmembershipRequestCompound;
@@ -2368,65 +1972,48 @@ use EzmaxApi::Object::EzsignsignergroupmembershipResponseCompound;
 use EzmaxApi::Object::EzsigntemplateAutocompleteElementResponse;
 use EzmaxApi::Object::EzsigntemplateCopyV1Request;
 use EzmaxApi::Object::EzsigntemplateCopyV1Response;
-use EzmaxApi::Object::EzsigntemplateCopyV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateCopyV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplateCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplateCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplateEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplateEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplateGetAutocompleteV2Response;
-use EzmaxApi::Object::EzsigntemplateGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateGetListV1Response;
-use EzmaxApi::Object::EzsigntemplateGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateGetListV1ResponseMPayload;
-use EzmaxApi::Object::EzsigntemplateGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsigntemplateGetObjectV1Response;
-use EzmaxApi::Object::EzsigntemplateGetObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateGetObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplateGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateListElement;
 use EzmaxApi::Object::EzsigntemplateRequest;
 use EzmaxApi::Object::EzsigntemplateRequestCompound;
 use EzmaxApi::Object::EzsigntemplateResponse;
 use EzmaxApi::Object::EzsigntemplateResponseCompound;
-use EzmaxApi::Object::EzsigntemplateResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatedocumentCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request;
 use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request;
 use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatedocumentEditObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentEditObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentFlattenV1Response;
 use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatedocumentGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatedocumentGetWordsPositionsV1Request;
 use EzmaxApi::Object::EzsigntemplatedocumentGetWordsPositionsV1Response;
-use EzmaxApi::Object::EzsigntemplatedocumentGetWordsPositionsV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatedocumentPatchObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatedocumentPatchObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatedocumentRequest;
@@ -2442,20 +2029,16 @@ use EzmaxApi::Object::EzsigntemplateformfieldResponse;
 use EzmaxApi::Object::EzsigntemplateformfieldResponseCompound;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplateformfieldgroupCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplateformfieldgroupGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupRequest;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupRequestCompound;
-use EzmaxApi::Object::EzsigntemplateformfieldgroupRequestCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupResponse;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupResponseCompound;
-use EzmaxApi::Object::EzsigntemplateformfieldgroupResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupsignerRequest;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupsignerRequestCompound;
 use EzmaxApi::Object::EzsigntemplateformfieldgroupsignerResponse;
@@ -2463,55 +2046,42 @@ use EzmaxApi::Object::EzsigntemplateformfieldgroupsignerResponseCompound;
 use EzmaxApi::Object::EzsigntemplatepackageAutocompleteElementResponse;
 use EzmaxApi::Object::EzsigntemplatepackageCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepackageCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatepackageCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackageDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request;
 use EzmaxApi::Object::EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response;
-use EzmaxApi::Object::EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackageEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepackageEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepackageGetAutocompleteV2Response;
-use EzmaxApi::Object::EzsigntemplatepackageGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1Response;
-use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload;
-use EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatepackageGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackageGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackageListElement;
 use EzmaxApi::Object::EzsigntemplatepackageRequest;
 use EzmaxApi::Object::EzsigntemplatepackageRequestCompound;
 use EzmaxApi::Object::EzsigntemplatepackageResponse;
 use EzmaxApi::Object::EzsigntemplatepackageResponseCompound;
-use EzmaxApi::Object::EzsigntemplatepackageResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatepackagemembershipGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipRequest;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipRequestCompound;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipResponse;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipResponseCompound;
-use EzmaxApi::Object::EzsigntemplatepackagemembershipResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignerCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepackagesignerCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatepackagesignerCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagesignerDeleteObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatepackagesignerDeleteObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagesignerEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepackagesignerEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepackagesignerGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatepackagesignerGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignerGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagesignerRequest;
 use EzmaxApi::Object::EzsigntemplatepackagesignerRequestCompound;
@@ -2519,13 +2089,10 @@ use EzmaxApi::Object::EzsigntemplatepackagesignerResponse;
 use EzmaxApi::Object::EzsigntemplatepackagesignerResponseCompound;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatepackagesignermembershipCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipDeleteObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipRequest;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipRequestCompound;
@@ -2533,33 +2100,27 @@ use EzmaxApi::Object::EzsigntemplatepackagesignermembershipResponse;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipResponseCompound;
 use EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatesignatureDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatesignatureEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatesignatureEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatesignatureGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatesignatureGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatesignatureGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatesignatureRequest;
 use EzmaxApi::Object::EzsigntemplatesignatureRequestCompound;
-use EzmaxApi::Object::EzsigntemplatesignatureRequestCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplatesignatureResponse;
 use EzmaxApi::Object::EzsigntemplatesignatureResponseCompound;
-use EzmaxApi::Object::EzsigntemplatesignatureResponseCompoundAllOf;
 use EzmaxApi::Object::EzsigntemplatesignaturecustomdateRequest;
 use EzmaxApi::Object::EzsigntemplatesignaturecustomdateRequestCompound;
 use EzmaxApi::Object::EzsigntemplatesignaturecustomdateResponse;
 use EzmaxApi::Object::EzsigntemplatesignaturecustomdateResponseCompound;
 use EzmaxApi::Object::EzsigntemplatesignerCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatesignerCreateObjectV1Response;
-use EzmaxApi::Object::EzsigntemplatesignerCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatesignerCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatesignerDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatesignerEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatesignerEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatesignerGetObjectV2Response;
-use EzmaxApi::Object::EzsigntemplatesignerGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntemplatesignerGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatesignerRequest;
 use EzmaxApi::Object::EzsigntemplatesignerRequestCompound;
@@ -2567,7 +2128,6 @@ use EzmaxApi::Object::EzsigntemplatesignerResponse;
 use EzmaxApi::Object::EzsigntemplatesignerResponseCompound;
 use EzmaxApi::Object::EzsigntsarequirementAutocompleteElementResponse;
 use EzmaxApi::Object::EzsigntsarequirementGetAutocompleteV2Response;
-use EzmaxApi::Object::EzsigntsarequirementGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::EzsigntsarequirementGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::FieldEActivesessionOrigin;
 use EzmaxApi::Object::FieldEActivesessionUsertype;
@@ -2629,43 +2189,33 @@ use EzmaxApi::Object::FieldEWebhookModule;
 use EzmaxApi::Object::FieldPksEzmaxclientOs;
 use EzmaxApi::Object::FontAutocompleteElementResponse;
 use EzmaxApi::Object::FontGetAutocompleteV2Response;
-use EzmaxApi::Object::FontGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::FontGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::FranchisebrokerAutocompleteElementResponse;
 use EzmaxApi::Object::FranchisebrokerGetAutocompleteV2Response;
-use EzmaxApi::Object::FranchisebrokerGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::FranchisebrokerGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::FranchiseofficeAutocompleteElementResponse;
 use EzmaxApi::Object::FranchiseofficeGetAutocompleteV2Response;
-use EzmaxApi::Object::FranchiseofficeGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::FranchiseofficeGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1Request;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1Response;
-use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV2Request;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV2Response;
-use EzmaxApi::Object::FranchisereferalincomeCreateObjectV2ResponseAllOf;
 use EzmaxApi::Object::FranchisereferalincomeCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::FranchisereferalincomeRequest;
 use EzmaxApi::Object::FranchisereferalincomeRequestCompound;
-use EzmaxApi::Object::FranchisereferalincomeRequestCompoundAllOf;
 use EzmaxApi::Object::GlobalCustomerGetEndpointV1Response;
 use EzmaxApi::Object::GlobalEzmaxclientVersionV1Response;
 use EzmaxApi::Object::GlobalEzmaxcustomerGetConfigurationV1Response;
 use EzmaxApi::Object::HeaderAcceptLanguage;
 use EzmaxApi::Object::ModuleResponse;
 use EzmaxApi::Object::ModuleResponseCompound;
-use EzmaxApi::Object::ModuleResponseCompoundAllOf;
 use EzmaxApi::Object::ModulegroupGetAllV1Response;
-use EzmaxApi::Object::ModulegroupGetAllV1ResponseAllOf;
 use EzmaxApi::Object::ModulegroupGetAllV1ResponseMPayload;
 use EzmaxApi::Object::ModulegroupResponse;
 use EzmaxApi::Object::ModulegroupResponseCompound;
-use EzmaxApi::Object::ModulegroupResponseCompoundAllOf;
 use EzmaxApi::Object::ModulesectionResponse;
 use EzmaxApi::Object::ModulesectionResponseCompound;
-use EzmaxApi::Object::ModulesectionResponseCompoundAllOf;
 use EzmaxApi::Object::MultilingualApikeyDescription;
 use EzmaxApi::Object::MultilingualBillingentityinternalDescription;
 use EzmaxApi::Object::MultilingualBrandingDescription;
@@ -2680,29 +2230,22 @@ use EzmaxApi::Object::MultilingualUsergroupName;
 use EzmaxApi::Object::MultilingualVariableexpenseDescription;
 use EzmaxApi::Object::MultilingualVersionhistoryDetail;
 use EzmaxApi::Object::NotificationsectionGetNotificationtestsV1Response;
-use EzmaxApi::Object::NotificationsectionGetNotificationtestsV1ResponseAllOf;
 use EzmaxApi::Object::NotificationsectionGetNotificationtestsV1ResponseMPayload;
 use EzmaxApi::Object::NotificationsubsectionResponse;
 use EzmaxApi::Object::NotificationtestGetElementsV1Response;
-use EzmaxApi::Object::NotificationtestGetElementsV1ResponseAllOf;
 use EzmaxApi::Object::NotificationtestGetElementsV1ResponseMPayload;
 use EzmaxApi::Object::NotificationtestResponse;
 use EzmaxApi::Object::PaymenttermAutocompleteElementResponse;
 use EzmaxApi::Object::PaymenttermCreateObjectV1Request;
 use EzmaxApi::Object::PaymenttermCreateObjectV1Response;
-use EzmaxApi::Object::PaymenttermCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::PaymenttermCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::PaymenttermEditObjectV1Request;
 use EzmaxApi::Object::PaymenttermEditObjectV1Response;
 use EzmaxApi::Object::PaymenttermGetAutocompleteV2Response;
-use EzmaxApi::Object::PaymenttermGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::PaymenttermGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::PaymenttermGetListV1Response;
-use EzmaxApi::Object::PaymenttermGetListV1ResponseAllOf;
 use EzmaxApi::Object::PaymenttermGetListV1ResponseMPayload;
-use EzmaxApi::Object::PaymenttermGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::PaymenttermGetObjectV2Response;
-use EzmaxApi::Object::PaymenttermGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::PaymenttermGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::PaymenttermListElement;
 use EzmaxApi::Object::PaymenttermRequest;
@@ -2711,17 +2254,14 @@ use EzmaxApi::Object::PaymenttermResponse;
 use EzmaxApi::Object::PaymenttermResponseCompound;
 use EzmaxApi::Object::PeriodAutocompleteElementResponse;
 use EzmaxApi::Object::PeriodGetAutocompleteV2Response;
-use EzmaxApi::Object::PeriodGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::PeriodGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::PermissionCreateObjectV1Request;
 use EzmaxApi::Object::PermissionCreateObjectV1Response;
-use EzmaxApi::Object::PermissionCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::PermissionCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::PermissionDeleteObjectV1Response;
 use EzmaxApi::Object::PermissionEditObjectV1Request;
 use EzmaxApi::Object::PermissionEditObjectV1Response;
 use EzmaxApi::Object::PermissionGetObjectV2Response;
-use EzmaxApi::Object::PermissionGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::PermissionGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::PermissionRequest;
 use EzmaxApi::Object::PermissionRequestCompound;
@@ -2735,7 +2275,6 @@ use EzmaxApi::Object::PhonestaticResponse;
 use EzmaxApi::Object::PhonestaticResponseCompound;
 use EzmaxApi::Object::PhonetypeAutocompleteElementResponse;
 use EzmaxApi::Object::PhonetypeGetAutocompleteV2Response;
-use EzmaxApi::Object::PhonetypeGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::PhonetypeGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::ScimAuthenticationScheme;
 use EzmaxApi::Object::ScimEmail;
@@ -2752,22 +2291,17 @@ use EzmaxApi::Object::ScimUser;
 use EzmaxApi::Object::ScimUserList;
 use EzmaxApi::Object::SecretquestionAutocompleteElementResponse;
 use EzmaxApi::Object::SecretquestionGetAutocompleteV2Response;
-use EzmaxApi::Object::SecretquestionGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::SecretquestionGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::SessionhistoryGetListV1Response;
-use EzmaxApi::Object::SessionhistoryGetListV1ResponseAllOf;
 use EzmaxApi::Object::SessionhistoryGetListV1ResponseMPayload;
-use EzmaxApi::Object::SessionhistoryGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::SessionhistoryListElement;
 use EzmaxApi::Object::SignatureCreateObjectV1Request;
 use EzmaxApi::Object::SignatureCreateObjectV1Response;
-use EzmaxApi::Object::SignatureCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::SignatureCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::SignatureDeleteObjectV1Response;
 use EzmaxApi::Object::SignatureEditObjectV1Request;
 use EzmaxApi::Object::SignatureEditObjectV1Response;
 use EzmaxApi::Object::SignatureGetObjectV2Response;
-use EzmaxApi::Object::SignatureGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::SignatureGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::SignatureRequest;
 use EzmaxApi::Object::SignatureRequestCompound;
@@ -2775,13 +2309,11 @@ use EzmaxApi::Object::SignatureResponse;
 use EzmaxApi::Object::SignatureResponseCompound;
 use EzmaxApi::Object::SubnetCreateObjectV1Request;
 use EzmaxApi::Object::SubnetCreateObjectV1Response;
-use EzmaxApi::Object::SubnetCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::SubnetCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::SubnetDeleteObjectV1Response;
 use EzmaxApi::Object::SubnetEditObjectV1Request;
 use EzmaxApi::Object::SubnetEditObjectV1Response;
 use EzmaxApi::Object::SubnetGetObjectV2Response;
-use EzmaxApi::Object::SubnetGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::SubnetGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::SubnetRequest;
 use EzmaxApi::Object::SubnetRequestCompound;
@@ -2790,7 +2322,6 @@ use EzmaxApi::Object::SubnetResponseCompound;
 use EzmaxApi::Object::SystemconfigurationEditObjectV1Request;
 use EzmaxApi::Object::SystemconfigurationEditObjectV1Response;
 use EzmaxApi::Object::SystemconfigurationGetObjectV2Response;
-use EzmaxApi::Object::SystemconfigurationGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::SystemconfigurationGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::SystemconfigurationRequest;
 use EzmaxApi::Object::SystemconfigurationRequestCompound;
@@ -2798,113 +2329,106 @@ use EzmaxApi::Object::SystemconfigurationResponse;
 use EzmaxApi::Object::SystemconfigurationResponseCompound;
 use EzmaxApi::Object::TaxassignmentAutocompleteElementResponse;
 use EzmaxApi::Object::TaxassignmentGetAutocompleteV2Response;
-use EzmaxApi::Object::TaxassignmentGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::TaxassignmentGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::TextstylestaticResponse;
 use EzmaxApi::Object::TextstylestaticResponseCompound;
 use EzmaxApi::Object::TimezoneAutocompleteElementResponse;
 use EzmaxApi::Object::TimezoneGetAutocompleteV2Response;
-use EzmaxApi::Object::TimezoneGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::TimezoneGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::UserAutocompleteElementResponse;
 use EzmaxApi::Object::UserCreateEzsignuserV1Request;
 use EzmaxApi::Object::UserCreateEzsignuserV1Response;
-use EzmaxApi::Object::UserCreateEzsignuserV1ResponseAllOf;
 use EzmaxApi::Object::UserCreateEzsignuserV1ResponseMPayload;
 use EzmaxApi::Object::UserCreateObjectV1Request;
 use EzmaxApi::Object::UserCreateObjectV1Response;
-use EzmaxApi::Object::UserCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::UserCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::UserEditObjectV1Request;
 use EzmaxApi::Object::UserEditObjectV1Response;
 use EzmaxApi::Object::UserEditPermissionsV1Request;
 use EzmaxApi::Object::UserEditPermissionsV1Response;
-use EzmaxApi::Object::UserEditPermissionsV1ResponseAllOf;
 use EzmaxApi::Object::UserEditPermissionsV1ResponseMPayload;
+use EzmaxApi::Object::UserGetApikeysV1Response;
+use EzmaxApi::Object::UserGetApikeysV1ResponseMPayload;
 use EzmaxApi::Object::UserGetAutocompleteV2Response;
-use EzmaxApi::Object::UserGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::UserGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::UserGetEffectivePermissionsV1Response;
-use EzmaxApi::Object::UserGetEffectivePermissionsV1ResponseAllOf;
 use EzmaxApi::Object::UserGetEffectivePermissionsV1ResponseMPayload;
 use EzmaxApi::Object::UserGetListV1Response;
-use EzmaxApi::Object::UserGetListV1ResponseAllOf;
 use EzmaxApi::Object::UserGetListV1ResponseMPayload;
-use EzmaxApi::Object::UserGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::UserGetObjectV2Response;
-use EzmaxApi::Object::UserGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::UserGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::UserGetPermissionsV1Response;
-use EzmaxApi::Object::UserGetPermissionsV1ResponseAllOf;
 use EzmaxApi::Object::UserGetPermissionsV1ResponseMPayload;
 use EzmaxApi::Object::UserGetSubnetsV1Response;
-use EzmaxApi::Object::UserGetSubnetsV1ResponseAllOf;
 use EzmaxApi::Object::UserGetSubnetsV1ResponseMPayload;
 use EzmaxApi::Object::UserListElement;
 use EzmaxApi::Object::UserRequest;
 use EzmaxApi::Object::UserRequestCompound;
 use EzmaxApi::Object::UserResponse;
 use EzmaxApi::Object::UserResponseCompound;
+use EzmaxApi::Object::UserSendPasswordResetV1Response;
 use EzmaxApi::Object::UsergroupAutocompleteElementResponse;
 use EzmaxApi::Object::UsergroupCreateObjectV1Request;
 use EzmaxApi::Object::UsergroupCreateObjectV1Response;
-use EzmaxApi::Object::UsergroupCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::UsergroupEditObjectV1Request;
 use EzmaxApi::Object::UsergroupEditObjectV1Response;
 use EzmaxApi::Object::UsergroupEditPermissionsV1Request;
 use EzmaxApi::Object::UsergroupEditPermissionsV1Response;
-use EzmaxApi::Object::UsergroupEditPermissionsV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupEditPermissionsV1ResponseMPayload;
+use EzmaxApi::Object::UsergroupEditUsergroupdelegationsV1Request;
+use EzmaxApi::Object::UsergroupEditUsergroupdelegationsV1Response;
+use EzmaxApi::Object::UsergroupEditUsergroupdelegationsV1ResponseMPayload;
 use EzmaxApi::Object::UsergroupEditUsergroupmembershipsV1Request;
 use EzmaxApi::Object::UsergroupEditUsergroupmembershipsV1Response;
-use EzmaxApi::Object::UsergroupEditUsergroupmembershipsV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupEditUsergroupmembershipsV1ResponseMPayload;
 use EzmaxApi::Object::UsergroupGetAutocompleteV2Response;
-use EzmaxApi::Object::UsergroupGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::UsergroupGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::UsergroupGetListV1Response;
-use EzmaxApi::Object::UsergroupGetListV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupGetListV1ResponseMPayload;
-use EzmaxApi::Object::UsergroupGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::UsergroupGetObjectV2Response;
-use EzmaxApi::Object::UsergroupGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::UsergroupGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::UsergroupGetPermissionsV1Response;
-use EzmaxApi::Object::UsergroupGetPermissionsV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupGetPermissionsV1ResponseMPayload;
+use EzmaxApi::Object::UsergroupGetUsergroupdelegationsV1Response;
+use EzmaxApi::Object::UsergroupGetUsergroupdelegationsV1ResponseMPayload;
 use EzmaxApi::Object::UsergroupGetUsergroupmembershipsV1Response;
-use EzmaxApi::Object::UsergroupGetUsergroupmembershipsV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupGetUsergroupmembershipsV1ResponseMPayload;
 use EzmaxApi::Object::UsergroupListElement;
 use EzmaxApi::Object::UsergroupRequest;
 use EzmaxApi::Object::UsergroupRequestCompound;
 use EzmaxApi::Object::UsergroupResponse;
 use EzmaxApi::Object::UsergroupResponseCompound;
+use EzmaxApi::Object::UsergroupdelegationCreateObjectV1Request;
+use EzmaxApi::Object::UsergroupdelegationCreateObjectV1Response;
+use EzmaxApi::Object::UsergroupdelegationCreateObjectV1ResponseMPayload;
+use EzmaxApi::Object::UsergroupdelegationDeleteObjectV1Response;
+use EzmaxApi::Object::UsergroupdelegationEditObjectV1Request;
+use EzmaxApi::Object::UsergroupdelegationEditObjectV1Response;
+use EzmaxApi::Object::UsergroupdelegationGetObjectV2Response;
+use EzmaxApi::Object::UsergroupdelegationGetObjectV2ResponseMPayload;
+use EzmaxApi::Object::UsergroupdelegationRequest;
+use EzmaxApi::Object::UsergroupdelegationRequestCompound;
+use EzmaxApi::Object::UsergroupdelegationResponse;
+use EzmaxApi::Object::UsergroupdelegationResponseCompound;
 use EzmaxApi::Object::UsergroupmembershipCreateObjectV1Request;
 use EzmaxApi::Object::UsergroupmembershipCreateObjectV1Response;
-use EzmaxApi::Object::UsergroupmembershipCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::UsergroupmembershipCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::UsergroupmembershipDeleteObjectV1Response;
 use EzmaxApi::Object::UsergroupmembershipEditObjectV1Request;
 use EzmaxApi::Object::UsergroupmembershipEditObjectV1Response;
 use EzmaxApi::Object::UsergroupmembershipGetObjectV2Response;
-use EzmaxApi::Object::UsergroupmembershipGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::UsergroupmembershipGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::UsergroupmembershipRequest;
 use EzmaxApi::Object::UsergroupmembershipRequestCompound;
 use EzmaxApi::Object::UsergroupmembershipResponse;
 use EzmaxApi::Object::UsergroupmembershipResponseCompound;
 use EzmaxApi::Object::UserstagedCreateUserV1Response;
-use EzmaxApi::Object::UserstagedCreateUserV1ResponseAllOf;
 use EzmaxApi::Object::UserstagedCreateUserV1ResponseMPayload;
 use EzmaxApi::Object::UserstagedDeleteObjectV1Response;
 use EzmaxApi::Object::UserstagedGetListV1Response;
-use EzmaxApi::Object::UserstagedGetListV1ResponseAllOf;
 use EzmaxApi::Object::UserstagedGetListV1ResponseMPayload;
-use EzmaxApi::Object::UserstagedGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::UserstagedGetObjectV2Response;
-use EzmaxApi::Object::UserstagedGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::UserstagedGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::UserstagedListElement;
 use EzmaxApi::Object::UserstagedMapV1Request;
@@ -2914,19 +2438,14 @@ use EzmaxApi::Object::UserstagedResponseCompound;
 use EzmaxApi::Object::VariableexpenseAutocompleteElementResponse;
 use EzmaxApi::Object::VariableexpenseCreateObjectV1Request;
 use EzmaxApi::Object::VariableexpenseCreateObjectV1Response;
-use EzmaxApi::Object::VariableexpenseCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::VariableexpenseCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::VariableexpenseEditObjectV1Request;
 use EzmaxApi::Object::VariableexpenseEditObjectV1Response;
 use EzmaxApi::Object::VariableexpenseGetAutocompleteV2Response;
-use EzmaxApi::Object::VariableexpenseGetAutocompleteV2ResponseAllOf;
 use EzmaxApi::Object::VariableexpenseGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::VariableexpenseGetListV1Response;
-use EzmaxApi::Object::VariableexpenseGetListV1ResponseAllOf;
 use EzmaxApi::Object::VariableexpenseGetListV1ResponseMPayload;
-use EzmaxApi::Object::VariableexpenseGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::VariableexpenseGetObjectV2Response;
-use EzmaxApi::Object::VariableexpenseGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::VariableexpenseGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::VariableexpenseListElement;
 use EzmaxApi::Object::VariableexpenseRequest;
@@ -2934,46 +2453,33 @@ use EzmaxApi::Object::VariableexpenseRequestCompound;
 use EzmaxApi::Object::VariableexpenseResponse;
 use EzmaxApi::Object::VariableexpenseResponseCompound;
 use EzmaxApi::Object::VersionhistoryGetObjectV2Response;
-use EzmaxApi::Object::VersionhistoryGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::VersionhistoryGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::VersionhistoryResponse;
 use EzmaxApi::Object::VersionhistoryResponseCompound;
 use EzmaxApi::Object::WebhookCreateObjectV1Request;
 use EzmaxApi::Object::WebhookCreateObjectV1Response;
-use EzmaxApi::Object::WebhookCreateObjectV1ResponseAllOf;
 use EzmaxApi::Object::WebhookCreateObjectV1ResponseMPayload;
 use EzmaxApi::Object::WebhookDeleteObjectV1Response;
 use EzmaxApi::Object::WebhookEditObjectV1Request;
 use EzmaxApi::Object::WebhookEditObjectV1Response;
 use EzmaxApi::Object::WebhookEzsignDocumentCompleted;
-use EzmaxApi::Object::WebhookEzsignDocumentCompletedAllOf;
 use EzmaxApi::Object::WebhookEzsignEzsignsignerAcceptclause;
-use EzmaxApi::Object::WebhookEzsignEzsignsignerAcceptclauseAllOf;
 use EzmaxApi::Object::WebhookEzsignEzsignsignerConnect;
 use EzmaxApi::Object::WebhookEzsignFolderCompleted;
-use EzmaxApi::Object::WebhookEzsignFolderCompletedAllOf;
 use EzmaxApi::Object::WebhookGetHistoryV1Response;
-use EzmaxApi::Object::WebhookGetHistoryV1ResponseAllOf;
 use EzmaxApi::Object::WebhookGetHistoryV1ResponseMPayload;
-use EzmaxApi::Object::WebhookGetHistoryV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::WebhookGetListV1Response;
-use EzmaxApi::Object::WebhookGetListV1ResponseAllOf;
 use EzmaxApi::Object::WebhookGetListV1ResponseMPayload;
-use EzmaxApi::Object::WebhookGetListV1ResponseMPayloadAllOf;
 use EzmaxApi::Object::WebhookGetObjectV2Response;
-use EzmaxApi::Object::WebhookGetObjectV2ResponseAllOf;
 use EzmaxApi::Object::WebhookGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::WebhookListElement;
 use EzmaxApi::Object::WebhookRequest;
 use EzmaxApi::Object::WebhookRequestCompound;
 use EzmaxApi::Object::WebhookResponse;
 use EzmaxApi::Object::WebhookResponseCompound;
-use EzmaxApi::Object::WebhookResponseCompoundAllOf;
 use EzmaxApi::Object::WebhookTestV1Response;
 use EzmaxApi::Object::WebhookUserUserCreated;
-use EzmaxApi::Object::WebhookUserUserCreatedAllOf;
 use EzmaxApi::Object::WebhookUserstagedUserstagedCreated;
-use EzmaxApi::Object::WebhookUserstagedUserstagedCreatedAllOf;
 use EzmaxApi::Object::WebsiteRequest;
 use EzmaxApi::Object::WebsiteRequestCompound;
 use EzmaxApi::Object::WebsocketRequestServerGetWebsocketIDV1;
@@ -3250,21 +2756,29 @@ Class | Method | HTTP request | Description
 *ObjectUserApi* | [**user_create_object_v1**](docs/ObjectUserApi.md#user_create_object_v1) | **POST** /1/object/user | Create a new User
 *ObjectUserApi* | [**user_edit_object_v1**](docs/ObjectUserApi.md#user_edit_object_v1) | **PUT** /1/object/user/{pkiUserID} | Edit an existing User
 *ObjectUserApi* | [**user_edit_permissions_v1**](docs/ObjectUserApi.md#user_edit_permissions_v1) | **PUT** /1/object/user/{pkiUserID}/editPermissions | Edit multiple Permissions
+*ObjectUserApi* | [**user_get_apikeys_v1**](docs/ObjectUserApi.md#user_get_apikeys_v1) | **GET** /1/object/user/{pkiUserID}/getApikeys | Retrieve an existing User&#39;s Apikeys
 *ObjectUserApi* | [**user_get_autocomplete_v2**](docs/ObjectUserApi.md#user_get_autocomplete_v2) | **GET** /2/object/user/getAutocomplete/{sSelector} | Retrieve Users and IDs
 *ObjectUserApi* | [**user_get_effective_permissions_v1**](docs/ObjectUserApi.md#user_get_effective_permissions_v1) | **GET** /1/object/user/{pkiUserID}/getEffectivePermissions | Retrieve an existing User&#39;s Effective Permissions
 *ObjectUserApi* | [**user_get_list_v1**](docs/ObjectUserApi.md#user_get_list_v1) | **GET** /1/object/user/getList | Retrieve User list
 *ObjectUserApi* | [**user_get_object_v2**](docs/ObjectUserApi.md#user_get_object_v2) | **GET** /2/object/user/{pkiUserID} | Retrieve an existing User
 *ObjectUserApi* | [**user_get_permissions_v1**](docs/ObjectUserApi.md#user_get_permissions_v1) | **GET** /1/object/user/{pkiUserID}/getPermissions | Retrieve an existing User&#39;s Permissions
 *ObjectUserApi* | [**user_get_subnets_v1**](docs/ObjectUserApi.md#user_get_subnets_v1) | **GET** /1/object/user/{pkiUserID}/getSubnets | Retrieve an existing User&#39;s Subnets
+*ObjectUserApi* | [**user_send_password_reset_v1**](docs/ObjectUserApi.md#user_send_password_reset_v1) | **POST** /1/object/user/{pkiUserID}/sendPasswordReset | Send password reset
 *ObjectUsergroupApi* | [**usergroup_create_object_v1**](docs/ObjectUsergroupApi.md#usergroup_create_object_v1) | **POST** /1/object/usergroup | Create a new Usergroup
 *ObjectUsergroupApi* | [**usergroup_edit_object_v1**](docs/ObjectUsergroupApi.md#usergroup_edit_object_v1) | **PUT** /1/object/usergroup/{pkiUsergroupID} | Edit an existing Usergroup
 *ObjectUsergroupApi* | [**usergroup_edit_permissions_v1**](docs/ObjectUsergroupApi.md#usergroup_edit_permissions_v1) | **PUT** /1/object/usergroup/{pkiUsergroupID}/editPermissions | Edit multiple Permissions
+*ObjectUsergroupApi* | [**usergroup_edit_usergroupdelegations_v1**](docs/ObjectUsergroupApi.md#usergroup_edit_usergroupdelegations_v1) | **PUT** /1/object/usergroup/{pkiUsergroupID}/editUsergroupdelegations | Edit multiple Usergroupdelegations
 *ObjectUsergroupApi* | [**usergroup_edit_usergroupmemberships_v1**](docs/ObjectUsergroupApi.md#usergroup_edit_usergroupmemberships_v1) | **PUT** /1/object/usergroup/{pkiUsergroupID}/editUsergroupmemberships | Edit multiple Usergroupmemberships
 *ObjectUsergroupApi* | [**usergroup_get_autocomplete_v2**](docs/ObjectUsergroupApi.md#usergroup_get_autocomplete_v2) | **GET** /2/object/usergroup/getAutocomplete/{sSelector} | Retrieve Usergroups and IDs
 *ObjectUsergroupApi* | [**usergroup_get_list_v1**](docs/ObjectUsergroupApi.md#usergroup_get_list_v1) | **GET** /1/object/usergroup/getList | Retrieve Usergroup list
 *ObjectUsergroupApi* | [**usergroup_get_object_v2**](docs/ObjectUsergroupApi.md#usergroup_get_object_v2) | **GET** /2/object/usergroup/{pkiUsergroupID} | Retrieve an existing Usergroup
 *ObjectUsergroupApi* | [**usergroup_get_permissions_v1**](docs/ObjectUsergroupApi.md#usergroup_get_permissions_v1) | **GET** /1/object/usergroup/{pkiUsergroupID}/getPermissions | Retrieve an existing Usergroup&#39;s Permissions
+*ObjectUsergroupApi* | [**usergroup_get_usergroupdelegations_v1**](docs/ObjectUsergroupApi.md#usergroup_get_usergroupdelegations_v1) | **GET** /1/object/usergroup/{pkiUsergroupID}/getUsergroupdelegations | Retrieve an existing Usergroup&#39;s Usergroupdelegations
 *ObjectUsergroupApi* | [**usergroup_get_usergroupmemberships_v1**](docs/ObjectUsergroupApi.md#usergroup_get_usergroupmemberships_v1) | **GET** /1/object/usergroup/{pkiUsergroupID}/getUsergroupmemberships | Retrieve an existing Usergroup&#39;s Usergroupmemberships
+*ObjectUsergroupdelegationApi* | [**usergroupdelegation_create_object_v1**](docs/ObjectUsergroupdelegationApi.md#usergroupdelegation_create_object_v1) | **POST** /1/object/usergroupdelegation | Create a new Usergroupdelegation
+*ObjectUsergroupdelegationApi* | [**usergroupdelegation_delete_object_v1**](docs/ObjectUsergroupdelegationApi.md#usergroupdelegation_delete_object_v1) | **DELETE** /1/object/usergroupdelegation/{pkiUsergroupdelegationID} | Delete an existing Usergroupdelegation
+*ObjectUsergroupdelegationApi* | [**usergroupdelegation_edit_object_v1**](docs/ObjectUsergroupdelegationApi.md#usergroupdelegation_edit_object_v1) | **PUT** /1/object/usergroupdelegation/{pkiUsergroupdelegationID} | Edit an existing Usergroupdelegation
+*ObjectUsergroupdelegationApi* | [**usergroupdelegation_get_object_v2**](docs/ObjectUsergroupdelegationApi.md#usergroupdelegation_get_object_v2) | **GET** /2/object/usergroupdelegation/{pkiUsergroupdelegationID} | Retrieve an existing Usergroupdelegation
 *ObjectUsergroupmembershipApi* | [**usergroupmembership_create_object_v1**](docs/ObjectUsergroupmembershipApi.md#usergroupmembership_create_object_v1) | **POST** /1/object/usergroupmembership | Create a new Usergroupmembership
 *ObjectUsergroupmembershipApi* | [**usergroupmembership_delete_object_v1**](docs/ObjectUsergroupmembershipApi.md#usergroupmembership_delete_object_v1) | **DELETE** /1/object/usergroupmembership/{pkiUsergroupmembershipID} | Delete an existing Usergroupmembership
 *ObjectUsergroupmembershipApi* | [**usergroupmembership_edit_object_v1**](docs/ObjectUsergroupmembershipApi.md#usergroupmembership_edit_object_v1) | **PUT** /1/object/usergroupmembership/{pkiUsergroupmembershipID} | Edit an existing Usergroupmembership
@@ -3302,50 +2816,37 @@ Class | Method | HTTP request | Description
 
 # DOCUMENTATION FOR MODELS
  - [EzmaxApi::Object::ActivesessionGetCurrentV1Response](docs/ActivesessionGetCurrentV1Response.md)
- - [EzmaxApi::Object::ActivesessionGetCurrentV1ResponseAllOf](docs/ActivesessionGetCurrentV1ResponseAllOf.md)
  - [EzmaxApi::Object::ActivesessionGetCurrentV1ResponseMPayload](docs/ActivesessionGetCurrentV1ResponseMPayload.md)
  - [EzmaxApi::Object::ActivesessionGetListV1Response](docs/ActivesessionGetListV1Response.md)
- - [EzmaxApi::Object::ActivesessionGetListV1ResponseAllOf](docs/ActivesessionGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::ActivesessionGetListV1ResponseMPayload](docs/ActivesessionGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::ActivesessionGetListV1ResponseMPayloadAllOf](docs/ActivesessionGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::ActivesessionListElement](docs/ActivesessionListElement.md)
  - [EzmaxApi::Object::ActivesessionResponse](docs/ActivesessionResponse.md)
  - [EzmaxApi::Object::ActivesessionResponseCompound](docs/ActivesessionResponseCompound.md)
- - [EzmaxApi::Object::ActivesessionResponseCompoundAllOf](docs/ActivesessionResponseCompoundAllOf.md)
  - [EzmaxApi::Object::ActivesessionResponseCompoundApikey](docs/ActivesessionResponseCompoundApikey.md)
  - [EzmaxApi::Object::ActivesessionResponseCompoundUser](docs/ActivesessionResponseCompoundUser.md)
  - [EzmaxApi::Object::AddressRequest](docs/AddressRequest.md)
  - [EzmaxApi::Object::AddressRequestCompound](docs/AddressRequestCompound.md)
  - [EzmaxApi::Object::ApikeyCreateObjectV2Request](docs/ApikeyCreateObjectV2Request.md)
  - [EzmaxApi::Object::ApikeyCreateObjectV2Response](docs/ApikeyCreateObjectV2Response.md)
- - [EzmaxApi::Object::ApikeyCreateObjectV2ResponseAllOf](docs/ApikeyCreateObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::ApikeyCreateObjectV2ResponseMPayload](docs/ApikeyCreateObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::ApikeyEditObjectV1Request](docs/ApikeyEditObjectV1Request.md)
  - [EzmaxApi::Object::ApikeyEditObjectV1Response](docs/ApikeyEditObjectV1Response.md)
  - [EzmaxApi::Object::ApikeyEditPermissionsV1Request](docs/ApikeyEditPermissionsV1Request.md)
  - [EzmaxApi::Object::ApikeyEditPermissionsV1Response](docs/ApikeyEditPermissionsV1Response.md)
- - [EzmaxApi::Object::ApikeyEditPermissionsV1ResponseAllOf](docs/ApikeyEditPermissionsV1ResponseAllOf.md)
  - [EzmaxApi::Object::ApikeyEditPermissionsV1ResponseMPayload](docs/ApikeyEditPermissionsV1ResponseMPayload.md)
  - [EzmaxApi::Object::ApikeyGetCorsV1Response](docs/ApikeyGetCorsV1Response.md)
- - [EzmaxApi::Object::ApikeyGetCorsV1ResponseAllOf](docs/ApikeyGetCorsV1ResponseAllOf.md)
  - [EzmaxApi::Object::ApikeyGetCorsV1ResponseMPayload](docs/ApikeyGetCorsV1ResponseMPayload.md)
  - [EzmaxApi::Object::ApikeyGetListV1Response](docs/ApikeyGetListV1Response.md)
- - [EzmaxApi::Object::ApikeyGetListV1ResponseAllOf](docs/ApikeyGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::ApikeyGetListV1ResponseMPayload](docs/ApikeyGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::ApikeyGetListV1ResponseMPayloadAllOf](docs/ApikeyGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::ApikeyGetObjectV2Response](docs/ApikeyGetObjectV2Response.md)
- - [EzmaxApi::Object::ApikeyGetObjectV2ResponseAllOf](docs/ApikeyGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::ApikeyGetObjectV2ResponseMPayload](docs/ApikeyGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::ApikeyGetPermissionsV1Response](docs/ApikeyGetPermissionsV1Response.md)
- - [EzmaxApi::Object::ApikeyGetPermissionsV1ResponseAllOf](docs/ApikeyGetPermissionsV1ResponseAllOf.md)
  - [EzmaxApi::Object::ApikeyGetPermissionsV1ResponseMPayload](docs/ApikeyGetPermissionsV1ResponseMPayload.md)
  - [EzmaxApi::Object::ApikeyGetSubnetsV1Response](docs/ApikeyGetSubnetsV1Response.md)
- - [EzmaxApi::Object::ApikeyGetSubnetsV1ResponseAllOf](docs/ApikeyGetSubnetsV1ResponseAllOf.md)
  - [EzmaxApi::Object::ApikeyGetSubnetsV1ResponseMPayload](docs/ApikeyGetSubnetsV1ResponseMPayload.md)
  - [EzmaxApi::Object::ApikeyListElement](docs/ApikeyListElement.md)
  - [EzmaxApi::Object::ApikeyRegenerateV1Request](docs/ApikeyRegenerateV1Request.md)
  - [EzmaxApi::Object::ApikeyRegenerateV1Response](docs/ApikeyRegenerateV1Response.md)
- - [EzmaxApi::Object::ApikeyRegenerateV1ResponseAllOf](docs/ApikeyRegenerateV1ResponseAllOf.md)
  - [EzmaxApi::Object::ApikeyRegenerateV1ResponseMPayload](docs/ApikeyRegenerateV1ResponseMPayload.md)
  - [EzmaxApi::Object::ApikeyRequest](docs/ApikeyRequest.md)
  - [EzmaxApi::Object::ApikeyRequestCompound](docs/ApikeyRequestCompound.md)
@@ -3355,32 +2856,24 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::AttemptResponseCompound](docs/AttemptResponseCompound.md)
  - [EzmaxApi::Object::BillingentityexternalAutocompleteElementResponse](docs/BillingentityexternalAutocompleteElementResponse.md)
  - [EzmaxApi::Object::BillingentityexternalGetAutocompleteV2Response](docs/BillingentityexternalGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::BillingentityexternalGetAutocompleteV2ResponseAllOf](docs/BillingentityexternalGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::BillingentityexternalGetAutocompleteV2ResponseMPayload](docs/BillingentityexternalGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::BillingentityinternalAutocompleteElementResponse](docs/BillingentityinternalAutocompleteElementResponse.md)
  - [EzmaxApi::Object::BillingentityinternalCreateObjectV1Request](docs/BillingentityinternalCreateObjectV1Request.md)
  - [EzmaxApi::Object::BillingentityinternalCreateObjectV1Response](docs/BillingentityinternalCreateObjectV1Response.md)
- - [EzmaxApi::Object::BillingentityinternalCreateObjectV1ResponseAllOf](docs/BillingentityinternalCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::BillingentityinternalCreateObjectV1ResponseMPayload](docs/BillingentityinternalCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::BillingentityinternalEditObjectV1Request](docs/BillingentityinternalEditObjectV1Request.md)
  - [EzmaxApi::Object::BillingentityinternalEditObjectV1Response](docs/BillingentityinternalEditObjectV1Response.md)
  - [EzmaxApi::Object::BillingentityinternalGetAutocompleteV2Response](docs/BillingentityinternalGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::BillingentityinternalGetAutocompleteV2ResponseAllOf](docs/BillingentityinternalGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::BillingentityinternalGetAutocompleteV2ResponseMPayload](docs/BillingentityinternalGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::BillingentityinternalGetListV1Response](docs/BillingentityinternalGetListV1Response.md)
- - [EzmaxApi::Object::BillingentityinternalGetListV1ResponseAllOf](docs/BillingentityinternalGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::BillingentityinternalGetListV1ResponseMPayload](docs/BillingentityinternalGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::BillingentityinternalGetListV1ResponseMPayloadAllOf](docs/BillingentityinternalGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::BillingentityinternalGetObjectV2Response](docs/BillingentityinternalGetObjectV2Response.md)
- - [EzmaxApi::Object::BillingentityinternalGetObjectV2ResponseAllOf](docs/BillingentityinternalGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::BillingentityinternalGetObjectV2ResponseMPayload](docs/BillingentityinternalGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::BillingentityinternalListElement](docs/BillingentityinternalListElement.md)
  - [EzmaxApi::Object::BillingentityinternalRequest](docs/BillingentityinternalRequest.md)
  - [EzmaxApi::Object::BillingentityinternalRequestCompound](docs/BillingentityinternalRequestCompound.md)
- - [EzmaxApi::Object::BillingentityinternalRequestCompoundAllOf](docs/BillingentityinternalRequestCompoundAllOf.md)
  - [EzmaxApi::Object::BillingentityinternalResponse](docs/BillingentityinternalResponse.md)
  - [EzmaxApi::Object::BillingentityinternalResponseCompound](docs/BillingentityinternalResponseCompound.md)
- - [EzmaxApi::Object::BillingentityinternalResponseCompoundAllOf](docs/BillingentityinternalResponseCompoundAllOf.md)
  - [EzmaxApi::Object::BillingentityinternalproductRequest](docs/BillingentityinternalproductRequest.md)
  - [EzmaxApi::Object::BillingentityinternalproductRequestCompound](docs/BillingentityinternalproductRequestCompound.md)
  - [EzmaxApi::Object::BillingentityinternalproductResponse](docs/BillingentityinternalproductResponse.md)
@@ -3388,39 +2881,29 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::BrandingAutocompleteElementResponse](docs/BrandingAutocompleteElementResponse.md)
  - [EzmaxApi::Object::BrandingCreateObjectV1Request](docs/BrandingCreateObjectV1Request.md)
  - [EzmaxApi::Object::BrandingCreateObjectV1Response](docs/BrandingCreateObjectV1Response.md)
- - [EzmaxApi::Object::BrandingCreateObjectV1ResponseAllOf](docs/BrandingCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::BrandingCreateObjectV1ResponseMPayload](docs/BrandingCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::BrandingEditObjectV1Request](docs/BrandingEditObjectV1Request.md)
  - [EzmaxApi::Object::BrandingEditObjectV1Response](docs/BrandingEditObjectV1Response.md)
  - [EzmaxApi::Object::BrandingGetAutocompleteV2Response](docs/BrandingGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::BrandingGetAutocompleteV2ResponseAllOf](docs/BrandingGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::BrandingGetAutocompleteV2ResponseMPayload](docs/BrandingGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::BrandingGetListV1Response](docs/BrandingGetListV1Response.md)
- - [EzmaxApi::Object::BrandingGetListV1ResponseAllOf](docs/BrandingGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::BrandingGetListV1ResponseMPayload](docs/BrandingGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::BrandingGetListV1ResponseMPayloadAllOf](docs/BrandingGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::BrandingGetObjectV2Response](docs/BrandingGetObjectV2Response.md)
- - [EzmaxApi::Object::BrandingGetObjectV2ResponseAllOf](docs/BrandingGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::BrandingGetObjectV2ResponseMPayload](docs/BrandingGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::BrandingListElement](docs/BrandingListElement.md)
  - [EzmaxApi::Object::BrandingRequest](docs/BrandingRequest.md)
  - [EzmaxApi::Object::BrandingRequestCompound](docs/BrandingRequestCompound.md)
  - [EzmaxApi::Object::BrandingResponse](docs/BrandingResponse.md)
  - [EzmaxApi::Object::BrandingResponseCompound](docs/BrandingResponseCompound.md)
- - [EzmaxApi::Object::BrandingResponseCompoundAllOf](docs/BrandingResponseCompoundAllOf.md)
  - [EzmaxApi::Object::ClonehistoryGetListV1Response](docs/ClonehistoryGetListV1Response.md)
- - [EzmaxApi::Object::ClonehistoryGetListV1ResponseAllOf](docs/ClonehistoryGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::ClonehistoryGetListV1ResponseMPayload](docs/ClonehistoryGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::ClonehistoryGetListV1ResponseMPayloadAllOf](docs/ClonehistoryGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::ClonehistoryListElement](docs/ClonehistoryListElement.md)
  - [EzmaxApi::Object::CommonAudit](docs/CommonAudit.md)
  - [EzmaxApi::Object::CommonAuditdetail](docs/CommonAuditdetail.md)
  - [EzmaxApi::Object::CommonFile](docs/CommonFile.md)
  - [EzmaxApi::Object::CommonGetAutocompleteV1Response](docs/CommonGetAutocompleteV1Response.md)
- - [EzmaxApi::Object::CommonGetAutocompleteV1ResponseAllOf](docs/CommonGetAutocompleteV1ResponseAllOf.md)
  - [EzmaxApi::Object::CommonGetListV1ResponseMPayload](docs/CommonGetListV1ResponseMPayload.md)
  - [EzmaxApi::Object::CommonGetReportV1Response](docs/CommonGetReportV1Response.md)
- - [EzmaxApi::Object::CommonGetReportV1ResponseAllOf](docs/CommonGetReportV1ResponseAllOf.md)
  - [EzmaxApi::Object::CommonGetReportV1ResponseMPayload](docs/CommonGetReportV1ResponseMPayload.md)
  - [EzmaxApi::Object::CommonReport](docs/CommonReport.md)
  - [EzmaxApi::Object::CommonReportcell](docs/CommonReportcell.md)
@@ -3435,24 +2918,20 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CommonResponseError](docs/CommonResponseError.md)
  - [EzmaxApi::Object::CommonResponseErrorEzsignformValidation](docs/CommonResponseErrorEzsignformValidation.md)
  - [EzmaxApi::Object::CommonResponseErrorSTemporaryFileUrl](docs/CommonResponseErrorSTemporaryFileUrl.md)
- - [EzmaxApi::Object::CommonResponseErrorSTemporaryFileUrlAllOf](docs/CommonResponseErrorSTemporaryFileUrlAllOf.md)
  - [EzmaxApi::Object::CommonResponseErrorTooManyRequests](docs/CommonResponseErrorTooManyRequests.md)
  - [EzmaxApi::Object::CommonResponseFilter](docs/CommonResponseFilter.md)
  - [EzmaxApi::Object::CommonResponseGetList](docs/CommonResponseGetList.md)
  - [EzmaxApi::Object::CommonResponseObjDebug](docs/CommonResponseObjDebug.md)
  - [EzmaxApi::Object::CommonResponseObjDebugPayload](docs/CommonResponseObjDebugPayload.md)
  - [EzmaxApi::Object::CommonResponseObjDebugPayloadGetList](docs/CommonResponseObjDebugPayloadGetList.md)
- - [EzmaxApi::Object::CommonResponseObjDebugPayloadGetListAllOf](docs/CommonResponseObjDebugPayloadGetListAllOf.md)
  - [EzmaxApi::Object::CommonResponseObjSQLQuery](docs/CommonResponseObjSQLQuery.md)
  - [EzmaxApi::Object::CommonResponseRedirectSSecretquestionTextX](docs/CommonResponseRedirectSSecretquestionTextX.md)
  - [EzmaxApi::Object::CommonResponseWarning](docs/CommonResponseWarning.md)
  - [EzmaxApi::Object::CommonWebhook](docs/CommonWebhook.md)
  - [EzmaxApi::Object::CommunicationGetObjectV2Response](docs/CommunicationGetObjectV2Response.md)
- - [EzmaxApi::Object::CommunicationGetObjectV2ResponseAllOf](docs/CommunicationGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::CommunicationGetObjectV2ResponseMPayload](docs/CommunicationGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::CommunicationResponse](docs/CommunicationResponse.md)
  - [EzmaxApi::Object::CommunicationResponseCompound](docs/CommunicationResponseCompound.md)
- - [EzmaxApi::Object::CommunicationResponseCompoundAllOf](docs/CommunicationResponseCompoundAllOf.md)
  - [EzmaxApi::Object::CommunicationattachmentResponse](docs/CommunicationattachmentResponse.md)
  - [EzmaxApi::Object::CommunicationattachmentResponseCompound](docs/CommunicationattachmentResponseCompound.md)
  - [EzmaxApi::Object::CommunicationexternalrecipientResponse](docs/CommunicationexternalrecipientResponse.md)
@@ -3461,24 +2940,20 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CommunicationrecipientResponseCompound](docs/CommunicationrecipientResponseCompound.md)
  - [EzmaxApi::Object::CompanyAutocompleteElementResponse](docs/CompanyAutocompleteElementResponse.md)
  - [EzmaxApi::Object::CompanyGetAutocompleteV2Response](docs/CompanyGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::CompanyGetAutocompleteV2ResponseAllOf](docs/CompanyGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::CompanyGetAutocompleteV2ResponseMPayload](docs/CompanyGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::ComputedECommunicationDirection](docs/ComputedECommunicationDirection.md)
+ - [EzmaxApi::Object::ComputedEEzsigndocumentSteptype](docs/ComputedEEzsigndocumentSteptype.md)
  - [EzmaxApi::Object::ContactRequest](docs/ContactRequest.md)
  - [EzmaxApi::Object::ContactRequestCompound](docs/ContactRequestCompound.md)
- - [EzmaxApi::Object::ContactRequestCompoundAllOf](docs/ContactRequestCompoundAllOf.md)
  - [EzmaxApi::Object::ContactinformationsRequest](docs/ContactinformationsRequest.md)
  - [EzmaxApi::Object::ContactinformationsRequestCompound](docs/ContactinformationsRequestCompound.md)
- - [EzmaxApi::Object::ContactinformationsRequestCompoundAllOf](docs/ContactinformationsRequestCompoundAllOf.md)
  - [EzmaxApi::Object::CorsCreateObjectV1Request](docs/CorsCreateObjectV1Request.md)
  - [EzmaxApi::Object::CorsCreateObjectV1Response](docs/CorsCreateObjectV1Response.md)
- - [EzmaxApi::Object::CorsCreateObjectV1ResponseAllOf](docs/CorsCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::CorsCreateObjectV1ResponseMPayload](docs/CorsCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::CorsDeleteObjectV1Response](docs/CorsDeleteObjectV1Response.md)
  - [EzmaxApi::Object::CorsEditObjectV1Request](docs/CorsEditObjectV1Request.md)
  - [EzmaxApi::Object::CorsEditObjectV1Response](docs/CorsEditObjectV1Response.md)
  - [EzmaxApi::Object::CorsGetObjectV2Response](docs/CorsGetObjectV2Response.md)
- - [EzmaxApi::Object::CorsGetObjectV2ResponseAllOf](docs/CorsGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::CorsGetObjectV2ResponseMPayload](docs/CorsGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::CorsRequest](docs/CorsRequest.md)
  - [EzmaxApi::Object::CorsRequestCompound](docs/CorsRequestCompound.md)
@@ -3493,27 +2968,20 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CustomDropdownElementResponse](docs/CustomDropdownElementResponse.md)
  - [EzmaxApi::Object::CustomDropdownElementResponseCompound](docs/CustomDropdownElementResponseCompound.md)
  - [EzmaxApi::Object::CustomEzmaxinvoicingEzsigndocumentResponse](docs/CustomEzmaxinvoicingEzsigndocumentResponse.md)
- - [EzmaxApi::Object::CustomEzmaxinvoicingEzsigndocumentResponseAllOf](docs/CustomEzmaxinvoicingEzsigndocumentResponseAllOf.md)
  - [EzmaxApi::Object::CustomEzmaxinvoicingEzsignfolderResponse](docs/CustomEzmaxinvoicingEzsignfolderResponse.md)
- - [EzmaxApi::Object::CustomEzmaxinvoicingEzsignfolderResponseAllOf](docs/CustomEzmaxinvoicingEzsignfolderResponseAllOf.md)
  - [EzmaxApi::Object::CustomEzmaxpricingResponse](docs/CustomEzmaxpricingResponse.md)
  - [EzmaxApi::Object::CustomEzsigndocumentEzsignsignaturesAutomaticResponse](docs/CustomEzsigndocumentEzsignsignaturesAutomaticResponse.md)
  - [EzmaxApi::Object::CustomEzsignfolderEzsignsignaturesAutomaticResponse](docs/CustomEzsignfolderEzsignsignaturesAutomaticResponse.md)
  - [EzmaxApi::Object::CustomEzsignfoldersignerassociationActionableElementResponse](docs/CustomEzsignfoldersignerassociationActionableElementResponse.md)
- - [EzmaxApi::Object::CustomEzsignfoldersignerassociationActionableElementResponseAllOf](docs/CustomEzsignfoldersignerassociationActionableElementResponseAllOf.md)
  - [EzmaxApi::Object::CustomEzsignfoldersignerassociationmessageRequest](docs/CustomEzsignfoldersignerassociationmessageRequest.md)
  - [EzmaxApi::Object::CustomEzsignfoldersignerassociationmineResponse](docs/CustomEzsignfoldersignerassociationmineResponse.md)
  - [EzmaxApi::Object::CustomEzsignfoldersignerassociationstatusResponse](docs/CustomEzsignfoldersignerassociationstatusResponse.md)
  - [EzmaxApi::Object::CustomEzsignfoldertransmissionResponse](docs/CustomEzsignfoldertransmissionResponse.md)
  - [EzmaxApi::Object::CustomEzsignfoldertransmissionSignerResponse](docs/CustomEzsignfoldertransmissionSignerResponse.md)
  - [EzmaxApi::Object::CustomEzsignformfieldRequest](docs/CustomEzsignformfieldRequest.md)
- - [EzmaxApi::Object::CustomEzsignformfieldRequestAllOf](docs/CustomEzsignformfieldRequestAllOf.md)
  - [EzmaxApi::Object::CustomEzsignformfielderrorResponse](docs/CustomEzsignformfielderrorResponse.md)
- - [EzmaxApi::Object::CustomEzsignformfielderrorResponseAllOf](docs/CustomEzsignformfielderrorResponseAllOf.md)
  - [EzmaxApi::Object::CustomEzsignformfielderrortestResponse](docs/CustomEzsignformfielderrortestResponse.md)
- - [EzmaxApi::Object::CustomEzsignformfielderrortestResponseAllOf](docs/CustomEzsignformfielderrortestResponseAllOf.md)
  - [EzmaxApi::Object::CustomEzsignformfieldgroupRequest](docs/CustomEzsignformfieldgroupRequest.md)
- - [EzmaxApi::Object::CustomEzsignformfieldgroupRequestAllOf](docs/CustomEzsignformfieldgroupRequestAllOf.md)
  - [EzmaxApi::Object::CustomEzsignsignatureEzsignsignaturesAutomaticResponse](docs/CustomEzsignsignatureEzsignsignaturesAutomaticResponse.md)
  - [EzmaxApi::Object::CustomEzsignsignaturestatusResponse](docs/CustomEzsignsignaturestatusResponse.md)
  - [EzmaxApi::Object::CustomFormDataDocumentResponse](docs/CustomFormDataDocumentResponse.md)
@@ -3523,19 +2991,14 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CustomFormsDataFolderResponse](docs/CustomFormsDataFolderResponse.md)
  - [EzmaxApi::Object::CustomImportEzsigntemplatepackageRelationRequest](docs/CustomImportEzsigntemplatepackageRelationRequest.md)
  - [EzmaxApi::Object::CustomNotificationsubsectiongetnotificationtestsResponse](docs/CustomNotificationsubsectiongetnotificationtestsResponse.md)
- - [EzmaxApi::Object::CustomNotificationsubsectiongetnotificationtestsResponseAllOf](docs/CustomNotificationsubsectiongetnotificationtestsResponseAllOf.md)
  - [EzmaxApi::Object::CustomNotificationtestgetnotificationtestsResponse](docs/CustomNotificationtestgetnotificationtestsResponse.md)
- - [EzmaxApi::Object::CustomNotificationtestgetnotificationtestsResponseAllOf](docs/CustomNotificationtestgetnotificationtestsResponseAllOf.md)
  - [EzmaxApi::Object::CustomUserResponse](docs/CustomUserResponse.md)
  - [EzmaxApi::Object::CustomWebhookResponse](docs/CustomWebhookResponse.md)
- - [EzmaxApi::Object::CustomWebhookResponseAllOf](docs/CustomWebhookResponseAllOf.md)
  - [EzmaxApi::Object::CustomWebhooklogResponse](docs/CustomWebhooklogResponse.md)
- - [EzmaxApi::Object::CustomWebhooklogResponseAllOf](docs/CustomWebhooklogResponseAllOf.md)
  - [EzmaxApi::Object::CustomWordPositionOccurenceResponse](docs/CustomWordPositionOccurenceResponse.md)
  - [EzmaxApi::Object::CustomWordPositionWordResponse](docs/CustomWordPositionWordResponse.md)
  - [EzmaxApi::Object::DepartmentAutocompleteElementResponse](docs/DepartmentAutocompleteElementResponse.md)
  - [EzmaxApi::Object::DepartmentGetAutocompleteV2Response](docs/DepartmentGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::DepartmentGetAutocompleteV2ResponseAllOf](docs/DepartmentGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::DepartmentGetAutocompleteV2ResponseMPayload](docs/DepartmentGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::DescriptionstaticResponse](docs/DescriptionstaticResponse.md)
  - [EzmaxApi::Object::DescriptionstaticResponseCompound](docs/DescriptionstaticResponseCompound.md)
@@ -3547,7 +3010,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EmailstaticResponseCompound](docs/EmailstaticResponseCompound.md)
  - [EzmaxApi::Object::EmailtypeAutocompleteElementResponse](docs/EmailtypeAutocompleteElementResponse.md)
  - [EzmaxApi::Object::EmailtypeGetAutocompleteV2Response](docs/EmailtypeGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::EmailtypeGetAutocompleteV2ResponseAllOf](docs/EmailtypeGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::EmailtypeGetAutocompleteV2ResponseMPayload](docs/EmailtypeGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::EnumFontunderline](docs/EnumFontunderline.md)
  - [EzmaxApi::Object::EnumFontweight](docs/EnumFontweight.md)
@@ -3556,79 +3018,58 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EnumVerticalalignment](docs/EnumVerticalalignment.md)
  - [EzmaxApi::Object::EzmaxinvoicingAutocompleteElementResponse](docs/EzmaxinvoicingAutocompleteElementResponse.md)
  - [EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2Response](docs/EzmaxinvoicingGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2ResponseAllOf](docs/EzmaxinvoicingGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2ResponseMPayload](docs/EzmaxinvoicingGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzmaxinvoicingGetObjectV2Response](docs/EzmaxinvoicingGetObjectV2Response.md)
- - [EzmaxApi::Object::EzmaxinvoicingGetObjectV2ResponseAllOf](docs/EzmaxinvoicingGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzmaxinvoicingGetObjectV2ResponseMPayload](docs/EzmaxinvoicingGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzmaxinvoicingGetProvisionalV1Response](docs/EzmaxinvoicingGetProvisionalV1Response.md)
- - [EzmaxApi::Object::EzmaxinvoicingGetProvisionalV1ResponseAllOf](docs/EzmaxinvoicingGetProvisionalV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzmaxinvoicingGetProvisionalV1ResponseMPayload](docs/EzmaxinvoicingGetProvisionalV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzmaxinvoicingResponse](docs/EzmaxinvoicingResponse.md)
  - [EzmaxApi::Object::EzmaxinvoicingResponseCompound](docs/EzmaxinvoicingResponseCompound.md)
- - [EzmaxApi::Object::EzmaxinvoicingResponseCompoundAllOf](docs/EzmaxinvoicingResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzmaxinvoicingagentResponse](docs/EzmaxinvoicingagentResponse.md)
  - [EzmaxApi::Object::EzmaxinvoicingagentResponseCompound](docs/EzmaxinvoicingagentResponseCompound.md)
- - [EzmaxApi::Object::EzmaxinvoicingagentResponseCompoundAllOf](docs/EzmaxinvoicingagentResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzmaxinvoicingcommissionResponse](docs/EzmaxinvoicingcommissionResponse.md)
  - [EzmaxApi::Object::EzmaxinvoicingcommissionResponseCompound](docs/EzmaxinvoicingcommissionResponseCompound.md)
- - [EzmaxApi::Object::EzmaxinvoicingcommissionResponseCompoundAllOf](docs/EzmaxinvoicingcommissionResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzmaxinvoicingcontractResponse](docs/EzmaxinvoicingcontractResponse.md)
  - [EzmaxApi::Object::EzmaxinvoicingcontractResponseCompound](docs/EzmaxinvoicingcontractResponseCompound.md)
  - [EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponse](docs/EzmaxinvoicingsummaryexternalResponse.md)
  - [EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponseCompound](docs/EzmaxinvoicingsummaryexternalResponseCompound.md)
- - [EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponseCompoundAllOf](docs/EzmaxinvoicingsummaryexternalResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzmaxinvoicingsummaryexternaldetailResponse](docs/EzmaxinvoicingsummaryexternaldetailResponse.md)
  - [EzmaxApi::Object::EzmaxinvoicingsummaryexternaldetailResponseCompound](docs/EzmaxinvoicingsummaryexternaldetailResponseCompound.md)
  - [EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponse](docs/EzmaxinvoicingsummaryglobalResponse.md)
  - [EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponseCompound](docs/EzmaxinvoicingsummaryglobalResponseCompound.md)
- - [EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponseCompoundAllOf](docs/EzmaxinvoicingsummaryglobalResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponse](docs/EzmaxinvoicingsummaryinternalResponse.md)
  - [EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponseCompound](docs/EzmaxinvoicingsummaryinternalResponseCompound.md)
- - [EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponseCompoundAllOf](docs/EzmaxinvoicingsummaryinternalResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzmaxinvoicingsummaryinternaldetailResponse](docs/EzmaxinvoicingsummaryinternaldetailResponse.md)
  - [EzmaxApi::Object::EzmaxinvoicingsummaryinternaldetailResponseCompound](docs/EzmaxinvoicingsummaryinternaldetailResponseCompound.md)
  - [EzmaxApi::Object::EzmaxinvoicinguserResponse](docs/EzmaxinvoicinguserResponse.md)
  - [EzmaxApi::Object::EzmaxinvoicinguserResponseCompound](docs/EzmaxinvoicinguserResponseCompound.md)
  - [EzmaxApi::Object::EzmaxproductAutocompleteElementResponse](docs/EzmaxproductAutocompleteElementResponse.md)
  - [EzmaxApi::Object::EzmaxproductGetAutocompleteV2Response](docs/EzmaxproductGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::EzmaxproductGetAutocompleteV2ResponseAllOf](docs/EzmaxproductGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzmaxproductGetAutocompleteV2ResponseMPayload](docs/EzmaxproductGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignSuggestSignersV1Response](docs/EzsignSuggestSignersV1Response.md)
- - [EzmaxApi::Object::EzsignSuggestSignersV1ResponseAllOf](docs/EzsignSuggestSignersV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignSuggestSignersV1ResponseMPayload](docs/EzsignSuggestSignersV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignSuggestTemplatesV1Response](docs/EzsignSuggestTemplatesV1Response.md)
- - [EzmaxApi::Object::EzsignSuggestTemplatesV1ResponseAllOf](docs/EzsignSuggestTemplatesV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignSuggestTemplatesV1ResponseMPayload](docs/EzsignSuggestTemplatesV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignannotationResponse](docs/EzsignannotationResponse.md)
  - [EzmaxApi::Object::EzsignannotationResponseCompound](docs/EzsignannotationResponseCompound.md)
- - [EzmaxApi::Object::EzsignannotationResponseCompoundAllOf](docs/EzsignannotationResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendCreateEzsignbulksendtransmissionV1Request](docs/EzsignbulksendCreateEzsignbulksendtransmissionV1Request.md)
  - [EzmaxApi::Object::EzsignbulksendCreateEzsignbulksendtransmissionV1Response](docs/EzsignbulksendCreateEzsignbulksendtransmissionV1Response.md)
- - [EzmaxApi::Object::EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf](docs/EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload](docs/EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksendCreateObjectV1Request](docs/EzsignbulksendCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsignbulksendCreateObjectV1Response](docs/EzsignbulksendCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsignbulksendCreateObjectV1ResponseAllOf](docs/EzsignbulksendCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendCreateObjectV1ResponseMPayload](docs/EzsignbulksendCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksendDeleteObjectV1Response](docs/EzsignbulksendDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsignbulksendEditObjectV1Request](docs/EzsignbulksendEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsignbulksendEditObjectV1Response](docs/EzsignbulksendEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsignbulksendGetEzsignbulksendtransmissionsV1Response](docs/EzsignbulksendGetEzsignbulksendtransmissionsV1Response.md)
- - [EzmaxApi::Object::EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf](docs/EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload](docs/EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksendGetEzsignsignaturesAutomaticV1Response](docs/EzsignbulksendGetEzsignsignaturesAutomaticV1Response.md)
- - [EzmaxApi::Object::EzsignbulksendGetEzsignsignaturesAutomaticV1ResponseAllOf](docs/EzsignbulksendGetEzsignsignaturesAutomaticV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendGetEzsignsignaturesAutomaticV1ResponseMPayload](docs/EzsignbulksendGetEzsignsignaturesAutomaticV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksendGetFormsDataV1Response](docs/EzsignbulksendGetFormsDataV1Response.md)
- - [EzmaxApi::Object::EzsignbulksendGetFormsDataV1ResponseAllOf](docs/EzsignbulksendGetFormsDataV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendGetFormsDataV1ResponseMPayload](docs/EzsignbulksendGetFormsDataV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksendGetListV1Response](docs/EzsignbulksendGetListV1Response.md)
- - [EzmaxApi::Object::EzsignbulksendGetListV1ResponseAllOf](docs/EzsignbulksendGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendGetListV1ResponseMPayload](docs/EzsignbulksendGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::EzsignbulksendGetListV1ResponseMPayloadAllOf](docs/EzsignbulksendGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendGetObjectV2Response](docs/EzsignbulksendGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsignbulksendGetObjectV2ResponseAllOf](docs/EzsignbulksendGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendGetObjectV2ResponseMPayload](docs/EzsignbulksendGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksendListElement](docs/EzsignbulksendListElement.md)
  - [EzmaxApi::Object::EzsignbulksendReorderV1Request](docs/EzsignbulksendReorderV1Request.md)
@@ -3637,108 +3078,81 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignbulksendRequestCompound](docs/EzsignbulksendRequestCompound.md)
  - [EzmaxApi::Object::EzsignbulksendResponse](docs/EzsignbulksendResponse.md)
  - [EzmaxApi::Object::EzsignbulksendResponseCompound](docs/EzsignbulksendResponseCompound.md)
- - [EzmaxApi::Object::EzsignbulksendResponseCompoundAllOf](docs/EzsignbulksendResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignbulksenddocumentmappingCreateObjectV1Request](docs/EzsignbulksenddocumentmappingCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsignbulksenddocumentmappingCreateObjectV1Response](docs/EzsignbulksenddocumentmappingCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf](docs/EzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload](docs/EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksenddocumentmappingDeleteObjectV1Response](docs/EzsignbulksenddocumentmappingDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsignbulksenddocumentmappingGetObjectV2Response](docs/EzsignbulksenddocumentmappingGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsignbulksenddocumentmappingGetObjectV2ResponseAllOf](docs/EzsignbulksenddocumentmappingGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload](docs/EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksenddocumentmappingRequest](docs/EzsignbulksenddocumentmappingRequest.md)
  - [EzmaxApi::Object::EzsignbulksenddocumentmappingRequestCompound](docs/EzsignbulksenddocumentmappingRequestCompound.md)
  - [EzmaxApi::Object::EzsignbulksenddocumentmappingResponse](docs/EzsignbulksenddocumentmappingResponse.md)
  - [EzmaxApi::Object::EzsignbulksenddocumentmappingResponseCompound](docs/EzsignbulksenddocumentmappingResponseCompound.md)
- - [EzmaxApi::Object::EzsignbulksenddocumentmappingResponseCompoundAllOf](docs/EzsignbulksenddocumentmappingResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendsignermappingCreateObjectV1Request](docs/EzsignbulksendsignermappingCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsignbulksendsignermappingCreateObjectV1Response](docs/EzsignbulksendsignermappingCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsignbulksendsignermappingCreateObjectV1ResponseAllOf](docs/EzsignbulksendsignermappingCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendsignermappingCreateObjectV1ResponseMPayload](docs/EzsignbulksendsignermappingCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksendsignermappingDeleteObjectV1Response](docs/EzsignbulksendsignermappingDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsignbulksendsignermappingGetObjectV2Response](docs/EzsignbulksendsignermappingGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsignbulksendsignermappingGetObjectV2ResponseAllOf](docs/EzsignbulksendsignermappingGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendsignermappingGetObjectV2ResponseMPayload](docs/EzsignbulksendsignermappingGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksendsignermappingRequest](docs/EzsignbulksendsignermappingRequest.md)
  - [EzmaxApi::Object::EzsignbulksendsignermappingRequestCompound](docs/EzsignbulksendsignermappingRequestCompound.md)
  - [EzmaxApi::Object::EzsignbulksendsignermappingResponse](docs/EzsignbulksendsignermappingResponse.md)
  - [EzmaxApi::Object::EzsignbulksendsignermappingResponseCompound](docs/EzsignbulksendsignermappingResponseCompound.md)
  - [EzmaxApi::Object::EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response](docs/EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response.md)
- - [EzmaxApi::Object::EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1ResponseAllOf](docs/EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1ResponseMPayload](docs/EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksendtransmissionGetFormsDataV1Response](docs/EzsignbulksendtransmissionGetFormsDataV1Response.md)
- - [EzmaxApi::Object::EzsignbulksendtransmissionGetFormsDataV1ResponseAllOf](docs/EzsignbulksendtransmissionGetFormsDataV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendtransmissionGetFormsDataV1ResponseMPayload](docs/EzsignbulksendtransmissionGetFormsDataV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksendtransmissionGetObjectV2Response](docs/EzsignbulksendtransmissionGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsignbulksendtransmissionGetObjectV2ResponseAllOf](docs/EzsignbulksendtransmissionGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignbulksendtransmissionGetObjectV2ResponseMPayload](docs/EzsignbulksendtransmissionGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignbulksendtransmissionResponse](docs/EzsignbulksendtransmissionResponse.md)
  - [EzmaxApi::Object::EzsignbulksendtransmissionResponseCompound](docs/EzsignbulksendtransmissionResponseCompound.md)
- - [EzmaxApi::Object::EzsignbulksendtransmissionResponseCompoundAllOf](docs/EzsignbulksendtransmissionResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Request](docs/EzsigndocumentApplyEzsigntemplateV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV1Response](docs/EzsigndocumentApplyEzsigntemplateV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV2Request](docs/EzsigndocumentApplyEzsigntemplateV2Request.md)
  - [EzmaxApi::Object::EzsigndocumentApplyEzsigntemplateV2Response](docs/EzsigndocumentApplyEzsigntemplateV2Response.md)
  - [EzmaxApi::Object::EzsigndocumentCreateObjectV1Request](docs/EzsigndocumentCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentCreateObjectV1Response](docs/EzsigndocumentCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseAllOf](docs/EzsigndocumentCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentCreateObjectV1ResponseMPayload](docs/EzsigndocumentCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentCreateObjectV2Request](docs/EzsigndocumentCreateObjectV2Request.md)
  - [EzmaxApi::Object::EzsigndocumentCreateObjectV2Response](docs/EzsigndocumentCreateObjectV2Response.md)
- - [EzmaxApi::Object::EzsigndocumentCreateObjectV2ResponseAllOf](docs/EzsigndocumentCreateObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentCreateObjectV2ResponseMPayload](docs/EzsigndocumentCreateObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentDeclineToSignV1Request](docs/EzsigndocumentDeclineToSignV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentDeclineToSignV1Response](docs/EzsigndocumentDeclineToSignV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentDeleteObjectV1Response](docs/EzsigndocumentDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV1Request](docs/EzsigndocumentEditEzsignformfieldgroupsV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV1Response](docs/EzsigndocumentEditEzsignformfieldgroupsV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf](docs/EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload](docs/EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Request](docs/EzsigndocumentEditEzsignsignaturesV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1Response](docs/EzsigndocumentEditEzsignsignaturesV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1ResponseAllOf](docs/EzsigndocumentEditEzsignsignaturesV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentEditEzsignsignaturesV1ResponseMPayload](docs/EzsigndocumentEditEzsignsignaturesV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentEndPrematurelyV1Response](docs/EzsigndocumentEndPrematurelyV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentFlattenV1Response](docs/EzsigndocumentFlattenV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentGetActionableElementsV1Response](docs/EzsigndocumentGetActionableElementsV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentGetActionableElementsV1ResponseAllOf](docs/EzsigndocumentGetActionableElementsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetActionableElementsV1ResponseMPayload](docs/EzsigndocumentGetActionableElementsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetCompletedElementsV1Response](docs/EzsigndocumentGetCompletedElementsV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentGetCompletedElementsV1ResponseAllOf](docs/EzsigndocumentGetCompletedElementsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetCompletedElementsV1ResponseMPayload](docs/EzsigndocumentGetCompletedElementsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1Response](docs/EzsigndocumentGetDownloadUrlV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseAllOf](docs/EzsigndocumentGetDownloadUrlV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetDownloadUrlV1ResponseMPayload](docs/EzsigndocumentGetDownloadUrlV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetEzsignannotationsV1Response](docs/EzsigndocumentGetEzsignannotationsV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentGetEzsignannotationsV1ResponseAllOf](docs/EzsigndocumentGetEzsignannotationsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetEzsignannotationsV1ResponseMPayload](docs/EzsigndocumentGetEzsignannotationsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetEzsignformfieldgroupsV1Response](docs/EzsigndocumentGetEzsignformfieldgroupsV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf](docs/EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload](docs/EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetEzsignpagesV1Response](docs/EzsigndocumentGetEzsignpagesV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentGetEzsignpagesV1ResponseAllOf](docs/EzsigndocumentGetEzsignpagesV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetEzsignpagesV1ResponseMPayload](docs/EzsigndocumentGetEzsignpagesV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesAutomaticV1Response](docs/EzsigndocumentGetEzsignsignaturesAutomaticV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseAllOf](docs/EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload](docs/EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesV1Response](docs/EzsigndocumentGetEzsignsignaturesV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesV1ResponseAllOf](docs/EzsigndocumentGetEzsignsignaturesV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetEzsignsignaturesV1ResponseMPayload](docs/EzsigndocumentGetEzsignsignaturesV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetFormDataV1Response](docs/EzsigndocumentGetFormDataV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentGetFormDataV1ResponseAllOf](docs/EzsigndocumentGetFormDataV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetFormDataV1ResponseMPayload](docs/EzsigndocumentGetFormDataV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetObjectV1Response](docs/EzsigndocumentGetObjectV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseAllOf](docs/EzsigndocumentGetObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetObjectV1ResponseMPayload](docs/EzsigndocumentGetObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetObjectV2Response](docs/EzsigndocumentGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsigndocumentGetObjectV2ResponseAllOf](docs/EzsigndocumentGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetObjectV2ResponseMPayload](docs/EzsigndocumentGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1Response](docs/EzsigndocumentGetTemporaryProofV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseAllOf](docs/EzsigndocumentGetTemporaryProofV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentGetTemporaryProofV1ResponseMPayload](docs/EzsigndocumentGetTemporaryProofV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Request](docs/EzsigndocumentGetWordsPositionsV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1Response](docs/EzsigndocumentGetWordsPositionsV1Response.md)
- - [EzmaxApi::Object::EzsigndocumentGetWordsPositionsV1ResponseAllOf](docs/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentPatchObjectV1Request](docs/EzsigndocumentPatchObjectV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentPatchObjectV1Response](docs/EzsigndocumentPatchObjectV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentRequest](docs/EzsigndocumentRequest.md)
@@ -3746,7 +3160,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigndocumentRequestPatch](docs/EzsigndocumentRequestPatch.md)
  - [EzmaxApi::Object::EzsigndocumentResponse](docs/EzsigndocumentResponse.md)
  - [EzmaxApi::Object::EzsigndocumentResponseCompound](docs/EzsigndocumentResponseCompound.md)
- - [EzmaxApi::Object::EzsigndocumentResponseCompoundAllOf](docs/EzsigndocumentResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsigndocumentSubmitEzsignformV1Request](docs/EzsigndocumentSubmitEzsignformV1Request.md)
  - [EzmaxApi::Object::EzsigndocumentSubmitEzsignformV1Response](docs/EzsigndocumentSubmitEzsignformV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentUnsendV1Response](docs/EzsigndocumentUnsendV1Response.md)
@@ -3756,11 +3169,9 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignfolderBatchDownloadV1Request](docs/EzsignfolderBatchDownloadV1Request.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV1Request](docs/EzsignfolderCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV1Response](docs/EzsignfolderCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseAllOf](docs/EzsignfolderCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV1ResponseMPayload](docs/EzsignfolderCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV2Request](docs/EzsignfolderCreateObjectV2Request.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV2Response](docs/EzsignfolderCreateObjectV2Response.md)
- - [EzmaxApi::Object::EzsignfolderCreateObjectV2ResponseAllOf](docs/EzsignfolderCreateObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV2ResponseMPayload](docs/EzsignfolderCreateObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderDeleteObjectV1Response](docs/EzsignfolderDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsignfolderDisposeEzsignfoldersV1Request](docs/EzsignfolderDisposeEzsignfoldersV1Request.md)
@@ -3769,47 +3180,32 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignfolderEditObjectV1Request](docs/EzsignfolderEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsignfolderEditObjectV1Response](docs/EzsignfolderEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsignfolderGetActionableElementsV1Response](docs/EzsignfolderGetActionableElementsV1Response.md)
- - [EzmaxApi::Object::EzsignfolderGetActionableElementsV1ResponseAllOf](docs/EzsignfolderGetActionableElementsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetActionableElementsV1ResponseMPayload](docs/EzsignfolderGetActionableElementsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetCommunicationCountV1Response](docs/EzsignfolderGetCommunicationCountV1Response.md)
- - [EzmaxApi::Object::EzsignfolderGetCommunicationCountV1ResponseAllOf](docs/EzsignfolderGetCommunicationCountV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetCommunicationCountV1ResponseMPayload](docs/EzsignfolderGetCommunicationCountV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetCommunicationListV1Response](docs/EzsignfolderGetCommunicationListV1Response.md)
- - [EzmaxApi::Object::EzsignfolderGetCommunicationListV1ResponseAllOf](docs/EzsignfolderGetCommunicationListV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetCommunicationListV1ResponseMPayload](docs/EzsignfolderGetCommunicationListV1ResponseMPayload.md)
- - [EzmaxApi::Object::EzsignfolderGetCommunicationListV1ResponseMPayloadAllOf](docs/EzsignfolderGetCommunicationListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1Response](docs/EzsignfolderGetEzsigndocumentsV1Response.md)
- - [EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseAllOf](docs/EzsignfolderGetEzsigndocumentsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseMPayload](docs/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1Response](docs/EzsignfolderGetEzsignfoldersignerassociationsV1Response.md)
- - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf](docs/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload](docs/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1Response](docs/EzsignfolderGetEzsignfoldersignerassociationsmineV1Response.md)
- - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseAllOf](docs/EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseMPayload](docs/EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1Response](docs/EzsignfolderGetEzsignsignaturesAutomaticV1Response.md)
- - [EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1ResponseAllOf](docs/EzsignfolderGetEzsignsignaturesAutomaticV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1ResponseMPayload](docs/EzsignfolderGetEzsignsignaturesAutomaticV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetFormsDataV1Response](docs/EzsignfolderGetFormsDataV1Response.md)
- - [EzmaxApi::Object::EzsignfolderGetFormsDataV1ResponseAllOf](docs/EzsignfolderGetFormsDataV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetFormsDataV1ResponseMPayload](docs/EzsignfolderGetFormsDataV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetListV1Response](docs/EzsignfolderGetListV1Response.md)
- - [EzmaxApi::Object::EzsignfolderGetListV1ResponseAllOf](docs/EzsignfolderGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetListV1ResponseMPayload](docs/EzsignfolderGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::EzsignfolderGetListV1ResponseMPayloadAllOf](docs/EzsignfolderGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetObjectV1Response](docs/EzsignfolderGetObjectV1Response.md)
- - [EzmaxApi::Object::EzsignfolderGetObjectV1ResponseAllOf](docs/EzsignfolderGetObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetObjectV1ResponseMPayload](docs/EzsignfolderGetObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetObjectV2Response](docs/EzsignfolderGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsignfolderGetObjectV2ResponseAllOf](docs/EzsignfolderGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderGetObjectV2ResponseMPayload](docs/EzsignfolderGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderImportEzsignfoldersignerassociationsV1Request](docs/EzsignfolderImportEzsignfoldersignerassociationsV1Request.md)
  - [EzmaxApi::Object::EzsignfolderImportEzsignfoldersignerassociationsV1Response](docs/EzsignfolderImportEzsignfoldersignerassociationsV1Response.md)
- - [EzmaxApi::Object::EzsignfolderImportEzsignfoldersignerassociationsV1ResponseAllOf](docs/EzsignfolderImportEzsignfoldersignerassociationsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderImportEzsignfoldersignerassociationsV1ResponseMPayload](docs/EzsignfolderImportEzsignfoldersignerassociationsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderImportEzsigntemplatepackageV1Request](docs/EzsignfolderImportEzsigntemplatepackageV1Request.md)
  - [EzmaxApi::Object::EzsignfolderImportEzsigntemplatepackageV1Response](docs/EzsignfolderImportEzsigntemplatepackageV1Response.md)
- - [EzmaxApi::Object::EzsignfolderImportEzsigntemplatepackageV1ResponseAllOf](docs/EzsignfolderImportEzsigntemplatepackageV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload](docs/EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderListElement](docs/EzsignfolderListElement.md)
  - [EzmaxApi::Object::EzsignfolderReorderV1Request](docs/EzsignfolderReorderV1Request.md)
@@ -3827,56 +3223,43 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignfolderUnsendV1Response](docs/EzsignfolderUnsendV1Response.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV1Request](docs/EzsignfoldersignerassociationCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV1Response](docs/EzsignfoldersignerassociationCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV1ResponseAllOf](docs/EzsignfoldersignerassociationCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV1ResponseMPayload](docs/EzsignfoldersignerassociationCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV2Request](docs/EzsignfoldersignerassociationCreateObjectV2Request.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV2Response](docs/EzsignfoldersignerassociationCreateObjectV2Response.md)
- - [EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV2ResponseAllOf](docs/EzsignfoldersignerassociationCreateObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationCreateObjectV2ResponseMPayload](docs/EzsignfoldersignerassociationCreateObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationDeleteObjectV1Response](docs/EzsignfoldersignerassociationDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationEditObjectV1Request](docs/EzsignfoldersignerassociationEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationEditObjectV1Response](docs/EzsignfoldersignerassociationEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationForceDisconnectV1Response](docs/EzsignfoldersignerassociationForceDisconnectV1Response.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationGetInPersonLoginUrlV1Response](docs/EzsignfoldersignerassociationGetInPersonLoginUrlV1Response.md)
- - [EzmaxApi::Object::EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf](docs/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload](docs/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV1Response](docs/EzsignfoldersignerassociationGetObjectV1Response.md)
- - [EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV1ResponseAllOf](docs/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV1ResponseMPayload](docs/EzsignfoldersignerassociationGetObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV2Response](docs/EzsignfoldersignerassociationGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV2ResponseAllOf](docs/EzsignfoldersignerassociationGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationGetObjectV2ResponseMPayload](docs/EzsignfoldersignerassociationGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationPatchObjectV1Request](docs/EzsignfoldersignerassociationPatchObjectV1Request.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationPatchObjectV1Response](docs/EzsignfoldersignerassociationPatchObjectV1Response.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationRequest](docs/EzsignfoldersignerassociationRequest.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationRequestCompound](docs/EzsignfoldersignerassociationRequestCompound.md)
- - [EzmaxApi::Object::EzsignfoldersignerassociationRequestCompoundAllOf](docs/EzsignfoldersignerassociationRequestCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationRequestPatch](docs/EzsignfoldersignerassociationRequestPatch.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationResponse](docs/EzsignfoldersignerassociationResponse.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationResponseCompound](docs/EzsignfoldersignerassociationResponseCompound.md)
- - [EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundAllOf](docs/EzsignfoldersignerassociationResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignfoldersignerassociationResponseCompoundUser](docs/EzsignfoldersignerassociationResponseCompoundUser.md)
  - [EzmaxApi::Object::EzsignfoldertypeAutocompleteElementResponse](docs/EzsignfoldertypeAutocompleteElementResponse.md)
  - [EzmaxApi::Object::EzsignfoldertypeCreateObjectV1Request](docs/EzsignfoldertypeCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsignfoldertypeCreateObjectV1Response](docs/EzsignfoldertypeCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsignfoldertypeCreateObjectV1ResponseAllOf](docs/EzsignfoldertypeCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfoldertypeCreateObjectV1ResponseMPayload](docs/EzsignfoldertypeCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfoldertypeEditObjectV1Request](docs/EzsignfoldertypeEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsignfoldertypeEditObjectV1Response](docs/EzsignfoldertypeEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsignfoldertypeGetAutocompleteV2Response](docs/EzsignfoldertypeGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::EzsignfoldertypeGetAutocompleteV2ResponseAllOf](docs/EzsignfoldertypeGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfoldertypeGetAutocompleteV2ResponseMPayload](docs/EzsignfoldertypeGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfoldertypeGetListV1Response](docs/EzsignfoldertypeGetListV1Response.md)
- - [EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseAllOf](docs/EzsignfoldertypeGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayload](docs/EzsignfoldertypeGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::EzsignfoldertypeGetListV1ResponseMPayloadAllOf](docs/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::EzsignfoldertypeGetObjectV2Response](docs/EzsignfoldertypeGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsignfoldertypeGetObjectV2ResponseAllOf](docs/EzsignfoldertypeGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignfoldertypeGetObjectV2ResponseMPayload](docs/EzsignfoldertypeGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfoldertypeListElement](docs/EzsignfoldertypeListElement.md)
  - [EzmaxApi::Object::EzsignfoldertypeRequest](docs/EzsignfoldertypeRequest.md)
  - [EzmaxApi::Object::EzsignfoldertypeRequestCompound](docs/EzsignfoldertypeRequestCompound.md)
- - [EzmaxApi::Object::EzsignfoldertypeRequestCompoundAllOf](docs/EzsignfoldertypeRequestCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignfoldertypeResponse](docs/EzsignfoldertypeResponse.md)
  - [EzmaxApi::Object::EzsignfoldertypeResponseCompound](docs/EzsignfoldertypeResponseCompound.md)
  - [EzmaxApi::Object::EzsignformfieldRequest](docs/EzsignformfieldRequest.md)
@@ -3885,20 +3268,16 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignformfieldResponseCompound](docs/EzsignformfieldResponseCompound.md)
  - [EzmaxApi::Object::EzsignformfieldgroupCreateObjectV1Request](docs/EzsignformfieldgroupCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsignformfieldgroupCreateObjectV1Response](docs/EzsignformfieldgroupCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsignformfieldgroupCreateObjectV1ResponseAllOf](docs/EzsignformfieldgroupCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignformfieldgroupCreateObjectV1ResponseMPayload](docs/EzsignformfieldgroupCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignformfieldgroupDeleteObjectV1Response](docs/EzsignformfieldgroupDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsignformfieldgroupEditObjectV1Request](docs/EzsignformfieldgroupEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsignformfieldgroupEditObjectV1Response](docs/EzsignformfieldgroupEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsignformfieldgroupGetObjectV2Response](docs/EzsignformfieldgroupGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsignformfieldgroupGetObjectV2ResponseAllOf](docs/EzsignformfieldgroupGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignformfieldgroupGetObjectV2ResponseMPayload](docs/EzsignformfieldgroupGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignformfieldgroupRequest](docs/EzsignformfieldgroupRequest.md)
  - [EzmaxApi::Object::EzsignformfieldgroupRequestCompound](docs/EzsignformfieldgroupRequestCompound.md)
- - [EzmaxApi::Object::EzsignformfieldgroupRequestCompoundAllOf](docs/EzsignformfieldgroupRequestCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignformfieldgroupResponse](docs/EzsignformfieldgroupResponse.md)
  - [EzmaxApi::Object::EzsignformfieldgroupResponseCompound](docs/EzsignformfieldgroupResponseCompound.md)
- - [EzmaxApi::Object::EzsignformfieldgroupResponseCompoundAllOf](docs/EzsignformfieldgroupResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignformfieldgroupsignerRequest](docs/EzsignformfieldgroupsignerRequest.md)
  - [EzmaxApi::Object::EzsignformfieldgroupsignerRequestCompound](docs/EzsignformfieldgroupsignerRequestCompound.md)
  - [EzmaxApi::Object::EzsignformfieldgroupsignerResponse](docs/EzsignformfieldgroupsignerResponse.md)
@@ -3908,30 +3287,23 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignpageResponseCompound](docs/EzsignpageResponseCompound.md)
  - [EzmaxApi::Object::EzsignsignatureCreateObjectV1Request](docs/EzsignsignatureCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsignsignatureCreateObjectV1Response](docs/EzsignsignatureCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsignsignatureCreateObjectV1ResponseAllOf](docs/EzsignsignatureCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignatureCreateObjectV1ResponseMPayload](docs/EzsignsignatureCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignsignatureCreateObjectV2Request](docs/EzsignsignatureCreateObjectV2Request.md)
  - [EzmaxApi::Object::EzsignsignatureCreateObjectV2Response](docs/EzsignsignatureCreateObjectV2Response.md)
- - [EzmaxApi::Object::EzsignsignatureCreateObjectV2ResponseAllOf](docs/EzsignsignatureCreateObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignatureCreateObjectV2ResponseMPayload](docs/EzsignsignatureCreateObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignsignatureDeleteObjectV1Response](docs/EzsignsignatureDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsignsignatureEditObjectV1Request](docs/EzsignsignatureEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsignsignatureEditObjectV1Response](docs/EzsignsignatureEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsignsignatureGetEzsignsignatureattachmentV1Response](docs/EzsignsignatureGetEzsignsignatureattachmentV1Response.md)
- - [EzmaxApi::Object::EzsignsignatureGetEzsignsignatureattachmentV1ResponseAllOf](docs/EzsignsignatureGetEzsignsignatureattachmentV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignatureGetEzsignsignatureattachmentV1ResponseMPayload](docs/EzsignsignatureGetEzsignsignatureattachmentV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignsignatureGetEzsignsignaturesAutomaticV1Response](docs/EzsignsignatureGetEzsignsignaturesAutomaticV1Response.md)
- - [EzmaxApi::Object::EzsignsignatureGetEzsignsignaturesAutomaticV1ResponseAllOf](docs/EzsignsignatureGetEzsignsignaturesAutomaticV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignatureGetEzsignsignaturesAutomaticV1ResponseMPayload](docs/EzsignsignatureGetEzsignsignaturesAutomaticV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignsignatureGetObjectV2Response](docs/EzsignsignatureGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsignsignatureGetObjectV2ResponseAllOf](docs/EzsignsignatureGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignatureGetObjectV2ResponseMPayload](docs/EzsignsignatureGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignsignatureRequest](docs/EzsignsignatureRequest.md)
  - [EzmaxApi::Object::EzsignsignatureRequestCompound](docs/EzsignsignatureRequestCompound.md)
- - [EzmaxApi::Object::EzsignsignatureRequestCompoundAllOf](docs/EzsignsignatureRequestCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignsignatureResponse](docs/EzsignsignatureResponse.md)
  - [EzmaxApi::Object::EzsignsignatureResponseCompound](docs/EzsignsignatureResponseCompound.md)
- - [EzmaxApi::Object::EzsignsignatureResponseCompoundAllOf](docs/EzsignsignatureResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignsignatureSignV1Request](docs/EzsignsignatureSignV1Request.md)
  - [EzmaxApi::Object::EzsignsignatureSignV1Response](docs/EzsignsignatureSignV1Response.md)
  - [EzmaxApi::Object::EzsignsignatureattachmentResponse](docs/EzsignsignatureattachmentResponse.md)
@@ -3941,28 +3313,22 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignsignaturecustomdateResponseCompound](docs/EzsignsignaturecustomdateResponseCompound.md)
  - [EzmaxApi::Object::EzsignsignerRequest](docs/EzsignsignerRequest.md)
  - [EzmaxApi::Object::EzsignsignerRequestCompound](docs/EzsignsignerRequestCompound.md)
- - [EzmaxApi::Object::EzsignsignerRequestCompoundAllOf](docs/EzsignsignerRequestCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignsignerRequestCompoundContact](docs/EzsignsignerRequestCompoundContact.md)
  - [EzmaxApi::Object::EzsignsignerResponse](docs/EzsignsignerResponse.md)
  - [EzmaxApi::Object::EzsignsignerResponseCompound](docs/EzsignsignerResponseCompound.md)
- - [EzmaxApi::Object::EzsignsignerResponseCompoundAllOf](docs/EzsignsignerResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsignsignerResponseCompoundContact](docs/EzsignsignerResponseCompoundContact.md)
  - [EzmaxApi::Object::EzsignsignergroupCreateObjectV1Request](docs/EzsignsignergroupCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsignsignergroupCreateObjectV1Response](docs/EzsignsignergroupCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsignsignergroupCreateObjectV1ResponseAllOf](docs/EzsignsignergroupCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignergroupCreateObjectV1ResponseMPayload](docs/EzsignsignergroupCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignsignergroupDeleteObjectV1Response](docs/EzsignsignergroupDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsignsignergroupEditEzsignsignergroupmembershipsV1Request](docs/EzsignsignergroupEditEzsignsignergroupmembershipsV1Request.md)
  - [EzmaxApi::Object::EzsignsignergroupEditEzsignsignergroupmembershipsV1Response](docs/EzsignsignergroupEditEzsignsignergroupmembershipsV1Response.md)
- - [EzmaxApi::Object::EzsignsignergroupEditEzsignsignergroupmembershipsV1ResponseAllOf](docs/EzsignsignergroupEditEzsignsignergroupmembershipsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignergroupEditEzsignsignergroupmembershipsV1ResponseMPayload](docs/EzsignsignergroupEditEzsignsignergroupmembershipsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignsignergroupEditObjectV1Request](docs/EzsignsignergroupEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsignsignergroupEditObjectV1Response](docs/EzsignsignergroupEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsignsignergroupGetEzsignsignergroupmembershipsV1Response](docs/EzsignsignergroupGetEzsignsignergroupmembershipsV1Response.md)
- - [EzmaxApi::Object::EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseAllOf](docs/EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload](docs/EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignsignergroupGetObjectV2Response](docs/EzsignsignergroupGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsignsignergroupGetObjectV2ResponseAllOf](docs/EzsignsignergroupGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignergroupGetObjectV2ResponseMPayload](docs/EzsignsignergroupGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignsignergroupRequest](docs/EzsignsignergroupRequest.md)
  - [EzmaxApi::Object::EzsignsignergroupRequestCompound](docs/EzsignsignergroupRequestCompound.md)
@@ -3970,11 +3336,9 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignsignergroupResponseCompound](docs/EzsignsignergroupResponseCompound.md)
  - [EzmaxApi::Object::EzsignsignergroupmembershipCreateObjectV1Request](docs/EzsignsignergroupmembershipCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsignsignergroupmembershipCreateObjectV1Response](docs/EzsignsignergroupmembershipCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsignsignergroupmembershipCreateObjectV1ResponseAllOf](docs/EzsignsignergroupmembershipCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignergroupmembershipCreateObjectV1ResponseMPayload](docs/EzsignsignergroupmembershipCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignsignergroupmembershipDeleteObjectV1Response](docs/EzsignsignergroupmembershipDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsignsignergroupmembershipGetObjectV2Response](docs/EzsignsignergroupmembershipGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsignsignergroupmembershipGetObjectV2ResponseAllOf](docs/EzsignsignergroupmembershipGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsignsignergroupmembershipGetObjectV2ResponseMPayload](docs/EzsignsignergroupmembershipGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignsignergroupmembershipRequest](docs/EzsignsignergroupmembershipRequest.md)
  - [EzmaxApi::Object::EzsignsignergroupmembershipRequestCompound](docs/EzsignsignergroupmembershipRequestCompound.md)
@@ -3983,65 +3347,48 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigntemplateAutocompleteElementResponse](docs/EzsigntemplateAutocompleteElementResponse.md)
  - [EzmaxApi::Object::EzsigntemplateCopyV1Request](docs/EzsigntemplateCopyV1Request.md)
  - [EzmaxApi::Object::EzsigntemplateCopyV1Response](docs/EzsigntemplateCopyV1Response.md)
- - [EzmaxApi::Object::EzsigntemplateCopyV1ResponseAllOf](docs/EzsigntemplateCopyV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplateCopyV1ResponseMPayload](docs/EzsigntemplateCopyV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplateCreateObjectV1Request](docs/EzsigntemplateCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplateCreateObjectV1Response](docs/EzsigntemplateCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsigntemplateCreateObjectV1ResponseAllOf](docs/EzsigntemplateCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplateCreateObjectV1ResponseMPayload](docs/EzsigntemplateCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplateDeleteObjectV1Response](docs/EzsigntemplateDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplateEditObjectV1Request](docs/EzsigntemplateEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplateEditObjectV1Response](docs/EzsigntemplateEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplateGetAutocompleteV2Response](docs/EzsigntemplateGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::EzsigntemplateGetAutocompleteV2ResponseAllOf](docs/EzsigntemplateGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplateGetAutocompleteV2ResponseMPayload](docs/EzsigntemplateGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplateGetListV1Response](docs/EzsigntemplateGetListV1Response.md)
- - [EzmaxApi::Object::EzsigntemplateGetListV1ResponseAllOf](docs/EzsigntemplateGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplateGetListV1ResponseMPayload](docs/EzsigntemplateGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::EzsigntemplateGetListV1ResponseMPayloadAllOf](docs/EzsigntemplateGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::EzsigntemplateGetObjectV1Response](docs/EzsigntemplateGetObjectV1Response.md)
- - [EzmaxApi::Object::EzsigntemplateGetObjectV1ResponseAllOf](docs/EzsigntemplateGetObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplateGetObjectV1ResponseMPayload](docs/EzsigntemplateGetObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplateGetObjectV2Response](docs/EzsigntemplateGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsigntemplateGetObjectV2ResponseAllOf](docs/EzsigntemplateGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplateGetObjectV2ResponseMPayload](docs/EzsigntemplateGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplateListElement](docs/EzsigntemplateListElement.md)
  - [EzmaxApi::Object::EzsigntemplateRequest](docs/EzsigntemplateRequest.md)
  - [EzmaxApi::Object::EzsigntemplateRequestCompound](docs/EzsigntemplateRequestCompound.md)
  - [EzmaxApi::Object::EzsigntemplateResponse](docs/EzsigntemplateResponse.md)
  - [EzmaxApi::Object::EzsigntemplateResponseCompound](docs/EzsigntemplateResponseCompound.md)
- - [EzmaxApi::Object::EzsigntemplateResponseCompoundAllOf](docs/EzsigntemplateResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentCreateObjectV1Request](docs/EzsigntemplatedocumentCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentCreateObjectV1Response](docs/EzsigntemplatedocumentCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatedocumentCreateObjectV1ResponseAllOf](docs/EzsigntemplatedocumentCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentCreateObjectV1ResponseMPayload](docs/EzsigntemplatedocumentCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request](docs/EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response](docs/EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseAllOf](docs/EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload](docs/EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request](docs/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response](docs/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseAllOf](docs/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload](docs/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentEditObjectV1Request](docs/EzsigntemplatedocumentEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentEditObjectV1Response](docs/EzsigntemplatedocumentEditObjectV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatedocumentEditObjectV1ResponseAllOf](docs/EzsigntemplatedocumentEditObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentFlattenV1Response](docs/EzsigntemplatedocumentFlattenV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response](docs/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOf](docs/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload](docs/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response](docs/EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf](docs/EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload](docs/EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response](docs/EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllOf](docs/EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload](docs/EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentGetObjectV2Response](docs/EzsigntemplatedocumentGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsigntemplatedocumentGetObjectV2ResponseAllOf](docs/EzsigntemplatedocumentGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentGetObjectV2ResponseMPayload](docs/EzsigntemplatedocumentGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentGetWordsPositionsV1Request](docs/EzsigntemplatedocumentGetWordsPositionsV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentGetWordsPositionsV1Response](docs/EzsigntemplatedocumentGetWordsPositionsV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatedocumentGetWordsPositionsV1ResponseAllOf](docs/EzsigntemplatedocumentGetWordsPositionsV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentPatchObjectV1Request](docs/EzsigntemplatedocumentPatchObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentPatchObjectV1Response](docs/EzsigntemplatedocumentPatchObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentRequest](docs/EzsigntemplatedocumentRequest.md)
@@ -4057,20 +3404,16 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigntemplateformfieldResponseCompound](docs/EzsigntemplateformfieldResponseCompound.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupCreateObjectV1Request](docs/EzsigntemplateformfieldgroupCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupCreateObjectV1Response](docs/EzsigntemplateformfieldgroupCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsigntemplateformfieldgroupCreateObjectV1ResponseAllOf](docs/EzsigntemplateformfieldgroupCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload](docs/EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupDeleteObjectV1Response](docs/EzsigntemplateformfieldgroupDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupEditObjectV1Request](docs/EzsigntemplateformfieldgroupEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupEditObjectV1Response](docs/EzsigntemplateformfieldgroupEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupGetObjectV2Response](docs/EzsigntemplateformfieldgroupGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsigntemplateformfieldgroupGetObjectV2ResponseAllOf](docs/EzsigntemplateformfieldgroupGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload](docs/EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupRequest](docs/EzsigntemplateformfieldgroupRequest.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupRequestCompound](docs/EzsigntemplateformfieldgroupRequestCompound.md)
- - [EzmaxApi::Object::EzsigntemplateformfieldgroupRequestCompoundAllOf](docs/EzsigntemplateformfieldgroupRequestCompoundAllOf.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupResponse](docs/EzsigntemplateformfieldgroupResponse.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupResponseCompound](docs/EzsigntemplateformfieldgroupResponseCompound.md)
- - [EzmaxApi::Object::EzsigntemplateformfieldgroupResponseCompoundAllOf](docs/EzsigntemplateformfieldgroupResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupsignerRequest](docs/EzsigntemplateformfieldgroupsignerRequest.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupsignerRequestCompound](docs/EzsigntemplateformfieldgroupsignerRequestCompound.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldgroupsignerResponse](docs/EzsigntemplateformfieldgroupsignerResponse.md)
@@ -4078,55 +3421,42 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigntemplatepackageAutocompleteElementResponse](docs/EzsigntemplatepackageAutocompleteElementResponse.md)
  - [EzmaxApi::Object::EzsigntemplatepackageCreateObjectV1Request](docs/EzsigntemplatepackageCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatepackageCreateObjectV1Response](docs/EzsigntemplatepackageCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatepackageCreateObjectV1ResponseAllOf](docs/EzsigntemplatepackageCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackageCreateObjectV1ResponseMPayload](docs/EzsigntemplatepackageCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackageDeleteObjectV1Response](docs/EzsigntemplatepackageDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request](docs/EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response](docs/EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseAllOf](docs/EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload](docs/EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackageEditObjectV1Request](docs/EzsigntemplatepackageEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatepackageEditObjectV1Response](docs/EzsigntemplatepackageEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatepackageGetAutocompleteV2Response](docs/EzsigntemplatepackageGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::EzsigntemplatepackageGetAutocompleteV2ResponseAllOf](docs/EzsigntemplatepackageGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackageGetAutocompleteV2ResponseMPayload](docs/EzsigntemplatepackageGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackageGetListV1Response](docs/EzsigntemplatepackageGetListV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseAllOf](docs/EzsigntemplatepackageGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayload](docs/EzsigntemplatepackageGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::EzsigntemplatepackageGetListV1ResponseMPayloadAllOf](docs/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackageGetObjectV2Response](docs/EzsigntemplatepackageGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsigntemplatepackageGetObjectV2ResponseAllOf](docs/EzsigntemplatepackageGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackageGetObjectV2ResponseMPayload](docs/EzsigntemplatepackageGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackageListElement](docs/EzsigntemplatepackageListElement.md)
  - [EzmaxApi::Object::EzsigntemplatepackageRequest](docs/EzsigntemplatepackageRequest.md)
  - [EzmaxApi::Object::EzsigntemplatepackageRequestCompound](docs/EzsigntemplatepackageRequestCompound.md)
  - [EzmaxApi::Object::EzsigntemplatepackageResponse](docs/EzsigntemplatepackageResponse.md)
  - [EzmaxApi::Object::EzsigntemplatepackageResponseCompound](docs/EzsigntemplatepackageResponseCompound.md)
- - [EzmaxApi::Object::EzsigntemplatepackageResponseCompoundAllOf](docs/EzsigntemplatepackageResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackagemembershipCreateObjectV1Request](docs/EzsigntemplatepackagemembershipCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatepackagemembershipCreateObjectV1Response](docs/EzsigntemplatepackagemembershipCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf](docs/EzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload](docs/EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackagemembershipDeleteObjectV1Response](docs/EzsigntemplatepackagemembershipDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatepackagemembershipGetObjectV2Response](docs/EzsigntemplatepackagemembershipGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsigntemplatepackagemembershipGetObjectV2ResponseAllOf](docs/EzsigntemplatepackagemembershipGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackagemembershipGetObjectV2ResponseMPayload](docs/EzsigntemplatepackagemembershipGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackagemembershipRequest](docs/EzsigntemplatepackagemembershipRequest.md)
  - [EzmaxApi::Object::EzsigntemplatepackagemembershipRequestCompound](docs/EzsigntemplatepackagemembershipRequestCompound.md)
  - [EzmaxApi::Object::EzsigntemplatepackagemembershipResponse](docs/EzsigntemplatepackagemembershipResponse.md)
  - [EzmaxApi::Object::EzsigntemplatepackagemembershipResponseCompound](docs/EzsigntemplatepackagemembershipResponseCompound.md)
- - [EzmaxApi::Object::EzsigntemplatepackagemembershipResponseCompoundAllOf](docs/EzsigntemplatepackagemembershipResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignerCreateObjectV1Request](docs/EzsigntemplatepackagesignerCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignerCreateObjectV1Response](docs/EzsigntemplatepackagesignerCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatepackagesignerCreateObjectV1ResponseAllOf](docs/EzsigntemplatepackagesignerCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload](docs/EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignerDeleteObjectV1Response](docs/EzsigntemplatepackagesignerDeleteObjectV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatepackagesignerDeleteObjectV1ResponseAllOf](docs/EzsigntemplatepackagesignerDeleteObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload](docs/EzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignerEditObjectV1Request](docs/EzsigntemplatepackagesignerEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignerEditObjectV1Response](docs/EzsigntemplatepackagesignerEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignerGetObjectV2Response](docs/EzsigntemplatepackagesignerGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsigntemplatepackagesignerGetObjectV2ResponseAllOf](docs/EzsigntemplatepackagesignerGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignerGetObjectV2ResponseMPayload](docs/EzsigntemplatepackagesignerGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignerRequest](docs/EzsigntemplatepackagesignerRequest.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignerRequestCompound](docs/EzsigntemplatepackagesignerRequestCompound.md)
@@ -4134,13 +3464,10 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigntemplatepackagesignerResponseCompound](docs/EzsigntemplatepackagesignerResponseCompound.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignermembershipCreateObjectV1Request](docs/EzsigntemplatepackagesignermembershipCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignermembershipCreateObjectV1Response](docs/EzsigntemplatepackagesignermembershipCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatepackagesignermembershipCreateObjectV1ResponseAllOf](docs/EzsigntemplatepackagesignermembershipCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload](docs/EzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignermembershipDeleteObjectV1Response](docs/EzsigntemplatepackagesignermembershipDeleteObjectV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf](docs/EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload](docs/EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignermembershipGetObjectV2Response](docs/EzsigntemplatepackagesignermembershipGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf](docs/EzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload](docs/EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignermembershipRequest](docs/EzsigntemplatepackagesignermembershipRequest.md)
  - [EzmaxApi::Object::EzsigntemplatepackagesignermembershipRequestCompound](docs/EzsigntemplatepackagesignermembershipRequestCompound.md)
@@ -4148,33 +3475,27 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigntemplatepackagesignermembershipResponseCompound](docs/EzsigntemplatepackagesignermembershipResponseCompound.md)
  - [EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV1Request](docs/EzsigntemplatesignatureCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV1Response](docs/EzsigntemplatesignatureCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV1ResponseAllOf](docs/EzsigntemplatesignatureCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV1ResponseMPayload](docs/EzsigntemplatesignatureCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatesignatureDeleteObjectV1Response](docs/EzsigntemplatesignatureDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatesignatureEditObjectV1Request](docs/EzsigntemplatesignatureEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatesignatureEditObjectV1Response](docs/EzsigntemplatesignatureEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatesignatureGetObjectV2Response](docs/EzsigntemplatesignatureGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsigntemplatesignatureGetObjectV2ResponseAllOf](docs/EzsigntemplatesignatureGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatesignatureGetObjectV2ResponseMPayload](docs/EzsigntemplatesignatureGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatesignatureRequest](docs/EzsigntemplatesignatureRequest.md)
  - [EzmaxApi::Object::EzsigntemplatesignatureRequestCompound](docs/EzsigntemplatesignatureRequestCompound.md)
- - [EzmaxApi::Object::EzsigntemplatesignatureRequestCompoundAllOf](docs/EzsigntemplatesignatureRequestCompoundAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatesignatureResponse](docs/EzsigntemplatesignatureResponse.md)
  - [EzmaxApi::Object::EzsigntemplatesignatureResponseCompound](docs/EzsigntemplatesignatureResponseCompound.md)
- - [EzmaxApi::Object::EzsigntemplatesignatureResponseCompoundAllOf](docs/EzsigntemplatesignatureResponseCompoundAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatesignaturecustomdateRequest](docs/EzsigntemplatesignaturecustomdateRequest.md)
  - [EzmaxApi::Object::EzsigntemplatesignaturecustomdateRequestCompound](docs/EzsigntemplatesignaturecustomdateRequestCompound.md)
  - [EzmaxApi::Object::EzsigntemplatesignaturecustomdateResponse](docs/EzsigntemplatesignaturecustomdateResponse.md)
  - [EzmaxApi::Object::EzsigntemplatesignaturecustomdateResponseCompound](docs/EzsigntemplatesignaturecustomdateResponseCompound.md)
  - [EzmaxApi::Object::EzsigntemplatesignerCreateObjectV1Request](docs/EzsigntemplatesignerCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatesignerCreateObjectV1Response](docs/EzsigntemplatesignerCreateObjectV1Response.md)
- - [EzmaxApi::Object::EzsigntemplatesignerCreateObjectV1ResponseAllOf](docs/EzsigntemplatesignerCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatesignerCreateObjectV1ResponseMPayload](docs/EzsigntemplatesignerCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatesignerDeleteObjectV1Response](docs/EzsigntemplatesignerDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatesignerEditObjectV1Request](docs/EzsigntemplatesignerEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatesignerEditObjectV1Response](docs/EzsigntemplatesignerEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatesignerGetObjectV2Response](docs/EzsigntemplatesignerGetObjectV2Response.md)
- - [EzmaxApi::Object::EzsigntemplatesignerGetObjectV2ResponseAllOf](docs/EzsigntemplatesignerGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntemplatesignerGetObjectV2ResponseMPayload](docs/EzsigntemplatesignerGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigntemplatesignerRequest](docs/EzsigntemplatesignerRequest.md)
  - [EzmaxApi::Object::EzsigntemplatesignerRequestCompound](docs/EzsigntemplatesignerRequestCompound.md)
@@ -4182,7 +3503,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigntemplatesignerResponseCompound](docs/EzsigntemplatesignerResponseCompound.md)
  - [EzmaxApi::Object::EzsigntsarequirementAutocompleteElementResponse](docs/EzsigntsarequirementAutocompleteElementResponse.md)
  - [EzmaxApi::Object::EzsigntsarequirementGetAutocompleteV2Response](docs/EzsigntsarequirementGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::EzsigntsarequirementGetAutocompleteV2ResponseAllOf](docs/EzsigntsarequirementGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::EzsigntsarequirementGetAutocompleteV2ResponseMPayload](docs/EzsigntsarequirementGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::FieldEActivesessionOrigin](docs/FieldEActivesessionOrigin.md)
  - [EzmaxApi::Object::FieldEActivesessionUsertype](docs/FieldEActivesessionUsertype.md)
@@ -4244,43 +3564,33 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::FieldPksEzmaxclientOs](docs/FieldPksEzmaxclientOs.md)
  - [EzmaxApi::Object::FontAutocompleteElementResponse](docs/FontAutocompleteElementResponse.md)
  - [EzmaxApi::Object::FontGetAutocompleteV2Response](docs/FontGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::FontGetAutocompleteV2ResponseAllOf](docs/FontGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::FontGetAutocompleteV2ResponseMPayload](docs/FontGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::FranchisebrokerAutocompleteElementResponse](docs/FranchisebrokerAutocompleteElementResponse.md)
  - [EzmaxApi::Object::FranchisebrokerGetAutocompleteV2Response](docs/FranchisebrokerGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::FranchisebrokerGetAutocompleteV2ResponseAllOf](docs/FranchisebrokerGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::FranchisebrokerGetAutocompleteV2ResponseMPayload](docs/FranchisebrokerGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::FranchiseofficeAutocompleteElementResponse](docs/FranchiseofficeAutocompleteElementResponse.md)
  - [EzmaxApi::Object::FranchiseofficeGetAutocompleteV2Response](docs/FranchiseofficeGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::FranchiseofficeGetAutocompleteV2ResponseAllOf](docs/FranchiseofficeGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::FranchiseofficeGetAutocompleteV2ResponseMPayload](docs/FranchiseofficeGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::FranchisereferalincomeCreateObjectV1Request](docs/FranchisereferalincomeCreateObjectV1Request.md)
  - [EzmaxApi::Object::FranchisereferalincomeCreateObjectV1Response](docs/FranchisereferalincomeCreateObjectV1Response.md)
- - [EzmaxApi::Object::FranchisereferalincomeCreateObjectV1ResponseAllOf](docs/FranchisereferalincomeCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::FranchisereferalincomeCreateObjectV1ResponseMPayload](docs/FranchisereferalincomeCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::FranchisereferalincomeCreateObjectV2Request](docs/FranchisereferalincomeCreateObjectV2Request.md)
  - [EzmaxApi::Object::FranchisereferalincomeCreateObjectV2Response](docs/FranchisereferalincomeCreateObjectV2Response.md)
- - [EzmaxApi::Object::FranchisereferalincomeCreateObjectV2ResponseAllOf](docs/FranchisereferalincomeCreateObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::FranchisereferalincomeCreateObjectV2ResponseMPayload](docs/FranchisereferalincomeCreateObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::FranchisereferalincomeRequest](docs/FranchisereferalincomeRequest.md)
  - [EzmaxApi::Object::FranchisereferalincomeRequestCompound](docs/FranchisereferalincomeRequestCompound.md)
- - [EzmaxApi::Object::FranchisereferalincomeRequestCompoundAllOf](docs/FranchisereferalincomeRequestCompoundAllOf.md)
  - [EzmaxApi::Object::GlobalCustomerGetEndpointV1Response](docs/GlobalCustomerGetEndpointV1Response.md)
  - [EzmaxApi::Object::GlobalEzmaxclientVersionV1Response](docs/GlobalEzmaxclientVersionV1Response.md)
  - [EzmaxApi::Object::GlobalEzmaxcustomerGetConfigurationV1Response](docs/GlobalEzmaxcustomerGetConfigurationV1Response.md)
  - [EzmaxApi::Object::HeaderAcceptLanguage](docs/HeaderAcceptLanguage.md)
  - [EzmaxApi::Object::ModuleResponse](docs/ModuleResponse.md)
  - [EzmaxApi::Object::ModuleResponseCompound](docs/ModuleResponseCompound.md)
- - [EzmaxApi::Object::ModuleResponseCompoundAllOf](docs/ModuleResponseCompoundAllOf.md)
  - [EzmaxApi::Object::ModulegroupGetAllV1Response](docs/ModulegroupGetAllV1Response.md)
- - [EzmaxApi::Object::ModulegroupGetAllV1ResponseAllOf](docs/ModulegroupGetAllV1ResponseAllOf.md)
  - [EzmaxApi::Object::ModulegroupGetAllV1ResponseMPayload](docs/ModulegroupGetAllV1ResponseMPayload.md)
  - [EzmaxApi::Object::ModulegroupResponse](docs/ModulegroupResponse.md)
  - [EzmaxApi::Object::ModulegroupResponseCompound](docs/ModulegroupResponseCompound.md)
- - [EzmaxApi::Object::ModulegroupResponseCompoundAllOf](docs/ModulegroupResponseCompoundAllOf.md)
  - [EzmaxApi::Object::ModulesectionResponse](docs/ModulesectionResponse.md)
  - [EzmaxApi::Object::ModulesectionResponseCompound](docs/ModulesectionResponseCompound.md)
- - [EzmaxApi::Object::ModulesectionResponseCompoundAllOf](docs/ModulesectionResponseCompoundAllOf.md)
  - [EzmaxApi::Object::MultilingualApikeyDescription](docs/MultilingualApikeyDescription.md)
  - [EzmaxApi::Object::MultilingualBillingentityinternalDescription](docs/MultilingualBillingentityinternalDescription.md)
  - [EzmaxApi::Object::MultilingualBrandingDescription](docs/MultilingualBrandingDescription.md)
@@ -4295,29 +3605,22 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::MultilingualVariableexpenseDescription](docs/MultilingualVariableexpenseDescription.md)
  - [EzmaxApi::Object::MultilingualVersionhistoryDetail](docs/MultilingualVersionhistoryDetail.md)
  - [EzmaxApi::Object::NotificationsectionGetNotificationtestsV1Response](docs/NotificationsectionGetNotificationtestsV1Response.md)
- - [EzmaxApi::Object::NotificationsectionGetNotificationtestsV1ResponseAllOf](docs/NotificationsectionGetNotificationtestsV1ResponseAllOf.md)
  - [EzmaxApi::Object::NotificationsectionGetNotificationtestsV1ResponseMPayload](docs/NotificationsectionGetNotificationtestsV1ResponseMPayload.md)
  - [EzmaxApi::Object::NotificationsubsectionResponse](docs/NotificationsubsectionResponse.md)
  - [EzmaxApi::Object::NotificationtestGetElementsV1Response](docs/NotificationtestGetElementsV1Response.md)
- - [EzmaxApi::Object::NotificationtestGetElementsV1ResponseAllOf](docs/NotificationtestGetElementsV1ResponseAllOf.md)
  - [EzmaxApi::Object::NotificationtestGetElementsV1ResponseMPayload](docs/NotificationtestGetElementsV1ResponseMPayload.md)
  - [EzmaxApi::Object::NotificationtestResponse](docs/NotificationtestResponse.md)
  - [EzmaxApi::Object::PaymenttermAutocompleteElementResponse](docs/PaymenttermAutocompleteElementResponse.md)
  - [EzmaxApi::Object::PaymenttermCreateObjectV1Request](docs/PaymenttermCreateObjectV1Request.md)
  - [EzmaxApi::Object::PaymenttermCreateObjectV1Response](docs/PaymenttermCreateObjectV1Response.md)
- - [EzmaxApi::Object::PaymenttermCreateObjectV1ResponseAllOf](docs/PaymenttermCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::PaymenttermCreateObjectV1ResponseMPayload](docs/PaymenttermCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::PaymenttermEditObjectV1Request](docs/PaymenttermEditObjectV1Request.md)
  - [EzmaxApi::Object::PaymenttermEditObjectV1Response](docs/PaymenttermEditObjectV1Response.md)
  - [EzmaxApi::Object::PaymenttermGetAutocompleteV2Response](docs/PaymenttermGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::PaymenttermGetAutocompleteV2ResponseAllOf](docs/PaymenttermGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::PaymenttermGetAutocompleteV2ResponseMPayload](docs/PaymenttermGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::PaymenttermGetListV1Response](docs/PaymenttermGetListV1Response.md)
- - [EzmaxApi::Object::PaymenttermGetListV1ResponseAllOf](docs/PaymenttermGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::PaymenttermGetListV1ResponseMPayload](docs/PaymenttermGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::PaymenttermGetListV1ResponseMPayloadAllOf](docs/PaymenttermGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::PaymenttermGetObjectV2Response](docs/PaymenttermGetObjectV2Response.md)
- - [EzmaxApi::Object::PaymenttermGetObjectV2ResponseAllOf](docs/PaymenttermGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::PaymenttermGetObjectV2ResponseMPayload](docs/PaymenttermGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::PaymenttermListElement](docs/PaymenttermListElement.md)
  - [EzmaxApi::Object::PaymenttermRequest](docs/PaymenttermRequest.md)
@@ -4326,17 +3629,14 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::PaymenttermResponseCompound](docs/PaymenttermResponseCompound.md)
  - [EzmaxApi::Object::PeriodAutocompleteElementResponse](docs/PeriodAutocompleteElementResponse.md)
  - [EzmaxApi::Object::PeriodGetAutocompleteV2Response](docs/PeriodGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::PeriodGetAutocompleteV2ResponseAllOf](docs/PeriodGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::PeriodGetAutocompleteV2ResponseMPayload](docs/PeriodGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::PermissionCreateObjectV1Request](docs/PermissionCreateObjectV1Request.md)
  - [EzmaxApi::Object::PermissionCreateObjectV1Response](docs/PermissionCreateObjectV1Response.md)
- - [EzmaxApi::Object::PermissionCreateObjectV1ResponseAllOf](docs/PermissionCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::PermissionCreateObjectV1ResponseMPayload](docs/PermissionCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::PermissionDeleteObjectV1Response](docs/PermissionDeleteObjectV1Response.md)
  - [EzmaxApi::Object::PermissionEditObjectV1Request](docs/PermissionEditObjectV1Request.md)
  - [EzmaxApi::Object::PermissionEditObjectV1Response](docs/PermissionEditObjectV1Response.md)
  - [EzmaxApi::Object::PermissionGetObjectV2Response](docs/PermissionGetObjectV2Response.md)
- - [EzmaxApi::Object::PermissionGetObjectV2ResponseAllOf](docs/PermissionGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::PermissionGetObjectV2ResponseMPayload](docs/PermissionGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::PermissionRequest](docs/PermissionRequest.md)
  - [EzmaxApi::Object::PermissionRequestCompound](docs/PermissionRequestCompound.md)
@@ -4350,7 +3650,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::PhonestaticResponseCompound](docs/PhonestaticResponseCompound.md)
  - [EzmaxApi::Object::PhonetypeAutocompleteElementResponse](docs/PhonetypeAutocompleteElementResponse.md)
  - [EzmaxApi::Object::PhonetypeGetAutocompleteV2Response](docs/PhonetypeGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::PhonetypeGetAutocompleteV2ResponseAllOf](docs/PhonetypeGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::PhonetypeGetAutocompleteV2ResponseMPayload](docs/PhonetypeGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::ScimAuthenticationScheme](docs/ScimAuthenticationScheme.md)
  - [EzmaxApi::Object::ScimEmail](docs/ScimEmail.md)
@@ -4367,22 +3666,17 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::ScimUserList](docs/ScimUserList.md)
  - [EzmaxApi::Object::SecretquestionAutocompleteElementResponse](docs/SecretquestionAutocompleteElementResponse.md)
  - [EzmaxApi::Object::SecretquestionGetAutocompleteV2Response](docs/SecretquestionGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::SecretquestionGetAutocompleteV2ResponseAllOf](docs/SecretquestionGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::SecretquestionGetAutocompleteV2ResponseMPayload](docs/SecretquestionGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::SessionhistoryGetListV1Response](docs/SessionhistoryGetListV1Response.md)
- - [EzmaxApi::Object::SessionhistoryGetListV1ResponseAllOf](docs/SessionhistoryGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::SessionhistoryGetListV1ResponseMPayload](docs/SessionhistoryGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::SessionhistoryGetListV1ResponseMPayloadAllOf](docs/SessionhistoryGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::SessionhistoryListElement](docs/SessionhistoryListElement.md)
  - [EzmaxApi::Object::SignatureCreateObjectV1Request](docs/SignatureCreateObjectV1Request.md)
  - [EzmaxApi::Object::SignatureCreateObjectV1Response](docs/SignatureCreateObjectV1Response.md)
- - [EzmaxApi::Object::SignatureCreateObjectV1ResponseAllOf](docs/SignatureCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::SignatureCreateObjectV1ResponseMPayload](docs/SignatureCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::SignatureDeleteObjectV1Response](docs/SignatureDeleteObjectV1Response.md)
  - [EzmaxApi::Object::SignatureEditObjectV1Request](docs/SignatureEditObjectV1Request.md)
  - [EzmaxApi::Object::SignatureEditObjectV1Response](docs/SignatureEditObjectV1Response.md)
  - [EzmaxApi::Object::SignatureGetObjectV2Response](docs/SignatureGetObjectV2Response.md)
- - [EzmaxApi::Object::SignatureGetObjectV2ResponseAllOf](docs/SignatureGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::SignatureGetObjectV2ResponseMPayload](docs/SignatureGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::SignatureRequest](docs/SignatureRequest.md)
  - [EzmaxApi::Object::SignatureRequestCompound](docs/SignatureRequestCompound.md)
@@ -4390,13 +3684,11 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::SignatureResponseCompound](docs/SignatureResponseCompound.md)
  - [EzmaxApi::Object::SubnetCreateObjectV1Request](docs/SubnetCreateObjectV1Request.md)
  - [EzmaxApi::Object::SubnetCreateObjectV1Response](docs/SubnetCreateObjectV1Response.md)
- - [EzmaxApi::Object::SubnetCreateObjectV1ResponseAllOf](docs/SubnetCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::SubnetCreateObjectV1ResponseMPayload](docs/SubnetCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::SubnetDeleteObjectV1Response](docs/SubnetDeleteObjectV1Response.md)
  - [EzmaxApi::Object::SubnetEditObjectV1Request](docs/SubnetEditObjectV1Request.md)
  - [EzmaxApi::Object::SubnetEditObjectV1Response](docs/SubnetEditObjectV1Response.md)
  - [EzmaxApi::Object::SubnetGetObjectV2Response](docs/SubnetGetObjectV2Response.md)
- - [EzmaxApi::Object::SubnetGetObjectV2ResponseAllOf](docs/SubnetGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::SubnetGetObjectV2ResponseMPayload](docs/SubnetGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::SubnetRequest](docs/SubnetRequest.md)
  - [EzmaxApi::Object::SubnetRequestCompound](docs/SubnetRequestCompound.md)
@@ -4405,7 +3697,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::SystemconfigurationEditObjectV1Request](docs/SystemconfigurationEditObjectV1Request.md)
  - [EzmaxApi::Object::SystemconfigurationEditObjectV1Response](docs/SystemconfigurationEditObjectV1Response.md)
  - [EzmaxApi::Object::SystemconfigurationGetObjectV2Response](docs/SystemconfigurationGetObjectV2Response.md)
- - [EzmaxApi::Object::SystemconfigurationGetObjectV2ResponseAllOf](docs/SystemconfigurationGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::SystemconfigurationGetObjectV2ResponseMPayload](docs/SystemconfigurationGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::SystemconfigurationRequest](docs/SystemconfigurationRequest.md)
  - [EzmaxApi::Object::SystemconfigurationRequestCompound](docs/SystemconfigurationRequestCompound.md)
@@ -4413,113 +3704,106 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::SystemconfigurationResponseCompound](docs/SystemconfigurationResponseCompound.md)
  - [EzmaxApi::Object::TaxassignmentAutocompleteElementResponse](docs/TaxassignmentAutocompleteElementResponse.md)
  - [EzmaxApi::Object::TaxassignmentGetAutocompleteV2Response](docs/TaxassignmentGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::TaxassignmentGetAutocompleteV2ResponseAllOf](docs/TaxassignmentGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::TaxassignmentGetAutocompleteV2ResponseMPayload](docs/TaxassignmentGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::TextstylestaticResponse](docs/TextstylestaticResponse.md)
  - [EzmaxApi::Object::TextstylestaticResponseCompound](docs/TextstylestaticResponseCompound.md)
  - [EzmaxApi::Object::TimezoneAutocompleteElementResponse](docs/TimezoneAutocompleteElementResponse.md)
  - [EzmaxApi::Object::TimezoneGetAutocompleteV2Response](docs/TimezoneGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::TimezoneGetAutocompleteV2ResponseAllOf](docs/TimezoneGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::TimezoneGetAutocompleteV2ResponseMPayload](docs/TimezoneGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::UserAutocompleteElementResponse](docs/UserAutocompleteElementResponse.md)
  - [EzmaxApi::Object::UserCreateEzsignuserV1Request](docs/UserCreateEzsignuserV1Request.md)
  - [EzmaxApi::Object::UserCreateEzsignuserV1Response](docs/UserCreateEzsignuserV1Response.md)
- - [EzmaxApi::Object::UserCreateEzsignuserV1ResponseAllOf](docs/UserCreateEzsignuserV1ResponseAllOf.md)
  - [EzmaxApi::Object::UserCreateEzsignuserV1ResponseMPayload](docs/UserCreateEzsignuserV1ResponseMPayload.md)
  - [EzmaxApi::Object::UserCreateObjectV1Request](docs/UserCreateObjectV1Request.md)
  - [EzmaxApi::Object::UserCreateObjectV1Response](docs/UserCreateObjectV1Response.md)
- - [EzmaxApi::Object::UserCreateObjectV1ResponseAllOf](docs/UserCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::UserCreateObjectV1ResponseMPayload](docs/UserCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::UserEditObjectV1Request](docs/UserEditObjectV1Request.md)
  - [EzmaxApi::Object::UserEditObjectV1Response](docs/UserEditObjectV1Response.md)
  - [EzmaxApi::Object::UserEditPermissionsV1Request](docs/UserEditPermissionsV1Request.md)
  - [EzmaxApi::Object::UserEditPermissionsV1Response](docs/UserEditPermissionsV1Response.md)
- - [EzmaxApi::Object::UserEditPermissionsV1ResponseAllOf](docs/UserEditPermissionsV1ResponseAllOf.md)
  - [EzmaxApi::Object::UserEditPermissionsV1ResponseMPayload](docs/UserEditPermissionsV1ResponseMPayload.md)
+ - [EzmaxApi::Object::UserGetApikeysV1Response](docs/UserGetApikeysV1Response.md)
+ - [EzmaxApi::Object::UserGetApikeysV1ResponseMPayload](docs/UserGetApikeysV1ResponseMPayload.md)
  - [EzmaxApi::Object::UserGetAutocompleteV2Response](docs/UserGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::UserGetAutocompleteV2ResponseAllOf](docs/UserGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::UserGetAutocompleteV2ResponseMPayload](docs/UserGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::UserGetEffectivePermissionsV1Response](docs/UserGetEffectivePermissionsV1Response.md)
- - [EzmaxApi::Object::UserGetEffectivePermissionsV1ResponseAllOf](docs/UserGetEffectivePermissionsV1ResponseAllOf.md)
  - [EzmaxApi::Object::UserGetEffectivePermissionsV1ResponseMPayload](docs/UserGetEffectivePermissionsV1ResponseMPayload.md)
  - [EzmaxApi::Object::UserGetListV1Response](docs/UserGetListV1Response.md)
- - [EzmaxApi::Object::UserGetListV1ResponseAllOf](docs/UserGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::UserGetListV1ResponseMPayload](docs/UserGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::UserGetListV1ResponseMPayloadAllOf](docs/UserGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::UserGetObjectV2Response](docs/UserGetObjectV2Response.md)
- - [EzmaxApi::Object::UserGetObjectV2ResponseAllOf](docs/UserGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::UserGetObjectV2ResponseMPayload](docs/UserGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::UserGetPermissionsV1Response](docs/UserGetPermissionsV1Response.md)
- - [EzmaxApi::Object::UserGetPermissionsV1ResponseAllOf](docs/UserGetPermissionsV1ResponseAllOf.md)
  - [EzmaxApi::Object::UserGetPermissionsV1ResponseMPayload](docs/UserGetPermissionsV1ResponseMPayload.md)
  - [EzmaxApi::Object::UserGetSubnetsV1Response](docs/UserGetSubnetsV1Response.md)
- - [EzmaxApi::Object::UserGetSubnetsV1ResponseAllOf](docs/UserGetSubnetsV1ResponseAllOf.md)
  - [EzmaxApi::Object::UserGetSubnetsV1ResponseMPayload](docs/UserGetSubnetsV1ResponseMPayload.md)
  - [EzmaxApi::Object::UserListElement](docs/UserListElement.md)
  - [EzmaxApi::Object::UserRequest](docs/UserRequest.md)
  - [EzmaxApi::Object::UserRequestCompound](docs/UserRequestCompound.md)
  - [EzmaxApi::Object::UserResponse](docs/UserResponse.md)
  - [EzmaxApi::Object::UserResponseCompound](docs/UserResponseCompound.md)
+ - [EzmaxApi::Object::UserSendPasswordResetV1Response](docs/UserSendPasswordResetV1Response.md)
  - [EzmaxApi::Object::UsergroupAutocompleteElementResponse](docs/UsergroupAutocompleteElementResponse.md)
  - [EzmaxApi::Object::UsergroupCreateObjectV1Request](docs/UsergroupCreateObjectV1Request.md)
  - [EzmaxApi::Object::UsergroupCreateObjectV1Response](docs/UsergroupCreateObjectV1Response.md)
- - [EzmaxApi::Object::UsergroupCreateObjectV1ResponseAllOf](docs/UsergroupCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::UsergroupCreateObjectV1ResponseMPayload](docs/UsergroupCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::UsergroupEditObjectV1Request](docs/UsergroupEditObjectV1Request.md)
  - [EzmaxApi::Object::UsergroupEditObjectV1Response](docs/UsergroupEditObjectV1Response.md)
  - [EzmaxApi::Object::UsergroupEditPermissionsV1Request](docs/UsergroupEditPermissionsV1Request.md)
  - [EzmaxApi::Object::UsergroupEditPermissionsV1Response](docs/UsergroupEditPermissionsV1Response.md)
- - [EzmaxApi::Object::UsergroupEditPermissionsV1ResponseAllOf](docs/UsergroupEditPermissionsV1ResponseAllOf.md)
  - [EzmaxApi::Object::UsergroupEditPermissionsV1ResponseMPayload](docs/UsergroupEditPermissionsV1ResponseMPayload.md)
+ - [EzmaxApi::Object::UsergroupEditUsergroupdelegationsV1Request](docs/UsergroupEditUsergroupdelegationsV1Request.md)
+ - [EzmaxApi::Object::UsergroupEditUsergroupdelegationsV1Response](docs/UsergroupEditUsergroupdelegationsV1Response.md)
+ - [EzmaxApi::Object::UsergroupEditUsergroupdelegationsV1ResponseMPayload](docs/UsergroupEditUsergroupdelegationsV1ResponseMPayload.md)
  - [EzmaxApi::Object::UsergroupEditUsergroupmembershipsV1Request](docs/UsergroupEditUsergroupmembershipsV1Request.md)
  - [EzmaxApi::Object::UsergroupEditUsergroupmembershipsV1Response](docs/UsergroupEditUsergroupmembershipsV1Response.md)
- - [EzmaxApi::Object::UsergroupEditUsergroupmembershipsV1ResponseAllOf](docs/UsergroupEditUsergroupmembershipsV1ResponseAllOf.md)
  - [EzmaxApi::Object::UsergroupEditUsergroupmembershipsV1ResponseMPayload](docs/UsergroupEditUsergroupmembershipsV1ResponseMPayload.md)
  - [EzmaxApi::Object::UsergroupGetAutocompleteV2Response](docs/UsergroupGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::UsergroupGetAutocompleteV2ResponseAllOf](docs/UsergroupGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::UsergroupGetAutocompleteV2ResponseMPayload](docs/UsergroupGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::UsergroupGetListV1Response](docs/UsergroupGetListV1Response.md)
- - [EzmaxApi::Object::UsergroupGetListV1ResponseAllOf](docs/UsergroupGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::UsergroupGetListV1ResponseMPayload](docs/UsergroupGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::UsergroupGetListV1ResponseMPayloadAllOf](docs/UsergroupGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::UsergroupGetObjectV2Response](docs/UsergroupGetObjectV2Response.md)
- - [EzmaxApi::Object::UsergroupGetObjectV2ResponseAllOf](docs/UsergroupGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::UsergroupGetObjectV2ResponseMPayload](docs/UsergroupGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::UsergroupGetPermissionsV1Response](docs/UsergroupGetPermissionsV1Response.md)
- - [EzmaxApi::Object::UsergroupGetPermissionsV1ResponseAllOf](docs/UsergroupGetPermissionsV1ResponseAllOf.md)
  - [EzmaxApi::Object::UsergroupGetPermissionsV1ResponseMPayload](docs/UsergroupGetPermissionsV1ResponseMPayload.md)
+ - [EzmaxApi::Object::UsergroupGetUsergroupdelegationsV1Response](docs/UsergroupGetUsergroupdelegationsV1Response.md)
+ - [EzmaxApi::Object::UsergroupGetUsergroupdelegationsV1ResponseMPayload](docs/UsergroupGetUsergroupdelegationsV1ResponseMPayload.md)
  - [EzmaxApi::Object::UsergroupGetUsergroupmembershipsV1Response](docs/UsergroupGetUsergroupmembershipsV1Response.md)
- - [EzmaxApi::Object::UsergroupGetUsergroupmembershipsV1ResponseAllOf](docs/UsergroupGetUsergroupmembershipsV1ResponseAllOf.md)
  - [EzmaxApi::Object::UsergroupGetUsergroupmembershipsV1ResponseMPayload](docs/UsergroupGetUsergroupmembershipsV1ResponseMPayload.md)
  - [EzmaxApi::Object::UsergroupListElement](docs/UsergroupListElement.md)
  - [EzmaxApi::Object::UsergroupRequest](docs/UsergroupRequest.md)
  - [EzmaxApi::Object::UsergroupRequestCompound](docs/UsergroupRequestCompound.md)
  - [EzmaxApi::Object::UsergroupResponse](docs/UsergroupResponse.md)
  - [EzmaxApi::Object::UsergroupResponseCompound](docs/UsergroupResponseCompound.md)
+ - [EzmaxApi::Object::UsergroupdelegationCreateObjectV1Request](docs/UsergroupdelegationCreateObjectV1Request.md)
+ - [EzmaxApi::Object::UsergroupdelegationCreateObjectV1Response](docs/UsergroupdelegationCreateObjectV1Response.md)
+ - [EzmaxApi::Object::UsergroupdelegationCreateObjectV1ResponseMPayload](docs/UsergroupdelegationCreateObjectV1ResponseMPayload.md)
+ - [EzmaxApi::Object::UsergroupdelegationDeleteObjectV1Response](docs/UsergroupdelegationDeleteObjectV1Response.md)
+ - [EzmaxApi::Object::UsergroupdelegationEditObjectV1Request](docs/UsergroupdelegationEditObjectV1Request.md)
+ - [EzmaxApi::Object::UsergroupdelegationEditObjectV1Response](docs/UsergroupdelegationEditObjectV1Response.md)
+ - [EzmaxApi::Object::UsergroupdelegationGetObjectV2Response](docs/UsergroupdelegationGetObjectV2Response.md)
+ - [EzmaxApi::Object::UsergroupdelegationGetObjectV2ResponseMPayload](docs/UsergroupdelegationGetObjectV2ResponseMPayload.md)
+ - [EzmaxApi::Object::UsergroupdelegationRequest](docs/UsergroupdelegationRequest.md)
+ - [EzmaxApi::Object::UsergroupdelegationRequestCompound](docs/UsergroupdelegationRequestCompound.md)
+ - [EzmaxApi::Object::UsergroupdelegationResponse](docs/UsergroupdelegationResponse.md)
+ - [EzmaxApi::Object::UsergroupdelegationResponseCompound](docs/UsergroupdelegationResponseCompound.md)
  - [EzmaxApi::Object::UsergroupmembershipCreateObjectV1Request](docs/UsergroupmembershipCreateObjectV1Request.md)
  - [EzmaxApi::Object::UsergroupmembershipCreateObjectV1Response](docs/UsergroupmembershipCreateObjectV1Response.md)
- - [EzmaxApi::Object::UsergroupmembershipCreateObjectV1ResponseAllOf](docs/UsergroupmembershipCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::UsergroupmembershipCreateObjectV1ResponseMPayload](docs/UsergroupmembershipCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::UsergroupmembershipDeleteObjectV1Response](docs/UsergroupmembershipDeleteObjectV1Response.md)
  - [EzmaxApi::Object::UsergroupmembershipEditObjectV1Request](docs/UsergroupmembershipEditObjectV1Request.md)
  - [EzmaxApi::Object::UsergroupmembershipEditObjectV1Response](docs/UsergroupmembershipEditObjectV1Response.md)
  - [EzmaxApi::Object::UsergroupmembershipGetObjectV2Response](docs/UsergroupmembershipGetObjectV2Response.md)
- - [EzmaxApi::Object::UsergroupmembershipGetObjectV2ResponseAllOf](docs/UsergroupmembershipGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::UsergroupmembershipGetObjectV2ResponseMPayload](docs/UsergroupmembershipGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::UsergroupmembershipRequest](docs/UsergroupmembershipRequest.md)
  - [EzmaxApi::Object::UsergroupmembershipRequestCompound](docs/UsergroupmembershipRequestCompound.md)
  - [EzmaxApi::Object::UsergroupmembershipResponse](docs/UsergroupmembershipResponse.md)
  - [EzmaxApi::Object::UsergroupmembershipResponseCompound](docs/UsergroupmembershipResponseCompound.md)
  - [EzmaxApi::Object::UserstagedCreateUserV1Response](docs/UserstagedCreateUserV1Response.md)
- - [EzmaxApi::Object::UserstagedCreateUserV1ResponseAllOf](docs/UserstagedCreateUserV1ResponseAllOf.md)
  - [EzmaxApi::Object::UserstagedCreateUserV1ResponseMPayload](docs/UserstagedCreateUserV1ResponseMPayload.md)
  - [EzmaxApi::Object::UserstagedDeleteObjectV1Response](docs/UserstagedDeleteObjectV1Response.md)
  - [EzmaxApi::Object::UserstagedGetListV1Response](docs/UserstagedGetListV1Response.md)
- - [EzmaxApi::Object::UserstagedGetListV1ResponseAllOf](docs/UserstagedGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::UserstagedGetListV1ResponseMPayload](docs/UserstagedGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::UserstagedGetListV1ResponseMPayloadAllOf](docs/UserstagedGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::UserstagedGetObjectV2Response](docs/UserstagedGetObjectV2Response.md)
- - [EzmaxApi::Object::UserstagedGetObjectV2ResponseAllOf](docs/UserstagedGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::UserstagedGetObjectV2ResponseMPayload](docs/UserstagedGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::UserstagedListElement](docs/UserstagedListElement.md)
  - [EzmaxApi::Object::UserstagedMapV1Request](docs/UserstagedMapV1Request.md)
@@ -4529,19 +3813,14 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::VariableexpenseAutocompleteElementResponse](docs/VariableexpenseAutocompleteElementResponse.md)
  - [EzmaxApi::Object::VariableexpenseCreateObjectV1Request](docs/VariableexpenseCreateObjectV1Request.md)
  - [EzmaxApi::Object::VariableexpenseCreateObjectV1Response](docs/VariableexpenseCreateObjectV1Response.md)
- - [EzmaxApi::Object::VariableexpenseCreateObjectV1ResponseAllOf](docs/VariableexpenseCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::VariableexpenseCreateObjectV1ResponseMPayload](docs/VariableexpenseCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::VariableexpenseEditObjectV1Request](docs/VariableexpenseEditObjectV1Request.md)
  - [EzmaxApi::Object::VariableexpenseEditObjectV1Response](docs/VariableexpenseEditObjectV1Response.md)
  - [EzmaxApi::Object::VariableexpenseGetAutocompleteV2Response](docs/VariableexpenseGetAutocompleteV2Response.md)
- - [EzmaxApi::Object::VariableexpenseGetAutocompleteV2ResponseAllOf](docs/VariableexpenseGetAutocompleteV2ResponseAllOf.md)
  - [EzmaxApi::Object::VariableexpenseGetAutocompleteV2ResponseMPayload](docs/VariableexpenseGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::VariableexpenseGetListV1Response](docs/VariableexpenseGetListV1Response.md)
- - [EzmaxApi::Object::VariableexpenseGetListV1ResponseAllOf](docs/VariableexpenseGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::VariableexpenseGetListV1ResponseMPayload](docs/VariableexpenseGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::VariableexpenseGetListV1ResponseMPayloadAllOf](docs/VariableexpenseGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::VariableexpenseGetObjectV2Response](docs/VariableexpenseGetObjectV2Response.md)
- - [EzmaxApi::Object::VariableexpenseGetObjectV2ResponseAllOf](docs/VariableexpenseGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::VariableexpenseGetObjectV2ResponseMPayload](docs/VariableexpenseGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::VariableexpenseListElement](docs/VariableexpenseListElement.md)
  - [EzmaxApi::Object::VariableexpenseRequest](docs/VariableexpenseRequest.md)
@@ -4549,46 +3828,33 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::VariableexpenseResponse](docs/VariableexpenseResponse.md)
  - [EzmaxApi::Object::VariableexpenseResponseCompound](docs/VariableexpenseResponseCompound.md)
  - [EzmaxApi::Object::VersionhistoryGetObjectV2Response](docs/VersionhistoryGetObjectV2Response.md)
- - [EzmaxApi::Object::VersionhistoryGetObjectV2ResponseAllOf](docs/VersionhistoryGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::VersionhistoryGetObjectV2ResponseMPayload](docs/VersionhistoryGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::VersionhistoryResponse](docs/VersionhistoryResponse.md)
  - [EzmaxApi::Object::VersionhistoryResponseCompound](docs/VersionhistoryResponseCompound.md)
  - [EzmaxApi::Object::WebhookCreateObjectV1Request](docs/WebhookCreateObjectV1Request.md)
  - [EzmaxApi::Object::WebhookCreateObjectV1Response](docs/WebhookCreateObjectV1Response.md)
- - [EzmaxApi::Object::WebhookCreateObjectV1ResponseAllOf](docs/WebhookCreateObjectV1ResponseAllOf.md)
  - [EzmaxApi::Object::WebhookCreateObjectV1ResponseMPayload](docs/WebhookCreateObjectV1ResponseMPayload.md)
  - [EzmaxApi::Object::WebhookDeleteObjectV1Response](docs/WebhookDeleteObjectV1Response.md)
  - [EzmaxApi::Object::WebhookEditObjectV1Request](docs/WebhookEditObjectV1Request.md)
  - [EzmaxApi::Object::WebhookEditObjectV1Response](docs/WebhookEditObjectV1Response.md)
  - [EzmaxApi::Object::WebhookEzsignDocumentCompleted](docs/WebhookEzsignDocumentCompleted.md)
- - [EzmaxApi::Object::WebhookEzsignDocumentCompletedAllOf](docs/WebhookEzsignDocumentCompletedAllOf.md)
  - [EzmaxApi::Object::WebhookEzsignEzsignsignerAcceptclause](docs/WebhookEzsignEzsignsignerAcceptclause.md)
- - [EzmaxApi::Object::WebhookEzsignEzsignsignerAcceptclauseAllOf](docs/WebhookEzsignEzsignsignerAcceptclauseAllOf.md)
  - [EzmaxApi::Object::WebhookEzsignEzsignsignerConnect](docs/WebhookEzsignEzsignsignerConnect.md)
  - [EzmaxApi::Object::WebhookEzsignFolderCompleted](docs/WebhookEzsignFolderCompleted.md)
- - [EzmaxApi::Object::WebhookEzsignFolderCompletedAllOf](docs/WebhookEzsignFolderCompletedAllOf.md)
  - [EzmaxApi::Object::WebhookGetHistoryV1Response](docs/WebhookGetHistoryV1Response.md)
- - [EzmaxApi::Object::WebhookGetHistoryV1ResponseAllOf](docs/WebhookGetHistoryV1ResponseAllOf.md)
  - [EzmaxApi::Object::WebhookGetHistoryV1ResponseMPayload](docs/WebhookGetHistoryV1ResponseMPayload.md)
- - [EzmaxApi::Object::WebhookGetHistoryV1ResponseMPayloadAllOf](docs/WebhookGetHistoryV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::WebhookGetListV1Response](docs/WebhookGetListV1Response.md)
- - [EzmaxApi::Object::WebhookGetListV1ResponseAllOf](docs/WebhookGetListV1ResponseAllOf.md)
  - [EzmaxApi::Object::WebhookGetListV1ResponseMPayload](docs/WebhookGetListV1ResponseMPayload.md)
- - [EzmaxApi::Object::WebhookGetListV1ResponseMPayloadAllOf](docs/WebhookGetListV1ResponseMPayloadAllOf.md)
  - [EzmaxApi::Object::WebhookGetObjectV2Response](docs/WebhookGetObjectV2Response.md)
- - [EzmaxApi::Object::WebhookGetObjectV2ResponseAllOf](docs/WebhookGetObjectV2ResponseAllOf.md)
  - [EzmaxApi::Object::WebhookGetObjectV2ResponseMPayload](docs/WebhookGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::WebhookListElement](docs/WebhookListElement.md)
  - [EzmaxApi::Object::WebhookRequest](docs/WebhookRequest.md)
  - [EzmaxApi::Object::WebhookRequestCompound](docs/WebhookRequestCompound.md)
  - [EzmaxApi::Object::WebhookResponse](docs/WebhookResponse.md)
  - [EzmaxApi::Object::WebhookResponseCompound](docs/WebhookResponseCompound.md)
- - [EzmaxApi::Object::WebhookResponseCompoundAllOf](docs/WebhookResponseCompoundAllOf.md)
  - [EzmaxApi::Object::WebhookTestV1Response](docs/WebhookTestV1Response.md)
  - [EzmaxApi::Object::WebhookUserUserCreated](docs/WebhookUserUserCreated.md)
- - [EzmaxApi::Object::WebhookUserUserCreatedAllOf](docs/WebhookUserUserCreatedAllOf.md)
  - [EzmaxApi::Object::WebhookUserstagedUserstagedCreated](docs/WebhookUserstagedUserstagedCreated.md)
- - [EzmaxApi::Object::WebhookUserstagedUserstagedCreatedAllOf](docs/WebhookUserstagedUserstagedCreatedAllOf.md)
  - [EzmaxApi::Object::WebsiteRequest](docs/WebsiteRequest.md)
  - [EzmaxApi::Object::WebsiteRequestCompound](docs/WebsiteRequestCompound.md)
  - [EzmaxApi::Object::WebsocketRequestServerGetWebsocketIDV1](docs/WebsocketRequestServerGetWebsocketIDV1.md)
@@ -4611,7 +3877,7 @@ Authentication schemes defined for the API:
 
 ## Bearer
 
-- **Type**: HTTP basic authentication
+- **Type**: HTTP Bearer Token authentication
 
 ## Presigned
 

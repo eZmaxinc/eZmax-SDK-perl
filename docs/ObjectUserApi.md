@@ -12,12 +12,14 @@ Method | HTTP request | Description
 [**user_create_object_v1**](ObjectUserApi.md#user_create_object_v1) | **POST** /1/object/user | Create a new User
 [**user_edit_object_v1**](ObjectUserApi.md#user_edit_object_v1) | **PUT** /1/object/user/{pkiUserID} | Edit an existing User
 [**user_edit_permissions_v1**](ObjectUserApi.md#user_edit_permissions_v1) | **PUT** /1/object/user/{pkiUserID}/editPermissions | Edit multiple Permissions
+[**user_get_apikeys_v1**](ObjectUserApi.md#user_get_apikeys_v1) | **GET** /1/object/user/{pkiUserID}/getApikeys | Retrieve an existing User&#39;s Apikeys
 [**user_get_autocomplete_v2**](ObjectUserApi.md#user_get_autocomplete_v2) | **GET** /2/object/user/getAutocomplete/{sSelector} | Retrieve Users and IDs
 [**user_get_effective_permissions_v1**](ObjectUserApi.md#user_get_effective_permissions_v1) | **GET** /1/object/user/{pkiUserID}/getEffectivePermissions | Retrieve an existing User&#39;s Effective Permissions
 [**user_get_list_v1**](ObjectUserApi.md#user_get_list_v1) | **GET** /1/object/user/getList | Retrieve User list
 [**user_get_object_v2**](ObjectUserApi.md#user_get_object_v2) | **GET** /2/object/user/{pkiUserID} | Retrieve an existing User
 [**user_get_permissions_v1**](ObjectUserApi.md#user_get_permissions_v1) | **GET** /1/object/user/{pkiUserID}/getPermissions | Retrieve an existing User&#39;s Permissions
 [**user_get_subnets_v1**](ObjectUserApi.md#user_get_subnets_v1) | **GET** /1/object/user/{pkiUserID}/getSubnets | Retrieve an existing User&#39;s Subnets
+[**user_send_password_reset_v1**](ObjectUserApi.md#user_send_password_reset_v1) | **POST** /1/object/user/{pkiUserID}/sendPasswordReset | Send password reset
 
 
 # **user_create_object_v1**
@@ -173,6 +175,55 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_get_apikeys_v1**
+> UserGetApikeysV1Response user_get_apikeys_v1(pki_user_id => $pki_user_id)
+
+Retrieve an existing User's Apikeys
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectUserApi;
+my $api_instance = EzmaxApi::ObjectUserApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_user_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->user_get_apikeys_v1(pki_user_id => $pki_user_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectUserApi->user_get_apikeys_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_user_id** | **int**|  | 
+
+### Return type
+
+[**UserGetApikeysV1Response**](UserGetApikeysV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -489,6 +540,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_send_password_reset_v1**
+> UserSendPasswordResetV1Response user_send_password_reset_v1(pki_user_id => $pki_user_id, body => $body)
+
+Send password reset
+
+Send the password reset email
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectUserApi;
+my $api_instance = EzmaxApi::ObjectUserApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_user_id = 56; # int | 
+my $body = EzmaxApi::Object::object->new(); # object | 
+
+eval {
+    my $result = $api_instance->user_send_password_reset_v1(pki_user_id => $pki_user_id, body => $body);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectUserApi->user_send_password_reset_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_user_id** | **int**|  | 
+ **body** | **object**|  | 
+
+### Return type
+
+[**UserSendPasswordResetV1Response**](UserSendPasswordResetV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

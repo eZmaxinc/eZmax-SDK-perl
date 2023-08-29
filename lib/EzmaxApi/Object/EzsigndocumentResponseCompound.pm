@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
+use EzmaxApi::Object::ComputedEEzsigndocumentSteptype;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationstatusResponse;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 
@@ -369,6 +370,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsigndocument_steptype' => {
+        datatype => 'ComputedEEzsigndocumentSteptype',
+        base_name => 'eEzsigndocumentSteptype',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'i_ezsigndocument_stepformtotal' => {
         datatype => 'int',
         base_name => 'iEzsigndocumentStepformtotal',
@@ -428,6 +436,7 @@ __PACKAGE__->openapi_types( {
     'b_ezsigndocument_hassignedsignatures' => 'boolean',
     'obj_audit' => 'CommonAudit',
     's_ezsigndocument_externalid' => 'string',
+    'e_ezsigndocument_steptype' => 'ComputedEEzsigndocumentSteptype',
     'i_ezsigndocument_stepformtotal' => 'int',
     'i_ezsigndocument_stepformcurrent' => 'int',
     'i_ezsigndocument_stepsignaturetotal' => 'int',
@@ -457,6 +466,7 @@ __PACKAGE__->attribute_map( {
     'b_ezsigndocument_hassignedsignatures' => 'bEzsigndocumentHassignedsignatures',
     'obj_audit' => 'objAudit',
     's_ezsigndocument_externalid' => 'sEzsigndocumentExternalid',
+    'e_ezsigndocument_steptype' => 'eEzsigndocumentSteptype',
     'i_ezsigndocument_stepformtotal' => 'iEzsigndocumentStepformtotal',
     'i_ezsigndocument_stepformcurrent' => 'iEzsigndocumentStepformcurrent',
     'i_ezsigndocument_stepsignaturetotal' => 'iEzsigndocumentStepsignaturetotal',

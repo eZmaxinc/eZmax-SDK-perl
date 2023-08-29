@@ -350,6 +350,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_ezsignsignature_maxlength' => {
+        datatype => 'int',
+        base_name => 'iEzsignsignatureMaxlength',
+        description => 'The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**',
+        format => '',
+        read_only => '',
+            },
     'e_ezsignsignature_textvalidation' => {
         datatype => 'EnumTextvalidation',
         base_name => 'eEzsignsignatureTextvalidation',
@@ -385,6 +392,7 @@ __PACKAGE__->openapi_types( {
     'e_ezsignsignature_attachmentnamesource' => 'FieldEEzsignsignatureAttachmentnamesource',
     's_ezsignsignature_attachmentdescription' => 'string',
     'i_ezsignsignature_validationstep' => 'int',
+    'i_ezsignsignature_maxlength' => 'int',
     'e_ezsignsignature_textvalidation' => 'EnumTextvalidation',
     's_ezsignsignature_regexp' => 'string'
 } );
@@ -408,6 +416,7 @@ __PACKAGE__->attribute_map( {
     'e_ezsignsignature_attachmentnamesource' => 'eEzsignsignatureAttachmentnamesource',
     's_ezsignsignature_attachmentdescription' => 'sEzsignsignatureAttachmentdescription',
     'i_ezsignsignature_validationstep' => 'iEzsignsignatureValidationstep',
+    'i_ezsignsignature_maxlength' => 'iEzsignsignatureMaxlength',
     'e_ezsignsignature_textvalidation' => 'eEzsignsignatureTextvalidation',
     's_ezsignsignature_regexp' => 'sEzsignsignatureRegexp'
 } );

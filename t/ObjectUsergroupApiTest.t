@@ -53,6 +53,14 @@ isa_ok($api, 'EzmaxApi::ObjectUsergroupApi');
 #my $usergroup_edit_permissions_v1_result = $api->usergroup_edit_permissions_v1(pki_usergroup_id => $usergroup_edit_permissions_v1_pki_usergroup_id, usergroup_edit_permissions_v1_request => $usergroup_edit_permissions_v1_usergroup_edit_permissions_v1_request);
 
 #
+# usergroup_edit_usergroupdelegations_v1 test
+#
+# uncomment below and update the test
+#my $usergroup_edit_usergroupdelegations_v1_pki_usergroup_id = undef; # replace NULL with a proper value
+#my $usergroup_edit_usergroupdelegations_v1_usergroup_edit_usergroupdelegations_v1_request = undef; # replace NULL with a proper value
+#my $usergroup_edit_usergroupdelegations_v1_result = $api->usergroup_edit_usergroupdelegations_v1(pki_usergroup_id => $usergroup_edit_usergroupdelegations_v1_pki_usergroup_id, usergroup_edit_usergroupdelegations_v1_request => $usergroup_edit_usergroupdelegations_v1_usergroup_edit_usergroupdelegations_v1_request);
+
+#
 # usergroup_edit_usergroupmemberships_v1 test
 #
 # uncomment below and update the test
@@ -94,6 +102,13 @@ isa_ok($api, 'EzmaxApi::ObjectUsergroupApi');
 # uncomment below and update the test
 #my $usergroup_get_permissions_v1_pki_usergroup_id = undef; # replace NULL with a proper value
 #my $usergroup_get_permissions_v1_result = $api->usergroup_get_permissions_v1(pki_usergroup_id => $usergroup_get_permissions_v1_pki_usergroup_id);
+
+#
+# usergroup_get_usergroupdelegations_v1 test
+#
+# uncomment below and update the test
+#my $usergroup_get_usergroupdelegations_v1_pki_usergroup_id = undef; # replace NULL with a proper value
+#my $usergroup_get_usergroupdelegations_v1_result = $api->usergroup_get_usergroupdelegations_v1(pki_usergroup_id => $usergroup_get_usergroupdelegations_v1_pki_usergroup_id);
 
 #
 # usergroup_get_usergroupmemberships_v1 test

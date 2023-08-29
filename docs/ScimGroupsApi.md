@@ -27,7 +27,6 @@ use Data::Dumper;
 use EzmaxApi::ScimGroupsApi;
 my $api_instance = EzmaxApi::ScimGroupsApi->new(
 
-    # Configure HTTP basic authorization: Bearer
     # Configure bearer access token for authorization: Bearer
     access_token => 'YOUR_BEARER_TOKEN',
     
@@ -76,7 +75,6 @@ use Data::Dumper;
 use EzmaxApi::ScimGroupsApi;
 my $api_instance = EzmaxApi::ScimGroupsApi->new(
 
-    # Configure HTTP basic authorization: Bearer
     # Configure bearer access token for authorization: Bearer
     access_token => 'YOUR_BEARER_TOKEN',
     
@@ -124,7 +122,6 @@ use Data::Dumper;
 use EzmaxApi::ScimGroupsApi;
 my $api_instance = EzmaxApi::ScimGroupsApi->new(
 
-    # Configure HTTP basic authorization: Bearer
     # Configure bearer access token for authorization: Bearer
     access_token => 'YOUR_BEARER_TOKEN',
     
@@ -175,7 +172,6 @@ use Data::Dumper;
 use EzmaxApi::ScimGroupsApi;
 my $api_instance = EzmaxApi::ScimGroupsApi->new(
 
-    # Configure HTTP basic authorization: Bearer
     # Configure bearer access token for authorization: Bearer
     access_token => 'YOUR_BEARER_TOKEN',
     
@@ -224,7 +220,6 @@ use Data::Dumper;
 use EzmaxApi::ScimGroupsApi;
 my $api_instance = EzmaxApi::ScimGroupsApi->new(
 
-    # Configure HTTP basic authorization: Bearer
     # Configure bearer access token for authorization: Bearer
     access_token => 'YOUR_BEARER_TOKEN',
     

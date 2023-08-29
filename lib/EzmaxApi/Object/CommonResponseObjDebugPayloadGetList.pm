@@ -241,6 +241,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_version_deprecated' => {
+        datatype => 'boolean',
+        base_name => 'bVersionDeprecated',
+        description => 'Wheter the current route is deprecated or not',
+        format => '',
+        read_only => '',
+            },
     'a_filter' => {
         datatype => 'CommonResponseFilter',
         base_name => 'a_Filter',
@@ -261,6 +268,7 @@ __PACKAGE__->openapi_types( {
     'i_version_min' => 'int',
     'i_version_max' => 'int',
     'a_required_permission' => 'ARRAY[int]',
+    'b_version_deprecated' => 'boolean',
     'a_filter' => 'CommonResponseFilter',
     'a_order_by' => 'HASH[string,string]'
 } );
@@ -269,6 +277,7 @@ __PACKAGE__->attribute_map( {
     'i_version_min' => 'iVersionMin',
     'i_version_max' => 'iVersionMax',
     'a_required_permission' => 'a_RequiredPermission',
+    'b_version_deprecated' => 'bVersionDeprecated',
     'a_filter' => 'a_Filter',
     'a_order_by' => 'a_OrderBy'
 } );

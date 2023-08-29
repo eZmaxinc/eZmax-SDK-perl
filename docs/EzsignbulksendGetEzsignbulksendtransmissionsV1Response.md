@@ -8,9 +8,9 @@ use EzmaxApi::Object::EzsignbulksendGetEzsignbulksendtransmissionsV1Response;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**m_payload** | [**EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload**](EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload.md) |  | 
-**obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
+**obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | 
 **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
+**m_payload** | [**EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload**](EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

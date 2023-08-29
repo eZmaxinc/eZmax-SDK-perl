@@ -220,13 +220,6 @@ __PACKAGE__->class_documentation({description => 'Payload for GET /1/object/apik
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'a_obj_apikey' => {
-        datatype => 'ARRAY[ApikeyListElement]',
-        base_name => 'a_objApikey',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'i_row_returned' => {
         datatype => 'int',
         base_name => 'iRowReturned',
@@ -241,18 +234,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_apikey' => {
+        datatype => 'ARRAY[ApikeyListElement]',
+        base_name => 'a_objApikey',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'a_obj_apikey' => 'ARRAY[ApikeyListElement]',
     'i_row_returned' => 'int',
-    'i_row_filtered' => 'int'
+    'i_row_filtered' => 'int',
+    'a_obj_apikey' => 'ARRAY[ApikeyListElement]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'a_obj_apikey' => 'a_objApikey',
     'i_row_returned' => 'iRowReturned',
-    'i_row_filtered' => 'iRowFiltered'
+    'i_row_filtered' => 'iRowFiltered',
+    'a_obj_apikey' => 'a_objApikey'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -8,7 +8,7 @@ use EzmaxApi::Object::EzsigntemplatedocumentEditObjectV1Response;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
+**obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | 
 **obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
 **a_obj_warning** | [**ARRAY[CommonResponseWarning]**](CommonResponseWarning.md) |  | [optional] 
 

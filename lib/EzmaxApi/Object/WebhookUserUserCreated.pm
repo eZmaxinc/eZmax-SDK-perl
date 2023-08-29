@@ -222,13 +222,6 @@ __PACKAGE__->class_documentation({description => 'This is the base Webhook objec
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'obj_user' => {
-        datatype => 'UserResponseCompound',
-        base_name => 'objUser',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'obj_webhook' => {
         datatype => 'CustomWebhookResponse',
         base_name => 'objWebhook',
@@ -243,18 +236,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_user' => {
+        datatype => 'UserResponseCompound',
+        base_name => 'objUser',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_user' => 'UserResponseCompound',
     'obj_webhook' => 'CustomWebhookResponse',
-    'a_obj_attempt' => 'ARRAY[AttemptResponseCompound]'
+    'a_obj_attempt' => 'ARRAY[AttemptResponseCompound]',
+    'obj_user' => 'UserResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {
-    'obj_user' => 'objUser',
     'obj_webhook' => 'objWebhook',
-    'a_obj_attempt' => 'a_objAttempt'
+    'a_obj_attempt' => 'a_objAttempt',
+    'obj_user' => 'objUser'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

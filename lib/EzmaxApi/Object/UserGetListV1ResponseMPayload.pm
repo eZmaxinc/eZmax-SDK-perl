@@ -220,13 +220,6 @@ __PACKAGE__->class_documentation({description => 'Payload for GET /1/object/user
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'a_obj_user' => {
-        datatype => 'ARRAY[UserListElement]',
-        base_name => 'a_objUser',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'i_row_returned' => {
         datatype => 'int',
         base_name => 'iRowReturned',
@@ -241,18 +234,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_user' => {
+        datatype => 'ARRAY[UserListElement]',
+        base_name => 'a_objUser',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'a_obj_user' => 'ARRAY[UserListElement]',
     'i_row_returned' => 'int',
-    'i_row_filtered' => 'int'
+    'i_row_filtered' => 'int',
+    'a_obj_user' => 'ARRAY[UserListElement]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'a_obj_user' => 'a_objUser',
     'i_row_returned' => 'iRowReturned',
-    'i_row_filtered' => 'iRowFiltered'
+    'i_row_filtered' => 'iRowFiltered',
+    'a_obj_user' => 'a_objUser'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

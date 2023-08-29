@@ -280,6 +280,89 @@ sub usergroup_edit_permissions_v1 {
 }
 
 #
+# usergroup_edit_usergroupdelegations_v1
+#
+# Edit multiple Usergroupdelegations
+#
+# @param int $pki_usergroup_id  (required)
+# @param UsergroupEditUsergroupdelegationsV1Request $usergroup_edit_usergroupdelegations_v1_request  (required)
+{
+    my $params = {
+    'pki_usergroup_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'usergroup_edit_usergroupdelegations_v1_request' => {
+        data_type => 'UsergroupEditUsergroupdelegationsV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'usergroup_edit_usergroupdelegations_v1' } = {
+        summary => 'Edit multiple Usergroupdelegations',
+        params => $params,
+        returns => 'UsergroupEditUsergroupdelegationsV1Response',
+        };
+}
+# @return UsergroupEditUsergroupdelegationsV1Response
+#
+sub usergroup_edit_usergroupdelegations_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_usergroup_id' is set
+    unless (exists $args{'pki_usergroup_id'}) {
+      croak("Missing the required parameter 'pki_usergroup_id' when calling usergroup_edit_usergroupdelegations_v1");
+    }
+
+    # verify the required parameter 'usergroup_edit_usergroupdelegations_v1_request' is set
+    unless (exists $args{'usergroup_edit_usergroupdelegations_v1_request'}) {
+      croak("Missing the required parameter 'usergroup_edit_usergroupdelegations_v1_request' when calling usergroup_edit_usergroupdelegations_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/usergroup/{pkiUsergroupID}/editUsergroupdelegations';
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_usergroup_id'}) {
+        my $_base_variable = "{" . "pkiUsergroupID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_usergroup_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'usergroup_edit_usergroupdelegations_v1_request'}) {
+        $_body_data = $args{'usergroup_edit_usergroupdelegations_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('UsergroupEditUsergroupdelegationsV1Response', $response);
+    return $_response_object;
+}
+
+#
 # usergroup_edit_usergroupmemberships_v1
 #
 # Edit multiple Usergroupmemberships
@@ -697,6 +780,73 @@ sub usergroup_get_permissions_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('UsergroupGetPermissionsV1Response', $response);
+    return $_response_object;
+}
+
+#
+# usergroup_get_usergroupdelegations_v1
+#
+# Retrieve an existing Usergroup's Usergroupdelegations
+#
+# @param int $pki_usergroup_id  (required)
+{
+    my $params = {
+    'pki_usergroup_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'usergroup_get_usergroupdelegations_v1' } = {
+        summary => 'Retrieve an existing Usergroup&#39;s Usergroupdelegations',
+        params => $params,
+        returns => 'UsergroupGetUsergroupdelegationsV1Response',
+        };
+}
+# @return UsergroupGetUsergroupdelegationsV1Response
+#
+sub usergroup_get_usergroupdelegations_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_usergroup_id' is set
+    unless (exists $args{'pki_usergroup_id'}) {
+      croak("Missing the required parameter 'pki_usergroup_id' when calling usergroup_get_usergroupdelegations_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/usergroup/{pkiUsergroupID}/getUsergroupdelegations';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_usergroup_id'}) {
+        my $_base_variable = "{" . "pkiUsergroupID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_usergroup_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('UsergroupGetUsergroupdelegationsV1Response', $response);
     return $_response_object;
 }
 

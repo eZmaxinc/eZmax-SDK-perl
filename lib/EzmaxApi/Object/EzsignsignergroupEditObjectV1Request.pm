@@ -220,9 +220,9 @@ __PACKAGE__->class_documentation({description => 'Request for PUT /1/object/ezsi
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'obj_branding' => {
+    'obj_ezsignsignergroup' => {
         datatype => 'EzsignsignergroupRequestCompound',
-        base_name => 'objBranding',
+        base_name => 'objEzsignsignergroup',
         description => '',
         format => '',
         read_only => '',
@@ -230,11 +230,11 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_branding' => 'EzsignsignergroupRequestCompound'
+    'obj_ezsignsignergroup' => 'EzsignsignergroupRequestCompound'
 } );
 
 __PACKAGE__->attribute_map( {
-    'obj_branding' => 'objBranding'
+    'obj_ezsignsignergroup' => 'objEzsignsignergroup'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
