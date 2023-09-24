@@ -166,6 +166,7 @@ docs/CustomEzsignfoldersignerassociationmineResponse.md
 docs/CustomEzsignfoldersignerassociationstatusResponse.md
 docs/CustomEzsignfoldertransmissionResponse.md
 docs/CustomEzsignfoldertransmissionSignerResponse.md
+docs/CustomEzsignfoldertypeResponse.md
 docs/CustomEzsignformfieldRequest.md
 docs/CustomEzsignformfielderrorResponse.md
 docs/CustomEzsignformfielderrortestResponse.md
@@ -1296,6 +1297,7 @@ lib/EzmaxApi/Object/CustomEzsignfoldersignerassociationmineResponse.pm
 lib/EzmaxApi/Object/CustomEzsignfoldersignerassociationstatusResponse.pm
 lib/EzmaxApi/Object/CustomEzsignfoldertransmissionResponse.pm
 lib/EzmaxApi/Object/CustomEzsignfoldertransmissionSignerResponse.pm
+lib/EzmaxApi/Object/CustomEzsignfoldertypeResponse.pm
 lib/EzmaxApi/Object/CustomEzsignformfieldRequest.pm
 lib/EzmaxApi/Object/CustomEzsignformfielderrorResponse.pm
 lib/EzmaxApi/Object/CustomEzsignformfielderrortestResponse.pm
@@ -2412,6 +2414,7 @@ t/CustomEzsignfoldersignerassociationmineResponseTest.t
 t/CustomEzsignfoldersignerassociationstatusResponseTest.t
 t/CustomEzsignfoldertransmissionResponseTest.t
 t/CustomEzsignfoldertransmissionSignerResponseTest.t
+t/CustomEzsignfoldertypeResponseTest.t
 t/CustomEzsignformfieldRequestTest.t
 t/CustomEzsignformfielderrorResponseTest.t
 t/CustomEzsignformfielderrortestResponseTest.t
