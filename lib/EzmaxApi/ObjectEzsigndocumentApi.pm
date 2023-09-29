@@ -966,7 +966,7 @@ sub ezsigndocument_get_completed_elements_v1 {
 # Retrieve a URL to download documents.
 #
 # @param int $pki_ezsigndocument_id  (required)
-# @param string $e_document_type The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more.  (required)
+# @param string $e_document_type The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more.  (required)
 {
     my $params = {
     'pki_ezsigndocument_id' => {
@@ -976,7 +976,7 @@ sub ezsigndocument_get_completed_elements_v1 {
     },
     'e_document_type' => {
         data_type => 'string',
-        description => 'The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. ',
+        description => 'The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. ',
         required => '1',
     },
     };

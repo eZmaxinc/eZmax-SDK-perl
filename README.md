@@ -466,7 +466,6 @@ use EzmaxApi::Object::CustomEzsigndocumentEzsignsignaturesAutomaticResponse;
 use EzmaxApi::Object::CustomEzsignfolderEzsignsignaturesAutomaticResponse;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationActionableElementResponse;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationmessageRequest;
-use EzmaxApi::Object::CustomEzsignfoldersignerassociationmineResponse;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationstatusResponse;
 use EzmaxApi::Object::CustomEzsignfoldertransmissionResponse;
 use EzmaxApi::Object::CustomEzsignfoldertransmissionSignerResponse;
@@ -682,8 +681,6 @@ use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1Response;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1Response;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload;
-use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1Response;
-use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1Response;
 use EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1Response;
@@ -1600,7 +1597,6 @@ use EzmaxApi::Object::CustomEzsigndocumentEzsignsignaturesAutomaticResponse;
 use EzmaxApi::Object::CustomEzsignfolderEzsignsignaturesAutomaticResponse;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationActionableElementResponse;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationmessageRequest;
-use EzmaxApi::Object::CustomEzsignfoldersignerassociationmineResponse;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationstatusResponse;
 use EzmaxApi::Object::CustomEzsignfoldertransmissionResponse;
 use EzmaxApi::Object::CustomEzsignfoldertransmissionSignerResponse;
@@ -1816,8 +1812,6 @@ use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1Response;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1Response;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload;
-use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1Response;
-use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1Response;
 use EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetFormsDataV1Response;
@@ -2621,7 +2615,6 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_communication_list_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_communication_list_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationList | Retrieve Communication list
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_ezsigndocuments_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_ezsigndocuments_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_ezsignfoldersignerassociations_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_ezsignfoldersignerassociations_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations | Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations
-*ObjectEzsignfolderApi* | [**ezsignfolder_get_ezsignfoldersignerassociationsmine_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_ezsignfoldersignerassociationsmine_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociationsmine | Retrieve your own Ezsignfoldersignerassociations from an existing Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_ezsignsignatures_automatic_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_ezsignsignatures_automatic_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignsignaturesAutomatic | Retrieve an existing Ezsignfolder&#39;s automatic Ezsignsignatures
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_forms_data_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_forms_data_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_list_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_list_v1) | **GET** /1/object/ezsignfolder/getList | Retrieve Ezsignfolder list
@@ -2976,7 +2969,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CustomEzsignfolderEzsignsignaturesAutomaticResponse](docs/CustomEzsignfolderEzsignsignaturesAutomaticResponse.md)
  - [EzmaxApi::Object::CustomEzsignfoldersignerassociationActionableElementResponse](docs/CustomEzsignfoldersignerassociationActionableElementResponse.md)
  - [EzmaxApi::Object::CustomEzsignfoldersignerassociationmessageRequest](docs/CustomEzsignfoldersignerassociationmessageRequest.md)
- - [EzmaxApi::Object::CustomEzsignfoldersignerassociationmineResponse](docs/CustomEzsignfoldersignerassociationmineResponse.md)
  - [EzmaxApi::Object::CustomEzsignfoldersignerassociationstatusResponse](docs/CustomEzsignfoldersignerassociationstatusResponse.md)
  - [EzmaxApi::Object::CustomEzsignfoldertransmissionResponse](docs/CustomEzsignfoldertransmissionResponse.md)
  - [EzmaxApi::Object::CustomEzsignfoldertransmissionSignerResponse](docs/CustomEzsignfoldertransmissionSignerResponse.md)
@@ -3192,8 +3184,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseMPayload](docs/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1Response](docs/EzsignfolderGetEzsignfoldersignerassociationsV1Response.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload](docs/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload.md)
- - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1Response](docs/EzsignfolderGetEzsignfoldersignerassociationsmineV1Response.md)
- - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseMPayload](docs/EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1Response](docs/EzsignfolderGetEzsignsignaturesAutomaticV1Response.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsignsignaturesAutomaticV1ResponseMPayload](docs/EzsignfolderGetEzsignsignaturesAutomaticV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetFormsDataV1Response](docs/EzsignfolderGetFormsDataV1Response.md)

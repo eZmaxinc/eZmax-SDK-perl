@@ -275,6 +275,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsigntemplateformfield_autocomplete' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplateformfieldAutocomplete',
+        description => 'Whether the Ezsigntemplateformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsigntemplateformfieldgroupType is **Text**',
+        format => '',
+        read_only => '',
+            },
     'b_ezsigntemplateformfield_selected' => {
         datatype => 'boolean',
         base_name => 'bEzsigntemplateformfieldSelected',
@@ -293,6 +300,7 @@ __PACKAGE__->openapi_types( {
     'i_ezsigntemplateformfield_y' => 'int',
     'i_ezsigntemplateformfield_width' => 'int',
     'i_ezsigntemplateformfield_height' => 'int',
+    'b_ezsigntemplateformfield_autocomplete' => 'boolean',
     'b_ezsigntemplateformfield_selected' => 'boolean'
 } );
 
@@ -305,6 +313,7 @@ __PACKAGE__->attribute_map( {
     'i_ezsigntemplateformfield_y' => 'iEzsigntemplateformfieldY',
     'i_ezsigntemplateformfield_width' => 'iEzsigntemplateformfieldWidth',
     'i_ezsigntemplateformfield_height' => 'iEzsigntemplateformfieldHeight',
+    'b_ezsigntemplateformfield_autocomplete' => 'bEzsigntemplateformfieldAutocomplete',
     'b_ezsigntemplateformfield_selected' => 'bEzsigntemplateformfieldSelected'
 } );
 
