@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **s_module_name_x** | **string** | The Name of the Module in the language of the requester | 
 **b_module_registered** | **boolean** | Whether the Module is registered or not | 
 **b_module_registeredapi** | **boolean** | Whether the Module is registered or not for api use | 
-**a_obj_modulesection** | [**ARRAY[ModulesectionResponseCompound]**](ModulesectionResponseCompound.md) |  | 
+**a_obj_modulesection** | [**ARRAY[ModulesectionResponseCompound]**](ModulesectionResponseCompound.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
