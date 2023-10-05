@@ -788,6 +788,9 @@ docs/GlobalEzmaxclientVersionV1Response.md
 docs/GlobalEzmaxcustomerApi.md
 docs/GlobalEzmaxcustomerGetConfigurationV1Response.md
 docs/HeaderAcceptLanguage.md
+docs/LanguageAutocompleteElementResponse.md
+docs/LanguageGetAutocompleteV2Response.md
+docs/LanguageGetAutocompleteV2ResponseMPayload.md
 docs/ModuleEzsignApi.md
 docs/ModuleReportApi.md
 docs/ModuleResponse.md
@@ -858,6 +861,7 @@ docs/ObjectFontApi.md
 docs/ObjectFranchisebrokerApi.md
 docs/ObjectFranchiseofficeApi.md
 docs/ObjectFranchisereferalincomeApi.md
+docs/ObjectLanguageApi.md
 docs/ObjectModulegroupApi.md
 docs/ObjectNotificationsectionApi.md
 docs/ObjectNotificationtestApi.md
@@ -1929,6 +1933,9 @@ lib/EzmaxApi/Object/GlobalCustomerGetEndpointV1Response.pm
 lib/EzmaxApi/Object/GlobalEzmaxclientVersionV1Response.pm
 lib/EzmaxApi/Object/GlobalEzmaxcustomerGetConfigurationV1Response.pm
 lib/EzmaxApi/Object/HeaderAcceptLanguage.pm
+lib/EzmaxApi/Object/LanguageAutocompleteElementResponse.pm
+lib/EzmaxApi/Object/LanguageGetAutocompleteV2Response.pm
+lib/EzmaxApi/Object/LanguageGetAutocompleteV2ResponseMPayload.pm
 lib/EzmaxApi/Object/ModuleResponse.pm
 lib/EzmaxApi/Object/ModuleResponseCompound.pm
 lib/EzmaxApi/Object/ModulegroupGetAllV1Response.pm
@@ -2250,6 +2257,7 @@ lib/EzmaxApi/ObjectFontApi.pm
 lib/EzmaxApi/ObjectFranchisebrokerApi.pm
 lib/EzmaxApi/ObjectFranchiseofficeApi.pm
 lib/EzmaxApi/ObjectFranchisereferalincomeApi.pm
+lib/EzmaxApi/ObjectLanguageApi.pm
 lib/EzmaxApi/ObjectModulegroupApi.pm
 lib/EzmaxApi/ObjectNotificationsectionApi.pm
 lib/EzmaxApi/ObjectNotificationtestApi.pm
@@ -3062,6 +3070,9 @@ t/GlobalEzmaxclientVersionV1ResponseTest.t
 t/GlobalEzmaxcustomerApiTest.t
 t/GlobalEzmaxcustomerGetConfigurationV1ResponseTest.t
 t/HeaderAcceptLanguageTest.t
+t/LanguageAutocompleteElementResponseTest.t
+t/LanguageGetAutocompleteV2ResponseMPayloadTest.t
+t/LanguageGetAutocompleteV2ResponseTest.t
 t/ModuleEzsignApiTest.t
 t/ModuleReportApiTest.t
 t/ModuleResponseCompoundTest.t
@@ -3132,6 +3143,7 @@ t/ObjectFontApiTest.t
 t/ObjectFranchisebrokerApiTest.t
 t/ObjectFranchiseofficeApiTest.t
 t/ObjectFranchisereferalincomeApiTest.t
+t/ObjectLanguageApiTest.t
 t/ObjectModulegroupApiTest.t
 t/ObjectNotificationsectionApiTest.t
 t/ObjectNotificationtestApiTest.t
