@@ -30,6 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EzsignelementdependencyResponseCompound;
+use EzmaxApi::Object::FieldEEzsignformfieldDependencyrequirement;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -296,6 +298,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignformfield_dependencyrequirement' => {
+        datatype => 'FieldEEzsignformfieldDependencyrequirement',
+        base_name => 'eEzsignformfieldDependencyrequirement',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_ezsignelementdependency' => {
+        datatype => 'ARRAY[EzsignelementdependencyResponseCompound]',
+        base_name => 'a_objEzsignelementdependency',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -309,7 +325,9 @@ __PACKAGE__->openapi_types( {
     'i_ezsignformfield_height' => 'int',
     'b_ezsignformfield_autocomplete' => 'boolean',
     'b_ezsignformfield_selected' => 'boolean',
-    's_ezsignformfield_enteredvalue' => 'string'
+    's_ezsignformfield_enteredvalue' => 'string',
+    'e_ezsignformfield_dependencyrequirement' => 'FieldEEzsignformfieldDependencyrequirement',
+    'a_obj_ezsignelementdependency' => 'ARRAY[EzsignelementdependencyResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -323,7 +341,9 @@ __PACKAGE__->attribute_map( {
     'i_ezsignformfield_height' => 'iEzsignformfieldHeight',
     'b_ezsignformfield_autocomplete' => 'bEzsignformfieldAutocomplete',
     'b_ezsignformfield_selected' => 'bEzsignformfieldSelected',
-    's_ezsignformfield_enteredvalue' => 'sEzsignformfieldEnteredvalue'
+    's_ezsignformfield_enteredvalue' => 'sEzsignformfieldEnteredvalue',
+    'e_ezsignformfield_dependencyrequirement' => 'eEzsignformfieldDependencyrequirement',
+    'a_obj_ezsignelementdependency' => 'a_objEzsignelementdependency'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

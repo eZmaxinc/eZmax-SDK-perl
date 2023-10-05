@@ -31,8 +31,10 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::EnumTextvalidation;
+use EzmaxApi::Object::EzsigntemplateelementdependencyResponseCompound;
 use EzmaxApi::Object::EzsigntemplatesignaturecustomdateResponseCompound;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureAttachmentnamesource;
+use EzmaxApi::Object::FieldEEzsigntemplatesignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureFont;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureType;
@@ -372,6 +374,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsigntemplatesignature_dependencyrequirement' => {
+        datatype => 'FieldEEzsigntemplatesignatureDependencyrequirement',
+        base_name => 'eEzsigntemplatesignatureDependencyrequirement',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'b_ezsigntemplatesignature_customdate' => {
         datatype => 'boolean',
         base_name => 'bEzsigntemplatesignatureCustomdate',
@@ -383,6 +392,13 @@ __PACKAGE__->method_documentation({
         datatype => 'ARRAY[EzsigntemplatesignaturecustomdateResponseCompound]',
         base_name => 'a_objEzsigntemplatesignaturecustomdate',
         description => 'An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsigntemplatesignatureCustomdate is true.  Use an empty array if you don&#39;t want to have a date at all.',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_ezsigntemplateelementdependency' => {
+        datatype => 'ARRAY[EzsigntemplateelementdependencyResponseCompound]',
+        base_name => 'a_objEzsigntemplateelementdependency',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -410,8 +426,10 @@ __PACKAGE__->openapi_types( {
     'i_ezsigntemplatesignature_maxlength' => 'int',
     's_ezsigntemplatesignature_regexp' => 'string',
     'e_ezsigntemplatesignature_textvalidation' => 'EnumTextvalidation',
+    'e_ezsigntemplatesignature_dependencyrequirement' => 'FieldEEzsigntemplatesignatureDependencyrequirement',
     'b_ezsigntemplatesignature_customdate' => 'boolean',
-    'a_obj_ezsigntemplatesignaturecustomdate' => 'ARRAY[EzsigntemplatesignaturecustomdateResponseCompound]'
+    'a_obj_ezsigntemplatesignaturecustomdate' => 'ARRAY[EzsigntemplatesignaturecustomdateResponseCompound]',
+    'a_obj_ezsigntemplateelementdependency' => 'ARRAY[EzsigntemplateelementdependencyResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -436,8 +454,10 @@ __PACKAGE__->attribute_map( {
     'i_ezsigntemplatesignature_maxlength' => 'iEzsigntemplatesignatureMaxlength',
     's_ezsigntemplatesignature_regexp' => 'sEzsigntemplatesignatureRegexp',
     'e_ezsigntemplatesignature_textvalidation' => 'eEzsigntemplatesignatureTextvalidation',
+    'e_ezsigntemplatesignature_dependencyrequirement' => 'eEzsigntemplatesignatureDependencyrequirement',
     'b_ezsigntemplatesignature_customdate' => 'bEzsigntemplatesignatureCustomdate',
-    'a_obj_ezsigntemplatesignaturecustomdate' => 'a_objEzsigntemplatesignaturecustomdate'
+    'a_obj_ezsigntemplatesignaturecustomdate' => 'a_objEzsigntemplatesignaturecustomdate',
+    'a_obj_ezsigntemplateelementdependency' => 'a_objEzsigntemplateelementdependency'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

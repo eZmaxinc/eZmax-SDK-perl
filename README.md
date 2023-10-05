@@ -657,6 +657,10 @@ use EzmaxApi::Object::EzsigndocumentSubmitEzsignformV1Response;
 use EzmaxApi::Object::EzsigndocumentUnsendV1Response;
 use EzmaxApi::Object::EzsigndocumentlogResponse;
 use EzmaxApi::Object::EzsigndocumentlogResponseCompound;
+use EzmaxApi::Object::EzsignelementdependencyRequest;
+use EzmaxApi::Object::EzsignelementdependencyRequestCompound;
+use EzmaxApi::Object::EzsignelementdependencyResponse;
+use EzmaxApi::Object::EzsignelementdependencyResponseCompound;
 use EzmaxApi::Object::EzsignfolderArchiveV1Response;
 use EzmaxApi::Object::EzsignfolderBatchDownloadV1Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Request;
@@ -888,6 +892,10 @@ use EzmaxApi::Object::EzsigntemplatedocumentResponse;
 use EzmaxApi::Object::EzsigntemplatedocumentResponseCompound;
 use EzmaxApi::Object::EzsigntemplatedocumentpageResponse;
 use EzmaxApi::Object::EzsigntemplatedocumentpageResponseCompound;
+use EzmaxApi::Object::EzsigntemplateelementdependencyRequest;
+use EzmaxApi::Object::EzsigntemplateelementdependencyRequestCompound;
+use EzmaxApi::Object::EzsigntemplateelementdependencyResponse;
+use EzmaxApi::Object::EzsigntemplateelementdependencyResponseCompound;
 use EzmaxApi::Object::EzsigntemplateformfieldRequest;
 use EzmaxApi::Object::EzsigntemplateformfieldRequestCompound;
 use EzmaxApi::Object::EzsigntemplateformfieldResponse;
@@ -1013,22 +1021,30 @@ use EzmaxApi::Object::FieldEEzmaxinvoicinguserVariationezsign;
 use EzmaxApi::Object::FieldEEzsignannotationType;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 use EzmaxApi::Object::FieldEEzsigndocumentlogType;
+use EzmaxApi::Object::FieldEEzsignelementdependencyOperator;
+use EzmaxApi::Object::FieldEEzsignelementdependencyValidation;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 use EzmaxApi::Object::FieldEEzsignfoldertypeDisposal;
 use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
 use EzmaxApi::Object::FieldEEzsignfoldertypeSendreminderfrequency;
+use EzmaxApi::Object::FieldEEzsignformfieldDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsignformfieldgroupSignerrequirement;
 use EzmaxApi::Object::FieldEEzsignformfieldgroupTooltipposition;
 use EzmaxApi::Object::FieldEEzsignformfieldgroupType;
 use EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource;
+use EzmaxApi::Object::FieldEEzsignsignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsignsignatureFont;
 use EzmaxApi::Object::FieldEEzsignsignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
+use EzmaxApi::Object::FieldEEzsigntemplateelementdependencyOperator;
+use EzmaxApi::Object::FieldEEzsigntemplateelementdependencyValidation;
+use EzmaxApi::Object::FieldEEzsigntemplateformfieldDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldgroupSignerrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldgroupTooltipposition;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldgroupType;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureAttachmentnamesource;
+use EzmaxApi::Object::FieldEEzsigntemplatesignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureFont;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureType;
@@ -1788,6 +1804,10 @@ use EzmaxApi::Object::EzsigndocumentSubmitEzsignformV1Response;
 use EzmaxApi::Object::EzsigndocumentUnsendV1Response;
 use EzmaxApi::Object::EzsigndocumentlogResponse;
 use EzmaxApi::Object::EzsigndocumentlogResponseCompound;
+use EzmaxApi::Object::EzsignelementdependencyRequest;
+use EzmaxApi::Object::EzsignelementdependencyRequestCompound;
+use EzmaxApi::Object::EzsignelementdependencyResponse;
+use EzmaxApi::Object::EzsignelementdependencyResponseCompound;
 use EzmaxApi::Object::EzsignfolderArchiveV1Response;
 use EzmaxApi::Object::EzsignfolderBatchDownloadV1Request;
 use EzmaxApi::Object::EzsignfolderCreateObjectV1Request;
@@ -2019,6 +2039,10 @@ use EzmaxApi::Object::EzsigntemplatedocumentResponse;
 use EzmaxApi::Object::EzsigntemplatedocumentResponseCompound;
 use EzmaxApi::Object::EzsigntemplatedocumentpageResponse;
 use EzmaxApi::Object::EzsigntemplatedocumentpageResponseCompound;
+use EzmaxApi::Object::EzsigntemplateelementdependencyRequest;
+use EzmaxApi::Object::EzsigntemplateelementdependencyRequestCompound;
+use EzmaxApi::Object::EzsigntemplateelementdependencyResponse;
+use EzmaxApi::Object::EzsigntemplateelementdependencyResponseCompound;
 use EzmaxApi::Object::EzsigntemplateformfieldRequest;
 use EzmaxApi::Object::EzsigntemplateformfieldRequestCompound;
 use EzmaxApi::Object::EzsigntemplateformfieldResponse;
@@ -2144,22 +2168,30 @@ use EzmaxApi::Object::FieldEEzmaxinvoicinguserVariationezsign;
 use EzmaxApi::Object::FieldEEzsignannotationType;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 use EzmaxApi::Object::FieldEEzsigndocumentlogType;
+use EzmaxApi::Object::FieldEEzsignelementdependencyOperator;
+use EzmaxApi::Object::FieldEEzsignelementdependencyValidation;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 use EzmaxApi::Object::FieldEEzsignfoldertypeDisposal;
 use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
 use EzmaxApi::Object::FieldEEzsignfoldertypeSendreminderfrequency;
+use EzmaxApi::Object::FieldEEzsignformfieldDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsignformfieldgroupSignerrequirement;
 use EzmaxApi::Object::FieldEEzsignformfieldgroupTooltipposition;
 use EzmaxApi::Object::FieldEEzsignformfieldgroupType;
 use EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource;
+use EzmaxApi::Object::FieldEEzsignsignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsignsignatureFont;
 use EzmaxApi::Object::FieldEEzsignsignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
+use EzmaxApi::Object::FieldEEzsigntemplateelementdependencyOperator;
+use EzmaxApi::Object::FieldEEzsigntemplateelementdependencyValidation;
+use EzmaxApi::Object::FieldEEzsigntemplateformfieldDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldgroupSignerrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldgroupTooltipposition;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldgroupType;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureAttachmentnamesource;
+use EzmaxApi::Object::FieldEEzsigntemplatesignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureFont;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureType;
@@ -3160,6 +3192,10 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigndocumentUnsendV1Response](docs/EzsigndocumentUnsendV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentlogResponse](docs/EzsigndocumentlogResponse.md)
  - [EzmaxApi::Object::EzsigndocumentlogResponseCompound](docs/EzsigndocumentlogResponseCompound.md)
+ - [EzmaxApi::Object::EzsignelementdependencyRequest](docs/EzsignelementdependencyRequest.md)
+ - [EzmaxApi::Object::EzsignelementdependencyRequestCompound](docs/EzsignelementdependencyRequestCompound.md)
+ - [EzmaxApi::Object::EzsignelementdependencyResponse](docs/EzsignelementdependencyResponse.md)
+ - [EzmaxApi::Object::EzsignelementdependencyResponseCompound](docs/EzsignelementdependencyResponseCompound.md)
  - [EzmaxApi::Object::EzsignfolderArchiveV1Response](docs/EzsignfolderArchiveV1Response.md)
  - [EzmaxApi::Object::EzsignfolderBatchDownloadV1Request](docs/EzsignfolderBatchDownloadV1Request.md)
  - [EzmaxApi::Object::EzsignfolderCreateObjectV1Request](docs/EzsignfolderCreateObjectV1Request.md)
@@ -3391,6 +3427,10 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigntemplatedocumentResponseCompound](docs/EzsigntemplatedocumentResponseCompound.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentpageResponse](docs/EzsigntemplatedocumentpageResponse.md)
  - [EzmaxApi::Object::EzsigntemplatedocumentpageResponseCompound](docs/EzsigntemplatedocumentpageResponseCompound.md)
+ - [EzmaxApi::Object::EzsigntemplateelementdependencyRequest](docs/EzsigntemplateelementdependencyRequest.md)
+ - [EzmaxApi::Object::EzsigntemplateelementdependencyRequestCompound](docs/EzsigntemplateelementdependencyRequestCompound.md)
+ - [EzmaxApi::Object::EzsigntemplateelementdependencyResponse](docs/EzsigntemplateelementdependencyResponse.md)
+ - [EzmaxApi::Object::EzsigntemplateelementdependencyResponseCompound](docs/EzsigntemplateelementdependencyResponseCompound.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldRequest](docs/EzsigntemplateformfieldRequest.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldRequestCompound](docs/EzsigntemplateformfieldRequestCompound.md)
  - [EzmaxApi::Object::EzsigntemplateformfieldResponse](docs/EzsigntemplateformfieldResponse.md)
@@ -3516,22 +3556,30 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::FieldEEzsignannotationType](docs/FieldEEzsignannotationType.md)
  - [EzmaxApi::Object::FieldEEzsigndocumentStep](docs/FieldEEzsigndocumentStep.md)
  - [EzmaxApi::Object::FieldEEzsigndocumentlogType](docs/FieldEEzsigndocumentlogType.md)
+ - [EzmaxApi::Object::FieldEEzsignelementdependencyOperator](docs/FieldEEzsignelementdependencyOperator.md)
+ - [EzmaxApi::Object::FieldEEzsignelementdependencyValidation](docs/FieldEEzsignelementdependencyValidation.md)
  - [EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency](docs/FieldEEzsignfolderSendreminderfrequency.md)
  - [EzmaxApi::Object::FieldEEzsignfolderStep](docs/FieldEEzsignfolderStep.md)
  - [EzmaxApi::Object::FieldEEzsignfoldertypeDisposal](docs/FieldEEzsignfoldertypeDisposal.md)
  - [EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel](docs/FieldEEzsignfoldertypePrivacylevel.md)
  - [EzmaxApi::Object::FieldEEzsignfoldertypeSendreminderfrequency](docs/FieldEEzsignfoldertypeSendreminderfrequency.md)
+ - [EzmaxApi::Object::FieldEEzsignformfieldDependencyrequirement](docs/FieldEEzsignformfieldDependencyrequirement.md)
  - [EzmaxApi::Object::FieldEEzsignformfieldgroupSignerrequirement](docs/FieldEEzsignformfieldgroupSignerrequirement.md)
  - [EzmaxApi::Object::FieldEEzsignformfieldgroupTooltipposition](docs/FieldEEzsignformfieldgroupTooltipposition.md)
  - [EzmaxApi::Object::FieldEEzsignformfieldgroupType](docs/FieldEEzsignformfieldgroupType.md)
  - [EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource](docs/FieldEEzsignsignatureAttachmentnamesource.md)
+ - [EzmaxApi::Object::FieldEEzsignsignatureDependencyrequirement](docs/FieldEEzsignsignatureDependencyrequirement.md)
  - [EzmaxApi::Object::FieldEEzsignsignatureFont](docs/FieldEEzsignsignatureFont.md)
  - [EzmaxApi::Object::FieldEEzsignsignatureTooltipposition](docs/FieldEEzsignsignatureTooltipposition.md)
  - [EzmaxApi::Object::FieldEEzsignsignatureType](docs/FieldEEzsignsignatureType.md)
+ - [EzmaxApi::Object::FieldEEzsigntemplateelementdependencyOperator](docs/FieldEEzsigntemplateelementdependencyOperator.md)
+ - [EzmaxApi::Object::FieldEEzsigntemplateelementdependencyValidation](docs/FieldEEzsigntemplateelementdependencyValidation.md)
+ - [EzmaxApi::Object::FieldEEzsigntemplateformfieldDependencyrequirement](docs/FieldEEzsigntemplateformfieldDependencyrequirement.md)
  - [EzmaxApi::Object::FieldEEzsigntemplateformfieldgroupSignerrequirement](docs/FieldEEzsigntemplateformfieldgroupSignerrequirement.md)
  - [EzmaxApi::Object::FieldEEzsigntemplateformfieldgroupTooltipposition](docs/FieldEEzsigntemplateformfieldgroupTooltipposition.md)
  - [EzmaxApi::Object::FieldEEzsigntemplateformfieldgroupType](docs/FieldEEzsigntemplateformfieldgroupType.md)
  - [EzmaxApi::Object::FieldEEzsigntemplatesignatureAttachmentnamesource](docs/FieldEEzsigntemplatesignatureAttachmentnamesource.md)
+ - [EzmaxApi::Object::FieldEEzsigntemplatesignatureDependencyrequirement](docs/FieldEEzsigntemplatesignatureDependencyrequirement.md)
  - [EzmaxApi::Object::FieldEEzsigntemplatesignatureFont](docs/FieldEEzsigntemplatesignatureFont.md)
  - [EzmaxApi::Object::FieldEEzsigntemplatesignatureTooltipposition](docs/FieldEEzsigntemplatesignatureTooltipposition.md)
  - [EzmaxApi::Object::FieldEEzsigntemplatesignatureType](docs/FieldEEzsigntemplatesignatureType.md)

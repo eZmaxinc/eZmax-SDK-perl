@@ -33,6 +33,7 @@ use DateTime;
 use EzmaxApi::Object::CustomContactNameResponse;
 use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource;
+use EzmaxApi::Object::FieldEEzsignsignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsignsignatureFont;
 use EzmaxApi::Object::FieldEEzsignsignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
@@ -387,6 +388,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignsignature_dependencyrequirement' => {
+        datatype => 'FieldEEzsignsignatureDependencyrequirement',
+        base_name => 'eEzsignsignatureDependencyrequirement',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     's_ezsignsignature_regexp' => {
         datatype => 'string',
         base_name => 'sEzsignsignatureRegexp',
@@ -441,6 +449,7 @@ __PACKAGE__->openapi_types( {
     's_ezsignsignature_description' => 'string',
     'i_ezsignsignature_maxlength' => 'int',
     'e_ezsignsignature_textvalidation' => 'EnumTextvalidation',
+    'e_ezsignsignature_dependencyrequirement' => 'FieldEEzsignsignatureDependencyrequirement',
     's_ezsignsignature_regexp' => 'string',
     'obj_contact_name' => 'CustomContactNameResponse',
     'obj_contact_name_delegation' => 'CustomContactNameResponse',
@@ -471,6 +480,7 @@ __PACKAGE__->attribute_map( {
     's_ezsignsignature_description' => 'sEzsignsignatureDescription',
     'i_ezsignsignature_maxlength' => 'iEzsignsignatureMaxlength',
     'e_ezsignsignature_textvalidation' => 'eEzsignsignatureTextvalidation',
+    'e_ezsignsignature_dependencyrequirement' => 'eEzsignsignatureDependencyrequirement',
     's_ezsignsignature_regexp' => 'sEzsignsignatureRegexp',
     'obj_contact_name' => 'objContactName',
     'obj_contact_name_delegation' => 'objContactNameDelegation',

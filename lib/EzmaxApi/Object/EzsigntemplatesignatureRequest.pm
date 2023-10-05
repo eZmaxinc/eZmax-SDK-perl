@@ -32,6 +32,7 @@ use DateTime;
 
 use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureAttachmentnamesource;
+use EzmaxApi::Object::FieldEEzsigntemplatesignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureFont;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureType;
@@ -371,6 +372,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsigntemplatesignature_dependencyrequirement' => {
+        datatype => 'FieldEEzsigntemplatesignatureDependencyrequirement',
+        base_name => 'eEzsigntemplatesignatureDependencyrequirement',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -394,7 +402,8 @@ __PACKAGE__->openapi_types( {
     'i_ezsigntemplatesignature_validationstep' => 'int',
     'i_ezsigntemplatesignature_maxlength' => 'int',
     's_ezsigntemplatesignature_regexp' => 'string',
-    'e_ezsigntemplatesignature_textvalidation' => 'EnumTextvalidation'
+    'e_ezsigntemplatesignature_textvalidation' => 'EnumTextvalidation',
+    'e_ezsigntemplatesignature_dependencyrequirement' => 'FieldEEzsigntemplatesignatureDependencyrequirement'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -418,7 +427,8 @@ __PACKAGE__->attribute_map( {
     'i_ezsigntemplatesignature_validationstep' => 'iEzsigntemplatesignatureValidationstep',
     'i_ezsigntemplatesignature_maxlength' => 'iEzsigntemplatesignatureMaxlength',
     's_ezsigntemplatesignature_regexp' => 'sEzsigntemplatesignatureRegexp',
-    'e_ezsigntemplatesignature_textvalidation' => 'eEzsigntemplatesignatureTextvalidation'
+    'e_ezsigntemplatesignature_textvalidation' => 'eEzsigntemplatesignatureTextvalidation',
+    'e_ezsigntemplatesignature_dependencyrequirement' => 'eEzsigntemplatesignatureDependencyrequirement'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

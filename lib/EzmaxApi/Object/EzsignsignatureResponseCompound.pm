@@ -33,8 +33,10 @@ use DateTime;
 use EzmaxApi::Object::CustomContactNameResponse;
 use EzmaxApi::Object::CustomCreditcardtransactionResponse;
 use EzmaxApi::Object::EnumTextvalidation;
+use EzmaxApi::Object::EzsignelementdependencyResponseCompound;
 use EzmaxApi::Object::EzsignsignaturecustomdateResponseCompound;
 use EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource;
+use EzmaxApi::Object::FieldEEzsignsignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsignsignatureFont;
 use EzmaxApi::Object::FieldEEzsignsignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
@@ -389,6 +391,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignsignature_dependencyrequirement' => {
+        datatype => 'FieldEEzsignsignatureDependencyrequirement',
+        base_name => 'eEzsignsignatureDependencyrequirement',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     's_ezsignsignature_regexp' => {
         datatype => 'string',
         base_name => 'sEzsignsignatureRegexp',
@@ -438,6 +447,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_ezsignelementdependency' => {
+        datatype => 'ARRAY[EzsignelementdependencyResponseCompound]',
+        base_name => 'a_objEzsignelementdependency',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -464,13 +480,15 @@ __PACKAGE__->openapi_types( {
     's_ezsignsignature_description' => 'string',
     'i_ezsignsignature_maxlength' => 'int',
     'e_ezsignsignature_textvalidation' => 'EnumTextvalidation',
+    'e_ezsignsignature_dependencyrequirement' => 'FieldEEzsignsignatureDependencyrequirement',
     's_ezsignsignature_regexp' => 'string',
     'obj_contact_name' => 'CustomContactNameResponse',
     'obj_contact_name_delegation' => 'CustomContactNameResponse',
     'obj_signature' => 'SignatureResponseCompound',
     'b_ezsignsignature_customdate' => 'boolean',
     'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateResponseCompound]',
-    'obj_creditcardtransaction' => 'CustomCreditcardtransactionResponse'
+    'obj_creditcardtransaction' => 'CustomCreditcardtransactionResponse',
+    'a_obj_ezsignelementdependency' => 'ARRAY[EzsignelementdependencyResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -497,13 +515,15 @@ __PACKAGE__->attribute_map( {
     's_ezsignsignature_description' => 'sEzsignsignatureDescription',
     'i_ezsignsignature_maxlength' => 'iEzsignsignatureMaxlength',
     'e_ezsignsignature_textvalidation' => 'eEzsignsignatureTextvalidation',
+    'e_ezsignsignature_dependencyrequirement' => 'eEzsignsignatureDependencyrequirement',
     's_ezsignsignature_regexp' => 'sEzsignsignatureRegexp',
     'obj_contact_name' => 'objContactName',
     'obj_contact_name_delegation' => 'objContactNameDelegation',
     'obj_signature' => 'objSignature',
     'b_ezsignsignature_customdate' => 'bEzsignsignatureCustomdate',
     'a_obj_ezsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate',
-    'obj_creditcardtransaction' => 'objCreditcardtransaction'
+    'obj_creditcardtransaction' => 'objCreditcardtransaction',
+    'a_obj_ezsignelementdependency' => 'a_objEzsignelementdependency'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

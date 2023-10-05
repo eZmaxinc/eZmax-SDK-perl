@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldEEzsigntemplateformfieldDependencyrequirement;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -289,6 +290,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsigntemplateformfield_dependencyrequirement' => {
+        datatype => 'FieldEEzsigntemplateformfieldDependencyrequirement',
+        base_name => 'eEzsigntemplateformfieldDependencyrequirement',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -301,7 +309,8 @@ __PACKAGE__->openapi_types( {
     'i_ezsigntemplateformfield_width' => 'int',
     'i_ezsigntemplateformfield_height' => 'int',
     'b_ezsigntemplateformfield_autocomplete' => 'boolean',
-    'b_ezsigntemplateformfield_selected' => 'boolean'
+    'b_ezsigntemplateformfield_selected' => 'boolean',
+    'e_ezsigntemplateformfield_dependencyrequirement' => 'FieldEEzsigntemplateformfieldDependencyrequirement'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -314,7 +323,8 @@ __PACKAGE__->attribute_map( {
     'i_ezsigntemplateformfield_width' => 'iEzsigntemplateformfieldWidth',
     'i_ezsigntemplateformfield_height' => 'iEzsigntemplateformfieldHeight',
     'b_ezsigntemplateformfield_autocomplete' => 'bEzsigntemplateformfieldAutocomplete',
-    'b_ezsigntemplateformfield_selected' => 'bEzsigntemplateformfieldSelected'
+    'b_ezsigntemplateformfield_selected' => 'bEzsigntemplateformfieldSelected',
+    'e_ezsigntemplateformfield_dependencyrequirement' => 'eEzsigntemplateformfieldDependencyrequirement'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
