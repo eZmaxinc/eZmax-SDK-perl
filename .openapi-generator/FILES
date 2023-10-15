@@ -880,6 +880,7 @@ docs/ObjectUserApi.md
 docs/ObjectUsergroupApi.md
 docs/ObjectUsergroupdelegationApi.md
 docs/ObjectUsergroupmembershipApi.md
+docs/ObjectUserlogintypeApi.md
 docs/ObjectUserstagedApi.md
 docs/ObjectVariableexpenseApi.md
 docs/ObjectVersionhistoryApi.md
@@ -1075,6 +1076,9 @@ docs/UsergroupmembershipRequest.md
 docs/UsergroupmembershipRequestCompound.md
 docs/UsergroupmembershipResponse.md
 docs/UsergroupmembershipResponseCompound.md
+docs/UserlogintypeAutocompleteElementResponse.md
+docs/UserlogintypeGetAutocompleteV2Response.md
+docs/UserlogintypeGetAutocompleteV2ResponseMPayload.md
 docs/UserstagedCreateUserV1Response.md
 docs/UserstagedCreateUserV1ResponseMPayload.md
 docs/UserstagedDeleteObjectV1Response.md
@@ -2151,6 +2155,9 @@ lib/EzmaxApi/Object/UsergroupmembershipRequest.pm
 lib/EzmaxApi/Object/UsergroupmembershipRequestCompound.pm
 lib/EzmaxApi/Object/UsergroupmembershipResponse.pm
 lib/EzmaxApi/Object/UsergroupmembershipResponseCompound.pm
+lib/EzmaxApi/Object/UserlogintypeAutocompleteElementResponse.pm
+lib/EzmaxApi/Object/UserlogintypeGetAutocompleteV2Response.pm
+lib/EzmaxApi/Object/UserlogintypeGetAutocompleteV2ResponseMPayload.pm
 lib/EzmaxApi/Object/UserstagedCreateUserV1Response.pm
 lib/EzmaxApi/Object/UserstagedCreateUserV1ResponseMPayload.pm
 lib/EzmaxApi/Object/UserstagedDeleteObjectV1Response.pm
@@ -2276,6 +2283,7 @@ lib/EzmaxApi/ObjectUserApi.pm
 lib/EzmaxApi/ObjectUsergroupApi.pm
 lib/EzmaxApi/ObjectUsergroupdelegationApi.pm
 lib/EzmaxApi/ObjectUsergroupmembershipApi.pm
+lib/EzmaxApi/ObjectUserlogintypeApi.pm
 lib/EzmaxApi/ObjectUserstagedApi.pm
 lib/EzmaxApi/ObjectVariableexpenseApi.pm
 lib/EzmaxApi/ObjectVersionhistoryApi.pm
@@ -3162,6 +3170,7 @@ t/ObjectUserApiTest.t
 t/ObjectUsergroupApiTest.t
 t/ObjectUsergroupdelegationApiTest.t
 t/ObjectUsergroupmembershipApiTest.t
+t/ObjectUserlogintypeApiTest.t
 t/ObjectUserstagedApiTest.t
 t/ObjectVariableexpenseApiTest.t
 t/ObjectVersionhistoryApiTest.t
@@ -3357,6 +3366,9 @@ t/UsergroupmembershipRequestCompoundTest.t
 t/UsergroupmembershipRequestTest.t
 t/UsergroupmembershipResponseCompoundTest.t
 t/UsergroupmembershipResponseTest.t
+t/UserlogintypeAutocompleteElementResponseTest.t
+t/UserlogintypeGetAutocompleteV2ResponseMPayloadTest.t
+t/UserlogintypeGetAutocompleteV2ResponseTest.t
 t/UserstagedCreateUserV1ResponseMPayloadTest.t
 t/UserstagedCreateUserV1ResponseTest.t
 t/UserstagedDeleteObjectV1ResponseTest.t

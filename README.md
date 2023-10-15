@@ -296,6 +296,7 @@ use EzmaxApi::ObjectUserApi;
 use EzmaxApi::ObjectUsergroupApi;
 use EzmaxApi::ObjectUsergroupdelegationApi;
 use EzmaxApi::ObjectUsergroupmembershipApi;
+use EzmaxApi::ObjectUserlogintypeApi;
 use EzmaxApi::ObjectUserstagedApi;
 use EzmaxApi::ObjectVariableexpenseApi;
 use EzmaxApi::ObjectVersionhistoryApi;
@@ -1308,6 +1309,9 @@ use EzmaxApi::Object::UsergroupmembershipRequest;
 use EzmaxApi::Object::UsergroupmembershipRequestCompound;
 use EzmaxApi::Object::UsergroupmembershipResponse;
 use EzmaxApi::Object::UsergroupmembershipResponseCompound;
+use EzmaxApi::Object::UserlogintypeAutocompleteElementResponse;
+use EzmaxApi::Object::UserlogintypeGetAutocompleteV2Response;
+use EzmaxApi::Object::UserlogintypeGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::UserstagedCreateUserV1Response;
 use EzmaxApi::Object::UserstagedCreateUserV1ResponseMPayload;
 use EzmaxApi::Object::UserstagedDeleteObjectV1Response;
@@ -1450,6 +1454,7 @@ use EzmaxApi::ObjectUserApi;
 use EzmaxApi::ObjectUsergroupApi;
 use EzmaxApi::ObjectUsergroupdelegationApi;
 use EzmaxApi::ObjectUsergroupmembershipApi;
+use EzmaxApi::ObjectUserlogintypeApi;
 use EzmaxApi::ObjectUserstagedApi;
 use EzmaxApi::ObjectVariableexpenseApi;
 use EzmaxApi::ObjectVersionhistoryApi;
@@ -2459,6 +2464,9 @@ use EzmaxApi::Object::UsergroupmembershipRequest;
 use EzmaxApi::Object::UsergroupmembershipRequestCompound;
 use EzmaxApi::Object::UsergroupmembershipResponse;
 use EzmaxApi::Object::UsergroupmembershipResponseCompound;
+use EzmaxApi::Object::UserlogintypeAutocompleteElementResponse;
+use EzmaxApi::Object::UserlogintypeGetAutocompleteV2Response;
+use EzmaxApi::Object::UserlogintypeGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::UserstagedCreateUserV1Response;
 use EzmaxApi::Object::UserstagedCreateUserV1ResponseMPayload;
 use EzmaxApi::Object::UserstagedDeleteObjectV1Response;
@@ -2819,6 +2827,7 @@ Class | Method | HTTP request | Description
 *ObjectUsergroupmembershipApi* | [**usergroupmembership_delete_object_v1**](docs/ObjectUsergroupmembershipApi.md#usergroupmembership_delete_object_v1) | **DELETE** /1/object/usergroupmembership/{pkiUsergroupmembershipID} | Delete an existing Usergroupmembership
 *ObjectUsergroupmembershipApi* | [**usergroupmembership_edit_object_v1**](docs/ObjectUsergroupmembershipApi.md#usergroupmembership_edit_object_v1) | **PUT** /1/object/usergroupmembership/{pkiUsergroupmembershipID} | Edit an existing Usergroupmembership
 *ObjectUsergroupmembershipApi* | [**usergroupmembership_get_object_v2**](docs/ObjectUsergroupmembershipApi.md#usergroupmembership_get_object_v2) | **GET** /2/object/usergroupmembership/{pkiUsergroupmembershipID} | Retrieve an existing Usergroupmembership
+*ObjectUserlogintypeApi* | [**userlogintype_get_autocomplete_v2**](docs/ObjectUserlogintypeApi.md#userlogintype_get_autocomplete_v2) | **GET** /2/object/userlogintype/getAutocomplete/{sSelector} | Retrieve Userlogintypes and IDs
 *ObjectUserstagedApi* | [**userstaged_create_user_v1**](docs/ObjectUserstagedApi.md#userstaged_create_user_v1) | **POST** /1/object/userstaged/{pkiUserstagedID}/createUser | Create a User from a Userstaged and then map it
 *ObjectUserstagedApi* | [**userstaged_delete_object_v1**](docs/ObjectUserstagedApi.md#userstaged_delete_object_v1) | **DELETE** /1/object/userstaged/{pkiUserstagedID} | Delete an existing Userstaged
 *ObjectUserstagedApi* | [**userstaged_get_list_v1**](docs/ObjectUserstagedApi.md#userstaged_get_list_v1) | **GET** /1/object/userstaged/getList | Retrieve Userstaged list
@@ -3851,6 +3860,9 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::UsergroupmembershipRequestCompound](docs/UsergroupmembershipRequestCompound.md)
  - [EzmaxApi::Object::UsergroupmembershipResponse](docs/UsergroupmembershipResponse.md)
  - [EzmaxApi::Object::UsergroupmembershipResponseCompound](docs/UsergroupmembershipResponseCompound.md)
+ - [EzmaxApi::Object::UserlogintypeAutocompleteElementResponse](docs/UserlogintypeAutocompleteElementResponse.md)
+ - [EzmaxApi::Object::UserlogintypeGetAutocompleteV2Response](docs/UserlogintypeGetAutocompleteV2Response.md)
+ - [EzmaxApi::Object::UserlogintypeGetAutocompleteV2ResponseMPayload](docs/UserlogintypeGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::UserstagedCreateUserV1Response](docs/UserstagedCreateUserV1Response.md)
  - [EzmaxApi::Object::UserstagedCreateUserV1ResponseMPayload](docs/UserstagedCreateUserV1ResponseMPayload.md)
  - [EzmaxApi::Object::UserstagedDeleteObjectV1Response](docs/UserstagedDeleteObjectV1Response.md)
