@@ -111,6 +111,20 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfolderApi');
 #my $ezsignfolder_get_communication_list_v1_result = $api->ezsignfolder_get_communication_list_v1(pki_ezsignfolder_id => $ezsignfolder_get_communication_list_v1_pki_ezsignfolder_id);
 
 #
+# ezsignfolder_get_communicationrecipients_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_get_communicationrecipients_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_communicationrecipients_v1_result = $api->ezsignfolder_get_communicationrecipients_v1(pki_ezsignfolder_id => $ezsignfolder_get_communicationrecipients_v1_pki_ezsignfolder_id);
+
+#
+# ezsignfolder_get_communicationsenders_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_get_communicationsenders_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_communicationsenders_v1_result = $api->ezsignfolder_get_communicationsenders_v1(pki_ezsignfolder_id => $ezsignfolder_get_communicationsenders_v1_pki_ezsignfolder_id);
+
+#
 # ezsignfolder_get_ezsigndocuments_v1 test
 #
 # uncomment below and update the test

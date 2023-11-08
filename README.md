@@ -239,14 +239,17 @@ use EzmaxApi::ModuleReportApi;
 use EzmaxApi::ModuleUserApi;
 use EzmaxApi::ObjectActivesessionApi;
 use EzmaxApi::ObjectApikeyApi;
+use EzmaxApi::ObjectAttachmentApi;
 use EzmaxApi::ObjectBillingentityexternalApi;
 use EzmaxApi::ObjectBillingentityinternalApi;
 use EzmaxApi::ObjectBrandingApi;
+use EzmaxApi::ObjectBuyercontractApi;
 use EzmaxApi::ObjectClonehistoryApi;
 use EzmaxApi::ObjectCommunicationApi;
 use EzmaxApi::ObjectCompanyApi;
 use EzmaxApi::ObjectCorsApi;
 use EzmaxApi::ObjectDepartmentApi;
+use EzmaxApi::ObjectElectronicfundstransferApi;
 use EzmaxApi::ObjectEmailtypeApi;
 use EzmaxApi::ObjectEzmaxinvoicingApi;
 use EzmaxApi::ObjectEzmaxproductApi;
@@ -277,14 +280,20 @@ use EzmaxApi::ObjectFontApi;
 use EzmaxApi::ObjectFranchisebrokerApi;
 use EzmaxApi::ObjectFranchiseofficeApi;
 use EzmaxApi::ObjectFranchisereferalincomeApi;
+use EzmaxApi::ObjectInscriptionApi;
+use EzmaxApi::ObjectInscriptionnotauthenticatedApi;
+use EzmaxApi::ObjectInscriptiontempApi;
+use EzmaxApi::ObjectInvoiceApi;
 use EzmaxApi::ObjectLanguageApi;
 use EzmaxApi::ObjectModulegroupApi;
 use EzmaxApi::ObjectNotificationsectionApi;
 use EzmaxApi::ObjectNotificationtestApi;
+use EzmaxApi::ObjectOtherincomeApi;
 use EzmaxApi::ObjectPaymenttermApi;
 use EzmaxApi::ObjectPeriodApi;
 use EzmaxApi::ObjectPermissionApi;
 use EzmaxApi::ObjectPhonetypeApi;
+use EzmaxApi::ObjectRejectedoffertopurchaseApi;
 use EzmaxApi::ObjectSecretquestionApi;
 use EzmaxApi::ObjectSessionhistoryApi;
 use EzmaxApi::ObjectSignatureApi;
@@ -346,6 +355,7 @@ use EzmaxApi::Object::ApikeyRequest;
 use EzmaxApi::Object::ApikeyRequestCompound;
 use EzmaxApi::Object::ApikeyResponse;
 use EzmaxApi::Object::ApikeyResponseCompound;
+use EzmaxApi::Object::AttachmentDownloadV1Response;
 use EzmaxApi::Object::AttemptResponse;
 use EzmaxApi::Object::AttemptResponseCompound;
 use EzmaxApi::Object::BillingentityexternalAutocompleteElementResponse;
@@ -389,6 +399,8 @@ use EzmaxApi::Object::BrandingRequest;
 use EzmaxApi::Object::BrandingRequestCompound;
 use EzmaxApi::Object::BrandingResponse;
 use EzmaxApi::Object::BrandingResponseCompound;
+use EzmaxApi::Object::BuyercontractGetCommunicationListV1Response;
+use EzmaxApi::Object::BuyercontractGetCommunicationListV1ResponseMPayload;
 use EzmaxApi::Object::ClonehistoryGetListV1Response;
 use EzmaxApi::Object::ClonehistoryGetListV1ResponseMPayload;
 use EzmaxApi::Object::ClonehistoryListElement;
@@ -422,16 +434,19 @@ use EzmaxApi::Object::CommonResponseObjSQLQuery;
 use EzmaxApi::Object::CommonResponseRedirectSSecretquestionTextX;
 use EzmaxApi::Object::CommonResponseWarning;
 use EzmaxApi::Object::CommonWebhook;
-use EzmaxApi::Object::CommunicationGetObjectV2Response;
-use EzmaxApi::Object::CommunicationGetObjectV2ResponseMPayload;
-use EzmaxApi::Object::CommunicationResponse;
-use EzmaxApi::Object::CommunicationResponseCompound;
-use EzmaxApi::Object::CommunicationattachmentResponse;
-use EzmaxApi::Object::CommunicationattachmentResponseCompound;
-use EzmaxApi::Object::CommunicationexternalrecipientResponse;
-use EzmaxApi::Object::CommunicationexternalrecipientResponseCompound;
-use EzmaxApi::Object::CommunicationrecipientResponse;
-use EzmaxApi::Object::CommunicationrecipientResponseCompound;
+use EzmaxApi::Object::CommunicationCreateObjectV1ResponseMPayload;
+use EzmaxApi::Object::CommunicationRequest;
+use EzmaxApi::Object::CommunicationRequestCompound;
+use EzmaxApi::Object::CommunicationSendV1Request;
+use EzmaxApi::Object::CommunicationSendV1Response;
+use EzmaxApi::Object::CommunicationattachmentRequest;
+use EzmaxApi::Object::CommunicationattachmentRequestCompound;
+use EzmaxApi::Object::CommunicationexternalrecipientRequest;
+use EzmaxApi::Object::CommunicationexternalrecipientRequestCompound;
+use EzmaxApi::Object::CommunicationrecipientRequest;
+use EzmaxApi::Object::CommunicationrecipientRequestCompound;
+use EzmaxApi::Object::CommunicationreferenceRequest;
+use EzmaxApi::Object::CommunicationreferenceRequestCompound;
 use EzmaxApi::Object::CompanyAutocompleteElementResponse;
 use EzmaxApi::Object::CompanyGetAutocompleteV2Response;
 use EzmaxApi::Object::CompanyGetAutocompleteV2ResponseMPayload;
@@ -455,6 +470,11 @@ use EzmaxApi::Object::CorsResponse;
 use EzmaxApi::Object::CorsResponseCompound;
 use EzmaxApi::Object::CustomAutocompleteElementResponse;
 use EzmaxApi::Object::CustomCommunicationListElementResponse;
+use EzmaxApi::Object::CustomCommunicationattachmentRequest;
+use EzmaxApi::Object::CustomCommunicationrecipientsgroupResponse;
+use EzmaxApi::Object::CustomCommunicationrecipientsrecipientResponse;
+use EzmaxApi::Object::CustomCommunicationsenderRequest;
+use EzmaxApi::Object::CustomCommunicationsenderResponse;
 use EzmaxApi::Object::CustomContactNameResponse;
 use EzmaxApi::Object::CustomCreditcardtransactionResponse;
 use EzmaxApi::Object::CustomDropdownElementRequest;
@@ -494,14 +514,12 @@ use EzmaxApi::Object::CustomWordPositionWordResponse;
 use EzmaxApi::Object::DepartmentAutocompleteElementResponse;
 use EzmaxApi::Object::DepartmentGetAutocompleteV2Response;
 use EzmaxApi::Object::DepartmentGetAutocompleteV2ResponseMPayload;
-use EzmaxApi::Object::DescriptionstaticResponse;
-use EzmaxApi::Object::DescriptionstaticResponseCompound;
+use EzmaxApi::Object::ElectronicfundstransferGetCommunicationListV1Response;
+use EzmaxApi::Object::ElectronicfundstransferGetCommunicationListV1ResponseMPayload;
 use EzmaxApi::Object::EmailRequest;
 use EzmaxApi::Object::EmailRequestCompound;
 use EzmaxApi::Object::EmailResponse;
 use EzmaxApi::Object::EmailResponseCompound;
-use EzmaxApi::Object::EmailstaticResponse;
-use EzmaxApi::Object::EmailstaticResponseCompound;
 use EzmaxApi::Object::EmailtypeAutocompleteElementResponse;
 use EzmaxApi::Object::EmailtypeGetAutocompleteV2Response;
 use EzmaxApi::Object::EmailtypeGetAutocompleteV2ResponseMPayload;
@@ -683,6 +701,10 @@ use EzmaxApi::Object::EzsignfolderGetCommunicationCountV1Response;
 use EzmaxApi::Object::EzsignfolderGetCommunicationCountV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetCommunicationListV1Response;
 use EzmaxApi::Object::EzsignfolderGetCommunicationListV1ResponseMPayload;
+use EzmaxApi::Object::EzsignfolderGetCommunicationrecipientsV1Response;
+use EzmaxApi::Object::EzsignfolderGetCommunicationrecipientsV1ResponseMPayload;
+use EzmaxApi::Object::EzsignfolderGetCommunicationsendersV1Response;
+use EzmaxApi::Object::EzsignfolderGetCommunicationsendersV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1Response;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1Response;
@@ -1011,7 +1033,6 @@ use EzmaxApi::Object::FieldEBrandingLogo;
 use EzmaxApi::Object::FieldECommunicationImportance;
 use EzmaxApi::Object::FieldECommunicationType;
 use EzmaxApi::Object::FieldECommunicationexternalrecipientType;
-use EzmaxApi::Object::FieldECommunicationrecipientObjecttype;
 use EzmaxApi::Object::FieldECommunicationrecipientType;
 use EzmaxApi::Object::FieldECreditcardtypeCodename;
 use EzmaxApi::Object::FieldEErrorCode;
@@ -1091,6 +1112,14 @@ use EzmaxApi::Object::GlobalCustomerGetEndpointV1Response;
 use EzmaxApi::Object::GlobalEzmaxclientVersionV1Response;
 use EzmaxApi::Object::GlobalEzmaxcustomerGetConfigurationV1Response;
 use EzmaxApi::Object::HeaderAcceptLanguage;
+use EzmaxApi::Object::InscriptionGetCommunicationListV1Response;
+use EzmaxApi::Object::InscriptionGetCommunicationListV1ResponseMPayload;
+use EzmaxApi::Object::InscriptionnotauthenticatedGetCommunicationListV1Response;
+use EzmaxApi::Object::InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload;
+use EzmaxApi::Object::InscriptiontempGetCommunicationListV1Response;
+use EzmaxApi::Object::InscriptiontempGetCommunicationListV1ResponseMPayload;
+use EzmaxApi::Object::InvoiceGetCommunicationListV1Response;
+use EzmaxApi::Object::InvoiceGetCommunicationListV1ResponseMPayload;
 use EzmaxApi::Object::LanguageAutocompleteElementResponse;
 use EzmaxApi::Object::LanguageGetAutocompleteV2Response;
 use EzmaxApi::Object::LanguageGetAutocompleteV2ResponseMPayload;
@@ -1121,6 +1150,8 @@ use EzmaxApi::Object::NotificationsubsectionResponse;
 use EzmaxApi::Object::NotificationtestGetElementsV1Response;
 use EzmaxApi::Object::NotificationtestGetElementsV1ResponseMPayload;
 use EzmaxApi::Object::NotificationtestResponse;
+use EzmaxApi::Object::OtherincomeGetCommunicationListV1Response;
+use EzmaxApi::Object::OtherincomeGetCommunicationListV1ResponseMPayload;
 use EzmaxApi::Object::PaymenttermAutocompleteElementResponse;
 use EzmaxApi::Object::PaymenttermCreateObjectV1Request;
 use EzmaxApi::Object::PaymenttermCreateObjectV1Response;
@@ -1157,11 +1188,11 @@ use EzmaxApi::Object::PhoneRequest;
 use EzmaxApi::Object::PhoneRequestCompound;
 use EzmaxApi::Object::PhoneResponse;
 use EzmaxApi::Object::PhoneResponseCompound;
-use EzmaxApi::Object::PhonestaticResponse;
-use EzmaxApi::Object::PhonestaticResponseCompound;
 use EzmaxApi::Object::PhonetypeAutocompleteElementResponse;
 use EzmaxApi::Object::PhonetypeGetAutocompleteV2Response;
 use EzmaxApi::Object::PhonetypeGetAutocompleteV2ResponseMPayload;
+use EzmaxApi::Object::RejectedoffertopurchaseGetCommunicationListV1Response;
+use EzmaxApi::Object::RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload;
 use EzmaxApi::Object::ScimAuthenticationScheme;
 use EzmaxApi::Object::ScimEmail;
 use EzmaxApi::Object::ScimGroup;
@@ -1397,14 +1428,17 @@ use EzmaxApi::ModuleReportApi;
 use EzmaxApi::ModuleUserApi;
 use EzmaxApi::ObjectActivesessionApi;
 use EzmaxApi::ObjectApikeyApi;
+use EzmaxApi::ObjectAttachmentApi;
 use EzmaxApi::ObjectBillingentityexternalApi;
 use EzmaxApi::ObjectBillingentityinternalApi;
 use EzmaxApi::ObjectBrandingApi;
+use EzmaxApi::ObjectBuyercontractApi;
 use EzmaxApi::ObjectClonehistoryApi;
 use EzmaxApi::ObjectCommunicationApi;
 use EzmaxApi::ObjectCompanyApi;
 use EzmaxApi::ObjectCorsApi;
 use EzmaxApi::ObjectDepartmentApi;
+use EzmaxApi::ObjectElectronicfundstransferApi;
 use EzmaxApi::ObjectEmailtypeApi;
 use EzmaxApi::ObjectEzmaxinvoicingApi;
 use EzmaxApi::ObjectEzmaxproductApi;
@@ -1435,14 +1469,20 @@ use EzmaxApi::ObjectFontApi;
 use EzmaxApi::ObjectFranchisebrokerApi;
 use EzmaxApi::ObjectFranchiseofficeApi;
 use EzmaxApi::ObjectFranchisereferalincomeApi;
+use EzmaxApi::ObjectInscriptionApi;
+use EzmaxApi::ObjectInscriptionnotauthenticatedApi;
+use EzmaxApi::ObjectInscriptiontempApi;
+use EzmaxApi::ObjectInvoiceApi;
 use EzmaxApi::ObjectLanguageApi;
 use EzmaxApi::ObjectModulegroupApi;
 use EzmaxApi::ObjectNotificationsectionApi;
 use EzmaxApi::ObjectNotificationtestApi;
+use EzmaxApi::ObjectOtherincomeApi;
 use EzmaxApi::ObjectPaymenttermApi;
 use EzmaxApi::ObjectPeriodApi;
 use EzmaxApi::ObjectPermissionApi;
 use EzmaxApi::ObjectPhonetypeApi;
+use EzmaxApi::ObjectRejectedoffertopurchaseApi;
 use EzmaxApi::ObjectSecretquestionApi;
 use EzmaxApi::ObjectSessionhistoryApi;
 use EzmaxApi::ObjectSignatureApi;
@@ -1501,6 +1541,7 @@ use EzmaxApi::Object::ApikeyRequest;
 use EzmaxApi::Object::ApikeyRequestCompound;
 use EzmaxApi::Object::ApikeyResponse;
 use EzmaxApi::Object::ApikeyResponseCompound;
+use EzmaxApi::Object::AttachmentDownloadV1Response;
 use EzmaxApi::Object::AttemptResponse;
 use EzmaxApi::Object::AttemptResponseCompound;
 use EzmaxApi::Object::BillingentityexternalAutocompleteElementResponse;
@@ -1544,6 +1585,8 @@ use EzmaxApi::Object::BrandingRequest;
 use EzmaxApi::Object::BrandingRequestCompound;
 use EzmaxApi::Object::BrandingResponse;
 use EzmaxApi::Object::BrandingResponseCompound;
+use EzmaxApi::Object::BuyercontractGetCommunicationListV1Response;
+use EzmaxApi::Object::BuyercontractGetCommunicationListV1ResponseMPayload;
 use EzmaxApi::Object::ClonehistoryGetListV1Response;
 use EzmaxApi::Object::ClonehistoryGetListV1ResponseMPayload;
 use EzmaxApi::Object::ClonehistoryListElement;
@@ -1577,16 +1620,19 @@ use EzmaxApi::Object::CommonResponseObjSQLQuery;
 use EzmaxApi::Object::CommonResponseRedirectSSecretquestionTextX;
 use EzmaxApi::Object::CommonResponseWarning;
 use EzmaxApi::Object::CommonWebhook;
-use EzmaxApi::Object::CommunicationGetObjectV2Response;
-use EzmaxApi::Object::CommunicationGetObjectV2ResponseMPayload;
-use EzmaxApi::Object::CommunicationResponse;
-use EzmaxApi::Object::CommunicationResponseCompound;
-use EzmaxApi::Object::CommunicationattachmentResponse;
-use EzmaxApi::Object::CommunicationattachmentResponseCompound;
-use EzmaxApi::Object::CommunicationexternalrecipientResponse;
-use EzmaxApi::Object::CommunicationexternalrecipientResponseCompound;
-use EzmaxApi::Object::CommunicationrecipientResponse;
-use EzmaxApi::Object::CommunicationrecipientResponseCompound;
+use EzmaxApi::Object::CommunicationCreateObjectV1ResponseMPayload;
+use EzmaxApi::Object::CommunicationRequest;
+use EzmaxApi::Object::CommunicationRequestCompound;
+use EzmaxApi::Object::CommunicationSendV1Request;
+use EzmaxApi::Object::CommunicationSendV1Response;
+use EzmaxApi::Object::CommunicationattachmentRequest;
+use EzmaxApi::Object::CommunicationattachmentRequestCompound;
+use EzmaxApi::Object::CommunicationexternalrecipientRequest;
+use EzmaxApi::Object::CommunicationexternalrecipientRequestCompound;
+use EzmaxApi::Object::CommunicationrecipientRequest;
+use EzmaxApi::Object::CommunicationrecipientRequestCompound;
+use EzmaxApi::Object::CommunicationreferenceRequest;
+use EzmaxApi::Object::CommunicationreferenceRequestCompound;
 use EzmaxApi::Object::CompanyAutocompleteElementResponse;
 use EzmaxApi::Object::CompanyGetAutocompleteV2Response;
 use EzmaxApi::Object::CompanyGetAutocompleteV2ResponseMPayload;
@@ -1610,6 +1656,11 @@ use EzmaxApi::Object::CorsResponse;
 use EzmaxApi::Object::CorsResponseCompound;
 use EzmaxApi::Object::CustomAutocompleteElementResponse;
 use EzmaxApi::Object::CustomCommunicationListElementResponse;
+use EzmaxApi::Object::CustomCommunicationattachmentRequest;
+use EzmaxApi::Object::CustomCommunicationrecipientsgroupResponse;
+use EzmaxApi::Object::CustomCommunicationrecipientsrecipientResponse;
+use EzmaxApi::Object::CustomCommunicationsenderRequest;
+use EzmaxApi::Object::CustomCommunicationsenderResponse;
 use EzmaxApi::Object::CustomContactNameResponse;
 use EzmaxApi::Object::CustomCreditcardtransactionResponse;
 use EzmaxApi::Object::CustomDropdownElementRequest;
@@ -1649,14 +1700,12 @@ use EzmaxApi::Object::CustomWordPositionWordResponse;
 use EzmaxApi::Object::DepartmentAutocompleteElementResponse;
 use EzmaxApi::Object::DepartmentGetAutocompleteV2Response;
 use EzmaxApi::Object::DepartmentGetAutocompleteV2ResponseMPayload;
-use EzmaxApi::Object::DescriptionstaticResponse;
-use EzmaxApi::Object::DescriptionstaticResponseCompound;
+use EzmaxApi::Object::ElectronicfundstransferGetCommunicationListV1Response;
+use EzmaxApi::Object::ElectronicfundstransferGetCommunicationListV1ResponseMPayload;
 use EzmaxApi::Object::EmailRequest;
 use EzmaxApi::Object::EmailRequestCompound;
 use EzmaxApi::Object::EmailResponse;
 use EzmaxApi::Object::EmailResponseCompound;
-use EzmaxApi::Object::EmailstaticResponse;
-use EzmaxApi::Object::EmailstaticResponseCompound;
 use EzmaxApi::Object::EmailtypeAutocompleteElementResponse;
 use EzmaxApi::Object::EmailtypeGetAutocompleteV2Response;
 use EzmaxApi::Object::EmailtypeGetAutocompleteV2ResponseMPayload;
@@ -1838,6 +1887,10 @@ use EzmaxApi::Object::EzsignfolderGetCommunicationCountV1Response;
 use EzmaxApi::Object::EzsignfolderGetCommunicationCountV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetCommunicationListV1Response;
 use EzmaxApi::Object::EzsignfolderGetCommunicationListV1ResponseMPayload;
+use EzmaxApi::Object::EzsignfolderGetCommunicationrecipientsV1Response;
+use EzmaxApi::Object::EzsignfolderGetCommunicationrecipientsV1ResponseMPayload;
+use EzmaxApi::Object::EzsignfolderGetCommunicationsendersV1Response;
+use EzmaxApi::Object::EzsignfolderGetCommunicationsendersV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1Response;
 use EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1Response;
@@ -2166,7 +2219,6 @@ use EzmaxApi::Object::FieldEBrandingLogo;
 use EzmaxApi::Object::FieldECommunicationImportance;
 use EzmaxApi::Object::FieldECommunicationType;
 use EzmaxApi::Object::FieldECommunicationexternalrecipientType;
-use EzmaxApi::Object::FieldECommunicationrecipientObjecttype;
 use EzmaxApi::Object::FieldECommunicationrecipientType;
 use EzmaxApi::Object::FieldECreditcardtypeCodename;
 use EzmaxApi::Object::FieldEErrorCode;
@@ -2246,6 +2298,14 @@ use EzmaxApi::Object::GlobalCustomerGetEndpointV1Response;
 use EzmaxApi::Object::GlobalEzmaxclientVersionV1Response;
 use EzmaxApi::Object::GlobalEzmaxcustomerGetConfigurationV1Response;
 use EzmaxApi::Object::HeaderAcceptLanguage;
+use EzmaxApi::Object::InscriptionGetCommunicationListV1Response;
+use EzmaxApi::Object::InscriptionGetCommunicationListV1ResponseMPayload;
+use EzmaxApi::Object::InscriptionnotauthenticatedGetCommunicationListV1Response;
+use EzmaxApi::Object::InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload;
+use EzmaxApi::Object::InscriptiontempGetCommunicationListV1Response;
+use EzmaxApi::Object::InscriptiontempGetCommunicationListV1ResponseMPayload;
+use EzmaxApi::Object::InvoiceGetCommunicationListV1Response;
+use EzmaxApi::Object::InvoiceGetCommunicationListV1ResponseMPayload;
 use EzmaxApi::Object::LanguageAutocompleteElementResponse;
 use EzmaxApi::Object::LanguageGetAutocompleteV2Response;
 use EzmaxApi::Object::LanguageGetAutocompleteV2ResponseMPayload;
@@ -2276,6 +2336,8 @@ use EzmaxApi::Object::NotificationsubsectionResponse;
 use EzmaxApi::Object::NotificationtestGetElementsV1Response;
 use EzmaxApi::Object::NotificationtestGetElementsV1ResponseMPayload;
 use EzmaxApi::Object::NotificationtestResponse;
+use EzmaxApi::Object::OtherincomeGetCommunicationListV1Response;
+use EzmaxApi::Object::OtherincomeGetCommunicationListV1ResponseMPayload;
 use EzmaxApi::Object::PaymenttermAutocompleteElementResponse;
 use EzmaxApi::Object::PaymenttermCreateObjectV1Request;
 use EzmaxApi::Object::PaymenttermCreateObjectV1Response;
@@ -2312,11 +2374,11 @@ use EzmaxApi::Object::PhoneRequest;
 use EzmaxApi::Object::PhoneRequestCompound;
 use EzmaxApi::Object::PhoneResponse;
 use EzmaxApi::Object::PhoneResponseCompound;
-use EzmaxApi::Object::PhonestaticResponse;
-use EzmaxApi::Object::PhonestaticResponseCompound;
 use EzmaxApi::Object::PhonetypeAutocompleteElementResponse;
 use EzmaxApi::Object::PhonetypeGetAutocompleteV2Response;
 use EzmaxApi::Object::PhonetypeGetAutocompleteV2ResponseMPayload;
+use EzmaxApi::Object::RejectedoffertopurchaseGetCommunicationListV1Response;
+use EzmaxApi::Object::RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload;
 use EzmaxApi::Object::ScimAuthenticationScheme;
 use EzmaxApi::Object::ScimEmail;
 use EzmaxApi::Object::ScimGroup;
@@ -2578,6 +2640,7 @@ Class | Method | HTTP request | Description
 *ObjectApikeyApi* | [**apikey_get_permissions_v1**](docs/ObjectApikeyApi.md#apikey_get_permissions_v1) | **GET** /1/object/apikey/{pkiApikeyID}/getPermissions | Retrieve an existing Apikey&#39;s Permissions
 *ObjectApikeyApi* | [**apikey_get_subnets_v1**](docs/ObjectApikeyApi.md#apikey_get_subnets_v1) | **GET** /1/object/apikey/{pkiApikeyID}/getSubnets | Retrieve an existing Apikey&#39;s subnets
 *ObjectApikeyApi* | [**apikey_regenerate_v1**](docs/ObjectApikeyApi.md#apikey_regenerate_v1) | **POST** /1/object/apikey/{pkiApikeyID}/regenerate | Regenerate the Apikey
+*ObjectAttachmentApi* | [**attachment_download_v1**](docs/ObjectAttachmentApi.md#attachment_download_v1) | **GET** /1/object/attachment/{pkiAttachmentID}/download | Retrieve the content
 *ObjectBillingentityexternalApi* | [**billingentityexternal_get_autocomplete_v2**](docs/ObjectBillingentityexternalApi.md#billingentityexternal_get_autocomplete_v2) | **GET** /2/object/billingentityexternal/getAutocomplete/{sSelector} | Retrieve Billingentityexternals and IDs
 *ObjectBillingentityinternalApi* | [**billingentityinternal_create_object_v1**](docs/ObjectBillingentityinternalApi.md#billingentityinternal_create_object_v1) | **POST** /1/object/billingentityinternal | Create a new Billingentityinternal
 *ObjectBillingentityinternalApi* | [**billingentityinternal_edit_object_v1**](docs/ObjectBillingentityinternalApi.md#billingentityinternal_edit_object_v1) | **PUT** /1/object/billingentityinternal/{pkiBillingentityinternalID} | Edit an existing Billingentityinternal
@@ -2589,14 +2652,16 @@ Class | Method | HTTP request | Description
 *ObjectBrandingApi* | [**branding_get_autocomplete_v2**](docs/ObjectBrandingApi.md#branding_get_autocomplete_v2) | **GET** /2/object/branding/getAutocomplete/{sSelector} | Retrieve Brandings and IDs
 *ObjectBrandingApi* | [**branding_get_list_v1**](docs/ObjectBrandingApi.md#branding_get_list_v1) | **GET** /1/object/branding/getList | Retrieve Branding list
 *ObjectBrandingApi* | [**branding_get_object_v2**](docs/ObjectBrandingApi.md#branding_get_object_v2) | **GET** /2/object/branding/{pkiBrandingID} | Retrieve an existing Branding
+*ObjectBuyercontractApi* | [**buyercontract_get_communication_list_v1**](docs/ObjectBuyercontractApi.md#buyercontract_get_communication_list_v1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationList | Retrieve Communication list
 *ObjectClonehistoryApi* | [**clonehistory_get_list_v1**](docs/ObjectClonehistoryApi.md#clonehistory_get_list_v1) | **GET** /1/object/clonehistory/getList | Retrieve Clonehistory list
-*ObjectCommunicationApi* | [**communication_get_object_v2**](docs/ObjectCommunicationApi.md#communication_get_object_v2) | **GET** /2/object/communication/{pkiCommunicationID} | Retrieve an existing Communication
+*ObjectCommunicationApi* | [**communication_send_v1**](docs/ObjectCommunicationApi.md#communication_send_v1) | **POST** /1/object/communication/send | Send a new Communication
 *ObjectCompanyApi* | [**company_get_autocomplete_v2**](docs/ObjectCompanyApi.md#company_get_autocomplete_v2) | **GET** /2/object/company/getAutocomplete/{sSelector} | Retrieve Companys and IDs
 *ObjectCorsApi* | [**cors_create_object_v1**](docs/ObjectCorsApi.md#cors_create_object_v1) | **POST** /1/object/cors | Create a new Cors
 *ObjectCorsApi* | [**cors_delete_object_v1**](docs/ObjectCorsApi.md#cors_delete_object_v1) | **DELETE** /1/object/cors/{pkiCorsID} | Delete an existing Cors
 *ObjectCorsApi* | [**cors_edit_object_v1**](docs/ObjectCorsApi.md#cors_edit_object_v1) | **PUT** /1/object/cors/{pkiCorsID} | Edit an existing Cors
 *ObjectCorsApi* | [**cors_get_object_v2**](docs/ObjectCorsApi.md#cors_get_object_v2) | **GET** /2/object/cors/{pkiCorsID} | Retrieve an existing Cors
 *ObjectDepartmentApi* | [**department_get_autocomplete_v2**](docs/ObjectDepartmentApi.md#department_get_autocomplete_v2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
+*ObjectElectronicfundstransferApi* | [**eletronicfundstransfer_get_communication_list_v1**](docs/ObjectElectronicfundstransferApi.md#eletronicfundstransfer_get_communication_list_v1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list
 *ObjectEmailtypeApi* | [**emailtype_get_autocomplete_v2**](docs/ObjectEmailtypeApi.md#emailtype_get_autocomplete_v2) | **GET** /2/object/emailtype/getAutocomplete/{sSelector} | Retrieve Emailtypes and IDs
 *ObjectEzmaxinvoicingApi* | [**ezmaxinvoicing_get_autocomplete_v1**](docs/ObjectEzmaxinvoicingApi.md#ezmaxinvoicing_get_autocomplete_v1) | **GET** /1/object/ezmaxinvoicing/getAutocomplete/{sSelector} | Retrieve Ezmaxinvoicings and IDs
 *ObjectEzmaxinvoicingApi* | [**ezmaxinvoicing_get_autocomplete_v2**](docs/ObjectEzmaxinvoicingApi.md#ezmaxinvoicing_get_autocomplete_v2) | **GET** /2/object/ezmaxinvoicing/getAutocomplete/{sSelector} | Retrieve Ezmaxinvoicings and IDs
@@ -2661,6 +2726,8 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_actionable_elements_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_communication_count_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_communication_count_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationCount | Retrieve Communication count
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_communication_list_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_communication_list_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationList | Retrieve Communication list
+*ObjectEzsignfolderApi* | [**ezsignfolder_get_communicationrecipients_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_communicationrecipients_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationrecipients | Retrieve Ezsignfolder&#39;s Communicationrecipient
+*ObjectEzsignfolderApi* | [**ezsignfolder_get_communicationsenders_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_communicationsenders_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationsenders | Retrieve Ezsignfolder&#39;s Communicationsender
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_ezsigndocuments_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_ezsigndocuments_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_ezsignfoldersignerassociations_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_ezsignfoldersignerassociations_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations | Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_ezsignsignatures_automatic_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_ezsignsignatures_automatic_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignsignaturesAutomatic | Retrieve an existing Ezsignfolder&#39;s automatic Ezsignsignatures
@@ -2767,10 +2834,15 @@ Class | Method | HTTP request | Description
 *ObjectFranchiseofficeApi* | [**franchiseoffice_get_autocomplete_v2**](docs/ObjectFranchiseofficeApi.md#franchiseoffice_get_autocomplete_v2) | **GET** /2/object/franchiseoffice/getAutocomplete/{sSelector} | Retrieve Franchiseoffices and IDs
 *ObjectFranchisereferalincomeApi* | [**franchisereferalincome_create_object_v1**](docs/ObjectFranchisereferalincomeApi.md#franchisereferalincome_create_object_v1) | **POST** /1/object/franchisereferalincome | Create a new Franchisereferalincome
 *ObjectFranchisereferalincomeApi* | [**franchisereferalincome_create_object_v2**](docs/ObjectFranchisereferalincomeApi.md#franchisereferalincome_create_object_v2) | **POST** /2/object/franchisereferalincome | Create a new Franchisereferalincome
+*ObjectInscriptionApi* | [**inscription_get_communication_list_v1**](docs/ObjectInscriptionApi.md#inscription_get_communication_list_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationList | Retrieve Communication list
+*ObjectInscriptionnotauthenticatedApi* | [**inscriptionnotauthenticated_get_communication_list_v1**](docs/ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_communication_list_v1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationList | Retrieve Communication list
+*ObjectInscriptiontempApi* | [**inscriptiontemp_get_communication_list_v1**](docs/ObjectInscriptiontempApi.md#inscriptiontemp_get_communication_list_v1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationList | Retrieve Communication list
+*ObjectInvoiceApi* | [**invoice_get_communication_list_v1**](docs/ObjectInvoiceApi.md#invoice_get_communication_list_v1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationList | Retrieve Communication list
 *ObjectLanguageApi* | [**language_get_autocomplete_v2**](docs/ObjectLanguageApi.md#language_get_autocomplete_v2) | **GET** /2/object/language/getAutocomplete/{sSelector} | Retrieve Languages and IDs
 *ObjectModulegroupApi* | [**modulegroup_get_all_v1**](docs/ObjectModulegroupApi.md#modulegroup_get_all_v1) | **GET** /1/object/modulegroup/getAll/{eContext} | Retrieve all Modulegroups
 *ObjectNotificationsectionApi* | [**notificationsection_get_notificationtests_v1**](docs/ObjectNotificationsectionApi.md#notificationsection_get_notificationtests_v1) | **GET** /1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests | Retrieve an existing Notificationsection&#39;s Notificationtests
 *ObjectNotificationtestApi* | [**notificationtest_get_elements_v1**](docs/ObjectNotificationtestApi.md#notificationtest_get_elements_v1) | **GET** /1/object/notificationtest/{pkiNotificationtestID}/getElements | Retrieve an existing Notificationtest&#39;s Elements
+*ObjectOtherincomeApi* | [**otherincome_get_communication_list_v1**](docs/ObjectOtherincomeApi.md#otherincome_get_communication_list_v1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationList | Retrieve Communication list
 *ObjectPaymenttermApi* | [**paymentterm_create_object_v1**](docs/ObjectPaymenttermApi.md#paymentterm_create_object_v1) | **POST** /1/object/paymentterm | Create a new Paymentterm
 *ObjectPaymenttermApi* | [**paymentterm_edit_object_v1**](docs/ObjectPaymenttermApi.md#paymentterm_edit_object_v1) | **PUT** /1/object/paymentterm/{pkiPaymenttermID} | Edit an existing Paymentterm
 *ObjectPaymenttermApi* | [**paymentterm_get_autocomplete_v2**](docs/ObjectPaymenttermApi.md#paymentterm_get_autocomplete_v2) | **GET** /2/object/paymentterm/getAutocomplete/{sSelector} | Retrieve Paymentterms and IDs
@@ -2783,6 +2855,7 @@ Class | Method | HTTP request | Description
 *ObjectPermissionApi* | [**permission_edit_object_v1**](docs/ObjectPermissionApi.md#permission_edit_object_v1) | **PUT** /1/object/permission/{pkiPermissionID} | Edit an existing Permission
 *ObjectPermissionApi* | [**permission_get_object_v2**](docs/ObjectPermissionApi.md#permission_get_object_v2) | **GET** /2/object/permission/{pkiPermissionID} | Retrieve an existing Permission
 *ObjectPhonetypeApi* | [**phonetype_get_autocomplete_v2**](docs/ObjectPhonetypeApi.md#phonetype_get_autocomplete_v2) | **GET** /2/object/phonetype/getAutocomplete/{sSelector} | Retrieve Phonetypes and IDs
+*ObjectRejectedoffertopurchaseApi* | [**rejectedoffertopurchase_get_communication_list_v1**](docs/ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_get_communication_list_v1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationList | Retrieve Communication list
 *ObjectSecretquestionApi* | [**secretquestion_get_autocomplete_v2**](docs/ObjectSecretquestionApi.md#secretquestion_get_autocomplete_v2) | **GET** /2/object/secretquestion/getAutocomplete/{sSelector} | Retrieve Secretquestions and IDs
 *ObjectSessionhistoryApi* | [**sessionhistory_get_list_v1**](docs/ObjectSessionhistoryApi.md#sessionhistory_get_list_v1) | **GET** /1/object/sessionhistory/getList | Retrieve Sessionhistory list
 *ObjectSignatureApi* | [**signature_create_object_v1**](docs/ObjectSignatureApi.md#signature_create_object_v1) | **POST** /1/object/signature | Create a new Signature
@@ -2897,6 +2970,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::ApikeyRequestCompound](docs/ApikeyRequestCompound.md)
  - [EzmaxApi::Object::ApikeyResponse](docs/ApikeyResponse.md)
  - [EzmaxApi::Object::ApikeyResponseCompound](docs/ApikeyResponseCompound.md)
+ - [EzmaxApi::Object::AttachmentDownloadV1Response](docs/AttachmentDownloadV1Response.md)
  - [EzmaxApi::Object::AttemptResponse](docs/AttemptResponse.md)
  - [EzmaxApi::Object::AttemptResponseCompound](docs/AttemptResponseCompound.md)
  - [EzmaxApi::Object::BillingentityexternalAutocompleteElementResponse](docs/BillingentityexternalAutocompleteElementResponse.md)
@@ -2940,6 +3014,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::BrandingRequestCompound](docs/BrandingRequestCompound.md)
  - [EzmaxApi::Object::BrandingResponse](docs/BrandingResponse.md)
  - [EzmaxApi::Object::BrandingResponseCompound](docs/BrandingResponseCompound.md)
+ - [EzmaxApi::Object::BuyercontractGetCommunicationListV1Response](docs/BuyercontractGetCommunicationListV1Response.md)
+ - [EzmaxApi::Object::BuyercontractGetCommunicationListV1ResponseMPayload](docs/BuyercontractGetCommunicationListV1ResponseMPayload.md)
  - [EzmaxApi::Object::ClonehistoryGetListV1Response](docs/ClonehistoryGetListV1Response.md)
  - [EzmaxApi::Object::ClonehistoryGetListV1ResponseMPayload](docs/ClonehistoryGetListV1ResponseMPayload.md)
  - [EzmaxApi::Object::ClonehistoryListElement](docs/ClonehistoryListElement.md)
@@ -2973,16 +3049,19 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CommonResponseRedirectSSecretquestionTextX](docs/CommonResponseRedirectSSecretquestionTextX.md)
  - [EzmaxApi::Object::CommonResponseWarning](docs/CommonResponseWarning.md)
  - [EzmaxApi::Object::CommonWebhook](docs/CommonWebhook.md)
- - [EzmaxApi::Object::CommunicationGetObjectV2Response](docs/CommunicationGetObjectV2Response.md)
- - [EzmaxApi::Object::CommunicationGetObjectV2ResponseMPayload](docs/CommunicationGetObjectV2ResponseMPayload.md)
- - [EzmaxApi::Object::CommunicationResponse](docs/CommunicationResponse.md)
- - [EzmaxApi::Object::CommunicationResponseCompound](docs/CommunicationResponseCompound.md)
- - [EzmaxApi::Object::CommunicationattachmentResponse](docs/CommunicationattachmentResponse.md)
- - [EzmaxApi::Object::CommunicationattachmentResponseCompound](docs/CommunicationattachmentResponseCompound.md)
- - [EzmaxApi::Object::CommunicationexternalrecipientResponse](docs/CommunicationexternalrecipientResponse.md)
- - [EzmaxApi::Object::CommunicationexternalrecipientResponseCompound](docs/CommunicationexternalrecipientResponseCompound.md)
- - [EzmaxApi::Object::CommunicationrecipientResponse](docs/CommunicationrecipientResponse.md)
- - [EzmaxApi::Object::CommunicationrecipientResponseCompound](docs/CommunicationrecipientResponseCompound.md)
+ - [EzmaxApi::Object::CommunicationCreateObjectV1ResponseMPayload](docs/CommunicationCreateObjectV1ResponseMPayload.md)
+ - [EzmaxApi::Object::CommunicationRequest](docs/CommunicationRequest.md)
+ - [EzmaxApi::Object::CommunicationRequestCompound](docs/CommunicationRequestCompound.md)
+ - [EzmaxApi::Object::CommunicationSendV1Request](docs/CommunicationSendV1Request.md)
+ - [EzmaxApi::Object::CommunicationSendV1Response](docs/CommunicationSendV1Response.md)
+ - [EzmaxApi::Object::CommunicationattachmentRequest](docs/CommunicationattachmentRequest.md)
+ - [EzmaxApi::Object::CommunicationattachmentRequestCompound](docs/CommunicationattachmentRequestCompound.md)
+ - [EzmaxApi::Object::CommunicationexternalrecipientRequest](docs/CommunicationexternalrecipientRequest.md)
+ - [EzmaxApi::Object::CommunicationexternalrecipientRequestCompound](docs/CommunicationexternalrecipientRequestCompound.md)
+ - [EzmaxApi::Object::CommunicationrecipientRequest](docs/CommunicationrecipientRequest.md)
+ - [EzmaxApi::Object::CommunicationrecipientRequestCompound](docs/CommunicationrecipientRequestCompound.md)
+ - [EzmaxApi::Object::CommunicationreferenceRequest](docs/CommunicationreferenceRequest.md)
+ - [EzmaxApi::Object::CommunicationreferenceRequestCompound](docs/CommunicationreferenceRequestCompound.md)
  - [EzmaxApi::Object::CompanyAutocompleteElementResponse](docs/CompanyAutocompleteElementResponse.md)
  - [EzmaxApi::Object::CompanyGetAutocompleteV2Response](docs/CompanyGetAutocompleteV2Response.md)
  - [EzmaxApi::Object::CompanyGetAutocompleteV2ResponseMPayload](docs/CompanyGetAutocompleteV2ResponseMPayload.md)
@@ -3006,6 +3085,11 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CorsResponseCompound](docs/CorsResponseCompound.md)
  - [EzmaxApi::Object::CustomAutocompleteElementResponse](docs/CustomAutocompleteElementResponse.md)
  - [EzmaxApi::Object::CustomCommunicationListElementResponse](docs/CustomCommunicationListElementResponse.md)
+ - [EzmaxApi::Object::CustomCommunicationattachmentRequest](docs/CustomCommunicationattachmentRequest.md)
+ - [EzmaxApi::Object::CustomCommunicationrecipientsgroupResponse](docs/CustomCommunicationrecipientsgroupResponse.md)
+ - [EzmaxApi::Object::CustomCommunicationrecipientsrecipientResponse](docs/CustomCommunicationrecipientsrecipientResponse.md)
+ - [EzmaxApi::Object::CustomCommunicationsenderRequest](docs/CustomCommunicationsenderRequest.md)
+ - [EzmaxApi::Object::CustomCommunicationsenderResponse](docs/CustomCommunicationsenderResponse.md)
  - [EzmaxApi::Object::CustomContactNameResponse](docs/CustomContactNameResponse.md)
  - [EzmaxApi::Object::CustomCreditcardtransactionResponse](docs/CustomCreditcardtransactionResponse.md)
  - [EzmaxApi::Object::CustomDropdownElementRequest](docs/CustomDropdownElementRequest.md)
@@ -3045,14 +3129,12 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::DepartmentAutocompleteElementResponse](docs/DepartmentAutocompleteElementResponse.md)
  - [EzmaxApi::Object::DepartmentGetAutocompleteV2Response](docs/DepartmentGetAutocompleteV2Response.md)
  - [EzmaxApi::Object::DepartmentGetAutocompleteV2ResponseMPayload](docs/DepartmentGetAutocompleteV2ResponseMPayload.md)
- - [EzmaxApi::Object::DescriptionstaticResponse](docs/DescriptionstaticResponse.md)
- - [EzmaxApi::Object::DescriptionstaticResponseCompound](docs/DescriptionstaticResponseCompound.md)
+ - [EzmaxApi::Object::ElectronicfundstransferGetCommunicationListV1Response](docs/ElectronicfundstransferGetCommunicationListV1Response.md)
+ - [EzmaxApi::Object::ElectronicfundstransferGetCommunicationListV1ResponseMPayload](docs/ElectronicfundstransferGetCommunicationListV1ResponseMPayload.md)
  - [EzmaxApi::Object::EmailRequest](docs/EmailRequest.md)
  - [EzmaxApi::Object::EmailRequestCompound](docs/EmailRequestCompound.md)
  - [EzmaxApi::Object::EmailResponse](docs/EmailResponse.md)
  - [EzmaxApi::Object::EmailResponseCompound](docs/EmailResponseCompound.md)
- - [EzmaxApi::Object::EmailstaticResponse](docs/EmailstaticResponse.md)
- - [EzmaxApi::Object::EmailstaticResponseCompound](docs/EmailstaticResponseCompound.md)
  - [EzmaxApi::Object::EmailtypeAutocompleteElementResponse](docs/EmailtypeAutocompleteElementResponse.md)
  - [EzmaxApi::Object::EmailtypeGetAutocompleteV2Response](docs/EmailtypeGetAutocompleteV2Response.md)
  - [EzmaxApi::Object::EmailtypeGetAutocompleteV2ResponseMPayload](docs/EmailtypeGetAutocompleteV2ResponseMPayload.md)
@@ -3234,6 +3316,10 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignfolderGetCommunicationCountV1ResponseMPayload](docs/EzsignfolderGetCommunicationCountV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetCommunicationListV1Response](docs/EzsignfolderGetCommunicationListV1Response.md)
  - [EzmaxApi::Object::EzsignfolderGetCommunicationListV1ResponseMPayload](docs/EzsignfolderGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::Object::EzsignfolderGetCommunicationrecipientsV1Response](docs/EzsignfolderGetCommunicationrecipientsV1Response.md)
+ - [EzmaxApi::Object::EzsignfolderGetCommunicationrecipientsV1ResponseMPayload](docs/EzsignfolderGetCommunicationrecipientsV1ResponseMPayload.md)
+ - [EzmaxApi::Object::EzsignfolderGetCommunicationsendersV1Response](docs/EzsignfolderGetCommunicationsendersV1Response.md)
+ - [EzmaxApi::Object::EzsignfolderGetCommunicationsendersV1ResponseMPayload](docs/EzsignfolderGetCommunicationsendersV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1Response](docs/EzsignfolderGetEzsigndocumentsV1Response.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsigndocumentsV1ResponseMPayload](docs/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetEzsignfoldersignerassociationsV1Response](docs/EzsignfolderGetEzsignfoldersignerassociationsV1Response.md)
@@ -3562,7 +3648,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::FieldECommunicationImportance](docs/FieldECommunicationImportance.md)
  - [EzmaxApi::Object::FieldECommunicationType](docs/FieldECommunicationType.md)
  - [EzmaxApi::Object::FieldECommunicationexternalrecipientType](docs/FieldECommunicationexternalrecipientType.md)
- - [EzmaxApi::Object::FieldECommunicationrecipientObjecttype](docs/FieldECommunicationrecipientObjecttype.md)
  - [EzmaxApi::Object::FieldECommunicationrecipientType](docs/FieldECommunicationrecipientType.md)
  - [EzmaxApi::Object::FieldECreditcardtypeCodename](docs/FieldECreditcardtypeCodename.md)
  - [EzmaxApi::Object::FieldEErrorCode](docs/FieldEErrorCode.md)
@@ -3642,6 +3727,14 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::GlobalEzmaxclientVersionV1Response](docs/GlobalEzmaxclientVersionV1Response.md)
  - [EzmaxApi::Object::GlobalEzmaxcustomerGetConfigurationV1Response](docs/GlobalEzmaxcustomerGetConfigurationV1Response.md)
  - [EzmaxApi::Object::HeaderAcceptLanguage](docs/HeaderAcceptLanguage.md)
+ - [EzmaxApi::Object::InscriptionGetCommunicationListV1Response](docs/InscriptionGetCommunicationListV1Response.md)
+ - [EzmaxApi::Object::InscriptionGetCommunicationListV1ResponseMPayload](docs/InscriptionGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::Object::InscriptionnotauthenticatedGetCommunicationListV1Response](docs/InscriptionnotauthenticatedGetCommunicationListV1Response.md)
+ - [EzmaxApi::Object::InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload](docs/InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::Object::InscriptiontempGetCommunicationListV1Response](docs/InscriptiontempGetCommunicationListV1Response.md)
+ - [EzmaxApi::Object::InscriptiontempGetCommunicationListV1ResponseMPayload](docs/InscriptiontempGetCommunicationListV1ResponseMPayload.md)
+ - [EzmaxApi::Object::InvoiceGetCommunicationListV1Response](docs/InvoiceGetCommunicationListV1Response.md)
+ - [EzmaxApi::Object::InvoiceGetCommunicationListV1ResponseMPayload](docs/InvoiceGetCommunicationListV1ResponseMPayload.md)
  - [EzmaxApi::Object::LanguageAutocompleteElementResponse](docs/LanguageAutocompleteElementResponse.md)
  - [EzmaxApi::Object::LanguageGetAutocompleteV2Response](docs/LanguageGetAutocompleteV2Response.md)
  - [EzmaxApi::Object::LanguageGetAutocompleteV2ResponseMPayload](docs/LanguageGetAutocompleteV2ResponseMPayload.md)
@@ -3672,6 +3765,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::NotificationtestGetElementsV1Response](docs/NotificationtestGetElementsV1Response.md)
  - [EzmaxApi::Object::NotificationtestGetElementsV1ResponseMPayload](docs/NotificationtestGetElementsV1ResponseMPayload.md)
  - [EzmaxApi::Object::NotificationtestResponse](docs/NotificationtestResponse.md)
+ - [EzmaxApi::Object::OtherincomeGetCommunicationListV1Response](docs/OtherincomeGetCommunicationListV1Response.md)
+ - [EzmaxApi::Object::OtherincomeGetCommunicationListV1ResponseMPayload](docs/OtherincomeGetCommunicationListV1ResponseMPayload.md)
  - [EzmaxApi::Object::PaymenttermAutocompleteElementResponse](docs/PaymenttermAutocompleteElementResponse.md)
  - [EzmaxApi::Object::PaymenttermCreateObjectV1Request](docs/PaymenttermCreateObjectV1Request.md)
  - [EzmaxApi::Object::PaymenttermCreateObjectV1Response](docs/PaymenttermCreateObjectV1Response.md)
@@ -3708,11 +3803,11 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::PhoneRequestCompound](docs/PhoneRequestCompound.md)
  - [EzmaxApi::Object::PhoneResponse](docs/PhoneResponse.md)
  - [EzmaxApi::Object::PhoneResponseCompound](docs/PhoneResponseCompound.md)
- - [EzmaxApi::Object::PhonestaticResponse](docs/PhonestaticResponse.md)
- - [EzmaxApi::Object::PhonestaticResponseCompound](docs/PhonestaticResponseCompound.md)
  - [EzmaxApi::Object::PhonetypeAutocompleteElementResponse](docs/PhonetypeAutocompleteElementResponse.md)
  - [EzmaxApi::Object::PhonetypeGetAutocompleteV2Response](docs/PhonetypeGetAutocompleteV2Response.md)
  - [EzmaxApi::Object::PhonetypeGetAutocompleteV2ResponseMPayload](docs/PhonetypeGetAutocompleteV2ResponseMPayload.md)
+ - [EzmaxApi::Object::RejectedoffertopurchaseGetCommunicationListV1Response](docs/RejectedoffertopurchaseGetCommunicationListV1Response.md)
+ - [EzmaxApi::Object::RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload](docs/RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload.md)
  - [EzmaxApi::Object::ScimAuthenticationScheme](docs/ScimAuthenticationScheme.md)
  - [EzmaxApi::Object::ScimEmail](docs/ScimEmail.md)
  - [EzmaxApi::Object::ScimGroup](docs/ScimGroup.md)

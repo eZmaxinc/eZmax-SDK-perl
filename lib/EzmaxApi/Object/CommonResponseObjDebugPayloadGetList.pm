@@ -265,7 +265,7 @@ __PACKAGE__->method_documentation({
     'i_row_max' => {
         datatype => 'int',
         base_name => 'iRowMax',
-        description => 'The maximum numbers of results to be returned',
+        description => 'The maximum numbers of results to be returned.  When the content-type is **application/json** there is an implicit default of 10 000.  When it&#39;s **application/vnd.openxmlformats-officedocument.spreadsheetml.sheet** the is no implicit default so if you do not specify iRowMax, all records will be returned.',
         format => '',
         read_only => '',
             },

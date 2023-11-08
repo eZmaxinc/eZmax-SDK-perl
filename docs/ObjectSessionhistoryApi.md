@@ -30,7 +30,7 @@ my $api_instance = EzmaxApi::ObjectSessionhistoryApi->new(
 );
 
 my $e_order_by = "e_order_by_example"; # string | Specify how you want the results to be sorted
-my $i_row_max = 10000; # int | 
+my $i_row_max = 56; # int | 
 my $i_row_offset = 0; # int | 
 my $accept_language = new EzmaxApi.HeaderAcceptLanguage(); # HeaderAcceptLanguage | 
 my $s_filter = "s_filter_example"; # string | 
@@ -49,7 +49,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **e_order_by** | **string**| Specify how you want the results to be sorted | [optional] 
- **i_row_max** | **int**|  | [optional] [default to 10000]
+ **i_row_max** | **int**|  | [optional] 
  **i_row_offset** | **int**|  | [optional] [default to 0]
  **accept_language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
  **s_filter** | **string**|  | [optional] 

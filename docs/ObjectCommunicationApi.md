@@ -9,15 +9,15 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**communication_get_object_v2**](ObjectCommunicationApi.md#communication_get_object_v2) | **GET** /2/object/communication/{pkiCommunicationID} | Retrieve an existing Communication
+[**communication_send_v1**](ObjectCommunicationApi.md#communication_send_v1) | **POST** /1/object/communication/send | Send a new Communication
 
 
-# **communication_get_object_v2**
-> CommunicationGetObjectV2Response communication_get_object_v2(pki_communication_id => $pki_communication_id)
+# **communication_send_v1**
+> CommunicationSendV1Response communication_send_v1(communication_send_v1_request => $communication_send_v1_request)
 
-Retrieve an existing Communication
+Send a new Communication
 
-
+The endpoint allows to send one or many elements at once.
 
 ### Example
 ```perl
@@ -31,14 +31,14 @@ my $api_instance = EzmaxApi::ObjectCommunicationApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pki_communication_id = 56; # int | 
+my $communication_send_v1_request = EzmaxApi::Object::CommunicationSendV1Request->new(); # CommunicationSendV1Request | 
 
 eval {
-    my $result = $api_instance->communication_get_object_v2(pki_communication_id => $pki_communication_id);
+    my $result = $api_instance->communication_send_v1(communication_send_v1_request => $communication_send_v1_request);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ObjectCommunicationApi->communication_get_object_v2: $@\n";
+    warn "Exception when calling ObjectCommunicationApi->communication_send_v1: $@\n";
 }
 ```
 
@@ -46,11 +46,11 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pki_communication_id** | **int**|  | 
+ **communication_send_v1_request** | [**CommunicationSendV1Request**](CommunicationSendV1Request.md)|  | 
 
 ### Return type
 
-[**CommunicationGetObjectV2Response**](CommunicationGetObjectV2Response.md)
+[**CommunicationSendV1Response**](CommunicationSendV1Response.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

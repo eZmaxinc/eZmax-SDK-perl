@@ -844,6 +844,140 @@ sub ezsignfolder_get_communication_list_v1 {
 }
 
 #
+# ezsignfolder_get_communicationrecipients_v1
+#
+# Retrieve Ezsignfolder's Communicationrecipient
+#
+# @param int $pki_ezsignfolder_id  (required)
+{
+    my $params = {
+    'pki_ezsignfolder_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignfolder_get_communicationrecipients_v1' } = {
+        summary => 'Retrieve Ezsignfolder&#39;s Communicationrecipient',
+        params => $params,
+        returns => 'EzsignfolderGetCommunicationrecipientsV1Response',
+        };
+}
+# @return EzsignfolderGetCommunicationrecipientsV1Response
+#
+sub ezsignfolder_get_communicationrecipients_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignfolder_id' is set
+    unless (exists $args{'pki_ezsignfolder_id'}) {
+      croak("Missing the required parameter 'pki_ezsignfolder_id' when calling ezsignfolder_get_communicationrecipients_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationrecipients';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsignfolder_id'}) {
+        my $_base_variable = "{" . "pkiEzsignfolderID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignfolder_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignfolderGetCommunicationrecipientsV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsignfolder_get_communicationsenders_v1
+#
+# Retrieve Ezsignfolder's Communicationsender
+#
+# @param int $pki_ezsignfolder_id  (required)
+{
+    my $params = {
+    'pki_ezsignfolder_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignfolder_get_communicationsenders_v1' } = {
+        summary => 'Retrieve Ezsignfolder&#39;s Communicationsender',
+        params => $params,
+        returns => 'EzsignfolderGetCommunicationsendersV1Response',
+        };
+}
+# @return EzsignfolderGetCommunicationsendersV1Response
+#
+sub ezsignfolder_get_communicationsenders_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignfolder_id' is set
+    unless (exists $args{'pki_ezsignfolder_id'}) {
+      croak("Missing the required parameter 'pki_ezsignfolder_id' when calling ezsignfolder_get_communicationsenders_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationsenders';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsignfolder_id'}) {
+        my $_base_variable = "{" . "pkiEzsignfolderID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignfolder_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignfolderGetCommunicationsendersV1Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsignfolder_get_ezsigndocuments_v1
 #
 # Retrieve an existing Ezsignfolder's Ezsigndocuments
@@ -1117,7 +1251,7 @@ sub ezsignfolder_get_forms_data_v1 {
 # Retrieve Ezsignfolder list
 #
 # @param string $e_order_by Specify how you want the results to be sorted (optional)
-# @param int $i_row_max  (optional, default to 10000)
+# @param int $i_row_max  (optional)
 # @param int $i_row_offset  (optional, default to 0)
 # @param HeaderAcceptLanguage $accept_language  (optional)
 # @param string $s_filter  (optional)

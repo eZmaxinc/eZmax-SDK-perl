@@ -54,7 +54,7 @@ sub new {
 # Retrieve Sessionhistory list
 #
 # @param string $e_order_by Specify how you want the results to be sorted (optional)
-# @param int $i_row_max  (optional, default to 10000)
+# @param int $i_row_max  (optional)
 # @param int $i_row_offset  (optional, default to 0)
 # @param HeaderAcceptLanguage $accept_language  (optional)
 # @param string $s_filter  (optional)

@@ -49,39 +49,39 @@ sub new {
 
 
 #
-# communication_get_object_v2
+# communication_send_v1
 #
-# Retrieve an existing Communication
+# Send a new Communication
 #
-# @param int $pki_communication_id  (required)
+# @param CommunicationSendV1Request $communication_send_v1_request  (required)
 {
     my $params = {
-    'pki_communication_id' => {
-        data_type => 'int',
+    'communication_send_v1_request' => {
+        data_type => 'CommunicationSendV1Request',
         description => '',
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'communication_get_object_v2' } = {
-        summary => 'Retrieve an existing Communication',
+    __PACKAGE__->method_documentation->{ 'communication_send_v1' } = {
+        summary => 'Send a new Communication',
         params => $params,
-        returns => 'CommunicationGetObjectV2Response',
+        returns => 'CommunicationSendV1Response',
         };
 }
-# @return CommunicationGetObjectV2Response
+# @return CommunicationSendV1Response
 #
-sub communication_get_object_v2 {
+sub communication_send_v1 {
     my ($self, %args) = @_;
 
-    # verify the required parameter 'pki_communication_id' is set
-    unless (exists $args{'pki_communication_id'}) {
-      croak("Missing the required parameter 'pki_communication_id' when calling communication_get_object_v2");
+    # verify the required parameter 'communication_send_v1_request' is set
+    unless (exists $args{'communication_send_v1_request'}) {
+      croak("Missing the required parameter 'communication_send_v1_request' when calling communication_send_v1");
     }
 
     # parse inputs
-    my $_resource_path = '/2/object/communication/{pkiCommunicationID}';
+    my $_resource_path = '/1/object/communication/send';
 
-    my $_method = 'GET';
+    my $_method = 'POST';
     my $query_params = {};
     my $header_params = {};
     my $form_params = {};
@@ -91,16 +91,14 @@ sub communication_get_object_v2 {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
-    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
-
-    # path params
-    if ( exists $args{'pki_communication_id'}) {
-        my $_base_variable = "{" . "pkiCommunicationID" . "}";
-        my $_base_value = $self->{api_client}->to_path_value($args{'pki_communication_id'});
-        $_resource_path =~ s/$_base_variable/$_base_value/g;
-    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
 
     my $_body_data;
+    # body params
+    if ( exists $args{'communication_send_v1_request'}) {
+        $_body_data = $args{'communication_send_v1_request'};
+    }
+
     # authentication setting, if any
     my $auth_settings = [qw(Authorization )];
 
@@ -111,7 +109,7 @@ sub communication_get_object_v2 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommunicationGetObjectV2Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommunicationSendV1Response', $response);
     return $_response_object;
 }
 
