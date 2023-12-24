@@ -31,6 +31,8 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CustomContactNameResponse;
+use EzmaxApi::Object::EmailResponseCompound;
+use EzmaxApi::Object::PhoneResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -248,6 +250,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_phonelineshared_id' => {
+        datatype => 'int',
+        base_name => 'fkiPhonelinesharedID',
+        description => 'The unique ID of the Phonelineshared',
+        format => '',
+        read_only => '',
+            },
     'e_communicationsender_objecttype' => {
         datatype => 'string',
         base_name => 'eCommunicationsenderObjecttype',
@@ -262,17 +271,24 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    's_email_address' => {
-        datatype => 'string',
-        base_name => 'sEmailAddress',
-        description => 'The email address.',
+    'obj_email' => {
+        datatype => 'EmailResponseCompound',
+        base_name => 'objEmail',
+        description => '',
         format => '',
         read_only => '',
             },
-    's_phone_e164' => {
-        datatype => 'string',
-        base_name => 'sPhoneE164',
-        description => 'A phone number in E.164 Format',
+    'obj_phone_fax' => {
+        datatype => 'PhoneResponseCompound',
+        base_name => 'objPhoneFax',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_phone_sms' => {
+        datatype => 'PhoneResponseCompound',
+        base_name => 'objPhoneSMS',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -283,10 +299,12 @@ __PACKAGE__->openapi_types( {
     'fki_broker_id' => 'int',
     'fki_user_id' => 'int',
     'fki_mailboxshared_id' => 'int',
+    'fki_phonelineshared_id' => 'int',
     'e_communicationsender_objecttype' => 'string',
     'obj_contact_name' => 'CustomContactNameResponse',
-    's_email_address' => 'string',
-    's_phone_e164' => 'string'
+    'obj_email' => 'EmailResponseCompound',
+    'obj_phone_fax' => 'PhoneResponseCompound',
+    'obj_phone_sms' => 'PhoneResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -294,10 +312,12 @@ __PACKAGE__->attribute_map( {
     'fki_broker_id' => 'fkiBrokerID',
     'fki_user_id' => 'fkiUserID',
     'fki_mailboxshared_id' => 'fkiMailboxsharedID',
+    'fki_phonelineshared_id' => 'fkiPhonelinesharedID',
     'e_communicationsender_objecttype' => 'eCommunicationsenderObjecttype',
     'obj_contact_name' => 'objContactName',
-    's_email_address' => 'sEmailAddress',
-    's_phone_e164' => 'sPhoneE164'
+    'obj_email' => 'objEmail',
+    'obj_phone_fax' => 'objPhoneFax',
+    'obj_phone_sms' => 'objPhoneSMS'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

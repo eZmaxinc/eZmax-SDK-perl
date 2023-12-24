@@ -285,6 +285,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_webhook_issigned' => {
+        datatype => 'boolean',
+        base_name => 'bWebhookIssigned',
+        description => 'Whether the requests will be signed or not',
+        format => '',
+        read_only => '',
+            },
     'b_webhook_skipsslvalidation' => {
         datatype => 'boolean',
         base_name => 'bWebhookSkipsslvalidation',
@@ -304,6 +311,7 @@ __PACKAGE__->openapi_types( {
     's_webhook_url' => 'string',
     's_webhook_emailfailed' => 'string',
     'b_webhook_isactive' => 'boolean',
+    'b_webhook_issigned' => 'boolean',
     'b_webhook_skipsslvalidation' => 'boolean'
 } );
 
@@ -317,6 +325,7 @@ __PACKAGE__->attribute_map( {
     's_webhook_url' => 'sWebhookUrl',
     's_webhook_emailfailed' => 'sWebhookEmailfailed',
     'b_webhook_isactive' => 'bWebhookIsactive',
+    'b_webhook_issigned' => 'bWebhookIssigned',
     'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation'
 } );
 

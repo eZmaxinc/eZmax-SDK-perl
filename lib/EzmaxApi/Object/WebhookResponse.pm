@@ -285,10 +285,31 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_webhook_apikey' => {
+        datatype => 'string',
+        base_name => 'sWebhookApikey',
+        description => 'The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.',
+        format => '',
+        read_only => '',
+            },
+    's_webhook_secret' => {
+        datatype => 'string',
+        base_name => 'sWebhookSecret',
+        description => 'The Secret for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.',
+        format => '',
+        read_only => '',
+            },
     'b_webhook_isactive' => {
         datatype => 'boolean',
         base_name => 'bWebhookIsactive',
         description => 'Whether the Webhook is active or not',
+        format => '',
+        read_only => '',
+            },
+    'b_webhook_issigned' => {
+        datatype => 'boolean',
+        base_name => 'bWebhookIssigned',
+        description => 'Whether the requests will be signed or not',
         format => '',
         read_only => '',
             },
@@ -311,7 +332,10 @@ __PACKAGE__->openapi_types( {
     'e_webhook_managementevent' => 'FieldEWebhookManagementevent',
     's_webhook_url' => 'string',
     's_webhook_emailfailed' => 'string',
+    's_webhook_apikey' => 'string',
+    's_webhook_secret' => 'string',
     'b_webhook_isactive' => 'boolean',
+    'b_webhook_issigned' => 'boolean',
     'b_webhook_skipsslvalidation' => 'boolean'
 } );
 
@@ -325,7 +349,10 @@ __PACKAGE__->attribute_map( {
     'e_webhook_managementevent' => 'eWebhookManagementevent',
     's_webhook_url' => 'sWebhookUrl',
     's_webhook_emailfailed' => 'sWebhookEmailfailed',
+    's_webhook_apikey' => 'sWebhookApikey',
+    's_webhook_secret' => 'sWebhookSecret',
     'b_webhook_isactive' => 'bWebhookIsactive',
+    'b_webhook_issigned' => 'bWebhookIssigned',
     'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation'
 } );
 

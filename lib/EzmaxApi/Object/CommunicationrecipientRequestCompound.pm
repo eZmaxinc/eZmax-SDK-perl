@@ -234,17 +234,17 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'fki_agentincorporation_id' => {
-        datatype => 'int',
-        base_name => 'fkiAgentincorporationID',
-        description => 'The unique ID of the Agentincorporation.',
-        format => '',
-        read_only => '',
-            },
     'fki_broker_id' => {
         datatype => 'int',
         base_name => 'fkiBrokerID',
         description => 'The unique ID of the Broker.',
+        format => '',
+        read_only => '',
+            },
+    'fki_contact_id' => {
+        datatype => 'int',
+        base_name => 'fkiContactID',
+        description => 'The unique ID of the Contact',
         format => '',
         read_only => '',
             },
@@ -304,6 +304,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_mailboxshared_id' => {
+        datatype => 'int',
+        base_name => 'fkiMailboxsharedID',
+        description => 'The unique ID of the Mailboxshared',
+        format => '',
+        read_only => '',
+            },
+    'fki_phonelineshared_id' => {
+        datatype => 'int',
+        base_name => 'fkiPhonelinesharedID',
+        description => 'The unique ID of the Phonelineshared',
+        format => '',
+        read_only => '',
+            },
     'e_communicationrecipient_type' => {
         datatype => 'FieldECommunicationrecipientType',
         base_name => 'eCommunicationrecipientType',
@@ -316,8 +330,8 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'pki_communicationrecipient_id' => 'int',
     'fki_agent_id' => 'int',
-    'fki_agentincorporation_id' => 'int',
     'fki_broker_id' => 'int',
+    'fki_contact_id' => 'int',
     'fki_customer_id' => 'int',
     'fki_employee_id' => 'int',
     'fki_assistant_id' => 'int',
@@ -326,14 +340,16 @@ __PACKAGE__->openapi_types( {
     'fki_notary_id' => 'int',
     'fki_supplier_id' => 'int',
     'fki_user_id' => 'int',
+    'fki_mailboxshared_id' => 'int',
+    'fki_phonelineshared_id' => 'int',
     'e_communicationrecipient_type' => 'FieldECommunicationrecipientType'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_communicationrecipient_id' => 'pkiCommunicationrecipientID',
     'fki_agent_id' => 'fkiAgentID',
-    'fki_agentincorporation_id' => 'fkiAgentincorporationID',
     'fki_broker_id' => 'fkiBrokerID',
+    'fki_contact_id' => 'fkiContactID',
     'fki_customer_id' => 'fkiCustomerID',
     'fki_employee_id' => 'fkiEmployeeID',
     'fki_assistant_id' => 'fkiAssistantID',
@@ -342,6 +358,8 @@ __PACKAGE__->attribute_map( {
     'fki_notary_id' => 'fkiNotaryID',
     'fki_supplier_id' => 'fkiSupplierID',
     'fki_user_id' => 'fkiUserID',
+    'fki_mailboxshared_id' => 'fkiMailboxsharedID',
+    'fki_phonelineshared_id' => 'fkiPhonelinesharedID',
     'e_communicationrecipient_type' => 'eCommunicationrecipientType'
 } );
 

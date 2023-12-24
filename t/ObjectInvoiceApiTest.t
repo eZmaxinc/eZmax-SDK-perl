@@ -30,6 +30,13 @@ my $api = EzmaxApi::ObjectInvoiceApi->new();
 isa_ok($api, 'EzmaxApi::ObjectInvoiceApi');
 
 #
+# invoice_get_attachments_v1 test
+#
+# uncomment below and update the test
+#my $invoice_get_attachments_v1_pki_invoice_id = undef; # replace NULL with a proper value
+#my $invoice_get_attachments_v1_result = $api->invoice_get_attachments_v1(pki_invoice_id => $invoice_get_attachments_v1_pki_invoice_id);
+
+#
 # invoice_get_communication_list_v1 test
 #
 # uncomment below and update the test

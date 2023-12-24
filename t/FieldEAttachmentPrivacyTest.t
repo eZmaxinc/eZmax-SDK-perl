@@ -25,10 +25,10 @@ use strict;
 use warnings;
 
 
-use_ok('EzmaxApi::Object::AttachmentDownloadV1Response');
+use_ok('EzmaxApi::Object::FieldEAttachmentPrivacy');
 
 # uncomment below and update the test
-#my $instance = EzmaxApi::Object::AttachmentDownloadV1Response->new();
+#my $instance = EzmaxApi::Object::FieldEAttachmentPrivacy->new();
 #
-#isa_ok($instance, 'EzmaxApi::Object::AttachmentDownloadV1Response');
+#isa_ok($instance, 'EzmaxApi::Object::FieldEAttachmentPrivacy');
 

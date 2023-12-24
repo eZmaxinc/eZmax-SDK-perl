@@ -233,10 +233,17 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsignfoldertype_sendproofezsignsigner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendproofezsignsigner',
+        description => 'Whether we send the proof in the email to Ezsignsigner',
+        format => '',
+        read_only => '',
+            },
     'b_ezsignfoldertype_includeproofsigner' => {
         datatype => 'boolean',
         base_name => 'bEzsignfoldertypeIncludeproofsigner',
-        description => 'Whether we include the proof with the signed Ezsigndocument for Ezsignsigners',
+        description => 'THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners',
         format => '',
         read_only => '',
             },
@@ -244,6 +251,20 @@ __PACKAGE__->method_documentation({
         datatype => 'boolean',
         base_name => 'bEzsignfoldertypeIncludeproofuser',
         description => 'Whether we include the proof with the signed Ezsigndocument for users',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeAllowdownloadattachmentezsignsigner',
+        description => 'Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_allowdownloadproofezsignsigner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeAllowdownloadproofezsignsigner',
+        description => 'Whether we allow the proof to be downloaded by an Ezsignsigner',
         format => '',
         read_only => '',
             },
@@ -266,8 +287,11 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'pki_ezsignfoldertype_id' => 'int',
     's_ezsignfoldertype_name_x' => 'string',
+    'b_ezsignfoldertype_sendproofezsignsigner' => 'boolean',
     'b_ezsignfoldertype_includeproofsigner' => 'boolean',
     'b_ezsignfoldertype_includeproofuser' => 'boolean',
+    'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => 'boolean',
+    'b_ezsignfoldertype_allowdownloadproofezsignsigner' => 'boolean',
     'b_ezsignfoldertype_delegate' => 'boolean',
     'b_ezsignfoldertype_reassign' => 'boolean'
 } );
@@ -275,8 +299,11 @@ __PACKAGE__->openapi_types( {
 __PACKAGE__->attribute_map( {
     'pki_ezsignfoldertype_id' => 'pkiEzsignfoldertypeID',
     's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
+    'b_ezsignfoldertype_sendproofezsignsigner' => 'bEzsignfoldertypeSendproofezsignsigner',
     'b_ezsignfoldertype_includeproofsigner' => 'bEzsignfoldertypeIncludeproofsigner',
     'b_ezsignfoldertype_includeproofuser' => 'bEzsignfoldertypeIncludeproofuser',
+    'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => 'bEzsignfoldertypeAllowdownloadattachmentezsignsigner',
+    'b_ezsignfoldertype_allowdownloadproofezsignsigner' => 'bEzsignfoldertypeAllowdownloadproofezsignsigner',
     'b_ezsignfoldertype_delegate' => 'bEzsignfoldertypeDelegate',
     'b_ezsignfoldertype_reassign' => 'bEzsignfoldertypeReassign'
 } );

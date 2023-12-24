@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **e_webhook_ezsignevent** | [**FieldEWebhookEzsignevent**](FieldEWebhookEzsignevent.md) |  | [optional] 
 **e_webhook_managementevent** | [**FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional] 
 **b_webhook_isactive** | **boolean** | Whether the Webhook is active or not | 
+**b_webhook_issigned** | **boolean** | Whether the requests will be signed or not | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

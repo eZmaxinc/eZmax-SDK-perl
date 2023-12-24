@@ -9,6 +9,7 @@ use EzmaxApi::Object::WebsocketResponseErrorV1;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **e_websocket_messagetype** | **string** | The Type of message | 
+**s_websocket_channel** | **string** | The Channel on which to route the websocket message | 
 **m_payload** | [**WebsocketResponseErrorV1MPayload**](WebsocketResponseErrorV1MPayload.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

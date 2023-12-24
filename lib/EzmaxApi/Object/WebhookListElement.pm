@@ -285,6 +285,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_webhook_issigned' => {
+        datatype => 'boolean',
+        base_name => 'bWebhookIssigned',
+        description => 'Whether the requests will be signed or not',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -296,7 +303,8 @@ __PACKAGE__->openapi_types( {
     'e_webhook_module' => 'FieldEWebhookModule',
     'e_webhook_ezsignevent' => 'FieldEWebhookEzsignevent',
     'e_webhook_managementevent' => 'FieldEWebhookManagementevent',
-    'b_webhook_isactive' => 'boolean'
+    'b_webhook_isactive' => 'boolean',
+    'b_webhook_issigned' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -308,7 +316,8 @@ __PACKAGE__->attribute_map( {
     'e_webhook_module' => 'eWebhookModule',
     'e_webhook_ezsignevent' => 'eWebhookEzsignevent',
     'e_webhook_managementevent' => 'eWebhookManagementevent',
-    'b_webhook_isactive' => 'bWebhookIsactive'
+    'b_webhook_isactive' => 'bWebhookIsactive',
+    'b_webhook_issigned' => 'bWebhookIssigned'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -226,14 +226,23 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezmaxclient_oslatestversion' => {
+        datatype => 'string',
+        base_name => 'sEzmaxclientOslatestversion',
+        description => 'The latest OS version of the system running the application at the time of release',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    's_ezmaxclient_version' => 'string'
+    's_ezmaxclient_version' => 'string',
+    's_ezmaxclient_oslatestversion' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    's_ezmaxclient_version' => 'sEzmaxclientVersion'
+    's_ezmaxclient_version' => 'sEzmaxclientVersion',
+    's_ezmaxclient_oslatestversion' => 'sEzmaxclientOslatestversion'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

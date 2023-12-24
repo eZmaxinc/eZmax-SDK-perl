@@ -220,6 +220,13 @@ __PACKAGE__->class_documentation({description => 'Request for POST /1/object/ezs
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'fki_ezsignsigningreason_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignsigningreasonID',
+        description => 'The unique ID of the Ezsignsigningreason',
+        format => '',
+        read_only => '',
+            },
     's_value' => {
         datatype => 'string',
         base_name => 'sValue',
@@ -265,6 +272,7 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'fki_ezsignsigningreason_id' => 'int',
     's_value' => 'string',
     'e_attachments_confirmation_decision' => 'string',
     's_attachments_refusal_reason' => 'string',
@@ -274,6 +282,7 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
+    'fki_ezsignsigningreason_id' => 'fkiEzsignsigningreasonID',
     's_value' => 'sValue',
     'e_attachments_confirmation_decision' => 'eAttachmentsConfirmationDecision',
     's_attachments_refusal_reason' => 'sAttachmentsRefusalReason',

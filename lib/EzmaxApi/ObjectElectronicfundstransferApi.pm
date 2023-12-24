@@ -49,7 +49,7 @@ sub new {
 
 
 #
-# eletronicfundstransfer_get_communication_list_v1
+# electronicfundstransfer_get_communication_list_v1
 #
 # Retrieve Communication list
 #
@@ -62,7 +62,7 @@ sub new {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'eletronicfundstransfer_get_communication_list_v1' } = {
+    __PACKAGE__->method_documentation->{ 'electronicfundstransfer_get_communication_list_v1' } = {
         summary => 'Retrieve Communication list',
         params => $params,
         returns => 'ElectronicfundstransferGetCommunicationListV1Response',
@@ -70,12 +70,12 @@ sub new {
 }
 # @return ElectronicfundstransferGetCommunicationListV1Response
 #
-sub eletronicfundstransfer_get_communication_list_v1 {
+sub electronicfundstransfer_get_communication_list_v1 {
     my ($self, %args) = @_;
 
     # verify the required parameter 'pki_electronicfundstransfer_id' is set
     unless (exists $args{'pki_electronicfundstransfer_id'}) {
-      croak("Missing the required parameter 'pki_electronicfundstransfer_id' when calling eletronicfundstransfer_get_communication_list_v1");
+      croak("Missing the required parameter 'pki_electronicfundstransfer_id' when calling electronicfundstransfer_get_communication_list_v1");
     }
 
     # parse inputs

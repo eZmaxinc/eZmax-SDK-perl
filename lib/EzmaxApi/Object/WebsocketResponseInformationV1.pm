@@ -227,6 +227,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_websocket_channel' => {
+        datatype => 'string',
+        base_name => 'sWebsocketChannel',
+        description => 'The Channel on which to route the websocket message',
+        format => '',
+        read_only => '',
+            },
     'm_payload' => {
         datatype => 'WebsocketResponseInformationV1MPayload',
         base_name => 'mPayload',
@@ -238,11 +245,13 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'e_websocket_messagetype' => 'string',
+    's_websocket_channel' => 'string',
     'm_payload' => 'WebsocketResponseInformationV1MPayload'
 } );
 
 __PACKAGE__->attribute_map( {
     'e_websocket_messagetype' => 'eWebsocketMessagetype',
+    's_websocket_channel' => 'sWebsocketChannel',
     'm_payload' => 'mPayload'
 } );
 

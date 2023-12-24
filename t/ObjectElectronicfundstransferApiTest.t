@@ -30,9 +30,9 @@ my $api = EzmaxApi::ObjectElectronicfundstransferApi->new();
 isa_ok($api, 'EzmaxApi::ObjectElectronicfundstransferApi');
 
 #
-# eletronicfundstransfer_get_communication_list_v1 test
+# electronicfundstransfer_get_communication_list_v1 test
 #
 # uncomment below and update the test
-#my $eletronicfundstransfer_get_communication_list_v1_pki_electronicfundstransfer_id = undef; # replace NULL with a proper value
-#my $eletronicfundstransfer_get_communication_list_v1_result = $api->eletronicfundstransfer_get_communication_list_v1(pki_electronicfundstransfer_id => $eletronicfundstransfer_get_communication_list_v1_pki_electronicfundstransfer_id);
+#my $electronicfundstransfer_get_communication_list_v1_pki_electronicfundstransfer_id = undef; # replace NULL with a proper value
+#my $electronicfundstransfer_get_communication_list_v1_result = $api->electronicfundstransfer_get_communication_list_v1(pki_electronicfundstransfer_id => $electronicfundstransfer_get_communication_list_v1_pki_electronicfundstransfer_id);
 

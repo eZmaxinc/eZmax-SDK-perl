@@ -114,6 +114,71 @@ sub webhook_create_object_v1 {
 }
 
 #
+# webhook_create_object_v2
+#
+# Create a new Webhook
+#
+# @param WebhookCreateObjectV2Request $webhook_create_object_v2_request  (required)
+{
+    my $params = {
+    'webhook_create_object_v2_request' => {
+        data_type => 'WebhookCreateObjectV2Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'webhook_create_object_v2' } = {
+        summary => 'Create a new Webhook',
+        params => $params,
+        returns => 'WebhookCreateObjectV2Response',
+        };
+}
+# @return WebhookCreateObjectV2Response
+#
+sub webhook_create_object_v2 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'webhook_create_object_v2_request' is set
+    unless (exists $args{'webhook_create_object_v2_request'}) {
+      croak("Missing the required parameter 'webhook_create_object_v2_request' when calling webhook_create_object_v2");
+    }
+
+    # parse inputs
+    my $_resource_path = '/2/object/webhook';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'webhook_create_object_v2_request'}) {
+        $_body_data = $args{'webhook_create_object_v2_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('WebhookCreateObjectV2Response', $response);
+    return $_response_object;
+}
+
+#
 # webhook_delete_object_v1
 #
 # Delete an existing Webhook
@@ -514,6 +579,89 @@ sub webhook_get_object_v2 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('WebhookGetObjectV2Response', $response);
+    return $_response_object;
+}
+
+#
+# webhook_regenerate_apikey_v1
+#
+# Regenerate the Apikey
+#
+# @param int $pki_webhook_id  (required)
+# @param WebhookRegenerateApikeyV1Request $webhook_regenerate_apikey_v1_request  (required)
+{
+    my $params = {
+    'pki_webhook_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'webhook_regenerate_apikey_v1_request' => {
+        data_type => 'WebhookRegenerateApikeyV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'webhook_regenerate_apikey_v1' } = {
+        summary => 'Regenerate the Apikey',
+        params => $params,
+        returns => 'WebhookRegenerateApikeyV1Response',
+        };
+}
+# @return WebhookRegenerateApikeyV1Response
+#
+sub webhook_regenerate_apikey_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_webhook_id' is set
+    unless (exists $args{'pki_webhook_id'}) {
+      croak("Missing the required parameter 'pki_webhook_id' when calling webhook_regenerate_apikey_v1");
+    }
+
+    # verify the required parameter 'webhook_regenerate_apikey_v1_request' is set
+    unless (exists $args{'webhook_regenerate_apikey_v1_request'}) {
+      croak("Missing the required parameter 'webhook_regenerate_apikey_v1_request' when calling webhook_regenerate_apikey_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/webhook/{pkiWebhookID}/regenerateApikey';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_webhook_id'}) {
+        my $_base_variable = "{" . "pkiWebhookID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_webhook_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'webhook_regenerate_apikey_v1_request'}) {
+        $_body_data = $args{'webhook_regenerate_apikey_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('WebhookRegenerateApikeyV1Response', $response);
     return $_response_object;
 }
 

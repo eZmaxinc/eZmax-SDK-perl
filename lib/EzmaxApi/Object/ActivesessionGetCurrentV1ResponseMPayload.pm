@@ -35,6 +35,8 @@ use EzmaxApi::Object::ActivesessionResponseCompoundUser;
 use EzmaxApi::Object::FieldEActivesessionOrigin;
 use EzmaxApi::Object::FieldEActivesessionUsertype;
 use EzmaxApi::Object::FieldEActivesessionWeekdaystart;
+use EzmaxApi::Object::FieldEUserEzsignaccess;
+use EzmaxApi::Object::FieldEUserEzsignprepaid;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -301,6 +303,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_user_ezsignaccess' => {
+        datatype => 'FieldEUserEzsignaccess',
+        base_name => 'eUserEzsignaccess',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_user_ezsignprepaid' => {
+        datatype => 'FieldEUserEzsignprepaid',
+        base_name => 'eUserEzsignprepaid',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'dt_user_ezsignprepaidexpiration' => {
+        datatype => 'string',
+        base_name => 'dtUserEzsignprepaidexpiration',
+        description => 'The eZsign prepaid expiration date',
+        format => '',
+        read_only => '',
+            },
     'a_pki_permission_id' => {
         datatype => 'ARRAY[int]',
         base_name => 'a_pkiPermissionID',
@@ -350,6 +373,9 @@ __PACKAGE__->openapi_types( {
     'pks_customer_code' => 'string',
     'fki_systemconfigurationtype_id' => 'int',
     'fki_signature_id' => 'int',
+    'e_user_ezsignaccess' => 'FieldEUserEzsignaccess',
+    'e_user_ezsignprepaid' => 'FieldEUserEzsignprepaid',
+    'dt_user_ezsignprepaidexpiration' => 'string',
     'a_pki_permission_id' => 'ARRAY[int]',
     'obj_user_real' => 'ActivesessionResponseCompoundUser',
     'obj_user_cloned' => 'ActivesessionResponseCompoundUser',
@@ -369,6 +395,9 @@ __PACKAGE__->attribute_map( {
     'pks_customer_code' => 'pksCustomerCode',
     'fki_systemconfigurationtype_id' => 'fkiSystemconfigurationtypeID',
     'fki_signature_id' => 'fkiSignatureID',
+    'e_user_ezsignaccess' => 'eUserEzsignaccess',
+    'e_user_ezsignprepaid' => 'eUserEzsignprepaid',
+    'dt_user_ezsignprepaidexpiration' => 'dtUserEzsignprepaidexpiration',
     'a_pki_permission_id' => 'a_pkiPermissionID',
     'obj_user_real' => 'objUserReal',
     'obj_user_cloned' => 'objUserCloned',

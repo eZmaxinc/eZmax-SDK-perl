@@ -97,6 +97,20 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfolderApi');
 #my $ezsignfolder_get_actionable_elements_v1_result = $api->ezsignfolder_get_actionable_elements_v1(pki_ezsignfolder_id => $ezsignfolder_get_actionable_elements_v1_pki_ezsignfolder_id);
 
 #
+# ezsignfolder_get_attachment_count_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_get_attachment_count_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_attachment_count_v1_result = $api->ezsignfolder_get_attachment_count_v1(pki_ezsignfolder_id => $ezsignfolder_get_attachment_count_v1_pki_ezsignfolder_id);
+
+#
+# ezsignfolder_get_attachments_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfolder_get_attachments_v1_pki_ezsignfolder_id = undef; # replace NULL with a proper value
+#my $ezsignfolder_get_attachments_v1_result = $api->ezsignfolder_get_attachments_v1(pki_ezsignfolder_id => $ezsignfolder_get_attachments_v1_pki_ezsignfolder_id);
+
+#
 # ezsignfolder_get_communication_count_v1 test
 #
 # uncomment below and update the test

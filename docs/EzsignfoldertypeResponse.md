@@ -30,18 +30,28 @@ Name | Type | Description | Notes
 **i_ezsignfoldertype_deadlinedays** | **int** | The number of days to get all Ezsignsignatures | 
 **b_ezsignfoldertype_delegate** | **boolean** | Wheter if delegation of signature is allowed to another user or not | [optional] 
 **b_ezsignfoldertype_reassign** | **boolean** | Wheter if Reassignment of signature is allowed to another signatory or not | [optional] 
-**b_ezsignfoldertype_sendattatchmentsigner** | **boolean** | Whether we send the Ezsigndocument and the proof as attachment in the email | 
+**b_ezsignfoldertype_sendattatchmentsigner** | **boolean** | THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email | [optional] 
+**b_ezsignfoldertype_sendsignedtoezsignsigner** | **boolean** | Whether we send an email to Ezsignsigner  when document is completed | [optional] 
+**b_ezsignfoldertype_sendsignedtouser** | **boolean** | Whether we send an email to User who signed when document is completed | [optional] 
+**b_ezsignfoldertype_sendattachmentezsignsigner** | **boolean** | Whether we send the Ezsigndocument in the email to Ezsignsigner | [optional] 
+**b_ezsignfoldertype_sendproofezsignsigner** | **boolean** | Whether we send the proof in the email to Ezsignsigner | [optional] 
+**b_ezsignfoldertype_sendattachmentuser** | **boolean** | Whether we send the Ezsigndocument in the email to User | [optional] 
+**b_ezsignfoldertype_sendproofuser** | **boolean** | Whether we send the proof in the email to User | [optional] 
+**b_ezsignfoldertype_sendproofemail** | **boolean** | Whether we send the proof in the email to external recipient | [optional] 
+**b_ezsignfoldertype_allowdownloadattachmentezsignsigner** | **boolean** | Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner | [optional] 
+**b_ezsignfoldertype_allowdownloadproofezsignsigner** | **boolean** | Whether we allow the proof to be downloaded by an Ezsignsigner | [optional] 
+**b_ezsignfoldertype_sendproofreceivealldocument** | **boolean** | Whether we send the proof to user and Ezsignsigner who receive all documents. | [optional] 
 **b_ezsignfoldertype_sendsignedtodocumentowner** | **boolean** | Whether we send the signed Ezsigndocument to the Ezsigndocument&#39;s owner | 
 **b_ezsignfoldertype_sendsignedtofolderowner** | **boolean** | Whether we send the signed Ezsigndocument to the Ezsignfolder&#39;s owner | 
 **b_ezsignfoldertype_sendsignedtofullgroup** | **boolean** | Whether we send the signed Ezsigndocument to the Usergroup that has acces to all Ezsignfolders | [optional] 
-**b_ezsignfoldertype_sendsignedtolimitedgroup** | **boolean** | Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders | [optional] 
+**b_ezsignfoldertype_sendsignedtolimitedgroup** | **boolean** | THIS FIELD WILL BE DELETED. Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders | [optional] 
 **b_ezsignfoldertype_sendsignedtocolleague** | **boolean** | Whether we send the signed Ezsigndocument to the colleagues | 
 **b_ezsignfoldertype_sendsummarytodocumentowner** | **boolean** | Whether we send the summary to the Ezsigndocument&#39;s owner | 
 **b_ezsignfoldertype_sendsummarytofolderowner** | **boolean** | Whether we send the summary to the Ezsignfolder&#39;s owner | 
 **b_ezsignfoldertype_sendsummarytofullgroup** | **boolean** | Whether we send the summary to the Usergroup that has acces to all Ezsignfolders | [optional] 
 **b_ezsignfoldertype_sendsummarytolimitedgroup** | **boolean** | Whether we send the summary to the Usergroup that has acces to only their own Ezsignfolders | [optional] 
 **b_ezsignfoldertype_sendsummarytocolleague** | **boolean** | Whether we send the summary to the colleagues | 
-**b_ezsignfoldertype_includeproofsigner** | **boolean** | Whether we include the proof with the signed Ezsigndocument for Ezsignsigners | 
+**b_ezsignfoldertype_includeproofsigner** | **boolean** | THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners | [optional] 
 **b_ezsignfoldertype_includeproofuser** | **boolean** | Whether we include the proof with the signed Ezsigndocument for users | 
 **b_ezsignfoldertype_isactive** | **boolean** | Whether the Ezsignfoldertype is active or not | 
 

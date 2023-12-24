@@ -9,11 +9,11 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eletronicfundstransfer_get_communication_list_v1**](ObjectElectronicfundstransferApi.md#eletronicfundstransfer_get_communication_list_v1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list
+[**electronicfundstransfer_get_communication_list_v1**](ObjectElectronicfundstransferApi.md#electronicfundstransfer_get_communication_list_v1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list
 
 
-# **eletronicfundstransfer_get_communication_list_v1**
-> ElectronicfundstransferGetCommunicationListV1Response eletronicfundstransfer_get_communication_list_v1(pki_electronicfundstransfer_id => $pki_electronicfundstransfer_id)
+# **electronicfundstransfer_get_communication_list_v1**
+> ElectronicfundstransferGetCommunicationListV1Response electronicfundstransfer_get_communication_list_v1(pki_electronicfundstransfer_id => $pki_electronicfundstransfer_id)
 
 Retrieve Communication list
 
@@ -34,11 +34,11 @@ my $api_instance = EzmaxApi::ObjectElectronicfundstransferApi->new(
 my $pki_electronicfundstransfer_id = 56; # int | 
 
 eval {
-    my $result = $api_instance->eletronicfundstransfer_get_communication_list_v1(pki_electronicfundstransfer_id => $pki_electronicfundstransfer_id);
+    my $result = $api_instance->electronicfundstransfer_get_communication_list_v1(pki_electronicfundstransfer_id => $pki_electronicfundstransfer_id);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ObjectElectronicfundstransferApi->eletronicfundstransfer_get_communication_list_v1: $@\n";
+    warn "Exception when calling ObjectElectronicfundstransferApi->electronicfundstransfer_get_communication_list_v1: $@\n";
 }
 ```
 

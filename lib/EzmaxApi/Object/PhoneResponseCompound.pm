@@ -255,6 +255,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_phone_international' => {
+        datatype => 'boolean',
+        base_name => 'bPhoneInternational',
+        description => 'Indicate the phone number is an international phone number.',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -262,7 +269,8 @@ __PACKAGE__->openapi_types( {
     'fki_phonetype_id' => 'int',
     'e_phone_type' => 'FieldEPhoneType',
     's_phone_e164' => 'string',
-    's_phone_extension' => 'string'
+    's_phone_extension' => 'string',
+    'b_phone_international' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -270,7 +278,8 @@ __PACKAGE__->attribute_map( {
     'fki_phonetype_id' => 'fkiPhonetypeID',
     'e_phone_type' => 'ePhoneType',
     's_phone_e164' => 'sPhoneE164',
-    's_phone_extension' => 'sPhoneExtension'
+    's_phone_extension' => 'sPhoneExtension',
+    'b_phone_international' => 'bPhoneInternational'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

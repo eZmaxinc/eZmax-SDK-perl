@@ -49,6 +49,73 @@ sub new {
 
 
 #
+# inscription_get_attachments_v1
+#
+# Retrieve Inscription's Attachments
+#
+# @param int $pki_inscription_id  (required)
+{
+    my $params = {
+    'pki_inscription_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'inscription_get_attachments_v1' } = {
+        summary => 'Retrieve Inscription&#39;s Attachments',
+        params => $params,
+        returns => 'InscriptionGetAttachmentsV1Response',
+        };
+}
+# @return InscriptionGetAttachmentsV1Response
+#
+sub inscription_get_attachments_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_inscription_id' is set
+    unless (exists $args{'pki_inscription_id'}) {
+      croak("Missing the required parameter 'pki_inscription_id' when calling inscription_get_attachments_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/inscription/{pkiInscriptionID}/getAttachments';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_inscription_id'}) {
+        my $_base_variable = "{" . "pkiInscriptionID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_inscription_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('InscriptionGetAttachmentsV1Response', $response);
+    return $_response_object;
+}
+
+#
 # inscription_get_communication_list_v1
 #
 # Retrieve Communication list
@@ -112,6 +179,73 @@ sub inscription_get_communication_list_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('InscriptionGetCommunicationListV1Response', $response);
+    return $_response_object;
+}
+
+#
+# inscription_get_communicationsenders_v1
+#
+# Retrieve Inscription's Communicationsender
+#
+# @param int $pki_inscription_id  (required)
+{
+    my $params = {
+    'pki_inscription_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'inscription_get_communicationsenders_v1' } = {
+        summary => 'Retrieve Inscription&#39;s Communicationsender',
+        params => $params,
+        returns => 'InscriptionGetCommunicationsendersV1Response',
+        };
+}
+# @return InscriptionGetCommunicationsendersV1Response
+#
+sub inscription_get_communicationsenders_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_inscription_id' is set
+    unless (exists $args{'pki_inscription_id'}) {
+      croak("Missing the required parameter 'pki_inscription_id' when calling inscription_get_communicationsenders_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/inscription/{pkiInscriptionID}/getCommunicationsenders';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_inscription_id'}) {
+        my $_base_variable = "{" . "pkiInscriptionID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_inscription_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('InscriptionGetCommunicationsendersV1Response', $response);
     return $_response_object;
 }
 

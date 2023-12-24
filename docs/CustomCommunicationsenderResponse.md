@@ -12,10 +12,12 @@ Name | Type | Description | Notes
 **fki_broker_id** | **int** | The unique ID of the Broker. | [optional] 
 **fki_user_id** | **int** | The unique ID of the User | [optional] 
 **fki_mailboxshared_id** | **int** | The unique ID of the Mailboxshared | [optional] 
+**fki_phonelineshared_id** | **int** | The unique ID of the Phonelineshared | [optional] 
 **e_communicationsender_objecttype** | **string** |  | 
 **obj_contact_name** | [**CustomContactNameResponse**](CustomContactNameResponse.md) |  | 
-**s_email_address** | **string** | The email address. | [optional] 
-**s_phone_e164** | **string** | A phone number in E.164 Format | [optional] 
+**obj_email** | [**EmailResponseCompound**](EmailResponseCompound.md) |  | [optional] 
+**obj_phone_fax** | [**PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional] 
+**obj_phone_sms** | [**PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

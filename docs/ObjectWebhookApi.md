@@ -10,11 +10,13 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**webhook_create_object_v1**](ObjectWebhookApi.md#webhook_create_object_v1) | **POST** /1/object/webhook | Create a new Webhook
+[**webhook_create_object_v2**](ObjectWebhookApi.md#webhook_create_object_v2) | **POST** /2/object/webhook | Create a new Webhook
 [**webhook_delete_object_v1**](ObjectWebhookApi.md#webhook_delete_object_v1) | **DELETE** /1/object/webhook/{pkiWebhookID} | Delete an existing Webhook
 [**webhook_edit_object_v1**](ObjectWebhookApi.md#webhook_edit_object_v1) | **PUT** /1/object/webhook/{pkiWebhookID} | Edit an existing Webhook
 [**webhook_get_history_v1**](ObjectWebhookApi.md#webhook_get_history_v1) | **GET** /1/object/webhook/{pkiWebhookID}/getHistory | Retrieve the logs for recent Webhook calls
 [**webhook_get_list_v1**](ObjectWebhookApi.md#webhook_get_list_v1) | **GET** /1/object/webhook/getList | Retrieve Webhook list
 [**webhook_get_object_v2**](ObjectWebhookApi.md#webhook_get_object_v2) | **GET** /2/object/webhook/{pkiWebhookID} | Retrieve an existing Webhook
+[**webhook_regenerate_apikey_v1**](ObjectWebhookApi.md#webhook_regenerate_apikey_v1) | **POST** /1/object/webhook/{pkiWebhookID}/regenerateApikey | Regenerate the Apikey
 [**webhook_test_v1**](ObjectWebhookApi.md#webhook_test_v1) | **POST** /1/object/webhook/{pkiWebhookID}/test | Test the Webhook by calling the Url
 
 
@@ -57,6 +59,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WebhookCreateObjectV1Response**](WebhookCreateObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **webhook_create_object_v2**
+> WebhookCreateObjectV2Response webhook_create_object_v2(webhook_create_object_v2_request => $webhook_create_object_v2_request)
+
+Create a new Webhook
+
+The endpoint allows to create one or many elements at once.
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectWebhookApi;
+my $api_instance = EzmaxApi::ObjectWebhookApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $webhook_create_object_v2_request = EzmaxApi::Object::WebhookCreateObjectV2Request->new(); # WebhookCreateObjectV2Request | 
+
+eval {
+    my $result = $api_instance->webhook_create_object_v2(webhook_create_object_v2_request => $webhook_create_object_v2_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectWebhookApi->webhook_create_object_v2: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhook_create_object_v2_request** | [**WebhookCreateObjectV2Request**](WebhookCreateObjectV2Request.md)|  | 
+
+### Return type
+
+[**WebhookCreateObjectV2Response**](WebhookCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -332,6 +385,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **webhook_regenerate_apikey_v1**
+> WebhookRegenerateApikeyV1Response webhook_regenerate_apikey_v1(pki_webhook_id => $pki_webhook_id, webhook_regenerate_apikey_v1_request => $webhook_regenerate_apikey_v1_request)
+
+Regenerate the Apikey
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectWebhookApi;
+my $api_instance = EzmaxApi::ObjectWebhookApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_webhook_id = 56; # int | 
+my $webhook_regenerate_apikey_v1_request = EzmaxApi::Object::WebhookRegenerateApikeyV1Request->new(); # WebhookRegenerateApikeyV1Request | 
+
+eval {
+    my $result = $api_instance->webhook_regenerate_apikey_v1(pki_webhook_id => $pki_webhook_id, webhook_regenerate_apikey_v1_request => $webhook_regenerate_apikey_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectWebhookApi->webhook_regenerate_apikey_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_webhook_id** | **int**|  | 
+ **webhook_regenerate_apikey_v1_request** | [**WebhookRegenerateApikeyV1Request**](WebhookRegenerateApikeyV1Request.md)|  | 
+
+### Return type
+
+[**WebhookRegenerateApikeyV1Response**](WebhookRegenerateApikeyV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

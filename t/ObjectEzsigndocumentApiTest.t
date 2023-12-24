@@ -114,6 +114,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #my $ezsigndocument_get_actionable_elements_v1_result = $api->ezsigndocument_get_actionable_elements_v1(pki_ezsigndocument_id => $ezsigndocument_get_actionable_elements_v1_pki_ezsigndocument_id);
 
 #
+# ezsigndocument_get_attachments_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_get_attachments_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_get_attachments_v1_result = $api->ezsigndocument_get_attachments_v1(pki_ezsigndocument_id => $ezsigndocument_get_attachments_v1_pki_ezsigndocument_id);
+
+#
 # ezsigndocument_get_completed_elements_v1 test
 #
 # uncomment below and update the test

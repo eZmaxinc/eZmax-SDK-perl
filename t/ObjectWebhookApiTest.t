@@ -37,6 +37,13 @@ isa_ok($api, 'EzmaxApi::ObjectWebhookApi');
 #my $webhook_create_object_v1_result = $api->webhook_create_object_v1(webhook_create_object_v1_request => $webhook_create_object_v1_webhook_create_object_v1_request);
 
 #
+# webhook_create_object_v2 test
+#
+# uncomment below and update the test
+#my $webhook_create_object_v2_webhook_create_object_v2_request = undef; # replace NULL with a proper value
+#my $webhook_create_object_v2_result = $api->webhook_create_object_v2(webhook_create_object_v2_request => $webhook_create_object_v2_webhook_create_object_v2_request);
+
+#
 # webhook_delete_object_v1 test
 #
 # uncomment below and update the test
@@ -76,6 +83,14 @@ isa_ok($api, 'EzmaxApi::ObjectWebhookApi');
 # uncomment below and update the test
 #my $webhook_get_object_v2_pki_webhook_id = undef; # replace NULL with a proper value
 #my $webhook_get_object_v2_result = $api->webhook_get_object_v2(pki_webhook_id => $webhook_get_object_v2_pki_webhook_id);
+
+#
+# webhook_regenerate_apikey_v1 test
+#
+# uncomment below and update the test
+#my $webhook_regenerate_apikey_v1_pki_webhook_id = undef; # replace NULL with a proper value
+#my $webhook_regenerate_apikey_v1_webhook_regenerate_apikey_v1_request = undef; # replace NULL with a proper value
+#my $webhook_regenerate_apikey_v1_result = $api->webhook_regenerate_apikey_v1(pki_webhook_id => $webhook_regenerate_apikey_v1_pki_webhook_id, webhook_regenerate_apikey_v1_request => $webhook_regenerate_apikey_v1_webhook_regenerate_apikey_v1_request);
 
 #
 # webhook_test_v1 test

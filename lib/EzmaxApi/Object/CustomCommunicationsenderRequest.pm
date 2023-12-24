@@ -240,6 +240,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_phonelineshared_id' => {
+        datatype => 'int',
+        base_name => 'fkiPhonelinesharedID',
+        description => 'The unique ID of the Phonelineshared',
+        format => '',
+        read_only => '',
+            },
     'fki_user_id' => {
         datatype => 'int',
         base_name => 'fkiUserID',
@@ -253,6 +260,7 @@ __PACKAGE__->openapi_types( {
     'fki_agent_id' => 'int',
     'fki_broker_id' => 'int',
     'fki_mailboxshared_id' => 'int',
+    'fki_phonelineshared_id' => 'int',
     'fki_user_id' => 'int'
 } );
 
@@ -260,6 +268,7 @@ __PACKAGE__->attribute_map( {
     'fki_agent_id' => 'fkiAgentID',
     'fki_broker_id' => 'fkiBrokerID',
     'fki_mailboxshared_id' => 'fkiMailboxsharedID',
+    'fki_phonelineshared_id' => 'fkiPhonelinesharedID',
     'fki_user_id' => 'fkiUserID'
 } );
 
