@@ -32,6 +32,7 @@ use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::CustomEzsignfoldertypeResponse;
+use EzmaxApi::Object::FieldEEzsignfolderCompletion;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 
@@ -244,6 +245,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignfolder_completion' => {
+        datatype => 'FieldEEzsignfolderCompletion',
+        base_name => 'eEzsignfolderCompletion',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     's_ezsignfoldertype_name_x' => {
         datatype => 'string',
         base_name => 'sEzsignfoldertypeNameX',
@@ -383,6 +391,7 @@ __PACKAGE__->openapi_types( {
     'pki_ezsignfolder_id' => 'int',
     'fki_ezsignfoldertype_id' => 'int',
     'obj_ezsignfoldertype' => 'CustomEzsignfoldertypeResponse',
+    'e_ezsignfolder_completion' => 'FieldEEzsignfolderCompletion',
     's_ezsignfoldertype_name_x' => 'string',
     'fki_billingentityinternal_id' => 'int',
     's_billingentityinternal_description_x' => 'string',
@@ -408,6 +417,7 @@ __PACKAGE__->attribute_map( {
     'pki_ezsignfolder_id' => 'pkiEzsignfolderID',
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
     'obj_ezsignfoldertype' => 'objEzsignfoldertype',
+    'e_ezsignfolder_completion' => 'eEzsignfolderCompletion',
     's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
     'fki_billingentityinternal_id' => 'fkiBillingentityinternalID',
     's_billingentityinternal_description_x' => 'sBillingentityinternalDescriptionX',

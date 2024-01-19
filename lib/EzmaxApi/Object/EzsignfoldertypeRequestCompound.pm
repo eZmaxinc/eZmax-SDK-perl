@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldEEzsignfoldertypeCompletion;
 use EzmaxApi::Object::FieldEEzsignfoldertypeDisposal;
 use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
 use EzmaxApi::Object::FieldEEzsignfoldertypeSendreminderfrequency;
@@ -314,6 +315,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignfoldertype_completion' => {
+        datatype => 'FieldEEzsignfoldertypeCompletion',
+        base_name => 'eEzsignfoldertypeCompletion',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'i_ezsignfoldertype_disposaldays' => {
         datatype => 'int',
         base_name => 'iEzsignfoldertypeDisposaldays',
@@ -339,6 +347,20 @@ __PACKAGE__->method_documentation({
         datatype => 'boolean',
         base_name => 'bEzsignfoldertypeReassign',
         description => 'Wheter if Reassignment of signature is allowed to another signatory or not',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_reassignezsignsigner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeReassignezsignsigner',
+        description => 'Wheter if Reassignment of signature is allowed by a signatory to another signatory or not',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_reassignuser' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeReassignuser',
+        description => 'Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not',
         format => '',
         read_only => '',
             },
@@ -540,10 +562,13 @@ __PACKAGE__->openapi_types( {
     'e_ezsignfoldertype_sendreminderfrequency' => 'FieldEEzsignfoldertypeSendreminderfrequency',
     'i_ezsignfoldertype_archivaldays' => 'int',
     'e_ezsignfoldertype_disposal' => 'FieldEEzsignfoldertypeDisposal',
+    'e_ezsignfoldertype_completion' => 'FieldEEzsignfoldertypeCompletion',
     'i_ezsignfoldertype_disposaldays' => 'int',
     'i_ezsignfoldertype_deadlinedays' => 'int',
     'b_ezsignfoldertype_delegate' => 'boolean',
     'b_ezsignfoldertype_reassign' => 'boolean',
+    'b_ezsignfoldertype_reassignezsignsigner' => 'boolean',
+    'b_ezsignfoldertype_reassignuser' => 'boolean',
     'b_ezsignfoldertype_sendattatchmentsigner' => 'boolean',
     'b_ezsignfoldertype_sendsignedtoezsignsigner' => 'boolean',
     'b_ezsignfoldertype_sendsignedtouser' => 'boolean',
@@ -586,10 +611,13 @@ __PACKAGE__->attribute_map( {
     'e_ezsignfoldertype_sendreminderfrequency' => 'eEzsignfoldertypeSendreminderfrequency',
     'i_ezsignfoldertype_archivaldays' => 'iEzsignfoldertypeArchivaldays',
     'e_ezsignfoldertype_disposal' => 'eEzsignfoldertypeDisposal',
+    'e_ezsignfoldertype_completion' => 'eEzsignfoldertypeCompletion',
     'i_ezsignfoldertype_disposaldays' => 'iEzsignfoldertypeDisposaldays',
     'i_ezsignfoldertype_deadlinedays' => 'iEzsignfoldertypeDeadlinedays',
     'b_ezsignfoldertype_delegate' => 'bEzsignfoldertypeDelegate',
     'b_ezsignfoldertype_reassign' => 'bEzsignfoldertypeReassign',
+    'b_ezsignfoldertype_reassignezsignsigner' => 'bEzsignfoldertypeReassignezsignsigner',
+    'b_ezsignfoldertype_reassignuser' => 'bEzsignfoldertypeReassignuser',
     'b_ezsignfoldertype_sendattatchmentsigner' => 'bEzsignfoldertypeSendattatchmentsigner',
     'b_ezsignfoldertype_sendsignedtoezsignsigner' => 'bEzsignfoldertypeSendsignedtoezsignsigner',
     'b_ezsignfoldertype_sendsignedtouser' => 'bEzsignfoldertypeSendsignedtouser',

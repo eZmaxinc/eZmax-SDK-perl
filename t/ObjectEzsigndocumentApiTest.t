@@ -46,6 +46,14 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #my $ezsigndocument_apply_ezsigntemplate_v2_result = $api->ezsigndocument_apply_ezsigntemplate_v2(pki_ezsigndocument_id => $ezsigndocument_apply_ezsigntemplate_v2_pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplate_v2_request => $ezsigndocument_apply_ezsigntemplate_v2_ezsigndocument_apply_ezsigntemplate_v2_request);
 
 #
+# ezsigndocument_create_ezsignelements_positioned_by_word_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_create_ezsignelements_positioned_by_word_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_create_ezsignelements_positioned_by_word_v1_ezsigndocument_create_ezsignelements_positioned_by_word_v1_request = undef; # replace NULL with a proper value
+#my $ezsigndocument_create_ezsignelements_positioned_by_word_v1_result = $api->ezsigndocument_create_ezsignelements_positioned_by_word_v1(pki_ezsigndocument_id => $ezsigndocument_create_ezsignelements_positioned_by_word_v1_pki_ezsigndocument_id, ezsigndocument_create_ezsignelements_positioned_by_word_v1_request => $ezsigndocument_create_ezsignelements_positioned_by_word_v1_ezsigndocument_create_ezsignelements_positioned_by_word_v1_request);
+
+#
 # ezsigndocument_create_object_v1 test
 #
 # uncomment below and update the test
@@ -141,6 +149,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 # uncomment below and update the test
 #my $ezsigndocument_get_ezsignannotations_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
 #my $ezsigndocument_get_ezsignannotations_v1_result = $api->ezsigndocument_get_ezsignannotations_v1(pki_ezsigndocument_id => $ezsigndocument_get_ezsignannotations_v1_pki_ezsigndocument_id);
+
+#
+# ezsigndocument_get_ezsigndiscussions_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_get_ezsigndiscussions_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_get_ezsigndiscussions_v1_result = $api->ezsigndocument_get_ezsigndiscussions_v1(pki_ezsigndocument_id => $ezsigndocument_get_ezsigndiscussions_v1_pki_ezsigndocument_id);
 
 #
 # ezsigndocument_get_ezsignformfieldgroups_v1 test

@@ -226,6 +226,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_billingentityinternal_id' => {
+        datatype => 'int',
+        base_name => 'fkiBillingentityinternalID',
+        description => 'The unique ID of the Billingentityinternal.',
+        format => '',
+        read_only => '',
+            },
     's_ezsignfolder_description' => {
         datatype => 'string',
         base_name => 'sEzsignfolderDescription',
@@ -265,6 +272,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'fki_ezsignfolder_id' => 'int',
+    'fki_billingentityinternal_id' => 'int',
     's_ezsignfolder_description' => 'string',
     'b_ezsigntsarequirement_billable' => 'boolean',
     'b_ezsignfolder_mfaused' => 'boolean',
@@ -274,6 +282,7 @@ __PACKAGE__->openapi_types( {
 
 __PACKAGE__->attribute_map( {
     'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
+    'fki_billingentityinternal_id' => 'fkiBillingentityinternalID',
     's_ezsignfolder_description' => 'sEzsignfolderDescription',
     'b_ezsigntsarequirement_billable' => 'bEzsigntsarequirementBillable',
     'b_ezsignfolder_mfaused' => 'bEzsignfolderMfaused',

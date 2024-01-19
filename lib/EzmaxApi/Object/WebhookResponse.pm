@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::FieldEWebhookEzsignevent;
 use EzmaxApi::Object::FieldEWebhookManagementevent;
 use EzmaxApi::Object::FieldEWebhookModule;
@@ -320,6 +321,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_audit' => {
+        datatype => 'CommonAudit',
+        base_name => 'objAudit',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -336,7 +344,8 @@ __PACKAGE__->openapi_types( {
     's_webhook_secret' => 'string',
     'b_webhook_isactive' => 'boolean',
     'b_webhook_issigned' => 'boolean',
-    'b_webhook_skipsslvalidation' => 'boolean'
+    'b_webhook_skipsslvalidation' => 'boolean',
+    'obj_audit' => 'CommonAudit'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -353,7 +362,8 @@ __PACKAGE__->attribute_map( {
     's_webhook_secret' => 'sWebhookSecret',
     'b_webhook_isactive' => 'bWebhookIsactive',
     'b_webhook_issigned' => 'bWebhookIssigned',
-    'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation'
+    'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation',
+    'obj_audit' => 'objAudit'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

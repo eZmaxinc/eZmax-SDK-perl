@@ -215,6 +215,89 @@ sub ezsigndocument_apply_ezsigntemplate_v2 {
 }
 
 #
+# ezsigndocument_create_ezsignelements_positioned_by_word_v1
+#
+# Create multiple Ezsignsignatures/Ezsignformfieldgroups
+#
+# @param int $pki_ezsigndocument_id  (required)
+# @param EzsigndocumentCreateEzsignelementsPositionedByWordV1Request $ezsigndocument_create_ezsignelements_positioned_by_word_v1_request  (required)
+{
+    my $params = {
+    'pki_ezsigndocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsigndocument_create_ezsignelements_positioned_by_word_v1_request' => {
+        data_type => 'EzsigndocumentCreateEzsignelementsPositionedByWordV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_create_ezsignelements_positioned_by_word_v1' } = {
+        summary => 'Create multiple Ezsignsignatures/Ezsignformfieldgroups',
+        params => $params,
+        returns => 'EzsigndocumentCreateEzsignelementsPositionedByWordV1Response',
+        };
+}
+# @return EzsigndocumentCreateEzsignelementsPositionedByWordV1Response
+#
+sub ezsigndocument_create_ezsignelements_positioned_by_word_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigndocument_id' is set
+    unless (exists $args{'pki_ezsigndocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_create_ezsignelements_positioned_by_word_v1");
+    }
+
+    # verify the required parameter 'ezsigndocument_create_ezsignelements_positioned_by_word_v1_request' is set
+    unless (exists $args{'ezsigndocument_create_ezsignelements_positioned_by_word_v1_request'}) {
+      croak("Missing the required parameter 'ezsigndocument_create_ezsignelements_positioned_by_word_v1_request' when calling ezsigndocument_create_ezsignelements_positioned_by_word_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsigndocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigndocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigndocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsigndocument_create_ezsignelements_positioned_by_word_v1_request'}) {
+        $_body_data = $args{'ezsigndocument_create_ezsignelements_positioned_by_word_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentCreateEzsignelementsPositionedByWordV1Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsigndocument_create_object_v1
 #
 # Create a new Ezsigndocument
@@ -1033,7 +1116,7 @@ sub ezsigndocument_get_completed_elements_v1 {
 # Retrieve a URL to download documents.
 #
 # @param int $pki_ezsigndocument_id  (required)
-# @param string $e_document_type The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more.  (required)
+# @param string $e_document_type The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more.  (required)
 {
     my $params = {
     'pki_ezsigndocument_id' => {
@@ -1043,7 +1126,7 @@ sub ezsigndocument_get_completed_elements_v1 {
     },
     'e_document_type' => {
         data_type => 'string',
-        description => 'The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. ',
+        description => 'The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. ',
         required => '1',
     },
     };
@@ -1176,6 +1259,73 @@ sub ezsigndocument_get_ezsignannotations_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('EzsigndocumentGetEzsignannotationsV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsigndocument_get_ezsigndiscussions_v1
+#
+# Retrieve an existing Ezsigndocument's Ezsigndiscussions
+#
+# @param int $pki_ezsigndocument_id  (required)
+{
+    my $params = {
+    'pki_ezsigndocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_get_ezsigndiscussions_v1' } = {
+        summary => 'Retrieve an existing Ezsigndocument&#39;s Ezsigndiscussions',
+        params => $params,
+        returns => 'EzsigndocumentGetEzsigndiscussionsV1Response',
+        };
+}
+# @return EzsigndocumentGetEzsigndiscussionsV1Response
+#
+sub ezsigndocument_get_ezsigndiscussions_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigndocument_id' is set
+    unless (exists $args{'pki_ezsigndocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_get_ezsigndiscussions_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsigndiscussions';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsigndocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigndocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigndocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentGetEzsigndiscussionsV1Response', $response);
     return $_response_object;
 }
 

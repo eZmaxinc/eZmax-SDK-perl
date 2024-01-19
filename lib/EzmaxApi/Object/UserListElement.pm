@@ -292,6 +292,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_user_jobtitle' => {
+        datatype => 'string',
+        base_name => 'sUserJobtitle',
+        description => 'The job title of the user',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -304,7 +311,8 @@ __PACKAGE__->openapi_types( {
     'e_user_origin' => 'FieldEUserOrigin',
     'e_user_ezsignaccess' => 'FieldEUserEzsignaccess',
     'dt_user_ezsignprepaidexpiration' => 'string',
-    's_email_address' => 'string'
+    's_email_address' => 'string',
+    's_user_jobtitle' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -317,7 +325,8 @@ __PACKAGE__->attribute_map( {
     'e_user_origin' => 'eUserOrigin',
     'e_user_ezsignaccess' => 'eUserEzsignaccess',
     'dt_user_ezsignprepaidexpiration' => 'dtUserEzsignprepaidexpiration',
-    's_email_address' => 'sEmailAddress'
+    's_email_address' => 'sEmailAddress',
+    's_user_jobtitle' => 'sUserJobtitle'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

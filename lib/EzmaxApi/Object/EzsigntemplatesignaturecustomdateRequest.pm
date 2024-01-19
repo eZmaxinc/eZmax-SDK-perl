@@ -240,6 +240,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_ezsigntemplatesignaturecustomdate_offsetx' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatesignaturecustomdateOffsetx',
+        description => 'The X coordinate (Horizontal) where to put the Ezsigntemplatesignaturecustomdate on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignaturecustomdate 2 inches from the left of the signature, you would use \&quot;200\&quot; for the X coordinate.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigntemplatesignaturecustomdate_offsety' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatesignaturecustomdateOffsety',
+        description => 'The X coordinate (Horizontal) where to put the Ezsigntemplatesignaturecustomdate on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignaturecustomdate 2 inches from the top of the signature, you would use \&quot;200\&quot; for the Y coordinate.',
+        format => '',
+        read_only => '',
+            },
     's_ezsigntemplatesignaturecustomdate_format' => {
         datatype => 'string',
         base_name => 'sEzsigntemplatesignaturecustomdateFormat',
@@ -253,6 +267,8 @@ __PACKAGE__->openapi_types( {
     'pki_ezsigntemplatesignaturecustomdate_id' => 'int',
     'i_ezsigntemplatesignaturecustomdate_x' => 'int',
     'i_ezsigntemplatesignaturecustomdate_y' => 'int',
+    'i_ezsigntemplatesignaturecustomdate_offsetx' => 'int',
+    'i_ezsigntemplatesignaturecustomdate_offsety' => 'int',
     's_ezsigntemplatesignaturecustomdate_format' => 'string'
 } );
 
@@ -260,6 +276,8 @@ __PACKAGE__->attribute_map( {
     'pki_ezsigntemplatesignaturecustomdate_id' => 'pkiEzsigntemplatesignaturecustomdateID',
     'i_ezsigntemplatesignaturecustomdate_x' => 'iEzsigntemplatesignaturecustomdateX',
     'i_ezsigntemplatesignaturecustomdate_y' => 'iEzsigntemplatesignaturecustomdateY',
+    'i_ezsigntemplatesignaturecustomdate_offsetx' => 'iEzsigntemplatesignaturecustomdateOffsetx',
+    'i_ezsigntemplatesignaturecustomdate_offsety' => 'iEzsigntemplatesignaturecustomdateOffsety',
     's_ezsigntemplatesignaturecustomdate_format' => 'sEzsigntemplatesignaturecustomdateFormat'
 } );
 

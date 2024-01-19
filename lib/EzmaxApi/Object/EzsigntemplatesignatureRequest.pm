@@ -34,6 +34,8 @@ use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureAttachmentnamesource;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureFont;
+use EzmaxApi::Object::FieldEEzsigntemplatesignaturePositioning;
+use EzmaxApi::Object::FieldEEzsigntemplatesignaturePositioningoccurence;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureType;
 
@@ -253,6 +255,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsigntemplatesignature_positioning' => {
+        datatype => 'FieldEEzsigntemplatesignaturePositioning',
+        base_name => 'eEzsigntemplatesignaturePositioning',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'i_ezsigntemplatedocumentpage_pagenumber' => {
         datatype => 'int',
         base_name => 'iEzsigntemplatedocumentpagePagenumber',
@@ -379,6 +388,34 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsigntemplatesignature_positioningpattern' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplatesignaturePositioningpattern',
+        description => 'The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigntemplatesignature_positioningoffsetx' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatesignaturePositioningoffsetx',
+        description => 'The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigntemplatesignature_positioningoffsety' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatesignaturePositioningoffsety',
+        description => 'The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsigntemplatesignature_positioningoccurence' => {
+        datatype => 'FieldEEzsigntemplatesignaturePositioningoccurence',
+        base_name => 'eEzsigntemplatesignaturePositioningoccurence',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -386,6 +423,7 @@ __PACKAGE__->openapi_types( {
     'fki_ezsigntemplatedocument_id' => 'int',
     'fki_ezsigntemplatesigner_id' => 'int',
     'fki_ezsigntemplatesigner_id_validation' => 'int',
+    'e_ezsigntemplatesignature_positioning' => 'FieldEEzsigntemplatesignaturePositioning',
     'i_ezsigntemplatedocumentpage_pagenumber' => 'int',
     'i_ezsigntemplatesignature_x' => 'int',
     'i_ezsigntemplatesignature_y' => 'int',
@@ -403,7 +441,11 @@ __PACKAGE__->openapi_types( {
     'i_ezsigntemplatesignature_maxlength' => 'int',
     's_ezsigntemplatesignature_regexp' => 'string',
     'e_ezsigntemplatesignature_textvalidation' => 'EnumTextvalidation',
-    'e_ezsigntemplatesignature_dependencyrequirement' => 'FieldEEzsigntemplatesignatureDependencyrequirement'
+    'e_ezsigntemplatesignature_dependencyrequirement' => 'FieldEEzsigntemplatesignatureDependencyrequirement',
+    's_ezsigntemplatesignature_positioningpattern' => 'string',
+    'i_ezsigntemplatesignature_positioningoffsetx' => 'int',
+    'i_ezsigntemplatesignature_positioningoffsety' => 'int',
+    'e_ezsigntemplatesignature_positioningoccurence' => 'FieldEEzsigntemplatesignaturePositioningoccurence'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -411,6 +453,7 @@ __PACKAGE__->attribute_map( {
     'fki_ezsigntemplatedocument_id' => 'fkiEzsigntemplatedocumentID',
     'fki_ezsigntemplatesigner_id' => 'fkiEzsigntemplatesignerID',
     'fki_ezsigntemplatesigner_id_validation' => 'fkiEzsigntemplatesignerIDValidation',
+    'e_ezsigntemplatesignature_positioning' => 'eEzsigntemplatesignaturePositioning',
     'i_ezsigntemplatedocumentpage_pagenumber' => 'iEzsigntemplatedocumentpagePagenumber',
     'i_ezsigntemplatesignature_x' => 'iEzsigntemplatesignatureX',
     'i_ezsigntemplatesignature_y' => 'iEzsigntemplatesignatureY',
@@ -428,7 +471,11 @@ __PACKAGE__->attribute_map( {
     'i_ezsigntemplatesignature_maxlength' => 'iEzsigntemplatesignatureMaxlength',
     's_ezsigntemplatesignature_regexp' => 'sEzsigntemplatesignatureRegexp',
     'e_ezsigntemplatesignature_textvalidation' => 'eEzsigntemplatesignatureTextvalidation',
-    'e_ezsigntemplatesignature_dependencyrequirement' => 'eEzsigntemplatesignatureDependencyrequirement'
+    'e_ezsigntemplatesignature_dependencyrequirement' => 'eEzsigntemplatesignatureDependencyrequirement',
+    's_ezsigntemplatesignature_positioningpattern' => 'sEzsigntemplatesignaturePositioningpattern',
+    'i_ezsigntemplatesignature_positioningoffsetx' => 'iEzsigntemplatesignaturePositioningoffsetx',
+    'i_ezsigntemplatesignature_positioningoffsety' => 'iEzsigntemplatesignaturePositioningoffsety',
+    'e_ezsigntemplatesignature_positioningoccurence' => 'eEzsigntemplatesignaturePositioningoccurence'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

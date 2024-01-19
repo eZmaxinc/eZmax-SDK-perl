@@ -9,6 +9,7 @@ use EzmaxApi::Object::CustomEzmaxinvoicingEzsignfolderResponse;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fki_ezsignfolder_id** | **int** | The unique ID of the Ezsignfolder | 
+**fki_billingentityinternal_id** | **int** | The unique ID of the Billingentityinternal. | [optional] 
 **s_ezsignfolder_description** | **string** | The description of the Ezsignfolder | 
 **b_ezsigntsarequirement_billable** | **boolean** | Whether the TSA requirement is billable or not | 
 **b_ezsignfolder_mfaused** | **boolean** | Whether the MFA was used or not for the Ezsignfolder | 

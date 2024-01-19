@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::FieldEWebhookEzsignevent;
 use EzmaxApi::Object::FieldEWebhookManagementevent;
 use EzmaxApi::Object::FieldEWebhookModule;
@@ -320,6 +321,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_audit' => {
+        datatype => 'CommonAudit',
+        base_name => 'objAudit',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'pks_customer_code' => {
         datatype => 'string',
         base_name => 'pksCustomerCode',
@@ -351,6 +359,7 @@ __PACKAGE__->openapi_types( {
     'b_webhook_isactive' => 'boolean',
     'b_webhook_issigned' => 'boolean',
     'b_webhook_skipsslvalidation' => 'boolean',
+    'obj_audit' => 'CommonAudit',
     'pks_customer_code' => 'string',
     'b_webhook_test' => 'boolean'
 } );
@@ -370,6 +379,7 @@ __PACKAGE__->attribute_map( {
     'b_webhook_isactive' => 'bWebhookIsactive',
     'b_webhook_issigned' => 'bWebhookIssigned',
     'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation',
+    'obj_audit' => 'objAudit',
     'pks_customer_code' => 'pksCustomerCode',
     'b_webhook_test' => 'bWebhookTest'
 } );

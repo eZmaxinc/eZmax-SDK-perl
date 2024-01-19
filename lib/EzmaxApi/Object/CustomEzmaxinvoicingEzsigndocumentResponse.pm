@@ -226,6 +226,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_billingentityinternal_id' => {
+        datatype => 'int',
+        base_name => 'fkiBillingentityinternalID',
+        description => 'The unique ID of the Billingentityinternal.',
+        format => '',
+        read_only => '',
+            },
     's_name' => {
         datatype => 'string',
         base_name => 'sName',
@@ -258,6 +265,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'fki_ezsignfolder_id' => 'int',
+    'fki_billingentityinternal_id' => 'int',
     's_name' => 'string',
     's_ezsignfolder_description' => 'string',
     's_ezsigndocument_name' => 'string',
@@ -266,6 +274,7 @@ __PACKAGE__->openapi_types( {
 
 __PACKAGE__->attribute_map( {
     'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
+    'fki_billingentityinternal_id' => 'fkiBillingentityinternalID',
     's_name' => 'sName',
     's_ezsignfolder_description' => 'sEzsignfolderDescription',
     's_ezsigndocument_name' => 'sEzsigndocumentName',

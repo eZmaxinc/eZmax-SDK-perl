@@ -32,6 +32,7 @@ use DateTime;
 
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
+use EzmaxApi::Object::CommonResponseWarning;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -235,16 +236,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_warning' => {
+        datatype => 'ARRAY[CommonResponseWarning]',
+        base_name => 'a_objWarning',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'obj_debug_payload' => 'CommonResponseObjDebugPayload',
-    'obj_debug' => 'CommonResponseObjDebug'
+    'obj_debug' => 'CommonResponseObjDebug',
+    'a_obj_warning' => 'ARRAY[CommonResponseWarning]'
 } );
 
 __PACKAGE__->attribute_map( {
     'obj_debug_payload' => 'objDebugPayload',
-    'obj_debug' => 'objDebug'
+    'obj_debug' => 'objDebug',
+    'a_obj_warning' => 'a_objWarning'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -32,6 +32,8 @@ use DateTime;
 
 use EzmaxApi::Object::EzsigntemplateelementdependencyRequestCompound;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldDependencyrequirement;
+use EzmaxApi::Object::FieldEEzsigntemplateformfieldPositioning;
+use EzmaxApi::Object::FieldEEzsigntemplateformfieldPositioningoccurence;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -228,6 +230,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsigntemplateformfield_positioning' => {
+        datatype => 'FieldEEzsigntemplateformfieldPositioning',
+        base_name => 'eEzsigntemplateformfieldPositioning',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'i_ezsigntemplatedocumentpage_pagenumber' => {
         datatype => 'int',
         base_name => 'iEzsigntemplatedocumentpagePagenumber',
@@ -298,6 +307,34 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsigntemplateformfield_positioningpattern' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplateformfieldPositioningpattern',
+        description => 'The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigntemplateformfield_positioningoffsetx' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplateformfieldPositioningoffsetx',
+        description => 'The offset X  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigntemplateformfield_positioningoffsety' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplateformfieldPositioningoffsety',
+        description => 'The offset Y  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsigntemplateformfield_positioningoccurence' => {
+        datatype => 'FieldEEzsigntemplateformfieldPositioningoccurence',
+        base_name => 'eEzsigntemplateformfieldPositioningoccurence',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'a_obj_ezsigntemplateelementdependency' => {
         datatype => 'ARRAY[EzsigntemplateelementdependencyRequestCompound]',
         base_name => 'a_objEzsigntemplateelementdependency',
@@ -309,6 +346,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'pki_ezsigntemplateformfield_id' => 'int',
+    'e_ezsigntemplateformfield_positioning' => 'FieldEEzsigntemplateformfieldPositioning',
     'i_ezsigntemplatedocumentpage_pagenumber' => 'int',
     's_ezsigntemplateformfield_label' => 'string',
     's_ezsigntemplateformfield_value' => 'string',
@@ -319,11 +357,16 @@ __PACKAGE__->openapi_types( {
     'b_ezsigntemplateformfield_autocomplete' => 'boolean',
     'b_ezsigntemplateformfield_selected' => 'boolean',
     'e_ezsigntemplateformfield_dependencyrequirement' => 'FieldEEzsigntemplateformfieldDependencyrequirement',
+    's_ezsigntemplateformfield_positioningpattern' => 'string',
+    'i_ezsigntemplateformfield_positioningoffsetx' => 'int',
+    'i_ezsigntemplateformfield_positioningoffsety' => 'int',
+    'e_ezsigntemplateformfield_positioningoccurence' => 'FieldEEzsigntemplateformfieldPositioningoccurence',
     'a_obj_ezsigntemplateelementdependency' => 'ARRAY[EzsigntemplateelementdependencyRequestCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_ezsigntemplateformfield_id' => 'pkiEzsigntemplateformfieldID',
+    'e_ezsigntemplateformfield_positioning' => 'eEzsigntemplateformfieldPositioning',
     'i_ezsigntemplatedocumentpage_pagenumber' => 'iEzsigntemplatedocumentpagePagenumber',
     's_ezsigntemplateformfield_label' => 'sEzsigntemplateformfieldLabel',
     's_ezsigntemplateformfield_value' => 'sEzsigntemplateformfieldValue',
@@ -334,6 +377,10 @@ __PACKAGE__->attribute_map( {
     'b_ezsigntemplateformfield_autocomplete' => 'bEzsigntemplateformfieldAutocomplete',
     'b_ezsigntemplateformfield_selected' => 'bEzsigntemplateformfieldSelected',
     'e_ezsigntemplateformfield_dependencyrequirement' => 'eEzsigntemplateformfieldDependencyrequirement',
+    's_ezsigntemplateformfield_positioningpattern' => 'sEzsigntemplateformfieldPositioningpattern',
+    'i_ezsigntemplateformfield_positioningoffsetx' => 'iEzsigntemplateformfieldPositioningoffsetx',
+    'i_ezsigntemplateformfield_positioningoffsety' => 'iEzsigntemplateformfieldPositioningoffsety',
+    'e_ezsigntemplateformfield_positioningoccurence' => 'eEzsigntemplateformfieldPositioningoccurence',
     'a_obj_ezsigntemplateelementdependency' => 'a_objEzsigntemplateelementdependency'
 } );
 

@@ -282,6 +282,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsignfoldertype_reassignezsignsigner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeReassignezsignsigner',
+        description => 'Wheter if Reassignment of signature is allowed by a signatory to another signatory or not',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_reassignuser' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeReassignuser',
+        description => 'Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -293,7 +307,9 @@ __PACKAGE__->openapi_types( {
     'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => 'boolean',
     'b_ezsignfoldertype_allowdownloadproofezsignsigner' => 'boolean',
     'b_ezsignfoldertype_delegate' => 'boolean',
-    'b_ezsignfoldertype_reassign' => 'boolean'
+    'b_ezsignfoldertype_reassign' => 'boolean',
+    'b_ezsignfoldertype_reassignezsignsigner' => 'boolean',
+    'b_ezsignfoldertype_reassignuser' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -305,7 +321,9 @@ __PACKAGE__->attribute_map( {
     'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => 'bEzsignfoldertypeAllowdownloadattachmentezsignsigner',
     'b_ezsignfoldertype_allowdownloadproofezsignsigner' => 'bEzsignfoldertypeAllowdownloadproofezsignsigner',
     'b_ezsignfoldertype_delegate' => 'bEzsignfoldertypeDelegate',
-    'b_ezsignfoldertype_reassign' => 'bEzsignfoldertypeReassign'
+    'b_ezsignfoldertype_reassign' => 'bEzsignfoldertypeReassign',
+    'b_ezsignfoldertype_reassignezsignsigner' => 'bEzsignfoldertypeReassignezsignsigner',
+    'b_ezsignfoldertype_reassignuser' => 'bEzsignfoldertypeReassignuser'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
