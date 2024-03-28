@@ -233,9 +233,9 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'b_isiframe' => {
+    'b_is_iframe' => {
         datatype => 'boolean',
-        base_name => 'bIsiframe',
+        base_name => 'bIsIframe',
         description => 'Whether the url would be in an iFrame or not',
         format => '',
         read_only => '',
@@ -245,13 +245,13 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     's_return_url' => 'string',
     's_iframedomain' => 'string',
-    'b_isiframe' => 'boolean'
+    'b_is_iframe' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
     's_return_url' => 'sReturnUrl',
     's_iframedomain' => 'sIframedomain',
-    'b_isiframe' => 'bIsiframe'
+    'b_is_iframe' => 'bIsIframe'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
