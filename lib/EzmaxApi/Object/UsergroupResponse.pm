@@ -234,16 +234,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_usergroup_name_x' => {
+        datatype => 'string',
+        base_name => 'sUsergroupNameX',
+        description => 'The Name of the Usergroup in the language of the requester',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_usergroup_id' => 'int',
-    'obj_usergroup_name' => 'MultilingualUsergroupName'
+    'obj_usergroup_name' => 'MultilingualUsergroupName',
+    's_usergroup_name_x' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_usergroup_id' => 'pkiUsergroupID',
-    'obj_usergroup_name' => 'objUsergroupName'
+    'obj_usergroup_name' => 'objUsergroupName',
+    's_usergroup_name_x' => 'sUsergroupNameX'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

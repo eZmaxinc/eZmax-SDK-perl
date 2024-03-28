@@ -10,6 +10,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**user_create_object_v1**](ObjectUserApi.md#user_create_object_v1) | **POST** /1/object/user | Create a new User
+[**user_create_object_v2**](ObjectUserApi.md#user_create_object_v2) | **POST** /2/object/user | Create a new User
 [**user_edit_object_v1**](ObjectUserApi.md#user_edit_object_v1) | **PUT** /1/object/user/{pkiUserID} | Edit an existing User
 [**user_edit_permissions_v1**](ObjectUserApi.md#user_edit_permissions_v1) | **PUT** /1/object/user/{pkiUserID}/editPermissions | Edit multiple Permissions
 [**user_get_apikeys_v1**](ObjectUserApi.md#user_get_apikeys_v1) | **GET** /1/object/user/{pkiUserID}/getApikeys | Retrieve an existing User&#39;s Apikeys
@@ -19,6 +20,8 @@ Method | HTTP request | Description
 [**user_get_object_v2**](ObjectUserApi.md#user_get_object_v2) | **GET** /2/object/user/{pkiUserID} | Retrieve an existing User
 [**user_get_permissions_v1**](ObjectUserApi.md#user_get_permissions_v1) | **GET** /1/object/user/{pkiUserID}/getPermissions | Retrieve an existing User&#39;s Permissions
 [**user_get_subnets_v1**](ObjectUserApi.md#user_get_subnets_v1) | **GET** /1/object/user/{pkiUserID}/getSubnets | Retrieve an existing User&#39;s Subnets
+[**user_get_usergroupexternals_v1**](ObjectUserApi.md#user_get_usergroupexternals_v1) | **GET** /1/object/user/{pkiUserID}/getUsergroupexternals | Get User&#39;s Usergroupexternals
+[**user_get_usergroups_v1**](ObjectUserApi.md#user_get_usergroups_v1) | **GET** /1/object/user/{pkiUserID}/getUsergroups | Get User&#39;s Usergroups
 [**user_send_password_reset_v1**](ObjectUserApi.md#user_send_password_reset_v1) | **POST** /1/object/user/{pkiUserID}/sendPasswordReset | Send password reset
 
 
@@ -61,6 +64,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UserCreateObjectV1Response**](UserCreateObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_create_object_v2**
+> UserCreateObjectV2Response user_create_object_v2(user_create_object_v2_request => $user_create_object_v2_request)
+
+Create a new User
+
+The endpoint allows to create one or many elements at once.
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectUserApi;
+my $api_instance = EzmaxApi::ObjectUserApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $user_create_object_v2_request = EzmaxApi::Object::UserCreateObjectV2Request->new(); # UserCreateObjectV2Request | 
+
+eval {
+    my $result = $api_instance->user_create_object_v2(user_create_object_v2_request => $user_create_object_v2_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectUserApi->user_create_object_v2: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_create_object_v2_request** | [**UserCreateObjectV2Request**](UserCreateObjectV2Request.md)|  | 
+
+### Return type
+
+[**UserCreateObjectV2Response**](UserCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -532,6 +586,104 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UserGetSubnetsV1Response**](UserGetSubnetsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_get_usergroupexternals_v1**
+> UserGetUsergroupexternalsV1Response user_get_usergroupexternals_v1(pki_user_id => $pki_user_id)
+
+Get User's Usergroupexternals
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectUserApi;
+my $api_instance = EzmaxApi::ObjectUserApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_user_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->user_get_usergroupexternals_v1(pki_user_id => $pki_user_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectUserApi->user_get_usergroupexternals_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_user_id** | **int**|  | 
+
+### Return type
+
+[**UserGetUsergroupexternalsV1Response**](UserGetUsergroupexternalsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_get_usergroups_v1**
+> UserGetUsergroupsV1Response user_get_usergroups_v1(pki_user_id => $pki_user_id)
+
+Get User's Usergroups
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectUserApi;
+my $api_instance = EzmaxApi::ObjectUserApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_user_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->user_get_usergroups_v1(pki_user_id => $pki_user_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectUserApi->user_get_usergroups_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_user_id** | **int**|  | 
+
+### Return type
+
+[**UserGetUsergroupsV1Response**](UserGetUsergroupsV1Response.md)
 
 ### Authorization
 

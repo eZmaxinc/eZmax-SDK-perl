@@ -114,6 +114,71 @@ sub user_create_object_v1 {
 }
 
 #
+# user_create_object_v2
+#
+# Create a new User
+#
+# @param UserCreateObjectV2Request $user_create_object_v2_request  (required)
+{
+    my $params = {
+    'user_create_object_v2_request' => {
+        data_type => 'UserCreateObjectV2Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'user_create_object_v2' } = {
+        summary => 'Create a new User',
+        params => $params,
+        returns => 'UserCreateObjectV2Response',
+        };
+}
+# @return UserCreateObjectV2Response
+#
+sub user_create_object_v2 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'user_create_object_v2_request' is set
+    unless (exists $args{'user_create_object_v2_request'}) {
+      croak("Missing the required parameter 'user_create_object_v2_request' when calling user_create_object_v2");
+    }
+
+    # parse inputs
+    my $_resource_path = '/2/object/user';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'user_create_object_v2_request'}) {
+        $_body_data = $args{'user_create_object_v2_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('UserCreateObjectV2Response', $response);
+    return $_response_object;
+}
+
+#
 # user_edit_object_v1
 #
 # Edit an existing User
@@ -815,6 +880,140 @@ sub user_get_subnets_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('UserGetSubnetsV1Response', $response);
+    return $_response_object;
+}
+
+#
+# user_get_usergroupexternals_v1
+#
+# Get User's Usergroupexternals
+#
+# @param int $pki_user_id  (required)
+{
+    my $params = {
+    'pki_user_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'user_get_usergroupexternals_v1' } = {
+        summary => 'Get User&#39;s Usergroupexternals',
+        params => $params,
+        returns => 'UserGetUsergroupexternalsV1Response',
+        };
+}
+# @return UserGetUsergroupexternalsV1Response
+#
+sub user_get_usergroupexternals_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_user_id' is set
+    unless (exists $args{'pki_user_id'}) {
+      croak("Missing the required parameter 'pki_user_id' when calling user_get_usergroupexternals_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/user/{pkiUserID}/getUsergroupexternals';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_user_id'}) {
+        my $_base_variable = "{" . "pkiUserID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_user_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('UserGetUsergroupexternalsV1Response', $response);
+    return $_response_object;
+}
+
+#
+# user_get_usergroups_v1
+#
+# Get User's Usergroups
+#
+# @param int $pki_user_id  (required)
+{
+    my $params = {
+    'pki_user_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'user_get_usergroups_v1' } = {
+        summary => 'Get User&#39;s Usergroups',
+        params => $params,
+        returns => 'UserGetUsergroupsV1Response',
+        };
+}
+# @return UserGetUsergroupsV1Response
+#
+sub user_get_usergroups_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_user_id' is set
+    unless (exists $args{'pki_user_id'}) {
+      croak("Missing the required parameter 'pki_user_id' when calling user_get_usergroups_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/user/{pkiUserID}/getUsergroups';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_user_id'}) {
+        my $_base_variable = "{" . "pkiUserID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_user_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('UserGetUsergroupsV1Response', $response);
     return $_response_object;
 }
 

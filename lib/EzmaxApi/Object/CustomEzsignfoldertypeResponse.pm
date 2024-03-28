@@ -240,20 +240,6 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'b_ezsignfoldertype_includeproofsigner' => {
-        datatype => 'boolean',
-        base_name => 'bEzsignfoldertypeIncludeproofsigner',
-        description => 'THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsignfoldertype_includeproofuser' => {
-        datatype => 'boolean',
-        base_name => 'bEzsignfoldertypeIncludeproofuser',
-        description => 'Whether we include the proof with the signed Ezsigndocument for users',
-        format => '',
-        read_only => '',
-            },
     'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => {
         datatype => 'boolean',
         base_name => 'bEzsignfoldertypeAllowdownloadattachmentezsignsigner',
@@ -275,10 +261,10 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'b_ezsignfoldertype_reassign' => {
+    'b_ezsignfoldertype_discussion' => {
         datatype => 'boolean',
-        base_name => 'bEzsignfoldertypeReassign',
-        description => 'Wheter if Reassignment of signature is allowed to another signatory or not',
+        base_name => 'bEzsignfoldertypeDiscussion',
+        description => 'Wheter if creating a new Discussion is allowed or not',
         format => '',
         read_only => '',
             },
@@ -302,12 +288,10 @@ __PACKAGE__->openapi_types( {
     'pki_ezsignfoldertype_id' => 'int',
     's_ezsignfoldertype_name_x' => 'string',
     'b_ezsignfoldertype_sendproofezsignsigner' => 'boolean',
-    'b_ezsignfoldertype_includeproofsigner' => 'boolean',
-    'b_ezsignfoldertype_includeproofuser' => 'boolean',
     'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => 'boolean',
     'b_ezsignfoldertype_allowdownloadproofezsignsigner' => 'boolean',
     'b_ezsignfoldertype_delegate' => 'boolean',
-    'b_ezsignfoldertype_reassign' => 'boolean',
+    'b_ezsignfoldertype_discussion' => 'boolean',
     'b_ezsignfoldertype_reassignezsignsigner' => 'boolean',
     'b_ezsignfoldertype_reassignuser' => 'boolean'
 } );
@@ -316,12 +300,10 @@ __PACKAGE__->attribute_map( {
     'pki_ezsignfoldertype_id' => 'pkiEzsignfoldertypeID',
     's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
     'b_ezsignfoldertype_sendproofezsignsigner' => 'bEzsignfoldertypeSendproofezsignsigner',
-    'b_ezsignfoldertype_includeproofsigner' => 'bEzsignfoldertypeIncludeproofsigner',
-    'b_ezsignfoldertype_includeproofuser' => 'bEzsignfoldertypeIncludeproofuser',
     'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => 'bEzsignfoldertypeAllowdownloadattachmentezsignsigner',
     'b_ezsignfoldertype_allowdownloadproofezsignsigner' => 'bEzsignfoldertypeAllowdownloadproofezsignsigner',
     'b_ezsignfoldertype_delegate' => 'bEzsignfoldertypeDelegate',
-    'b_ezsignfoldertype_reassign' => 'bEzsignfoldertypeReassign',
+    'b_ezsignfoldertype_discussion' => 'bEzsignfoldertypeDiscussion',
     'b_ezsignfoldertype_reassignezsignsigner' => 'bEzsignfoldertypeReassignezsignsigner',
     'b_ezsignfoldertype_reassignuser' => 'bEzsignfoldertypeReassignuser'
 } );

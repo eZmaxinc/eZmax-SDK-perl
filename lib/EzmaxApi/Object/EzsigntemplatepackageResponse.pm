@@ -282,6 +282,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsigntemplatepackage_editallowed' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplatepackageEditallowed',
+        description => 'Whether the Ezsigntemplatepackage if allowed to edit or not',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -293,7 +300,8 @@ __PACKAGE__->openapi_types( {
     'b_ezsigntemplatepackage_adminonly' => 'boolean',
     'b_ezsigntemplatepackage_needvalidation' => 'boolean',
     'b_ezsigntemplatepackage_isactive' => 'boolean',
-    's_ezsignfoldertype_name_x' => 'string'
+    's_ezsignfoldertype_name_x' => 'string',
+    'b_ezsigntemplatepackage_editallowed' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -305,7 +313,8 @@ __PACKAGE__->attribute_map( {
     'b_ezsigntemplatepackage_adminonly' => 'bEzsigntemplatepackageAdminonly',
     'b_ezsigntemplatepackage_needvalidation' => 'bEzsigntemplatepackageNeedvalidation',
     'b_ezsigntemplatepackage_isactive' => 'bEzsigntemplatepackageIsactive',
-    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX'
+    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
+    'b_ezsigntemplatepackage_editallowed' => 'bEzsigntemplatepackageEditallowed'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -240,18 +240,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_usergroupexternal_id' => {
+        datatype => 'int',
+        base_name => 'fkiUsergroupexternalID',
+        description => 'The unique ID of the Usergroupexternal',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_usergroupmembership_id' => 'int',
     'fki_usergroup_id' => 'int',
-    'fki_user_id' => 'int'
+    'fki_user_id' => 'int',
+    'fki_usergroupexternal_id' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_usergroupmembership_id' => 'pkiUsergroupmembershipID',
     'fki_usergroup_id' => 'fkiUsergroupID',
-    'fki_user_id' => 'fkiUserID'
+    'fki_user_id' => 'fkiUserID',
+    'fki_usergroupexternal_id' => 'fkiUsergroupexternalID'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

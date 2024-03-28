@@ -240,6 +240,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_usergroupexternal_id' => {
+        datatype => 'int',
+        base_name => 'fkiUsergroupexternalID',
+        description => 'The unique ID of the Usergroupexternal',
+        format => '',
+        read_only => '',
+            },
     's_user_firstname' => {
         datatype => 'string',
         base_name => 'sUserFirstname',
@@ -275,28 +282,39 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_usergroupexternal_name' => {
+        datatype => 'string',
+        base_name => 'sUsergroupexternalName',
+        description => 'The name of the Usergroupexternal',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_usergroupmembership_id' => 'int',
     'fki_usergroup_id' => 'int',
     'fki_user_id' => 'int',
+    'fki_usergroupexternal_id' => 'int',
     's_user_firstname' => 'string',
     's_user_lastname' => 'string',
     's_user_loginname' => 'string',
     's_email_address' => 'string',
-    's_usergroup_name_x' => 'string'
+    's_usergroup_name_x' => 'string',
+    's_usergroupexternal_name' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_usergroupmembership_id' => 'pkiUsergroupmembershipID',
     'fki_usergroup_id' => 'fkiUsergroupID',
     'fki_user_id' => 'fkiUserID',
+    'fki_usergroupexternal_id' => 'fkiUsergroupexternalID',
     's_user_firstname' => 'sUserFirstname',
     's_user_lastname' => 'sUserLastname',
     's_user_loginname' => 'sUserLoginname',
     's_email_address' => 'sEmailAddress',
-    's_usergroup_name_x' => 'sUsergroupNameX'
+    's_usergroup_name_x' => 'sUsergroupNameX',
+    's_usergroupexternal_name' => 'sUsergroupexternalName'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -247,6 +247,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsigntemplate_filenamepattern' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplateFilenamepattern',
+        description => 'The filename pattern of the Ezsigntemplate',
+        format => '',
+        read_only => '',
+            },
     'b_ezsigntemplate_adminonly' => {
         datatype => 'boolean',
         base_name => 'bEzsigntemplateAdminonly',
@@ -261,6 +268,7 @@ __PACKAGE__->openapi_types( {
     'fki_ezsignfoldertype_id' => 'int',
     'fki_language_id' => 'int',
     's_ezsigntemplate_description' => 'string',
+    's_ezsigntemplate_filenamepattern' => 'string',
     'b_ezsigntemplate_adminonly' => 'boolean'
 } );
 
@@ -269,6 +277,7 @@ __PACKAGE__->attribute_map( {
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
     'fki_language_id' => 'fkiLanguageID',
     's_ezsigntemplate_description' => 'sEzsigntemplateDescription',
+    's_ezsigntemplate_filenamepattern' => 'sEzsigntemplateFilenamepattern',
     'b_ezsigntemplate_adminonly' => 'bEzsigntemplateAdminonly'
 } );
 

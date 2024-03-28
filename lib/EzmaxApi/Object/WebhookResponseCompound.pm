@@ -34,6 +34,7 @@ use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::FieldEWebhookEzsignevent;
 use EzmaxApi::Object::FieldEWebhookManagementevent;
 use EzmaxApi::Object::FieldEWebhookModule;
+use EzmaxApi::Object::WebhookheaderResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -335,6 +336,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_webhookheader' => {
+        datatype => 'ARRAY[WebhookheaderResponseCompound]',
+        base_name => 'a_objWebhookheader',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -353,7 +361,8 @@ __PACKAGE__->openapi_types( {
     'b_webhook_issigned' => 'boolean',
     'b_webhook_skipsslvalidation' => 'boolean',
     'obj_audit' => 'CommonAudit',
-    's_webhook_event' => 'string'
+    's_webhook_event' => 'string',
+    'a_obj_webhookheader' => 'ARRAY[WebhookheaderResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -372,7 +381,8 @@ __PACKAGE__->attribute_map( {
     'b_webhook_issigned' => 'bWebhookIssigned',
     'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation',
     'obj_audit' => 'objAudit',
-    's_webhook_event' => 'sWebhookEvent'
+    's_webhook_event' => 'sWebhookEvent',
+    'a_obj_webhookheader' => 'a_objWebhookheader'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -275,6 +275,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'f_address_longitude' => {
+        datatype => 'string',
+        base_name => 'fAddressLongitude',
+        description => 'The Longitude of the Address',
+        format => '',
+        read_only => '',
+            },
+    'f_address_latitude' => {
+        datatype => 'string',
+        base_name => 'fAddressLatitude',
+        description => 'The Latitude of the Address',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -285,7 +299,9 @@ __PACKAGE__->openapi_types( {
     's_address_city' => 'string',
     'fki_province_id' => 'int',
     'fki_country_id' => 'int',
-    's_address_zip' => 'string'
+    's_address_zip' => 'string',
+    'f_address_longitude' => 'string',
+    'f_address_latitude' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -296,7 +312,9 @@ __PACKAGE__->attribute_map( {
     's_address_city' => 'sAddressCity',
     'fki_province_id' => 'fkiProvinceID',
     'fki_country_id' => 'fkiCountryID',
-    's_address_zip' => 'sAddressZip'
+    's_address_zip' => 'sAddressZip',
+    'f_address_longitude' => 'fAddressLongitude',
+    'f_address_latitude' => 'fAddressLatitude'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

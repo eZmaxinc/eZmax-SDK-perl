@@ -284,6 +284,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsigntemplatepackage_editallowed' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplatepackageEditallowed',
+        description => 'Whether the Ezsigntemplatepackage if allowed to edit or not',
+        format => '',
+        read_only => '',
+            },
     'a_obj_ezsigntemplatepackagesigner' => {
         datatype => 'ARRAY[EzsigntemplatepackagesignerResponseCompound]',
         base_name => 'a_objEzsigntemplatepackagesigner',
@@ -310,6 +317,7 @@ __PACKAGE__->openapi_types( {
     'b_ezsigntemplatepackage_needvalidation' => 'boolean',
     'b_ezsigntemplatepackage_isactive' => 'boolean',
     's_ezsignfoldertype_name_x' => 'string',
+    'b_ezsigntemplatepackage_editallowed' => 'boolean',
     'a_obj_ezsigntemplatepackagesigner' => 'ARRAY[EzsigntemplatepackagesignerResponseCompound]',
     'a_obj_ezsigntemplatepackagemembership' => 'ARRAY[EzsigntemplatepackagemembershipResponseCompound]'
 } );
@@ -324,6 +332,7 @@ __PACKAGE__->attribute_map( {
     'b_ezsigntemplatepackage_needvalidation' => 'bEzsigntemplatepackageNeedvalidation',
     'b_ezsigntemplatepackage_isactive' => 'bEzsigntemplatepackageIsactive',
     's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
+    'b_ezsigntemplatepackage_editallowed' => 'bEzsigntemplatepackageEditallowed',
     'a_obj_ezsigntemplatepackagesigner' => 'a_objEzsigntemplatepackagesigner',
     'a_obj_ezsigntemplatepackagemembership' => 'a_objEzsigntemplatepackagemembership'
 } );

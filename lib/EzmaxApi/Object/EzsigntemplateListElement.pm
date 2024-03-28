@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldEEzsigntemplateType;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -282,6 +283,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsigntemplate_type' => {
+        datatype => 'FieldEEzsigntemplateType',
+        base_name => 'eEzsigntemplateType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -293,7 +301,8 @@ __PACKAGE__->openapi_types( {
     'i_ezsigntemplate_signaturetotal' => 'int',
     'i_ezsigntemplate_formfieldtotal' => 'int',
     'b_ezsigntemplate_incomplete' => 'boolean',
-    's_ezsignfoldertype_name_x' => 'string'
+    's_ezsignfoldertype_name_x' => 'string',
+    'e_ezsigntemplate_type' => 'FieldEEzsigntemplateType'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -305,7 +314,8 @@ __PACKAGE__->attribute_map( {
     'i_ezsigntemplate_signaturetotal' => 'iEzsigntemplateSignaturetotal',
     'i_ezsigntemplate_formfieldtotal' => 'iEzsigntemplateFormfieldtotal',
     'b_ezsigntemplate_incomplete' => 'bEzsigntemplateIncomplete',
-    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX'
+    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
+    'e_ezsigntemplate_type' => 'eEzsigntemplateType'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -35,6 +35,7 @@ use EzmaxApi::Object::ActivesessionResponseCompoundUser;
 use EzmaxApi::Object::FieldEActivesessionOrigin;
 use EzmaxApi::Object::FieldEActivesessionUsertype;
 use EzmaxApi::Object::FieldEActivesessionWeekdaystart;
+use EzmaxApi::Object::FieldESystemconfigurationEzsignofficeplan;
 use EzmaxApi::Object::FieldEUserEzsignaccess;
 use EzmaxApi::Object::FieldEUserEzsignprepaid;
 
@@ -303,6 +304,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_systemconfiguration_ezsignpaidbyoffice' => {
+        datatype => 'boolean',
+        base_name => 'bSystemconfigurationEzsignpaidbyoffice',
+        description => 'Whether if Ezsign is paid by the company or not',
+        format => '',
+        read_only => '',
+            },
+    'e_systemconfiguration_ezsignofficeplan' => {
+        datatype => 'FieldESystemconfigurationEzsignofficeplan',
+        base_name => 'eSystemconfigurationEzsignofficeplan',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'e_user_ezsignaccess' => {
         datatype => 'FieldEUserEzsignaccess',
         base_name => 'eUserEzsignaccess',
@@ -373,6 +388,8 @@ __PACKAGE__->openapi_types( {
     'pks_customer_code' => 'string',
     'fki_systemconfigurationtype_id' => 'int',
     'fki_signature_id' => 'int',
+    'b_systemconfiguration_ezsignpaidbyoffice' => 'boolean',
+    'e_systemconfiguration_ezsignofficeplan' => 'FieldESystemconfigurationEzsignofficeplan',
     'e_user_ezsignaccess' => 'FieldEUserEzsignaccess',
     'e_user_ezsignprepaid' => 'FieldEUserEzsignprepaid',
     'dt_user_ezsignprepaidexpiration' => 'string',
@@ -395,6 +412,8 @@ __PACKAGE__->attribute_map( {
     'pks_customer_code' => 'pksCustomerCode',
     'fki_systemconfigurationtype_id' => 'fkiSystemconfigurationtypeID',
     'fki_signature_id' => 'fkiSignatureID',
+    'b_systemconfiguration_ezsignpaidbyoffice' => 'bSystemconfigurationEzsignpaidbyoffice',
+    'e_systemconfiguration_ezsignofficeplan' => 'eSystemconfigurationEzsignofficeplan',
     'e_user_ezsignaccess' => 'eUserEzsignaccess',
     'e_user_ezsignprepaid' => 'eUserEzsignprepaid',
     'dt_user_ezsignprepaidexpiration' => 'dtUserEzsignprepaidexpiration',

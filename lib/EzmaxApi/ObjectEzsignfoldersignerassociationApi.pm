@@ -49,6 +49,89 @@ sub new {
 
 
 #
+# ezsignfoldersignerassociation_create_embedded_url_v1
+#
+# Creates an Url to allow embedded signing
+#
+# @param int $pki_ezsignfoldersignerassociation_id  (required)
+# @param EzsignfoldersignerassociationCreateEmbeddedUrlV1Request $ezsignfoldersignerassociation_create_embedded_url_v1_request  (required)
+{
+    my $params = {
+    'pki_ezsignfoldersignerassociation_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsignfoldersignerassociation_create_embedded_url_v1_request' => {
+        data_type => 'EzsignfoldersignerassociationCreateEmbeddedUrlV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignfoldersignerassociation_create_embedded_url_v1' } = {
+        summary => 'Creates an Url to allow embedded signing',
+        params => $params,
+        returns => 'EzsignfoldersignerassociationCreateEmbeddedUrlV1Response',
+        };
+}
+# @return EzsignfoldersignerassociationCreateEmbeddedUrlV1Response
+#
+sub ezsignfoldersignerassociation_create_embedded_url_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignfoldersignerassociation_id' is set
+    unless (exists $args{'pki_ezsignfoldersignerassociation_id'}) {
+      croak("Missing the required parameter 'pki_ezsignfoldersignerassociation_id' when calling ezsignfoldersignerassociation_create_embedded_url_v1");
+    }
+
+    # verify the required parameter 'ezsignfoldersignerassociation_create_embedded_url_v1_request' is set
+    unless (exists $args{'ezsignfoldersignerassociation_create_embedded_url_v1_request'}) {
+      croak("Missing the required parameter 'ezsignfoldersignerassociation_create_embedded_url_v1_request' when calling ezsignfoldersignerassociation_create_embedded_url_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsignfoldersignerassociation_id'}) {
+        my $_base_variable = "{" . "pkiEzsignfoldersignerassociationID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignfoldersignerassociation_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsignfoldersignerassociation_create_embedded_url_v1_request'}) {
+        $_body_data = $args{'ezsignfoldersignerassociation_create_embedded_url_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignfoldersignerassociationCreateEmbeddedUrlV1Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsignfoldersignerassociation_create_object_v1
 #
 # Create a new Ezsignfoldersignerassociation

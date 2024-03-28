@@ -197,6 +197,71 @@ sub ezsigntemplate_create_object_v1 {
 }
 
 #
+# ezsigntemplate_create_object_v2
+#
+# Create a new Ezsigntemplate
+#
+# @param EzsigntemplateCreateObjectV2Request $ezsigntemplate_create_object_v2_request  (required)
+{
+    my $params = {
+    'ezsigntemplate_create_object_v2_request' => {
+        data_type => 'EzsigntemplateCreateObjectV2Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigntemplate_create_object_v2' } = {
+        summary => 'Create a new Ezsigntemplate',
+        params => $params,
+        returns => 'EzsigntemplateCreateObjectV2Response',
+        };
+}
+# @return EzsigntemplateCreateObjectV2Response
+#
+sub ezsigntemplate_create_object_v2 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'ezsigntemplate_create_object_v2_request' is set
+    unless (exists $args{'ezsigntemplate_create_object_v2_request'}) {
+      croak("Missing the required parameter 'ezsigntemplate_create_object_v2_request' when calling ezsigntemplate_create_object_v2");
+    }
+
+    # parse inputs
+    my $_resource_path = '/2/object/ezsigntemplate';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsigntemplate_create_object_v2_request'}) {
+        $_body_data = $args{'ezsigntemplate_create_object_v2_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplateCreateObjectV2Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsigntemplate_delete_object_v1
 #
 # Delete an existing Ezsigntemplate
@@ -343,6 +408,89 @@ sub ezsigntemplate_edit_object_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('EzsigntemplateEditObjectV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsigntemplate_edit_object_v2
+#
+# Edit an existing Ezsigntemplate
+#
+# @param int $pki_ezsigntemplate_id  (required)
+# @param EzsigntemplateEditObjectV2Request $ezsigntemplate_edit_object_v2_request  (required)
+{
+    my $params = {
+    'pki_ezsigntemplate_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsigntemplate_edit_object_v2_request' => {
+        data_type => 'EzsigntemplateEditObjectV2Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigntemplate_edit_object_v2' } = {
+        summary => 'Edit an existing Ezsigntemplate',
+        params => $params,
+        returns => 'EzsigntemplateEditObjectV2Response',
+        };
+}
+# @return EzsigntemplateEditObjectV2Response
+#
+sub ezsigntemplate_edit_object_v2 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigntemplate_id' is set
+    unless (exists $args{'pki_ezsigntemplate_id'}) {
+      croak("Missing the required parameter 'pki_ezsigntemplate_id' when calling ezsigntemplate_edit_object_v2");
+    }
+
+    # verify the required parameter 'ezsigntemplate_edit_object_v2_request' is set
+    unless (exists $args{'ezsigntemplate_edit_object_v2_request'}) {
+      croak("Missing the required parameter 'ezsigntemplate_edit_object_v2_request' when calling ezsigntemplate_edit_object_v2");
+    }
+
+    # parse inputs
+    my $_resource_path = '/2/object/ezsigntemplate/{pkiEzsigntemplateID}';
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsigntemplate_id'}) {
+        my $_base_variable = "{" . "pkiEzsigntemplateID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigntemplate_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsigntemplate_edit_object_v2_request'}) {
+        $_body_data = $args{'ezsigntemplate_edit_object_v2_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplateEditObjectV2Response', $response);
     return $_response_object;
 }
 

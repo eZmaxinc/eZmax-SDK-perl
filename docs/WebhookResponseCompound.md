@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **b_webhook_skipsslvalidation** | **boolean** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use | 
 **obj_audit** | [**CommonAudit**](CommonAudit.md) |  | 
 **s_webhook_event** | **string** | The concatenated string to describe the Webhook event | [optional] 
+**a_obj_webhookheader** | [**ARRAY[WebhookheaderResponseCompound]**](WebhookheaderResponseCompound.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

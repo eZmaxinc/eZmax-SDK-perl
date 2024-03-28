@@ -375,6 +375,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_ezsigndocument_ezsigndiscussiontotal' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentEzsigndiscussiontotal',
+        description => 'The total number of Ezsigndiscussions',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -399,7 +406,8 @@ __PACKAGE__->openapi_types( {
     'b_ezsigndocument_hassignedsignatures' => 'boolean',
     'obj_audit' => 'CommonAudit',
     's_ezsigndocument_externalid' => 'string',
-    'i_ezsigndocument_ezsignsignatureattachmenttotal' => 'int'
+    'i_ezsigndocument_ezsignsignatureattachmenttotal' => 'int',
+    'i_ezsigndocument_ezsigndiscussiontotal' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -424,7 +432,8 @@ __PACKAGE__->attribute_map( {
     'b_ezsigndocument_hassignedsignatures' => 'bEzsigndocumentHassignedsignatures',
     'obj_audit' => 'objAudit',
     's_ezsigndocument_externalid' => 'sEzsigndocumentExternalid',
-    'i_ezsigndocument_ezsignsignatureattachmenttotal' => 'iEzsigndocumentEzsignsignatureattachmenttotal'
+    'i_ezsigndocument_ezsignsignatureattachmenttotal' => 'iEzsigndocumentEzsignsignatureattachmenttotal',
+    'i_ezsigndocument_ezsigndiscussiontotal' => 'iEzsigndocumentEzsigndiscussiontotal'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

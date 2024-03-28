@@ -33,6 +33,7 @@ use DateTime;
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::EzsigntemplatedocumentResponse;
 use EzmaxApi::Object::EzsigntemplatesignerResponseCompound;
+use EzmaxApi::Object::FieldEEzsigntemplateType;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -264,6 +265,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsigntemplate_filenamepattern' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplateFilenamepattern',
+        description => 'The filename pattern of the Ezsigntemplate',
+        format => '',
+        read_only => '',
+            },
     'b_ezsigntemplate_adminonly' => {
         datatype => 'boolean',
         base_name => 'bEzsigntemplateAdminonly',
@@ -281,6 +289,20 @@ __PACKAGE__->method_documentation({
     'obj_audit' => {
         datatype => 'CommonAudit',
         base_name => 'objAudit',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsigntemplate_editallowed' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplateEditallowed',
+        description => 'Whether the Ezsigntemplate if allowed to edit or not',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsigntemplate_type' => {
+        datatype => 'FieldEEzsigntemplateType',
+        base_name => 'eEzsigntemplateType',
         description => '',
         format => '',
         read_only => '',
@@ -308,9 +330,12 @@ __PACKAGE__->openapi_types( {
     'fki_language_id' => 'int',
     's_language_name_x' => 'string',
     's_ezsigntemplate_description' => 'string',
+    's_ezsigntemplate_filenamepattern' => 'string',
     'b_ezsigntemplate_adminonly' => 'boolean',
     's_ezsignfoldertype_name_x' => 'string',
     'obj_audit' => 'CommonAudit',
+    'b_ezsigntemplate_editallowed' => 'boolean',
+    'e_ezsigntemplate_type' => 'FieldEEzsigntemplateType',
     'obj_ezsigntemplatedocument' => 'EzsigntemplatedocumentResponse',
     'a_obj_ezsigntemplatesigner' => 'ARRAY[EzsigntemplatesignerResponseCompound]'
 } );
@@ -322,9 +347,12 @@ __PACKAGE__->attribute_map( {
     'fki_language_id' => 'fkiLanguageID',
     's_language_name_x' => 'sLanguageNameX',
     's_ezsigntemplate_description' => 'sEzsigntemplateDescription',
+    's_ezsigntemplate_filenamepattern' => 'sEzsigntemplateFilenamepattern',
     'b_ezsigntemplate_adminonly' => 'bEzsigntemplateAdminonly',
     's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
     'obj_audit' => 'objAudit',
+    'b_ezsigntemplate_editallowed' => 'bEzsigntemplateEditallowed',
+    'e_ezsigntemplate_type' => 'eEzsigntemplateType',
     'obj_ezsigntemplatedocument' => 'objEzsigntemplatedocument',
     'a_obj_ezsigntemplatesigner' => 'a_objEzsigntemplatesigner'
 } );

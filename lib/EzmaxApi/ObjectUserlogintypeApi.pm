@@ -54,6 +54,7 @@ sub new {
 # Retrieve Userlogintypes and IDs
 #
 # @param string $s_selector The type of Userlogintypes to return (required)
+# @param int $fki_ezsignfoldertype_id  (optional)
 # @param string $e_filter_active Specify which results we want to display. (optional, default to 'Active')
 # @param string $s_query Allow to filter the returned results (optional)
 # @param HeaderAcceptLanguage $accept_language  (optional)
@@ -63,6 +64,11 @@ sub new {
         data_type => 'string',
         description => 'The type of Userlogintypes to return',
         required => '1',
+    },
+    'fki_ezsignfoldertype_id' => {
+        data_type => 'int',
+        description => '',
+        required => '0',
     },
     'e_filter_active' => {
         data_type => 'string',
@@ -110,6 +116,11 @@ sub userlogintype_get_autocomplete_v2 {
         $header_params->{'Accept'} = $_header_accept;
     }
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # query params
+    if ( exists $args{'fki_ezsignfoldertype_id'}) {
+        $query_params->{'fkiEzsignfoldertypeID'} = $self->{api_client}->to_query_value($args{'fki_ezsignfoldertype_id'});
+    }
 
     # query params
     if ( exists $args{'e_filter_active'}) {

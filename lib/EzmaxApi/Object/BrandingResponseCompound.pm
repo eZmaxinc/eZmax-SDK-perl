@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::FieldEBrandingLogo;
+use EzmaxApi::Object::FieldEBrandingLogointerface;
 use EzmaxApi::Object::MultilingualBrandingDescription;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -270,6 +271,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_branding_logointerface' => {
+        datatype => 'FieldEBrandingLogointerface',
+        base_name => 'eBrandingLogointerface',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'i_branding_colortext' => {
         datatype => 'int',
         base_name => 'iBrandingColortext',
@@ -312,6 +320,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_branding_interfacecolor' => {
+        datatype => 'int',
+        base_name => 'iBrandingInterfacecolor',
+        description => 'The color of the interface. This is a RGB color converted into integer',
+        format => '',
+        read_only => '',
+            },
     'b_branding_isactive' => {
         datatype => 'boolean',
         base_name => 'bBrandingIsactive',
@@ -326,6 +341,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_branding_logointerfaceurl' => {
+        datatype => 'string',
+        base_name => 'sBrandingLogointerfaceurl',
+        description => 'The url of the picture used as logo in the Branding',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -336,14 +358,17 @@ __PACKAGE__->openapi_types( {
     's_branding_name' => 'string',
     's_email_address' => 'string',
     'e_branding_logo' => 'FieldEBrandingLogo',
+    'e_branding_logointerface' => 'FieldEBrandingLogointerface',
     'i_branding_colortext' => 'int',
     'i_branding_colortextlinkbox' => 'int',
     'i_branding_colortextbutton' => 'int',
     'i_branding_colorbackground' => 'int',
     'i_branding_colorbackgroundbutton' => 'int',
     'i_branding_colorbackgroundsmallbox' => 'int',
+    'i_branding_interfacecolor' => 'int',
     'b_branding_isactive' => 'boolean',
-    's_branding_logourl' => 'string'
+    's_branding_logourl' => 'string',
+    's_branding_logointerfaceurl' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -354,14 +379,17 @@ __PACKAGE__->attribute_map( {
     's_branding_name' => 'sBrandingName',
     's_email_address' => 'sEmailAddress',
     'e_branding_logo' => 'eBrandingLogo',
+    'e_branding_logointerface' => 'eBrandingLogointerface',
     'i_branding_colortext' => 'iBrandingColortext',
     'i_branding_colortextlinkbox' => 'iBrandingColortextlinkbox',
     'i_branding_colortextbutton' => 'iBrandingColortextbutton',
     'i_branding_colorbackground' => 'iBrandingColorbackground',
     'i_branding_colorbackgroundbutton' => 'iBrandingColorbackgroundbutton',
     'i_branding_colorbackgroundsmallbox' => 'iBrandingColorbackgroundsmallbox',
+    'i_branding_interfacecolor' => 'iBrandingInterfacecolor',
     'b_branding_isactive' => 'bBrandingIsactive',
-    's_branding_logourl' => 'sBrandingLogourl'
+    's_branding_logourl' => 'sBrandingLogourl',
+    's_branding_logointerfaceurl' => 'sBrandingLogointerfaceurl'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -35,6 +35,7 @@ use EzmaxApi::Object::FieldEEzsignfoldertypeDisposal;
 use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
 use EzmaxApi::Object::FieldEEzsignfoldertypeSendreminderfrequency;
 use EzmaxApi::Object::MultilingualEzsignfoldertypeName;
+use EzmaxApi::Object::UserlogintypeResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -378,10 +379,10 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'b_ezsignfoldertype_reassign' => {
+    'b_ezsignfoldertype_discussion' => {
         datatype => 'boolean',
-        base_name => 'bEzsignfoldertypeReassign',
-        description => 'Wheter if Reassignment of signature is allowed to another signatory or not',
+        base_name => 'bEzsignfoldertypeDiscussion',
+        description => 'Wheter if creating a new Discussion is allowed or not',
         format => '',
         read_only => '',
             },
@@ -396,13 +397,6 @@ __PACKAGE__->method_documentation({
         datatype => 'boolean',
         base_name => 'bEzsignfoldertypeReassignuser',
         description => 'Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsignfoldertype_sendattatchmentsigner' => {
-        datatype => 'boolean',
-        base_name => 'bEzsignfoldertypeSendattatchmentsigner',
-        description => 'THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email',
         format => '',
         read_only => '',
             },
@@ -546,24 +540,17 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'b_ezsignfoldertype_includeproofsigner' => {
-        datatype => 'boolean',
-        base_name => 'bEzsignfoldertypeIncludeproofsigner',
-        description => 'THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsignfoldertype_includeproofuser' => {
-        datatype => 'boolean',
-        base_name => 'bEzsignfoldertypeIncludeproofuser',
-        description => 'Whether we include the proof with the signed Ezsigndocument for users',
-        format => '',
-        read_only => '',
-            },
     'b_ezsignfoldertype_isactive' => {
         datatype => 'boolean',
         base_name => 'bEzsignfoldertypeIsactive',
         description => 'Whether the Ezsignfoldertype is active or not',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_userlogintype' => {
+        datatype => 'ARRAY[UserlogintypeResponse]',
+        base_name => 'a_objUserlogintype',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -592,10 +579,9 @@ __PACKAGE__->openapi_types( {
     'i_ezsignfoldertype_disposaldays' => 'int',
     'i_ezsignfoldertype_deadlinedays' => 'int',
     'b_ezsignfoldertype_delegate' => 'boolean',
-    'b_ezsignfoldertype_reassign' => 'boolean',
+    'b_ezsignfoldertype_discussion' => 'boolean',
     'b_ezsignfoldertype_reassignezsignsigner' => 'boolean',
     'b_ezsignfoldertype_reassignuser' => 'boolean',
-    'b_ezsignfoldertype_sendattatchmentsigner' => 'boolean',
     'b_ezsignfoldertype_sendsignedtoezsignsigner' => 'boolean',
     'b_ezsignfoldertype_sendsignedtouser' => 'boolean',
     'b_ezsignfoldertype_sendattachmentezsignsigner' => 'boolean',
@@ -616,9 +602,8 @@ __PACKAGE__->openapi_types( {
     'b_ezsignfoldertype_sendsummarytofullgroup' => 'boolean',
     'b_ezsignfoldertype_sendsummarytolimitedgroup' => 'boolean',
     'b_ezsignfoldertype_sendsummarytocolleague' => 'boolean',
-    'b_ezsignfoldertype_includeproofsigner' => 'boolean',
-    'b_ezsignfoldertype_includeproofuser' => 'boolean',
-    'b_ezsignfoldertype_isactive' => 'boolean'
+    'b_ezsignfoldertype_isactive' => 'boolean',
+    'a_obj_userlogintype' => 'ARRAY[UserlogintypeResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -644,10 +629,9 @@ __PACKAGE__->attribute_map( {
     'i_ezsignfoldertype_disposaldays' => 'iEzsignfoldertypeDisposaldays',
     'i_ezsignfoldertype_deadlinedays' => 'iEzsignfoldertypeDeadlinedays',
     'b_ezsignfoldertype_delegate' => 'bEzsignfoldertypeDelegate',
-    'b_ezsignfoldertype_reassign' => 'bEzsignfoldertypeReassign',
+    'b_ezsignfoldertype_discussion' => 'bEzsignfoldertypeDiscussion',
     'b_ezsignfoldertype_reassignezsignsigner' => 'bEzsignfoldertypeReassignezsignsigner',
     'b_ezsignfoldertype_reassignuser' => 'bEzsignfoldertypeReassignuser',
-    'b_ezsignfoldertype_sendattatchmentsigner' => 'bEzsignfoldertypeSendattatchmentsigner',
     'b_ezsignfoldertype_sendsignedtoezsignsigner' => 'bEzsignfoldertypeSendsignedtoezsignsigner',
     'b_ezsignfoldertype_sendsignedtouser' => 'bEzsignfoldertypeSendsignedtouser',
     'b_ezsignfoldertype_sendattachmentezsignsigner' => 'bEzsignfoldertypeSendattachmentezsignsigner',
@@ -668,9 +652,8 @@ __PACKAGE__->attribute_map( {
     'b_ezsignfoldertype_sendsummarytofullgroup' => 'bEzsignfoldertypeSendsummarytofullgroup',
     'b_ezsignfoldertype_sendsummarytolimitedgroup' => 'bEzsignfoldertypeSendsummarytolimitedgroup',
     'b_ezsignfoldertype_sendsummarytocolleague' => 'bEzsignfoldertypeSendsummarytocolleague',
-    'b_ezsignfoldertype_includeproofsigner' => 'bEzsignfoldertypeIncludeproofsigner',
-    'b_ezsignfoldertype_includeproofuser' => 'bEzsignfoldertypeIncludeproofuser',
-    'b_ezsignfoldertype_isactive' => 'bEzsignfoldertypeIsactive'
+    'b_ezsignfoldertype_isactive' => 'bEzsignfoldertypeIsactive',
+    'a_obj_userlogintype' => 'a_objUserlogintype'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pki_user_id** | **int** | The unique ID of the User | 
 **fki_timezone_id** | **int** | The unique ID of the Timezone | 
-**s_avatar_url** | **string** | The url of the picture used as avatar | 
+**s_avatar_url** | **string** | The url of the picture used as avatar | [optional] 
 **s_user_firstname** | **string** | The first name of the user | 
 **s_user_lastname** | **string** | The last name of the user | 
-**s_email_address** | **string** | The email address. | 
+**s_email_address** | **string** | The email address. | [optional] 
 **e_user_ezsignsendreminderfrequency** | [**FieldEUserEzsignsendreminderfrequency**](FieldEUserEzsignsendreminderfrequency.md) |  | 
 **i_user_interfacecolor** | **int** | The int32 representation of the interface color. For example, RGB color #39435B would be 3752795 | 
 **b_user_interfacedark** | **boolean** | Whether to use a dark mode interface | 

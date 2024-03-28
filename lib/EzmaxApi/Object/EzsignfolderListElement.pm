@@ -319,6 +319,34 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_ezsignformfieldgroup' => {
+        datatype => 'int',
+        base_name => 'iEzsignformfieldgroup',
+        description => 'The total number of Ezsignformfieldgroup in all Ezsigndocuments in the folder',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignformfieldgroup_completed' => {
+        datatype => 'int',
+        base_name => 'iEzsignformfieldgroupCompleted',
+        description => 'The total number of completed Ezsignformfieldgroup in all Ezsigndocuments in the folder',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignform_hasdependencies' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignformHasdependencies',
+        description => 'Whether the Ezsignform/Ezsignsignatures has dependencies or not',
+        format => '',
+        read_only => '',
+            },
+    'd_ezsignfolder_completedpercentage' => {
+        datatype => 'string',
+        base_name => 'dEzsignfolderCompletedpercentage',
+        description => 'Whether the Ezsignform/Ezsignsignatures has dependencies or not',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -335,7 +363,11 @@ __PACKAGE__->openapi_types( {
     'i_ezsigndocument' => 'int',
     'i_ezsigndocument_edm' => 'int',
     'i_ezsignsignature' => 'int',
-    'i_ezsignsignature_signed' => 'int'
+    'i_ezsignsignature_signed' => 'int',
+    'i_ezsignformfieldgroup' => 'int',
+    'i_ezsignformfieldgroup_completed' => 'int',
+    'b_ezsignform_hasdependencies' => 'boolean',
+    'd_ezsignfolder_completedpercentage' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -352,7 +384,11 @@ __PACKAGE__->attribute_map( {
     'i_ezsigndocument' => 'iEzsigndocument',
     'i_ezsigndocument_edm' => 'iEzsigndocumentEdm',
     'i_ezsignsignature' => 'iEzsignsignature',
-    'i_ezsignsignature_signed' => 'iEzsignsignatureSigned'
+    'i_ezsignsignature_signed' => 'iEzsignsignatureSigned',
+    'i_ezsignformfieldgroup' => 'iEzsignformfieldgroup',
+    'i_ezsignformfieldgroup_completed' => 'iEzsignformfieldgroupCompleted',
+    'b_ezsignform_hasdependencies' => 'bEzsignformHasdependencies',
+    'd_ezsignfolder_completedpercentage' => 'dEzsignfolderCompletedpercentage'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

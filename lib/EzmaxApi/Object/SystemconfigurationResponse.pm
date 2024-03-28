@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::FieldESystemconfigurationEzsign;
+use EzmaxApi::Object::FieldESystemconfigurationEzsignofficeplan;
 use EzmaxApi::Object::FieldESystemconfigurationLanguage1;
 use EzmaxApi::Object::FieldESystemconfigurationLanguage2;
 use EzmaxApi::Object::FieldESystemconfigurationNewexternaluseraction;
@@ -272,10 +273,31 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_systemconfiguration_ezsignofficeplan' => {
+        datatype => 'FieldESystemconfigurationEzsignofficeplan',
+        base_name => 'eSystemconfigurationEzsignofficeplan',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'b_systemconfiguration_ezsignpaidbyoffice' => {
+        datatype => 'boolean',
+        base_name => 'bSystemconfigurationEzsignpaidbyoffice',
+        description => 'Whether if Ezsign is paid by the company or not',
+        format => '',
+        read_only => '',
+            },
     'b_systemconfiguration_ezsignpersonnal' => {
         datatype => 'boolean',
         base_name => 'bSystemconfigurationEzsignpersonnal',
         description => 'Whether if we allow the creation of personal files in eZsign',
+        format => '',
+        read_only => '',
+            },
+    'b_systemconfiguration_isdisposalactive' => {
+        datatype => 'boolean',
+        base_name => 'bSystemconfigurationIsdisposalactive',
+        description => 'Whether is Disposal processus is active or not',
         format => '',
         read_only => '',
             },
@@ -310,7 +332,10 @@ __PACKAGE__->openapi_types( {
     'e_systemconfiguration_language1' => 'FieldESystemconfigurationLanguage1',
     'e_systemconfiguration_language2' => 'FieldESystemconfigurationLanguage2',
     'e_systemconfiguration_ezsign' => 'FieldESystemconfigurationEzsign',
+    'e_systemconfiguration_ezsignofficeplan' => 'FieldESystemconfigurationEzsignofficeplan',
+    'b_systemconfiguration_ezsignpaidbyoffice' => 'boolean',
     'b_systemconfiguration_ezsignpersonnal' => 'boolean',
+    'b_systemconfiguration_isdisposalactive' => 'boolean',
     'b_systemconfiguration_sspr' => 'boolean',
     'dt_systemconfiguration_readonlyexpirationstart' => 'string',
     'dt_systemconfiguration_readonlyexpirationend' => 'string'
@@ -324,7 +349,10 @@ __PACKAGE__->attribute_map( {
     'e_systemconfiguration_language1' => 'eSystemconfigurationLanguage1',
     'e_systemconfiguration_language2' => 'eSystemconfigurationLanguage2',
     'e_systemconfiguration_ezsign' => 'eSystemconfigurationEzsign',
+    'e_systemconfiguration_ezsignofficeplan' => 'eSystemconfigurationEzsignofficeplan',
+    'b_systemconfiguration_ezsignpaidbyoffice' => 'bSystemconfigurationEzsignpaidbyoffice',
     'b_systemconfiguration_ezsignpersonnal' => 'bSystemconfigurationEzsignpersonnal',
+    'b_systemconfiguration_isdisposalactive' => 'bSystemconfigurationIsdisposalactive',
     'b_systemconfiguration_sspr' => 'bSystemconfigurationSspr',
     'dt_systemconfiguration_readonlyexpirationstart' => 'dtSystemconfigurationReadonlyexpirationstart',
     'dt_systemconfiguration_readonlyexpirationend' => 'dtSystemconfigurationReadonlyexpirationend'

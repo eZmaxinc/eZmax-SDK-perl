@@ -33,6 +33,7 @@ use DateTime;
 use EzmaxApi::Object::FieldEWebhookEzsignevent;
 use EzmaxApi::Object::FieldEWebhookManagementevent;
 use EzmaxApi::Object::FieldEWebhookModule;
+use EzmaxApi::Object::WebhookheaderRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -299,6 +300,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_webhookheader' => {
+        datatype => 'ARRAY[WebhookheaderRequestCompound]',
+        base_name => 'a_objWebhookheader',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -312,7 +320,8 @@ __PACKAGE__->openapi_types( {
     's_webhook_emailfailed' => 'string',
     'b_webhook_isactive' => 'boolean',
     'b_webhook_issigned' => 'boolean',
-    'b_webhook_skipsslvalidation' => 'boolean'
+    'b_webhook_skipsslvalidation' => 'boolean',
+    'a_obj_webhookheader' => 'ARRAY[WebhookheaderRequestCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -326,7 +335,8 @@ __PACKAGE__->attribute_map( {
     's_webhook_emailfailed' => 'sWebhookEmailfailed',
     'b_webhook_isactive' => 'bWebhookIsactive',
     'b_webhook_issigned' => 'bWebhookIssigned',
-    'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation'
+    'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation',
+    'a_obj_webhookheader' => 'a_objWebhookheader'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

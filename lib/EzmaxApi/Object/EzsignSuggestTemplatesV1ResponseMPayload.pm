@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::EzsigntemplateResponseCompound;
+use EzmaxApi::Object::EzsigntemplateglobalResponseCompound;
 use EzmaxApi::Object::EzsigntemplatepackageResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -235,16 +236,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_ezsigntemplateglobal' => {
+        datatype => 'ARRAY[EzsigntemplateglobalResponseCompound]',
+        base_name => 'a_objEzsigntemplateglobal',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'a_obj_ezsigntemplate' => 'ARRAY[EzsigntemplateResponseCompound]',
-    'a_obj_ezsigntemplatepackage' => 'ARRAY[EzsigntemplatepackageResponseCompound]'
+    'a_obj_ezsigntemplatepackage' => 'ARRAY[EzsigntemplatepackageResponseCompound]',
+    'a_obj_ezsigntemplateglobal' => 'ARRAY[EzsigntemplateglobalResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
     'a_obj_ezsigntemplate' => 'a_objEzsigntemplate',
-    'a_obj_ezsigntemplatepackage' => 'a_objEzsigntemplatepackage'
+    'a_obj_ezsigntemplatepackage' => 'a_objEzsigntemplatepackage',
+    'a_obj_ezsigntemplateglobal' => 'a_objEzsigntemplateglobal'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
