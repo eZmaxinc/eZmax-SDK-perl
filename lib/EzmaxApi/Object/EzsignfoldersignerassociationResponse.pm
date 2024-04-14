@@ -254,6 +254,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsignfoldersignerassociation_allowsigninginperson' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldersignerassociationAllowsigninginperson',
+        description => 'If the Ezsignfoldersignerassociation is allowed to sign in person or not',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -261,7 +268,8 @@ __PACKAGE__->openapi_types( {
     'fki_ezsignfolder_id' => 'int',
     'b_ezsignfoldersignerassociation_delayedsend' => 'boolean',
     'b_ezsignfoldersignerassociation_receivecopy' => 'boolean',
-    't_ezsignfoldersignerassociation_message' => 'string'
+    't_ezsignfoldersignerassociation_message' => 'string',
+    'b_ezsignfoldersignerassociation_allowsigninginperson' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -269,7 +277,8 @@ __PACKAGE__->attribute_map( {
     'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
     'b_ezsignfoldersignerassociation_delayedsend' => 'bEzsignfoldersignerassociationDelayedsend',
     'b_ezsignfoldersignerassociation_receivecopy' => 'bEzsignfoldersignerassociationReceivecopy',
-    't_ezsignfoldersignerassociation_message' => 'tEzsignfoldersignerassociationMessage'
+    't_ezsignfoldersignerassociation_message' => 'tEzsignfoldersignerassociationMessage',
+    'b_ezsignfoldersignerassociation_allowsigninginperson' => 'bEzsignfoldersignerassociationAllowsigninginperson'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

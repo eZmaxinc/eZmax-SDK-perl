@@ -250,6 +250,8 @@ use EzmaxApi::ObjectCommunicationApi;
 use EzmaxApi::ObjectCompanyApi;
 use EzmaxApi::ObjectCorsApi;
 use EzmaxApi::ObjectCountryApi;
+use EzmaxApi::ObjectCreditcardclientApi;
+use EzmaxApi::ObjectCreditcardtypeApi;
 use EzmaxApi::ObjectDepartmentApi;
 use EzmaxApi::ObjectDiscussionApi;
 use EzmaxApi::ObjectDiscussionmembershipApi;
@@ -488,6 +490,30 @@ use EzmaxApi::Object::CorsResponseCompound;
 use EzmaxApi::Object::CountryAutocompleteElementResponse;
 use EzmaxApi::Object::CountryGetAutocompleteV2Response;
 use EzmaxApi::Object::CountryGetAutocompleteV2ResponseMPayload;
+use EzmaxApi::Object::CreditcardclientAutocompleteElementResponse;
+use EzmaxApi::Object::CreditcardclientCreateObjectV1Request;
+use EzmaxApi::Object::CreditcardclientCreateObjectV1Response;
+use EzmaxApi::Object::CreditcardclientCreateObjectV1ResponseMPayload;
+use EzmaxApi::Object::CreditcardclientDeleteObjectV1Response;
+use EzmaxApi::Object::CreditcardclientEditObjectV1Request;
+use EzmaxApi::Object::CreditcardclientEditObjectV1Response;
+use EzmaxApi::Object::CreditcardclientGetAutocompleteV2Response;
+use EzmaxApi::Object::CreditcardclientGetAutocompleteV2ResponseMPayload;
+use EzmaxApi::Object::CreditcardclientGetListV1Response;
+use EzmaxApi::Object::CreditcardclientGetListV1ResponseMPayload;
+use EzmaxApi::Object::CreditcardclientGetObjectV2Response;
+use EzmaxApi::Object::CreditcardclientGetObjectV2ResponseMPayload;
+use EzmaxApi::Object::CreditcardclientListElement;
+use EzmaxApi::Object::CreditcardclientRequest;
+use EzmaxApi::Object::CreditcardclientRequestCompound;
+use EzmaxApi::Object::CreditcardclientResponse;
+use EzmaxApi::Object::CreditcardclientResponseCompound;
+use EzmaxApi::Object::CreditcarddetailRequest;
+use EzmaxApi::Object::CreditcarddetailResponse;
+use EzmaxApi::Object::CreditcarddetailResponseCompound;
+use EzmaxApi::Object::CreditcardtypeAutocompleteElementResponse;
+use EzmaxApi::Object::CreditcardtypeGetAutocompleteV2Response;
+use EzmaxApi::Object::CreditcardtypeGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::CustomAttachmentResponse;
 use EzmaxApi::Object::CustomAttachmentdocumenttypeResponse;
 use EzmaxApi::Object::CustomCommunicationListElementResponse;
@@ -1641,6 +1667,8 @@ use EzmaxApi::ObjectCommunicationApi;
 use EzmaxApi::ObjectCompanyApi;
 use EzmaxApi::ObjectCorsApi;
 use EzmaxApi::ObjectCountryApi;
+use EzmaxApi::ObjectCreditcardclientApi;
+use EzmaxApi::ObjectCreditcardtypeApi;
 use EzmaxApi::ObjectDepartmentApi;
 use EzmaxApi::ObjectDiscussionApi;
 use EzmaxApi::ObjectDiscussionmembershipApi;
@@ -1876,6 +1904,30 @@ use EzmaxApi::Object::CorsResponseCompound;
 use EzmaxApi::Object::CountryAutocompleteElementResponse;
 use EzmaxApi::Object::CountryGetAutocompleteV2Response;
 use EzmaxApi::Object::CountryGetAutocompleteV2ResponseMPayload;
+use EzmaxApi::Object::CreditcardclientAutocompleteElementResponse;
+use EzmaxApi::Object::CreditcardclientCreateObjectV1Request;
+use EzmaxApi::Object::CreditcardclientCreateObjectV1Response;
+use EzmaxApi::Object::CreditcardclientCreateObjectV1ResponseMPayload;
+use EzmaxApi::Object::CreditcardclientDeleteObjectV1Response;
+use EzmaxApi::Object::CreditcardclientEditObjectV1Request;
+use EzmaxApi::Object::CreditcardclientEditObjectV1Response;
+use EzmaxApi::Object::CreditcardclientGetAutocompleteV2Response;
+use EzmaxApi::Object::CreditcardclientGetAutocompleteV2ResponseMPayload;
+use EzmaxApi::Object::CreditcardclientGetListV1Response;
+use EzmaxApi::Object::CreditcardclientGetListV1ResponseMPayload;
+use EzmaxApi::Object::CreditcardclientGetObjectV2Response;
+use EzmaxApi::Object::CreditcardclientGetObjectV2ResponseMPayload;
+use EzmaxApi::Object::CreditcardclientListElement;
+use EzmaxApi::Object::CreditcardclientRequest;
+use EzmaxApi::Object::CreditcardclientRequestCompound;
+use EzmaxApi::Object::CreditcardclientResponse;
+use EzmaxApi::Object::CreditcardclientResponseCompound;
+use EzmaxApi::Object::CreditcarddetailRequest;
+use EzmaxApi::Object::CreditcarddetailResponse;
+use EzmaxApi::Object::CreditcarddetailResponseCompound;
+use EzmaxApi::Object::CreditcardtypeAutocompleteElementResponse;
+use EzmaxApi::Object::CreditcardtypeGetAutocompleteV2Response;
+use EzmaxApi::Object::CreditcardtypeGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::CustomAttachmentResponse;
 use EzmaxApi::Object::CustomAttachmentdocumenttypeResponse;
 use EzmaxApi::Object::CustomCommunicationListElementResponse;
@@ -3068,6 +3120,13 @@ Class | Method | HTTP request | Description
 *ObjectCorsApi* | [**cors_edit_object_v1**](docs/ObjectCorsApi.md#cors_edit_object_v1) | **PUT** /1/object/cors/{pkiCorsID} | Edit an existing Cors
 *ObjectCorsApi* | [**cors_get_object_v2**](docs/ObjectCorsApi.md#cors_get_object_v2) | **GET** /2/object/cors/{pkiCorsID} | Retrieve an existing Cors
 *ObjectCountryApi* | [**country_get_autocomplete_v2**](docs/ObjectCountryApi.md#country_get_autocomplete_v2) | **GET** /2/object/country/getAutocomplete/{sSelector} | Retrieve Countries and IDs
+*ObjectCreditcardclientApi* | [**creditcardclient_create_object_v1**](docs/ObjectCreditcardclientApi.md#creditcardclient_create_object_v1) | **POST** /1/object/creditcardclient | Create a new Creditcardclient
+*ObjectCreditcardclientApi* | [**creditcardclient_delete_object_v1**](docs/ObjectCreditcardclientApi.md#creditcardclient_delete_object_v1) | **DELETE** /1/object/creditcardclient/{pkiCreditcardclientID} | Delete an existing Creditcardclient
+*ObjectCreditcardclientApi* | [**creditcardclient_edit_object_v1**](docs/ObjectCreditcardclientApi.md#creditcardclient_edit_object_v1) | **PUT** /1/object/creditcardclient/{pkiCreditcardclientID} | Edit an existing Creditcardclient
+*ObjectCreditcardclientApi* | [**creditcardclient_get_autocomplete_v2**](docs/ObjectCreditcardclientApi.md#creditcardclient_get_autocomplete_v2) | **GET** /2/object/creditcardclient/getAutocomplete/{sSelector} | Retrieve Creditcardclients and IDs
+*ObjectCreditcardclientApi* | [**creditcardclient_get_list_v1**](docs/ObjectCreditcardclientApi.md#creditcardclient_get_list_v1) | **GET** /1/object/creditcardclient/getList | Retrieve Creditcardclient list
+*ObjectCreditcardclientApi* | [**creditcardclient_get_object_v2**](docs/ObjectCreditcardclientApi.md#creditcardclient_get_object_v2) | **GET** /2/object/creditcardclient/{pkiCreditcardclientID} | Retrieve an existing Creditcardclient
+*ObjectCreditcardtypeApi* | [**creditcardtype_get_autocomplete_v2**](docs/ObjectCreditcardtypeApi.md#creditcardtype_get_autocomplete_v2) | **GET** /2/object/creditcardtype/getAutocomplete/{sSelector} | Retrieve Creditcardtypes and IDs
 *ObjectDepartmentApi* | [**department_get_autocomplete_v2**](docs/ObjectDepartmentApi.md#department_get_autocomplete_v2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
 *ObjectDiscussionApi* | [**discussion_create_object_v1**](docs/ObjectDiscussionApi.md#discussion_create_object_v1) | **POST** /1/object/discussion | Create a new Discussion
 *ObjectDiscussionApi* | [**discussion_delete_object_v1**](docs/ObjectDiscussionApi.md#discussion_delete_object_v1) | **DELETE** /1/object/discussion/{pkiDiscussionID} | Delete an existing Discussion
@@ -3543,6 +3602,30 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CountryAutocompleteElementResponse](docs/CountryAutocompleteElementResponse.md)
  - [EzmaxApi::Object::CountryGetAutocompleteV2Response](docs/CountryGetAutocompleteV2Response.md)
  - [EzmaxApi::Object::CountryGetAutocompleteV2ResponseMPayload](docs/CountryGetAutocompleteV2ResponseMPayload.md)
+ - [EzmaxApi::Object::CreditcardclientAutocompleteElementResponse](docs/CreditcardclientAutocompleteElementResponse.md)
+ - [EzmaxApi::Object::CreditcardclientCreateObjectV1Request](docs/CreditcardclientCreateObjectV1Request.md)
+ - [EzmaxApi::Object::CreditcardclientCreateObjectV1Response](docs/CreditcardclientCreateObjectV1Response.md)
+ - [EzmaxApi::Object::CreditcardclientCreateObjectV1ResponseMPayload](docs/CreditcardclientCreateObjectV1ResponseMPayload.md)
+ - [EzmaxApi::Object::CreditcardclientDeleteObjectV1Response](docs/CreditcardclientDeleteObjectV1Response.md)
+ - [EzmaxApi::Object::CreditcardclientEditObjectV1Request](docs/CreditcardclientEditObjectV1Request.md)
+ - [EzmaxApi::Object::CreditcardclientEditObjectV1Response](docs/CreditcardclientEditObjectV1Response.md)
+ - [EzmaxApi::Object::CreditcardclientGetAutocompleteV2Response](docs/CreditcardclientGetAutocompleteV2Response.md)
+ - [EzmaxApi::Object::CreditcardclientGetAutocompleteV2ResponseMPayload](docs/CreditcardclientGetAutocompleteV2ResponseMPayload.md)
+ - [EzmaxApi::Object::CreditcardclientGetListV1Response](docs/CreditcardclientGetListV1Response.md)
+ - [EzmaxApi::Object::CreditcardclientGetListV1ResponseMPayload](docs/CreditcardclientGetListV1ResponseMPayload.md)
+ - [EzmaxApi::Object::CreditcardclientGetObjectV2Response](docs/CreditcardclientGetObjectV2Response.md)
+ - [EzmaxApi::Object::CreditcardclientGetObjectV2ResponseMPayload](docs/CreditcardclientGetObjectV2ResponseMPayload.md)
+ - [EzmaxApi::Object::CreditcardclientListElement](docs/CreditcardclientListElement.md)
+ - [EzmaxApi::Object::CreditcardclientRequest](docs/CreditcardclientRequest.md)
+ - [EzmaxApi::Object::CreditcardclientRequestCompound](docs/CreditcardclientRequestCompound.md)
+ - [EzmaxApi::Object::CreditcardclientResponse](docs/CreditcardclientResponse.md)
+ - [EzmaxApi::Object::CreditcardclientResponseCompound](docs/CreditcardclientResponseCompound.md)
+ - [EzmaxApi::Object::CreditcarddetailRequest](docs/CreditcarddetailRequest.md)
+ - [EzmaxApi::Object::CreditcarddetailResponse](docs/CreditcarddetailResponse.md)
+ - [EzmaxApi::Object::CreditcarddetailResponseCompound](docs/CreditcarddetailResponseCompound.md)
+ - [EzmaxApi::Object::CreditcardtypeAutocompleteElementResponse](docs/CreditcardtypeAutocompleteElementResponse.md)
+ - [EzmaxApi::Object::CreditcardtypeGetAutocompleteV2Response](docs/CreditcardtypeGetAutocompleteV2Response.md)
+ - [EzmaxApi::Object::CreditcardtypeGetAutocompleteV2ResponseMPayload](docs/CreditcardtypeGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::CustomAttachmentResponse](docs/CustomAttachmentResponse.md)
  - [EzmaxApi::Object::CustomAttachmentdocumenttypeResponse](docs/CustomAttachmentdocumenttypeResponse.md)
  - [EzmaxApi::Object::CustomCommunicationListElementResponse](docs/CustomCommunicationListElementResponse.md)
