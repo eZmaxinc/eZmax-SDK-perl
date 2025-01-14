@@ -30,6 +30,13 @@ my $api = EzmaxApi::ObjectActivesessionApi->new();
 isa_ok($api, 'EzmaxApi::ObjectActivesessionApi');
 
 #
+# activesession_generate_federation_token_v1 test
+#
+# uncomment below and update the test
+#my $activesession_generate_federation_token_v1_activesession_generate_federation_token_v1_request = undef; # replace NULL with a proper value
+#my $activesession_generate_federation_token_v1_result = $api->activesession_generate_federation_token_v1(activesession_generate_federation_token_v1_request => $activesession_generate_federation_token_v1_activesession_generate_federation_token_v1_request);
+
+#
 # activesession_get_current_v1 test
 #
 # uncomment below and update the test

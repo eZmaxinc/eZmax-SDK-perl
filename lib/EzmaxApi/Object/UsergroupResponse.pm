@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EmailRequest;
 use EzmaxApi::Object::MultilingualUsergroupName;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -241,18 +242,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_email' => {
+        datatype => 'EmailRequest',
+        base_name => 'objEmail',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_usergroup_id' => 'int',
     'obj_usergroup_name' => 'MultilingualUsergroupName',
-    's_usergroup_name_x' => 'string'
+    's_usergroup_name_x' => 'string',
+    'obj_email' => 'EmailRequest'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_usergroup_id' => 'pkiUsergroupID',
     'obj_usergroup_name' => 'objUsergroupName',
-    's_usergroup_name_x' => 'sUsergroupNameX'
+    's_usergroup_name_x' => 'sUsergroupNameX',
+    'obj_email' => 'objEmail'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

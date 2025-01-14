@@ -30,6 +30,14 @@ my $api = EzmaxApi::ObjectBillingentityexternalApi->new();
 isa_ok($api, 'EzmaxApi::ObjectBillingentityexternalApi');
 
 #
+# billingentityexternal_generate_federation_token_v1 test
+#
+# uncomment below and update the test
+#my $billingentityexternal_generate_federation_token_v1_pki_billingentityexternal_id = undef; # replace NULL with a proper value
+#my $billingentityexternal_generate_federation_token_v1_billingentityexternal_generate_federation_token_v1_request = undef; # replace NULL with a proper value
+#my $billingentityexternal_generate_federation_token_v1_result = $api->billingentityexternal_generate_federation_token_v1(pki_billingentityexternal_id => $billingentityexternal_generate_federation_token_v1_pki_billingentityexternal_id, billingentityexternal_generate_federation_token_v1_request => $billingentityexternal_generate_federation_token_v1_billingentityexternal_generate_federation_token_v1_request);
+
+#
 # billingentityexternal_get_autocomplete_v2 test
 #
 # uncomment below and update the test

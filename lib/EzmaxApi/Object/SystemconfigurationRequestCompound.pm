@@ -231,6 +231,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_branding_id' => {
+        datatype => 'int',
+        base_name => 'fkiBrandingID',
+        description => 'The unique ID of the Branding',
+        format => '',
+        read_only => '',
+            },
     'e_systemconfiguration_newexternaluseraction' => {
         datatype => 'FieldESystemconfigurationNewexternaluseraction',
         base_name => 'eSystemconfigurationNewexternaluseraction',
@@ -305,6 +312,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'pki_systemconfiguration_id' => 'int',
+    'fki_branding_id' => 'int',
     'e_systemconfiguration_newexternaluseraction' => 'FieldESystemconfigurationNewexternaluseraction',
     'e_systemconfiguration_language1' => 'FieldESystemconfigurationLanguage1',
     'e_systemconfiguration_language2' => 'FieldESystemconfigurationLanguage2',
@@ -319,6 +327,7 @@ __PACKAGE__->openapi_types( {
 
 __PACKAGE__->attribute_map( {
     'pki_systemconfiguration_id' => 'pkiSystemconfigurationID',
+    'fki_branding_id' => 'fkiBrandingID',
     'e_systemconfiguration_newexternaluseraction' => 'eSystemconfigurationNewexternaluseraction',
     'e_systemconfiguration_language1' => 'eSystemconfigurationLanguage1',
     'e_systemconfiguration_language2' => 'eSystemconfigurationLanguage2',

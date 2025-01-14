@@ -37,6 +37,14 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplatedocumentApi');
 #my $ezsigntemplatedocument_create_object_v1_result = $api->ezsigntemplatedocument_create_object_v1(ezsigntemplatedocument_create_object_v1_request => $ezsigntemplatedocument_create_object_v1_ezsigntemplatedocument_create_object_v1_request);
 
 #
+# ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1 test
+#
+# uncomment below and update the test
+#my $ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_pki_ezsigntemplatedocument_id = undef; # replace NULL with a proper value
+#my $ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_request = undef; # replace NULL with a proper value
+#my $ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_result = $api->ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1(pki_ezsigntemplatedocument_id => $ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_pki_ezsigntemplatedocument_id, ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_request => $ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_request);
+
+#
 # ezsigntemplatedocument_edit_ezsigntemplateformfieldgroups_v1 test
 #
 # uncomment below and update the test
@@ -61,12 +69,27 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplatedocumentApi');
 #my $ezsigntemplatedocument_edit_object_v1_result = $api->ezsigntemplatedocument_edit_object_v1(pki_ezsigntemplatedocument_id => $ezsigntemplatedocument_edit_object_v1_pki_ezsigntemplatedocument_id, ezsigntemplatedocument_edit_object_v1_request => $ezsigntemplatedocument_edit_object_v1_ezsigntemplatedocument_edit_object_v1_request);
 
 #
+# ezsigntemplatedocument_extract_text_v1 test
+#
+# uncomment below and update the test
+#my $ezsigntemplatedocument_extract_text_v1_pki_ezsigntemplatedocument_id = undef; # replace NULL with a proper value
+#my $ezsigntemplatedocument_extract_text_v1_ezsigntemplatedocument_extract_text_v1_request = undef; # replace NULL with a proper value
+#my $ezsigntemplatedocument_extract_text_v1_result = $api->ezsigntemplatedocument_extract_text_v1(pki_ezsigntemplatedocument_id => $ezsigntemplatedocument_extract_text_v1_pki_ezsigntemplatedocument_id, ezsigntemplatedocument_extract_text_v1_request => $ezsigntemplatedocument_extract_text_v1_ezsigntemplatedocument_extract_text_v1_request);
+
+#
 # ezsigntemplatedocument_flatten_v1 test
 #
 # uncomment below and update the test
 #my $ezsigntemplatedocument_flatten_v1_pki_ezsigntemplatedocument_id = undef; # replace NULL with a proper value
 #my $ezsigntemplatedocument_flatten_v1_body = undef; # replace NULL with a proper value
 #my $ezsigntemplatedocument_flatten_v1_result = $api->ezsigntemplatedocument_flatten_v1(pki_ezsigntemplatedocument_id => $ezsigntemplatedocument_flatten_v1_pki_ezsigntemplatedocument_id, body => $ezsigntemplatedocument_flatten_v1_body);
+
+#
+# ezsigntemplatedocument_get_ezsigntemplatedocumentpagerecognitions_v1 test
+#
+# uncomment below and update the test
+#my $ezsigntemplatedocument_get_ezsigntemplatedocumentpagerecognitions_v1_pki_ezsigntemplatedocument_id = undef; # replace NULL with a proper value
+#my $ezsigntemplatedocument_get_ezsigntemplatedocumentpagerecognitions_v1_result = $api->ezsigntemplatedocument_get_ezsigntemplatedocumentpagerecognitions_v1(pki_ezsigntemplatedocument_id => $ezsigntemplatedocument_get_ezsigntemplatedocumentpagerecognitions_v1_pki_ezsigntemplatedocument_id);
 
 #
 # ezsigntemplatedocument_get_ezsigntemplatedocumentpages_v1 test

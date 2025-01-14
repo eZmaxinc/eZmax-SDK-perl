@@ -233,6 +233,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_font_name' => {
+        datatype => 'string',
+        base_name => 'sFontName',
+        description => 'The name of the Font',
+        format => '',
+        read_only => '',
+            },
     'b_textstylestatic_bold' => {
         datatype => 'boolean',
         base_name => 'bTextstylestaticBold',
@@ -280,6 +287,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'pki_textstylestatic_id' => 'int',
     'fki_font_id' => 'int',
+    's_font_name' => 'string',
     'b_textstylestatic_bold' => 'boolean',
     'b_textstylestatic_underline' => 'boolean',
     'b_textstylestatic_italic' => 'boolean',
@@ -291,6 +299,7 @@ __PACKAGE__->openapi_types( {
 __PACKAGE__->attribute_map( {
     'pki_textstylestatic_id' => 'pkiTextstylestaticID',
     'fki_font_id' => 'fkiFontID',
+    's_font_name' => 'sFontName',
     'b_textstylestatic_bold' => 'bTextstylestaticBold',
     'b_textstylestatic_underline' => 'bTextstylestaticUnderline',
     'b_textstylestatic_italic' => 'bTextstylestaticItalic',

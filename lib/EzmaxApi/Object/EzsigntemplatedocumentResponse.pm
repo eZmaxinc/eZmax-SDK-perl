@@ -254,6 +254,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_ezsigntemplatedocument_formfieldtotal' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatedocumentFormfieldtotal',
+        description => 'The number of total form fields in the Ezsigntemplate.',
+        format => '',
+        read_only => '',
+            },
     'b_ezsigntemplatedocument_hassignedsignatures' => {
         datatype => 'boolean',
         base_name => 'bEzsigntemplatedocumentHassignedsignatures',
@@ -269,6 +276,7 @@ __PACKAGE__->openapi_types( {
     's_ezsigntemplatedocument_name' => 'string',
     'i_ezsigntemplatedocument_pagetotal' => 'int',
     'i_ezsigntemplatedocument_signaturetotal' => 'int',
+    'i_ezsigntemplatedocument_formfieldtotal' => 'int',
     'b_ezsigntemplatedocument_hassignedsignatures' => 'boolean'
 } );
 
@@ -278,6 +286,7 @@ __PACKAGE__->attribute_map( {
     's_ezsigntemplatedocument_name' => 'sEzsigntemplatedocumentName',
     'i_ezsigntemplatedocument_pagetotal' => 'iEzsigntemplatedocumentPagetotal',
     'i_ezsigntemplatedocument_signaturetotal' => 'iEzsigntemplatedocumentSignaturetotal',
+    'i_ezsigntemplatedocument_formfieldtotal' => 'iEzsigntemplatedocumentFormfieldtotal',
     'b_ezsigntemplatedocument_hassignedsignatures' => 'bEzsigntemplatedocumentHassignedsignatures'
 } );
 

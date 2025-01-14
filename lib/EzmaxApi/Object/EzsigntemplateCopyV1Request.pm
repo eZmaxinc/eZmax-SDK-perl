@@ -226,14 +226,32 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_copy_company' => {
+        datatype => 'boolean',
+        base_name => 'bCopyCompany',
+        description => 'Whether we shall copy the Ezsigntemplate as a company Ezsigntemplate',
+        format => '',
+        read_only => '',
+            },
+    'b_copy_user' => {
+        datatype => 'boolean',
+        base_name => 'bCopyUser',
+        description => 'Whether we shall copy the Ezsigntemplate as a user Ezsigntemplate',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'a_fki_ezsignfoldertype_id' => 'ARRAY[int]'
+    'a_fki_ezsignfoldertype_id' => 'ARRAY[int]',
+    'b_copy_company' => 'boolean',
+    'b_copy_user' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
-    'a_fki_ezsignfoldertype_id' => 'a_fkiEzsignfoldertypeID'
+    'a_fki_ezsignfoldertype_id' => 'a_fkiEzsignfoldertypeID',
+    'b_copy_company' => 'bCopyCompany',
+    'b_copy_user' => 'bCopyUser'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

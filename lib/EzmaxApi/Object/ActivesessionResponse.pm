@@ -30,7 +30,11 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldEActivesessionEzsign;
+use EzmaxApi::Object::FieldEActivesessionEzsignaccess;
+use EzmaxApi::Object::FieldEActivesessionEzsignprepaid;
 use EzmaxApi::Object::FieldEActivesessionOrigin;
+use EzmaxApi::Object::FieldEActivesessionRealestateinprogress;
 use EzmaxApi::Object::FieldEActivesessionUsertype;
 use EzmaxApi::Object::FieldEActivesessionWeekdaystart;
 
@@ -278,6 +282,62 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_activesession_attachment' => {
+        datatype => 'boolean',
+        base_name => 'bActivesessionAttachment',
+        description => 'Can access attachment when we clone a user',
+        format => '',
+        read_only => '',
+            },
+    'b_activesession_canafe' => {
+        datatype => 'boolean',
+        base_name => 'bActivesessionCanafe',
+        description => 'Can access canafe when we clone a user',
+        format => '',
+        read_only => '',
+            },
+    'b_activesession_financial' => {
+        datatype => 'boolean',
+        base_name => 'bActivesessionFinancial',
+        description => 'Can access financial element when we clone a user',
+        format => '',
+        read_only => '',
+            },
+    'b_activesession_realestatecompleted' => {
+        datatype => 'boolean',
+        base_name => 'bActivesessionRealestatecompleted',
+        description => 'Can access closed realestate folders when we clone a user',
+        format => '',
+        read_only => '',
+            },
+    'e_activesession_ezsign' => {
+        datatype => 'FieldEActivesessionEzsign',
+        base_name => 'eActivesessionEzsign',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_activesession_ezsignaccess' => {
+        datatype => 'FieldEActivesessionEzsignaccess',
+        base_name => 'eActivesessionEzsignaccess',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_activesession_ezsignprepaid' => {
+        datatype => 'FieldEActivesessionEzsignprepaid',
+        base_name => 'eActivesessionEzsignprepaid',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_activesession_realestateinprogress' => {
+        datatype => 'FieldEActivesessionRealestateinprogress',
+        base_name => 'eActivesessionRealestateinprogress',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'pks_customer_code' => {
         datatype => 'string',
         base_name => 'pksCustomerCode',
@@ -310,6 +370,14 @@ __PACKAGE__->openapi_types( {
     's_department_name_x' => 'string',
     'b_activesession_debug' => 'boolean',
     'b_activesession_issuperadmin' => 'boolean',
+    'b_activesession_attachment' => 'boolean',
+    'b_activesession_canafe' => 'boolean',
+    'b_activesession_financial' => 'boolean',
+    'b_activesession_realestatecompleted' => 'boolean',
+    'e_activesession_ezsign' => 'FieldEActivesessionEzsign',
+    'e_activesession_ezsignaccess' => 'FieldEActivesessionEzsignaccess',
+    'e_activesession_ezsignprepaid' => 'FieldEActivesessionEzsignprepaid',
+    'e_activesession_realestateinprogress' => 'FieldEActivesessionRealestateinprogress',
     'pks_customer_code' => 'string',
     'fki_systemconfigurationtype_id' => 'int',
     'fki_signature_id' => 'int'
@@ -324,6 +392,14 @@ __PACKAGE__->attribute_map( {
     's_department_name_x' => 'sDepartmentNameX',
     'b_activesession_debug' => 'bActivesessionDebug',
     'b_activesession_issuperadmin' => 'bActivesessionIssuperadmin',
+    'b_activesession_attachment' => 'bActivesessionAttachment',
+    'b_activesession_canafe' => 'bActivesessionCanafe',
+    'b_activesession_financial' => 'bActivesessionFinancial',
+    'b_activesession_realestatecompleted' => 'bActivesessionRealestatecompleted',
+    'e_activesession_ezsign' => 'eActivesessionEzsign',
+    'e_activesession_ezsignaccess' => 'eActivesessionEzsignaccess',
+    'e_activesession_ezsignprepaid' => 'eActivesessionEzsignprepaid',
+    'e_activesession_realestateinprogress' => 'eActivesessionRealestateinprogress',
     'pks_customer_code' => 'pksCustomerCode',
     'fki_systemconfigurationtype_id' => 'fkiSystemconfigurationtypeID',
     'fki_signature_id' => 'fkiSignatureID'

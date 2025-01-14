@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CustomBrandingResponse;
 use EzmaxApi::Object::FieldESystemconfigurationEzsign;
 use EzmaxApi::Object::FieldESystemconfigurationEzsignofficeplan;
 use EzmaxApi::Object::FieldESystemconfigurationLanguage1;
@@ -238,6 +239,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_branding_id' => {
+        datatype => 'int',
+        base_name => 'fkiBrandingID',
+        description => 'The unique ID of the Branding',
+        format => '',
+        read_only => '',
+            },
     's_systemconfigurationtype_description_x' => {
         datatype => 'string',
         base_name => 'sSystemconfigurationtypeDescriptionX',
@@ -294,6 +302,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_systemconfiguration_hascreditcardmerchant' => {
+        datatype => 'boolean',
+        base_name => 'bSystemconfigurationHascreditcardmerchant',
+        description => 'Whether there is a creditcard merchant configured or not',
+        format => '',
+        read_only => '',
+            },
     'b_systemconfiguration_isdisposalactive' => {
         datatype => 'boolean',
         base_name => 'bSystemconfigurationIsdisposalactive',
@@ -322,11 +337,19 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_branding' => {
+        datatype => 'CustomBrandingResponse',
+        base_name => 'objBranding',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_systemconfiguration_id' => 'int',
     'fki_systemconfigurationtype_id' => 'int',
+    'fki_branding_id' => 'int',
     's_systemconfigurationtype_description_x' => 'string',
     'e_systemconfiguration_newexternaluseraction' => 'FieldESystemconfigurationNewexternaluseraction',
     'e_systemconfiguration_language1' => 'FieldESystemconfigurationLanguage1',
@@ -335,15 +358,18 @@ __PACKAGE__->openapi_types( {
     'e_systemconfiguration_ezsignofficeplan' => 'FieldESystemconfigurationEzsignofficeplan',
     'b_systemconfiguration_ezsignpaidbyoffice' => 'boolean',
     'b_systemconfiguration_ezsignpersonnal' => 'boolean',
+    'b_systemconfiguration_hascreditcardmerchant' => 'boolean',
     'b_systemconfiguration_isdisposalactive' => 'boolean',
     'b_systemconfiguration_sspr' => 'boolean',
     'dt_systemconfiguration_readonlyexpirationstart' => 'string',
-    'dt_systemconfiguration_readonlyexpirationend' => 'string'
+    'dt_systemconfiguration_readonlyexpirationend' => 'string',
+    'obj_branding' => 'CustomBrandingResponse'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_systemconfiguration_id' => 'pkiSystemconfigurationID',
     'fki_systemconfigurationtype_id' => 'fkiSystemconfigurationtypeID',
+    'fki_branding_id' => 'fkiBrandingID',
     's_systemconfigurationtype_description_x' => 'sSystemconfigurationtypeDescriptionX',
     'e_systemconfiguration_newexternaluseraction' => 'eSystemconfigurationNewexternaluseraction',
     'e_systemconfiguration_language1' => 'eSystemconfigurationLanguage1',
@@ -352,10 +378,12 @@ __PACKAGE__->attribute_map( {
     'e_systemconfiguration_ezsignofficeplan' => 'eSystemconfigurationEzsignofficeplan',
     'b_systemconfiguration_ezsignpaidbyoffice' => 'bSystemconfigurationEzsignpaidbyoffice',
     'b_systemconfiguration_ezsignpersonnal' => 'bSystemconfigurationEzsignpersonnal',
+    'b_systemconfiguration_hascreditcardmerchant' => 'bSystemconfigurationHascreditcardmerchant',
     'b_systemconfiguration_isdisposalactive' => 'bSystemconfigurationIsdisposalactive',
     'b_systemconfiguration_sspr' => 'bSystemconfigurationSspr',
     'dt_systemconfiguration_readonlyexpirationstart' => 'dtSystemconfigurationReadonlyexpirationstart',
-    'dt_systemconfiguration_readonlyexpirationend' => 'dtSystemconfigurationReadonlyexpirationend'
+    'dt_systemconfiguration_readonlyexpirationend' => 'dtSystemconfigurationReadonlyexpirationend',
+    'obj_branding' => 'objBranding'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

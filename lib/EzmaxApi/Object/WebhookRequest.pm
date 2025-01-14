@@ -229,6 +229,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_authenticationexternal_id' => {
+        datatype => 'int',
+        base_name => 'fkiAuthenticationexternalID',
+        description => 'The unique ID of the Authenticationexternal',
+        format => '',
+        read_only => '',
+            },
     'fki_ezsignfoldertype_id' => {
         datatype => 'int',
         base_name => 'fkiEzsignfoldertypeID',
@@ -303,6 +310,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'pki_webhook_id' => 'int',
+    'fki_authenticationexternal_id' => 'int',
     'fki_ezsignfoldertype_id' => 'int',
     's_webhook_description' => 'string',
     'e_webhook_module' => 'FieldEWebhookModule',
@@ -317,6 +325,7 @@ __PACKAGE__->openapi_types( {
 
 __PACKAGE__->attribute_map( {
     'pki_webhook_id' => 'pkiWebhookID',
+    'fki_authenticationexternal_id' => 'fkiAuthenticationexternalID',
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
     's_webhook_description' => 'sWebhookDescription',
     'e_webhook_module' => 'eWebhookModule',

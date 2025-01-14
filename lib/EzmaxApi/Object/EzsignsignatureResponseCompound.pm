@@ -32,10 +32,12 @@ use DateTime;
 
 use EzmaxApi::Object::CustomContactNameResponse;
 use EzmaxApi::Object::CustomCreditcardtransactionResponse;
+use EzmaxApi::Object::CustomTimezoneWithCodeResponse;
 use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::EzsignelementdependencyResponseCompound;
 use EzmaxApi::Object::EzsignsignaturecustomdateResponseCompound;
 use EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource;
+use EzmaxApi::Object::FieldEEzsignsignatureConsultationtrigger;
 use EzmaxApi::Object::FieldEEzsignsignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsignsignatureFont;
 use EzmaxApi::Object::FieldEEzsignsignatureTooltipposition;
@@ -258,6 +260,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_font_id' => {
+        datatype => 'int',
+        base_name => 'fkiFontID',
+        description => 'The unique ID of the Font',
+        format => '',
+        read_only => '',
+            },
     's_ezsignsigningreason_description_x' => {
         datatype => 'string',
         base_name => 'sEzsignsigningreasonDescriptionX',
@@ -363,10 +372,31 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignsignature_consultationtrigger' => {
+        datatype => 'FieldEEzsignsignatureConsultationtrigger',
+        base_name => 'eEzsignsignatureConsultationtrigger',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignsignature_handwritten' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignsignatureHandwritten',
+        description => 'Whether the Ezsignsignature must be handwritten or not when eEzsignsignatureType &#x3D; Signature.',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignsignature_reason' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignsignatureReason',
+        description => 'Whether the Ezsignsignature must include a reason or not when eEzsignsignatureType &#x3D; Signature.',
+        format => '',
+        read_only => '',
+            },
     'b_ezsignsignature_required' => {
         datatype => 'boolean',
         base_name => 'bEzsignsignatureRequired',
-        description => 'Whether the Ezsignsignature is required or not. This field is relevant only with Ezsignsignature with eEzsignsignatureType &#x3D; Attachments.',
+        description => 'Whether the Ezsignsignature is required or not. This field is relevant only with Ezsignsignature with eEzsignsignatureType &#x3D; Attachments, Text or Textarea.',
         format => '',
         read_only => '',
             },
@@ -412,10 +442,24 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsignsignature_textvalidationcustommessage' => {
+        datatype => 'string',
+        base_name => 'sEzsignsignatureTextvalidationcustommessage',
+        description => 'Description of validation rule. Show by signatory.',
+        format => '',
+        read_only => '',
+            },
     'e_ezsignsignature_dependencyrequirement' => {
         datatype => 'FieldEEzsignsignatureDependencyrequirement',
         base_name => 'eEzsignsignatureDependencyrequirement',
         description => '',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignsignature_defaultvalue' => {
+        datatype => 'string',
+        base_name => 'sEzsignsignatureDefaultvalue',
+        description => 'The default value for the Ezsignsignature  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sCompany} | Company name | eZmax Solutions Inc. | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |',
         format => '',
         read_only => '',
             },
@@ -447,6 +491,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'dt_ezsignsignature_date_in_folder_timezone' => {
+        datatype => 'string',
+        base_name => 'dtEzsignsignatureDateInFolderTimezone',
+        description => 'The date the Ezsignsignature was signed in folder&#39;s timezone',
+        format => '',
+        read_only => '',
+            },
     'b_ezsignsignature_customdate' => {
         datatype => 'boolean',
         base_name => 'bEzsignsignatureCustomdate',
@@ -475,6 +526,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_timezone' => {
+        datatype => 'CustomTimezoneWithCodeResponse',
+        base_name => 'objTimezone',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -482,6 +540,7 @@ __PACKAGE__->openapi_types( {
     'fki_ezsigndocument_id' => 'int',
     'fki_ezsignfoldersignerassociation_id' => 'int',
     'fki_ezsignsigningreason_id' => 'int',
+    'fki_font_id' => 'int',
     's_ezsignsigningreason_description_x' => 'string',
     'i_ezsignpage_pagenumber' => 'int',
     'i_ezsignsignature_x' => 'int',
@@ -497,6 +556,9 @@ __PACKAGE__->openapi_types( {
     'i_ezsignsignature_validationstep' => 'int',
     's_ezsignsignature_attachmentdescription' => 'string',
     'e_ezsignsignature_attachmentnamesource' => 'FieldEEzsignsignatureAttachmentnamesource',
+    'e_ezsignsignature_consultationtrigger' => 'FieldEEzsignsignatureConsultationtrigger',
+    'b_ezsignsignature_handwritten' => 'boolean',
+    'b_ezsignsignature_reason' => 'boolean',
     'b_ezsignsignature_required' => 'boolean',
     'fki_ezsignfoldersignerassociation_id_validation' => 'int',
     'dt_ezsignsignature_date' => 'string',
@@ -504,15 +566,19 @@ __PACKAGE__->openapi_types( {
     's_ezsignsignature_description' => 'string',
     'i_ezsignsignature_maxlength' => 'int',
     'e_ezsignsignature_textvalidation' => 'EnumTextvalidation',
+    's_ezsignsignature_textvalidationcustommessage' => 'string',
     'e_ezsignsignature_dependencyrequirement' => 'FieldEEzsignsignatureDependencyrequirement',
+    's_ezsignsignature_defaultvalue' => 'string',
     's_ezsignsignature_regexp' => 'string',
     'obj_contact_name' => 'CustomContactNameResponse',
     'obj_contact_name_delegation' => 'CustomContactNameResponse',
     'obj_signature' => 'SignatureResponseCompound',
+    'dt_ezsignsignature_date_in_folder_timezone' => 'string',
     'b_ezsignsignature_customdate' => 'boolean',
     'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateResponseCompound]',
     'obj_creditcardtransaction' => 'CustomCreditcardtransactionResponse',
-    'a_obj_ezsignelementdependency' => 'ARRAY[EzsignelementdependencyResponseCompound]'
+    'a_obj_ezsignelementdependency' => 'ARRAY[EzsignelementdependencyResponseCompound]',
+    'obj_timezone' => 'CustomTimezoneWithCodeResponse'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -520,6 +586,7 @@ __PACKAGE__->attribute_map( {
     'fki_ezsigndocument_id' => 'fkiEzsigndocumentID',
     'fki_ezsignfoldersignerassociation_id' => 'fkiEzsignfoldersignerassociationID',
     'fki_ezsignsigningreason_id' => 'fkiEzsignsigningreasonID',
+    'fki_font_id' => 'fkiFontID',
     's_ezsignsigningreason_description_x' => 'sEzsignsigningreasonDescriptionX',
     'i_ezsignpage_pagenumber' => 'iEzsignpagePagenumber',
     'i_ezsignsignature_x' => 'iEzsignsignatureX',
@@ -535,6 +602,9 @@ __PACKAGE__->attribute_map( {
     'i_ezsignsignature_validationstep' => 'iEzsignsignatureValidationstep',
     's_ezsignsignature_attachmentdescription' => 'sEzsignsignatureAttachmentdescription',
     'e_ezsignsignature_attachmentnamesource' => 'eEzsignsignatureAttachmentnamesource',
+    'e_ezsignsignature_consultationtrigger' => 'eEzsignsignatureConsultationtrigger',
+    'b_ezsignsignature_handwritten' => 'bEzsignsignatureHandwritten',
+    'b_ezsignsignature_reason' => 'bEzsignsignatureReason',
     'b_ezsignsignature_required' => 'bEzsignsignatureRequired',
     'fki_ezsignfoldersignerassociation_id_validation' => 'fkiEzsignfoldersignerassociationIDValidation',
     'dt_ezsignsignature_date' => 'dtEzsignsignatureDate',
@@ -542,15 +612,19 @@ __PACKAGE__->attribute_map( {
     's_ezsignsignature_description' => 'sEzsignsignatureDescription',
     'i_ezsignsignature_maxlength' => 'iEzsignsignatureMaxlength',
     'e_ezsignsignature_textvalidation' => 'eEzsignsignatureTextvalidation',
+    's_ezsignsignature_textvalidationcustommessage' => 'sEzsignsignatureTextvalidationcustommessage',
     'e_ezsignsignature_dependencyrequirement' => 'eEzsignsignatureDependencyrequirement',
+    's_ezsignsignature_defaultvalue' => 'sEzsignsignatureDefaultvalue',
     's_ezsignsignature_regexp' => 'sEzsignsignatureRegexp',
     'obj_contact_name' => 'objContactName',
     'obj_contact_name_delegation' => 'objContactNameDelegation',
     'obj_signature' => 'objSignature',
+    'dt_ezsignsignature_date_in_folder_timezone' => 'dtEzsignsignatureDateInFolderTimezone',
     'b_ezsignsignature_customdate' => 'bEzsignsignatureCustomdate',
     'a_obj_ezsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate',
     'obj_creditcardtransaction' => 'objCreditcardtransaction',
-    'a_obj_ezsignelementdependency' => 'a_objEzsignelementdependency'
+    'a_obj_ezsignelementdependency' => 'a_objEzsignelementdependency',
+    'obj_timezone' => 'objTimezone'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

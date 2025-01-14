@@ -226,6 +226,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_font_id_annotation' => {
+        datatype => 'int',
+        base_name => 'fkiFontIDAnnotation',
+        description => 'The unique ID of the Font',
+        format => '',
+        read_only => '',
+            },
+    'fki_font_id_formfield' => {
+        datatype => 'int',
+        base_name => 'fkiFontIDFormfield',
+        description => 'The unique ID of the Font',
+        format => '',
+        read_only => '',
+            },
+    'fki_font_id_signature' => {
+        datatype => 'int',
+        base_name => 'fkiFontIDSignature',
+        description => 'The unique ID of the Font',
+        format => '',
+        read_only => '',
+            },
     's_ezsignfoldertype_name_x' => {
         datatype => 'string',
         base_name => 'sEzsignfoldertypeNameX',
@@ -251,6 +272,13 @@ __PACKAGE__->method_documentation({
         datatype => 'boolean',
         base_name => 'bEzsignfoldertypeAllowdownloadproofezsignsigner',
         description => 'Whether we allow the proof to be downloaded by an Ezsignsigner',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_automaticsignature' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeAutomaticsignature',
+        description => 'Whether we allow the automatic signature by an User',
         format => '',
         read_only => '',
             },
@@ -282,30 +310,74 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsignfoldertype_reassigngroup' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeReassigngroup',
+        description => 'Wheter if Reassignment of signatures of the groups to which the user belongs is authorized by a user to himself',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignfoldertype_deadlinedays' => {
+        datatype => 'int',
+        base_name => 'iEzsignfoldertypeDeadlinedays',
+        description => 'The number of days to get all Ezsignsignatures',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignfoldertype_fontsizeannotation' => {
+        datatype => 'int',
+        base_name => 'iEzsignfoldertypeFontsizeannotation',
+        description => 'Font size for annotations',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignfoldertype_fontsizeformfield' => {
+        datatype => 'int',
+        base_name => 'iEzsignfoldertypeFontsizeformfield',
+        description => 'Font size for form fields',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_ezsignfoldertype_id' => 'int',
+    'fki_font_id_annotation' => 'int',
+    'fki_font_id_formfield' => 'int',
+    'fki_font_id_signature' => 'int',
     's_ezsignfoldertype_name_x' => 'string',
     'b_ezsignfoldertype_sendproofezsignsigner' => 'boolean',
     'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => 'boolean',
     'b_ezsignfoldertype_allowdownloadproofezsignsigner' => 'boolean',
+    'b_ezsignfoldertype_automaticsignature' => 'boolean',
     'b_ezsignfoldertype_delegate' => 'boolean',
     'b_ezsignfoldertype_discussion' => 'boolean',
     'b_ezsignfoldertype_reassignezsignsigner' => 'boolean',
-    'b_ezsignfoldertype_reassignuser' => 'boolean'
+    'b_ezsignfoldertype_reassignuser' => 'boolean',
+    'b_ezsignfoldertype_reassigngroup' => 'boolean',
+    'i_ezsignfoldertype_deadlinedays' => 'int',
+    'i_ezsignfoldertype_fontsizeannotation' => 'int',
+    'i_ezsignfoldertype_fontsizeformfield' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_ezsignfoldertype_id' => 'pkiEzsignfoldertypeID',
+    'fki_font_id_annotation' => 'fkiFontIDAnnotation',
+    'fki_font_id_formfield' => 'fkiFontIDFormfield',
+    'fki_font_id_signature' => 'fkiFontIDSignature',
     's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
     'b_ezsignfoldertype_sendproofezsignsigner' => 'bEzsignfoldertypeSendproofezsignsigner',
     'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => 'bEzsignfoldertypeAllowdownloadattachmentezsignsigner',
     'b_ezsignfoldertype_allowdownloadproofezsignsigner' => 'bEzsignfoldertypeAllowdownloadproofezsignsigner',
+    'b_ezsignfoldertype_automaticsignature' => 'bEzsignfoldertypeAutomaticsignature',
     'b_ezsignfoldertype_delegate' => 'bEzsignfoldertypeDelegate',
     'b_ezsignfoldertype_discussion' => 'bEzsignfoldertypeDiscussion',
     'b_ezsignfoldertype_reassignezsignsigner' => 'bEzsignfoldertypeReassignezsignsigner',
-    'b_ezsignfoldertype_reassignuser' => 'bEzsignfoldertypeReassignuser'
+    'b_ezsignfoldertype_reassignuser' => 'bEzsignfoldertypeReassignuser',
+    'b_ezsignfoldertype_reassigngroup' => 'bEzsignfoldertypeReassigngroup',
+    'i_ezsignfoldertype_deadlinedays' => 'iEzsignfoldertypeDeadlinedays',
+    'i_ezsignfoldertype_fontsizeannotation' => 'iEzsignfoldertypeFontsizeannotation',
+    'i_ezsignfoldertype_fontsizeformfield' => 'iEzsignfoldertypeFontsizeformfield'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

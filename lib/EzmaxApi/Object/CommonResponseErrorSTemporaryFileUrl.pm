@@ -234,6 +234,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_s_error_messagedetail' => {
+        datatype => 'ARRAY[string]',
+        base_name => 'a_sErrorMessagedetail',
+        description => 'More error message detail',
+        format => '',
+        read_only => '',
+            },
     's_temporary_file_url' => {
         datatype => 'string',
         base_name => 'sTemporaryFileUrl',
@@ -246,12 +253,14 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     's_error_message' => 'string',
     'e_error_code' => 'FieldEErrorCode',
+    'a_s_error_messagedetail' => 'ARRAY[string]',
     's_temporary_file_url' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     's_error_message' => 'sErrorMessage',
     'e_error_code' => 'eErrorCode',
+    'a_s_error_messagedetail' => 'a_sErrorMessagedetail',
     's_temporary_file_url' => 'sTemporaryFileUrl'
 } );
 

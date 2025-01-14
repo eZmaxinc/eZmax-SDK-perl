@@ -58,5 +58,26 @@ isa_ok($api, 'EzmaxApi::ObjectSignatureApi');
 #my $signature_get_object_v2_pki_signature_id = undef; # replace NULL with a proper value
 #my $signature_get_object_v2_result = $api->signature_get_object_v2(pki_signature_id => $signature_get_object_v2_pki_signature_id);
 
+#
+# signature_get_object_v3 test
+#
+# uncomment below and update the test
+#my $signature_get_object_v3_pki_signature_id = undef; # replace NULL with a proper value
+#my $signature_get_object_v3_result = $api->signature_get_object_v3(pki_signature_id => $signature_get_object_v3_pki_signature_id);
+
+#
+# signature_get_svg_initials_v1 test
+#
+# uncomment below and update the test
+#my $signature_get_svg_initials_v1_pki_signature_id = undef; # replace NULL with a proper value
+#my $signature_get_svg_initials_v1_result = $api->signature_get_svg_initials_v1(pki_signature_id => $signature_get_svg_initials_v1_pki_signature_id);
+
+#
+# signature_get_svg_signature_v1 test
+#
+# uncomment below and update the test
+#my $signature_get_svg_signature_v1_pki_signature_id = undef; # replace NULL with a proper value
+#my $signature_get_svg_signature_v1_result = $api->signature_get_svg_signature_v1(pki_signature_id => $signature_get_svg_signature_v1_pki_signature_id);
+
 
 done_testing();

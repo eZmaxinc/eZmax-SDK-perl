@@ -30,27 +30,19 @@ my $api = EzmaxApi::ObjectEzsignfoldertypeApi->new();
 isa_ok($api, 'EzmaxApi::ObjectEzsignfoldertypeApi');
 
 #
-# ezsignfoldertype_create_object_v2 test
+# ezsignfoldertype_create_object_v3 test
 #
 # uncomment below and update the test
-#my $ezsignfoldertype_create_object_v2_ezsignfoldertype_create_object_v2_request = undef; # replace NULL with a proper value
-#my $ezsignfoldertype_create_object_v2_result = $api->ezsignfoldertype_create_object_v2(ezsignfoldertype_create_object_v2_request => $ezsignfoldertype_create_object_v2_ezsignfoldertype_create_object_v2_request);
+#my $ezsignfoldertype_create_object_v3_ezsignfoldertype_create_object_v3_request = undef; # replace NULL with a proper value
+#my $ezsignfoldertype_create_object_v3_result = $api->ezsignfoldertype_create_object_v3(ezsignfoldertype_create_object_v3_request => $ezsignfoldertype_create_object_v3_ezsignfoldertype_create_object_v3_request);
 
 #
-# ezsignfoldertype_edit_object_v1 test
+# ezsignfoldertype_edit_object_v3 test
 #
 # uncomment below and update the test
-#my $ezsignfoldertype_edit_object_v1_pki_ezsignfoldertype_id = undef; # replace NULL with a proper value
-#my $ezsignfoldertype_edit_object_v1_ezsignfoldertype_edit_object_v1_request = undef; # replace NULL with a proper value
-#my $ezsignfoldertype_edit_object_v1_result = $api->ezsignfoldertype_edit_object_v1(pki_ezsignfoldertype_id => $ezsignfoldertype_edit_object_v1_pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v1_request => $ezsignfoldertype_edit_object_v1_ezsignfoldertype_edit_object_v1_request);
-
-#
-# ezsignfoldertype_edit_object_v2 test
-#
-# uncomment below and update the test
-#my $ezsignfoldertype_edit_object_v2_pki_ezsignfoldertype_id = undef; # replace NULL with a proper value
-#my $ezsignfoldertype_edit_object_v2_ezsignfoldertype_edit_object_v2_request = undef; # replace NULL with a proper value
-#my $ezsignfoldertype_edit_object_v2_result = $api->ezsignfoldertype_edit_object_v2(pki_ezsignfoldertype_id => $ezsignfoldertype_edit_object_v2_pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v2_request => $ezsignfoldertype_edit_object_v2_ezsignfoldertype_edit_object_v2_request);
+#my $ezsignfoldertype_edit_object_v3_pki_ezsignfoldertype_id = undef; # replace NULL with a proper value
+#my $ezsignfoldertype_edit_object_v3_ezsignfoldertype_edit_object_v3_request = undef; # replace NULL with a proper value
+#my $ezsignfoldertype_edit_object_v3_result = $api->ezsignfoldertype_edit_object_v3(pki_ezsignfoldertype_id => $ezsignfoldertype_edit_object_v3_pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v3_request => $ezsignfoldertype_edit_object_v3_ezsignfoldertype_edit_object_v3_request);
 
 #
 # ezsignfoldertype_get_autocomplete_v2 test
@@ -81,11 +73,11 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfoldertypeApi');
 #my $ezsignfoldertype_get_object_v2_result = $api->ezsignfoldertype_get_object_v2(pki_ezsignfoldertype_id => $ezsignfoldertype_get_object_v2_pki_ezsignfoldertype_id);
 
 #
-# ezsignfoldertype_get_object_v3 test
+# ezsignfoldertype_get_object_v4 test
 #
 # uncomment below and update the test
-#my $ezsignfoldertype_get_object_v3_pki_ezsignfoldertype_id = undef; # replace NULL with a proper value
-#my $ezsignfoldertype_get_object_v3_result = $api->ezsignfoldertype_get_object_v3(pki_ezsignfoldertype_id => $ezsignfoldertype_get_object_v3_pki_ezsignfoldertype_id);
+#my $ezsignfoldertype_get_object_v4_pki_ezsignfoldertype_id = undef; # replace NULL with a proper value
+#my $ezsignfoldertype_get_object_v4_result = $api->ezsignfoldertype_get_object_v4(pki_ezsignfoldertype_id => $ezsignfoldertype_get_object_v4_pki_ezsignfoldertype_id);
 
 
 done_testing();

@@ -268,7 +268,7 @@ __PACKAGE__->method_documentation({
     's_ezsignformfieldgroup_defaultvalue' => {
         datatype => 'string',
         base_name => 'sEzsignformfieldgroupDefaultvalue',
-        description => 'The default value for the Ezsignformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |',
+        description => 'The default value for the Ezsignformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sCompany} | Company name | eZmax Solutions Inc. | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |',
         format => '',
         read_only => '',
             },
@@ -321,6 +321,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsignformfieldgroup_textvalidationcustommessage' => {
+        datatype => 'string',
+        base_name => 'sEzsignformfieldgroupTextvalidationcustommessage',
+        description => 'Description of validation rule. Show by signatory.',
+        format => '',
+        read_only => '',
+            },
     't_ezsignformfieldgroup_tooltip' => {
         datatype => 'string',
         base_name => 'tEzsignformfieldgroupTooltip',
@@ -352,6 +359,7 @@ __PACKAGE__->openapi_types( {
     'b_ezsignformfieldgroup_encrypted' => 'boolean',
     'e_ezsignformfieldgroup_textvalidation' => 'EnumTextvalidation',
     's_ezsignformfieldgroup_regexp' => 'string',
+    's_ezsignformfieldgroup_textvalidationcustommessage' => 'string',
     't_ezsignformfieldgroup_tooltip' => 'string',
     'e_ezsignformfieldgroup_tooltipposition' => 'FieldEEzsignformfieldgroupTooltipposition'
 } );
@@ -371,6 +379,7 @@ __PACKAGE__->attribute_map( {
     'b_ezsignformfieldgroup_encrypted' => 'bEzsignformfieldgroupEncrypted',
     'e_ezsignformfieldgroup_textvalidation' => 'eEzsignformfieldgroupTextvalidation',
     's_ezsignformfieldgroup_regexp' => 'sEzsignformfieldgroupRegexp',
+    's_ezsignformfieldgroup_textvalidationcustommessage' => 'sEzsignformfieldgroupTextvalidationcustommessage',
     't_ezsignformfieldgroup_tooltip' => 'tEzsignformfieldgroupTooltip',
     'e_ezsignformfieldgroup_tooltipposition' => 'eEzsignformfieldgroupTooltipposition'
 } );

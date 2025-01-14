@@ -9,9 +9,61 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**activesession_generate_federation_token_v1**](ObjectActivesessionApi.md#activesession_generate_federation_token_v1) | **POST** /1/object/activesession/generateFederationToken | Generate a federation token
 [**activesession_get_current_v1**](ObjectActivesessionApi.md#activesession_get_current_v1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
 [**activesession_get_list_v1**](ObjectActivesessionApi.md#activesession_get_list_v1) | **GET** /1/object/activesession/getList | Retrieve Activesession list
 
+
+# **activesession_generate_federation_token_v1**
+> ActivesessionGenerateFederationTokenV1Response activesession_generate_federation_token_v1(activesession_generate_federation_token_v1_request => $activesession_generate_federation_token_v1_request)
+
+Generate a federation token
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectActivesessionApi;
+my $api_instance = EzmaxApi::ObjectActivesessionApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $activesession_generate_federation_token_v1_request = EzmaxApi::Object::ActivesessionGenerateFederationTokenV1Request->new(); # ActivesessionGenerateFederationTokenV1Request | 
+
+eval {
+    my $result = $api_instance->activesession_generate_federation_token_v1(activesession_generate_federation_token_v1_request => $activesession_generate_federation_token_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectActivesessionApi->activesession_generate_federation_token_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activesession_generate_federation_token_v1_request** | [**ActivesessionGenerateFederationTokenV1Request**](ActivesessionGenerateFederationTokenV1Request.md)|  | 
+
+### Return type
+
+[**ActivesessionGenerateFederationTokenV1Response**](ActivesessionGenerateFederationTokenV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **activesession_get_current_v1**
 > ActivesessionGetCurrentV1Response activesession_get_current_v1()

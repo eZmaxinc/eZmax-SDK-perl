@@ -345,6 +345,71 @@ sub ezsignfolder_create_object_v2 {
 }
 
 #
+# ezsignfolder_create_object_v3
+#
+# Create a new Ezsignfolder
+#
+# @param EzsignfolderCreateObjectV3Request $ezsignfolder_create_object_v3_request  (required)
+{
+    my $params = {
+    'ezsignfolder_create_object_v3_request' => {
+        data_type => 'EzsignfolderCreateObjectV3Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignfolder_create_object_v3' } = {
+        summary => 'Create a new Ezsignfolder',
+        params => $params,
+        returns => 'EzsignfolderCreateObjectV3Response',
+        };
+}
+# @return EzsignfolderCreateObjectV3Response
+#
+sub ezsignfolder_create_object_v3 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'ezsignfolder_create_object_v3_request' is set
+    unless (exists $args{'ezsignfolder_create_object_v3_request'}) {
+      croak("Missing the required parameter 'ezsignfolder_create_object_v3_request' when calling ezsignfolder_create_object_v3");
+    }
+
+    # parse inputs
+    my $_resource_path = '/3/object/ezsignfolder';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsignfolder_create_object_v3_request'}) {
+        $_body_data = $args{'ezsignfolder_create_object_v3_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignfolderCreateObjectV3Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsignfolder_delete_object_v1
 #
 # Delete an existing Ezsignfolder
@@ -560,12 +625,12 @@ sub ezsignfolder_dispose_v1 {
 }
 
 #
-# ezsignfolder_edit_object_v1
+# ezsignfolder_edit_object_v3
 #
 # Edit an existing Ezsignfolder
 #
 # @param int $pki_ezsignfolder_id  (required)
-# @param EzsignfolderEditObjectV1Request $ezsignfolder_edit_object_v1_request  (required)
+# @param EzsignfolderEditObjectV3Request $ezsignfolder_edit_object_v3_request  (required)
 {
     my $params = {
     'pki_ezsignfolder_id' => {
@@ -573,35 +638,35 @@ sub ezsignfolder_dispose_v1 {
         description => '',
         required => '1',
     },
-    'ezsignfolder_edit_object_v1_request' => {
-        data_type => 'EzsignfolderEditObjectV1Request',
+    'ezsignfolder_edit_object_v3_request' => {
+        data_type => 'EzsignfolderEditObjectV3Request',
         description => '',
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'ezsignfolder_edit_object_v1' } = {
+    __PACKAGE__->method_documentation->{ 'ezsignfolder_edit_object_v3' } = {
         summary => 'Edit an existing Ezsignfolder',
         params => $params,
-        returns => 'EzsignfolderEditObjectV1Response',
+        returns => 'EzsignfolderEditObjectV3Response',
         };
 }
-# @return EzsignfolderEditObjectV1Response
+# @return EzsignfolderEditObjectV3Response
 #
-sub ezsignfolder_edit_object_v1 {
+sub ezsignfolder_edit_object_v3 {
     my ($self, %args) = @_;
 
     # verify the required parameter 'pki_ezsignfolder_id' is set
     unless (exists $args{'pki_ezsignfolder_id'}) {
-      croak("Missing the required parameter 'pki_ezsignfolder_id' when calling ezsignfolder_edit_object_v1");
+      croak("Missing the required parameter 'pki_ezsignfolder_id' when calling ezsignfolder_edit_object_v3");
     }
 
-    # verify the required parameter 'ezsignfolder_edit_object_v1_request' is set
-    unless (exists $args{'ezsignfolder_edit_object_v1_request'}) {
-      croak("Missing the required parameter 'ezsignfolder_edit_object_v1_request' when calling ezsignfolder_edit_object_v1");
+    # verify the required parameter 'ezsignfolder_edit_object_v3_request' is set
+    unless (exists $args{'ezsignfolder_edit_object_v3_request'}) {
+      croak("Missing the required parameter 'ezsignfolder_edit_object_v3_request' when calling ezsignfolder_edit_object_v3");
     }
 
     # parse inputs
-    my $_resource_path = '/1/object/ezsignfolder/{pkiEzsignfolderID}';
+    my $_resource_path = '/3/object/ezsignfolder/{pkiEzsignfolderID}';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -624,8 +689,8 @@ sub ezsignfolder_edit_object_v1 {
 
     my $_body_data;
     # body params
-    if ( exists $args{'ezsignfolder_edit_object_v1_request'}) {
-        $_body_data = $args{'ezsignfolder_edit_object_v1_request'};
+    if ( exists $args{'ezsignfolder_edit_object_v3_request'}) {
+        $_body_data = $args{'ezsignfolder_edit_object_v3_request'};
     }
 
     # authentication setting, if any
@@ -638,7 +703,7 @@ sub ezsignfolder_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignfolderEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsignfolderEditObjectV3Response', $response);
     return $_response_object;
 }
 
@@ -1701,6 +1766,73 @@ sub ezsignfolder_get_object_v2 {
 }
 
 #
+# ezsignfolder_get_object_v3
+#
+# Retrieve an existing Ezsignfolder
+#
+# @param int $pki_ezsignfolder_id  (required)
+{
+    my $params = {
+    'pki_ezsignfolder_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignfolder_get_object_v3' } = {
+        summary => 'Retrieve an existing Ezsignfolder',
+        params => $params,
+        returns => 'EzsignfolderGetObjectV3Response',
+        };
+}
+# @return EzsignfolderGetObjectV3Response
+#
+sub ezsignfolder_get_object_v3 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignfolder_id' is set
+    unless (exists $args{'pki_ezsignfolder_id'}) {
+      croak("Missing the required parameter 'pki_ezsignfolder_id' when calling ezsignfolder_get_object_v3");
+    }
+
+    # parse inputs
+    my $_resource_path = '/3/object/ezsignfolder/{pkiEzsignfolderID}';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsignfolder_id'}) {
+        my $_base_variable = "{" . "pkiEzsignfolderID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignfolder_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignfolderGetObjectV3Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsignfolder_import_ezsignfoldersignerassociations_v1
 #
 # Import an existing Ezsignfoldersignerassociation into this Ezsignfolder
@@ -1946,6 +2078,89 @@ sub ezsignfolder_reorder_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('EzsignfolderReorderV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsignfolder_reorder_v2
+#
+# Reorder Ezsigndocuments in the Ezsignfolder
+#
+# @param int $pki_ezsignfolder_id  (required)
+# @param EzsignfolderReorderV2Request $ezsignfolder_reorder_v2_request  (required)
+{
+    my $params = {
+    'pki_ezsignfolder_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsignfolder_reorder_v2_request' => {
+        data_type => 'EzsignfolderReorderV2Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignfolder_reorder_v2' } = {
+        summary => 'Reorder Ezsigndocuments in the Ezsignfolder',
+        params => $params,
+        returns => 'EzsignfolderReorderV2Response',
+        };
+}
+# @return EzsignfolderReorderV2Response
+#
+sub ezsignfolder_reorder_v2 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignfolder_id' is set
+    unless (exists $args{'pki_ezsignfolder_id'}) {
+      croak("Missing the required parameter 'pki_ezsignfolder_id' when calling ezsignfolder_reorder_v2");
+    }
+
+    # verify the required parameter 'ezsignfolder_reorder_v2_request' is set
+    unless (exists $args{'ezsignfolder_reorder_v2_request'}) {
+      croak("Missing the required parameter 'ezsignfolder_reorder_v2_request' when calling ezsignfolder_reorder_v2");
+    }
+
+    # parse inputs
+    my $_resource_path = '/2/object/ezsignfolder/{pkiEzsignfolderID}/reorder';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsignfolder_id'}) {
+        my $_base_variable = "{" . "pkiEzsignfolderID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignfolder_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsignfolder_reorder_v2_request'}) {
+        $_body_data = $args{'ezsignfolder_reorder_v2_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignfolderReorderV2Response', $response);
     return $_response_object;
 }
 

@@ -314,6 +314,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsigntemplateformfieldgroup_textvalidationcustommessage' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplateformfieldgroupTextvalidationcustommessage',
+        description => 'Description of validation rule. Show by signatory.',
+        format => '',
+        read_only => '',
+            },
     'e_ezsigntemplateformfieldgroup_textvalidation' => {
         datatype => 'EnumTextvalidation',
         base_name => 'eEzsigntemplateformfieldgroupTextvalidation',
@@ -351,6 +358,7 @@ __PACKAGE__->openapi_types( {
     'i_ezsigntemplateformfieldgroup_maxlength' => 'int',
     'b_ezsigntemplateformfieldgroup_encrypted' => 'boolean',
     's_ezsigntemplateformfieldgroup_regexp' => 'string',
+    's_ezsigntemplateformfieldgroup_textvalidationcustommessage' => 'string',
     'e_ezsigntemplateformfieldgroup_textvalidation' => 'EnumTextvalidation',
     't_ezsigntemplateformfieldgroup_tooltip' => 'string',
     'e_ezsigntemplateformfieldgroup_tooltipposition' => 'FieldEEzsigntemplateformfieldgroupTooltipposition'
@@ -370,6 +378,7 @@ __PACKAGE__->attribute_map( {
     'i_ezsigntemplateformfieldgroup_maxlength' => 'iEzsigntemplateformfieldgroupMaxlength',
     'b_ezsigntemplateformfieldgroup_encrypted' => 'bEzsigntemplateformfieldgroupEncrypted',
     's_ezsigntemplateformfieldgroup_regexp' => 'sEzsigntemplateformfieldgroupRegexp',
+    's_ezsigntemplateformfieldgroup_textvalidationcustommessage' => 'sEzsigntemplateformfieldgroupTextvalidationcustommessage',
     'e_ezsigntemplateformfieldgroup_textvalidation' => 'eEzsigntemplateformfieldgroupTextvalidation',
     't_ezsigntemplateformfieldgroup_tooltip' => 'tEzsigntemplateformfieldgroupTooltip',
     'e_ezsigntemplateformfieldgroup_tooltipposition' => 'eEzsigntemplateformfieldgroupTooltipposition'

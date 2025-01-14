@@ -330,4 +330,197 @@ sub signature_get_object_v2 {
     return $_response_object;
 }
 
+#
+# signature_get_object_v3
+#
+# Retrieve an existing Signature
+#
+# @param int $pki_signature_id The unique ID of the Signature (required)
+{
+    my $params = {
+    'pki_signature_id' => {
+        data_type => 'int',
+        description => 'The unique ID of the Signature',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'signature_get_object_v3' } = {
+        summary => 'Retrieve an existing Signature',
+        params => $params,
+        returns => 'SignatureGetObjectV3Response',
+        };
+}
+# @return SignatureGetObjectV3Response
+#
+sub signature_get_object_v3 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_signature_id' is set
+    unless (exists $args{'pki_signature_id'}) {
+      croak("Missing the required parameter 'pki_signature_id' when calling signature_get_object_v3");
+    }
+
+    # parse inputs
+    my $_resource_path = '/3/object/signature/{pkiSignatureID}';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_signature_id'}) {
+        my $_base_variable = "{" . "pkiSignatureID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_signature_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('SignatureGetObjectV3Response', $response);
+    return $_response_object;
+}
+
+#
+# signature_get_svg_initials_v1
+#
+# Retrieve an existing Signature initial SVG
+#
+# @param int $pki_signature_id The unique ID of the Signature (required)
+{
+    my $params = {
+    'pki_signature_id' => {
+        data_type => 'int',
+        description => 'The unique ID of the Signature',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'signature_get_svg_initials_v1' } = {
+        summary => 'Retrieve an existing Signature initial SVG',
+        params => $params,
+        returns => undef,
+        };
+}
+# @return void
+#
+sub signature_get_svg_initials_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_signature_id' is set
+    unless (exists $args{'pki_signature_id'}) {
+      croak("Missing the required parameter 'pki_signature_id' when calling signature_get_svg_initials_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/signature/{pkiSignatureID}/getSVGInitials';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_signature_id'}) {
+        my $_base_variable = "{" . "pkiSignatureID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_signature_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    return;
+}
+
+#
+# signature_get_svg_signature_v1
+#
+# Retrieve an existing Signature SVG
+#
+# @param int $pki_signature_id The unique ID of the Signature (required)
+{
+    my $params = {
+    'pki_signature_id' => {
+        data_type => 'int',
+        description => 'The unique ID of the Signature',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'signature_get_svg_signature_v1' } = {
+        summary => 'Retrieve an existing Signature SVG',
+        params => $params,
+        returns => undef,
+        };
+}
+# @return void
+#
+sub signature_get_svg_signature_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_signature_id' is set
+    unless (exists $args{'pki_signature_id'}) {
+      croak("Missing the required parameter 'pki_signature_id' when calling signature_get_svg_signature_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/signature/{pkiSignatureID}/getSVGSignature';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_signature_id'}) {
+        my $_base_variable = "{" . "pkiSignatureID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_signature_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    return;
+}
+
 1;

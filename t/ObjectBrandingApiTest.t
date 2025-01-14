@@ -30,19 +30,19 @@ my $api = EzmaxApi::ObjectBrandingApi->new();
 isa_ok($api, 'EzmaxApi::ObjectBrandingApi');
 
 #
-# branding_create_object_v1 test
+# branding_create_object_v2 test
 #
 # uncomment below and update the test
-#my $branding_create_object_v1_branding_create_object_v1_request = undef; # replace NULL with a proper value
-#my $branding_create_object_v1_result = $api->branding_create_object_v1(branding_create_object_v1_request => $branding_create_object_v1_branding_create_object_v1_request);
+#my $branding_create_object_v2_branding_create_object_v2_request = undef; # replace NULL with a proper value
+#my $branding_create_object_v2_result = $api->branding_create_object_v2(branding_create_object_v2_request => $branding_create_object_v2_branding_create_object_v2_request);
 
 #
-# branding_edit_object_v1 test
+# branding_edit_object_v2 test
 #
 # uncomment below and update the test
-#my $branding_edit_object_v1_pki_branding_id = undef; # replace NULL with a proper value
-#my $branding_edit_object_v1_branding_edit_object_v1_request = undef; # replace NULL with a proper value
-#my $branding_edit_object_v1_result = $api->branding_edit_object_v1(pki_branding_id => $branding_edit_object_v1_pki_branding_id, branding_edit_object_v1_request => $branding_edit_object_v1_branding_edit_object_v1_request);
+#my $branding_edit_object_v2_pki_branding_id = undef; # replace NULL with a proper value
+#my $branding_edit_object_v2_branding_edit_object_v2_request = undef; # replace NULL with a proper value
+#my $branding_edit_object_v2_result = $api->branding_edit_object_v2(pki_branding_id => $branding_edit_object_v2_pki_branding_id, branding_edit_object_v2_request => $branding_edit_object_v2_branding_edit_object_v2_request);
 
 #
 # branding_get_autocomplete_v2 test
@@ -66,11 +66,11 @@ isa_ok($api, 'EzmaxApi::ObjectBrandingApi');
 #my $branding_get_list_v1_result = $api->branding_get_list_v1(e_order_by => $branding_get_list_v1_e_order_by, i_row_max => $branding_get_list_v1_i_row_max, i_row_offset => $branding_get_list_v1_i_row_offset, accept_language => $branding_get_list_v1_accept_language, s_filter => $branding_get_list_v1_s_filter);
 
 #
-# branding_get_object_v2 test
+# branding_get_object_v3 test
 #
 # uncomment below and update the test
-#my $branding_get_object_v2_pki_branding_id = undef; # replace NULL with a proper value
-#my $branding_get_object_v2_result = $api->branding_get_object_v2(pki_branding_id => $branding_get_object_v2_pki_branding_id);
+#my $branding_get_object_v3_pki_branding_id = undef; # replace NULL with a proper value
+#my $branding_get_object_v3_result = $api->branding_get_object_v3(pki_branding_id => $branding_get_object_v3_pki_branding_id);
 
 
 done_testing();

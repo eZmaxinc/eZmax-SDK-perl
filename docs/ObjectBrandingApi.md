@@ -9,15 +9,15 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**branding_create_object_v1**](ObjectBrandingApi.md#branding_create_object_v1) | **POST** /1/object/branding | Create a new Branding
-[**branding_edit_object_v1**](ObjectBrandingApi.md#branding_edit_object_v1) | **PUT** /1/object/branding/{pkiBrandingID} | Edit an existing Branding
+[**branding_create_object_v2**](ObjectBrandingApi.md#branding_create_object_v2) | **POST** /2/object/branding | Create a new Branding
+[**branding_edit_object_v2**](ObjectBrandingApi.md#branding_edit_object_v2) | **PUT** /2/object/branding/{pkiBrandingID} | Edit an existing Branding
 [**branding_get_autocomplete_v2**](ObjectBrandingApi.md#branding_get_autocomplete_v2) | **GET** /2/object/branding/getAutocomplete/{sSelector} | Retrieve Brandings and IDs
 [**branding_get_list_v1**](ObjectBrandingApi.md#branding_get_list_v1) | **GET** /1/object/branding/getList | Retrieve Branding list
-[**branding_get_object_v2**](ObjectBrandingApi.md#branding_get_object_v2) | **GET** /2/object/branding/{pkiBrandingID} | Retrieve an existing Branding
+[**branding_get_object_v3**](ObjectBrandingApi.md#branding_get_object_v3) | **GET** /3/object/branding/{pkiBrandingID} | Retrieve an existing Branding
 
 
-# **branding_create_object_v1**
-> BrandingCreateObjectV1Response branding_create_object_v1(branding_create_object_v1_request => $branding_create_object_v1_request)
+# **branding_create_object_v2**
+> BrandingCreateObjectV2Response branding_create_object_v2(branding_create_object_v2_request => $branding_create_object_v2_request)
 
 Create a new Branding
 
@@ -35,14 +35,14 @@ my $api_instance = EzmaxApi::ObjectBrandingApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $branding_create_object_v1_request = EzmaxApi::Object::BrandingCreateObjectV1Request->new(); # BrandingCreateObjectV1Request | 
+my $branding_create_object_v2_request = EzmaxApi::Object::BrandingCreateObjectV2Request->new(); # BrandingCreateObjectV2Request | 
 
 eval {
-    my $result = $api_instance->branding_create_object_v1(branding_create_object_v1_request => $branding_create_object_v1_request);
+    my $result = $api_instance->branding_create_object_v2(branding_create_object_v2_request => $branding_create_object_v2_request);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ObjectBrandingApi->branding_create_object_v1: $@\n";
+    warn "Exception when calling ObjectBrandingApi->branding_create_object_v2: $@\n";
 }
 ```
 
@@ -50,11 +50,11 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **branding_create_object_v1_request** | [**BrandingCreateObjectV1Request**](BrandingCreateObjectV1Request.md)|  | 
+ **branding_create_object_v2_request** | [**BrandingCreateObjectV2Request**](BrandingCreateObjectV2Request.md)|  | 
 
 ### Return type
 
-[**BrandingCreateObjectV1Response**](BrandingCreateObjectV1Response.md)
+[**BrandingCreateObjectV2Response**](BrandingCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -67,8 +67,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **branding_edit_object_v1**
-> BrandingEditObjectV1Response branding_edit_object_v1(pki_branding_id => $pki_branding_id, branding_edit_object_v1_request => $branding_edit_object_v1_request)
+# **branding_edit_object_v2**
+> BrandingEditObjectV2Response branding_edit_object_v2(pki_branding_id => $pki_branding_id, branding_edit_object_v2_request => $branding_edit_object_v2_request)
 
 Edit an existing Branding
 
@@ -87,14 +87,14 @@ my $api_instance = EzmaxApi::ObjectBrandingApi->new(
 );
 
 my $pki_branding_id = 56; # int | 
-my $branding_edit_object_v1_request = EzmaxApi::Object::BrandingEditObjectV1Request->new(); # BrandingEditObjectV1Request | 
+my $branding_edit_object_v2_request = EzmaxApi::Object::BrandingEditObjectV2Request->new(); # BrandingEditObjectV2Request | 
 
 eval {
-    my $result = $api_instance->branding_edit_object_v1(pki_branding_id => $pki_branding_id, branding_edit_object_v1_request => $branding_edit_object_v1_request);
+    my $result = $api_instance->branding_edit_object_v2(pki_branding_id => $pki_branding_id, branding_edit_object_v2_request => $branding_edit_object_v2_request);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ObjectBrandingApi->branding_edit_object_v1: $@\n";
+    warn "Exception when calling ObjectBrandingApi->branding_edit_object_v2: $@\n";
 }
 ```
 
@@ -103,11 +103,11 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pki_branding_id** | **int**|  | 
- **branding_edit_object_v1_request** | [**BrandingEditObjectV1Request**](BrandingEditObjectV1Request.md)|  | 
+ **branding_edit_object_v2_request** | [**BrandingEditObjectV2Request**](BrandingEditObjectV2Request.md)|  | 
 
 ### Return type
 
-[**BrandingEditObjectV1Response**](BrandingEditObjectV1Response.md)
+[**BrandingEditObjectV2Response**](BrandingEditObjectV2Response.md)
 
 ### Authorization
 
@@ -236,8 +236,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **branding_get_object_v2**
-> BrandingGetObjectV2Response branding_get_object_v2(pki_branding_id => $pki_branding_id)
+# **branding_get_object_v3**
+> BrandingGetObjectV3Response branding_get_object_v3(pki_branding_id => $pki_branding_id)
 
 Retrieve an existing Branding
 
@@ -258,11 +258,11 @@ my $api_instance = EzmaxApi::ObjectBrandingApi->new(
 my $pki_branding_id = 56; # int | 
 
 eval {
-    my $result = $api_instance->branding_get_object_v2(pki_branding_id => $pki_branding_id);
+    my $result = $api_instance->branding_get_object_v3(pki_branding_id => $pki_branding_id);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ObjectBrandingApi->branding_get_object_v2: $@\n";
+    warn "Exception when calling ObjectBrandingApi->branding_get_object_v3: $@\n";
 }
 ```
 
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BrandingGetObjectV2Response**](BrandingGetObjectV2Response.md)
+[**BrandingGetObjectV3Response**](BrandingGetObjectV3Response.md)
 
 ### Authorization
 

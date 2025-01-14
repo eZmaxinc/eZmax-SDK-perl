@@ -49,6 +49,73 @@ sub new {
 
 
 #
+# buyercontract_get_communication_count_v1
+#
+# Retrieve Communication count
+#
+# @param int $pki_buyercontract_id  (required)
+{
+    my $params = {
+    'pki_buyercontract_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'buyercontract_get_communication_count_v1' } = {
+        summary => 'Retrieve Communication count',
+        params => $params,
+        returns => 'BuyercontractGetCommunicationCountV1Response',
+        };
+}
+# @return BuyercontractGetCommunicationCountV1Response
+#
+sub buyercontract_get_communication_count_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_buyercontract_id' is set
+    unless (exists $args{'pki_buyercontract_id'}) {
+      croak("Missing the required parameter 'pki_buyercontract_id' when calling buyercontract_get_communication_count_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/buyercontract/{pkiBuyercontractID}/getCommunicationCount';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_buyercontract_id'}) {
+        my $_base_variable = "{" . "pkiBuyercontractID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_buyercontract_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('BuyercontractGetCommunicationCountV1Response', $response);
+    return $_response_object;
+}
+
+#
 # buyercontract_get_communication_list_v1
 #
 # Retrieve Communication list
@@ -112,6 +179,140 @@ sub buyercontract_get_communication_list_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('BuyercontractGetCommunicationListV1Response', $response);
+    return $_response_object;
+}
+
+#
+# buyercontract_get_communicationrecipients_v1
+#
+# Retrieve Buyercontract's Communicationrecipient
+#
+# @param int $pki_buyercontract_id  (required)
+{
+    my $params = {
+    'pki_buyercontract_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'buyercontract_get_communicationrecipients_v1' } = {
+        summary => 'Retrieve Buyercontract&#39;s Communicationrecipient',
+        params => $params,
+        returns => 'BuyercontractGetCommunicationrecipientsV1Response',
+        };
+}
+# @return BuyercontractGetCommunicationrecipientsV1Response
+#
+sub buyercontract_get_communicationrecipients_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_buyercontract_id' is set
+    unless (exists $args{'pki_buyercontract_id'}) {
+      croak("Missing the required parameter 'pki_buyercontract_id' when calling buyercontract_get_communicationrecipients_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/buyercontract/{pkiBuyercontractID}/getCommunicationrecipients';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_buyercontract_id'}) {
+        my $_base_variable = "{" . "pkiBuyercontractID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_buyercontract_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('BuyercontractGetCommunicationrecipientsV1Response', $response);
+    return $_response_object;
+}
+
+#
+# buyercontract_get_communicationsenders_v1
+#
+# Retrieve Buyercontract's Communicationsender
+#
+# @param int $pki_buyercontract_id  (required)
+{
+    my $params = {
+    'pki_buyercontract_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'buyercontract_get_communicationsenders_v1' } = {
+        summary => 'Retrieve Buyercontract&#39;s Communicationsender',
+        params => $params,
+        returns => 'BuyercontractGetCommunicationsendersV1Response',
+        };
+}
+# @return BuyercontractGetCommunicationsendersV1Response
+#
+sub buyercontract_get_communicationsenders_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_buyercontract_id' is set
+    unless (exists $args{'pki_buyercontract_id'}) {
+      croak("Missing the required parameter 'pki_buyercontract_id' when calling buyercontract_get_communicationsenders_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/buyercontract/{pkiBuyercontractID}/getCommunicationsenders';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_buyercontract_id'}) {
+        my $_base_variable = "{" . "pkiBuyercontractID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_buyercontract_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('BuyercontractGetCommunicationsendersV1Response', $response);
     return $_response_object;
 }
 

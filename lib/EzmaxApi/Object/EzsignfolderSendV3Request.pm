@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldEEzsignfolderMessageorder;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -226,6 +227,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignfolder_messageorder' => {
+        datatype => 'FieldEEzsignfolderMessageorder',
+        base_name => 'eEzsignfolderMessageorder',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'dt_ezsignfolder_delayedsenddate' => {
         datatype => 'string',
         base_name => 'dtEzsignfolderDelayedsenddate',
@@ -244,12 +252,14 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     't_ezsignfolder_message' => 'string',
+    'e_ezsignfolder_messageorder' => 'FieldEEzsignfolderMessageorder',
     'dt_ezsignfolder_delayedsenddate' => 'string',
     'a_fki_ezsignfoldersignerassociation_id' => 'ARRAY[int]'
 } );
 
 __PACKAGE__->attribute_map( {
     't_ezsignfolder_message' => 'tEzsignfolderMessage',
+    'e_ezsignfolder_messageorder' => 'eEzsignfolderMessageorder',
     'dt_ezsignfolder_delayedsenddate' => 'dtEzsignfolderDelayedsenddate',
     'a_fki_ezsignfoldersignerassociation_id' => 'a_fkiEzsignfoldersignerassociationID'
 } );

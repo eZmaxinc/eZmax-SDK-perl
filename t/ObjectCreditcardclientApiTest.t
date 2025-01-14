@@ -79,5 +79,13 @@ isa_ok($api, 'EzmaxApi::ObjectCreditcardclientApi');
 #my $creditcardclient_get_object_v2_pki_creditcardclient_id = undef; # replace NULL with a proper value
 #my $creditcardclient_get_object_v2_result = $api->creditcardclient_get_object_v2(pki_creditcardclient_id => $creditcardclient_get_object_v2_pki_creditcardclient_id);
 
+#
+# creditcardclient_patch_object_v1 test
+#
+# uncomment below and update the test
+#my $creditcardclient_patch_object_v1_pki_creditcardclient_id = undef; # replace NULL with a proper value
+#my $creditcardclient_patch_object_v1_creditcardclient_patch_object_v1_request = undef; # replace NULL with a proper value
+#my $creditcardclient_patch_object_v1_result = $api->creditcardclient_patch_object_v1(pki_creditcardclient_id => $creditcardclient_patch_object_v1_pki_creditcardclient_id, creditcardclient_patch_object_v1_request => $creditcardclient_patch_object_v1_creditcardclient_patch_object_v1_request);
+
 
 done_testing();

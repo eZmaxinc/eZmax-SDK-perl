@@ -227,6 +227,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_font_id' => {
+        datatype => 'int',
+        base_name => 'fkiFontID',
+        description => 'The unique ID of the Font',
+        format => '',
+        read_only => '',
+            },
     's_value' => {
         datatype => 'string',
         base_name => 'sValue',
@@ -251,7 +258,7 @@ __PACKAGE__->method_documentation({
     's_svg' => {
         datatype => 'string',
         base_name => 'sSvg',
-        description => 'The SVG of the handwritten signature.  This can only be set if eEzsignsignatureType is **Handwritten** and **bIsAutomatic** is false',
+        description => 'The SVG of the signature.  This can only be set if eEzsignsignatureType is **Signature**/**Initials** and **bIsAutomatic** is false',
         format => '',
         read_only => '',
             },
@@ -265,7 +272,7 @@ __PACKAGE__->method_documentation({
     'b_is_automatic' => {
         datatype => 'boolean',
         base_name => 'bIsAutomatic',
-        description => 'Indicates if the Ezsignsignature was part of an automatic process or not.  This can only be true if eEzsignsignatureType is **Acknowledgement**, **City**, **Handwritten**, **Initials**, **Name** or **Stamp**. ',
+        description => 'Indicates if the Ezsignsignature was part of an automatic process or not.  This can only be true if eEzsignsignatureType is **Acknowledgement**, **City**, **Signature**, **Initials** or **Stamp**. ',
         format => '',
         read_only => '',
             },
@@ -273,6 +280,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'fki_ezsignsigningreason_id' => 'int',
+    'fki_font_id' => 'int',
     's_value' => 'string',
     'e_attachments_confirmation_decision' => 'string',
     's_attachments_refusal_reason' => 'string',
@@ -283,6 +291,7 @@ __PACKAGE__->openapi_types( {
 
 __PACKAGE__->attribute_map( {
     'fki_ezsignsigningreason_id' => 'fkiEzsignsigningreasonID',
+    'fki_font_id' => 'fkiFontID',
     's_value' => 'sValue',
     'e_attachments_confirmation_decision' => 'eAttachmentsConfirmationDecision',
     's_attachments_refusal_reason' => 'sAttachmentsRefusalReason',

@@ -9,6 +9,7 @@ use EzmaxApi::Object::EzsignfolderSendV3Request;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **t_ezsignfolder_message** | **string** | A custom text message that will be added to the email sent. | [optional] 
+**e_ezsignfolder_messageorder** | [**FieldEEzsignfolderMessageorder**](FieldEEzsignfolderMessageorder.md) |  | [optional] 
 **dt_ezsignfolder_delayedsenddate** | **string** | The date and time at which the Ezsignfolder will be sent in the future. | [optional] 
 **a_fki_ezsignfoldersignerassociation_id** | **ARRAY[int]** |  | 
 

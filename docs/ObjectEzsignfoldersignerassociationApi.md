@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**ezsignfoldersignerassociation_get_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_object_v1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation
 [**ezsignfoldersignerassociation_get_object_v2**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_get_object_v2) | **GET** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation
 [**ezsignfoldersignerassociation_patch_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_patch_object_v1) | **PATCH** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Patch an existing Ezsignfoldersignerassociation
+[**ezsignfoldersignerassociation_reassign_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_reassign_v1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/reassign | Reassign remaining unsigned signatures and forms
 
 
 # **ezsignfoldersignerassociation_create_embedded_url_v1**
@@ -26,7 +27,7 @@ Method | HTTP request | Description
 
 Creates an Url to allow embedded signing
 
-This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.  There will be a list to retrieve informations after the signing happens in the embedded version. To do so, there is a list of parameter to add to your sReturnUrl.  In example: https://www.example.com/sReturl?sParameter1&sParameter2. The sParameter1 et sParameter2 will be replace when we will redirect on the url.
+This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
 
 ### Example
 ```perl
@@ -525,6 +526,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsignfoldersignerassociationPatchObjectV1Response**](EzsignfoldersignerassociationPatchObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignfoldersignerassociation_reassign_v1**
+> EzsignfoldersignerassociationReassignV1Response ezsignfoldersignerassociation_reassign_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_reassign_v1_request => $ezsignfoldersignerassociation_reassign_v1_request)
+
+Reassign remaining unsigned signatures and forms
+
+Reassign remaining unsigned signatures and forms
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignfoldersignerassociationApi;
+my $api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsignfoldersignerassociation_id = 56; # int | 
+my $ezsignfoldersignerassociation_reassign_v1_request = EzmaxApi::Object::EzsignfoldersignerassociationReassignV1Request->new(); # EzsignfoldersignerassociationReassignV1Request | 
+
+eval {
+    my $result = $api_instance->ezsignfoldersignerassociation_reassign_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_reassign_v1_request => $ezsignfoldersignerassociation_reassign_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_reassign_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsignfoldersignerassociation_id** | **int**|  | 
+ **ezsignfoldersignerassociation_reassign_v1_request** | [**EzsignfoldersignerassociationReassignV1Request**](EzsignfoldersignerassociationReassignV1Request.md)|  | 
+
+### Return type
+
+[**EzsignfoldersignerassociationReassignV1Response**](EzsignfoldersignerassociationReassignV1Response.md)
 
 ### Authorization
 

@@ -35,6 +35,7 @@ use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::EzsignelementdependencyRequestCompound;
 use EzmaxApi::Object::EzsignsignaturecustomdateRequestCompound;
 use EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource;
+use EzmaxApi::Object::FieldEEzsignsignatureConsultationtrigger;
 use EzmaxApi::Object::FieldEEzsignsignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsignsignatureFont;
 use EzmaxApi::Object::FieldEEzsignsignatureTooltipposition;
@@ -326,10 +327,24 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsignsignature_handwritten' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignsignatureHandwritten',
+        description => 'Whether the Ezsignsignature must be handwritten or not when eEzsignsignatureType &#x3D; Signature.',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignsignature_reason' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignsignatureReason',
+        description => 'Whether the Ezsignsignature must include a reason or not when eEzsignsignatureType &#x3D; Signature.',
+        format => '',
+        read_only => '',
+            },
     'b_ezsignsignature_required' => {
         datatype => 'boolean',
         base_name => 'bEzsignsignatureRequired',
-        description => 'Whether the Ezsignsignature is required or not. This field is relevant only with Ezsignsignature with eEzsignsignatureType &#x3D; Attachments.',
+        description => 'Whether the Ezsignsignature is required or not. This field is relevant only with Ezsignsignature with eEzsignsignatureType &#x3D; Attachments, Text or Textarea.',
         format => '',
         read_only => '',
             },
@@ -347,6 +362,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignsignature_consultationtrigger' => {
+        datatype => 'FieldEEzsignsignatureConsultationtrigger',
+        base_name => 'eEzsignsignatureConsultationtrigger',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'i_ezsignsignature_validationstep' => {
         datatype => 'int',
         base_name => 'iEzsignsignatureValidationstep',
@@ -361,10 +383,24 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsignsignature_defaultvalue' => {
+        datatype => 'string',
+        base_name => 'sEzsignsignatureDefaultvalue',
+        description => 'The default value for the Ezsignsignature  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sCompany} | Company name | eZmax Solutions Inc. | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |',
+        format => '',
+        read_only => '',
+            },
     'e_ezsignsignature_textvalidation' => {
         datatype => 'EnumTextvalidation',
         base_name => 'eEzsignsignatureTextvalidation',
         description => '',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignsignature_textvalidationcustommessage' => {
+        datatype => 'string',
+        base_name => 'sEzsignsignatureTextvalidationcustommessage',
+        description => 'Description of validation rule. Show by signatory.',
         format => '',
         read_only => '',
             },
@@ -427,12 +463,17 @@ __PACKAGE__->openapi_types( {
     'e_ezsignsignature_tooltipposition' => 'FieldEEzsignsignatureTooltipposition',
     'e_ezsignsignature_font' => 'FieldEEzsignsignatureFont',
     'fki_ezsignfoldersignerassociation_id_validation' => 'int',
+    'b_ezsignsignature_handwritten' => 'boolean',
+    'b_ezsignsignature_reason' => 'boolean',
     'b_ezsignsignature_required' => 'boolean',
     'e_ezsignsignature_attachmentnamesource' => 'FieldEEzsignsignatureAttachmentnamesource',
     's_ezsignsignature_attachmentdescription' => 'string',
+    'e_ezsignsignature_consultationtrigger' => 'FieldEEzsignsignatureConsultationtrigger',
     'i_ezsignsignature_validationstep' => 'int',
     'i_ezsignsignature_maxlength' => 'int',
+    's_ezsignsignature_defaultvalue' => 'string',
     'e_ezsignsignature_textvalidation' => 'EnumTextvalidation',
+    's_ezsignsignature_textvalidationcustommessage' => 'string',
     's_ezsignsignature_regexp' => 'string',
     'e_ezsignsignature_dependencyrequirement' => 'FieldEEzsignsignatureDependencyrequirement',
     'b_ezsignsignature_customdate' => 'boolean',
@@ -456,12 +497,17 @@ __PACKAGE__->attribute_map( {
     'e_ezsignsignature_tooltipposition' => 'eEzsignsignatureTooltipposition',
     'e_ezsignsignature_font' => 'eEzsignsignatureFont',
     'fki_ezsignfoldersignerassociation_id_validation' => 'fkiEzsignfoldersignerassociationIDValidation',
+    'b_ezsignsignature_handwritten' => 'bEzsignsignatureHandwritten',
+    'b_ezsignsignature_reason' => 'bEzsignsignatureReason',
     'b_ezsignsignature_required' => 'bEzsignsignatureRequired',
     'e_ezsignsignature_attachmentnamesource' => 'eEzsignsignatureAttachmentnamesource',
     's_ezsignsignature_attachmentdescription' => 'sEzsignsignatureAttachmentdescription',
+    'e_ezsignsignature_consultationtrigger' => 'eEzsignsignatureConsultationtrigger',
     'i_ezsignsignature_validationstep' => 'iEzsignsignatureValidationstep',
     'i_ezsignsignature_maxlength' => 'iEzsignsignatureMaxlength',
+    's_ezsignsignature_defaultvalue' => 'sEzsignsignatureDefaultvalue',
     'e_ezsignsignature_textvalidation' => 'eEzsignsignatureTextvalidation',
+    's_ezsignsignature_textvalidationcustommessage' => 'sEzsignsignatureTextvalidationcustommessage',
     's_ezsignsignature_regexp' => 'sEzsignsignatureRegexp',
     'e_ezsignsignature_dependencyrequirement' => 'eEzsignsignatureDependencyrequirement',
     'b_ezsignsignature_customdate' => 'bEzsignsignatureCustomdate',

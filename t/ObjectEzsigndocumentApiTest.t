@@ -76,6 +76,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #my $ezsigndocument_create_object_v2_result = $api->ezsigndocument_create_object_v2(ezsigndocument_create_object_v2_request => $ezsigndocument_create_object_v2_ezsigndocument_create_object_v2_request);
 
 #
+# ezsigndocument_create_object_v3 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_create_object_v3_ezsigndocument_create_object_v3_request = undef; # replace NULL with a proper value
+#my $ezsigndocument_create_object_v3_result = $api->ezsigndocument_create_object_v3(ezsigndocument_create_object_v3_request => $ezsigndocument_create_object_v3_ezsigndocument_create_object_v3_request);
+
+#
 # ezsigndocument_decline_to_sign_v1 test
 #
 # uncomment below and update the test
@@ -89,6 +96,14 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 # uncomment below and update the test
 #my $ezsigndocument_delete_object_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
 #my $ezsigndocument_delete_object_v1_result = $api->ezsigndocument_delete_object_v1(pki_ezsigndocument_id => $ezsigndocument_delete_object_v1_pki_ezsigndocument_id);
+
+#
+# ezsigndocument_edit_ezsignannotations_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_edit_ezsignannotations_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_edit_ezsignannotations_v1_ezsigndocument_edit_ezsignannotations_v1_request = undef; # replace NULL with a proper value
+#my $ezsigndocument_edit_ezsignannotations_v1_result = $api->ezsigndocument_edit_ezsignannotations_v1(pki_ezsigndocument_id => $ezsigndocument_edit_ezsignannotations_v1_pki_ezsigndocument_id, ezsigndocument_edit_ezsignannotations_v1_request => $ezsigndocument_edit_ezsignannotations_v1_ezsigndocument_edit_ezsignannotations_v1_request);
 
 #
 # ezsigndocument_edit_ezsignformfieldgroups_v1 test
@@ -107,12 +122,28 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigndocumentApi');
 #my $ezsigndocument_edit_ezsignsignatures_v1_result = $api->ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id => $ezsigndocument_edit_ezsignsignatures_v1_pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request => $ezsigndocument_edit_ezsignsignatures_v1_ezsigndocument_edit_ezsignsignatures_v1_request);
 
 #
+# ezsigndocument_edit_object_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_edit_object_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_edit_object_v1_ezsigndocument_edit_object_v1_request = undef; # replace NULL with a proper value
+#my $ezsigndocument_edit_object_v1_result = $api->ezsigndocument_edit_object_v1(pki_ezsigndocument_id => $ezsigndocument_edit_object_v1_pki_ezsigndocument_id, ezsigndocument_edit_object_v1_request => $ezsigndocument_edit_object_v1_ezsigndocument_edit_object_v1_request);
+
+#
 # ezsigndocument_end_prematurely_v1 test
 #
 # uncomment below and update the test
 #my $ezsigndocument_end_prematurely_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
 #my $ezsigndocument_end_prematurely_v1_body = undef; # replace NULL with a proper value
 #my $ezsigndocument_end_prematurely_v1_result = $api->ezsigndocument_end_prematurely_v1(pki_ezsigndocument_id => $ezsigndocument_end_prematurely_v1_pki_ezsigndocument_id, body => $ezsigndocument_end_prematurely_v1_body);
+
+#
+# ezsigndocument_extract_text_v1 test
+#
+# uncomment below and update the test
+#my $ezsigndocument_extract_text_v1_pki_ezsigndocument_id = undef; # replace NULL with a proper value
+#my $ezsigndocument_extract_text_v1_ezsigndocument_extract_text_v1_request = undef; # replace NULL with a proper value
+#my $ezsigndocument_extract_text_v1_result = $api->ezsigndocument_extract_text_v1(pki_ezsigndocument_id => $ezsigndocument_extract_text_v1_pki_ezsigndocument_id, ezsigndocument_extract_text_v1_request => $ezsigndocument_extract_text_v1_ezsigndocument_extract_text_v1_request);
 
 #
 # ezsigndocument_flatten_v1 test

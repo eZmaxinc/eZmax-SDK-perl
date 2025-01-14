@@ -355,6 +355,7 @@ sub ezsigntemplatepackage_edit_object_v1 {
 # @param string $e_filter_active Specify which results we want to display. (optional, default to 'Active')
 # @param string $s_query Allow to filter the returned results (optional)
 # @param HeaderAcceptLanguage $accept_language  (optional)
+# @param int $fki_ezsignfoldertype_id The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic (optional)
 {
     my $params = {
     's_selector' => {
@@ -375,6 +376,11 @@ sub ezsigntemplatepackage_edit_object_v1 {
     'accept_language' => {
         data_type => 'HeaderAcceptLanguage',
         description => '',
+        required => '0',
+    },
+    'fki_ezsignfoldertype_id' => {
+        data_type => 'int',
+        description => 'The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic',
         required => '0',
     },
     };
@@ -417,6 +423,11 @@ sub ezsigntemplatepackage_get_autocomplete_v2 {
     # query params
     if ( exists $args{'s_query'}) {
         $query_params->{'sQuery'} = $self->{api_client}->to_query_value($args{'s_query'});
+    }
+
+    # query params
+    if ( exists $args{'fki_ezsignfoldertype_id'}) {
+        $query_params->{'fkiEzsignfoldertypeID'} = $self->{api_client}->to_query_value($args{'fki_ezsignfoldertype_id'});
     }
 
     # header params

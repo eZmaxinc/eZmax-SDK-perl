@@ -9,6 +9,7 @@ use EzmaxApi::Object::WebhookRequestCompound;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pki_webhook_id** | **int** | The unique ID of the Webhook | [optional] 
+**fki_authenticationexternal_id** | **int** | The unique ID of the Authenticationexternal | [optional] 
 **fki_ezsignfoldertype_id** | **int** | The unique ID of the Ezsignfoldertype. | [optional] 
 **s_webhook_description** | **string** | The description of the Webhook | 
 **e_webhook_module** | [**FieldEWebhookModule**](FieldEWebhookModule.md) |  | 

@@ -249,6 +249,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_ezsignfolder_formfieldtotal' => {
+        datatype => 'int',
+        base_name => 'iEzsignfolderFormfieldtotal',
+        description => 'The number of total form fields that were requested in the Ezsignfolder',
+        format => '',
+        read_only => '',
+            },
     'i_ezsignfolder_signaturesigned' => {
         datatype => 'int',
         base_name => 'iEzsignfolderSignaturesigned',
@@ -270,6 +277,7 @@ __PACKAGE__->openapi_types( {
     's_ezsignfolder_description' => 'string',
     'e_ezsignfolder_step' => 'FieldEEzsignfolderStep',
     'i_ezsignfolder_signaturetotal' => 'int',
+    'i_ezsignfolder_formfieldtotal' => 'int',
     'i_ezsignfolder_signaturesigned' => 'int',
     'a_obj_ezsignfoldertransmission_signer' => 'ARRAY[CustomEzsignfoldertransmissionSignerResponse]'
 } );
@@ -279,6 +287,7 @@ __PACKAGE__->attribute_map( {
     's_ezsignfolder_description' => 'sEzsignfolderDescription',
     'e_ezsignfolder_step' => 'eEzsignfolderStep',
     'i_ezsignfolder_signaturetotal' => 'iEzsignfolderSignaturetotal',
+    'i_ezsignfolder_formfieldtotal' => 'iEzsignfolderFormfieldtotal',
     'i_ezsignfolder_signaturesigned' => 'iEzsignfolderSignaturesigned',
     'a_obj_ezsignfoldertransmission_signer' => 'a_objEzsignfoldertransmissionSigner'
 } );

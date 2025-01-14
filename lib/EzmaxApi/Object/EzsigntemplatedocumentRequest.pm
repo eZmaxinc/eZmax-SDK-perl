@@ -292,7 +292,7 @@ __PACKAGE__->method_documentation({
     'e_ezsigntemplatedocument_form' => {
         datatype => 'string',
         base_name => 'eEzsigntemplatedocumentForm',
-        description => 'If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**  **Discard** removes the form from the document',
+        description => 'If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**  **Discard** removes the form from the document  **Flatten** prints the form values in the document.',
         format => '',
         read_only => '',
             },

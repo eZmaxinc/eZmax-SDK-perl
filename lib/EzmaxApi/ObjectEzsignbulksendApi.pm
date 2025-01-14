@@ -49,12 +49,12 @@ sub new {
 
 
 #
-# ezsignbulksend_create_ezsignbulksendtransmission_v1
+# ezsignbulksend_create_ezsignbulksendtransmission_v2
 #
 # Create a new Ezsignbulksendtransmission in the Ezsignbulksend
 #
 # @param int $pki_ezsignbulksend_id  (required)
-# @param EzsignbulksendCreateEzsignbulksendtransmissionV1Request $ezsignbulksend_create_ezsignbulksendtransmission_v1_request  (required)
+# @param EzsignbulksendCreateEzsignbulksendtransmissionV2Request $ezsignbulksend_create_ezsignbulksendtransmission_v2_request  (required)
 {
     my $params = {
     'pki_ezsignbulksend_id' => {
@@ -62,35 +62,35 @@ sub new {
         description => '',
         required => '1',
     },
-    'ezsignbulksend_create_ezsignbulksendtransmission_v1_request' => {
-        data_type => 'EzsignbulksendCreateEzsignbulksendtransmissionV1Request',
+    'ezsignbulksend_create_ezsignbulksendtransmission_v2_request' => {
+        data_type => 'EzsignbulksendCreateEzsignbulksendtransmissionV2Request',
         description => '',
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'ezsignbulksend_create_ezsignbulksendtransmission_v1' } = {
+    __PACKAGE__->method_documentation->{ 'ezsignbulksend_create_ezsignbulksendtransmission_v2' } = {
         summary => 'Create a new Ezsignbulksendtransmission in the Ezsignbulksend',
         params => $params,
-        returns => 'EzsignbulksendCreateEzsignbulksendtransmissionV1Response',
+        returns => 'EzsignbulksendCreateEzsignbulksendtransmissionV2Response',
         };
 }
-# @return EzsignbulksendCreateEzsignbulksendtransmissionV1Response
+# @return EzsignbulksendCreateEzsignbulksendtransmissionV2Response
 #
-sub ezsignbulksend_create_ezsignbulksendtransmission_v1 {
+sub ezsignbulksend_create_ezsignbulksendtransmission_v2 {
     my ($self, %args) = @_;
 
     # verify the required parameter 'pki_ezsignbulksend_id' is set
     unless (exists $args{'pki_ezsignbulksend_id'}) {
-      croak("Missing the required parameter 'pki_ezsignbulksend_id' when calling ezsignbulksend_create_ezsignbulksendtransmission_v1");
+      croak("Missing the required parameter 'pki_ezsignbulksend_id' when calling ezsignbulksend_create_ezsignbulksendtransmission_v2");
     }
 
-    # verify the required parameter 'ezsignbulksend_create_ezsignbulksendtransmission_v1_request' is set
-    unless (exists $args{'ezsignbulksend_create_ezsignbulksendtransmission_v1_request'}) {
-      croak("Missing the required parameter 'ezsignbulksend_create_ezsignbulksendtransmission_v1_request' when calling ezsignbulksend_create_ezsignbulksendtransmission_v1");
+    # verify the required parameter 'ezsignbulksend_create_ezsignbulksendtransmission_v2_request' is set
+    unless (exists $args{'ezsignbulksend_create_ezsignbulksendtransmission_v2_request'}) {
+      croak("Missing the required parameter 'ezsignbulksend_create_ezsignbulksendtransmission_v2_request' when calling ezsignbulksend_create_ezsignbulksendtransmission_v2");
     }
 
     # parse inputs
-    my $_resource_path = '/1/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission';
+    my $_resource_path = '/2/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission';
 
     my $_method = 'POST';
     my $query_params = {};
@@ -113,8 +113,8 @@ sub ezsignbulksend_create_ezsignbulksendtransmission_v1 {
 
     my $_body_data;
     # body params
-    if ( exists $args{'ezsignbulksend_create_ezsignbulksendtransmission_v1_request'}) {
-        $_body_data = $args{'ezsignbulksend_create_ezsignbulksendtransmission_v1_request'};
+    if ( exists $args{'ezsignbulksend_create_ezsignbulksendtransmission_v2_request'}) {
+        $_body_data = $args{'ezsignbulksend_create_ezsignbulksendtransmission_v2_request'};
     }
 
     # authentication setting, if any
@@ -127,7 +127,7 @@ sub ezsignbulksend_create_ezsignbulksendtransmission_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignbulksendCreateEzsignbulksendtransmissionV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsignbulksendCreateEzsignbulksendtransmissionV2Response', $response);
     return $_response_object;
 }
 

@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldESignaturePreference;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -226,6 +227,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_font_id' => {
+        datatype => 'int',
+        base_name => 'fkiFontID',
+        description => 'The unique ID of the Font',
+        format => '',
+        read_only => '',
+            },
+    'e_signature_preference' => {
+        datatype => 'FieldESignaturePreference',
+        base_name => 'eSignaturePreference',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     't_signature_svg' => {
         datatype => 'string',
         base_name => 'tSignatureSvg',
@@ -233,16 +248,29 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    't_signature_svginitials' => {
+        datatype => 'string',
+        base_name => 'tSignatureSvginitials',
+        description => 'The svg of the Initials',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_signature_id' => 'int',
-    't_signature_svg' => 'string'
+    'fki_font_id' => 'int',
+    'e_signature_preference' => 'FieldESignaturePreference',
+    't_signature_svg' => 'string',
+    't_signature_svginitials' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_signature_id' => 'pkiSignatureID',
-    't_signature_svg' => 'tSignatureSvg'
+    'fki_font_id' => 'fkiFontID',
+    'e_signature_preference' => 'eSignaturePreference',
+    't_signature_svg' => 'tSignatureSvg',
+    't_signature_svginitials' => 'tSignatureSvginitials'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -219,6 +219,13 @@ __PACKAGE__->class_documentation({description => 'A Website Object and children 
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_website_id' => {
+        datatype => 'int',
+        base_name => 'pkiWebsiteID',
+        description => 'The unique ID of the Website Default',
+        format => '',
+        read_only => '',
+            },
     'fki_websitetype_id' => {
         datatype => 'int',
         base_name => 'fkiWebsitetypeID',
@@ -236,11 +243,13 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_website_id' => 'int',
     'fki_websitetype_id' => 'int',
     's_website_address' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_website_id' => 'pkiWebsiteID',
     'fki_websitetype_id' => 'fkiWebsitetypeID',
     's_website_address' => 'sWebsiteAddress'
 } );

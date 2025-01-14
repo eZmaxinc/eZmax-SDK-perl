@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigntemplatepackage_get_autocomplete_v2**
-> EzsigntemplatepackageGetAutocompleteV2Response ezsigntemplatepackage_get_autocomplete_v2(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language)
+> EzsigntemplatepackageGetAutocompleteV2Response ezsigntemplatepackage_get_autocomplete_v2(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language, fki_ezsignfoldertype_id => $fki_ezsignfoldertype_id)
 
 Retrieve Ezsigntemplatepackages and IDs
 
@@ -249,9 +249,10 @@ my $s_selector = "s_selector_example"; # string | The type of Ezsigntemplatepack
 my $e_filter_active = 'Active'; # string | Specify which results we want to display.
 my $s_query = "s_query_example"; # string | Allow to filter the returned results
 my $accept_language = new EzmaxApi.HeaderAcceptLanguage(); # HeaderAcceptLanguage | 
+my $fki_ezsignfoldertype_id = 56; # int | The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic
 
 eval {
-    my $result = $api_instance->ezsigntemplatepackage_get_autocomplete_v2(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language);
+    my $result = $api_instance->ezsigntemplatepackage_get_autocomplete_v2(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language, fki_ezsignfoldertype_id => $fki_ezsignfoldertype_id);
     print Dumper($result);
 };
 if ($@) {
@@ -267,6 +268,7 @@ Name | Type | Description  | Notes
  **e_filter_active** | **string**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
  **s_query** | **string**| Allow to filter the returned results | [optional] 
  **accept_language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
+ **fki_ezsignfoldertype_id** | **int**| The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic | [optional] 
 
 ### Return type
 

@@ -9,14 +9,14 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ezsigntemplatesignature_create_object_v1**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignature_create_object_v1) | **POST** /1/object/ezsigntemplatesignature | Create a new Ezsigntemplatesignature
+[**ezsigntemplatesignature_create_object_v2**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignature_create_object_v2) | **POST** /2/object/ezsigntemplatesignature | Create a new Ezsigntemplatesignature
 [**ezsigntemplatesignature_delete_object_v1**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignature_delete_object_v1) | **DELETE** /1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Delete an existing Ezsigntemplatesignature
-[**ezsigntemplatesignature_edit_object_v1**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignature_edit_object_v1) | **PUT** /1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Edit an existing Ezsigntemplatesignature
-[**ezsigntemplatesignature_get_object_v2**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignature_get_object_v2) | **GET** /2/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Retrieve an existing Ezsigntemplatesignature
+[**ezsigntemplatesignature_edit_object_v2**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignature_edit_object_v2) | **PUT** /2/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Edit an existing Ezsigntemplatesignature
+[**ezsigntemplatesignature_get_object_v3**](ObjectEzsigntemplatesignatureApi.md#ezsigntemplatesignature_get_object_v3) | **GET** /3/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID} | Retrieve an existing Ezsigntemplatesignature
 
 
-# **ezsigntemplatesignature_create_object_v1**
-> EzsigntemplatesignatureCreateObjectV1Response ezsigntemplatesignature_create_object_v1(ezsigntemplatesignature_create_object_v1_request => $ezsigntemplatesignature_create_object_v1_request)
+# **ezsigntemplatesignature_create_object_v2**
+> EzsigntemplatesignatureCreateObjectV2Response ezsigntemplatesignature_create_object_v2(ezsigntemplatesignature_create_object_v2_request => $ezsigntemplatesignature_create_object_v2_request)
 
 Create a new Ezsigntemplatesignature
 
@@ -34,14 +34,14 @@ my $api_instance = EzmaxApi::ObjectEzsigntemplatesignatureApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $ezsigntemplatesignature_create_object_v1_request = EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV1Request->new(); # EzsigntemplatesignatureCreateObjectV1Request | 
+my $ezsigntemplatesignature_create_object_v2_request = EzmaxApi::Object::EzsigntemplatesignatureCreateObjectV2Request->new(); # EzsigntemplatesignatureCreateObjectV2Request | 
 
 eval {
-    my $result = $api_instance->ezsigntemplatesignature_create_object_v1(ezsigntemplatesignature_create_object_v1_request => $ezsigntemplatesignature_create_object_v1_request);
+    my $result = $api_instance->ezsigntemplatesignature_create_object_v2(ezsigntemplatesignature_create_object_v2_request => $ezsigntemplatesignature_create_object_v2_request);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignature_create_object_v1: $@\n";
+    warn "Exception when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignature_create_object_v2: $@\n";
 }
 ```
 
@@ -49,11 +49,11 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ezsigntemplatesignature_create_object_v1_request** | [**EzsigntemplatesignatureCreateObjectV1Request**](EzsigntemplatesignatureCreateObjectV1Request.md)|  | 
+ **ezsigntemplatesignature_create_object_v2_request** | [**EzsigntemplatesignatureCreateObjectV2Request**](EzsigntemplatesignatureCreateObjectV2Request.md)|  | 
 
 ### Return type
 
-[**EzsigntemplatesignatureCreateObjectV1Response**](EzsigntemplatesignatureCreateObjectV1Response.md)
+[**EzsigntemplatesignatureCreateObjectV2Response**](EzsigntemplatesignatureCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -117,8 +117,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ezsigntemplatesignature_edit_object_v1**
-> EzsigntemplatesignatureEditObjectV1Response ezsigntemplatesignature_edit_object_v1(pki_ezsigntemplatesignature_id => $pki_ezsigntemplatesignature_id, ezsigntemplatesignature_edit_object_v1_request => $ezsigntemplatesignature_edit_object_v1_request)
+# **ezsigntemplatesignature_edit_object_v2**
+> EzsigntemplatesignatureEditObjectV2Response ezsigntemplatesignature_edit_object_v2(pki_ezsigntemplatesignature_id => $pki_ezsigntemplatesignature_id, ezsigntemplatesignature_edit_object_v2_request => $ezsigntemplatesignature_edit_object_v2_request)
 
 Edit an existing Ezsigntemplatesignature
 
@@ -137,14 +137,14 @@ my $api_instance = EzmaxApi::ObjectEzsigntemplatesignatureApi->new(
 );
 
 my $pki_ezsigntemplatesignature_id = 56; # int | 
-my $ezsigntemplatesignature_edit_object_v1_request = EzmaxApi::Object::EzsigntemplatesignatureEditObjectV1Request->new(); # EzsigntemplatesignatureEditObjectV1Request | 
+my $ezsigntemplatesignature_edit_object_v2_request = EzmaxApi::Object::EzsigntemplatesignatureEditObjectV2Request->new(); # EzsigntemplatesignatureEditObjectV2Request | 
 
 eval {
-    my $result = $api_instance->ezsigntemplatesignature_edit_object_v1(pki_ezsigntemplatesignature_id => $pki_ezsigntemplatesignature_id, ezsigntemplatesignature_edit_object_v1_request => $ezsigntemplatesignature_edit_object_v1_request);
+    my $result = $api_instance->ezsigntemplatesignature_edit_object_v2(pki_ezsigntemplatesignature_id => $pki_ezsigntemplatesignature_id, ezsigntemplatesignature_edit_object_v2_request => $ezsigntemplatesignature_edit_object_v2_request);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignature_edit_object_v1: $@\n";
+    warn "Exception when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignature_edit_object_v2: $@\n";
 }
 ```
 
@@ -153,11 +153,11 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pki_ezsigntemplatesignature_id** | **int**|  | 
- **ezsigntemplatesignature_edit_object_v1_request** | [**EzsigntemplatesignatureEditObjectV1Request**](EzsigntemplatesignatureEditObjectV1Request.md)|  | 
+ **ezsigntemplatesignature_edit_object_v2_request** | [**EzsigntemplatesignatureEditObjectV2Request**](EzsigntemplatesignatureEditObjectV2Request.md)|  | 
 
 ### Return type
 
-[**EzsigntemplatesignatureEditObjectV1Response**](EzsigntemplatesignatureEditObjectV1Response.md)
+[**EzsigntemplatesignatureEditObjectV2Response**](EzsigntemplatesignatureEditObjectV2Response.md)
 
 ### Authorization
 
@@ -170,8 +170,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ezsigntemplatesignature_get_object_v2**
-> EzsigntemplatesignatureGetObjectV2Response ezsigntemplatesignature_get_object_v2(pki_ezsigntemplatesignature_id => $pki_ezsigntemplatesignature_id)
+# **ezsigntemplatesignature_get_object_v3**
+> EzsigntemplatesignatureGetObjectV3Response ezsigntemplatesignature_get_object_v3(pki_ezsigntemplatesignature_id => $pki_ezsigntemplatesignature_id)
 
 Retrieve an existing Ezsigntemplatesignature
 
@@ -192,11 +192,11 @@ my $api_instance = EzmaxApi::ObjectEzsigntemplatesignatureApi->new(
 my $pki_ezsigntemplatesignature_id = 56; # int | 
 
 eval {
-    my $result = $api_instance->ezsigntemplatesignature_get_object_v2(pki_ezsigntemplatesignature_id => $pki_ezsigntemplatesignature_id);
+    my $result = $api_instance->ezsigntemplatesignature_get_object_v3(pki_ezsigntemplatesignature_id => $pki_ezsigntemplatesignature_id);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignature_get_object_v2: $@\n";
+    warn "Exception when calling ObjectEzsigntemplatesignatureApi->ezsigntemplatesignature_get_object_v3: $@\n";
 }
 ```
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsigntemplatesignatureGetObjectV2Response**](EzsigntemplatesignatureGetObjectV2Response.md)
+[**EzsigntemplatesignatureGetObjectV3Response**](EzsigntemplatesignatureGetObjectV3Response.md)
 
 ### Authorization
 

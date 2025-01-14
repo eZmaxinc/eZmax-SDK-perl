@@ -30,11 +30,11 @@ my $api = EzmaxApi::ObjectEzsigntemplatesignatureApi->new();
 isa_ok($api, 'EzmaxApi::ObjectEzsigntemplatesignatureApi');
 
 #
-# ezsigntemplatesignature_create_object_v1 test
+# ezsigntemplatesignature_create_object_v2 test
 #
 # uncomment below and update the test
-#my $ezsigntemplatesignature_create_object_v1_ezsigntemplatesignature_create_object_v1_request = undef; # replace NULL with a proper value
-#my $ezsigntemplatesignature_create_object_v1_result = $api->ezsigntemplatesignature_create_object_v1(ezsigntemplatesignature_create_object_v1_request => $ezsigntemplatesignature_create_object_v1_ezsigntemplatesignature_create_object_v1_request);
+#my $ezsigntemplatesignature_create_object_v2_ezsigntemplatesignature_create_object_v2_request = undef; # replace NULL with a proper value
+#my $ezsigntemplatesignature_create_object_v2_result = $api->ezsigntemplatesignature_create_object_v2(ezsigntemplatesignature_create_object_v2_request => $ezsigntemplatesignature_create_object_v2_ezsigntemplatesignature_create_object_v2_request);
 
 #
 # ezsigntemplatesignature_delete_object_v1 test
@@ -44,19 +44,19 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplatesignatureApi');
 #my $ezsigntemplatesignature_delete_object_v1_result = $api->ezsigntemplatesignature_delete_object_v1(pki_ezsigntemplatesignature_id => $ezsigntemplatesignature_delete_object_v1_pki_ezsigntemplatesignature_id);
 
 #
-# ezsigntemplatesignature_edit_object_v1 test
+# ezsigntemplatesignature_edit_object_v2 test
 #
 # uncomment below and update the test
-#my $ezsigntemplatesignature_edit_object_v1_pki_ezsigntemplatesignature_id = undef; # replace NULL with a proper value
-#my $ezsigntemplatesignature_edit_object_v1_ezsigntemplatesignature_edit_object_v1_request = undef; # replace NULL with a proper value
-#my $ezsigntemplatesignature_edit_object_v1_result = $api->ezsigntemplatesignature_edit_object_v1(pki_ezsigntemplatesignature_id => $ezsigntemplatesignature_edit_object_v1_pki_ezsigntemplatesignature_id, ezsigntemplatesignature_edit_object_v1_request => $ezsigntemplatesignature_edit_object_v1_ezsigntemplatesignature_edit_object_v1_request);
+#my $ezsigntemplatesignature_edit_object_v2_pki_ezsigntemplatesignature_id = undef; # replace NULL with a proper value
+#my $ezsigntemplatesignature_edit_object_v2_ezsigntemplatesignature_edit_object_v2_request = undef; # replace NULL with a proper value
+#my $ezsigntemplatesignature_edit_object_v2_result = $api->ezsigntemplatesignature_edit_object_v2(pki_ezsigntemplatesignature_id => $ezsigntemplatesignature_edit_object_v2_pki_ezsigntemplatesignature_id, ezsigntemplatesignature_edit_object_v2_request => $ezsigntemplatesignature_edit_object_v2_ezsigntemplatesignature_edit_object_v2_request);
 
 #
-# ezsigntemplatesignature_get_object_v2 test
+# ezsigntemplatesignature_get_object_v3 test
 #
 # uncomment below and update the test
-#my $ezsigntemplatesignature_get_object_v2_pki_ezsigntemplatesignature_id = undef; # replace NULL with a proper value
-#my $ezsigntemplatesignature_get_object_v2_result = $api->ezsigntemplatesignature_get_object_v2(pki_ezsigntemplatesignature_id => $ezsigntemplatesignature_get_object_v2_pki_ezsigntemplatesignature_id);
+#my $ezsigntemplatesignature_get_object_v3_pki_ezsigntemplatesignature_id = undef; # replace NULL with a proper value
+#my $ezsigntemplatesignature_get_object_v3_result = $api->ezsigntemplatesignature_get_object_v3(pki_ezsigntemplatesignature_id => $ezsigntemplatesignature_get_object_v3_pki_ezsigntemplatesignature_id);
 
 
 done_testing();

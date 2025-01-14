@@ -33,6 +33,7 @@ use DateTime;
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::ComputedEEzsigndocumentSteptype;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationstatusResponse;
+use EzmaxApi::Object::EzsigndocumentdependencyResponse;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -321,6 +322,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_ezsigndocument_formfieldtotal' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentFormfieldtotal',
+        description => 'The number of total Ezsignformfield that were requested in the Ezsigndocument.',
+        format => '',
+        read_only => '',
+            },
     's_ezsigndocument_md5initial' => {
         datatype => 'string',
         base_name => 'sEzsigndocumentMD5initial',
@@ -426,6 +434,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_ezsigndocumentdependency' => {
+        datatype => 'ARRAY[EzsigndocumentdependencyResponse]',
+        base_name => 'a_objEzsigndocumentdependency',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -443,6 +458,7 @@ __PACKAGE__->openapi_types( {
     'i_ezsigndocument_pagetotal' => 'int',
     'i_ezsigndocument_signaturesigned' => 'int',
     'i_ezsigndocument_signaturetotal' => 'int',
+    'i_ezsigndocument_formfieldtotal' => 'int',
     's_ezsigndocument_md5initial' => 'string',
     't_ezsigndocument_declinedtosignreason' => 'string',
     's_ezsigndocument_md5signed' => 'string',
@@ -457,7 +473,8 @@ __PACKAGE__->openapi_types( {
     'i_ezsigndocument_stepformcurrent' => 'int',
     'i_ezsigndocument_stepsignaturetotal' => 'int',
     'i_ezsigndocument_stepsignature_current' => 'int',
-    'a_obj_ezsignfoldersignerassociationstatus' => 'ARRAY[CustomEzsignfoldersignerassociationstatusResponse]'
+    'a_obj_ezsignfoldersignerassociationstatus' => 'ARRAY[CustomEzsignfoldersignerassociationstatusResponse]',
+    'a_obj_ezsigndocumentdependency' => 'ARRAY[EzsigndocumentdependencyResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -475,6 +492,7 @@ __PACKAGE__->attribute_map( {
     'i_ezsigndocument_pagetotal' => 'iEzsigndocumentPagetotal',
     'i_ezsigndocument_signaturesigned' => 'iEzsigndocumentSignaturesigned',
     'i_ezsigndocument_signaturetotal' => 'iEzsigndocumentSignaturetotal',
+    'i_ezsigndocument_formfieldtotal' => 'iEzsigndocumentFormfieldtotal',
     's_ezsigndocument_md5initial' => 'sEzsigndocumentMD5initial',
     't_ezsigndocument_declinedtosignreason' => 'tEzsigndocumentDeclinedtosignreason',
     's_ezsigndocument_md5signed' => 'sEzsigndocumentMD5signed',
@@ -489,7 +507,8 @@ __PACKAGE__->attribute_map( {
     'i_ezsigndocument_stepformcurrent' => 'iEzsigndocumentStepformcurrent',
     'i_ezsigndocument_stepsignaturetotal' => 'iEzsigndocumentStepsignaturetotal',
     'i_ezsigndocument_stepsignature_current' => 'iEzsigndocumentStepsignatureCurrent',
-    'a_obj_ezsignfoldersignerassociationstatus' => 'a_objEzsignfoldersignerassociationstatus'
+    'a_obj_ezsignfoldersignerassociationstatus' => 'a_objEzsignfoldersignerassociationstatus',
+    'a_obj_ezsigndocumentdependency' => 'a_objEzsigndocumentdependency'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

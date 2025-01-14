@@ -30,11 +30,32 @@ my $api = EzmaxApi::ObjectInscriptiontempApi->new();
 isa_ok($api, 'EzmaxApi::ObjectInscriptiontempApi');
 
 #
+# inscriptiontemp_get_communication_count_v1 test
+#
+# uncomment below and update the test
+#my $inscriptiontemp_get_communication_count_v1_pki_inscriptiontemp_id = undef; # replace NULL with a proper value
+#my $inscriptiontemp_get_communication_count_v1_result = $api->inscriptiontemp_get_communication_count_v1(pki_inscriptiontemp_id => $inscriptiontemp_get_communication_count_v1_pki_inscriptiontemp_id);
+
+#
 # inscriptiontemp_get_communication_list_v1 test
 #
 # uncomment below and update the test
 #my $inscriptiontemp_get_communication_list_v1_pki_inscriptiontemp_id = undef; # replace NULL with a proper value
 #my $inscriptiontemp_get_communication_list_v1_result = $api->inscriptiontemp_get_communication_list_v1(pki_inscriptiontemp_id => $inscriptiontemp_get_communication_list_v1_pki_inscriptiontemp_id);
+
+#
+# inscriptiontemp_get_communicationrecipients_v1 test
+#
+# uncomment below and update the test
+#my $inscriptiontemp_get_communicationrecipients_v1_pki_inscriptiontemp_id = undef; # replace NULL with a proper value
+#my $inscriptiontemp_get_communicationrecipients_v1_result = $api->inscriptiontemp_get_communicationrecipients_v1(pki_inscriptiontemp_id => $inscriptiontemp_get_communicationrecipients_v1_pki_inscriptiontemp_id);
+
+#
+# inscriptiontemp_get_communicationsenders_v1 test
+#
+# uncomment below and update the test
+#my $inscriptiontemp_get_communicationsenders_v1_pki_inscriptiontemp_id = undef; # replace NULL with a proper value
+#my $inscriptiontemp_get_communicationsenders_v1_result = $api->inscriptiontemp_get_communicationsenders_v1(pki_inscriptiontemp_id => $inscriptiontemp_get_communicationsenders_v1_pki_inscriptiontemp_id);
 
 
 done_testing();

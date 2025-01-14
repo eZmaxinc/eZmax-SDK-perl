@@ -30,12 +30,12 @@ my $api = EzmaxApi::ObjectEzsignbulksendApi->new();
 isa_ok($api, 'EzmaxApi::ObjectEzsignbulksendApi');
 
 #
-# ezsignbulksend_create_ezsignbulksendtransmission_v1 test
+# ezsignbulksend_create_ezsignbulksendtransmission_v2 test
 #
 # uncomment below and update the test
-#my $ezsignbulksend_create_ezsignbulksendtransmission_v1_pki_ezsignbulksend_id = undef; # replace NULL with a proper value
-#my $ezsignbulksend_create_ezsignbulksendtransmission_v1_ezsignbulksend_create_ezsignbulksendtransmission_v1_request = undef; # replace NULL with a proper value
-#my $ezsignbulksend_create_ezsignbulksendtransmission_v1_result = $api->ezsignbulksend_create_ezsignbulksendtransmission_v1(pki_ezsignbulksend_id => $ezsignbulksend_create_ezsignbulksendtransmission_v1_pki_ezsignbulksend_id, ezsignbulksend_create_ezsignbulksendtransmission_v1_request => $ezsignbulksend_create_ezsignbulksendtransmission_v1_ezsignbulksend_create_ezsignbulksendtransmission_v1_request);
+#my $ezsignbulksend_create_ezsignbulksendtransmission_v2_pki_ezsignbulksend_id = undef; # replace NULL with a proper value
+#my $ezsignbulksend_create_ezsignbulksendtransmission_v2_ezsignbulksend_create_ezsignbulksendtransmission_v2_request = undef; # replace NULL with a proper value
+#my $ezsignbulksend_create_ezsignbulksendtransmission_v2_result = $api->ezsignbulksend_create_ezsignbulksendtransmission_v2(pki_ezsignbulksend_id => $ezsignbulksend_create_ezsignbulksendtransmission_v2_pki_ezsignbulksend_id, ezsignbulksend_create_ezsignbulksendtransmission_v2_request => $ezsignbulksend_create_ezsignbulksendtransmission_v2_ezsignbulksend_create_ezsignbulksendtransmission_v2_request);
 
 #
 # ezsignbulksend_create_object_v1 test

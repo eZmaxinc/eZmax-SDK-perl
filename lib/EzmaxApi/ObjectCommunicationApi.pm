@@ -49,6 +49,69 @@ sub new {
 
 
 #
+# communication_get_communication_body_v1
+#
+# Retrieve the communication body.
+#
+# @param int $pki_communication_id  (required)
+{
+    my $params = {
+    'pki_communication_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'communication_get_communication_body_v1' } = {
+        summary => 'Retrieve the communication body.',
+        params => $params,
+        returns => undef,
+        };
+}
+# @return void
+#
+sub communication_get_communication_body_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_communication_id' is set
+    unless (exists $args{'pki_communication_id'}) {
+      croak("Missing the required parameter 'pki_communication_id' when calling communication_get_communication_body_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/communication/{pkiCommunicationID}/getCommunicationBody';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_communication_id'}) {
+        my $_base_variable = "{" . "pkiCommunicationID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_communication_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    return;
+}
+
+#
 # communication_send_v1
 #
 # Send a new Communication

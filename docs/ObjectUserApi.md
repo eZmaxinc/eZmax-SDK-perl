@@ -11,10 +11,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**user_create_object_v1**](ObjectUserApi.md#user_create_object_v1) | **POST** /1/object/user | Create a new User
 [**user_create_object_v2**](ObjectUserApi.md#user_create_object_v2) | **POST** /2/object/user | Create a new User
+[**user_edit_colleagues_v2**](ObjectUserApi.md#user_edit_colleagues_v2) | **PUT** /2/object/user/{pkiUserID}/editColleagues | Edit multiple Colleagues
 [**user_edit_object_v1**](ObjectUserApi.md#user_edit_object_v1) | **PUT** /1/object/user/{pkiUserID} | Edit an existing User
 [**user_edit_permissions_v1**](ObjectUserApi.md#user_edit_permissions_v1) | **PUT** /1/object/user/{pkiUserID}/editPermissions | Edit multiple Permissions
 [**user_get_apikeys_v1**](ObjectUserApi.md#user_get_apikeys_v1) | **GET** /1/object/user/{pkiUserID}/getApikeys | Retrieve an existing User&#39;s Apikeys
 [**user_get_autocomplete_v2**](ObjectUserApi.md#user_get_autocomplete_v2) | **GET** /2/object/user/getAutocomplete/{sSelector} | Retrieve Users and IDs
+[**user_get_colleagues_v2**](ObjectUserApi.md#user_get_colleagues_v2) | **GET** /2/object/user/{pkiUserID}/getColleagues | Retrieve an existing User&#39;s Colleagues
 [**user_get_effective_permissions_v1**](ObjectUserApi.md#user_get_effective_permissions_v1) | **GET** /1/object/user/{pkiUserID}/getEffectivePermissions | Retrieve an existing User&#39;s Effective Permissions
 [**user_get_list_v1**](ObjectUserApi.md#user_get_list_v1) | **GET** /1/object/user/getList | Retrieve User list
 [**user_get_object_v2**](ObjectUserApi.md#user_get_object_v2) | **GET** /2/object/user/{pkiUserID} | Retrieve an existing User
@@ -115,6 +117,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UserCreateObjectV2Response**](UserCreateObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_edit_colleagues_v2**
+> UserEditColleaguesV2Response user_edit_colleagues_v2(pki_user_id => $pki_user_id, user_edit_colleagues_v2_request => $user_edit_colleagues_v2_request)
+
+Edit multiple Colleagues
+
+Using this endpoint, you can edit multiple Colleagues at the same time.
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectUserApi;
+my $api_instance = EzmaxApi::ObjectUserApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_user_id = 56; # int | 
+my $user_edit_colleagues_v2_request = EzmaxApi::Object::UserEditColleaguesV2Request->new(); # UserEditColleaguesV2Request | 
+
+eval {
+    my $result = $api_instance->user_edit_colleagues_v2(pki_user_id => $pki_user_id, user_edit_colleagues_v2_request => $user_edit_colleagues_v2_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectUserApi->user_edit_colleagues_v2: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_user_id** | **int**|  | 
+ **user_edit_colleagues_v2_request** | [**UserEditColleaguesV2Request**](UserEditColleaguesV2Request.md)|  | 
+
+### Return type
+
+[**UserEditColleaguesV2Response**](UserEditColleaguesV2Response.md)
 
 ### Authorization
 
@@ -327,6 +382,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UserGetAutocompleteV2Response**](UserGetAutocompleteV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_get_colleagues_v2**
+> UserGetColleaguesV2Response user_get_colleagues_v2(pki_user_id => $pki_user_id)
+
+Retrieve an existing User's Colleagues
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectUserApi;
+my $api_instance = EzmaxApi::ObjectUserApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_user_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->user_get_colleagues_v2(pki_user_id => $pki_user_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectUserApi->user_get_colleagues_v2: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_user_id** | **int**|  | 
+
+### Return type
+
+[**UserGetColleaguesV2Response**](UserGetColleaguesV2Response.md)
 
 ### Authorization
 

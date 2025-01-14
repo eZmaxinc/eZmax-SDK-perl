@@ -233,10 +233,17 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_creditcardtype_id' => {
+        datatype => 'int',
+        base_name => 'fkiCreditcardtypeID',
+        description => 'The unique ID of the Creditcardtype',
+        format => '',
+        read_only => '',
+            },
     'b_creditcardclientrelation_isdefault' => {
         datatype => 'boolean',
         base_name => 'bCreditcardclientrelationIsdefault',
-        description => 'Whether if it&#39;s an relationisdefault',
+        description => 'Whether if it&#39;s the creditcardclient is the default one',
         format => '',
         read_only => '',
             },
@@ -247,24 +254,10 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'b_creditcardclient_isactive' => {
+    'b_creditcardclient_allowedcompanypayment' => {
         datatype => 'boolean',
-        base_name => 'bCreditcardclientIsactive',
-        description => 'Whether the creditcardclient is active or not',
-        format => '',
-        read_only => '',
-            },
-    'b_creditcardclient_allowedagencypayment' => {
-        datatype => 'boolean',
-        base_name => 'bCreditcardclientAllowedagencypayment',
+        base_name => 'bCreditcardclientAllowedcompanypayment',
         description => 'Whether if it&#39;s an allowedagencypayment',
-        format => '',
-        read_only => '',
-            },
-    'b_creditcardclient_allowedroyallepageprotection' => {
-        datatype => 'boolean',
-        base_name => 'bCreditcardclientAllowedroyallepageprotection',
-        description => 'Whether if it&#39;s an allowedroyallepageprotection',
         format => '',
         read_only => '',
             },
@@ -289,10 +282,10 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    's_creditcarddetail_numbermasked' => {
-        datatype => 'string',
-        base_name => 'sCreditcarddetailNumbermasked',
-        description => 'The numbermasked of the Creditcarddetail',
+    'i_creditcarddetail_lastdigits' => {
+        datatype => 'int',
+        base_name => 'iCreditcarddetailLastdigits',
+        description => 'The last digits of the Creditcarddetail',
         format => '',
         read_only => '',
             },
@@ -301,29 +294,27 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'pki_creditcardclient_id' => 'int',
     'fki_creditcarddetail_id' => 'int',
+    'fki_creditcardtype_id' => 'int',
     'b_creditcardclientrelation_isdefault' => 'boolean',
     's_creditcardclient_description' => 'string',
-    'b_creditcardclient_isactive' => 'boolean',
-    'b_creditcardclient_allowedagencypayment' => 'boolean',
-    'b_creditcardclient_allowedroyallepageprotection' => 'boolean',
+    'b_creditcardclient_allowedcompanypayment' => 'boolean',
     'b_creditcardclient_allowedtranquillit' => 'boolean',
     'i_creditcarddetail_expirationmonth' => 'int',
     'i_creditcarddetail_expirationyear' => 'int',
-    's_creditcarddetail_numbermasked' => 'string'
+    'i_creditcarddetail_lastdigits' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_creditcardclient_id' => 'pkiCreditcardclientID',
     'fki_creditcarddetail_id' => 'fkiCreditcarddetailID',
+    'fki_creditcardtype_id' => 'fkiCreditcardtypeID',
     'b_creditcardclientrelation_isdefault' => 'bCreditcardclientrelationIsdefault',
     's_creditcardclient_description' => 'sCreditcardclientDescription',
-    'b_creditcardclient_isactive' => 'bCreditcardclientIsactive',
-    'b_creditcardclient_allowedagencypayment' => 'bCreditcardclientAllowedagencypayment',
-    'b_creditcardclient_allowedroyallepageprotection' => 'bCreditcardclientAllowedroyallepageprotection',
+    'b_creditcardclient_allowedcompanypayment' => 'bCreditcardclientAllowedcompanypayment',
     'b_creditcardclient_allowedtranquillit' => 'bCreditcardclientAllowedtranquillit',
     'i_creditcarddetail_expirationmonth' => 'iCreditcarddetailExpirationmonth',
     'i_creditcarddetail_expirationyear' => 'iCreditcarddetailExpirationyear',
-    's_creditcarddetail_numbermasked' => 'sCreditcarddetailNumbermasked'
+    'i_creditcarddetail_lastdigits' => 'iCreditcarddetailLastdigits'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

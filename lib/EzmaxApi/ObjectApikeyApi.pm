@@ -280,6 +280,71 @@ sub apikey_edit_permissions_v1 {
 }
 
 #
+# apikey_generate_delegated_credentials_v1
+#
+# Generate a delegated credentials
+#
+# @param ApikeyGenerateDelegatedCredentialsV1Request $apikey_generate_delegated_credentials_v1_request  (required)
+{
+    my $params = {
+    'apikey_generate_delegated_credentials_v1_request' => {
+        data_type => 'ApikeyGenerateDelegatedCredentialsV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'apikey_generate_delegated_credentials_v1' } = {
+        summary => 'Generate a delegated credentials',
+        params => $params,
+        returns => 'ApikeyGenerateDelegatedCredentialsV1Response',
+        };
+}
+# @return ApikeyGenerateDelegatedCredentialsV1Response
+#
+sub apikey_generate_delegated_credentials_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'apikey_generate_delegated_credentials_v1_request' is set
+    unless (exists $args{'apikey_generate_delegated_credentials_v1_request'}) {
+      croak("Missing the required parameter 'apikey_generate_delegated_credentials_v1_request' when calling apikey_generate_delegated_credentials_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/apikey/generateDelegatedCredentials';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'apikey_generate_delegated_credentials_v1_request'}) {
+        $_body_data = $args{'apikey_generate_delegated_credentials_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('ApikeyGenerateDelegatedCredentialsV1Response', $response);
+    return $_response_object;
+}
+
+#
 # apikey_get_cors_v1
 #
 # Retrieve an existing Apikey's cors

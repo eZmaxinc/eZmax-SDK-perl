@@ -32,6 +32,7 @@ use DateTime;
 
 use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureAttachmentnamesource;
+use EzmaxApi::Object::FieldEEzsigntemplatesignatureConsultationtrigger;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureFont;
 use EzmaxApi::Object::FieldEEzsigntemplatesignaturePositioning;
@@ -255,6 +256,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsigntemplatesignature_handwritten' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplatesignatureHandwritten',
+        description => 'Whether the Ezsigntemplatesignature must be handwritten or not when eEzsigntemplatesignatureType &#x3D; Signature.',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsigntemplatesignature_reason' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplatesignatureReason',
+        description => 'Whether the Ezsigntemplatesignature must include a reason or not when eEzsigntemplatesignatureType &#x3D; Signature.',
+        format => '',
+        read_only => '',
+            },
     'e_ezsigntemplatesignature_positioning' => {
         datatype => 'FieldEEzsigntemplatesignaturePositioning',
         base_name => 'eEzsigntemplatesignaturePositioning',
@@ -307,6 +322,13 @@ __PACKAGE__->method_documentation({
     'e_ezsigntemplatesignature_type' => {
         datatype => 'FieldEEzsigntemplatesignatureType',
         base_name => 'eEzsigntemplatesignatureType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsigntemplatesignature_consultationtrigger' => {
+        datatype => 'FieldEEzsigntemplatesignatureConsultationtrigger',
+        base_name => 'eEzsigntemplatesignatureConsultationtrigger',
         description => '',
         format => '',
         read_only => '',
@@ -367,6 +389,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_ezsigntemplatesignature_defaultvalue' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplatesignatureDefaultvalue',
+        description => 'The default value for the Ezsigntemplatesignature  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sCompany} | Company name | eZmax Solutions Inc. | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |',
+        format => '',
+        read_only => '',
+            },
     's_ezsigntemplatesignature_regexp' => {
         datatype => 'string',
         base_name => 'sEzsigntemplatesignatureRegexp',
@@ -378,6 +407,13 @@ __PACKAGE__->method_documentation({
         datatype => 'EnumTextvalidation',
         base_name => 'eEzsigntemplatesignatureTextvalidation',
         description => '',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigntemplatesignature_textvalidationcustommessage' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplatesignatureTextvalidationcustommessage',
+        description => 'Description of validation rule. Show by signatory.',
         format => '',
         read_only => '',
             },
@@ -423,6 +459,8 @@ __PACKAGE__->openapi_types( {
     'fki_ezsigntemplatedocument_id' => 'int',
     'fki_ezsigntemplatesigner_id' => 'int',
     'fki_ezsigntemplatesigner_id_validation' => 'int',
+    'b_ezsigntemplatesignature_handwritten' => 'boolean',
+    'b_ezsigntemplatesignature_reason' => 'boolean',
     'e_ezsigntemplatesignature_positioning' => 'FieldEEzsigntemplatesignaturePositioning',
     'i_ezsigntemplatedocumentpage_pagenumber' => 'int',
     'i_ezsigntemplatesignature_x' => 'int',
@@ -431,6 +469,7 @@ __PACKAGE__->openapi_types( {
     'i_ezsigntemplatesignature_height' => 'int',
     'i_ezsigntemplatesignature_step' => 'int',
     'e_ezsigntemplatesignature_type' => 'FieldEEzsigntemplatesignatureType',
+    'e_ezsigntemplatesignature_consultationtrigger' => 'FieldEEzsigntemplatesignatureConsultationtrigger',
     't_ezsigntemplatesignature_tooltip' => 'string',
     'e_ezsigntemplatesignature_tooltipposition' => 'FieldEEzsigntemplatesignatureTooltipposition',
     'e_ezsigntemplatesignature_font' => 'FieldEEzsigntemplatesignatureFont',
@@ -439,8 +478,10 @@ __PACKAGE__->openapi_types( {
     'e_ezsigntemplatesignature_attachmentnamesource' => 'FieldEEzsigntemplatesignatureAttachmentnamesource',
     'b_ezsigntemplatesignature_required' => 'boolean',
     'i_ezsigntemplatesignature_maxlength' => 'int',
+    's_ezsigntemplatesignature_defaultvalue' => 'string',
     's_ezsigntemplatesignature_regexp' => 'string',
     'e_ezsigntemplatesignature_textvalidation' => 'EnumTextvalidation',
+    's_ezsigntemplatesignature_textvalidationcustommessage' => 'string',
     'e_ezsigntemplatesignature_dependencyrequirement' => 'FieldEEzsigntemplatesignatureDependencyrequirement',
     's_ezsigntemplatesignature_positioningpattern' => 'string',
     'i_ezsigntemplatesignature_positioningoffsetx' => 'int',
@@ -453,6 +494,8 @@ __PACKAGE__->attribute_map( {
     'fki_ezsigntemplatedocument_id' => 'fkiEzsigntemplatedocumentID',
     'fki_ezsigntemplatesigner_id' => 'fkiEzsigntemplatesignerID',
     'fki_ezsigntemplatesigner_id_validation' => 'fkiEzsigntemplatesignerIDValidation',
+    'b_ezsigntemplatesignature_handwritten' => 'bEzsigntemplatesignatureHandwritten',
+    'b_ezsigntemplatesignature_reason' => 'bEzsigntemplatesignatureReason',
     'e_ezsigntemplatesignature_positioning' => 'eEzsigntemplatesignaturePositioning',
     'i_ezsigntemplatedocumentpage_pagenumber' => 'iEzsigntemplatedocumentpagePagenumber',
     'i_ezsigntemplatesignature_x' => 'iEzsigntemplatesignatureX',
@@ -461,6 +504,7 @@ __PACKAGE__->attribute_map( {
     'i_ezsigntemplatesignature_height' => 'iEzsigntemplatesignatureHeight',
     'i_ezsigntemplatesignature_step' => 'iEzsigntemplatesignatureStep',
     'e_ezsigntemplatesignature_type' => 'eEzsigntemplatesignatureType',
+    'e_ezsigntemplatesignature_consultationtrigger' => 'eEzsigntemplatesignatureConsultationtrigger',
     't_ezsigntemplatesignature_tooltip' => 'tEzsigntemplatesignatureTooltip',
     'e_ezsigntemplatesignature_tooltipposition' => 'eEzsigntemplatesignatureTooltipposition',
     'e_ezsigntemplatesignature_font' => 'eEzsigntemplatesignatureFont',
@@ -469,8 +513,10 @@ __PACKAGE__->attribute_map( {
     'e_ezsigntemplatesignature_attachmentnamesource' => 'eEzsigntemplatesignatureAttachmentnamesource',
     'b_ezsigntemplatesignature_required' => 'bEzsigntemplatesignatureRequired',
     'i_ezsigntemplatesignature_maxlength' => 'iEzsigntemplatesignatureMaxlength',
+    's_ezsigntemplatesignature_defaultvalue' => 'sEzsigntemplatesignatureDefaultvalue',
     's_ezsigntemplatesignature_regexp' => 'sEzsigntemplatesignatureRegexp',
     'e_ezsigntemplatesignature_textvalidation' => 'eEzsigntemplatesignatureTextvalidation',
+    's_ezsigntemplatesignature_textvalidationcustommessage' => 'sEzsigntemplatesignatureTextvalidationcustommessage',
     'e_ezsigntemplatesignature_dependencyrequirement' => 'eEzsigntemplatesignatureDependencyrequirement',
     's_ezsigntemplatesignature_positioningpattern' => 'sEzsigntemplatesignaturePositioningpattern',
     'i_ezsigntemplatesignature_positioningoffsetx' => 'iEzsigntemplatesignaturePositioningoffsetx',

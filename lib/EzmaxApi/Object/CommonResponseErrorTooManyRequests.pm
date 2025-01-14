@@ -234,16 +234,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_s_error_messagedetail' => {
+        datatype => 'ARRAY[string]',
+        base_name => 'a_sErrorMessagedetail',
+        description => 'More error message detail',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     's_error_message' => 'string',
-    'e_error_code' => 'FieldEErrorCode'
+    'e_error_code' => 'FieldEErrorCode',
+    'a_s_error_messagedetail' => 'ARRAY[string]'
 } );
 
 __PACKAGE__->attribute_map( {
     's_error_message' => 'sErrorMessage',
-    'e_error_code' => 'eErrorCode'
+    'e_error_code' => 'eErrorCode',
+    'a_s_error_messagedetail' => 'a_sErrorMessagedetail'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

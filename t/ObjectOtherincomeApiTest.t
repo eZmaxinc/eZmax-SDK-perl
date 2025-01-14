@@ -30,11 +30,32 @@ my $api = EzmaxApi::ObjectOtherincomeApi->new();
 isa_ok($api, 'EzmaxApi::ObjectOtherincomeApi');
 
 #
+# otherincome_get_communication_count_v1 test
+#
+# uncomment below and update the test
+#my $otherincome_get_communication_count_v1_pki_otherincome_id = undef; # replace NULL with a proper value
+#my $otherincome_get_communication_count_v1_result = $api->otherincome_get_communication_count_v1(pki_otherincome_id => $otherincome_get_communication_count_v1_pki_otherincome_id);
+
+#
 # otherincome_get_communication_list_v1 test
 #
 # uncomment below and update the test
 #my $otherincome_get_communication_list_v1_pki_otherincome_id = undef; # replace NULL with a proper value
 #my $otherincome_get_communication_list_v1_result = $api->otherincome_get_communication_list_v1(pki_otherincome_id => $otherincome_get_communication_list_v1_pki_otherincome_id);
+
+#
+# otherincome_get_communicationrecipients_v1 test
+#
+# uncomment below and update the test
+#my $otherincome_get_communicationrecipients_v1_pki_otherincome_id = undef; # replace NULL with a proper value
+#my $otherincome_get_communicationrecipients_v1_result = $api->otherincome_get_communicationrecipients_v1(pki_otherincome_id => $otherincome_get_communicationrecipients_v1_pki_otherincome_id);
+
+#
+# otherincome_get_communicationsenders_v1 test
+#
+# uncomment below and update the test
+#my $otherincome_get_communicationsenders_v1_pki_otherincome_id = undef; # replace NULL with a proper value
+#my $otherincome_get_communicationsenders_v1_result = $api->otherincome_get_communicationsenders_v1(pki_otherincome_id => $otherincome_get_communicationsenders_v1_pki_otherincome_id);
 
 
 done_testing();

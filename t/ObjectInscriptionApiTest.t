@@ -37,11 +37,25 @@ isa_ok($api, 'EzmaxApi::ObjectInscriptionApi');
 #my $inscription_get_attachments_v1_result = $api->inscription_get_attachments_v1(pki_inscription_id => $inscription_get_attachments_v1_pki_inscription_id);
 
 #
+# inscription_get_communication_count_v1 test
+#
+# uncomment below and update the test
+#my $inscription_get_communication_count_v1_pki_inscription_id = undef; # replace NULL with a proper value
+#my $inscription_get_communication_count_v1_result = $api->inscription_get_communication_count_v1(pki_inscription_id => $inscription_get_communication_count_v1_pki_inscription_id);
+
+#
 # inscription_get_communication_list_v1 test
 #
 # uncomment below and update the test
 #my $inscription_get_communication_list_v1_pki_inscription_id = undef; # replace NULL with a proper value
 #my $inscription_get_communication_list_v1_result = $api->inscription_get_communication_list_v1(pki_inscription_id => $inscription_get_communication_list_v1_pki_inscription_id);
+
+#
+# inscription_get_communicationrecipients_v1 test
+#
+# uncomment below and update the test
+#my $inscription_get_communicationrecipients_v1_pki_inscription_id = undef; # replace NULL with a proper value
+#my $inscription_get_communicationrecipients_v1_result = $api->inscription_get_communicationrecipients_v1(pki_inscription_id => $inscription_get_communicationrecipients_v1_pki_inscription_id);
 
 #
 # inscription_get_communicationsenders_v1 test

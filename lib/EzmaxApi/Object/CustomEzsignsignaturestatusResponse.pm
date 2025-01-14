@@ -247,20 +247,29 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_ezsignsignaturestatus_conditional' => {
+        datatype => 'int',
+        base_name => 'iEzsignsignaturestatusConditional',
+        description => 'The number of signature or form fields the Ezsignsigner need to sign or fill under current conditions.',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'e_ezsignsignaturestatus_steptype' => 'string',
     'i_ezsignsignaturestatus_step' => 'int',
     'i_ezsignsignaturestatus_total' => 'int',
-    'i_ezsignsignaturestatus_signed' => 'int'
+    'i_ezsignsignaturestatus_signed' => 'int',
+    'i_ezsignsignaturestatus_conditional' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
     'e_ezsignsignaturestatus_steptype' => 'eEzsignsignaturestatusSteptype',
     'i_ezsignsignaturestatus_step' => 'iEzsignsignaturestatusStep',
     'i_ezsignsignaturestatus_total' => 'iEzsignsignaturestatusTotal',
-    'i_ezsignsignaturestatus_signed' => 'iEzsignsignaturestatusSigned'
+    'i_ezsignsignaturestatus_signed' => 'iEzsignsignaturestatusSigned',
+    'i_ezsignsignaturestatus_conditional' => 'iEzsignsignaturestatusConditional'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

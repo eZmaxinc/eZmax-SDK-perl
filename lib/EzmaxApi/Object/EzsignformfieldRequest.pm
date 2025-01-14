@@ -30,7 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EnumHorizontalalignment;
 use EzmaxApi::Object::FieldEEzsignformfieldDependencyrequirement;
+use EzmaxApi::Object::TextstylestaticRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -265,14 +267,14 @@ __PACKAGE__->method_documentation({
     'i_ezsignformfield_width' => {
         datatype => 'int',
         base_name => 'iEzsignformfieldWidth',
-        description => 'The Width of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |',
+        description => 'The Width of the Ezsignformfield in pixels calculated at 100 DPI',
         format => '',
         read_only => '',
             },
     'i_ezsignformfield_height' => {
         datatype => 'int',
         base_name => 'iEzsignformfieldHeight',
-        description => 'The Height of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | ',
+        description => 'The Height of the Ezsignformfield in pixels calculated at 100 DPI ',
         format => '',
         read_only => '',
             },
@@ -304,6 +306,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignformfield_horizontalalignment' => {
+        datatype => 'EnumHorizontalalignment',
+        base_name => 'eEzsignformfieldHorizontalalignment',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_textstylestatic' => {
+        datatype => 'TextstylestaticRequestCompound',
+        base_name => 'objTextstylestatic',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -318,7 +334,9 @@ __PACKAGE__->openapi_types( {
     'b_ezsignformfield_autocomplete' => 'boolean',
     'b_ezsignformfield_selected' => 'boolean',
     's_ezsignformfield_enteredvalue' => 'string',
-    'e_ezsignformfield_dependencyrequirement' => 'FieldEEzsignformfieldDependencyrequirement'
+    'e_ezsignformfield_dependencyrequirement' => 'FieldEEzsignformfieldDependencyrequirement',
+    'e_ezsignformfield_horizontalalignment' => 'EnumHorizontalalignment',
+    'obj_textstylestatic' => 'TextstylestaticRequestCompound'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -333,7 +351,9 @@ __PACKAGE__->attribute_map( {
     'b_ezsignformfield_autocomplete' => 'bEzsignformfieldAutocomplete',
     'b_ezsignformfield_selected' => 'bEzsignformfieldSelected',
     's_ezsignformfield_enteredvalue' => 'sEzsignformfieldEnteredvalue',
-    'e_ezsignformfield_dependencyrequirement' => 'eEzsignformfieldDependencyrequirement'
+    'e_ezsignformfield_dependencyrequirement' => 'eEzsignformfieldDependencyrequirement',
+    'e_ezsignformfield_horizontalalignment' => 'eEzsignformfieldHorizontalalignment',
+    'obj_textstylestatic' => 'objTextstylestatic'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

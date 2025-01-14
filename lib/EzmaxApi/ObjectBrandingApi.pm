@@ -49,37 +49,37 @@ sub new {
 
 
 #
-# branding_create_object_v1
+# branding_create_object_v2
 #
 # Create a new Branding
 #
-# @param BrandingCreateObjectV1Request $branding_create_object_v1_request  (required)
+# @param BrandingCreateObjectV2Request $branding_create_object_v2_request  (required)
 {
     my $params = {
-    'branding_create_object_v1_request' => {
-        data_type => 'BrandingCreateObjectV1Request',
+    'branding_create_object_v2_request' => {
+        data_type => 'BrandingCreateObjectV2Request',
         description => '',
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'branding_create_object_v1' } = {
+    __PACKAGE__->method_documentation->{ 'branding_create_object_v2' } = {
         summary => 'Create a new Branding',
         params => $params,
-        returns => 'BrandingCreateObjectV1Response',
+        returns => 'BrandingCreateObjectV2Response',
         };
 }
-# @return BrandingCreateObjectV1Response
+# @return BrandingCreateObjectV2Response
 #
-sub branding_create_object_v1 {
+sub branding_create_object_v2 {
     my ($self, %args) = @_;
 
-    # verify the required parameter 'branding_create_object_v1_request' is set
-    unless (exists $args{'branding_create_object_v1_request'}) {
-      croak("Missing the required parameter 'branding_create_object_v1_request' when calling branding_create_object_v1");
+    # verify the required parameter 'branding_create_object_v2_request' is set
+    unless (exists $args{'branding_create_object_v2_request'}) {
+      croak("Missing the required parameter 'branding_create_object_v2_request' when calling branding_create_object_v2");
     }
 
     # parse inputs
-    my $_resource_path = '/1/object/branding';
+    my $_resource_path = '/2/object/branding';
 
     my $_method = 'POST';
     my $query_params = {};
@@ -95,8 +95,8 @@ sub branding_create_object_v1 {
 
     my $_body_data;
     # body params
-    if ( exists $args{'branding_create_object_v1_request'}) {
-        $_body_data = $args{'branding_create_object_v1_request'};
+    if ( exists $args{'branding_create_object_v2_request'}) {
+        $_body_data = $args{'branding_create_object_v2_request'};
     }
 
     # authentication setting, if any
@@ -109,17 +109,17 @@ sub branding_create_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('BrandingCreateObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('BrandingCreateObjectV2Response', $response);
     return $_response_object;
 }
 
 #
-# branding_edit_object_v1
+# branding_edit_object_v2
 #
 # Edit an existing Branding
 #
 # @param int $pki_branding_id  (required)
-# @param BrandingEditObjectV1Request $branding_edit_object_v1_request  (required)
+# @param BrandingEditObjectV2Request $branding_edit_object_v2_request  (required)
 {
     my $params = {
     'pki_branding_id' => {
@@ -127,35 +127,35 @@ sub branding_create_object_v1 {
         description => '',
         required => '1',
     },
-    'branding_edit_object_v1_request' => {
-        data_type => 'BrandingEditObjectV1Request',
+    'branding_edit_object_v2_request' => {
+        data_type => 'BrandingEditObjectV2Request',
         description => '',
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'branding_edit_object_v1' } = {
+    __PACKAGE__->method_documentation->{ 'branding_edit_object_v2' } = {
         summary => 'Edit an existing Branding',
         params => $params,
-        returns => 'BrandingEditObjectV1Response',
+        returns => 'BrandingEditObjectV2Response',
         };
 }
-# @return BrandingEditObjectV1Response
+# @return BrandingEditObjectV2Response
 #
-sub branding_edit_object_v1 {
+sub branding_edit_object_v2 {
     my ($self, %args) = @_;
 
     # verify the required parameter 'pki_branding_id' is set
     unless (exists $args{'pki_branding_id'}) {
-      croak("Missing the required parameter 'pki_branding_id' when calling branding_edit_object_v1");
+      croak("Missing the required parameter 'pki_branding_id' when calling branding_edit_object_v2");
     }
 
-    # verify the required parameter 'branding_edit_object_v1_request' is set
-    unless (exists $args{'branding_edit_object_v1_request'}) {
-      croak("Missing the required parameter 'branding_edit_object_v1_request' when calling branding_edit_object_v1");
+    # verify the required parameter 'branding_edit_object_v2_request' is set
+    unless (exists $args{'branding_edit_object_v2_request'}) {
+      croak("Missing the required parameter 'branding_edit_object_v2_request' when calling branding_edit_object_v2");
     }
 
     # parse inputs
-    my $_resource_path = '/1/object/branding/{pkiBrandingID}';
+    my $_resource_path = '/2/object/branding/{pkiBrandingID}';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -178,8 +178,8 @@ sub branding_edit_object_v1 {
 
     my $_body_data;
     # body params
-    if ( exists $args{'branding_edit_object_v1_request'}) {
-        $_body_data = $args{'branding_edit_object_v1_request'};
+    if ( exists $args{'branding_edit_object_v2_request'}) {
+        $_body_data = $args{'branding_edit_object_v2_request'};
     }
 
     # authentication setting, if any
@@ -192,7 +192,7 @@ sub branding_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('BrandingEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('BrandingEditObjectV2Response', $response);
     return $_response_object;
 }
 
@@ -401,7 +401,7 @@ sub branding_get_list_v1 {
 }
 
 #
-# branding_get_object_v2
+# branding_get_object_v3
 #
 # Retrieve an existing Branding
 #
@@ -414,24 +414,24 @@ sub branding_get_list_v1 {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'branding_get_object_v2' } = {
+    __PACKAGE__->method_documentation->{ 'branding_get_object_v3' } = {
         summary => 'Retrieve an existing Branding',
         params => $params,
-        returns => 'BrandingGetObjectV2Response',
+        returns => 'BrandingGetObjectV3Response',
         };
 }
-# @return BrandingGetObjectV2Response
+# @return BrandingGetObjectV3Response
 #
-sub branding_get_object_v2 {
+sub branding_get_object_v3 {
     my ($self, %args) = @_;
 
     # verify the required parameter 'pki_branding_id' is set
     unless (exists $args{'pki_branding_id'}) {
-      croak("Missing the required parameter 'pki_branding_id' when calling branding_get_object_v2");
+      croak("Missing the required parameter 'pki_branding_id' when calling branding_get_object_v3");
     }
 
     # parse inputs
-    my $_resource_path = '/2/object/branding/{pkiBrandingID}';
+    my $_resource_path = '/3/object/branding/{pkiBrandingID}';
 
     my $_method = 'GET';
     my $query_params = {};
@@ -463,7 +463,7 @@ sub branding_get_object_v2 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('BrandingGetObjectV2Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('BrandingGetObjectV3Response', $response);
     return $_response_object;
 }
 

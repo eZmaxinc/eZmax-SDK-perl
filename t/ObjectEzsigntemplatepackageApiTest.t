@@ -67,7 +67,8 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplatepackageApi');
 #my $ezsigntemplatepackage_get_autocomplete_v2_e_filter_active = undef; # replace NULL with a proper value
 #my $ezsigntemplatepackage_get_autocomplete_v2_s_query = undef; # replace NULL with a proper value
 #my $ezsigntemplatepackage_get_autocomplete_v2_accept_language = undef; # replace NULL with a proper value
-#my $ezsigntemplatepackage_get_autocomplete_v2_result = $api->ezsigntemplatepackage_get_autocomplete_v2(s_selector => $ezsigntemplatepackage_get_autocomplete_v2_s_selector, e_filter_active => $ezsigntemplatepackage_get_autocomplete_v2_e_filter_active, s_query => $ezsigntemplatepackage_get_autocomplete_v2_s_query, accept_language => $ezsigntemplatepackage_get_autocomplete_v2_accept_language);
+#my $ezsigntemplatepackage_get_autocomplete_v2_fki_ezsignfoldertype_id = undef; # replace NULL with a proper value
+#my $ezsigntemplatepackage_get_autocomplete_v2_result = $api->ezsigntemplatepackage_get_autocomplete_v2(s_selector => $ezsigntemplatepackage_get_autocomplete_v2_s_selector, e_filter_active => $ezsigntemplatepackage_get_autocomplete_v2_e_filter_active, s_query => $ezsigntemplatepackage_get_autocomplete_v2_s_query, accept_language => $ezsigntemplatepackage_get_autocomplete_v2_accept_language, fki_ezsignfoldertype_id => $ezsigntemplatepackage_get_autocomplete_v2_fki_ezsignfoldertype_id);
 
 #
 # ezsigntemplatepackage_get_list_v1 test

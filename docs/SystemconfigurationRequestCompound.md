@@ -9,6 +9,7 @@ use EzmaxApi::Object::SystemconfigurationRequestCompound;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pki_systemconfiguration_id** | **int** | The unique ID of the Systemconfiguration | [optional] 
+**fki_branding_id** | **int** | The unique ID of the Branding | [optional] 
 **e_systemconfiguration_newexternaluseraction** | [**FieldESystemconfigurationNewexternaluseraction**](FieldESystemconfigurationNewexternaluseraction.md) |  | 
 **e_systemconfiguration_language1** | [**FieldESystemconfigurationLanguage1**](FieldESystemconfigurationLanguage1.md) |  | 
 **e_systemconfiguration_language2** | [**FieldESystemconfigurationLanguage2**](FieldESystemconfigurationLanguage2.md) |  | 

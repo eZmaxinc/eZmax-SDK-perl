@@ -343,7 +343,28 @@ __PACKAGE__->method_documentation({
     'd_ezsignfolder_completedpercentage' => {
         datatype => 'string',
         base_name => 'dEzsignfolderCompletedpercentage',
-        description => 'Whether the Ezsignform/Ezsignsignatures has dependencies or not',
+        description => 'Percentage of Ezsignform/Ezsignsignatures has completed',
+        format => '',
+        read_only => '',
+            },
+    'd_ezsignfolder_formcompletedpercentage' => {
+        datatype => 'string',
+        base_name => 'dEzsignfolderFormcompletedpercentage',
+        description => 'Percentage of Ezsignform has completed',
+        format => '',
+        read_only => '',
+            },
+    'd_ezsignfolder_signaturecompletedpercentage' => {
+        datatype => 'string',
+        base_name => 'dEzsignfolderSignaturecompletedpercentage',
+        description => 'Percentage of Ezsignsignatures has signed',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfolder_signer' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfolderSigner',
+        description => 'Whether the Ezsignfolder has an Ezsignsignatures that need to be signed or an Ezsignformfieldgroups that need to be filled by the current user',
         format => '',
         read_only => '',
             },
@@ -367,7 +388,10 @@ __PACKAGE__->openapi_types( {
     'i_ezsignformfieldgroup' => 'int',
     'i_ezsignformfieldgroup_completed' => 'int',
     'b_ezsignform_hasdependencies' => 'boolean',
-    'd_ezsignfolder_completedpercentage' => 'string'
+    'd_ezsignfolder_completedpercentage' => 'string',
+    'd_ezsignfolder_formcompletedpercentage' => 'string',
+    'd_ezsignfolder_signaturecompletedpercentage' => 'string',
+    'b_ezsignfolder_signer' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -388,7 +412,10 @@ __PACKAGE__->attribute_map( {
     'i_ezsignformfieldgroup' => 'iEzsignformfieldgroup',
     'i_ezsignformfieldgroup_completed' => 'iEzsignformfieldgroupCompleted',
     'b_ezsignform_hasdependencies' => 'bEzsignformHasdependencies',
-    'd_ezsignfolder_completedpercentage' => 'dEzsignfolderCompletedpercentage'
+    'd_ezsignfolder_completedpercentage' => 'dEzsignfolderCompletedpercentage',
+    'd_ezsignfolder_formcompletedpercentage' => 'dEzsignfolderFormcompletedpercentage',
+    'd_ezsignfolder_signaturecompletedpercentage' => 'dEzsignfolderSignaturecompletedpercentage',
+    'b_ezsignfolder_signer' => 'bEzsignfolderSigner'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

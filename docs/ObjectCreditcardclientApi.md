@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**creditcardclient_get_autocomplete_v2**](ObjectCreditcardclientApi.md#creditcardclient_get_autocomplete_v2) | **GET** /2/object/creditcardclient/getAutocomplete/{sSelector} | Retrieve Creditcardclients and IDs
 [**creditcardclient_get_list_v1**](ObjectCreditcardclientApi.md#creditcardclient_get_list_v1) | **GET** /1/object/creditcardclient/getList | Retrieve Creditcardclient list
 [**creditcardclient_get_object_v2**](ObjectCreditcardclientApi.md#creditcardclient_get_object_v2) | **GET** /2/object/creditcardclient/{pkiCreditcardclientID} | Retrieve an existing Creditcardclient
+[**creditcardclient_patch_object_v1**](ObjectCreditcardclientApi.md#creditcardclient_patch_object_v1) | **PATCH** /1/object/creditcardclient/{pkiCreditcardclientID} | Patch an existing Creditcardclient
 
 
 # **creditcardclient_create_object_v1**
@@ -335,6 +336,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **creditcardclient_patch_object_v1**
+> CreditcardclientPatchObjectV1Response creditcardclient_patch_object_v1(pki_creditcardclient_id => $pki_creditcardclient_id, creditcardclient_patch_object_v1_request => $creditcardclient_patch_object_v1_request)
+
+Patch an existing Creditcardclient
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectCreditcardclientApi;
+my $api_instance = EzmaxApi::ObjectCreditcardclientApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_creditcardclient_id = 56; # int | The unique ID of the Creditcardclient
+my $creditcardclient_patch_object_v1_request = EzmaxApi::Object::CreditcardclientPatchObjectV1Request->new(); # CreditcardclientPatchObjectV1Request | 
+
+eval {
+    my $result = $api_instance->creditcardclient_patch_object_v1(pki_creditcardclient_id => $pki_creditcardclient_id, creditcardclient_patch_object_v1_request => $creditcardclient_patch_object_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectCreditcardclientApi->creditcardclient_patch_object_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_creditcardclient_id** | **int**| The unique ID of the Creditcardclient | 
+ **creditcardclient_patch_object_v1_request** | [**CreditcardclientPatchObjectV1Request**](CreditcardclientPatchObjectV1Request.md)|  | 
+
+### Return type
+
+[**CreditcardclientPatchObjectV1Response**](CreditcardclientPatchObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**webhook_get_list_v1**](ObjectWebhookApi.md#webhook_get_list_v1) | **GET** /1/object/webhook/getList | Retrieve Webhook list
 [**webhook_get_object_v2**](ObjectWebhookApi.md#webhook_get_object_v2) | **GET** /2/object/webhook/{pkiWebhookID} | Retrieve an existing Webhook
 [**webhook_regenerate_apikey_v1**](ObjectWebhookApi.md#webhook_regenerate_apikey_v1) | **POST** /1/object/webhook/{pkiWebhookID}/regenerateApikey | Regenerate the Apikey
+[**webhook_send_webhook_v1**](ObjectWebhookApi.md#webhook_send_webhook_v1) | **POST** /1/object/webhook/sendWebhook | Emit a Webhook event
 [**webhook_test_v1**](ObjectWebhookApi.md#webhook_test_v1) | **POST** /1/object/webhook/{pkiWebhookID}/test | Test the Webhook by calling the Url
 
 
@@ -378,6 +379,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WebhookRegenerateApikeyV1Response**](WebhookRegenerateApikeyV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **webhook_send_webhook_v1**
+> WebhookSendWebhookV1Response webhook_send_webhook_v1(webhook_send_webhook_v1_request => $webhook_send_webhook_v1_request)
+
+Emit a Webhook event
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectWebhookApi;
+my $api_instance = EzmaxApi::ObjectWebhookApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $webhook_send_webhook_v1_request = EzmaxApi::Object::WebhookSendWebhookV1Request->new(); # WebhookSendWebhookV1Request | 
+
+eval {
+    my $result = $api_instance->webhook_send_webhook_v1(webhook_send_webhook_v1_request => $webhook_send_webhook_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectWebhookApi->webhook_send_webhook_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhook_send_webhook_v1_request** | [**WebhookSendWebhookV1Request**](WebhookSendWebhookV1Request.md)|  | 
+
+### Return type
+
+[**WebhookSendWebhookV1Response**](WebhookSendWebhookV1Response.md)
 
 ### Authorization
 

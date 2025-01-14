@@ -32,7 +32,7 @@ use DateTime;
 
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
-use EzmaxApi::Object::CommunicationCreateObjectV1ResponseMPayload;
+use EzmaxApi::Object::CommunicationSendV1ResponseMPayload;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -237,7 +237,7 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'm_payload' => {
-        datatype => 'CommunicationCreateObjectV1ResponseMPayload',
+        datatype => 'CommunicationSendV1ResponseMPayload',
         base_name => 'mPayload',
         description => '',
         format => '',
@@ -248,7 +248,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'obj_debug_payload' => 'CommonResponseObjDebugPayload',
     'obj_debug' => 'CommonResponseObjDebug',
-    'm_payload' => 'CommunicationCreateObjectV1ResponseMPayload'
+    'm_payload' => 'CommunicationSendV1ResponseMPayload'
 } );
 
 __PACKAGE__->attribute_map( {

@@ -25,7 +25,10 @@ Name | Type | Description | Notes
 **i_ezsignformfieldgroup** | **int** | The total number of Ezsignformfieldgroup in all Ezsigndocuments in the folder | 
 **i_ezsignformfieldgroup_completed** | **int** | The total number of completed Ezsignformfieldgroup in all Ezsigndocuments in the folder | 
 **b_ezsignform_hasdependencies** | **boolean** | Whether the Ezsignform/Ezsignsignatures has dependencies or not | [optional] 
-**d_ezsignfolder_completedpercentage** | **string** | Whether the Ezsignform/Ezsignsignatures has dependencies or not | 
+**d_ezsignfolder_completedpercentage** | **string** | Percentage of Ezsignform/Ezsignsignatures has completed | 
+**d_ezsignfolder_formcompletedpercentage** | **string** | Percentage of Ezsignform has completed | 
+**d_ezsignfolder_signaturecompletedpercentage** | **string** | Percentage of Ezsignsignatures has signed | 
+**b_ezsignfolder_signer** | **boolean** | Whether the Ezsignfolder has an Ezsignsignatures that need to be signed or an Ezsignformfieldgroups that need to be filled by the current user | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

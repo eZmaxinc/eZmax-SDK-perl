@@ -10,10 +10,13 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ezsigntemplatedocument_create_object_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_create_object_v1) | **POST** /1/object/ezsigntemplatedocument | Create a new Ezsigntemplatedocument
+[**ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatedocumentpagerecognitions | Edit multiple Ezsigntemplatedocumentpagerecognitions
 [**ezsigntemplatedocument_edit_ezsigntemplateformfieldgroups_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_edit_ezsigntemplateformfieldgroups_v1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateformfieldgroups | Edit multiple Ezsigntemplateformfieldgroups
 [**ezsigntemplatedocument_edit_ezsigntemplatesignatures_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_edit_ezsigntemplatesignatures_v1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatesignatures | Edit multiple Ezsigntemplatesignatures
 [**ezsigntemplatedocument_edit_object_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_edit_object_v1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Edit an existing Ezsigntemplatedocument
+[**ezsigntemplatedocument_extract_text_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_extract_text_v1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/extractText | Extract text from Ezsigntemplatedocument area
 [**ezsigntemplatedocument_flatten_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_flatten_v1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/flatten | Flatten
+[**ezsigntemplatedocument_get_ezsigntemplatedocumentpagerecognitions_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_get_ezsigntemplatedocumentpagerecognitions_v1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpagerecognitions | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpagerecognitions
 [**ezsigntemplatedocument_get_ezsigntemplatedocumentpages_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_get_ezsigntemplatedocumentpages_v1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpages | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatedocumentpages
 [**ezsigntemplatedocument_get_ezsigntemplateformfieldgroups_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_get_ezsigntemplateformfieldgroups_v1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateformfieldgroups | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateformfieldgroups
 [**ezsigntemplatedocument_get_ezsigntemplatesignatures_v1**](ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocument_get_ezsigntemplatesignatures_v1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatesignatures | Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplatesignatures
@@ -61,6 +64,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsigntemplatedocumentCreateObjectV1Response**](EzsigntemplatedocumentCreateObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1**
+> EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1(pki_ezsigntemplatedocument_id => $pki_ezsigntemplatedocument_id, ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_request => $ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_request)
+
+Edit multiple Ezsigntemplatedocumentpagerecognitions
+
+Edit multiple Ezsigntemplatedocumentpagerecognitions
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsigntemplatedocumentApi;
+my $api_instance = EzmaxApi::ObjectEzsigntemplatedocumentApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsigntemplatedocument_id = 56; # int | 
+my $ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_request = EzmaxApi::Object::EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request->new(); # EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request | 
+
+eval {
+    my $result = $api_instance->ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1(pki_ezsigntemplatedocument_id => $pki_ezsigntemplatedocument_id, ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_request => $ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsigntemplatedocument_id** | **int**|  | 
+ **ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1_request** | [**EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request**](EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request.md)|  | 
+
+### Return type
+
+[**EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response**](EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response.md)
 
 ### Authorization
 
@@ -232,6 +288,59 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ezsigntemplatedocument_extract_text_v1**
+> EzsigntemplatedocumentExtractTextV1Response ezsigntemplatedocument_extract_text_v1(pki_ezsigntemplatedocument_id => $pki_ezsigntemplatedocument_id, ezsigntemplatedocument_extract_text_v1_request => $ezsigntemplatedocument_extract_text_v1_request)
+
+Extract text from Ezsigntemplatedocument area
+
+Extract text from Ezsigntemplatedocument area
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsigntemplatedocumentApi;
+my $api_instance = EzmaxApi::ObjectEzsigntemplatedocumentApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsigntemplatedocument_id = 56; # int | 
+my $ezsigntemplatedocument_extract_text_v1_request = EzmaxApi::Object::EzsigntemplatedocumentExtractTextV1Request->new(); # EzsigntemplatedocumentExtractTextV1Request | 
+
+eval {
+    my $result = $api_instance->ezsigntemplatedocument_extract_text_v1(pki_ezsigntemplatedocument_id => $pki_ezsigntemplatedocument_id, ezsigntemplatedocument_extract_text_v1_request => $ezsigntemplatedocument_extract_text_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocument_extract_text_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsigntemplatedocument_id** | **int**|  | 
+ **ezsigntemplatedocument_extract_text_v1_request** | [**EzsigntemplatedocumentExtractTextV1Request**](EzsigntemplatedocumentExtractTextV1Request.md)|  | 
+
+### Return type
+
+[**EzsigntemplatedocumentExtractTextV1Response**](EzsigntemplatedocumentExtractTextV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ezsigntemplatedocument_flatten_v1**
 > EzsigntemplatedocumentFlattenV1Response ezsigntemplatedocument_flatten_v1(pki_ezsigntemplatedocument_id => $pki_ezsigntemplatedocument_id, body => $body)
 
@@ -281,6 +390,57 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigntemplatedocument_get_ezsigntemplatedocumentpagerecognitions_v1**
+> EzsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1Response ezsigntemplatedocument_get_ezsigntemplatedocumentpagerecognitions_v1(pki_ezsigntemplatedocument_id => $pki_ezsigntemplatedocument_id)
+
+Retrieve an existing Ezsigntemplatedocument's Ezsigntemplatedocumentpagerecognitions
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsigntemplatedocumentApi;
+my $api_instance = EzmaxApi::ObjectEzsigntemplatedocumentApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsigntemplatedocument_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->ezsigntemplatedocument_get_ezsigntemplatedocumentpagerecognitions_v1(pki_ezsigntemplatedocument_id => $pki_ezsigntemplatedocument_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsigntemplatedocumentApi->ezsigntemplatedocument_get_ezsigntemplatedocumentpagerecognitions_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsigntemplatedocument_id** | **int**|  | 
+
+### Return type
+
+[**EzsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1Response**](EzsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

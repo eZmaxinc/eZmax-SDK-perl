@@ -49,37 +49,37 @@ sub new {
 
 
 #
-# ezsigntemplatesignature_create_object_v1
+# ezsigntemplatesignature_create_object_v2
 #
 # Create a new Ezsigntemplatesignature
 #
-# @param EzsigntemplatesignatureCreateObjectV1Request $ezsigntemplatesignature_create_object_v1_request  (required)
+# @param EzsigntemplatesignatureCreateObjectV2Request $ezsigntemplatesignature_create_object_v2_request  (required)
 {
     my $params = {
-    'ezsigntemplatesignature_create_object_v1_request' => {
-        data_type => 'EzsigntemplatesignatureCreateObjectV1Request',
+    'ezsigntemplatesignature_create_object_v2_request' => {
+        data_type => 'EzsigntemplatesignatureCreateObjectV2Request',
         description => '',
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'ezsigntemplatesignature_create_object_v1' } = {
+    __PACKAGE__->method_documentation->{ 'ezsigntemplatesignature_create_object_v2' } = {
         summary => 'Create a new Ezsigntemplatesignature',
         params => $params,
-        returns => 'EzsigntemplatesignatureCreateObjectV1Response',
+        returns => 'EzsigntemplatesignatureCreateObjectV2Response',
         };
 }
-# @return EzsigntemplatesignatureCreateObjectV1Response
+# @return EzsigntemplatesignatureCreateObjectV2Response
 #
-sub ezsigntemplatesignature_create_object_v1 {
+sub ezsigntemplatesignature_create_object_v2 {
     my ($self, %args) = @_;
 
-    # verify the required parameter 'ezsigntemplatesignature_create_object_v1_request' is set
-    unless (exists $args{'ezsigntemplatesignature_create_object_v1_request'}) {
-      croak("Missing the required parameter 'ezsigntemplatesignature_create_object_v1_request' when calling ezsigntemplatesignature_create_object_v1");
+    # verify the required parameter 'ezsigntemplatesignature_create_object_v2_request' is set
+    unless (exists $args{'ezsigntemplatesignature_create_object_v2_request'}) {
+      croak("Missing the required parameter 'ezsigntemplatesignature_create_object_v2_request' when calling ezsigntemplatesignature_create_object_v2");
     }
 
     # parse inputs
-    my $_resource_path = '/1/object/ezsigntemplatesignature';
+    my $_resource_path = '/2/object/ezsigntemplatesignature';
 
     my $_method = 'POST';
     my $query_params = {};
@@ -95,8 +95,8 @@ sub ezsigntemplatesignature_create_object_v1 {
 
     my $_body_data;
     # body params
-    if ( exists $args{'ezsigntemplatesignature_create_object_v1_request'}) {
-        $_body_data = $args{'ezsigntemplatesignature_create_object_v1_request'};
+    if ( exists $args{'ezsigntemplatesignature_create_object_v2_request'}) {
+        $_body_data = $args{'ezsigntemplatesignature_create_object_v2_request'};
     }
 
     # authentication setting, if any
@@ -109,7 +109,7 @@ sub ezsigntemplatesignature_create_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatesignatureCreateObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatesignatureCreateObjectV2Response', $response);
     return $_response_object;
 }
 
@@ -181,12 +181,12 @@ sub ezsigntemplatesignature_delete_object_v1 {
 }
 
 #
-# ezsigntemplatesignature_edit_object_v1
+# ezsigntemplatesignature_edit_object_v2
 #
 # Edit an existing Ezsigntemplatesignature
 #
 # @param int $pki_ezsigntemplatesignature_id  (required)
-# @param EzsigntemplatesignatureEditObjectV1Request $ezsigntemplatesignature_edit_object_v1_request  (required)
+# @param EzsigntemplatesignatureEditObjectV2Request $ezsigntemplatesignature_edit_object_v2_request  (required)
 {
     my $params = {
     'pki_ezsigntemplatesignature_id' => {
@@ -194,35 +194,35 @@ sub ezsigntemplatesignature_delete_object_v1 {
         description => '',
         required => '1',
     },
-    'ezsigntemplatesignature_edit_object_v1_request' => {
-        data_type => 'EzsigntemplatesignatureEditObjectV1Request',
+    'ezsigntemplatesignature_edit_object_v2_request' => {
+        data_type => 'EzsigntemplatesignatureEditObjectV2Request',
         description => '',
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'ezsigntemplatesignature_edit_object_v1' } = {
+    __PACKAGE__->method_documentation->{ 'ezsigntemplatesignature_edit_object_v2' } = {
         summary => 'Edit an existing Ezsigntemplatesignature',
         params => $params,
-        returns => 'EzsigntemplatesignatureEditObjectV1Response',
+        returns => 'EzsigntemplatesignatureEditObjectV2Response',
         };
 }
-# @return EzsigntemplatesignatureEditObjectV1Response
+# @return EzsigntemplatesignatureEditObjectV2Response
 #
-sub ezsigntemplatesignature_edit_object_v1 {
+sub ezsigntemplatesignature_edit_object_v2 {
     my ($self, %args) = @_;
 
     # verify the required parameter 'pki_ezsigntemplatesignature_id' is set
     unless (exists $args{'pki_ezsigntemplatesignature_id'}) {
-      croak("Missing the required parameter 'pki_ezsigntemplatesignature_id' when calling ezsigntemplatesignature_edit_object_v1");
+      croak("Missing the required parameter 'pki_ezsigntemplatesignature_id' when calling ezsigntemplatesignature_edit_object_v2");
     }
 
-    # verify the required parameter 'ezsigntemplatesignature_edit_object_v1_request' is set
-    unless (exists $args{'ezsigntemplatesignature_edit_object_v1_request'}) {
-      croak("Missing the required parameter 'ezsigntemplatesignature_edit_object_v1_request' when calling ezsigntemplatesignature_edit_object_v1");
+    # verify the required parameter 'ezsigntemplatesignature_edit_object_v2_request' is set
+    unless (exists $args{'ezsigntemplatesignature_edit_object_v2_request'}) {
+      croak("Missing the required parameter 'ezsigntemplatesignature_edit_object_v2_request' when calling ezsigntemplatesignature_edit_object_v2");
     }
 
     # parse inputs
-    my $_resource_path = '/1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID}';
+    my $_resource_path = '/2/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID}';
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -245,8 +245,8 @@ sub ezsigntemplatesignature_edit_object_v1 {
 
     my $_body_data;
     # body params
-    if ( exists $args{'ezsigntemplatesignature_edit_object_v1_request'}) {
-        $_body_data = $args{'ezsigntemplatesignature_edit_object_v1_request'};
+    if ( exists $args{'ezsigntemplatesignature_edit_object_v2_request'}) {
+        $_body_data = $args{'ezsigntemplatesignature_edit_object_v2_request'};
     }
 
     # authentication setting, if any
@@ -259,12 +259,12 @@ sub ezsigntemplatesignature_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatesignatureEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatesignatureEditObjectV2Response', $response);
     return $_response_object;
 }
 
 #
-# ezsigntemplatesignature_get_object_v2
+# ezsigntemplatesignature_get_object_v3
 #
 # Retrieve an existing Ezsigntemplatesignature
 #
@@ -277,24 +277,24 @@ sub ezsigntemplatesignature_edit_object_v1 {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'ezsigntemplatesignature_get_object_v2' } = {
+    __PACKAGE__->method_documentation->{ 'ezsigntemplatesignature_get_object_v3' } = {
         summary => 'Retrieve an existing Ezsigntemplatesignature',
         params => $params,
-        returns => 'EzsigntemplatesignatureGetObjectV2Response',
+        returns => 'EzsigntemplatesignatureGetObjectV3Response',
         };
 }
-# @return EzsigntemplatesignatureGetObjectV2Response
+# @return EzsigntemplatesignatureGetObjectV3Response
 #
-sub ezsigntemplatesignature_get_object_v2 {
+sub ezsigntemplatesignature_get_object_v3 {
     my ($self, %args) = @_;
 
     # verify the required parameter 'pki_ezsigntemplatesignature_id' is set
     unless (exists $args{'pki_ezsigntemplatesignature_id'}) {
-      croak("Missing the required parameter 'pki_ezsigntemplatesignature_id' when calling ezsigntemplatesignature_get_object_v2");
+      croak("Missing the required parameter 'pki_ezsigntemplatesignature_id' when calling ezsigntemplatesignature_get_object_v3");
     }
 
     # parse inputs
-    my $_resource_path = '/2/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID}';
+    my $_resource_path = '/3/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID}';
 
     my $_method = 'GET';
     my $query_params = {};
@@ -326,7 +326,7 @@ sub ezsigntemplatesignature_get_object_v2 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatesignatureGetObjectV2Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatesignatureGetObjectV3Response', $response);
     return $_response_object;
 }
 

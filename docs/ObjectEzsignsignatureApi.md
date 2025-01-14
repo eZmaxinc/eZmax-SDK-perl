@@ -11,11 +11,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ezsignsignature_create_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature
 [**ezsignsignature_create_object_v2**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v2) | **POST** /2/object/ezsignsignature | Create a new Ezsignsignature
+[**ezsignsignature_create_object_v3**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v3) | **POST** /3/object/ezsignsignature | Create a new Ezsignsignature
 [**ezsignsignature_delete_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_delete_object_v1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
-[**ezsignsignature_edit_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_edit_object_v1) | **PUT** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature
+[**ezsignsignature_edit_object_v2**](ObjectEzsignsignatureApi.md#ezsignsignature_edit_object_v2) | **PUT** /2/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature
 [**ezsignsignature_get_ezsignsignatureattachment_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_ezsignsignatureattachment_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getEzsignsignatureattachment | Retrieve an existing Ezsignsignature&#39;s Ezsignsignatureattachments
 [**ezsignsignature_get_ezsignsignatures_automatic_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_ezsignsignatures_automatic_v1) | **GET** /1/object/ezsignsignature/getEzsignsignaturesAutomatic | Retrieve all automatic Ezsignsignatures
-[**ezsignsignature_get_object_v2**](ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v2) | **GET** /2/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
+[**ezsignsignature_get_object_v3**](ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v3) | **GET** /3/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
 [**ezsignsignature_sign_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_sign_v1) | **POST** /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign | Sign the Ezsignsignature
 
 
@@ -121,6 +122,57 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ezsignsignature_create_object_v3**
+> EzsignsignatureCreateObjectV3Response ezsignsignature_create_object_v3(ezsignsignature_create_object_v3_request => $ezsignsignature_create_object_v3_request)
+
+Create a new Ezsignsignature
+
+The endpoint allows to create one or many elements at once.
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignsignatureApi;
+my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $ezsignsignature_create_object_v3_request = EzmaxApi::Object::EzsignsignatureCreateObjectV3Request->new(); # EzsignsignatureCreateObjectV3Request | 
+
+eval {
+    my $result = $api_instance->ezsignsignature_create_object_v3(ezsignsignature_create_object_v3_request => $ezsignsignature_create_object_v3_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignsignatureApi->ezsignsignature_create_object_v3: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ezsignsignature_create_object_v3_request** | [**EzsignsignatureCreateObjectV3Request**](EzsignsignatureCreateObjectV3Request.md)|  | 
+
+### Return type
+
+[**EzsignsignatureCreateObjectV3Response**](EzsignsignatureCreateObjectV3Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ezsignsignature_delete_object_v1**
 > EzsignsignatureDeleteObjectV1Response ezsignsignature_delete_object_v1(pki_ezsignsignature_id => $pki_ezsignsignature_id)
 
@@ -172,8 +224,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ezsignsignature_edit_object_v1**
-> EzsignsignatureEditObjectV1Response ezsignsignature_edit_object_v1(pki_ezsignsignature_id => $pki_ezsignsignature_id, ezsignsignature_edit_object_v1_request => $ezsignsignature_edit_object_v1_request)
+# **ezsignsignature_edit_object_v2**
+> EzsignsignatureEditObjectV2Response ezsignsignature_edit_object_v2(pki_ezsignsignature_id => $pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request => $ezsignsignature_edit_object_v2_request)
 
 Edit an existing Ezsignsignature
 
@@ -192,14 +244,14 @@ my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
 );
 
 my $pki_ezsignsignature_id = 56; # int | 
-my $ezsignsignature_edit_object_v1_request = EzmaxApi::Object::EzsignsignatureEditObjectV1Request->new(); # EzsignsignatureEditObjectV1Request | 
+my $ezsignsignature_edit_object_v2_request = EzmaxApi::Object::EzsignsignatureEditObjectV2Request->new(); # EzsignsignatureEditObjectV2Request | 
 
 eval {
-    my $result = $api_instance->ezsignsignature_edit_object_v1(pki_ezsignsignature_id => $pki_ezsignsignature_id, ezsignsignature_edit_object_v1_request => $ezsignsignature_edit_object_v1_request);
+    my $result = $api_instance->ezsignsignature_edit_object_v2(pki_ezsignsignature_id => $pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request => $ezsignsignature_edit_object_v2_request);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ObjectEzsignsignatureApi->ezsignsignature_edit_object_v1: $@\n";
+    warn "Exception when calling ObjectEzsignsignatureApi->ezsignsignature_edit_object_v2: $@\n";
 }
 ```
 
@@ -208,11 +260,11 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pki_ezsignsignature_id** | **int**|  | 
- **ezsignsignature_edit_object_v1_request** | [**EzsignsignatureEditObjectV1Request**](EzsignsignatureEditObjectV1Request.md)|  | 
+ **ezsignsignature_edit_object_v2_request** | [**EzsignsignatureEditObjectV2Request**](EzsignsignatureEditObjectV2Request.md)|  | 
 
 ### Return type
 
-[**EzsignsignatureEditObjectV1Response**](EzsignsignatureEditObjectV1Response.md)
+[**EzsignsignatureEditObjectV2Response**](EzsignsignatureEditObjectV2Response.md)
 
 ### Authorization
 
@@ -321,8 +373,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ezsignsignature_get_object_v2**
-> EzsignsignatureGetObjectV2Response ezsignsignature_get_object_v2(pki_ezsignsignature_id => $pki_ezsignsignature_id)
+# **ezsignsignature_get_object_v3**
+> EzsignsignatureGetObjectV3Response ezsignsignature_get_object_v3(pki_ezsignsignature_id => $pki_ezsignsignature_id)
 
 Retrieve an existing Ezsignsignature
 
@@ -343,11 +395,11 @@ my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
 my $pki_ezsignsignature_id = 56; # int | 
 
 eval {
-    my $result = $api_instance->ezsignsignature_get_object_v2(pki_ezsignsignature_id => $pki_ezsignsignature_id);
+    my $result = $api_instance->ezsignsignature_get_object_v3(pki_ezsignsignature_id => $pki_ezsignsignature_id);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ObjectEzsignsignatureApi->ezsignsignature_get_object_v2: $@\n";
+    warn "Exception when calling ObjectEzsignsignatureApi->ezsignsignature_get_object_v3: $@\n";
 }
 ```
 
@@ -359,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignsignatureGetObjectV2Response**](EzsignsignatureGetObjectV2Response.md)
+[**EzsignsignatureGetObjectV3Response**](EzsignsignatureGetObjectV3Response.md)
 
 ### Authorization
 

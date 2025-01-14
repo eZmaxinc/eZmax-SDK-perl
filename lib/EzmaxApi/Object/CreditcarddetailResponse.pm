@@ -233,10 +233,10 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    's_creditcarddetail_numbermasked' => {
-        datatype => 'string',
-        base_name => 'sCreditcarddetailNumbermasked',
-        description => 'The numbermasked of the Creditcarddetail',
+    'i_creditcarddetail_lastdigits' => {
+        datatype => 'int',
+        base_name => 'iCreditcarddetailLastdigits',
+        description => 'The last digits of the Creditcarddetail',
         format => '',
         read_only => '',
             },
@@ -280,7 +280,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'pki_creditcarddetail_id' => 'int',
     'fki_creditcardtype_id' => 'int',
-    's_creditcarddetail_numbermasked' => 'string',
+    'i_creditcarddetail_lastdigits' => 'int',
     'i_creditcarddetail_expirationmonth' => 'int',
     'i_creditcarddetail_expirationyear' => 'int',
     's_creditcarddetail_civic' => 'string',
@@ -291,7 +291,7 @@ __PACKAGE__->openapi_types( {
 __PACKAGE__->attribute_map( {
     'pki_creditcarddetail_id' => 'pkiCreditcarddetailID',
     'fki_creditcardtype_id' => 'fkiCreditcardtypeID',
-    's_creditcarddetail_numbermasked' => 'sCreditcarddetailNumbermasked',
+    'i_creditcarddetail_lastdigits' => 'iCreditcarddetailLastdigits',
     'i_creditcarddetail_expirationmonth' => 'iCreditcarddetailExpirationmonth',
     'i_creditcarddetail_expirationyear' => 'iCreditcarddetailExpirationyear',
     's_creditcarddetail_civic' => 'sCreditcarddetailCivic',

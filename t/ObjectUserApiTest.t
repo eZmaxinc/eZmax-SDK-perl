@@ -44,6 +44,14 @@ isa_ok($api, 'EzmaxApi::ObjectUserApi');
 #my $user_create_object_v2_result = $api->user_create_object_v2(user_create_object_v2_request => $user_create_object_v2_user_create_object_v2_request);
 
 #
+# user_edit_colleagues_v2 test
+#
+# uncomment below and update the test
+#my $user_edit_colleagues_v2_pki_user_id = undef; # replace NULL with a proper value
+#my $user_edit_colleagues_v2_user_edit_colleagues_v2_request = undef; # replace NULL with a proper value
+#my $user_edit_colleagues_v2_result = $api->user_edit_colleagues_v2(pki_user_id => $user_edit_colleagues_v2_pki_user_id, user_edit_colleagues_v2_request => $user_edit_colleagues_v2_user_edit_colleagues_v2_request);
+
+#
 # user_edit_object_v1 test
 #
 # uncomment below and update the test
@@ -75,6 +83,13 @@ isa_ok($api, 'EzmaxApi::ObjectUserApi');
 #my $user_get_autocomplete_v2_s_query = undef; # replace NULL with a proper value
 #my $user_get_autocomplete_v2_accept_language = undef; # replace NULL with a proper value
 #my $user_get_autocomplete_v2_result = $api->user_get_autocomplete_v2(s_selector => $user_get_autocomplete_v2_s_selector, e_filter_active => $user_get_autocomplete_v2_e_filter_active, s_query => $user_get_autocomplete_v2_s_query, accept_language => $user_get_autocomplete_v2_accept_language);
+
+#
+# user_get_colleagues_v2 test
+#
+# uncomment below and update the test
+#my $user_get_colleagues_v2_pki_user_id = undef; # replace NULL with a proper value
+#my $user_get_colleagues_v2_result = $api->user_get_colleagues_v2(pki_user_id => $user_get_colleagues_v2_pki_user_id);
 
 #
 # user_get_effective_permissions_v1 test

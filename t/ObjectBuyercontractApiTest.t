@@ -30,11 +30,32 @@ my $api = EzmaxApi::ObjectBuyercontractApi->new();
 isa_ok($api, 'EzmaxApi::ObjectBuyercontractApi');
 
 #
+# buyercontract_get_communication_count_v1 test
+#
+# uncomment below and update the test
+#my $buyercontract_get_communication_count_v1_pki_buyercontract_id = undef; # replace NULL with a proper value
+#my $buyercontract_get_communication_count_v1_result = $api->buyercontract_get_communication_count_v1(pki_buyercontract_id => $buyercontract_get_communication_count_v1_pki_buyercontract_id);
+
+#
 # buyercontract_get_communication_list_v1 test
 #
 # uncomment below and update the test
 #my $buyercontract_get_communication_list_v1_pki_buyercontract_id = undef; # replace NULL with a proper value
 #my $buyercontract_get_communication_list_v1_result = $api->buyercontract_get_communication_list_v1(pki_buyercontract_id => $buyercontract_get_communication_list_v1_pki_buyercontract_id);
+
+#
+# buyercontract_get_communicationrecipients_v1 test
+#
+# uncomment below and update the test
+#my $buyercontract_get_communicationrecipients_v1_pki_buyercontract_id = undef; # replace NULL with a proper value
+#my $buyercontract_get_communicationrecipients_v1_result = $api->buyercontract_get_communicationrecipients_v1(pki_buyercontract_id => $buyercontract_get_communicationrecipients_v1_pki_buyercontract_id);
+
+#
+# buyercontract_get_communicationsenders_v1 test
+#
+# uncomment below and update the test
+#my $buyercontract_get_communicationsenders_v1_pki_buyercontract_id = undef; # replace NULL with a proper value
+#my $buyercontract_get_communicationsenders_v1_result = $api->buyercontract_get_communicationsenders_v1(pki_buyercontract_id => $buyercontract_get_communicationsenders_v1_pki_buyercontract_id);
 
 
 done_testing();

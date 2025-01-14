@@ -219,6 +219,13 @@ __PACKAGE__->class_documentation({description => 'An Address Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_address_id' => {
+        datatype => 'int',
+        base_name => 'pkiAddressID',
+        description => 'The unique ID of the Address',
+        format => '',
+        read_only => '',
+            },
     'fki_addresstype_id' => {
         datatype => 'int',
         base_name => 'fkiAddresstypeID',
@@ -292,6 +299,7 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_address_id' => 'int',
     'fki_addresstype_id' => 'int',
     's_address_civic' => 'string',
     's_address_street' => 'string',
@@ -305,6 +313,7 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_address_id' => 'pkiAddressID',
     'fki_addresstype_id' => 'fkiAddresstypeID',
     's_address_civic' => 'sAddressCivic',
     's_address_street' => 'sAddressStreet',

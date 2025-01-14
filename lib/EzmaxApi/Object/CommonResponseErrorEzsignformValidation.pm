@@ -235,6 +235,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_s_error_messagedetail' => {
+        datatype => 'ARRAY[string]',
+        base_name => 'a_sErrorMessagedetail',
+        description => 'More error message detail',
+        format => '',
+        read_only => '',
+            },
     'a_obj_ezsignformfielderror' => {
         datatype => 'ARRAY[CustomEzsignformfielderrorResponse]',
         base_name => 'a_objEzsignformfielderror',
@@ -247,12 +254,14 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     's_error_message' => 'string',
     'e_error_code' => 'FieldEErrorCode',
+    'a_s_error_messagedetail' => 'ARRAY[string]',
     'a_obj_ezsignformfielderror' => 'ARRAY[CustomEzsignformfielderrorResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
     's_error_message' => 'sErrorMessage',
     'e_error_code' => 'eErrorCode',
+    'a_s_error_messagedetail' => 'a_sErrorMessagedetail',
     'a_obj_ezsignformfielderror' => 'a_objEzsignformfielderror'
 } );
 

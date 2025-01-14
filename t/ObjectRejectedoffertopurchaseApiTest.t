@@ -30,11 +30,32 @@ my $api = EzmaxApi::ObjectRejectedoffertopurchaseApi->new();
 isa_ok($api, 'EzmaxApi::ObjectRejectedoffertopurchaseApi');
 
 #
+# rejectedoffertopurchase_get_communication_count_v1 test
+#
+# uncomment below and update the test
+#my $rejectedoffertopurchase_get_communication_count_v1_pki_rejectedoffertopurchase_id = undef; # replace NULL with a proper value
+#my $rejectedoffertopurchase_get_communication_count_v1_result = $api->rejectedoffertopurchase_get_communication_count_v1(pki_rejectedoffertopurchase_id => $rejectedoffertopurchase_get_communication_count_v1_pki_rejectedoffertopurchase_id);
+
+#
 # rejectedoffertopurchase_get_communication_list_v1 test
 #
 # uncomment below and update the test
 #my $rejectedoffertopurchase_get_communication_list_v1_pki_rejectedoffertopurchase_id = undef; # replace NULL with a proper value
 #my $rejectedoffertopurchase_get_communication_list_v1_result = $api->rejectedoffertopurchase_get_communication_list_v1(pki_rejectedoffertopurchase_id => $rejectedoffertopurchase_get_communication_list_v1_pki_rejectedoffertopurchase_id);
+
+#
+# rejectedoffertopurchase_get_communicationrecipients_v1 test
+#
+# uncomment below and update the test
+#my $rejectedoffertopurchase_get_communicationrecipients_v1_pki_rejectedoffertopurchase_id = undef; # replace NULL with a proper value
+#my $rejectedoffertopurchase_get_communicationrecipients_v1_result = $api->rejectedoffertopurchase_get_communicationrecipients_v1(pki_rejectedoffertopurchase_id => $rejectedoffertopurchase_get_communicationrecipients_v1_pki_rejectedoffertopurchase_id);
+
+#
+# rejectedoffertopurchase_get_communicationsenders_v1 test
+#
+# uncomment below and update the test
+#my $rejectedoffertopurchase_get_communicationsenders_v1_pki_rejectedoffertopurchase_id = undef; # replace NULL with a proper value
+#my $rejectedoffertopurchase_get_communicationsenders_v1_result = $api->rejectedoffertopurchase_get_communicationsenders_v1(pki_rejectedoffertopurchase_id => $rejectedoffertopurchase_get_communicationsenders_v1_pki_rejectedoffertopurchase_id);
 
 
 done_testing();

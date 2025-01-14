@@ -37,11 +37,32 @@ isa_ok($api, 'EzmaxApi::ObjectInvoiceApi');
 #my $invoice_get_attachments_v1_result = $api->invoice_get_attachments_v1(pki_invoice_id => $invoice_get_attachments_v1_pki_invoice_id);
 
 #
+# invoice_get_communication_count_v1 test
+#
+# uncomment below and update the test
+#my $invoice_get_communication_count_v1_pki_invoice_id = undef; # replace NULL with a proper value
+#my $invoice_get_communication_count_v1_result = $api->invoice_get_communication_count_v1(pki_invoice_id => $invoice_get_communication_count_v1_pki_invoice_id);
+
+#
 # invoice_get_communication_list_v1 test
 #
 # uncomment below and update the test
 #my $invoice_get_communication_list_v1_pki_invoice_id = undef; # replace NULL with a proper value
 #my $invoice_get_communication_list_v1_result = $api->invoice_get_communication_list_v1(pki_invoice_id => $invoice_get_communication_list_v1_pki_invoice_id);
+
+#
+# invoice_get_communicationrecipients_v1 test
+#
+# uncomment below and update the test
+#my $invoice_get_communicationrecipients_v1_pki_invoice_id = undef; # replace NULL with a proper value
+#my $invoice_get_communicationrecipients_v1_result = $api->invoice_get_communicationrecipients_v1(pki_invoice_id => $invoice_get_communicationrecipients_v1_pki_invoice_id);
+
+#
+# invoice_get_communicationsenders_v1 test
+#
+# uncomment below and update the test
+#my $invoice_get_communicationsenders_v1_pki_invoice_id = undef; # replace NULL with a proper value
+#my $invoice_get_communicationsenders_v1_result = $api->invoice_get_communicationsenders_v1(pki_invoice_id => $invoice_get_communicationsenders_v1_pki_invoice_id);
 
 
 done_testing();

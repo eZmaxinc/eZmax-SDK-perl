@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldEEzsigntemplatesignerMapping;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -233,10 +234,59 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_user_id' => {
+        datatype => 'int',
+        base_name => 'fkiUserID',
+        description => 'The unique ID of the User',
+        format => '',
+        read_only => '',
+            },
+    'fki_usergroup_id' => {
+        datatype => 'int',
+        base_name => 'fkiUsergroupID',
+        description => 'The unique ID of the Usergroup',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezdoctemplatedocument_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzdoctemplatedocumentID',
+        description => 'The unique ID of the Ezdoctemplatedocument',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsigntemplatesigner_receivecopy' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplatesignerReceivecopy',
+        description => 'If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain&#39;t required to sign the document.',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsigntemplatesigner_mapping' => {
+        datatype => 'FieldEEzsigntemplatesignerMapping',
+        base_name => 'eEzsigntemplatesignerMapping',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     's_ezsigntemplatesigner_description' => {
         datatype => 'string',
         base_name => 'sEzsigntemplatesignerDescription',
         description => 'The description of the Ezsigntemplatesigner',
+        format => '',
+        read_only => '',
+            },
+    's_user_name' => {
+        datatype => 'string',
+        base_name => 'sUserName',
+        description => 'The description of the User in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    's_usergroup_name_x' => {
+        datatype => 'string',
+        base_name => 'sUsergroupNameX',
+        description => 'The Name of the Usergroup in the language of the requester',
         format => '',
         read_only => '',
             },
@@ -245,13 +295,27 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'pki_ezsigntemplatesigner_id' => 'int',
     'fki_ezsigntemplate_id' => 'int',
-    's_ezsigntemplatesigner_description' => 'string'
+    'fki_user_id' => 'int',
+    'fki_usergroup_id' => 'int',
+    'fki_ezdoctemplatedocument_id' => 'int',
+    'b_ezsigntemplatesigner_receivecopy' => 'boolean',
+    'e_ezsigntemplatesigner_mapping' => 'FieldEEzsigntemplatesignerMapping',
+    's_ezsigntemplatesigner_description' => 'string',
+    's_user_name' => 'string',
+    's_usergroup_name_x' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_ezsigntemplatesigner_id' => 'pkiEzsigntemplatesignerID',
     'fki_ezsigntemplate_id' => 'fkiEzsigntemplateID',
-    's_ezsigntemplatesigner_description' => 'sEzsigntemplatesignerDescription'
+    'fki_user_id' => 'fkiUserID',
+    'fki_usergroup_id' => 'fkiUsergroupID',
+    'fki_ezdoctemplatedocument_id' => 'fkiEzdoctemplatedocumentID',
+    'b_ezsigntemplatesigner_receivecopy' => 'bEzsigntemplatesignerReceivecopy',
+    'e_ezsigntemplatesigner_mapping' => 'eEzsigntemplatesignerMapping',
+    's_ezsigntemplatesigner_description' => 'sEzsigntemplatesignerDescription',
+    's_user_name' => 'sUserName',
+    's_usergroup_name_x' => 'sUsergroupNameX'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

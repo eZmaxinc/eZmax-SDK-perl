@@ -16,6 +16,14 @@ Name | Type | Description | Notes
 **s_department_name_x** | **string** | The Name of the Department in the language of the requester | 
 **b_activesession_debug** | **boolean** | Whether the active session is in debug or not | 
 **b_activesession_issuperadmin** | **boolean** | Whether the active session is superadmin or not | 
+**b_activesession_attachment** | **boolean** | Can access attachment when we clone a user | [optional] 
+**b_activesession_canafe** | **boolean** | Can access canafe when we clone a user | [optional] 
+**b_activesession_financial** | **boolean** | Can access financial element when we clone a user | [optional] 
+**b_activesession_realestatecompleted** | **boolean** | Can access closed realestate folders when we clone a user | [optional] 
+**e_activesession_ezsign** | [**FieldEActivesessionEzsign**](FieldEActivesessionEzsign.md) |  | [optional] 
+**e_activesession_ezsignaccess** | [**FieldEActivesessionEzsignaccess**](FieldEActivesessionEzsignaccess.md) |  | 
+**e_activesession_ezsignprepaid** | [**FieldEActivesessionEzsignprepaid**](FieldEActivesessionEzsignprepaid.md) |  | [optional] 
+**e_activesession_realestateinprogress** | [**FieldEActivesessionRealestateinprogress**](FieldEActivesessionRealestateinprogress.md) |  | [optional] 
 **pks_customer_code** | **string** | The customer code assigned to your account | 
 **fki_systemconfigurationtype_id** | **int** | The unique ID of the Systemconfigurationtype | 
 **fki_signature_id** | **int** | The unique ID of the Signature | [optional] 

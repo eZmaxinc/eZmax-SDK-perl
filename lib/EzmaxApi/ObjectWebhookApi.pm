@@ -601,6 +601,71 @@ sub webhook_regenerate_apikey_v1 {
 }
 
 #
+# webhook_send_webhook_v1
+#
+# Emit a Webhook event
+#
+# @param WebhookSendWebhookV1Request $webhook_send_webhook_v1_request  (required)
+{
+    my $params = {
+    'webhook_send_webhook_v1_request' => {
+        data_type => 'WebhookSendWebhookV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'webhook_send_webhook_v1' } = {
+        summary => 'Emit a Webhook event',
+        params => $params,
+        returns => 'WebhookSendWebhookV1Response',
+        };
+}
+# @return WebhookSendWebhookV1Response
+#
+sub webhook_send_webhook_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'webhook_send_webhook_v1_request' is set
+    unless (exists $args{'webhook_send_webhook_v1_request'}) {
+      croak("Missing the required parameter 'webhook_send_webhook_v1_request' when calling webhook_send_webhook_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/webhook/sendWebhook';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'webhook_send_webhook_v1_request'}) {
+        $_body_data = $args{'webhook_send_webhook_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('WebhookSendWebhookV1Response', $response);
+    return $_response_object;
+}
+
+#
 # webhook_test_v1
 #
 # Test the Webhook by calling the Url

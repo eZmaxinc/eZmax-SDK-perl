@@ -230,6 +230,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_authenticationexternal_id' => {
+        datatype => 'int',
+        base_name => 'fkiAuthenticationexternalID',
+        description => 'The unique ID of the Authenticationexternal',
+        format => '',
+        read_only => '',
+            },
     's_webhook_description' => {
         datatype => 'string',
         base_name => 'sWebhookDescription',
@@ -321,6 +328,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_authenticationexternal_description' => {
+        datatype => 'string',
+        base_name => 'sAuthenticationexternalDescription',
+        description => 'The description of the Authenticationexternal',
+        format => '',
+        read_only => '',
+            },
     'obj_audit' => {
         datatype => 'CommonAudit',
         base_name => 'objAudit',
@@ -332,6 +346,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'pki_webhook_id' => 'int',
+    'fki_authenticationexternal_id' => 'int',
     's_webhook_description' => 'string',
     'fki_ezsignfoldertype_id' => 'int',
     's_ezsignfoldertype_name_x' => 'string',
@@ -345,11 +360,13 @@ __PACKAGE__->openapi_types( {
     'b_webhook_isactive' => 'boolean',
     'b_webhook_issigned' => 'boolean',
     'b_webhook_skipsslvalidation' => 'boolean',
+    's_authenticationexternal_description' => 'string',
     'obj_audit' => 'CommonAudit'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_webhook_id' => 'pkiWebhookID',
+    'fki_authenticationexternal_id' => 'fkiAuthenticationexternalID',
     's_webhook_description' => 'sWebhookDescription',
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
     's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
@@ -363,6 +380,7 @@ __PACKAGE__->attribute_map( {
     'b_webhook_isactive' => 'bWebhookIsactive',
     'b_webhook_issigned' => 'bWebhookIssigned',
     'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation',
+    's_authenticationexternal_description' => 'sAuthenticationexternalDescription',
     'obj_audit' => 'objAudit'
 } );
 

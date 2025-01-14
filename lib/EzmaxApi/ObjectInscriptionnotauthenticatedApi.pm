@@ -49,6 +49,73 @@ sub new {
 
 
 #
+# inscriptionnotauthenticated_get_communication_count_v1
+#
+# Retrieve Communication count
+#
+# @param int $pki_inscriptionnotauthenticated_id  (required)
+{
+    my $params = {
+    'pki_inscriptionnotauthenticated_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'inscriptionnotauthenticated_get_communication_count_v1' } = {
+        summary => 'Retrieve Communication count',
+        params => $params,
+        returns => 'InscriptionnotauthenticatedGetCommunicationCountV1Response',
+        };
+}
+# @return InscriptionnotauthenticatedGetCommunicationCountV1Response
+#
+sub inscriptionnotauthenticated_get_communication_count_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_inscriptionnotauthenticated_id' is set
+    unless (exists $args{'pki_inscriptionnotauthenticated_id'}) {
+      croak("Missing the required parameter 'pki_inscriptionnotauthenticated_id' when calling inscriptionnotauthenticated_get_communication_count_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationCount';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_inscriptionnotauthenticated_id'}) {
+        my $_base_variable = "{" . "pkiInscriptionnotauthenticatedID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_inscriptionnotauthenticated_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('InscriptionnotauthenticatedGetCommunicationCountV1Response', $response);
+    return $_response_object;
+}
+
+#
 # inscriptionnotauthenticated_get_communication_list_v1
 #
 # Retrieve Communication list
@@ -112,6 +179,140 @@ sub inscriptionnotauthenticated_get_communication_list_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('InscriptionnotauthenticatedGetCommunicationListV1Response', $response);
+    return $_response_object;
+}
+
+#
+# inscriptionnotauthenticated_get_communicationrecipients_v1
+#
+# Retrieve Inscriptionnotauthenticated's Communicationrecipient
+#
+# @param int $pki_inscriptionnotauthenticated_id  (required)
+{
+    my $params = {
+    'pki_inscriptionnotauthenticated_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'inscriptionnotauthenticated_get_communicationrecipients_v1' } = {
+        summary => 'Retrieve Inscriptionnotauthenticated&#39;s Communicationrecipient',
+        params => $params,
+        returns => 'InscriptionnotauthenticatedGetCommunicationrecipientsV1Response',
+        };
+}
+# @return InscriptionnotauthenticatedGetCommunicationrecipientsV1Response
+#
+sub inscriptionnotauthenticated_get_communicationrecipients_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_inscriptionnotauthenticated_id' is set
+    unless (exists $args{'pki_inscriptionnotauthenticated_id'}) {
+      croak("Missing the required parameter 'pki_inscriptionnotauthenticated_id' when calling inscriptionnotauthenticated_get_communicationrecipients_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationrecipients';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_inscriptionnotauthenticated_id'}) {
+        my $_base_variable = "{" . "pkiInscriptionnotauthenticatedID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_inscriptionnotauthenticated_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('InscriptionnotauthenticatedGetCommunicationrecipientsV1Response', $response);
+    return $_response_object;
+}
+
+#
+# inscriptionnotauthenticated_get_communicationsenders_v1
+#
+# Retrieve Inscriptionnotauthenticated's Communicationsender
+#
+# @param int $pki_inscriptionnotauthenticated_id  (required)
+{
+    my $params = {
+    'pki_inscriptionnotauthenticated_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'inscriptionnotauthenticated_get_communicationsenders_v1' } = {
+        summary => 'Retrieve Inscriptionnotauthenticated&#39;s Communicationsender',
+        params => $params,
+        returns => 'InscriptionnotauthenticatedGetCommunicationsendersV1Response',
+        };
+}
+# @return InscriptionnotauthenticatedGetCommunicationsendersV1Response
+#
+sub inscriptionnotauthenticated_get_communicationsenders_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_inscriptionnotauthenticated_id' is set
+    unless (exists $args{'pki_inscriptionnotauthenticated_id'}) {
+      croak("Missing the required parameter 'pki_inscriptionnotauthenticated_id' when calling inscriptionnotauthenticated_get_communicationsenders_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationsenders';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_inscriptionnotauthenticated_id'}) {
+        my $_base_variable = "{" . "pkiInscriptionnotauthenticatedID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_inscriptionnotauthenticated_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('InscriptionnotauthenticatedGetCommunicationsendersV1Response', $response);
     return $_response_object;
 }
 

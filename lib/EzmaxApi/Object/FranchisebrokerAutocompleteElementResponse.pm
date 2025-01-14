@@ -222,7 +222,7 @@ __PACKAGE__->method_documentation({
     's_franchisebroker_name' => {
         datatype => 'string',
         base_name => 'sFranchisebrokerName',
-        description => 'The name of the Franchisebroker in the language of the requester',
+        description => 'The name of the Franchisebroker',
         format => '',
         read_only => '',
             },

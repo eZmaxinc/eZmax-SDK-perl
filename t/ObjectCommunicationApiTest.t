@@ -30,6 +30,13 @@ my $api = EzmaxApi::ObjectCommunicationApi->new();
 isa_ok($api, 'EzmaxApi::ObjectCommunicationApi');
 
 #
+# communication_get_communication_body_v1 test
+#
+# uncomment below and update the test
+#my $communication_get_communication_body_v1_pki_communication_id = undef; # replace NULL with a proper value
+#my $communication_get_communication_body_v1_result = $api->communication_get_communication_body_v1(pki_communication_id => $communication_get_communication_body_v1_pki_communication_id);
+
+#
 # communication_send_v1 test
 #
 # uncomment below and update the test

@@ -511,6 +511,71 @@ sub ezsigndocument_create_object_v2 {
 }
 
 #
+# ezsigndocument_create_object_v3
+#
+# Create a new Ezsigndocument
+#
+# @param EzsigndocumentCreateObjectV3Request $ezsigndocument_create_object_v3_request  (required)
+{
+    my $params = {
+    'ezsigndocument_create_object_v3_request' => {
+        data_type => 'EzsigndocumentCreateObjectV3Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_create_object_v3' } = {
+        summary => 'Create a new Ezsigndocument',
+        params => $params,
+        returns => 'EzsigndocumentCreateObjectV3Response',
+        };
+}
+# @return EzsigndocumentCreateObjectV3Response
+#
+sub ezsigndocument_create_object_v3 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'ezsigndocument_create_object_v3_request' is set
+    unless (exists $args{'ezsigndocument_create_object_v3_request'}) {
+      croak("Missing the required parameter 'ezsigndocument_create_object_v3_request' when calling ezsigndocument_create_object_v3");
+    }
+
+    # parse inputs
+    my $_resource_path = '/3/object/ezsigndocument';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsigndocument_create_object_v3_request'}) {
+        $_body_data = $args{'ezsigndocument_create_object_v3_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentCreateObjectV3Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsigndocument_decline_to_sign_v1
 #
 # Decline to sign
@@ -657,6 +722,89 @@ sub ezsigndocument_delete_object_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('EzsigndocumentDeleteObjectV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsigndocument_edit_ezsignannotations_v1
+#
+# Edit multiple Ezsignannotations
+#
+# @param int $pki_ezsigndocument_id  (required)
+# @param EzsigndocumentEditEzsignannotationsV1Request $ezsigndocument_edit_ezsignannotations_v1_request  (required)
+{
+    my $params = {
+    'pki_ezsigndocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsigndocument_edit_ezsignannotations_v1_request' => {
+        data_type => 'EzsigndocumentEditEzsignannotationsV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_edit_ezsignannotations_v1' } = {
+        summary => 'Edit multiple Ezsignannotations',
+        params => $params,
+        returns => 'EzsigndocumentEditEzsignannotationsV1Response',
+        };
+}
+# @return EzsigndocumentEditEzsignannotationsV1Response
+#
+sub ezsigndocument_edit_ezsignannotations_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigndocument_id' is set
+    unless (exists $args{'pki_ezsigndocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_edit_ezsignannotations_v1");
+    }
+
+    # verify the required parameter 'ezsigndocument_edit_ezsignannotations_v1_request' is set
+    unless (exists $args{'ezsigndocument_edit_ezsignannotations_v1_request'}) {
+      croak("Missing the required parameter 'ezsigndocument_edit_ezsignannotations_v1_request' when calling ezsigndocument_edit_ezsignannotations_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignannotations';
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsigndocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigndocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigndocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsigndocument_edit_ezsignannotations_v1_request'}) {
+        $_body_data = $args{'ezsigndocument_edit_ezsignannotations_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentEditEzsignannotationsV1Response', $response);
     return $_response_object;
 }
 
@@ -827,6 +975,89 @@ sub ezsigndocument_edit_ezsignsignatures_v1 {
 }
 
 #
+# ezsigndocument_edit_object_v1
+#
+# Edit an existing Ezsigndocument
+#
+# @param int $pki_ezsigndocument_id  (required)
+# @param EzsigndocumentEditObjectV1Request $ezsigndocument_edit_object_v1_request  (required)
+{
+    my $params = {
+    'pki_ezsigndocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsigndocument_edit_object_v1_request' => {
+        data_type => 'EzsigndocumentEditObjectV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_edit_object_v1' } = {
+        summary => 'Edit an existing Ezsigndocument',
+        params => $params,
+        returns => 'EzsigndocumentEditObjectV1Response',
+        };
+}
+# @return EzsigndocumentEditObjectV1Response
+#
+sub ezsigndocument_edit_object_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigndocument_id' is set
+    unless (exists $args{'pki_ezsigndocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_edit_object_v1");
+    }
+
+    # verify the required parameter 'ezsigndocument_edit_object_v1_request' is set
+    unless (exists $args{'ezsigndocument_edit_object_v1_request'}) {
+      croak("Missing the required parameter 'ezsigndocument_edit_object_v1_request' when calling ezsigndocument_edit_object_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}';
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsigndocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigndocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigndocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsigndocument_edit_object_v1_request'}) {
+        $_body_data = $args{'ezsigndocument_edit_object_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentEditObjectV1Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsigndocument_end_prematurely_v1
 #
 # End prematurely
@@ -906,6 +1137,89 @@ sub ezsigndocument_end_prematurely_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('EzsigndocumentEndPrematurelyV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsigndocument_extract_text_v1
+#
+# Extract text from Ezsigndocument area
+#
+# @param int $pki_ezsigndocument_id  (required)
+# @param EzsigndocumentExtractTextV1Request $ezsigndocument_extract_text_v1_request  (required)
+{
+    my $params = {
+    'pki_ezsigndocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsigndocument_extract_text_v1_request' => {
+        data_type => 'EzsigndocumentExtractTextV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_extract_text_v1' } = {
+        summary => 'Extract text from Ezsigndocument area',
+        params => $params,
+        returns => 'EzsigndocumentExtractTextV1Response',
+        };
+}
+# @return EzsigndocumentExtractTextV1Response
+#
+sub ezsigndocument_extract_text_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigndocument_id' is set
+    unless (exists $args{'pki_ezsigndocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_extract_text_v1");
+    }
+
+    # verify the required parameter 'ezsigndocument_extract_text_v1_request' is set
+    unless (exists $args{'ezsigndocument_extract_text_v1_request'}) {
+      croak("Missing the required parameter 'ezsigndocument_extract_text_v1_request' when calling ezsigndocument_extract_text_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/extractText';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsigndocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigndocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigndocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsigndocument_extract_text_v1_request'}) {
+        $_body_data = $args{'ezsigndocument_extract_text_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentExtractTextV1Response', $response);
     return $_response_object;
 }
 

@@ -53,6 +53,13 @@ isa_ok($api, 'EzmaxApi::ObjectApikeyApi');
 #my $apikey_edit_permissions_v1_result = $api->apikey_edit_permissions_v1(pki_apikey_id => $apikey_edit_permissions_v1_pki_apikey_id, apikey_edit_permissions_v1_request => $apikey_edit_permissions_v1_apikey_edit_permissions_v1_request);
 
 #
+# apikey_generate_delegated_credentials_v1 test
+#
+# uncomment below and update the test
+#my $apikey_generate_delegated_credentials_v1_apikey_generate_delegated_credentials_v1_request = undef; # replace NULL with a proper value
+#my $apikey_generate_delegated_credentials_v1_result = $api->apikey_generate_delegated_credentials_v1(apikey_generate_delegated_credentials_v1_request => $apikey_generate_delegated_credentials_v1_apikey_generate_delegated_credentials_v1_request);
+
+#
 # apikey_get_cors_v1 test
 #
 # uncomment below and update the test

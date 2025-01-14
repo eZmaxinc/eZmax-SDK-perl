@@ -43,12 +43,5 @@ isa_ok($api, 'EzmaxApi::ObjectAttachmentApi');
 #my $attachment_get_attachmentlogs_v1_pki_attachment_id = undef; # replace NULL with a proper value
 #my $attachment_get_attachmentlogs_v1_result = $api->attachment_get_attachmentlogs_v1(pki_attachment_id => $attachment_get_attachmentlogs_v1_pki_attachment_id);
 
-#
-# attachment_get_download_url_v1 test
-#
-# uncomment below and update the test
-#my $attachment_get_download_url_v1_pki_attachment_id = undef; # replace NULL with a proper value
-#my $attachment_get_download_url_v1_result = $api->attachment_get_download_url_v1(pki_attachment_id => $attachment_get_download_url_v1_pki_attachment_id);
-
 
 done_testing();

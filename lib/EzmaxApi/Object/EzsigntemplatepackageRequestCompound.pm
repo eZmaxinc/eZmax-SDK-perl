@@ -233,6 +233,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_ezdoctemplatedocument_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzdoctemplatedocumentID',
+        description => 'The unique ID of the Ezdoctemplatedocument',
+        format => '',
+        read_only => '',
+            },
     'fki_language_id' => {
         datatype => 'int',
         base_name => 'fkiLanguageID',
@@ -266,6 +273,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'pki_ezsigntemplatepackage_id' => 'int',
     'fki_ezsignfoldertype_id' => 'int',
+    'fki_ezdoctemplatedocument_id' => 'int',
     'fki_language_id' => 'int',
     's_ezsigntemplatepackage_description' => 'string',
     'b_ezsigntemplatepackage_adminonly' => 'boolean',
@@ -275,6 +283,7 @@ __PACKAGE__->openapi_types( {
 __PACKAGE__->attribute_map( {
     'pki_ezsigntemplatepackage_id' => 'pkiEzsigntemplatepackageID',
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
+    'fki_ezdoctemplatedocument_id' => 'fkiEzdoctemplatedocumentID',
     'fki_language_id' => 'fkiLanguageID',
     's_ezsigntemplatepackage_description' => 'sEzsigntemplatepackageDescription',
     'b_ezsigntemplatepackage_adminonly' => 'bEzsigntemplatepackageAdminonly',

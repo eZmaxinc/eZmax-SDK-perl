@@ -103,5 +103,13 @@ isa_ok($api, 'EzmaxApi::ObjectEzsignfoldersignerassociationApi');
 #my $ezsignfoldersignerassociation_patch_object_v1_ezsignfoldersignerassociation_patch_object_v1_request = undef; # replace NULL with a proper value
 #my $ezsignfoldersignerassociation_patch_object_v1_result = $api->ezsignfoldersignerassociation_patch_object_v1(pki_ezsignfoldersignerassociation_id => $ezsignfoldersignerassociation_patch_object_v1_pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_patch_object_v1_request => $ezsignfoldersignerassociation_patch_object_v1_ezsignfoldersignerassociation_patch_object_v1_request);
 
+#
+# ezsignfoldersignerassociation_reassign_v1 test
+#
+# uncomment below and update the test
+#my $ezsignfoldersignerassociation_reassign_v1_pki_ezsignfoldersignerassociation_id = undef; # replace NULL with a proper value
+#my $ezsignfoldersignerassociation_reassign_v1_ezsignfoldersignerassociation_reassign_v1_request = undef; # replace NULL with a proper value
+#my $ezsignfoldersignerassociation_reassign_v1_result = $api->ezsignfoldersignerassociation_reassign_v1(pki_ezsignfoldersignerassociation_id => $ezsignfoldersignerassociation_reassign_v1_pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_reassign_v1_request => $ezsignfoldersignerassociation_reassign_v1_ezsignfoldersignerassociation_reassign_v1_request);
+
 
 done_testing();

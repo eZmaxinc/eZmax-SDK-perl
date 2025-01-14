@@ -30,11 +30,32 @@ my $api = EzmaxApi::ObjectInscriptionnotauthenticatedApi->new();
 isa_ok($api, 'EzmaxApi::ObjectInscriptionnotauthenticatedApi');
 
 #
+# inscriptionnotauthenticated_get_communication_count_v1 test
+#
+# uncomment below and update the test
+#my $inscriptionnotauthenticated_get_communication_count_v1_pki_inscriptionnotauthenticated_id = undef; # replace NULL with a proper value
+#my $inscriptionnotauthenticated_get_communication_count_v1_result = $api->inscriptionnotauthenticated_get_communication_count_v1(pki_inscriptionnotauthenticated_id => $inscriptionnotauthenticated_get_communication_count_v1_pki_inscriptionnotauthenticated_id);
+
+#
 # inscriptionnotauthenticated_get_communication_list_v1 test
 #
 # uncomment below and update the test
 #my $inscriptionnotauthenticated_get_communication_list_v1_pki_inscriptionnotauthenticated_id = undef; # replace NULL with a proper value
 #my $inscriptionnotauthenticated_get_communication_list_v1_result = $api->inscriptionnotauthenticated_get_communication_list_v1(pki_inscriptionnotauthenticated_id => $inscriptionnotauthenticated_get_communication_list_v1_pki_inscriptionnotauthenticated_id);
+
+#
+# inscriptionnotauthenticated_get_communicationrecipients_v1 test
+#
+# uncomment below and update the test
+#my $inscriptionnotauthenticated_get_communicationrecipients_v1_pki_inscriptionnotauthenticated_id = undef; # replace NULL with a proper value
+#my $inscriptionnotauthenticated_get_communicationrecipients_v1_result = $api->inscriptionnotauthenticated_get_communicationrecipients_v1(pki_inscriptionnotauthenticated_id => $inscriptionnotauthenticated_get_communicationrecipients_v1_pki_inscriptionnotauthenticated_id);
+
+#
+# inscriptionnotauthenticated_get_communicationsenders_v1 test
+#
+# uncomment below and update the test
+#my $inscriptionnotauthenticated_get_communicationsenders_v1_pki_inscriptionnotauthenticated_id = undef; # replace NULL with a proper value
+#my $inscriptionnotauthenticated_get_communicationsenders_v1_result = $api->inscriptionnotauthenticated_get_communicationsenders_v1(pki_inscriptionnotauthenticated_id => $inscriptionnotauthenticated_get_communicationsenders_v1_pki_inscriptionnotauthenticated_id);
 
 
 done_testing();

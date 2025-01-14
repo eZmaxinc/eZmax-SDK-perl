@@ -237,7 +237,7 @@ __PACKAGE__->method_documentation({
     'b_creditcardclientrelation_isdefault' => {
         datatype => 'boolean',
         base_name => 'bCreditcardclientrelationIsdefault',
-        description => 'Whether if it&#39;s an relationisdefault',
+        description => 'Whether if it&#39;s the creditcardclient is the default one',
         format => '',
         read_only => '',
             },
@@ -248,24 +248,10 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'b_creditcardclient_isactive' => {
+    'b_creditcardclient_allowedcompanypayment' => {
         datatype => 'boolean',
-        base_name => 'bCreditcardclientIsactive',
-        description => 'Whether the creditcardclient is active or not',
-        format => '',
-        read_only => '',
-            },
-    'b_creditcardclient_allowedagencypayment' => {
-        datatype => 'boolean',
-        base_name => 'bCreditcardclientAllowedagencypayment',
+        base_name => 'bCreditcardclientAllowedcompanypayment',
         description => 'Whether if it&#39;s an allowedagencypayment',
-        format => '',
-        read_only => '',
-            },
-    'b_creditcardclient_allowedroyallepageprotection' => {
-        datatype => 'boolean',
-        base_name => 'bCreditcardclientAllowedroyallepageprotection',
-        description => 'Whether if it&#39;s an allowedroyallepageprotection',
         format => '',
         read_only => '',
             },
@@ -290,9 +276,7 @@ __PACKAGE__->openapi_types( {
     'fki_creditcarddetail_id' => 'int',
     'b_creditcardclientrelation_isdefault' => 'boolean',
     's_creditcardclient_description' => 'string',
-    'b_creditcardclient_isactive' => 'boolean',
-    'b_creditcardclient_allowedagencypayment' => 'boolean',
-    'b_creditcardclient_allowedroyallepageprotection' => 'boolean',
+    'b_creditcardclient_allowedcompanypayment' => 'boolean',
     'b_creditcardclient_allowedtranquillit' => 'boolean',
     'obj_creditcarddetail' => 'CreditcarddetailResponseCompound'
 } );
@@ -302,9 +286,7 @@ __PACKAGE__->attribute_map( {
     'fki_creditcarddetail_id' => 'fkiCreditcarddetailID',
     'b_creditcardclientrelation_isdefault' => 'bCreditcardclientrelationIsdefault',
     's_creditcardclient_description' => 'sCreditcardclientDescription',
-    'b_creditcardclient_isactive' => 'bCreditcardclientIsactive',
-    'b_creditcardclient_allowedagencypayment' => 'bCreditcardclientAllowedagencypayment',
-    'b_creditcardclient_allowedroyallepageprotection' => 'bCreditcardclientAllowedroyallepageprotection',
+    'b_creditcardclient_allowedcompanypayment' => 'bCreditcardclientAllowedcompanypayment',
     'b_creditcardclient_allowedtranquillit' => 'bCreditcardclientAllowedtranquillit',
     'obj_creditcarddetail' => 'objCreditcarddetail'
 } );

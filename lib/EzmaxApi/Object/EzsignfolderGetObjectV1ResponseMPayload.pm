@@ -32,6 +32,7 @@ use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::CustomEzsignfoldertypeResponse;
+use EzmaxApi::Object::CustomTimezoneWithCodeResponse;
 use EzmaxApi::Object::FieldEEzsignfolderCompletion;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
@@ -245,6 +246,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_timezone_id' => {
+        datatype => 'int',
+        base_name => 'fkiTimezoneID',
+        description => 'The unique ID of the Timezone',
+        format => '',
+        read_only => '',
+            },
     'e_ezsignfolder_completion' => {
         datatype => 'FieldEEzsignfolderCompletion',
         base_name => 'eEzsignfolderCompletion',
@@ -312,6 +320,20 @@ __PACKAGE__->method_documentation({
         datatype => 'FieldEEzsignfolderSendreminderfrequency',
         base_name => 'eEzsignfolderSendreminderfrequency',
         description => '',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignfolder_sendreminderfirstdays' => {
+        datatype => 'int',
+        base_name => 'iEzsignfolderSendreminderfirstdays',
+        description => 'The number of days before the the first reminder sending',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignfolder_sendreminderotherdays' => {
+        datatype => 'int',
+        base_name => 'iEzsignfolderSendreminderotherdays',
+        description => 'The number of days after the first reminder sending',
         format => '',
         read_only => '',
             },
@@ -385,12 +407,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_timezone' => {
+        datatype => 'CustomTimezoneWithCodeResponse',
+        base_name => 'objTimezone',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_ezsignfolder_id' => 'int',
     'fki_ezsignfoldertype_id' => 'int',
     'obj_ezsignfoldertype' => 'CustomEzsignfoldertypeResponse',
+    'fki_timezone_id' => 'int',
     'e_ezsignfolder_completion' => 'FieldEEzsignfolderCompletion',
     's_ezsignfoldertype_name_x' => 'string',
     'fki_billingentityinternal_id' => 'int',
@@ -401,6 +431,8 @@ __PACKAGE__->openapi_types( {
     't_ezsignfolder_note' => 'string',
     'b_ezsignfolder_isdisposable' => 'boolean',
     'e_ezsignfolder_sendreminderfrequency' => 'FieldEEzsignfolderSendreminderfrequency',
+    'i_ezsignfolder_sendreminderfirstdays' => 'int',
+    'i_ezsignfolder_sendreminderotherdays' => 'int',
     'dt_ezsignfolder_delayedsenddate' => 'string',
     'dt_ezsignfolder_duedate' => 'string',
     'dt_ezsignfolder_sentdate' => 'string',
@@ -410,13 +442,15 @@ __PACKAGE__->openapi_types( {
     'dt_ezsignfolder_close' => 'string',
     't_ezsignfolder_message' => 'string',
     'obj_audit' => 'CommonAudit',
-    's_ezsignfolder_externalid' => 'string'
+    's_ezsignfolder_externalid' => 'string',
+    'obj_timezone' => 'CustomTimezoneWithCodeResponse'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_ezsignfolder_id' => 'pkiEzsignfolderID',
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
     'obj_ezsignfoldertype' => 'objEzsignfoldertype',
+    'fki_timezone_id' => 'fkiTimezoneID',
     'e_ezsignfolder_completion' => 'eEzsignfolderCompletion',
     's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
     'fki_billingentityinternal_id' => 'fkiBillingentityinternalID',
@@ -427,6 +461,8 @@ __PACKAGE__->attribute_map( {
     't_ezsignfolder_note' => 'tEzsignfolderNote',
     'b_ezsignfolder_isdisposable' => 'bEzsignfolderIsdisposable',
     'e_ezsignfolder_sendreminderfrequency' => 'eEzsignfolderSendreminderfrequency',
+    'i_ezsignfolder_sendreminderfirstdays' => 'iEzsignfolderSendreminderfirstdays',
+    'i_ezsignfolder_sendreminderotherdays' => 'iEzsignfolderSendreminderotherdays',
     'dt_ezsignfolder_delayedsenddate' => 'dtEzsignfolderDelayedsenddate',
     'dt_ezsignfolder_duedate' => 'dtEzsignfolderDuedate',
     'dt_ezsignfolder_sentdate' => 'dtEzsignfolderSentdate',
@@ -436,7 +472,8 @@ __PACKAGE__->attribute_map( {
     'dt_ezsignfolder_close' => 'dtEzsignfolderClose',
     't_ezsignfolder_message' => 'tEzsignfolderMessage',
     'obj_audit' => 'objAudit',
-    's_ezsignfolder_externalid' => 'sEzsignfolderExternalid'
+    's_ezsignfolder_externalid' => 'sEzsignfolderExternalid',
+    'obj_timezone' => 'objTimezone'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

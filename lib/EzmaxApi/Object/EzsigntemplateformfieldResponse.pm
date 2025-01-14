@@ -30,9 +30,11 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EnumHorizontalalignment;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldPositioning;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldPositioningoccurence;
+use EzmaxApi::Object::TextstylestaticResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -274,14 +276,14 @@ __PACKAGE__->method_documentation({
     'i_ezsigntemplateformfield_width' => {
         datatype => 'int',
         base_name => 'iEzsigntemplateformfieldWidth',
-        description => 'The Width of the Ezsigntemplateformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsigntemplateformfieldgroupType.  | eEzsigntemplateformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |',
+        description => 'The Width of the Ezsigntemplateformfield in pixels calculated at 100 DPI',
         format => '',
         read_only => '',
             },
     'i_ezsigntemplateformfield_height' => {
         datatype => 'int',
         base_name => 'iEzsigntemplateformfieldHeight',
-        description => 'The Height of the Ezsigntemplateformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsigntemplateformfieldgroupType.  | eEzsigntemplateformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | ',
+        description => 'The Height of the Ezsigntemplateformfield in pixels calculated at 100 DPI ',
         format => '',
         read_only => '',
             },
@@ -334,6 +336,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsigntemplateformfield_horizontalalignment' => {
+        datatype => 'EnumHorizontalalignment',
+        base_name => 'eEzsigntemplateformfieldHorizontalalignment',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_textstylestatic' => {
+        datatype => 'TextstylestaticResponseCompound',
+        base_name => 'objTextstylestatic',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -352,7 +368,9 @@ __PACKAGE__->openapi_types( {
     's_ezsigntemplateformfield_positioningpattern' => 'string',
     'i_ezsigntemplateformfield_positioningoffsetx' => 'int',
     'i_ezsigntemplateformfield_positioningoffsety' => 'int',
-    'e_ezsigntemplateformfield_positioningoccurence' => 'FieldEEzsigntemplateformfieldPositioningoccurence'
+    'e_ezsigntemplateformfield_positioningoccurence' => 'FieldEEzsigntemplateformfieldPositioningoccurence',
+    'e_ezsigntemplateformfield_horizontalalignment' => 'EnumHorizontalalignment',
+    'obj_textstylestatic' => 'TextstylestaticResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -371,7 +389,9 @@ __PACKAGE__->attribute_map( {
     's_ezsigntemplateformfield_positioningpattern' => 'sEzsigntemplateformfieldPositioningpattern',
     'i_ezsigntemplateformfield_positioningoffsetx' => 'iEzsigntemplateformfieldPositioningoffsetx',
     'i_ezsigntemplateformfield_positioningoffsety' => 'iEzsigntemplateformfieldPositioningoffsety',
-    'e_ezsigntemplateformfield_positioningoccurence' => 'eEzsigntemplateformfieldPositioningoccurence'
+    'e_ezsigntemplateformfield_positioningoccurence' => 'eEzsigntemplateformfieldPositioningoccurence',
+    'e_ezsigntemplateformfield_horizontalalignment' => 'eEzsigntemplateformfieldHorizontalalignment',
+    'obj_textstylestatic' => 'objTextstylestatic'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

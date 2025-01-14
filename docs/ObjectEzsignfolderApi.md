@@ -13,10 +13,11 @@ Method | HTTP request | Description
 [**ezsignfolder_batch_download_v1**](ObjectEzsignfolderApi.md#ezsignfolder_batch_download_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/batchDownload | Download multiples files from an Ezsignfolder
 [**ezsignfolder_create_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_create_object_v1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
 [**ezsignfolder_create_object_v2**](ObjectEzsignfolderApi.md#ezsignfolder_create_object_v2) | **POST** /2/object/ezsignfolder | Create a new Ezsignfolder
+[**ezsignfolder_create_object_v3**](ObjectEzsignfolderApi.md#ezsignfolder_create_object_v3) | **POST** /3/object/ezsignfolder | Create a new Ezsignfolder
 [**ezsignfolder_delete_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_delete_object_v1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
 [**ezsignfolder_dispose_ezsignfolders_v1**](ObjectEzsignfolderApi.md#ezsignfolder_dispose_ezsignfolders_v1) | **POST** /1/object/ezsignfolder/disposeEzsignfolders | Dispose Ezsignfolders
 [**ezsignfolder_dispose_v1**](ObjectEzsignfolderApi.md#ezsignfolder_dispose_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/dispose | Dispose the Ezsignfolder
-[**ezsignfolder_edit_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder
+[**ezsignfolder_edit_object_v3**](ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v3) | **PUT** /3/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder
 [**ezsignfolder_end_prematurely_v1**](ObjectEzsignfolderApi.md#ezsignfolder_end_prematurely_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/endPrematurely | End prematurely
 [**ezsignfolder_get_actionable_elements_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
 [**ezsignfolder_get_attachment_count_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_attachment_count_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachmentCount | Retrieve Attachment count
@@ -32,9 +33,11 @@ Method | HTTP request | Description
 [**ezsignfolder_get_list_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_list_v1) | **GET** /1/object/ezsignfolder/getList | Retrieve Ezsignfolder list
 [**ezsignfolder_get_object_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_object_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
 [**ezsignfolder_get_object_v2**](ObjectEzsignfolderApi.md#ezsignfolder_get_object_v2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
+[**ezsignfolder_get_object_v3**](ObjectEzsignfolderApi.md#ezsignfolder_get_object_v3) | **GET** /3/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
 [**ezsignfolder_import_ezsignfoldersignerassociations_v1**](ObjectEzsignfolderApi.md#ezsignfolder_import_ezsignfoldersignerassociations_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsignfoldersignerassociations | Import an existing Ezsignfoldersignerassociation into this Ezsignfolder
 [**ezsignfolder_import_ezsigntemplatepackage_v1**](ObjectEzsignfolderApi.md#ezsignfolder_import_ezsigntemplatepackage_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder.
 [**ezsignfolder_reorder_v1**](ObjectEzsignfolderApi.md#ezsignfolder_reorder_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/reorder | Reorder Ezsigndocuments in the Ezsignfolder
+[**ezsignfolder_reorder_v2**](ObjectEzsignfolderApi.md#ezsignfolder_reorder_v2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/reorder | Reorder Ezsigndocuments in the Ezsignfolder
 [**ezsignfolder_send_v1**](ObjectEzsignfolderApi.md#ezsignfolder_send_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 [**ezsignfolder_send_v3**](ObjectEzsignfolderApi.md#ezsignfolder_send_v3) | **POST** /3/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 [**ezsignfolder_unsend_v1**](ObjectEzsignfolderApi.md#ezsignfolder_unsend_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/unsend | Unsend the Ezsignfolder
@@ -246,6 +249,57 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ezsignfolder_create_object_v3**
+> EzsignfolderCreateObjectV3Response ezsignfolder_create_object_v3(ezsignfolder_create_object_v3_request => $ezsignfolder_create_object_v3_request)
+
+Create a new Ezsignfolder
+
+The endpoint allows to create one or many elements at once.
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignfolderApi;
+my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $ezsignfolder_create_object_v3_request = EzmaxApi::Object::EzsignfolderCreateObjectV3Request->new(); # EzsignfolderCreateObjectV3Request | 
+
+eval {
+    my $result = $api_instance->ezsignfolder_create_object_v3(ezsignfolder_create_object_v3_request => $ezsignfolder_create_object_v3_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignfolderApi->ezsignfolder_create_object_v3: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ezsignfolder_create_object_v3_request** | [**EzsignfolderCreateObjectV3Request**](EzsignfolderCreateObjectV3Request.md)|  | 
+
+### Return type
+
+[**EzsignfolderCreateObjectV3Response**](EzsignfolderCreateObjectV3Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ezsignfolder_delete_object_v1**
 > EzsignfolderDeleteObjectV1Response ezsignfolder_delete_object_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id)
 
@@ -399,8 +453,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ezsignfolder_edit_object_v1**
-> EzsignfolderEditObjectV1Response ezsignfolder_edit_object_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_edit_object_v1_request => $ezsignfolder_edit_object_v1_request)
+# **ezsignfolder_edit_object_v3**
+> EzsignfolderEditObjectV3Response ezsignfolder_edit_object_v3(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_edit_object_v3_request => $ezsignfolder_edit_object_v3_request)
 
 Edit an existing Ezsignfolder
 
@@ -419,14 +473,14 @@ my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
 );
 
 my $pki_ezsignfolder_id = 56; # int | 
-my $ezsignfolder_edit_object_v1_request = EzmaxApi::Object::EzsignfolderEditObjectV1Request->new(); # EzsignfolderEditObjectV1Request | 
+my $ezsignfolder_edit_object_v3_request = EzmaxApi::Object::EzsignfolderEditObjectV3Request->new(); # EzsignfolderEditObjectV3Request | 
 
 eval {
-    my $result = $api_instance->ezsignfolder_edit_object_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_edit_object_v1_request => $ezsignfolder_edit_object_v1_request);
+    my $result = $api_instance->ezsignfolder_edit_object_v3(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_edit_object_v3_request => $ezsignfolder_edit_object_v3_request);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ObjectEzsignfolderApi->ezsignfolder_edit_object_v1: $@\n";
+    warn "Exception when calling ObjectEzsignfolderApi->ezsignfolder_edit_object_v3: $@\n";
 }
 ```
 
@@ -435,11 +489,11 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pki_ezsignfolder_id** | **int**|  | 
- **ezsignfolder_edit_object_v1_request** | [**EzsignfolderEditObjectV1Request**](EzsignfolderEditObjectV1Request.md)|  | 
+ **ezsignfolder_edit_object_v3_request** | [**EzsignfolderEditObjectV3Request**](EzsignfolderEditObjectV3Request.md)|  | 
 
 ### Return type
 
-[**EzsignfolderEditObjectV1Response**](EzsignfolderEditObjectV1Response.md)
+[**EzsignfolderEditObjectV3Response**](EzsignfolderEditObjectV3Response.md)
 
 ### Authorization
 
@@ -1071,7 +1125,7 @@ Name | Type | Description  | Notes
 
 Retrieve Ezsignfolder list
 
-Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sEzsigndocumentName |
+Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sUserFirstname | | sUserLastname | | sEzsigndocumentName |
 
 ### Example
 ```perl
@@ -1213,6 +1267,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsignfolderGetObjectV2Response**](EzsignfolderGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignfolder_get_object_v3**
+> EzsignfolderGetObjectV3Response ezsignfolder_get_object_v3(pki_ezsignfolder_id => $pki_ezsignfolder_id)
+
+Retrieve an existing Ezsignfolder
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignfolderApi;
+my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsignfolder_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->ezsignfolder_get_object_v3(pki_ezsignfolder_id => $pki_ezsignfolder_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignfolderApi->ezsignfolder_get_object_v3: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsignfolder_id** | **int**|  | 
+
+### Return type
+
+[**EzsignfolderGetObjectV3Response**](EzsignfolderGetObjectV3Response.md)
 
 ### Authorization
 
@@ -1370,6 +1475,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsignfolderReorderV1Response**](EzsignfolderReorderV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignfolder_reorder_v2**
+> EzsignfolderReorderV2Response ezsignfolder_reorder_v2(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_reorder_v2_request => $ezsignfolder_reorder_v2_request)
+
+Reorder Ezsigndocuments in the Ezsignfolder
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignfolderApi;
+my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsignfolder_id = 56; # int | 
+my $ezsignfolder_reorder_v2_request = EzmaxApi::Object::EzsignfolderReorderV2Request->new(); # EzsignfolderReorderV2Request | 
+
+eval {
+    my $result = $api_instance->ezsignfolder_reorder_v2(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_reorder_v2_request => $ezsignfolder_reorder_v2_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignfolderApi->ezsignfolder_reorder_v2: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsignfolder_id** | **int**|  | 
+ **ezsignfolder_reorder_v2_request** | [**EzsignfolderReorderV2Request**](EzsignfolderReorderV2Request.md)|  | 
+
+### Return type
+
+[**EzsignfolderReorderV2Response**](EzsignfolderReorderV2Response.md)
 
 ### Authorization
 

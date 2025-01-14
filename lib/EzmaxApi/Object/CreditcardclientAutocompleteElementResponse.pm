@@ -233,25 +233,16 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'b_creditcardclient_isactive' => {
-        datatype => 'boolean',
-        base_name => 'bCreditcardclientIsactive',
-        description => 'Whether the creditcardclient is active or not',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_creditcardclient_id' => 'int',
-    's_creditcardclient_description' => 'string',
-    'b_creditcardclient_isactive' => 'boolean'
+    's_creditcardclient_description' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_creditcardclient_id' => 'pkiCreditcardclientID',
-    's_creditcardclient_description' => 'sCreditcardclientDescription',
-    'b_creditcardclient_isactive' => 'bCreditcardclientIsactive'
+    's_creditcardclient_description' => 'sCreditcardclientDescription'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

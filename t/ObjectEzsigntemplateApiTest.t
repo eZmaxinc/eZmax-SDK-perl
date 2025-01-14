@@ -38,18 +38,11 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplateApi');
 #my $ezsigntemplate_copy_v1_result = $api->ezsigntemplate_copy_v1(pki_ezsigntemplate_id => $ezsigntemplate_copy_v1_pki_ezsigntemplate_id, ezsigntemplate_copy_v1_request => $ezsigntemplate_copy_v1_ezsigntemplate_copy_v1_request);
 
 #
-# ezsigntemplate_create_object_v1 test
+# ezsigntemplate_create_object_v3 test
 #
 # uncomment below and update the test
-#my $ezsigntemplate_create_object_v1_ezsigntemplate_create_object_v1_request = undef; # replace NULL with a proper value
-#my $ezsigntemplate_create_object_v1_result = $api->ezsigntemplate_create_object_v1(ezsigntemplate_create_object_v1_request => $ezsigntemplate_create_object_v1_ezsigntemplate_create_object_v1_request);
-
-#
-# ezsigntemplate_create_object_v2 test
-#
-# uncomment below and update the test
-#my $ezsigntemplate_create_object_v2_ezsigntemplate_create_object_v2_request = undef; # replace NULL with a proper value
-#my $ezsigntemplate_create_object_v2_result = $api->ezsigntemplate_create_object_v2(ezsigntemplate_create_object_v2_request => $ezsigntemplate_create_object_v2_ezsigntemplate_create_object_v2_request);
+#my $ezsigntemplate_create_object_v3_ezsigntemplate_create_object_v3_request = undef; # replace NULL with a proper value
+#my $ezsigntemplate_create_object_v3_result = $api->ezsigntemplate_create_object_v3(ezsigntemplate_create_object_v3_request => $ezsigntemplate_create_object_v3_ezsigntemplate_create_object_v3_request);
 
 #
 # ezsigntemplate_delete_object_v1 test
@@ -59,20 +52,12 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplateApi');
 #my $ezsigntemplate_delete_object_v1_result = $api->ezsigntemplate_delete_object_v1(pki_ezsigntemplate_id => $ezsigntemplate_delete_object_v1_pki_ezsigntemplate_id);
 
 #
-# ezsigntemplate_edit_object_v1 test
+# ezsigntemplate_edit_object_v3 test
 #
 # uncomment below and update the test
-#my $ezsigntemplate_edit_object_v1_pki_ezsigntemplate_id = undef; # replace NULL with a proper value
-#my $ezsigntemplate_edit_object_v1_ezsigntemplate_edit_object_v1_request = undef; # replace NULL with a proper value
-#my $ezsigntemplate_edit_object_v1_result = $api->ezsigntemplate_edit_object_v1(pki_ezsigntemplate_id => $ezsigntemplate_edit_object_v1_pki_ezsigntemplate_id, ezsigntemplate_edit_object_v1_request => $ezsigntemplate_edit_object_v1_ezsigntemplate_edit_object_v1_request);
-
-#
-# ezsigntemplate_edit_object_v2 test
-#
-# uncomment below and update the test
-#my $ezsigntemplate_edit_object_v2_pki_ezsigntemplate_id = undef; # replace NULL with a proper value
-#my $ezsigntemplate_edit_object_v2_ezsigntemplate_edit_object_v2_request = undef; # replace NULL with a proper value
-#my $ezsigntemplate_edit_object_v2_result = $api->ezsigntemplate_edit_object_v2(pki_ezsigntemplate_id => $ezsigntemplate_edit_object_v2_pki_ezsigntemplate_id, ezsigntemplate_edit_object_v2_request => $ezsigntemplate_edit_object_v2_ezsigntemplate_edit_object_v2_request);
+#my $ezsigntemplate_edit_object_v3_pki_ezsigntemplate_id = undef; # replace NULL with a proper value
+#my $ezsigntemplate_edit_object_v3_ezsigntemplate_edit_object_v3_request = undef; # replace NULL with a proper value
+#my $ezsigntemplate_edit_object_v3_result = $api->ezsigntemplate_edit_object_v3(pki_ezsigntemplate_id => $ezsigntemplate_edit_object_v3_pki_ezsigntemplate_id, ezsigntemplate_edit_object_v3_request => $ezsigntemplate_edit_object_v3_ezsigntemplate_edit_object_v3_request);
 
 #
 # ezsigntemplate_get_autocomplete_v2 test
@@ -82,7 +67,8 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplateApi');
 #my $ezsigntemplate_get_autocomplete_v2_e_filter_active = undef; # replace NULL with a proper value
 #my $ezsigntemplate_get_autocomplete_v2_s_query = undef; # replace NULL with a proper value
 #my $ezsigntemplate_get_autocomplete_v2_accept_language = undef; # replace NULL with a proper value
-#my $ezsigntemplate_get_autocomplete_v2_result = $api->ezsigntemplate_get_autocomplete_v2(s_selector => $ezsigntemplate_get_autocomplete_v2_s_selector, e_filter_active => $ezsigntemplate_get_autocomplete_v2_e_filter_active, s_query => $ezsigntemplate_get_autocomplete_v2_s_query, accept_language => $ezsigntemplate_get_autocomplete_v2_accept_language);
+#my $ezsigntemplate_get_autocomplete_v2_fki_ezsignfoldertype_id = undef; # replace NULL with a proper value
+#my $ezsigntemplate_get_autocomplete_v2_result = $api->ezsigntemplate_get_autocomplete_v2(s_selector => $ezsigntemplate_get_autocomplete_v2_s_selector, e_filter_active => $ezsigntemplate_get_autocomplete_v2_e_filter_active, s_query => $ezsigntemplate_get_autocomplete_v2_s_query, accept_language => $ezsigntemplate_get_autocomplete_v2_accept_language, fki_ezsignfoldertype_id => $ezsigntemplate_get_autocomplete_v2_fki_ezsignfoldertype_id);
 
 #
 # ezsigntemplate_get_list_v1 test
@@ -96,18 +82,11 @@ isa_ok($api, 'EzmaxApi::ObjectEzsigntemplateApi');
 #my $ezsigntemplate_get_list_v1_result = $api->ezsigntemplate_get_list_v1(e_order_by => $ezsigntemplate_get_list_v1_e_order_by, i_row_max => $ezsigntemplate_get_list_v1_i_row_max, i_row_offset => $ezsigntemplate_get_list_v1_i_row_offset, accept_language => $ezsigntemplate_get_list_v1_accept_language, s_filter => $ezsigntemplate_get_list_v1_s_filter);
 
 #
-# ezsigntemplate_get_object_v1 test
+# ezsigntemplate_get_object_v3 test
 #
 # uncomment below and update the test
-#my $ezsigntemplate_get_object_v1_pki_ezsigntemplate_id = undef; # replace NULL with a proper value
-#my $ezsigntemplate_get_object_v1_result = $api->ezsigntemplate_get_object_v1(pki_ezsigntemplate_id => $ezsigntemplate_get_object_v1_pki_ezsigntemplate_id);
-
-#
-# ezsigntemplate_get_object_v2 test
-#
-# uncomment below and update the test
-#my $ezsigntemplate_get_object_v2_pki_ezsigntemplate_id = undef; # replace NULL with a proper value
-#my $ezsigntemplate_get_object_v2_result = $api->ezsigntemplate_get_object_v2(pki_ezsigntemplate_id => $ezsigntemplate_get_object_v2_pki_ezsigntemplate_id);
+#my $ezsigntemplate_get_object_v3_pki_ezsigntemplate_id = undef; # replace NULL with a proper value
+#my $ezsigntemplate_get_object_v3_result = $api->ezsigntemplate_get_object_v3(pki_ezsigntemplate_id => $ezsigntemplate_get_object_v3_pki_ezsigntemplate_id);
 
 
 done_testing();

@@ -226,6 +226,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_font_id' => {
+        datatype => 'int',
+        base_name => 'fkiFontID',
+        description => 'The unique ID of the Font',
+        format => '',
+        read_only => '',
+            },
     's_signature_url' => {
         datatype => 'string',
         base_name => 'sSignatureUrl',
@@ -233,16 +240,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_signature_urlinitials' => {
+        datatype => 'string',
+        base_name => 'sSignatureUrlinitials',
+        description => 'The URL of the SVG file for the Initials',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_signature_id' => 'int',
-    's_signature_url' => 'string'
+    'fki_font_id' => 'int',
+    's_signature_url' => 'string',
+    's_signature_urlinitials' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_signature_id' => 'pkiSignatureID',
-    's_signature_url' => 'sSignatureUrl'
+    'fki_font_id' => 'fkiFontID',
+    's_signature_url' => 'sSignatureUrl',
+    's_signature_urlinitials' => 'sSignatureUrlinitials'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
