@@ -163,6 +163,55 @@ sub activesession_get_current_v1 {
 }
 
 #
+# activesession_get_current_v2
+#
+# Get Current Activesession
+#
+{
+    my $params = {
+    };
+    __PACKAGE__->method_documentation->{ 'activesession_get_current_v2' } = {
+        summary => 'Get Current Activesession',
+        params => $params,
+        returns => 'ActivesessionGetCurrentV2Response',
+        };
+}
+# @return ActivesessionGetCurrentV2Response
+#
+sub activesession_get_current_v2 {
+    my ($self, %args) = @_;
+
+    # parse inputs
+    my $_resource_path = '/2/object/activesession/getCurrent';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('ActivesessionGetCurrentV2Response', $response);
+    return $_response_object;
+}
+
+#
 # activesession_get_list_v1
 #
 # Retrieve Activesession list

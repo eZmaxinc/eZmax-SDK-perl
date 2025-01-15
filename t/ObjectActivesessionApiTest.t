@@ -43,6 +43,12 @@ isa_ok($api, 'EzmaxApi::ObjectActivesessionApi');
 #my $activesession_get_current_v1_result = $api->activesession_get_current_v1();
 
 #
+# activesession_get_current_v2 test
+#
+# uncomment below and update the test
+#my $activesession_get_current_v2_result = $api->activesession_get_current_v2();
+
+#
 # activesession_get_list_v1 test
 #
 # uncomment below and update the test

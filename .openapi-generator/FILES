@@ -9,6 +9,8 @@ docs/ActivesessionGenerateFederationTokenV1Response.md
 docs/ActivesessionGenerateFederationTokenV1ResponseMPayload.md
 docs/ActivesessionGetCurrentV1Response.md
 docs/ActivesessionGetCurrentV1ResponseMPayload.md
+docs/ActivesessionGetCurrentV2Response.md
+docs/ActivesessionGetCurrentV2ResponseMPayload.md
 docs/ActivesessionGetListV1Response.md
 docs/ActivesessionGetListV1ResponseMPayload.md
 docs/ActivesessionListElement.md
@@ -1762,6 +1764,8 @@ lib/EzmaxApi/Object/ActivesessionGenerateFederationTokenV1Response.pm
 lib/EzmaxApi/Object/ActivesessionGenerateFederationTokenV1ResponseMPayload.pm
 lib/EzmaxApi/Object/ActivesessionGetCurrentV1Response.pm
 lib/EzmaxApi/Object/ActivesessionGetCurrentV1ResponseMPayload.pm
+lib/EzmaxApi/Object/ActivesessionGetCurrentV2Response.pm
+lib/EzmaxApi/Object/ActivesessionGetCurrentV2ResponseMPayload.pm
 lib/EzmaxApi/Object/ActivesessionGetListV1Response.pm
 lib/EzmaxApi/Object/ActivesessionGetListV1ResponseMPayload.pm
 lib/EzmaxApi/Object/ActivesessionListElement.pm
@@ -3503,6 +3507,8 @@ t/ActivesessionGenerateFederationTokenV1ResponseMPayloadTest.t
 t/ActivesessionGenerateFederationTokenV1ResponseTest.t
 t/ActivesessionGetCurrentV1ResponseMPayloadTest.t
 t/ActivesessionGetCurrentV1ResponseTest.t
+t/ActivesessionGetCurrentV2ResponseMPayloadTest.t
+t/ActivesessionGetCurrentV2ResponseTest.t
 t/ActivesessionGetListV1ResponseMPayloadTest.t
 t/ActivesessionGetListV1ResponseTest.t
 t/ActivesessionListElementTest.t
