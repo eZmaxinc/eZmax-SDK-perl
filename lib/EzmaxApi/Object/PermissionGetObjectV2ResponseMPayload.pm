@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::PermissionResponseCompound;
+use EzmaxApi::Object::PermissionResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -221,16 +221,16 @@ __PACKAGE__->class_documentation({description => 'Payload for GET /2/object/perm
 
 __PACKAGE__->method_documentation({
     'obj_permission' => {
-        datatype => 'PermissionResponseCompound',
+        datatype => 'PermissionResponse',
         base_name => 'objPermission',
-        description => '',
+        description => 'A Permission Object and children to create a complete structure',
         format => '',
         read_only => '',
             },
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_permission' => 'PermissionResponseCompound'
+    'obj_permission' => 'PermissionResponse'
 } );
 
 __PACKAGE__->attribute_map( {

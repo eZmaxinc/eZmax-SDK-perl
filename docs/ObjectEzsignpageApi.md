@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **ezsignpage_consult_v1**
-> EzsignpageConsultV1Response ezsignpage_consult_v1(pki_ezsignpage_id => $pki_ezsignpage_id, body => $body)
+> CommonResponse ezsignpage_consult_v1(pki_ezsignpage_id => $pki_ezsignpage_id, body => $body)
 
 Consult an Ezsignpage
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignpageConsultV1Response**](EzsignpageConsultV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

@@ -30,7 +30,6 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::CustomBrandingResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -221,9 +220,9 @@ __PACKAGE__->class_documentation({description => 'Payload for POST /1/object/ezs
 
 __PACKAGE__->method_documentation({
     'obj_branding' => {
-        datatype => 'CustomBrandingResponse',
+        datatype => 'object',
         base_name => 'objBranding',
-        description => '',
+        description => 'A Custom Branding Object',
         format => '',
         read_only => '',
             },
@@ -244,7 +243,7 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_branding' => 'CustomBrandingResponse',
+    'obj_branding' => 'object',
     'fki_userlogintype_id' => 'int',
     'a_s_ezsigntemplatesigner_description' => 'ARRAY[string]'
 } );

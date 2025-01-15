@@ -8,7 +8,7 @@ use EzmaxApi::Object::UserGetApikeysV1ResponseMPayload;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_obj_apikey** | [**ARRAY[ApikeyResponseCompound]**](ApikeyResponseCompound.md) |  | 
+**a_obj_apikey** | [**ARRAY[ApikeyResponseCompound]**](ApikeyResponse.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

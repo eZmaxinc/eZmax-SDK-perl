@@ -30,7 +30,6 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::CustomEzsignformfielderrortestResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 

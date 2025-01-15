@@ -32,7 +32,6 @@ use DateTime;
 
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
-use EzmaxApi::Object::WebhookGetHistoryV1ResponseMPayload;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -237,9 +236,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'm_payload' => {
-        datatype => 'WebhookGetHistoryV1ResponseMPayload',
+        datatype => 'object',
         base_name => 'mPayload',
-        description => '',
+        description => 'Payload for GET /1/object/webhook/{pkiWebhookID}/getHistory',
         format => '',
         read_only => '',
             },
@@ -248,7 +247,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'obj_debug_payload' => 'CommonResponseObjDebugPayload',
     'obj_debug' => 'CommonResponseObjDebug',
-    'm_payload' => 'WebhookGetHistoryV1ResponseMPayload'
+    'm_payload' => 'object'
 } );
 
 __PACKAGE__->attribute_map( {

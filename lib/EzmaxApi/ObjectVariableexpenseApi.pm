@@ -136,10 +136,10 @@ sub variableexpense_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'variableexpense_edit_object_v1' } = {
         summary => 'Edit an existing Variableexpense',
         params => $params,
-        returns => 'VariableexpenseEditObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return VariableexpenseEditObjectV1Response
+# @return CommonResponse
 #
 sub variableexpense_edit_object_v1 {
     my ($self, %args) = @_;
@@ -192,7 +192,7 @@ sub variableexpense_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('VariableexpenseEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

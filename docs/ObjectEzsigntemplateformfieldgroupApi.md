@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigntemplateformfieldgroup_delete_object_v1**
-> EzsigntemplateformfieldgroupDeleteObjectV1Response ezsigntemplateformfieldgroup_delete_object_v1(pki_ezsigntemplateformfieldgroup_id => $pki_ezsigntemplateformfieldgroup_id)
+> CommonResponse ezsigntemplateformfieldgroup_delete_object_v1(pki_ezsigntemplateformfieldgroup_id => $pki_ezsigntemplateformfieldgroup_id)
 
 Delete an existing Ezsigntemplateformfieldgroup
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsigntemplateformfieldgroupDeleteObjectV1Response**](EzsigntemplateformfieldgroupDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigntemplateformfieldgroup_edit_object_v1**
-> EzsigntemplateformfieldgroupEditObjectV1Response ezsigntemplateformfieldgroup_edit_object_v1(pki_ezsigntemplateformfieldgroup_id => $pki_ezsigntemplateformfieldgroup_id, ezsigntemplateformfieldgroup_edit_object_v1_request => $ezsigntemplateformfieldgroup_edit_object_v1_request)
+> CommonResponse ezsigntemplateformfieldgroup_edit_object_v1(pki_ezsigntemplateformfieldgroup_id => $pki_ezsigntemplateformfieldgroup_id, ezsigntemplateformfieldgroup_edit_object_v1_request => $ezsigntemplateformfieldgroup_edit_object_v1_request)
 
 Edit an existing Ezsigntemplateformfieldgroup
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsigntemplateformfieldgroupEditObjectV1Response**](EzsigntemplateformfieldgroupEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

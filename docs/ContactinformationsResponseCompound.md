@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 **fki_website_id_default** | **int** | The unique ID of the Website Default | [optional] 
 **e_contactinformations_type** | [**FieldEContactinformationsType**](FieldEContactinformationsType.md) |  | 
 **s_contactinformations_url** | **string** | The url of the Contactinformations | [optional] 
-**obj_address_default** | [**AddressResponseCompound**](AddressResponseCompound.md) |  | [optional] 
+**obj_address_default** | [**AddressResponse**](AddressResponse.md) | An Address Object and children to create a complete structure | [optional] 
 **obj_phone_default** | [**PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional] 
-**obj_email_default** | [**EmailResponseCompound**](EmailResponseCompound.md) |  | [optional] 
-**obj_website_default** | [**WebsiteResponseCompound**](WebsiteResponseCompound.md) |  | [optional] 
-**a_obj_address** | [**ARRAY[AddressResponseCompound]**](AddressResponseCompound.md) |  | 
+**obj_email_default** | [**EmailResponse**](EmailResponse.md) | An Email Object and children to create a complete structure | [optional] 
+**obj_website_default** | [**WebsiteResponse**](WebsiteResponse.md) | A Website Object and children to create a complete structure | [optional] 
+**a_obj_address** | [**ARRAY[AddressResponseCompound]**](AddressResponse.md) |  | 
 **a_obj_phone** | [**ARRAY[PhoneResponseCompound]**](PhoneResponseCompound.md) |  | 
-**a_obj_email** | [**ARRAY[EmailResponseCompound]**](EmailResponseCompound.md) |  | 
-**a_obj_website** | [**ARRAY[WebsiteResponseCompound]**](WebsiteResponseCompound.md) |  | 
+**a_obj_email** | [**ARRAY[EmailResponseCompound]**](EmailResponse.md) |  | 
+**a_obj_website** | [**ARRAY[WebsiteResponseCompound]**](WebsiteResponse.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

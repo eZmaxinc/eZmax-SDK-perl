@@ -30,7 +30,6 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::CustomDiscussionconfigurationResponse;
 use EzmaxApi::Object::DiscussionmembershipResponseCompound;
 use EzmaxApi::Object::DiscussionmessageResponseCompound;
 
@@ -265,9 +264,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_discussionconfiguration' => {
-        datatype => 'CustomDiscussionconfigurationResponse',
+        datatype => 'object',
         base_name => 'objDiscussionconfiguration',
-        description => '',
+        description => 'A Custom Discussionconfiguration Object',
         format => '',
         read_only => '',
             },
@@ -294,7 +293,7 @@ __PACKAGE__->openapi_types( {
     'dt_discussion_lastread' => 'string',
     'i_discussionmessage_count' => 'int',
     'i_discussionmessage_countunread' => 'int',
-    'obj_discussionconfiguration' => 'CustomDiscussionconfigurationResponse',
+    'obj_discussionconfiguration' => 'object',
     'a_obj_discussionmembership' => 'ARRAY[DiscussionmembershipResponseCompound]',
     'a_obj_discussionmessage' => 'ARRAY[DiscussionmessageResponseCompound]'
 } );

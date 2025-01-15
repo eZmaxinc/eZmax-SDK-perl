@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::ActivesessionGetCurrentV1ResponseMPayload;
+use EzmaxApi::Object::ActivesessionResponseCompound;
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
 
@@ -237,9 +237,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'm_payload' => {
-        datatype => 'ActivesessionGetCurrentV1ResponseMPayload',
+        datatype => 'ActivesessionResponseCompound',
         base_name => 'mPayload',
-        description => '',
+        description => 'Payload for GET /1/object/activesession/getCurrent',
         format => '',
         read_only => '',
             },
@@ -248,7 +248,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'obj_debug_payload' => 'CommonResponseObjDebugPayload',
     'obj_debug' => 'CommonResponseObjDebug',
-    'm_payload' => 'ActivesessionGetCurrentV1ResponseMPayload'
+    'm_payload' => 'ActivesessionResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {

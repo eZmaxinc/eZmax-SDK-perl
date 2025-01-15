@@ -130,10 +130,10 @@ sub discussion_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'discussion_delete_object_v1' } = {
         summary => 'Delete an existing Discussion',
         params => $params,
-        returns => 'DiscussionDeleteObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return DiscussionDeleteObjectV1Response
+# @return CommonResponse
 #
 sub discussion_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub discussion_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('DiscussionDeleteObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -270,10 +270,10 @@ sub discussion_get_object_v2 {
     __PACKAGE__->method_documentation->{ 'discussion_patch_object_v1' } = {
         summary => 'Patch an existing Discussion',
         params => $params,
-        returns => 'DiscussionPatchObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return DiscussionPatchObjectV1Response
+# @return CommonResponse
 #
 sub discussion_patch_object_v1 {
     my ($self, %args) = @_;
@@ -326,7 +326,7 @@ sub discussion_patch_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('DiscussionPatchObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -353,10 +353,10 @@ sub discussion_patch_object_v1 {
     __PACKAGE__->method_documentation->{ 'discussion_update_discussionreadstatus_v1' } = {
         summary => 'Update the read status of the discussion',
         params => $params,
-        returns => 'DiscussionUpdateDiscussionreadstatusV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return DiscussionUpdateDiscussionreadstatusV1Response
+# @return CommonResponse
 #
 sub discussion_update_discussionreadstatus_v1 {
     my ($self, %args) = @_;
@@ -409,7 +409,7 @@ sub discussion_update_discussionreadstatus_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('DiscussionUpdateDiscussionreadstatusV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

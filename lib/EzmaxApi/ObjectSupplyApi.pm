@@ -130,10 +130,10 @@ sub supply_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'supply_delete_object_v1' } = {
         summary => 'Delete an existing Supply',
         params => $params,
-        returns => 'SupplyDeleteObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return SupplyDeleteObjectV1Response
+# @return CommonResponse
 #
 sub supply_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub supply_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('SupplyDeleteObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub supply_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'supply_edit_object_v1' } = {
         summary => 'Edit an existing Supply',
         params => $params,
-        returns => 'SupplyEditObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return SupplyEditObjectV1Response
+# @return CommonResponse
 #
 sub supply_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub supply_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('SupplyEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

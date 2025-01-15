@@ -30,7 +30,6 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::CustomBrandingResponse;
 use EzmaxApi::Object::FieldESystemconfigurationEzsign;
 use EzmaxApi::Object::FieldESystemconfigurationEzsignofficeplan;
 use EzmaxApi::Object::FieldESystemconfigurationLanguage1;
@@ -338,9 +337,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_branding' => {
-        datatype => 'CustomBrandingResponse',
+        datatype => 'object',
         base_name => 'objBranding',
-        description => '',
+        description => 'A Custom Branding Object',
         format => '',
         read_only => '',
             },
@@ -363,7 +362,7 @@ __PACKAGE__->openapi_types( {
     'b_systemconfiguration_sspr' => 'boolean',
     'dt_systemconfiguration_readonlyexpirationstart' => 'string',
     'dt_systemconfiguration_readonlyexpirationend' => 'string',
-    'obj_branding' => 'CustomBrandingResponse'
+    'obj_branding' => 'object'
 } );
 
 __PACKAGE__->attribute_map( {
