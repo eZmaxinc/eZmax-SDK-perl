@@ -32,6 +32,7 @@ use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::ComputedEEzsignfolderAccess;
+use EzmaxApi::Object::CustomEzsignfoldertypeResponse;
 use EzmaxApi::Object::FieldEEzsignfolderCompletion;
 use EzmaxApi::Object::FieldEEzsignfolderDocumentdependency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
@@ -239,9 +240,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_ezsignfoldertype' => {
-        datatype => 'object',
+        datatype => 'CustomEzsignfoldertypeResponse',
         base_name => 'objEzsignfoldertype',
-        description => 'A Custom Ezsignfoldertype Object',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -418,7 +419,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'pki_ezsignfolder_id' => 'int',
     'fki_ezsignfoldertype_id' => 'int',
-    'obj_ezsignfoldertype' => 'object',
+    'obj_ezsignfoldertype' => 'CustomEzsignfoldertypeResponse',
     'fki_timezone_id' => 'int',
     'e_ezsignfolder_completion' => 'FieldEEzsignfolderCompletion',
     'e_ezsignfolder_documentdependency' => 'FieldEEzsignfolderDocumentdependency',

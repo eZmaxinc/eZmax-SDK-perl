@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CustomDiscussionconfigurationResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -262,9 +263,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_discussionconfiguration' => {
-        datatype => 'object',
+        datatype => 'CustomDiscussionconfigurationResponse',
         base_name => 'objDiscussionconfiguration',
-        description => 'A Custom Discussionconfiguration Object',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -277,7 +278,7 @@ __PACKAGE__->openapi_types( {
     'dt_discussion_lastread' => 'string',
     'i_discussionmessage_count' => 'int',
     'i_discussionmessage_countunread' => 'int',
-    'obj_discussionconfiguration' => 'object'
+    'obj_discussionconfiguration' => 'CustomDiscussionconfigurationResponse'
 } );
 
 __PACKAGE__->attribute_map( {
