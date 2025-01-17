@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CommunicationRequest;
 use EzmaxApi::Object::CommunicationexternalrecipientRequestCompound;
 use EzmaxApi::Object::CommunicationrecipientRequestCompound;
 use EzmaxApi::Object::CommunicationreferenceRequest;
@@ -38,7 +39,7 @@ use EzmaxApi::Object::CustomCommunicationsenderRequest;
 use EzmaxApi::Object::FieldECommunicationImportance;
 use EzmaxApi::Object::FieldECommunicationType;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::CommunicationRequest");
 
 #
 #Request for POST /1/object/communication
@@ -91,12 +92,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object CommunicationRequest
+    $self->EzmaxApi::Object::CommunicationRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call CommunicationRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::CommunicationRequest::to_hash };
 
     return $_hash;
 }
@@ -127,6 +134,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (CommunicationRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::CommunicationRequest::TO_JSON };
 
     return $_data;
 }
@@ -195,6 +205,9 @@ sub from_hash {
         }
     }
 
+    # call parent (CommunicationRequest) from_hash
+    $self->EzmaxApi::Object::CommunicationRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -226,76 +239,6 @@ __PACKAGE__->class_documentation({description => 'Request for POST /1/object/com
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_communication_id' => {
-        datatype => 'int',
-        base_name => 'pkiCommunicationID',
-        description => 'The unique ID of the Communication.',
-        format => '',
-        read_only => '',
-            },
-    'e_communication_importance' => {
-        datatype => 'FieldECommunicationImportance',
-        base_name => 'eCommunicationImportance',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_communication_type' => {
-        datatype => 'FieldECommunicationType',
-        base_name => 'eCommunicationType',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'obj_communicationsender' => {
-        datatype => 'CustomCommunicationsenderRequest',
-        base_name => 'objCommunicationsender',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_communication_subject' => {
-        datatype => 'string',
-        base_name => 'sCommunicationSubject',
-        description => 'The subject of the Communication',
-        format => '',
-        read_only => '',
-            },
-    't_communication_body' => {
-        datatype => 'string',
-        base_name => 'tCommunicationBody',
-        description => 'The Body of the Communication',
-        format => '',
-        read_only => '',
-            },
-    'b_communication_private' => {
-        datatype => 'boolean',
-        base_name => 'bCommunicationPrivate',
-        description => 'Whether the Communication is private or not',
-        format => '',
-        read_only => '',
-            },
-    'e_communication_attachmenttype' => {
-        datatype => 'string',
-        base_name => 'eCommunicationAttachmenttype',
-        description => 'How the attachment should be included in the email.   Only used if eCommunicationType is **Email**',
-        format => '',
-        read_only => '',
-            },
-    'i_communication_attachmentlinkexpiration' => {
-        datatype => 'int',
-        base_name => 'iCommunicationAttachmentlinkexpiration',
-        description => 'The number of days before the attachment link expired.   Only used if eCommunicationType is **Email** and eCommunicationattachmentType is **Link**',
-        format => '',
-        read_only => '',
-            },
-    'b_communication_readreceipt' => {
-        datatype => 'boolean',
-        base_name => 'bCommunicationReadreceipt',
-        description => 'Whether we ask for a read receipt or not.',
-        format => '',
-        read_only => '',
-            },
     'a_obj_communicationattachment' => {
         datatype => 'ARRAY[CustomCommunicationattachmentRequest]',
         base_name => 'a_objCommunicationattachment',
@@ -327,16 +270,6 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_communication_id' => 'int',
-    'e_communication_importance' => 'FieldECommunicationImportance',
-    'e_communication_type' => 'FieldECommunicationType',
-    'obj_communicationsender' => 'CustomCommunicationsenderRequest',
-    's_communication_subject' => 'string',
-    't_communication_body' => 'string',
-    'b_communication_private' => 'boolean',
-    'e_communication_attachmenttype' => 'string',
-    'i_communication_attachmentlinkexpiration' => 'int',
-    'b_communication_readreceipt' => 'boolean',
     'a_obj_communicationattachment' => 'ARRAY[CustomCommunicationattachmentRequest]',
     'a_obj_communicationrecipient' => 'ARRAY[CommunicationrecipientRequestCompound]',
     'a_obj_communicationreference' => 'ARRAY[CommunicationreferenceRequestCompound]',
@@ -344,16 +277,6 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_communication_id' => 'pkiCommunicationID',
-    'e_communication_importance' => 'eCommunicationImportance',
-    'e_communication_type' => 'eCommunicationType',
-    'obj_communicationsender' => 'objCommunicationsender',
-    's_communication_subject' => 'sCommunicationSubject',
-    't_communication_body' => 'tCommunicationBody',
-    'b_communication_private' => 'bCommunicationPrivate',
-    'e_communication_attachmenttype' => 'eCommunicationAttachmenttype',
-    'i_communication_attachmentlinkexpiration' => 'iCommunicationAttachmentlinkexpiration',
-    'b_communication_readreceipt' => 'bCommunicationReadreceipt',
     'a_obj_communicationattachment' => 'a_objCommunicationattachment',
     'a_obj_communicationrecipient' => 'a_objCommunicationrecipient',
     'a_obj_communicationreference' => 'a_objCommunicationreference',

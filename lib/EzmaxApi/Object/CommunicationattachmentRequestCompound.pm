@@ -30,8 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CommunicationattachmentRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::CommunicationattachmentRequest");
 
 #
 #A Communicationattachment Object and children
@@ -84,12 +85,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object CommunicationattachmentRequest
+    $self->EzmaxApi::Object::CommunicationattachmentRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call CommunicationattachmentRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::CommunicationattachmentRequest::to_hash };
 
     return $_hash;
 }
@@ -120,6 +127,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (CommunicationattachmentRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::CommunicationattachmentRequest::TO_JSON };
 
     return $_data;
 }
@@ -188,6 +198,9 @@ sub from_hash {
         }
     }
 
+    # call parent (CommunicationattachmentRequest) from_hash
+    $self->EzmaxApi::Object::CommunicationattachmentRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -219,48 +232,14 @@ __PACKAGE__->class_documentation({description => 'A Communicationattachment Obje
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_communicationattachment_id' => {
-        datatype => 'int',
-        base_name => 'pkiCommunicationattachmentID',
-        description => 'The unique ID of the Communicationattachment',
-        format => '',
-        read_only => '',
-            },
-    'fki_attachment_id' => {
-        datatype => 'int',
-        base_name => 'fkiAttachmentID',
-        description => 'The unique ID of the Attachment.',
-        format => '',
-        read_only => '',
-            },
-    'fki_invoice_id' => {
-        datatype => 'int',
-        base_name => 'fkiInvoiceID',
-        description => 'The unique ID of the Invoice.',
-        format => '',
-        read_only => '',
-            },
-    'fki_salarypreparation_id' => {
-        datatype => 'int',
-        base_name => 'fkiSalarypreparationID',
-        description => 'The unique ID of the Salarypreparation.',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_communicationattachment_id' => 'int',
-    'fki_attachment_id' => 'int',
-    'fki_invoice_id' => 'int',
-    'fki_salarypreparation_id' => 'int'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_communicationattachment_id' => 'pkiCommunicationattachmentID',
-    'fki_attachment_id' => 'fkiAttachmentID',
-    'fki_invoice_id' => 'fkiInvoiceID',
-    'fki_salarypreparation_id' => 'fkiSalarypreparationID'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

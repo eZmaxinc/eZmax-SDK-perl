@@ -30,8 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::DiscussionmessageRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::DiscussionmessageRequest");
 
 #
 #A Discussionmessage Object and children
@@ -84,12 +85,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object DiscussionmessageRequest
+    $self->EzmaxApi::Object::DiscussionmessageRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call DiscussionmessageRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::DiscussionmessageRequest::to_hash };
 
     return $_hash;
 }
@@ -120,6 +127,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (DiscussionmessageRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::DiscussionmessageRequest::TO_JSON };
 
     return $_data;
 }
@@ -188,6 +198,9 @@ sub from_hash {
         }
     }
 
+    # call parent (DiscussionmessageRequest) from_hash
+    $self->EzmaxApi::Object::DiscussionmessageRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -219,48 +232,14 @@ __PACKAGE__->class_documentation({description => 'A Discussionmessage Object and
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_discussionmessage_id' => {
-        datatype => 'int',
-        base_name => 'pkiDiscussionmessageID',
-        description => 'The unique ID of the Discussionmessage',
-        format => '',
-        read_only => '',
-            },
-    'fki_discussion_id' => {
-        datatype => 'int',
-        base_name => 'fkiDiscussionID',
-        description => 'The unique ID of the Discussion',
-        format => '',
-        read_only => '',
-            },
-    'fki_discussionmembership_id_actionrequired' => {
-        datatype => 'int',
-        base_name => 'fkiDiscussionmembershipIDActionrequired',
-        description => 'The unique ID of the Discussionmembership',
-        format => '',
-        read_only => '',
-            },
-    't_discussionmessage_content' => {
-        datatype => 'string',
-        base_name => 'tDiscussionmessageContent',
-        description => 'The content of the Discussionmessage',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_discussionmessage_id' => 'int',
-    'fki_discussion_id' => 'int',
-    'fki_discussionmembership_id_actionrequired' => 'int',
-    't_discussionmessage_content' => 'string'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_discussionmessage_id' => 'pkiDiscussionmessageID',
-    'fki_discussion_id' => 'fkiDiscussionID',
-    'fki_discussionmembership_id_actionrequired' => 'fkiDiscussionmembershipIDActionrequired',
-    't_discussionmessage_content' => 'tDiscussionmessageContent'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

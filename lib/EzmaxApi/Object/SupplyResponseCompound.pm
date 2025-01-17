@@ -31,8 +31,9 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::MultilingualSupplyDescription;
+use EzmaxApi::Object::SupplyResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::SupplyResponse");
 
 #
 #A Supply Object
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object SupplyResponse
+    $self->EzmaxApi::Object::SupplyResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call SupplyResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::SupplyResponse::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (SupplyResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::SupplyResponse::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (SupplyResponse) from_hash
+    $self->EzmaxApi::Object::SupplyResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -220,120 +233,14 @@ __PACKAGE__->class_documentation({description => 'A Supply Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_supply_id' => {
-        datatype => 'int',
-        base_name => 'pkiSupplyID',
-        description => 'The unique ID of the Supply',
-        format => '',
-        read_only => '',
-            },
-    'fki_glaccount_id' => {
-        datatype => 'int',
-        base_name => 'fkiGlaccountID',
-        description => 'The unique ID of the Glaccount',
-        format => '',
-        read_only => '',
-            },
-    'fki_glaccountcontainer_id' => {
-        datatype => 'int',
-        base_name => 'fkiGlaccountcontainerID',
-        description => 'The unique ID of the Glaccountcontainer',
-        format => '',
-        read_only => '',
-            },
-    'fki_variableexpense_id' => {
-        datatype => 'int',
-        base_name => 'fkiVariableexpenseID',
-        description => 'The unique ID of the Variableexpense',
-        format => '',
-        read_only => '',
-            },
-    's_supply_code' => {
-        datatype => 'string',
-        base_name => 'sSupplyCode',
-        description => 'The code of the Supply',
-        format => '',
-        read_only => '',
-            },
-    'obj_supply_description' => {
-        datatype => 'MultilingualSupplyDescription',
-        base_name => 'objSupplyDescription',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'd_supply_unitprice' => {
-        datatype => 'string',
-        base_name => 'dSupplyUnitprice',
-        description => 'The unit price of the Supply',
-        format => '',
-        read_only => '',
-            },
-    'b_supply_isactive' => {
-        datatype => 'boolean',
-        base_name => 'bSupplyIsactive',
-        description => 'Whether the supply is active or not',
-        format => '',
-        read_only => '',
-            },
-    'b_supply_variableprice' => {
-        datatype => 'boolean',
-        base_name => 'bSupplyVariableprice',
-        description => 'Whether if the price is variable',
-        format => '',
-        read_only => '',
-            },
-    's_glaccount_description_x' => {
-        datatype => 'string',
-        base_name => 'sGlaccountDescriptionX',
-        description => 'The Description for the Glaccount in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    's_glaccountcontainer_longdescription_x' => {
-        datatype => 'string',
-        base_name => 'sGlaccountcontainerLongdescriptionX',
-        description => 'The Description for the Glaccountcontainer in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    's_variableexpense_description_x' => {
-        datatype => 'string',
-        base_name => 'sVariableexpenseDescriptionX',
-        description => 'The description of the Variableexpense in the language of the requester',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_supply_id' => 'int',
-    'fki_glaccount_id' => 'int',
-    'fki_glaccountcontainer_id' => 'int',
-    'fki_variableexpense_id' => 'int',
-    's_supply_code' => 'string',
-    'obj_supply_description' => 'MultilingualSupplyDescription',
-    'd_supply_unitprice' => 'string',
-    'b_supply_isactive' => 'boolean',
-    'b_supply_variableprice' => 'boolean',
-    's_glaccount_description_x' => 'string',
-    's_glaccountcontainer_longdescription_x' => 'string',
-    's_variableexpense_description_x' => 'string'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_supply_id' => 'pkiSupplyID',
-    'fki_glaccount_id' => 'fkiGlaccountID',
-    'fki_glaccountcontainer_id' => 'fkiGlaccountcontainerID',
-    'fki_variableexpense_id' => 'fkiVariableexpenseID',
-    's_supply_code' => 'sSupplyCode',
-    'obj_supply_description' => 'objSupplyDescription',
-    'd_supply_unitprice' => 'dSupplyUnitprice',
-    'b_supply_isactive' => 'bSupplyIsactive',
-    'b_supply_variableprice' => 'bSupplyVariableprice',
-    's_glaccount_description_x' => 'sGlaccountDescriptionX',
-    's_glaccountcontainer_longdescription_x' => 'sGlaccountcontainerLongdescriptionX',
-    's_variableexpense_description_x' => 'sVariableexpenseDescriptionX'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

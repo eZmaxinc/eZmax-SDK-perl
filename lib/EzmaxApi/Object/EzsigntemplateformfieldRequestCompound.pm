@@ -32,12 +32,13 @@ use DateTime;
 
 use EzmaxApi::Object::EnumHorizontalalignment;
 use EzmaxApi::Object::EzsigntemplateelementdependencyRequest;
+use EzmaxApi::Object::EzsigntemplateformfieldRequest;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldPositioning;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldPositioningoccurence;
 use EzmaxApi::Object::TextstylestaticRequestCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsigntemplateformfieldRequest");
 
 #
 #An Ezsigntemplateformfield Object and children to create a complete structure
@@ -90,12 +91,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsigntemplateformfieldRequest
+    $self->EzmaxApi::Object::EzsigntemplateformfieldRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsigntemplateformfieldRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsigntemplateformfieldRequest::to_hash };
 
     return $_hash;
 }
@@ -126,6 +133,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsigntemplateformfieldRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsigntemplateformfieldRequest::TO_JSON };
 
     return $_data;
 }
@@ -194,6 +204,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsigntemplateformfieldRequest) from_hash
+    $self->EzmaxApi::Object::EzsigntemplateformfieldRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -225,132 +238,6 @@ __PACKAGE__->class_documentation({description => 'An Ezsigntemplateformfield Obj
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsigntemplateformfield_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsigntemplateformfieldID',
-        description => 'The unique ID of the Ezsigntemplateformfield',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsigntemplateformfield_positioning' => {
-        datatype => 'FieldEEzsigntemplateformfieldPositioning',
-        base_name => 'eEzsigntemplateformfieldPositioning',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigntemplatedocumentpage_pagenumber' => {
-        datatype => 'int',
-        base_name => 'iEzsigntemplatedocumentpagePagenumber',
-        description => 'The page number in the Ezsigntemplatedocument',
-        format => '',
-        read_only => '',
-            },
-    's_ezsigntemplateformfield_label' => {
-        datatype => 'string',
-        base_name => 'sEzsigntemplateformfieldLabel',
-        description => 'The Label for the Ezsigntemplateformfield',
-        format => '',
-        read_only => '',
-            },
-    's_ezsigntemplateformfield_value' => {
-        datatype => 'string',
-        base_name => 'sEzsigntemplateformfieldValue',
-        description => 'The value for the Ezsigntemplateformfield',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigntemplateformfield_x' => {
-        datatype => 'int',
-        base_name => 'iEzsigntemplateformfieldX',
-        description => 'The X coordinate (Horizontal) where to put the Ezsigntemplateformfield on the Ezsigntemplatepage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplateformfield 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate.',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigntemplateformfield_y' => {
-        datatype => 'int',
-        base_name => 'iEzsigntemplateformfieldY',
-        description => 'The Y coordinate (Vertical) where to put the Ezsigntemplateformfield on the Ezsigntemplatepage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplateformfield 3 inches from the top border of the page, you would use \&quot;300\&quot; for the Y coordinate.',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigntemplateformfield_width' => {
-        datatype => 'int',
-        base_name => 'iEzsigntemplateformfieldWidth',
-        description => 'The Width of the Ezsigntemplateformfield in pixels calculated at 100 DPI',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigntemplateformfield_height' => {
-        datatype => 'int',
-        base_name => 'iEzsigntemplateformfieldHeight',
-        description => 'The Height of the Ezsigntemplateformfield in pixels calculated at 100 DPI ',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsigntemplateformfield_autocomplete' => {
-        datatype => 'boolean',
-        base_name => 'bEzsigntemplateformfieldAutocomplete',
-        description => 'Whether the Ezsigntemplateformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsigntemplateformfieldgroupType is **Text**',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsigntemplateformfield_selected' => {
-        datatype => 'boolean',
-        base_name => 'bEzsigntemplateformfieldSelected',
-        description => 'Whether the Ezsigntemplateformfield is selected or not by default.  This can only be set if eEzsigntemplateformfieldgroupType is **Checkbox** or **Radio**',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsigntemplateformfield_dependencyrequirement' => {
-        datatype => 'FieldEEzsigntemplateformfieldDependencyrequirement',
-        base_name => 'eEzsigntemplateformfieldDependencyrequirement',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_ezsigntemplateformfield_positioningpattern' => {
-        datatype => 'string',
-        base_name => 'sEzsigntemplateformfieldPositioningpattern',
-        description => 'The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigntemplateformfield_positioningoffsetx' => {
-        datatype => 'int',
-        base_name => 'iEzsigntemplateformfieldPositioningoffsetx',
-        description => 'The offset X  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigntemplateformfield_positioningoffsety' => {
-        datatype => 'int',
-        base_name => 'iEzsigntemplateformfieldPositioningoffsety',
-        description => 'The offset Y  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsigntemplateformfield_positioningoccurence' => {
-        datatype => 'FieldEEzsigntemplateformfieldPositioningoccurence',
-        base_name => 'eEzsigntemplateformfieldPositioningoccurence',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsigntemplateformfield_horizontalalignment' => {
-        datatype => 'EnumHorizontalalignment',
-        base_name => 'eEzsigntemplateformfieldHorizontalalignment',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'obj_textstylestatic' => {
-        datatype => 'TextstylestaticRequestCompound',
-        base_name => 'objTextstylestatic',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'a_obj_ezsigntemplateelementdependency' => {
         datatype => 'ARRAY[EzsigntemplateelementdependencyRequestCompound]',
         base_name => 'a_objEzsigntemplateelementdependency',
@@ -361,46 +248,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsigntemplateformfield_id' => 'int',
-    'e_ezsigntemplateformfield_positioning' => 'FieldEEzsigntemplateformfieldPositioning',
-    'i_ezsigntemplatedocumentpage_pagenumber' => 'int',
-    's_ezsigntemplateformfield_label' => 'string',
-    's_ezsigntemplateformfield_value' => 'string',
-    'i_ezsigntemplateformfield_x' => 'int',
-    'i_ezsigntemplateformfield_y' => 'int',
-    'i_ezsigntemplateformfield_width' => 'int',
-    'i_ezsigntemplateformfield_height' => 'int',
-    'b_ezsigntemplateformfield_autocomplete' => 'boolean',
-    'b_ezsigntemplateformfield_selected' => 'boolean',
-    'e_ezsigntemplateformfield_dependencyrequirement' => 'FieldEEzsigntemplateformfieldDependencyrequirement',
-    's_ezsigntemplateformfield_positioningpattern' => 'string',
-    'i_ezsigntemplateformfield_positioningoffsetx' => 'int',
-    'i_ezsigntemplateformfield_positioningoffsety' => 'int',
-    'e_ezsigntemplateformfield_positioningoccurence' => 'FieldEEzsigntemplateformfieldPositioningoccurence',
-    'e_ezsigntemplateformfield_horizontalalignment' => 'EnumHorizontalalignment',
-    'obj_textstylestatic' => 'TextstylestaticRequestCompound',
     'a_obj_ezsigntemplateelementdependency' => 'ARRAY[EzsigntemplateelementdependencyRequestCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsigntemplateformfield_id' => 'pkiEzsigntemplateformfieldID',
-    'e_ezsigntemplateformfield_positioning' => 'eEzsigntemplateformfieldPositioning',
-    'i_ezsigntemplatedocumentpage_pagenumber' => 'iEzsigntemplatedocumentpagePagenumber',
-    's_ezsigntemplateformfield_label' => 'sEzsigntemplateformfieldLabel',
-    's_ezsigntemplateformfield_value' => 'sEzsigntemplateformfieldValue',
-    'i_ezsigntemplateformfield_x' => 'iEzsigntemplateformfieldX',
-    'i_ezsigntemplateformfield_y' => 'iEzsigntemplateformfieldY',
-    'i_ezsigntemplateformfield_width' => 'iEzsigntemplateformfieldWidth',
-    'i_ezsigntemplateformfield_height' => 'iEzsigntemplateformfieldHeight',
-    'b_ezsigntemplateformfield_autocomplete' => 'bEzsigntemplateformfieldAutocomplete',
-    'b_ezsigntemplateformfield_selected' => 'bEzsigntemplateformfieldSelected',
-    'e_ezsigntemplateformfield_dependencyrequirement' => 'eEzsigntemplateformfieldDependencyrequirement',
-    's_ezsigntemplateformfield_positioningpattern' => 'sEzsigntemplateformfieldPositioningpattern',
-    'i_ezsigntemplateformfield_positioningoffsetx' => 'iEzsigntemplateformfieldPositioningoffsetx',
-    'i_ezsigntemplateformfield_positioningoffsety' => 'iEzsigntemplateformfieldPositioningoffsety',
-    'e_ezsigntemplateformfield_positioningoccurence' => 'eEzsigntemplateformfieldPositioningoccurence',
-    'e_ezsigntemplateformfield_horizontalalignment' => 'eEzsigntemplateformfieldHorizontalalignment',
-    'obj_textstylestatic' => 'objTextstylestatic',
     'a_obj_ezsigntemplateelementdependency' => 'a_objEzsigntemplateelementdependency'
 } );
 

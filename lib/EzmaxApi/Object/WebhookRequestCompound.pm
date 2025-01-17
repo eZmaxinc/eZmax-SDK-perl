@@ -33,9 +33,10 @@ use DateTime;
 use EzmaxApi::Object::FieldEWebhookEzsignevent;
 use EzmaxApi::Object::FieldEWebhookManagementevent;
 use EzmaxApi::Object::FieldEWebhookModule;
+use EzmaxApi::Object::WebhookRequest;
 use EzmaxApi::Object::WebhookheaderRequestCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::WebhookRequest");
 
 #
 #A Webhook Object and children
@@ -88,12 +89,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object WebhookRequest
+    $self->EzmaxApi::Object::WebhookRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call WebhookRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::WebhookRequest::to_hash };
 
     return $_hash;
 }
@@ -124,6 +131,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (WebhookRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::WebhookRequest::TO_JSON };
 
     return $_data;
 }
@@ -192,6 +202,9 @@ sub from_hash {
         }
     }
 
+    # call parent (WebhookRequest) from_hash
+    $self->EzmaxApi::Object::WebhookRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -223,90 +236,6 @@ __PACKAGE__->class_documentation({description => 'A Webhook Object and children'
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_webhook_id' => {
-        datatype => 'int',
-        base_name => 'pkiWebhookID',
-        description => 'The unique ID of the Webhook',
-        format => '',
-        read_only => '',
-            },
-    'fki_authenticationexternal_id' => {
-        datatype => 'int',
-        base_name => 'fkiAuthenticationexternalID',
-        description => 'The unique ID of the Authenticationexternal',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsignfoldertype_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsignfoldertypeID',
-        description => 'The unique ID of the Ezsignfoldertype.',
-        format => '',
-        read_only => '',
-            },
-    's_webhook_description' => {
-        datatype => 'string',
-        base_name => 'sWebhookDescription',
-        description => 'The description of the Webhook',
-        format => '',
-        read_only => '',
-            },
-    'e_webhook_module' => {
-        datatype => 'FieldEWebhookModule',
-        base_name => 'eWebhookModule',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_webhook_ezsignevent' => {
-        datatype => 'FieldEWebhookEzsignevent',
-        base_name => 'eWebhookEzsignevent',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_webhook_managementevent' => {
-        datatype => 'FieldEWebhookManagementevent',
-        base_name => 'eWebhookManagementevent',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_webhook_url' => {
-        datatype => 'string',
-        base_name => 'sWebhookUrl',
-        description => 'The URL of the Webhook callback',
-        format => '',
-        read_only => '',
-            },
-    's_webhook_emailfailed' => {
-        datatype => 'string',
-        base_name => 'sWebhookEmailfailed',
-        description => 'The email that will receive the Webhook in case all attempts fail',
-        format => '',
-        read_only => '',
-            },
-    'b_webhook_isactive' => {
-        datatype => 'boolean',
-        base_name => 'bWebhookIsactive',
-        description => 'Whether the Webhook is active or not',
-        format => '',
-        read_only => '',
-            },
-    'b_webhook_issigned' => {
-        datatype => 'boolean',
-        base_name => 'bWebhookIssigned',
-        description => 'Whether the requests will be signed or not',
-        format => '',
-        read_only => '',
-            },
-    'b_webhook_skipsslvalidation' => {
-        datatype => 'boolean',
-        base_name => 'bWebhookSkipsslvalidation',
-        description => 'Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use',
-        format => '',
-        read_only => '',
-            },
     'a_obj_webhookheader' => {
         datatype => 'ARRAY[WebhookheaderRequestCompound]',
         base_name => 'a_objWebhookheader',
@@ -317,34 +246,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_webhook_id' => 'int',
-    'fki_authenticationexternal_id' => 'int',
-    'fki_ezsignfoldertype_id' => 'int',
-    's_webhook_description' => 'string',
-    'e_webhook_module' => 'FieldEWebhookModule',
-    'e_webhook_ezsignevent' => 'FieldEWebhookEzsignevent',
-    'e_webhook_managementevent' => 'FieldEWebhookManagementevent',
-    's_webhook_url' => 'string',
-    's_webhook_emailfailed' => 'string',
-    'b_webhook_isactive' => 'boolean',
-    'b_webhook_issigned' => 'boolean',
-    'b_webhook_skipsslvalidation' => 'boolean',
     'a_obj_webhookheader' => 'ARRAY[WebhookheaderRequestCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_webhook_id' => 'pkiWebhookID',
-    'fki_authenticationexternal_id' => 'fkiAuthenticationexternalID',
-    'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
-    's_webhook_description' => 'sWebhookDescription',
-    'e_webhook_module' => 'eWebhookModule',
-    'e_webhook_ezsignevent' => 'eWebhookEzsignevent',
-    'e_webhook_managementevent' => 'eWebhookManagementevent',
-    's_webhook_url' => 'sWebhookUrl',
-    's_webhook_emailfailed' => 'sWebhookEmailfailed',
-    'b_webhook_isactive' => 'bWebhookIsactive',
-    'b_webhook_issigned' => 'bWebhookIssigned',
-    'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation',
     'a_obj_webhookheader' => 'a_objWebhookheader'
 } );
 

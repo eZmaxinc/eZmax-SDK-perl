@@ -30,8 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EzsigntemplatepackageRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsigntemplatepackageRequest");
 
 #
 #A Ezsigntemplatepackage Object and children
@@ -84,12 +85,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsigntemplatepackageRequest
+    $self->EzmaxApi::Object::EzsigntemplatepackageRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsigntemplatepackageRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsigntemplatepackageRequest::to_hash };
 
     return $_hash;
 }
@@ -120,6 +127,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsigntemplatepackageRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsigntemplatepackageRequest::TO_JSON };
 
     return $_data;
 }
@@ -188,6 +198,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsigntemplatepackageRequest) from_hash
+    $self->EzmaxApi::Object::EzsigntemplatepackageRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -219,75 +232,14 @@ __PACKAGE__->class_documentation({description => 'A Ezsigntemplatepackage Object
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsigntemplatepackage_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsigntemplatepackageID',
-        description => 'The unique ID of the Ezsigntemplatepackage',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsignfoldertype_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsignfoldertypeID',
-        description => 'The unique ID of the Ezsignfoldertype.',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezdoctemplatedocument_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzdoctemplatedocumentID',
-        description => 'The unique ID of the Ezdoctemplatedocument',
-        format => '',
-        read_only => '',
-            },
-    'fki_language_id' => {
-        datatype => 'int',
-        base_name => 'fkiLanguageID',
-        description => 'The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|',
-        format => '',
-        read_only => '',
-            },
-    's_ezsigntemplatepackage_description' => {
-        datatype => 'string',
-        base_name => 'sEzsigntemplatepackageDescription',
-        description => 'The description of the Ezsigntemplatepackage',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsigntemplatepackage_adminonly' => {
-        datatype => 'boolean',
-        base_name => 'bEzsigntemplatepackageAdminonly',
-        description => 'Whether the Ezsigntemplatepackage can be accessed by admin users only (eUserType&#x3D;Normal)',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsigntemplatepackage_isactive' => {
-        datatype => 'boolean',
-        base_name => 'bEzsigntemplatepackageIsactive',
-        description => 'Whether the Ezsigntemplatepackage is active or not',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsigntemplatepackage_id' => 'int',
-    'fki_ezsignfoldertype_id' => 'int',
-    'fki_ezdoctemplatedocument_id' => 'int',
-    'fki_language_id' => 'int',
-    's_ezsigntemplatepackage_description' => 'string',
-    'b_ezsigntemplatepackage_adminonly' => 'boolean',
-    'b_ezsigntemplatepackage_isactive' => 'boolean'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsigntemplatepackage_id' => 'pkiEzsigntemplatepackageID',
-    'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
-    'fki_ezdoctemplatedocument_id' => 'fkiEzdoctemplatedocumentID',
-    'fki_language_id' => 'fkiLanguageID',
-    's_ezsigntemplatepackage_description' => 'sEzsigntemplatepackageDescription',
-    'b_ezsigntemplatepackage_adminonly' => 'bEzsigntemplatepackageAdminonly',
-    'b_ezsigntemplatepackage_isactive' => 'bEzsigntemplatepackageIsactive'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

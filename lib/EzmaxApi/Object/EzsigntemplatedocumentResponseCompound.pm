@@ -30,8 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EzsigntemplatedocumentResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsigntemplatedocumentResponse");
 
 #
 #A Ezsigntemplatedocument Object
@@ -84,12 +85,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsigntemplatedocumentResponse
+    $self->EzmaxApi::Object::EzsigntemplatedocumentResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsigntemplatedocumentResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsigntemplatedocumentResponse::to_hash };
 
     return $_hash;
 }
@@ -120,6 +127,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsigntemplatedocumentResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsigntemplatedocumentResponse::TO_JSON };
 
     return $_data;
 }
@@ -188,6 +198,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsigntemplatedocumentResponse) from_hash
+    $self->EzmaxApi::Object::EzsigntemplatedocumentResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -219,75 +232,14 @@ __PACKAGE__->class_documentation({description => 'A Ezsigntemplatedocument Objec
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsigntemplatedocument_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsigntemplatedocumentID',
-        description => 'The unique ID of the Ezsigntemplatedocument',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsigntemplate_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsigntemplateID',
-        description => 'The unique ID of the Ezsigntemplate',
-        format => '',
-        read_only => '',
-            },
-    's_ezsigntemplatedocument_name' => {
-        datatype => 'string',
-        base_name => 'sEzsigntemplatedocumentName',
-        description => 'The name of the Ezsigntemplatedocument.',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigntemplatedocument_pagetotal' => {
-        datatype => 'int',
-        base_name => 'iEzsigntemplatedocumentPagetotal',
-        description => 'The number of pages in the Ezsigntemplatedocument.',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigntemplatedocument_signaturetotal' => {
-        datatype => 'int',
-        base_name => 'iEzsigntemplatedocumentSignaturetotal',
-        description => 'The number of total signatures in the Ezsigntemplate.',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigntemplatedocument_formfieldtotal' => {
-        datatype => 'int',
-        base_name => 'iEzsigntemplatedocumentFormfieldtotal',
-        description => 'The number of total form fields in the Ezsigntemplate.',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsigntemplatedocument_hassignedsignatures' => {
-        datatype => 'boolean',
-        base_name => 'bEzsigntemplatedocumentHassignedsignatures',
-        description => 'If the Ezsigntemplatedocument contains signed signatures (From internal or external sources)',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsigntemplatedocument_id' => 'int',
-    'fki_ezsigntemplate_id' => 'int',
-    's_ezsigntemplatedocument_name' => 'string',
-    'i_ezsigntemplatedocument_pagetotal' => 'int',
-    'i_ezsigntemplatedocument_signaturetotal' => 'int',
-    'i_ezsigntemplatedocument_formfieldtotal' => 'int',
-    'b_ezsigntemplatedocument_hassignedsignatures' => 'boolean'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsigntemplatedocument_id' => 'pkiEzsigntemplatedocumentID',
-    'fki_ezsigntemplate_id' => 'fkiEzsigntemplateID',
-    's_ezsigntemplatedocument_name' => 'sEzsigntemplatedocumentName',
-    'i_ezsigntemplatedocument_pagetotal' => 'iEzsigntemplatedocumentPagetotal',
-    'i_ezsigntemplatedocument_signaturetotal' => 'iEzsigntemplatedocumentSignaturetotal',
-    'i_ezsigntemplatedocument_formfieldtotal' => 'iEzsigntemplatedocumentFormfieldtotal',
-    'b_ezsigntemplatedocument_hassignedsignatures' => 'bEzsigntemplatedocumentHassignedsignatures'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

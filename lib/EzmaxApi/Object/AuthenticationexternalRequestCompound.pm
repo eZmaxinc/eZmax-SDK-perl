@@ -30,9 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::AuthenticationexternalRequest;
 use EzmaxApi::Object::FieldEAuthenticationexternalType;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::AuthenticationexternalRequest");
 
 #
 #A Authenticationexternal Object and children
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object AuthenticationexternalRequest
+    $self->EzmaxApi::Object::AuthenticationexternalRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call AuthenticationexternalRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::AuthenticationexternalRequest::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (AuthenticationexternalRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::AuthenticationexternalRequest::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (AuthenticationexternalRequest) from_hash
+    $self->EzmaxApi::Object::AuthenticationexternalRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -220,39 +233,14 @@ __PACKAGE__->class_documentation({description => 'A Authenticationexternal Objec
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_authenticationexternal_id' => {
-        datatype => 'int',
-        base_name => 'pkiAuthenticationexternalID',
-        description => 'The unique ID of the Authenticationexternal',
-        format => '',
-        read_only => '',
-            },
-    's_authenticationexternal_description' => {
-        datatype => 'string',
-        base_name => 'sAuthenticationexternalDescription',
-        description => 'The description of the Authenticationexternal',
-        format => '',
-        read_only => '',
-            },
-    'e_authenticationexternal_type' => {
-        datatype => 'FieldEAuthenticationexternalType',
-        base_name => 'eAuthenticationexternalType',
-        description => '',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_authenticationexternal_id' => 'int',
-    's_authenticationexternal_description' => 'string',
-    'e_authenticationexternal_type' => 'FieldEAuthenticationexternalType'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_authenticationexternal_id' => 'pkiAuthenticationexternalID',
-    's_authenticationexternal_description' => 'sAuthenticationexternalDescription',
-    'e_authenticationexternal_type' => 'eAuthenticationexternalType'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

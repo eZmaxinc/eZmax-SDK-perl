@@ -30,9 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CommunicationrecipientRequest;
 use EzmaxApi::Object::FieldECommunicationrecipientType;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::CommunicationrecipientRequest");
 
 #
 #A Communicationrecipient Object and children
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object CommunicationrecipientRequest
+    $self->EzmaxApi::Object::CommunicationrecipientRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call CommunicationrecipientRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::CommunicationrecipientRequest::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (CommunicationrecipientRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::CommunicationrecipientRequest::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (CommunicationrecipientRequest) from_hash
+    $self->EzmaxApi::Object::CommunicationrecipientRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -220,147 +233,14 @@ __PACKAGE__->class_documentation({description => 'A Communicationrecipient Objec
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_communicationrecipient_id' => {
-        datatype => 'int',
-        base_name => 'pkiCommunicationrecipientID',
-        description => 'The unique ID of the Communicationrecipient.',
-        format => '',
-        read_only => '',
-            },
-    'fki_agent_id' => {
-        datatype => 'int',
-        base_name => 'fkiAgentID',
-        description => 'The unique ID of the Agent.',
-        format => '',
-        read_only => '',
-            },
-    'fki_broker_id' => {
-        datatype => 'int',
-        base_name => 'fkiBrokerID',
-        description => 'The unique ID of the Broker.',
-        format => '',
-        read_only => '',
-            },
-    'fki_contact_id' => {
-        datatype => 'int',
-        base_name => 'fkiContactID',
-        description => 'The unique ID of the Contact',
-        format => '',
-        read_only => '',
-            },
-    'fki_customer_id' => {
-        datatype => 'int',
-        base_name => 'fkiCustomerID',
-        description => 'The unique ID of the Customer.',
-        format => '',
-        read_only => '',
-            },
-    'fki_employee_id' => {
-        datatype => 'int',
-        base_name => 'fkiEmployeeID',
-        description => 'The unique ID of the Employee.',
-        format => '',
-        read_only => '',
-            },
-    'fki_assistant_id' => {
-        datatype => 'int',
-        base_name => 'fkiAssistantID',
-        description => 'The unique ID of the Assistant.',
-        format => '',
-        read_only => '',
-            },
-    'fki_externalbroker_id' => {
-        datatype => 'int',
-        base_name => 'fkiExternalbrokerID',
-        description => 'The unique ID of the Externalbroker.',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsignsigner_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsignsignerID',
-        description => 'The unique ID of the Ezsignsigner',
-        format => '',
-        read_only => '',
-            },
-    'fki_notary_id' => {
-        datatype => 'int',
-        base_name => 'fkiNotaryID',
-        description => 'The unique ID of the Notary.',
-        format => '',
-        read_only => '',
-            },
-    'fki_supplier_id' => {
-        datatype => 'int',
-        base_name => 'fkiSupplierID',
-        description => 'The unique ID of the Supplier.',
-        format => '',
-        read_only => '',
-            },
-    'fki_user_id' => {
-        datatype => 'int',
-        base_name => 'fkiUserID',
-        description => 'The unique ID of the User',
-        format => '',
-        read_only => '',
-            },
-    'fki_mailboxshared_id' => {
-        datatype => 'int',
-        base_name => 'fkiMailboxsharedID',
-        description => 'The unique ID of the Mailboxshared',
-        format => '',
-        read_only => '',
-            },
-    'fki_phonelineshared_id' => {
-        datatype => 'int',
-        base_name => 'fkiPhonelinesharedID',
-        description => 'The unique ID of the Phonelineshared',
-        format => '',
-        read_only => '',
-            },
-    'e_communicationrecipient_type' => {
-        datatype => 'FieldECommunicationrecipientType',
-        base_name => 'eCommunicationrecipientType',
-        description => '',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_communicationrecipient_id' => 'int',
-    'fki_agent_id' => 'int',
-    'fki_broker_id' => 'int',
-    'fki_contact_id' => 'int',
-    'fki_customer_id' => 'int',
-    'fki_employee_id' => 'int',
-    'fki_assistant_id' => 'int',
-    'fki_externalbroker_id' => 'int',
-    'fki_ezsignsigner_id' => 'int',
-    'fki_notary_id' => 'int',
-    'fki_supplier_id' => 'int',
-    'fki_user_id' => 'int',
-    'fki_mailboxshared_id' => 'int',
-    'fki_phonelineshared_id' => 'int',
-    'e_communicationrecipient_type' => 'FieldECommunicationrecipientType'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_communicationrecipient_id' => 'pkiCommunicationrecipientID',
-    'fki_agent_id' => 'fkiAgentID',
-    'fki_broker_id' => 'fkiBrokerID',
-    'fki_contact_id' => 'fkiContactID',
-    'fki_customer_id' => 'fkiCustomerID',
-    'fki_employee_id' => 'fkiEmployeeID',
-    'fki_assistant_id' => 'fkiAssistantID',
-    'fki_externalbroker_id' => 'fkiExternalbrokerID',
-    'fki_ezsignsigner_id' => 'fkiEzsignsignerID',
-    'fki_notary_id' => 'fkiNotaryID',
-    'fki_supplier_id' => 'fkiSupplierID',
-    'fki_user_id' => 'fkiUserID',
-    'fki_mailboxshared_id' => 'fkiMailboxsharedID',
-    'fki_phonelineshared_id' => 'fkiPhonelinesharedID',
-    'e_communicationrecipient_type' => 'eCommunicationrecipientType'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

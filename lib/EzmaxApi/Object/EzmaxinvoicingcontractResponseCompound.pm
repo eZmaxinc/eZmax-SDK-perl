@@ -31,9 +31,10 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
+use EzmaxApi::Object::EzmaxinvoicingcontractResponse;
 use EzmaxApi::Object::FieldEEzmaxinvoicingcontractPaymenttype;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzmaxinvoicingcontractResponse");
 
 #
 #A Ezmaxinvoicingcontract Object
@@ -86,12 +87,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzmaxinvoicingcontractResponse
+    $self->EzmaxApi::Object::EzmaxinvoicingcontractResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzmaxinvoicingcontractResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzmaxinvoicingcontractResponse::to_hash };
 
     return $_hash;
 }
@@ -122,6 +129,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzmaxinvoicingcontractResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzmaxinvoicingcontractResponse::TO_JSON };
 
     return $_data;
 }
@@ -190,6 +200,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzmaxinvoicingcontractResponse) from_hash
+    $self->EzmaxApi::Object::EzmaxinvoicingcontractResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -221,93 +234,14 @@ __PACKAGE__->class_documentation({description => 'A Ezmaxinvoicingcontract Objec
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezmaxinvoicingcontract_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzmaxinvoicingcontractID',
-        description => 'The unique ID of the Ezmaxinvoicingcontract',
-        format => '',
-        read_only => '',
-            },
-    'e_ezmaxinvoicingcontract_paymenttype' => {
-        datatype => 'FieldEEzmaxinvoicingcontractPaymenttype',
-        base_name => 'eEzmaxinvoicingcontractPaymenttype',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'i_ezmaxinvoicingcontract_length' => {
-        datatype => 'int',
-        base_name => 'iEzmaxinvoicingcontractLength',
-        description => 'The length in years of the Ezmaxinvoicingcontract',
-        format => '',
-        read_only => '',
-            },
-    'dt_ezmaxinvoicingcontract_start' => {
-        datatype => 'string',
-        base_name => 'dtEzmaxinvoicingcontractStart',
-        description => 'The start date of the Ezmaxinvoicingcontract',
-        format => '',
-        read_only => '',
-            },
-    'dt_ezmaxinvoicingcontract_end' => {
-        datatype => 'string',
-        base_name => 'dtEzmaxinvoicingcontractEnd',
-        description => 'The end date of the Ezmaxinvoicingcontract',
-        format => '',
-        read_only => '',
-            },
-    'd_ezmaxinvoicingcontract_license' => {
-        datatype => 'string',
-        base_name => 'dEzmaxinvoicingcontractLicense',
-        description => 'The price of the license',
-        format => '',
-        read_only => '',
-            },
-    'd_ezmaxinvoicingcontract121qa' => {
-        datatype => 'string',
-        base_name => 'dEzmaxinvoicingcontract121qa',
-        description => 'The price for 121QA',
-        format => '',
-        read_only => '',
-            },
-    'b_ezmaxinvoicingcontract_ezsignallagents' => {
-        datatype => 'boolean',
-        base_name => 'bEzmaxinvoicingcontractEzsignallagents',
-        description => 'Whether eZsign is for all agents',
-        format => '',
-        read_only => '',
-            },
-    'obj_audit' => {
-        datatype => 'CommonAudit',
-        base_name => 'objAudit',
-        description => '',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezmaxinvoicingcontract_id' => 'int',
-    'e_ezmaxinvoicingcontract_paymenttype' => 'FieldEEzmaxinvoicingcontractPaymenttype',
-    'i_ezmaxinvoicingcontract_length' => 'int',
-    'dt_ezmaxinvoicingcontract_start' => 'string',
-    'dt_ezmaxinvoicingcontract_end' => 'string',
-    'd_ezmaxinvoicingcontract_license' => 'string',
-    'd_ezmaxinvoicingcontract121qa' => 'string',
-    'b_ezmaxinvoicingcontract_ezsignallagents' => 'boolean',
-    'obj_audit' => 'CommonAudit'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezmaxinvoicingcontract_id' => 'pkiEzmaxinvoicingcontractID',
-    'e_ezmaxinvoicingcontract_paymenttype' => 'eEzmaxinvoicingcontractPaymenttype',
-    'i_ezmaxinvoicingcontract_length' => 'iEzmaxinvoicingcontractLength',
-    'dt_ezmaxinvoicingcontract_start' => 'dtEzmaxinvoicingcontractStart',
-    'dt_ezmaxinvoicingcontract_end' => 'dtEzmaxinvoicingcontractEnd',
-    'd_ezmaxinvoicingcontract_license' => 'dEzmaxinvoicingcontractLicense',
-    'd_ezmaxinvoicingcontract121qa' => 'dEzmaxinvoicingcontract121qa',
-    'b_ezmaxinvoicingcontract_ezsignallagents' => 'bEzmaxinvoicingcontractEzsignallagents',
-    'obj_audit' => 'objAudit'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

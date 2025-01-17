@@ -32,8 +32,9 @@ use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::ContactResponseCompound;
+use EzmaxApi::Object::EzsignuserResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignuserResponse");
 
 #
 #A Ezsignuser Object
@@ -86,12 +87,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsignuserResponse
+    $self->EzmaxApi::Object::EzsignuserResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsignuserResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignuserResponse::to_hash };
 
     return $_hash;
 }
@@ -122,6 +129,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsignuserResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignuserResponse::TO_JSON };
 
     return $_data;
 }
@@ -190,6 +200,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsignuserResponse) from_hash
+    $self->EzmaxApi::Object::EzsignuserResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -221,48 +234,14 @@ __PACKAGE__->class_documentation({description => 'A Ezsignuser Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsignuser_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsignuserID',
-        description => 'The unique ID of the Ezsignuser',
-        format => '',
-        read_only => '',
-            },
-    'fki_contact_id' => {
-        datatype => 'int',
-        base_name => 'fkiContactID',
-        description => 'The unique ID of the Contact',
-        format => '',
-        read_only => '',
-            },
-    'obj_contact' => {
-        datatype => 'ContactResponseCompound',
-        base_name => 'objContact',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'obj_audit' => {
-        datatype => 'CommonAudit',
-        base_name => 'objAudit',
-        description => '',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsignuser_id' => 'int',
-    'fki_contact_id' => 'int',
-    'obj_contact' => 'ContactResponseCompound',
-    'obj_audit' => 'CommonAudit'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsignuser_id' => 'pkiEzsignuserID',
-    'fki_contact_id' => 'fkiContactID',
-    'obj_contact' => 'objContact',
-    'obj_audit' => 'objAudit'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

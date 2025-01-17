@@ -31,8 +31,9 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::FieldESignaturePreference;
+use EzmaxApi::Object::SignatureResponseV3;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::SignatureResponseV3");
 
 #
 #A Signature Object
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object SignatureResponseV3
+    $self->EzmaxApi::Object::SignatureResponseV3::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call SignatureResponseV3 to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::SignatureResponseV3::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (SignatureResponseV3) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::SignatureResponseV3::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (SignatureResponseV3) from_hash
+    $self->EzmaxApi::Object::SignatureResponseV3::from_hash($hash);
+
     return $self;
 }
 
@@ -220,57 +233,14 @@ __PACKAGE__->class_documentation({description => 'A Signature Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_signature_id' => {
-        datatype => 'int',
-        base_name => 'pkiSignatureID',
-        description => 'The unique ID of the Signature',
-        format => '',
-        read_only => '',
-            },
-    'fki_font_id' => {
-        datatype => 'int',
-        base_name => 'fkiFontID',
-        description => 'The unique ID of the Font',
-        format => '',
-        read_only => '',
-            },
-    'e_signature_preference' => {
-        datatype => 'FieldESignaturePreference',
-        base_name => 'eSignaturePreference',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'b_signature_svg' => {
-        datatype => 'boolean',
-        base_name => 'bSignatureSvg',
-        description => 'Whether the signature has a SVG or not',
-        format => '',
-        read_only => '',
-            },
-    'b_signature_svginitials' => {
-        datatype => 'boolean',
-        base_name => 'bSignatureSvginitials',
-        description => 'Whether the initials has a SVG or not',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_signature_id' => 'int',
-    'fki_font_id' => 'int',
-    'e_signature_preference' => 'FieldESignaturePreference',
-    'b_signature_svg' => 'boolean',
-    'b_signature_svginitials' => 'boolean'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_signature_id' => 'pkiSignatureID',
-    'fki_font_id' => 'fkiFontID',
-    'e_signature_preference' => 'eSignaturePreference',
-    'b_signature_svg' => 'bSignatureSvg',
-    'b_signature_svginitials' => 'bSignatureSvginitials'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

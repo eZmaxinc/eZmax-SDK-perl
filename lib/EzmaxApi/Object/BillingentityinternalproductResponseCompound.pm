@@ -30,8 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::BillingentityinternalproductResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::BillingentityinternalproductResponse");
 
 #
 #A Billingentityinternalproduct Object
@@ -84,12 +85,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object BillingentityinternalproductResponse
+    $self->EzmaxApi::Object::BillingentityinternalproductResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call BillingentityinternalproductResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::BillingentityinternalproductResponse::to_hash };
 
     return $_hash;
 }
@@ -120,6 +127,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (BillingentityinternalproductResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::BillingentityinternalproductResponse::TO_JSON };
 
     return $_data;
 }
@@ -188,6 +198,9 @@ sub from_hash {
         }
     }
 
+    # call parent (BillingentityinternalproductResponse) from_hash
+    $self->EzmaxApi::Object::BillingentityinternalproductResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -219,75 +232,14 @@ __PACKAGE__->class_documentation({description => 'A Billingentityinternalproduct
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_billingentityinternalproduct_id' => {
-        datatype => 'int',
-        base_name => 'pkiBillingentityinternalproductID',
-        description => 'The unique ID of the Billingentityinternalproduct',
-        format => '',
-        read_only => '',
-            },
-    'fki_billingentityinternal_id' => {
-        datatype => 'int',
-        base_name => 'fkiBillingentityinternalID',
-        description => 'The unique ID of the Billingentityinternal.',
-        format => '',
-        read_only => '',
-            },
-    's_billingentityinternal_description_x' => {
-        datatype => 'string',
-        base_name => 'sBillingentityinternalDescriptionX',
-        description => 'The description of the Billingentityinternal in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezmaxproduct_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzmaxproductID',
-        description => 'The unique ID of the Ezmaxproduct',
-        format => '',
-        read_only => '',
-            },
-    's_ezmaxproduct_description_x' => {
-        datatype => 'string',
-        base_name => 'sEzmaxproductDescriptionX',
-        description => 'The description of the Ezmaxproduct in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    'fki_billingentityexternal_id' => {
-        datatype => 'int',
-        base_name => 'fkiBillingentityexternalID',
-        description => 'The unique ID of the Billingentityexternal',
-        format => '',
-        read_only => '',
-            },
-    's_billingentityexternal_description' => {
-        datatype => 'string',
-        base_name => 'sBillingentityexternalDescription',
-        description => 'The description of the Billingentityexternal',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_billingentityinternalproduct_id' => 'int',
-    'fki_billingentityinternal_id' => 'int',
-    's_billingentityinternal_description_x' => 'string',
-    'fki_ezmaxproduct_id' => 'int',
-    's_ezmaxproduct_description_x' => 'string',
-    'fki_billingentityexternal_id' => 'int',
-    's_billingentityexternal_description' => 'string'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_billingentityinternalproduct_id' => 'pkiBillingentityinternalproductID',
-    'fki_billingentityinternal_id' => 'fkiBillingentityinternalID',
-    's_billingentityinternal_description_x' => 'sBillingentityinternalDescriptionX',
-    'fki_ezmaxproduct_id' => 'fkiEzmaxproductID',
-    's_ezmaxproduct_description_x' => 'sEzmaxproductDescriptionX',
-    'fki_billingentityexternal_id' => 'fkiBillingentityexternalID',
-    's_billingentityexternal_description' => 'sBillingentityexternalDescription'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

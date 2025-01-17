@@ -30,8 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::TextstylestaticResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::TextstylestaticResponse");
 
 #
 #A Textstylestatic Object
@@ -84,12 +85,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object TextstylestaticResponse
+    $self->EzmaxApi::Object::TextstylestaticResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call TextstylestaticResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::TextstylestaticResponse::to_hash };
 
     return $_hash;
 }
@@ -120,6 +127,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (TextstylestaticResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::TextstylestaticResponse::TO_JSON };
 
     return $_data;
 }
@@ -188,6 +198,9 @@ sub from_hash {
         }
     }
 
+    # call parent (TextstylestaticResponse) from_hash
+    $self->EzmaxApi::Object::TextstylestaticResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -219,93 +232,14 @@ __PACKAGE__->class_documentation({description => 'A Textstylestatic Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_textstylestatic_id' => {
-        datatype => 'int',
-        base_name => 'pkiTextstylestaticID',
-        description => 'The unique ID of the Textstylestatic',
-        format => '',
-        read_only => '',
-            },
-    'fki_font_id' => {
-        datatype => 'int',
-        base_name => 'fkiFontID',
-        description => 'The unique ID of the Font',
-        format => '',
-        read_only => '',
-            },
-    's_font_name' => {
-        datatype => 'string',
-        base_name => 'sFontName',
-        description => 'The name of the Font',
-        format => '',
-        read_only => '',
-            },
-    'b_textstylestatic_bold' => {
-        datatype => 'boolean',
-        base_name => 'bTextstylestaticBold',
-        description => 'Whether the Textstylestatic is Bold or not',
-        format => '',
-        read_only => '',
-            },
-    'b_textstylestatic_underline' => {
-        datatype => 'boolean',
-        base_name => 'bTextstylestaticUnderline',
-        description => 'Whether the Textstylestatic is Underline or not',
-        format => '',
-        read_only => '',
-            },
-    'b_textstylestatic_italic' => {
-        datatype => 'boolean',
-        base_name => 'bTextstylestaticItalic',
-        description => 'Whether the Textstylestatic is Italic or not',
-        format => '',
-        read_only => '',
-            },
-    'b_textstylestatic_strikethrough' => {
-        datatype => 'boolean',
-        base_name => 'bTextstylestaticStrikethrough',
-        description => 'Whether the Textstylestatic is Strikethrough or not',
-        format => '',
-        read_only => '',
-            },
-    'i_textstylestatic_fontcolor' => {
-        datatype => 'int',
-        base_name => 'iTextstylestaticFontcolor',
-        description => 'The int32 representation of the Fontcolor. For example, RGB color #39435B would be 3752795',
-        format => '',
-        read_only => '',
-            },
-    'i_textstylestatic_size' => {
-        datatype => 'int',
-        base_name => 'iTextstylestaticSize',
-        description => 'The Size for the Font of the Textstylestatic',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_textstylestatic_id' => 'int',
-    'fki_font_id' => 'int',
-    's_font_name' => 'string',
-    'b_textstylestatic_bold' => 'boolean',
-    'b_textstylestatic_underline' => 'boolean',
-    'b_textstylestatic_italic' => 'boolean',
-    'b_textstylestatic_strikethrough' => 'boolean',
-    'i_textstylestatic_fontcolor' => 'int',
-    'i_textstylestatic_size' => 'int'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_textstylestatic_id' => 'pkiTextstylestaticID',
-    'fki_font_id' => 'fkiFontID',
-    's_font_name' => 'sFontName',
-    'b_textstylestatic_bold' => 'bTextstylestaticBold',
-    'b_textstylestatic_underline' => 'bTextstylestaticUnderline',
-    'b_textstylestatic_italic' => 'bTextstylestaticItalic',
-    'b_textstylestatic_strikethrough' => 'bTextstylestaticStrikethrough',
-    'i_textstylestatic_fontcolor' => 'iTextstylestaticFontcolor',
-    'i_textstylestatic_size' => 'iTextstylestaticSize'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

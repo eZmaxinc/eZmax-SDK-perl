@@ -30,8 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::UsergroupexternalResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::UsergroupexternalResponse");
 
 #
 #A Usergroupexternal Object
@@ -84,12 +85,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object UsergroupexternalResponse
+    $self->EzmaxApi::Object::UsergroupexternalResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call UsergroupexternalResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::UsergroupexternalResponse::to_hash };
 
     return $_hash;
 }
@@ -120,6 +127,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (UsergroupexternalResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::UsergroupexternalResponse::TO_JSON };
 
     return $_data;
 }
@@ -188,6 +198,9 @@ sub from_hash {
         }
     }
 
+    # call parent (UsergroupexternalResponse) from_hash
+    $self->EzmaxApi::Object::UsergroupexternalResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -219,39 +232,14 @@ __PACKAGE__->class_documentation({description => 'A Usergroupexternal Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_usergroupexternal_id' => {
-        datatype => 'int',
-        base_name => 'pkiUsergroupexternalID',
-        description => 'The unique ID of the Usergroupexternal',
-        format => '',
-        read_only => '',
-            },
-    's_usergroupexternal_name' => {
-        datatype => 'string',
-        base_name => 'sUsergroupexternalName',
-        description => 'The name of the Usergroupexternal',
-        format => '',
-        read_only => '',
-            },
-    's_usergroupexternal_id' => {
-        datatype => 'string',
-        base_name => 'sUsergroupexternalID',
-        description => 'The id of the Usergroupexternal',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_usergroupexternal_id' => 'int',
-    's_usergroupexternal_name' => 'string',
-    's_usergroupexternal_id' => 'string'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_usergroupexternal_id' => 'pkiUsergroupexternalID',
-    's_usergroupexternal_name' => 'sUsergroupexternalName',
-    's_usergroupexternal_id' => 'sUsergroupexternalID'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -30,9 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponse;
 use EzmaxApi::Object::EzmaxinvoicingsummaryexternaldetailResponseCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponse");
 
 #
 #A Ezmaxinvoicingsummaryexternal Object
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzmaxinvoicingsummaryexternalResponse
+    $self->EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzmaxinvoicingsummaryexternalResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponse::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzmaxinvoicingsummaryexternalResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponse::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzmaxinvoicingsummaryexternalResponse) from_hash
+    $self->EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -220,41 +233,6 @@ __PACKAGE__->class_documentation({description => 'A Ezmaxinvoicingsummaryexterna
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezmaxinvoicingsummaryexternal_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzmaxinvoicingsummaryexternalID',
-        description => 'The unique ID of the Ezmaxinvoicingsummaryexternal',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezmaxinvoicing_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzmaxinvoicingID',
-        description => 'The unique ID of the Ezmaxinvoicing',
-        format => '',
-        read_only => '',
-            },
-    'fki_billingentityexternal_id' => {
-        datatype => 'int',
-        base_name => 'fkiBillingentityexternalID',
-        description => 'The unique ID of the Billingentityexternal',
-        format => '',
-        read_only => '',
-            },
-    's_billingentityexternal_description' => {
-        datatype => 'string',
-        base_name => 'sBillingentityexternalDescription',
-        description => 'The description of the Billingentityexternal',
-        format => '',
-        read_only => '',
-            },
-    's_ezmaxinvoicingsummaryexternal_description' => {
-        datatype => 'string',
-        base_name => 'sEzmaxinvoicingsummaryexternalDescription',
-        description => 'The description of the Ezmaxinvoicingsummaryexternal',
-        format => '',
-        read_only => '',
-            },
     'a_obj_ezmaxinvoicingsummaryexternaldetail' => {
         datatype => 'ARRAY[EzmaxinvoicingsummaryexternaldetailResponseCompound]',
         base_name => 'a_objEzmaxinvoicingsummaryexternaldetail',
@@ -265,20 +243,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezmaxinvoicingsummaryexternal_id' => 'int',
-    'fki_ezmaxinvoicing_id' => 'int',
-    'fki_billingentityexternal_id' => 'int',
-    's_billingentityexternal_description' => 'string',
-    's_ezmaxinvoicingsummaryexternal_description' => 'string',
     'a_obj_ezmaxinvoicingsummaryexternaldetail' => 'ARRAY[EzmaxinvoicingsummaryexternaldetailResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezmaxinvoicingsummaryexternal_id' => 'pkiEzmaxinvoicingsummaryexternalID',
-    'fki_ezmaxinvoicing_id' => 'fkiEzmaxinvoicingID',
-    'fki_billingentityexternal_id' => 'fkiBillingentityexternalID',
-    's_billingentityexternal_description' => 'sBillingentityexternalDescription',
-    's_ezmaxinvoicingsummaryexternal_description' => 'sEzmaxinvoicingsummaryexternalDescription',
     'a_obj_ezmaxinvoicingsummaryexternaldetail' => 'a_objEzmaxinvoicingsummaryexternaldetail'
 } );
 

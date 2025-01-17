@@ -30,9 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EzsignsigningreasonRequest;
 use EzmaxApi::Object::MultilingualEzsignsigningreasonDescription;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignsigningreasonRequest");
 
 #
 #A Ezsignsigningreason Object and children
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsignsigningreasonRequest
+    $self->EzmaxApi::Object::EzsignsigningreasonRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsignsigningreasonRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignsigningreasonRequest::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsignsigningreasonRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignsigningreasonRequest::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsignsigningreasonRequest) from_hash
+    $self->EzmaxApi::Object::EzsignsigningreasonRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -220,39 +233,14 @@ __PACKAGE__->class_documentation({description => 'A Ezsignsigningreason Object a
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsignsigningreason_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsignsigningreasonID',
-        description => 'The unique ID of the Ezsignsigningreason',
-        format => '',
-        read_only => '',
-            },
-    'obj_ezsignsigningreason_description' => {
-        datatype => 'MultilingualEzsignsigningreasonDescription',
-        base_name => 'objEzsignsigningreasonDescription',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsignsigningreason_isactive' => {
-        datatype => 'boolean',
-        base_name => 'bEzsignsigningreasonIsactive',
-        description => 'Whether the ezsignsigningreason is active or not',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsignsigningreason_id' => 'int',
-    'obj_ezsignsigningreason_description' => 'MultilingualEzsignsigningreasonDescription',
-    'b_ezsignsigningreason_isactive' => 'boolean'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsignsigningreason_id' => 'pkiEzsignsigningreasonID',
-    'obj_ezsignsigningreason_description' => 'objEzsignsigningreasonDescription',
-    'b_ezsignsigningreason_isactive' => 'bEzsignsigningreasonIsactive'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

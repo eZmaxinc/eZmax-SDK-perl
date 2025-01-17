@@ -34,6 +34,7 @@ use EzmaxApi::Object::CustomContactNameResponse;
 use EzmaxApi::Object::CustomCreditcardtransactionResponse;
 use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::EzsignelementdependencyResponse;
+use EzmaxApi::Object::EzsignsignatureResponse;
 use EzmaxApi::Object::EzsignsignaturecustomdateResponseV2;
 use EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource;
 use EzmaxApi::Object::FieldEEzsignsignatureConsultationtrigger;
@@ -43,7 +44,7 @@ use EzmaxApi::Object::FieldEEzsignsignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
 use EzmaxApi::Object::SignatureResponseCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignsignatureResponse");
 
 #
 #An Ezsignsignature Object and children to create a complete structure
@@ -96,12 +97,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsignsignatureResponse
+    $self->EzmaxApi::Object::EzsignsignatureResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsignsignatureResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignsignatureResponse::to_hash };
 
     return $_hash;
 }
@@ -132,6 +139,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsignsignatureResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignsignatureResponse::TO_JSON };
 
     return $_data;
 }
@@ -200,6 +210,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsignsignatureResponse) from_hash
+    $self->EzmaxApi::Object::EzsignsignatureResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -231,265 +244,6 @@ __PACKAGE__->class_documentation({description => 'An Ezsignsignature Object and 
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsignsignature_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsignsignatureID',
-        description => 'The unique ID of the Ezsignsignature',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsigndocument_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsigndocumentID',
-        description => 'The unique ID of the Ezsigndocument',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsignfoldersignerassociation_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsignfoldersignerassociationID',
-        description => 'The unique ID of the Ezsignfoldersignerassociation',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsignsigningreason_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsignsigningreasonID',
-        description => 'The unique ID of the Ezsignsigningreason',
-        format => '',
-        read_only => '',
-            },
-    'fki_font_id' => {
-        datatype => 'int',
-        base_name => 'fkiFontID',
-        description => 'The unique ID of the Font',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignsigningreason_description_x' => {
-        datatype => 'string',
-        base_name => 'sEzsignsigningreasonDescriptionX',
-        description => 'The description of the Ezsignsigningreason in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignpage_pagenumber' => {
-        datatype => 'int',
-        base_name => 'iEzsignpagePagenumber',
-        description => 'The page number in the Ezsigndocument',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignsignature_x' => {
-        datatype => 'int',
-        base_name => 'iEzsignsignatureX',
-        description => 'The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate.',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignsignature_y' => {
-        datatype => 'int',
-        base_name => 'iEzsignsignatureY',
-        description => 'The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \&quot;300\&quot; for the Y coordinate.',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignsignature_height' => {
-        datatype => 'int',
-        base_name => 'iEzsignsignatureHeight',
-        description => 'The height of the Ezsignsignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsignsignature to have an height of 2 inches, you would use \&quot;200\&quot; for the iEzsignsignatureHeight.',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignsignature_width' => {
-        datatype => 'int',
-        base_name => 'iEzsignsignatureWidth',
-        description => 'The width of the Ezsignsignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsignsignature to have a width of 2 inches, you would use \&quot;200\&quot; for the iEzsignsignatureWidth.',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignsignature_step' => {
-        datatype => 'int',
-        base_name => 'iEzsignsignatureStep',
-        description => 'The step when the Ezsignsigner will be invited to sign',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignsignature_stepadjusted' => {
-        datatype => 'int',
-        base_name => 'iEzsignsignatureStepadjusted',
-        description => 'The step when the Ezsignsigner will be invited to sign',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignsignature_type' => {
-        datatype => 'FieldEEzsignsignatureType',
-        base_name => 'eEzsignsignatureType',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    't_ezsignsignature_tooltip' => {
-        datatype => 'string',
-        base_name => 'tEzsignsignatureTooltip',
-        description => 'A tooltip that will be presented to Ezsignsigner about the Ezsignsignature',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignsignature_tooltipposition' => {
-        datatype => 'FieldEEzsignsignatureTooltipposition',
-        base_name => 'eEzsignsignatureTooltipposition',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignsignature_font' => {
-        datatype => 'FieldEEzsignsignatureFont',
-        base_name => 'eEzsignsignatureFont',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignsignature_validationstep' => {
-        datatype => 'int',
-        base_name => 'iEzsignsignatureValidationstep',
-        description => 'The step when the Ezsignsigner will be invited to validate the Ezsignsignature of eEzsignsignatureType Attachments',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignsignature_attachmentdescription' => {
-        datatype => 'string',
-        base_name => 'sEzsignsignatureAttachmentdescription',
-        description => 'The description attached to the attachment name added in Ezsignsignature of eEzsignsignatureType Attachments',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignsignature_attachmentnamesource' => {
-        datatype => 'FieldEEzsignsignatureAttachmentnamesource',
-        base_name => 'eEzsignsignatureAttachmentnamesource',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignsignature_consultationtrigger' => {
-        datatype => 'FieldEEzsignsignatureConsultationtrigger',
-        base_name => 'eEzsignsignatureConsultationtrigger',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsignsignature_handwritten' => {
-        datatype => 'boolean',
-        base_name => 'bEzsignsignatureHandwritten',
-        description => 'Whether the Ezsignsignature must be handwritten or not when eEzsignsignatureType &#x3D; Signature.',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsignsignature_reason' => {
-        datatype => 'boolean',
-        base_name => 'bEzsignsignatureReason',
-        description => 'Whether the Ezsignsignature must include a reason or not when eEzsignsignatureType &#x3D; Signature.',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsignsignature_required' => {
-        datatype => 'boolean',
-        base_name => 'bEzsignsignatureRequired',
-        description => 'Whether the Ezsignsignature is required or not. This field is relevant only with Ezsignsignature with eEzsignsignatureType &#x3D; Attachments, Text or Textarea.',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsignfoldersignerassociation_id_validation' => {
-        datatype => 'int',
-        base_name => 'fkiEzsignfoldersignerassociationIDValidation',
-        description => 'The unique ID of the Ezsignfoldersignerassociation',
-        format => '',
-        read_only => '',
-            },
-    'dt_ezsignsignature_date' => {
-        datatype => 'string',
-        base_name => 'dtEzsignsignatureDate',
-        description => 'The date the Ezsignsignature was signed',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignsignatureattachment_count' => {
-        datatype => 'int',
-        base_name => 'iEzsignsignatureattachmentCount',
-        description => 'The count of Ezsignsignatureattachment',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignsignature_description' => {
-        datatype => 'string',
-        base_name => 'sEzsignsignatureDescription',
-        description => 'The value entered while signing Ezsignsignature of eEzsignsignatureType **City**, **FieldText** and **FieldTextarea**',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignsignature_maxlength' => {
-        datatype => 'int',
-        base_name => 'iEzsignsignatureMaxlength',
-        description => 'The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignsignature_textvalidation' => {
-        datatype => 'EnumTextvalidation',
-        base_name => 'eEzsignsignatureTextvalidation',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignsignature_textvalidationcustommessage' => {
-        datatype => 'string',
-        base_name => 'sEzsignsignatureTextvalidationcustommessage',
-        description => 'Description of validation rule. Show by signatory.',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignsignature_dependencyrequirement' => {
-        datatype => 'FieldEEzsignsignatureDependencyrequirement',
-        base_name => 'eEzsignsignatureDependencyrequirement',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignsignature_defaultvalue' => {
-        datatype => 'string',
-        base_name => 'sEzsignsignatureDefaultvalue',
-        description => 'The default value for the Ezsignsignature  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sCompany} | Company name | eZmax Solutions Inc. | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignsignature_regexp' => {
-        datatype => 'string',
-        base_name => 'sEzsignsignatureRegexp',
-        description => 'A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom**',
-        format => '',
-        read_only => '',
-            },
-    'obj_contact_name' => {
-        datatype => 'CustomContactNameResponse',
-        base_name => 'objContactName',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'obj_contact_name_delegation' => {
-        datatype => 'CustomContactNameResponse',
-        base_name => 'objContactNameDelegation',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'obj_signature' => {
-        datatype => 'SignatureResponseCompound',
-        base_name => 'objSignature',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'b_ezsignsignature_customdate' => {
         datatype => 'boolean',
         base_name => 'bEzsignsignatureCustomdate',
@@ -521,43 +275,6 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsignsignature_id' => 'int',
-    'fki_ezsigndocument_id' => 'int',
-    'fki_ezsignfoldersignerassociation_id' => 'int',
-    'fki_ezsignsigningreason_id' => 'int',
-    'fki_font_id' => 'int',
-    's_ezsignsigningreason_description_x' => 'string',
-    'i_ezsignpage_pagenumber' => 'int',
-    'i_ezsignsignature_x' => 'int',
-    'i_ezsignsignature_y' => 'int',
-    'i_ezsignsignature_height' => 'int',
-    'i_ezsignsignature_width' => 'int',
-    'i_ezsignsignature_step' => 'int',
-    'i_ezsignsignature_stepadjusted' => 'int',
-    'e_ezsignsignature_type' => 'FieldEEzsignsignatureType',
-    't_ezsignsignature_tooltip' => 'string',
-    'e_ezsignsignature_tooltipposition' => 'FieldEEzsignsignatureTooltipposition',
-    'e_ezsignsignature_font' => 'FieldEEzsignsignatureFont',
-    'i_ezsignsignature_validationstep' => 'int',
-    's_ezsignsignature_attachmentdescription' => 'string',
-    'e_ezsignsignature_attachmentnamesource' => 'FieldEEzsignsignatureAttachmentnamesource',
-    'e_ezsignsignature_consultationtrigger' => 'FieldEEzsignsignatureConsultationtrigger',
-    'b_ezsignsignature_handwritten' => 'boolean',
-    'b_ezsignsignature_reason' => 'boolean',
-    'b_ezsignsignature_required' => 'boolean',
-    'fki_ezsignfoldersignerassociation_id_validation' => 'int',
-    'dt_ezsignsignature_date' => 'string',
-    'i_ezsignsignatureattachment_count' => 'int',
-    's_ezsignsignature_description' => 'string',
-    'i_ezsignsignature_maxlength' => 'int',
-    'e_ezsignsignature_textvalidation' => 'EnumTextvalidation',
-    's_ezsignsignature_textvalidationcustommessage' => 'string',
-    'e_ezsignsignature_dependencyrequirement' => 'FieldEEzsignsignatureDependencyrequirement',
-    's_ezsignsignature_defaultvalue' => 'string',
-    's_ezsignsignature_regexp' => 'string',
-    'obj_contact_name' => 'CustomContactNameResponse',
-    'obj_contact_name_delegation' => 'CustomContactNameResponse',
-    'obj_signature' => 'SignatureResponseCompound',
     'b_ezsignsignature_customdate' => 'boolean',
     'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateResponseCompoundV2]',
     'obj_creditcardtransaction' => 'CustomCreditcardtransactionResponse',
@@ -565,43 +282,6 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsignsignature_id' => 'pkiEzsignsignatureID',
-    'fki_ezsigndocument_id' => 'fkiEzsigndocumentID',
-    'fki_ezsignfoldersignerassociation_id' => 'fkiEzsignfoldersignerassociationID',
-    'fki_ezsignsigningreason_id' => 'fkiEzsignsigningreasonID',
-    'fki_font_id' => 'fkiFontID',
-    's_ezsignsigningreason_description_x' => 'sEzsignsigningreasonDescriptionX',
-    'i_ezsignpage_pagenumber' => 'iEzsignpagePagenumber',
-    'i_ezsignsignature_x' => 'iEzsignsignatureX',
-    'i_ezsignsignature_y' => 'iEzsignsignatureY',
-    'i_ezsignsignature_height' => 'iEzsignsignatureHeight',
-    'i_ezsignsignature_width' => 'iEzsignsignatureWidth',
-    'i_ezsignsignature_step' => 'iEzsignsignatureStep',
-    'i_ezsignsignature_stepadjusted' => 'iEzsignsignatureStepadjusted',
-    'e_ezsignsignature_type' => 'eEzsignsignatureType',
-    't_ezsignsignature_tooltip' => 'tEzsignsignatureTooltip',
-    'e_ezsignsignature_tooltipposition' => 'eEzsignsignatureTooltipposition',
-    'e_ezsignsignature_font' => 'eEzsignsignatureFont',
-    'i_ezsignsignature_validationstep' => 'iEzsignsignatureValidationstep',
-    's_ezsignsignature_attachmentdescription' => 'sEzsignsignatureAttachmentdescription',
-    'e_ezsignsignature_attachmentnamesource' => 'eEzsignsignatureAttachmentnamesource',
-    'e_ezsignsignature_consultationtrigger' => 'eEzsignsignatureConsultationtrigger',
-    'b_ezsignsignature_handwritten' => 'bEzsignsignatureHandwritten',
-    'b_ezsignsignature_reason' => 'bEzsignsignatureReason',
-    'b_ezsignsignature_required' => 'bEzsignsignatureRequired',
-    'fki_ezsignfoldersignerassociation_id_validation' => 'fkiEzsignfoldersignerassociationIDValidation',
-    'dt_ezsignsignature_date' => 'dtEzsignsignatureDate',
-    'i_ezsignsignatureattachment_count' => 'iEzsignsignatureattachmentCount',
-    's_ezsignsignature_description' => 'sEzsignsignatureDescription',
-    'i_ezsignsignature_maxlength' => 'iEzsignsignatureMaxlength',
-    'e_ezsignsignature_textvalidation' => 'eEzsignsignatureTextvalidation',
-    's_ezsignsignature_textvalidationcustommessage' => 'sEzsignsignatureTextvalidationcustommessage',
-    'e_ezsignsignature_dependencyrequirement' => 'eEzsignsignatureDependencyrequirement',
-    's_ezsignsignature_defaultvalue' => 'sEzsignsignatureDefaultvalue',
-    's_ezsignsignature_regexp' => 'sEzsignsignatureRegexp',
-    'obj_contact_name' => 'objContactName',
-    'obj_contact_name_delegation' => 'objContactNameDelegation',
-    'obj_signature' => 'objSignature',
     'b_ezsignsignature_customdate' => 'bEzsignsignatureCustomdate',
     'a_obj_ezsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate',
     'obj_creditcardtransaction' => 'objCreditcardtransaction',

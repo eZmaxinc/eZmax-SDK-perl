@@ -30,9 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EzsignsignergroupRequest;
 use EzmaxApi::Object::MultilingualEzsignsignergroupDescription;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignsignergroupRequest");
 
 #
 #A Ezsignsignergroup Object and children
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsignsignergroupRequest
+    $self->EzmaxApi::Object::EzsignsignergroupRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsignsignergroupRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignsignergroupRequest::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsignsignergroupRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignsignergroupRequest::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsignsignergroupRequest) from_hash
+    $self->EzmaxApi::Object::EzsignsignergroupRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -220,39 +233,14 @@ __PACKAGE__->class_documentation({description => 'A Ezsignsignergroup Object and
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsignsignergroup_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsignsignergroupID',
-        description => 'The unique ID of the Ezsignsignergroup',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsignfolder_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsignfolderID',
-        description => 'The unique ID of the Ezsignfolder',
-        format => '',
-        read_only => '',
-            },
-    'obj_ezsignsignergroup_description' => {
-        datatype => 'MultilingualEzsignsignergroupDescription',
-        base_name => 'objEzsignsignergroupDescription',
-        description => '',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsignsignergroup_id' => 'int',
-    'fki_ezsignfolder_id' => 'int',
-    'obj_ezsignsignergroup_description' => 'MultilingualEzsignsignergroupDescription'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsignsignergroup_id' => 'pkiEzsignsignergroupID',
-    'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
-    'obj_ezsignsignergroup_description' => 'objEzsignsignergroupDescription'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

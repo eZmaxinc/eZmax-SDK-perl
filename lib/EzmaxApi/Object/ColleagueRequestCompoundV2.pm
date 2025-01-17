@@ -30,10 +30,11 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::ColleagueRequestV2;
 use EzmaxApi::Object::FieldEColleagueEzsign;
 use EzmaxApi::Object::FieldEColleagueRealestateinprogess;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::ColleagueRequestV2");
 
 #
 #A Colleague Object and children
@@ -86,12 +87,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object ColleagueRequestV2
+    $self->EzmaxApi::Object::ColleagueRequestV2::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call ColleagueRequestV2 to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::ColleagueRequestV2::to_hash };
 
     return $_hash;
 }
@@ -122,6 +129,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (ColleagueRequestV2) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::ColleagueRequestV2::TO_JSON };
 
     return $_data;
 }
@@ -190,6 +200,9 @@ sub from_hash {
         }
     }
 
+    # call parent (ColleagueRequestV2) from_hash
+    $self->EzmaxApi::Object::ColleagueRequestV2::from_hash($hash);
+
     return $self;
 }
 
@@ -221,138 +234,14 @@ __PACKAGE__->class_documentation({description => 'A Colleague Object and childre
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_colleague_id' => {
-        datatype => 'int',
-        base_name => 'pkiColleagueID',
-        description => 'The unique ID of the Colleague',
-        format => '',
-        read_only => '',
-            },
-    'fki_user_id' => {
-        datatype => 'int',
-        base_name => 'fkiUserID',
-        description => 'The unique ID of the User',
-        format => '',
-        read_only => '',
-            },
-    'fki_user_id_colleague' => {
-        datatype => 'int',
-        base_name => 'fkiUserIDColleague',
-        description => 'The unique ID of the User',
-        format => '',
-        read_only => '',
-            },
-    'b_colleague_ezsignemail' => {
-        datatype => 'boolean',
-        base_name => 'bColleagueEzsignemail',
-        description => 'Whether the email can be used by the cloning user in Ezsign',
-        format => '',
-        read_only => '',
-            },
-    'b_colleague_financial' => {
-        datatype => 'boolean',
-        base_name => 'bColleagueFinancial',
-        description => 'Whether the cloning user has access to the financial',
-        format => '',
-        read_only => '',
-            },
-    'b_colleague_usecloneemail' => {
-        datatype => 'boolean',
-        base_name => 'bColleagueUsecloneemail',
-        description => 'Whether the cloning user has access to the cloned user email to send communications',
-        format => '',
-        read_only => '',
-            },
-    'b_colleague_attachment' => {
-        datatype => 'boolean',
-        base_name => 'bColleagueAttachment',
-        description => 'Whether the cloning user has access to the attachment',
-        format => '',
-        read_only => '',
-            },
-    'b_colleague_canafe' => {
-        datatype => 'boolean',
-        base_name => 'bColleagueCanafe',
-        description => 'Whether the cloning user has access to canafe',
-        format => '',
-        read_only => '',
-            },
-    'b_colleague_permission' => {
-        datatype => 'boolean',
-        base_name => 'bColleaguePermission',
-        description => 'Whether the cloning user copies the permission of the cloned user',
-        format => '',
-        read_only => '',
-            },
-    'b_colleague_realestatecompleted' => {
-        datatype => 'boolean',
-        base_name => 'bColleagueRealestatecompleted',
-        description => 'Whether if the cloning user has access to the completed folders in real estate',
-        format => '',
-        read_only => '',
-            },
-    'dt_colleague_from' => {
-        datatype => 'string',
-        base_name => 'dtColleagueFrom',
-        description => 'The from of the Colleague',
-        format => '',
-        read_only => '',
-            },
-    'dt_colleague_to' => {
-        datatype => 'string',
-        base_name => 'dtColleagueTo',
-        description => 'The to of the Colleague',
-        format => '',
-        read_only => '',
-            },
-    'e_colleague_ezsign' => {
-        datatype => 'FieldEColleagueEzsign',
-        base_name => 'eColleagueEzsign',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_colleague_realestateinprogress' => {
-        datatype => 'FieldEColleagueRealestateinprogess',
-        base_name => 'eColleagueRealestateinprogress',
-        description => '',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_colleague_id' => 'int',
-    'fki_user_id' => 'int',
-    'fki_user_id_colleague' => 'int',
-    'b_colleague_ezsignemail' => 'boolean',
-    'b_colleague_financial' => 'boolean',
-    'b_colleague_usecloneemail' => 'boolean',
-    'b_colleague_attachment' => 'boolean',
-    'b_colleague_canafe' => 'boolean',
-    'b_colleague_permission' => 'boolean',
-    'b_colleague_realestatecompleted' => 'boolean',
-    'dt_colleague_from' => 'string',
-    'dt_colleague_to' => 'string',
-    'e_colleague_ezsign' => 'FieldEColleagueEzsign',
-    'e_colleague_realestateinprogress' => 'FieldEColleagueRealestateinprogess'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_colleague_id' => 'pkiColleagueID',
-    'fki_user_id' => 'fkiUserID',
-    'fki_user_id_colleague' => 'fkiUserIDColleague',
-    'b_colleague_ezsignemail' => 'bColleagueEzsignemail',
-    'b_colleague_financial' => 'bColleagueFinancial',
-    'b_colleague_usecloneemail' => 'bColleagueUsecloneemail',
-    'b_colleague_attachment' => 'bColleagueAttachment',
-    'b_colleague_canafe' => 'bColleagueCanafe',
-    'b_colleague_permission' => 'bColleaguePermission',
-    'b_colleague_realestatecompleted' => 'bColleagueRealestatecompleted',
-    'dt_colleague_from' => 'dtColleagueFrom',
-    'dt_colleague_to' => 'dtColleagueTo',
-    'e_colleague_ezsign' => 'eColleagueEzsign',
-    'e_colleague_realestateinprogress' => 'eColleagueRealestateinprogress'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

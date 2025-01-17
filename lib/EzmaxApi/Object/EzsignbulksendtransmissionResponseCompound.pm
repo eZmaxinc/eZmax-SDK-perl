@@ -32,8 +32,9 @@ use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::CustomEzsignfoldertransmissionResponse;
+use EzmaxApi::Object::EzsignbulksendtransmissionResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignbulksendtransmissionResponse");
 
 #
 #An Ezsignbulksendtransmission Object and children to create a complete structure
@@ -86,12 +87,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsignbulksendtransmissionResponse
+    $self->EzmaxApi::Object::EzsignbulksendtransmissionResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsignbulksendtransmissionResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignbulksendtransmissionResponse::to_hash };
 
     return $_hash;
 }
@@ -122,6 +129,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsignbulksendtransmissionResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignbulksendtransmissionResponse::TO_JSON };
 
     return $_data;
 }
@@ -190,6 +200,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsignbulksendtransmissionResponse) from_hash
+    $self->EzmaxApi::Object::EzsignbulksendtransmissionResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -221,41 +234,6 @@ __PACKAGE__->class_documentation({description => 'An Ezsignbulksendtransmission 
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsignbulksendtransmission_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsignbulksendtransmissionID',
-        description => 'The unique ID of the Ezsignbulksendtransmission',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsignbulksend_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsignbulksendID',
-        description => 'The unique ID of the Ezsignbulksend',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignbulksendtransmission_description' => {
-        datatype => 'string',
-        base_name => 'sEzsignbulksendtransmissionDescription',
-        description => 'The description of the Ezsignbulksendtransmission',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignbulksendtransmission_errors' => {
-        datatype => 'int',
-        base_name => 'iEzsignbulksendtransmissionErrors',
-        description => 'The number of errors during the Ezsignbulksendtransmission',
-        format => '',
-        read_only => '',
-            },
-    'obj_audit' => {
-        datatype => 'CommonAudit',
-        base_name => 'objAudit',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'a_obj_ezsignfoldertransmission' => {
         datatype => 'ARRAY[CustomEzsignfoldertransmissionResponse]',
         base_name => 'a_objEzsignfoldertransmission',
@@ -266,20 +244,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsignbulksendtransmission_id' => 'int',
-    'fki_ezsignbulksend_id' => 'int',
-    's_ezsignbulksendtransmission_description' => 'string',
-    'i_ezsignbulksendtransmission_errors' => 'int',
-    'obj_audit' => 'CommonAudit',
     'a_obj_ezsignfoldertransmission' => 'ARRAY[CustomEzsignfoldertransmissionResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsignbulksendtransmission_id' => 'pkiEzsignbulksendtransmissionID',
-    'fki_ezsignbulksend_id' => 'fkiEzsignbulksendID',
-    's_ezsignbulksendtransmission_description' => 'sEzsignbulksendtransmissionDescription',
-    'i_ezsignbulksendtransmission_errors' => 'iEzsignbulksendtransmissionErrors',
-    'obj_audit' => 'objAudit',
     'a_obj_ezsignfoldertransmission' => 'a_objEzsignfoldertransmission'
 } );
 

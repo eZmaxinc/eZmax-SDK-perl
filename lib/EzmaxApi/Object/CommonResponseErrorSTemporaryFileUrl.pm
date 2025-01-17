@@ -30,9 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CommonResponseError;
 use EzmaxApi::Object::FieldEErrorCode;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::CommonResponseError");
 
 #
 #Generic Error Message
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object CommonResponseError
+    $self->EzmaxApi::Object::CommonResponseError::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call CommonResponseError to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::CommonResponseError::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (CommonResponseError) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::CommonResponseError::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (CommonResponseError) from_hash
+    $self->EzmaxApi::Object::CommonResponseError::from_hash($hash);
+
     return $self;
 }
 
@@ -220,27 +233,6 @@ __PACKAGE__->class_documentation({description => 'Generic Error Message',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    's_error_message' => {
-        datatype => 'string',
-        base_name => 'sErrorMessage',
-        description => 'The message giving details about the error',
-        format => '',
-        read_only => '',
-            },
-    'e_error_code' => {
-        datatype => 'FieldEErrorCode',
-        base_name => 'eErrorCode',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'a_s_error_messagedetail' => {
-        datatype => 'ARRAY[string]',
-        base_name => 'a_sErrorMessagedetail',
-        description => 'More error message detail',
-        format => '',
-        read_only => '',
-            },
     's_temporary_file_url' => {
         datatype => 'string',
         base_name => 'sTemporaryFileUrl',
@@ -251,16 +243,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    's_error_message' => 'string',
-    'e_error_code' => 'FieldEErrorCode',
-    'a_s_error_messagedetail' => 'ARRAY[string]',
     's_temporary_file_url' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    's_error_message' => 'sErrorMessage',
-    'e_error_code' => 'eErrorCode',
-    'a_s_error_messagedetail' => 'a_sErrorMessagedetail',
     's_temporary_file_url' => 'sTemporaryFileUrl'
 } );
 

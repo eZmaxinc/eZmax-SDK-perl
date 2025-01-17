@@ -30,9 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EzsigntemplatesignerRequest;
 use EzmaxApi::Object::FieldEEzsigntemplatesignerMapping;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsigntemplatesignerRequest");
 
 #
 #A Ezsigntemplatesigner Object and children
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsigntemplatesignerRequest
+    $self->EzmaxApi::Object::EzsigntemplatesignerRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsigntemplatesignerRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsigntemplatesignerRequest::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsigntemplatesignerRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsigntemplatesignerRequest::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsigntemplatesignerRequest) from_hash
+    $self->EzmaxApi::Object::EzsigntemplatesignerRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -220,84 +233,14 @@ __PACKAGE__->class_documentation({description => 'A Ezsigntemplatesigner Object 
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsigntemplatesigner_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsigntemplatesignerID',
-        description => 'The unique ID of the Ezsigntemplatesigner',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsigntemplate_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsigntemplateID',
-        description => 'The unique ID of the Ezsigntemplate',
-        format => '',
-        read_only => '',
-            },
-    'fki_user_id' => {
-        datatype => 'int',
-        base_name => 'fkiUserID',
-        description => 'The unique ID of the User',
-        format => '',
-        read_only => '',
-            },
-    'fki_usergroup_id' => {
-        datatype => 'int',
-        base_name => 'fkiUsergroupID',
-        description => 'The unique ID of the Usergroup',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezdoctemplatedocument_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzdoctemplatedocumentID',
-        description => 'The unique ID of the Ezdoctemplatedocument',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsigntemplatesigner_receivecopy' => {
-        datatype => 'boolean',
-        base_name => 'bEzsigntemplatesignerReceivecopy',
-        description => 'If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain&#39;t required to sign the document.',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsigntemplatesigner_mapping' => {
-        datatype => 'FieldEEzsigntemplatesignerMapping',
-        base_name => 'eEzsigntemplatesignerMapping',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_ezsigntemplatesigner_description' => {
-        datatype => 'string',
-        base_name => 'sEzsigntemplatesignerDescription',
-        description => 'The description of the Ezsigntemplatesigner',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsigntemplatesigner_id' => 'int',
-    'fki_ezsigntemplate_id' => 'int',
-    'fki_user_id' => 'int',
-    'fki_usergroup_id' => 'int',
-    'fki_ezdoctemplatedocument_id' => 'int',
-    'b_ezsigntemplatesigner_receivecopy' => 'boolean',
-    'e_ezsigntemplatesigner_mapping' => 'FieldEEzsigntemplatesignerMapping',
-    's_ezsigntemplatesigner_description' => 'string'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsigntemplatesigner_id' => 'pkiEzsigntemplatesignerID',
-    'fki_ezsigntemplate_id' => 'fkiEzsigntemplateID',
-    'fki_user_id' => 'fkiUserID',
-    'fki_usergroup_id' => 'fkiUsergroupID',
-    'fki_ezdoctemplatedocument_id' => 'fkiEzdoctemplatedocumentID',
-    'b_ezsigntemplatesigner_receivecopy' => 'bEzsigntemplatesignerReceivecopy',
-    'e_ezsigntemplatesigner_mapping' => 'eEzsigntemplatesignerMapping',
-    's_ezsigntemplatesigner_description' => 'sEzsigntemplatesignerDescription'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

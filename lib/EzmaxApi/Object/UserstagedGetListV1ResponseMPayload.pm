@@ -30,9 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CommonGetListV1ResponseMPayload;
 use EzmaxApi::Object::UserstagedListElement;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::CommonGetListV1ResponseMPayload");
 
 #
 #Payload for GET /1/object/userstaged/getList
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object CommonGetListV1ResponseMPayload
+    $self->EzmaxApi::Object::CommonGetListV1ResponseMPayload::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call CommonGetListV1ResponseMPayload to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::CommonGetListV1ResponseMPayload::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (CommonGetListV1ResponseMPayload) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::CommonGetListV1ResponseMPayload::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (CommonGetListV1ResponseMPayload) from_hash
+    $self->EzmaxApi::Object::CommonGetListV1ResponseMPayload::from_hash($hash);
+
     return $self;
 }
 
@@ -220,20 +233,6 @@ __PACKAGE__->class_documentation({description => 'Payload for GET /1/object/user
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'i_row_returned' => {
-        datatype => 'int',
-        base_name => 'iRowReturned',
-        description => 'The number of rows returned',
-        format => '',
-        read_only => '',
-            },
-    'i_row_filtered' => {
-        datatype => 'int',
-        base_name => 'iRowFiltered',
-        description => 'The number of rows matching your filters (if any) or the total number of rows',
-        format => '',
-        read_only => '',
-            },
     'a_obj_userstaged' => {
         datatype => 'ARRAY[UserstagedListElement]',
         base_name => 'a_objUserstaged',
@@ -244,14 +243,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'i_row_returned' => 'int',
-    'i_row_filtered' => 'int',
     'a_obj_userstaged' => 'ARRAY[UserstagedListElement]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'i_row_returned' => 'iRowReturned',
-    'i_row_filtered' => 'iRowFiltered',
     'a_obj_userstaged' => 'a_objUserstaged'
 } );
 

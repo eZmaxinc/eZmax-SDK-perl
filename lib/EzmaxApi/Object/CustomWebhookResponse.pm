@@ -34,9 +34,10 @@ use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::FieldEWebhookEzsignevent;
 use EzmaxApi::Object::FieldEWebhookManagementevent;
 use EzmaxApi::Object::FieldEWebhookModule;
+use EzmaxApi::Object::WebhookResponseCompound;
 use EzmaxApi::Object::WebhookheaderResponseCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::WebhookResponseCompound");
 
 #
 #A custom Webhook object
@@ -89,12 +90,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object WebhookResponseCompound
+    $self->EzmaxApi::Object::WebhookResponseCompound::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call WebhookResponseCompound to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::WebhookResponseCompound::to_hash };
 
     return $_hash;
 }
@@ -125,6 +132,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (WebhookResponseCompound) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::WebhookResponseCompound::TO_JSON };
 
     return $_data;
 }
@@ -193,6 +203,9 @@ sub from_hash {
         }
     }
 
+    # call parent (WebhookResponseCompound) from_hash
+    $self->EzmaxApi::Object::WebhookResponseCompound::from_hash($hash);
+
     return $self;
 }
 
@@ -224,139 +237,6 @@ __PACKAGE__->class_documentation({description => 'A custom Webhook object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_webhook_id' => {
-        datatype => 'int',
-        base_name => 'pkiWebhookID',
-        description => 'The unique ID of the Webhook',
-        format => '',
-        read_only => '',
-            },
-    'fki_authenticationexternal_id' => {
-        datatype => 'int',
-        base_name => 'fkiAuthenticationexternalID',
-        description => 'The unique ID of the Authenticationexternal',
-        format => '',
-        read_only => '',
-            },
-    's_webhook_description' => {
-        datatype => 'string',
-        base_name => 'sWebhookDescription',
-        description => 'The description of the Webhook',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsignfoldertype_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsignfoldertypeID',
-        description => 'The unique ID of the Ezsignfoldertype.',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignfoldertype_name_x' => {
-        datatype => 'string',
-        base_name => 'sEzsignfoldertypeNameX',
-        description => 'The name of the Ezsignfoldertype in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    'e_webhook_module' => {
-        datatype => 'FieldEWebhookModule',
-        base_name => 'eWebhookModule',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_webhook_ezsignevent' => {
-        datatype => 'FieldEWebhookEzsignevent',
-        base_name => 'eWebhookEzsignevent',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_webhook_managementevent' => {
-        datatype => 'FieldEWebhookManagementevent',
-        base_name => 'eWebhookManagementevent',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_webhook_url' => {
-        datatype => 'string',
-        base_name => 'sWebhookUrl',
-        description => 'The URL of the Webhook callback',
-        format => '',
-        read_only => '',
-            },
-    's_webhook_emailfailed' => {
-        datatype => 'string',
-        base_name => 'sWebhookEmailfailed',
-        description => 'The email that will receive the Webhook in case all attempts fail',
-        format => '',
-        read_only => '',
-            },
-    's_webhook_apikey' => {
-        datatype => 'string',
-        base_name => 'sWebhookApikey',
-        description => 'The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.',
-        format => '',
-        read_only => '',
-            },
-    's_webhook_secret' => {
-        datatype => 'string',
-        base_name => 'sWebhookSecret',
-        description => 'The Secret for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.',
-        format => '',
-        read_only => '',
-            },
-    'b_webhook_isactive' => {
-        datatype => 'boolean',
-        base_name => 'bWebhookIsactive',
-        description => 'Whether the Webhook is active or not',
-        format => '',
-        read_only => '',
-            },
-    'b_webhook_issigned' => {
-        datatype => 'boolean',
-        base_name => 'bWebhookIssigned',
-        description => 'Whether the requests will be signed or not',
-        format => '',
-        read_only => '',
-            },
-    'b_webhook_skipsslvalidation' => {
-        datatype => 'boolean',
-        base_name => 'bWebhookSkipsslvalidation',
-        description => 'Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use',
-        format => '',
-        read_only => '',
-            },
-    's_authenticationexternal_description' => {
-        datatype => 'string',
-        base_name => 'sAuthenticationexternalDescription',
-        description => 'The description of the Authenticationexternal',
-        format => '',
-        read_only => '',
-            },
-    'obj_audit' => {
-        datatype => 'CommonAudit',
-        base_name => 'objAudit',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_webhook_event' => {
-        datatype => 'string',
-        base_name => 'sWebhookEvent',
-        description => 'The concatenated string to describe the Webhook event',
-        format => '',
-        read_only => '',
-            },
-    'a_obj_webhookheader' => {
-        datatype => 'ARRAY[WebhookheaderResponseCompound]',
-        base_name => 'a_objWebhookheader',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'pks_customer_code' => {
         datatype => 'string',
         base_name => 'pksCustomerCode',
@@ -381,50 +261,12 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_webhook_id' => 'int',
-    'fki_authenticationexternal_id' => 'int',
-    's_webhook_description' => 'string',
-    'fki_ezsignfoldertype_id' => 'int',
-    's_ezsignfoldertype_name_x' => 'string',
-    'e_webhook_module' => 'FieldEWebhookModule',
-    'e_webhook_ezsignevent' => 'FieldEWebhookEzsignevent',
-    'e_webhook_managementevent' => 'FieldEWebhookManagementevent',
-    's_webhook_url' => 'string',
-    's_webhook_emailfailed' => 'string',
-    's_webhook_apikey' => 'string',
-    's_webhook_secret' => 'string',
-    'b_webhook_isactive' => 'boolean',
-    'b_webhook_issigned' => 'boolean',
-    'b_webhook_skipsslvalidation' => 'boolean',
-    's_authenticationexternal_description' => 'string',
-    'obj_audit' => 'CommonAudit',
-    's_webhook_event' => 'string',
-    'a_obj_webhookheader' => 'ARRAY[WebhookheaderResponseCompound]',
     'pks_customer_code' => 'string',
     'b_webhook_test' => 'boolean',
     'e_webhook_emittype' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_webhook_id' => 'pkiWebhookID',
-    'fki_authenticationexternal_id' => 'fkiAuthenticationexternalID',
-    's_webhook_description' => 'sWebhookDescription',
-    'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
-    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
-    'e_webhook_module' => 'eWebhookModule',
-    'e_webhook_ezsignevent' => 'eWebhookEzsignevent',
-    'e_webhook_managementevent' => 'eWebhookManagementevent',
-    's_webhook_url' => 'sWebhookUrl',
-    's_webhook_emailfailed' => 'sWebhookEmailfailed',
-    's_webhook_apikey' => 'sWebhookApikey',
-    's_webhook_secret' => 'sWebhookSecret',
-    'b_webhook_isactive' => 'bWebhookIsactive',
-    'b_webhook_issigned' => 'bWebhookIssigned',
-    'b_webhook_skipsslvalidation' => 'bWebhookSkipsslvalidation',
-    's_authenticationexternal_description' => 'sAuthenticationexternalDescription',
-    'obj_audit' => 'objAudit',
-    's_webhook_event' => 'sWebhookEvent',
-    'a_obj_webhookheader' => 'a_objWebhookheader',
     'pks_customer_code' => 'pksCustomerCode',
     'b_webhook_test' => 'bWebhookTest',
     'e_webhook_emittype' => 'eWebhookEmittype'

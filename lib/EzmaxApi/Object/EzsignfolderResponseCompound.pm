@@ -33,11 +33,12 @@ use DateTime;
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::CustomEzsignfoldertypeResponse;
 use EzmaxApi::Object::CustomTimezoneWithCodeResponse;
+use EzmaxApi::Object::EzsignfolderResponse;
 use EzmaxApi::Object::FieldEEzsignfolderCompletion;
 use EzmaxApi::Object::FieldEEzsignfolderSendreminderfrequency;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignfolderResponse");
 
 #
 #An Ezsignfolder Object and children to create a complete structure
@@ -90,12 +91,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsignfolderResponse
+    $self->EzmaxApi::Object::EzsignfolderResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsignfolderResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignfolderResponse::to_hash };
 
     return $_hash;
 }
@@ -126,6 +133,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsignfolderResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignfolderResponse::TO_JSON };
 
     return $_data;
 }
@@ -194,6 +204,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsignfolderResponse) from_hash
+    $self->EzmaxApi::Object::EzsignfolderResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -225,188 +238,6 @@ __PACKAGE__->class_documentation({description => 'An Ezsignfolder Object and chi
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsignfolder_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsignfolderID',
-        description => 'The unique ID of the Ezsignfolder',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsignfoldertype_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsignfoldertypeID',
-        description => 'The unique ID of the Ezsignfoldertype.',
-        format => '',
-        read_only => '',
-            },
-    'obj_ezsignfoldertype' => {
-        datatype => 'CustomEzsignfoldertypeResponse',
-        base_name => 'objEzsignfoldertype',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'fki_timezone_id' => {
-        datatype => 'int',
-        base_name => 'fkiTimezoneID',
-        description => 'The unique ID of the Timezone',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignfolder_completion' => {
-        datatype => 'FieldEEzsignfolderCompletion',
-        base_name => 'eEzsignfolderCompletion',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignfoldertype_name_x' => {
-        datatype => 'string',
-        base_name => 'sEzsignfoldertypeNameX',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'fki_billingentityinternal_id' => {
-        datatype => 'int',
-        base_name => 'fkiBillingentityinternalID',
-        description => 'The unique ID of the Billingentityinternal.',
-        format => '',
-        read_only => '',
-            },
-    's_billingentityinternal_description_x' => {
-        datatype => 'string',
-        base_name => 'sBillingentityinternalDescriptionX',
-        description => 'The description of the Billingentityinternal in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsigntsarequirement_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsigntsarequirementID',
-        description => 'The unique ID of the Ezsigntsarequirement.  Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values:  |Value|Description| |-|-| |1|No. TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server&#39;s time.| |2|Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server&#39;s time. **Additional fee applies**| |3|Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**|',
-        format => '',
-        read_only => '',
-            },
-    's_ezsigntsarequirement_description_x' => {
-        datatype => 'string',
-        base_name => 'sEzsigntsarequirementDescriptionX',
-        description => 'The description of the Ezsigntsarequirement in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignfolder_description' => {
-        datatype => 'string',
-        base_name => 'sEzsignfolderDescription',
-        description => 'The description of the Ezsignfolder',
-        format => '',
-        read_only => '',
-            },
-    't_ezsignfolder_note' => {
-        datatype => 'string',
-        base_name => 'tEzsignfolderNote',
-        description => 'Note about the Ezsignfolder',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsignfolder_isdisposable' => {
-        datatype => 'boolean',
-        base_name => 'bEzsignfolderIsdisposable',
-        description => 'If the Ezsigndocument can be disposed',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignfolder_sendreminderfrequency' => {
-        datatype => 'FieldEEzsignfolderSendreminderfrequency',
-        base_name => 'eEzsignfolderSendreminderfrequency',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignfolder_sendreminderfirstdays' => {
-        datatype => 'int',
-        base_name => 'iEzsignfolderSendreminderfirstdays',
-        description => 'The number of days before the the first reminder sending',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignfolder_sendreminderotherdays' => {
-        datatype => 'int',
-        base_name => 'iEzsignfolderSendreminderotherdays',
-        description => 'The number of days after the first reminder sending',
-        format => '',
-        read_only => '',
-            },
-    'dt_ezsignfolder_delayedsenddate' => {
-        datatype => 'string',
-        base_name => 'dtEzsignfolderDelayedsenddate',
-        description => 'The date and time at which the Ezsignfolder will be sent in the future.',
-        format => '',
-        read_only => '',
-            },
-    'dt_ezsignfolder_duedate' => {
-        datatype => 'string',
-        base_name => 'dtEzsignfolderDuedate',
-        description => 'The maximum date and time at which the Ezsignfolder can be signed.',
-        format => '',
-        read_only => '',
-            },
-    'dt_ezsignfolder_sentdate' => {
-        datatype => 'string',
-        base_name => 'dtEzsignfolderSentdate',
-        description => 'The date and time at which the Ezsignfolder was sent the last time.',
-        format => '',
-        read_only => '',
-            },
-    'dt_ezsignfolder_scheduledarchive' => {
-        datatype => 'string',
-        base_name => 'dtEzsignfolderScheduledarchive',
-        description => 'The scheduled date and time at which the Ezsignfolder should be archived.',
-        format => '',
-        read_only => '',
-            },
-    'dt_ezsignfolder_scheduleddispose' => {
-        datatype => 'string',
-        base_name => 'dtEzsignfolderScheduleddispose',
-        description => 'The scheduled date at which the Ezsignfolder should be Disposed.',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignfolder_step' => {
-        datatype => 'FieldEEzsignfolderStep',
-        base_name => 'eEzsignfolderStep',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'dt_ezsignfolder_close' => {
-        datatype => 'string',
-        base_name => 'dtEzsignfolderClose',
-        description => 'The date and time at which the Ezsignfolder was closed. Either by applying the last signature or by completing it prematurely.',
-        format => '',
-        read_only => '',
-            },
-    't_ezsignfolder_message' => {
-        datatype => 'string',
-        base_name => 'tEzsignfolderMessage',
-        description => 'A custom text message that will be added to the email sent.',
-        format => '',
-        read_only => '',
-            },
-    'obj_audit' => {
-        datatype => 'CommonAudit',
-        base_name => 'objAudit',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignfolder_externalid' => {
-        datatype => 'string',
-        base_name => 'sEzsignfolderExternalid',
-        description => 'This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. ',
-        format => '',
-        read_only => '',
-            },
     'obj_timezone' => {
         datatype => 'CustomTimezoneWithCodeResponse',
         base_name => 'objTimezone',
@@ -417,62 +248,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsignfolder_id' => 'int',
-    'fki_ezsignfoldertype_id' => 'int',
-    'obj_ezsignfoldertype' => 'CustomEzsignfoldertypeResponse',
-    'fki_timezone_id' => 'int',
-    'e_ezsignfolder_completion' => 'FieldEEzsignfolderCompletion',
-    's_ezsignfoldertype_name_x' => 'string',
-    'fki_billingentityinternal_id' => 'int',
-    's_billingentityinternal_description_x' => 'string',
-    'fki_ezsigntsarequirement_id' => 'int',
-    's_ezsigntsarequirement_description_x' => 'string',
-    's_ezsignfolder_description' => 'string',
-    't_ezsignfolder_note' => 'string',
-    'b_ezsignfolder_isdisposable' => 'boolean',
-    'e_ezsignfolder_sendreminderfrequency' => 'FieldEEzsignfolderSendreminderfrequency',
-    'i_ezsignfolder_sendreminderfirstdays' => 'int',
-    'i_ezsignfolder_sendreminderotherdays' => 'int',
-    'dt_ezsignfolder_delayedsenddate' => 'string',
-    'dt_ezsignfolder_duedate' => 'string',
-    'dt_ezsignfolder_sentdate' => 'string',
-    'dt_ezsignfolder_scheduledarchive' => 'string',
-    'dt_ezsignfolder_scheduleddispose' => 'string',
-    'e_ezsignfolder_step' => 'FieldEEzsignfolderStep',
-    'dt_ezsignfolder_close' => 'string',
-    't_ezsignfolder_message' => 'string',
-    'obj_audit' => 'CommonAudit',
-    's_ezsignfolder_externalid' => 'string',
     'obj_timezone' => 'CustomTimezoneWithCodeResponse'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsignfolder_id' => 'pkiEzsignfolderID',
-    'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
-    'obj_ezsignfoldertype' => 'objEzsignfoldertype',
-    'fki_timezone_id' => 'fkiTimezoneID',
-    'e_ezsignfolder_completion' => 'eEzsignfolderCompletion',
-    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
-    'fki_billingentityinternal_id' => 'fkiBillingentityinternalID',
-    's_billingentityinternal_description_x' => 'sBillingentityinternalDescriptionX',
-    'fki_ezsigntsarequirement_id' => 'fkiEzsigntsarequirementID',
-    's_ezsigntsarequirement_description_x' => 'sEzsigntsarequirementDescriptionX',
-    's_ezsignfolder_description' => 'sEzsignfolderDescription',
-    't_ezsignfolder_note' => 'tEzsignfolderNote',
-    'b_ezsignfolder_isdisposable' => 'bEzsignfolderIsdisposable',
-    'e_ezsignfolder_sendreminderfrequency' => 'eEzsignfolderSendreminderfrequency',
-    'i_ezsignfolder_sendreminderfirstdays' => 'iEzsignfolderSendreminderfirstdays',
-    'i_ezsignfolder_sendreminderotherdays' => 'iEzsignfolderSendreminderotherdays',
-    'dt_ezsignfolder_delayedsenddate' => 'dtEzsignfolderDelayedsenddate',
-    'dt_ezsignfolder_duedate' => 'dtEzsignfolderDuedate',
-    'dt_ezsignfolder_sentdate' => 'dtEzsignfolderSentdate',
-    'dt_ezsignfolder_scheduledarchive' => 'dtEzsignfolderScheduledarchive',
-    'dt_ezsignfolder_scheduleddispose' => 'dtEzsignfolderScheduleddispose',
-    'e_ezsignfolder_step' => 'eEzsignfolderStep',
-    'dt_ezsignfolder_close' => 'dtEzsignfolderClose',
-    't_ezsignfolder_message' => 'tEzsignfolderMessage',
-    'obj_audit' => 'objAudit',
-    's_ezsignfolder_externalid' => 'sEzsignfolderExternalid',
     'obj_timezone' => 'objTimezone'
 } );
 

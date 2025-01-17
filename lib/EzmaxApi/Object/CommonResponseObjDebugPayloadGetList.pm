@@ -31,8 +31,9 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonResponseFilter;
+use EzmaxApi::Object::CommonResponseObjDebugPayload;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::CommonResponseObjDebugPayload");
 
 #
 #This is a debug object containing debugging information on the actual function
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object CommonResponseObjDebugPayload
+    $self->EzmaxApi::Object::CommonResponseObjDebugPayload::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call CommonResponseObjDebugPayload to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::CommonResponseObjDebugPayload::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (CommonResponseObjDebugPayload) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::CommonResponseObjDebugPayload::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (CommonResponseObjDebugPayload) from_hash
+    $self->EzmaxApi::Object::CommonResponseObjDebugPayload::from_hash($hash);
+
     return $self;
 }
 
@@ -220,41 +233,6 @@ __PACKAGE__->class_documentation({description => 'This is a debug object contain
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'i_version_min' => {
-        datatype => 'int',
-        base_name => 'iVersionMin',
-        description => 'The minimum version of the function that can be called',
-        format => '',
-        read_only => '',
-            },
-    'i_version_max' => {
-        datatype => 'int',
-        base_name => 'iVersionMax',
-        description => 'The maximum version of the function that can be called',
-        format => '',
-        read_only => '',
-            },
-    'a_required_permission' => {
-        datatype => 'ARRAY[int]',
-        base_name => 'a_RequiredPermission',
-        description => 'An array of permissions required to access this function.  If the value \&quot;0\&quot; is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don&#39;t need to have all of them.',
-        format => '',
-        read_only => '',
-            },
-    'b_version_deprecated' => {
-        datatype => 'boolean',
-        base_name => 'bVersionDeprecated',
-        description => 'Wheter the current route is deprecated or not',
-        format => '',
-        read_only => '',
-            },
-    'dt_response_date' => {
-        datatype => 'string',
-        base_name => 'dtResponseDate',
-        description => 'Represent a Date Time. The timezone is the one configured in the User&#39;s profile.',
-        format => '',
-        read_only => '',
-            },
     'a_filter' => {
         datatype => 'CommonResponseFilter',
         base_name => 'a_Filter',
@@ -286,11 +264,6 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'i_version_min' => 'int',
-    'i_version_max' => 'int',
-    'a_required_permission' => 'ARRAY[int]',
-    'b_version_deprecated' => 'boolean',
-    'dt_response_date' => 'string',
     'a_filter' => 'CommonResponseFilter',
     'a_order_by' => 'HASH[string,string]',
     'i_row_max' => 'int',
@@ -298,11 +271,6 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
-    'i_version_min' => 'iVersionMin',
-    'i_version_max' => 'iVersionMax',
-    'a_required_permission' => 'a_RequiredPermission',
-    'b_version_deprecated' => 'bVersionDeprecated',
-    'dt_response_date' => 'dtResponseDate',
     'a_filter' => 'a_Filter',
     'a_order_by' => 'a_OrderBy',
     'i_row_max' => 'iRowMax',

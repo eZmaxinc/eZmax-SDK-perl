@@ -8,18 +8,6 @@ use EzmaxApi::Object::FranchisereferalincomeRequestCompound;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pki_franchisereferalincome_id** | **int** | The unique ID of the Franchisereferalincome | [optional] 
-**fki_franchisebroker_id** | **int** | The unique ID of the Franchisebroker | 
-**fki_franchisereferalincomeprogram_id** | **int** | The unique ID of the Franchisereferalincomeprogram | 
-**fki_period_id** | **int** | The unique ID of the Period | 
-**d_franchisereferalincome_loan** | **string** | The loan amount | 
-**d_franchisereferalincome_franchiseamount** | **string** | The amount that will be given to the franchise | 
-**d_franchisereferalincome_franchisoramount** | **string** | The amount that will be kept by the franchisor | 
-**d_franchisereferalincome_agentamount** | **string** | The amount that will be given to the agent | 
-**dt_franchisereferalincome_disbursed** | **string** | The date the amounts were disbursed | 
-**t_franchisereferalincome_comment** | **string** | Comment about the transaction | 
-**fki_franchiseoffice_id** | **int** | The unique ID of the Franchisereoffice | 
-**s_franchisereferalincome_remoteid** | **string** |  | 
 **obj_address** | [**AddressRequest**](AddressRequest.md) |  | [optional] 
 **a_obj_contact** | [**ARRAY[ContactRequestCompound]**](ContactRequestCompound.md) |  | 
 

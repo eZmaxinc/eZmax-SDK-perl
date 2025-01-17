@@ -31,8 +31,9 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::MultilingualSubnetDescription;
+use EzmaxApi::Object::SubnetRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::SubnetRequest");
 
 #
 #A Subnet Object and children
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object SubnetRequest
+    $self->EzmaxApi::Object::SubnetRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call SubnetRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::SubnetRequest::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (SubnetRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::SubnetRequest::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (SubnetRequest) from_hash
+    $self->EzmaxApi::Object::SubnetRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -220,66 +233,14 @@ __PACKAGE__->class_documentation({description => 'A Subnet Object and children',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_subnet_id' => {
-        datatype => 'int',
-        base_name => 'pkiSubnetID',
-        description => 'The unique ID of the Subnet',
-        format => '',
-        read_only => '',
-            },
-    'fki_user_id' => {
-        datatype => 'int',
-        base_name => 'fkiUserID',
-        description => 'The unique ID of the User',
-        format => '',
-        read_only => '',
-            },
-    'fki_apikey_id' => {
-        datatype => 'int',
-        base_name => 'fkiApikeyID',
-        description => 'The unique ID of the Apikey',
-        format => '',
-        read_only => '',
-            },
-    'obj_subnet_description' => {
-        datatype => 'MultilingualSubnetDescription',
-        base_name => 'objSubnetDescription',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'i_subnet_network' => {
-        datatype => 'int',
-        base_name => 'iSubnetNetwork',
-        description => 'The network of the Subnet in integer form. For example 8.8.8.0 would be 134744064',
-        format => '',
-        read_only => '',
-            },
-    'i_subnet_mask' => {
-        datatype => 'int',
-        base_name => 'iSubnetMask',
-        description => 'The mask of the Subnet  in integer form. For example 255.255.255.0 would be 4294967040',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_subnet_id' => 'int',
-    'fki_user_id' => 'int',
-    'fki_apikey_id' => 'int',
-    'obj_subnet_description' => 'MultilingualSubnetDescription',
-    'i_subnet_network' => 'int',
-    'i_subnet_mask' => 'int'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_subnet_id' => 'pkiSubnetID',
-    'fki_user_id' => 'fkiUserID',
-    'fki_apikey_id' => 'fkiApikeyID',
-    'obj_subnet_description' => 'objSubnetDescription',
-    'i_subnet_network' => 'iSubnetNetwork',
-    'i_subnet_mask' => 'iSubnetMask'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

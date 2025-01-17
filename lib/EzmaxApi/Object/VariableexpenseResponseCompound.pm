@@ -32,8 +32,9 @@ use DateTime;
 
 use EzmaxApi::Object::FieldEVariableexpenseTaxable;
 use EzmaxApi::Object::MultilingualVariableexpenseDescription;
+use EzmaxApi::Object::VariableexpenseResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::VariableexpenseResponse");
 
 #
 #A Variableexpense Object
@@ -86,12 +87,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object VariableexpenseResponse
+    $self->EzmaxApi::Object::VariableexpenseResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call VariableexpenseResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::VariableexpenseResponse::to_hash };
 
     return $_hash;
 }
@@ -122,6 +129,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (VariableexpenseResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::VariableexpenseResponse::TO_JSON };
 
     return $_data;
 }
@@ -190,6 +200,9 @@ sub from_hash {
         }
     }
 
+    # call parent (VariableexpenseResponse) from_hash
+    $self->EzmaxApi::Object::VariableexpenseResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -221,57 +234,14 @@ __PACKAGE__->class_documentation({description => 'A Variableexpense Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_variableexpense_id' => {
-        datatype => 'int',
-        base_name => 'pkiVariableexpenseID',
-        description => 'The unique ID of the Variableexpense',
-        format => '',
-        read_only => '',
-            },
-    's_variableexpense_code' => {
-        datatype => 'string',
-        base_name => 'sVariableexpenseCode',
-        description => 'The code of the Variableexpense',
-        format => '',
-        read_only => '',
-            },
-    'obj_variableexpense_description' => {
-        datatype => 'MultilingualVariableexpenseDescription',
-        base_name => 'objVariableexpenseDescription',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_variableexpense_taxable' => {
-        datatype => 'FieldEVariableexpenseTaxable',
-        base_name => 'eVariableexpenseTaxable',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'b_variableexpense_isactive' => {
-        datatype => 'boolean',
-        base_name => 'bVariableexpenseIsactive',
-        description => 'Whether the variableexpense is active or not',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_variableexpense_id' => 'int',
-    's_variableexpense_code' => 'string',
-    'obj_variableexpense_description' => 'MultilingualVariableexpenseDescription',
-    'e_variableexpense_taxable' => 'FieldEVariableexpenseTaxable',
-    'b_variableexpense_isactive' => 'boolean'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_variableexpense_id' => 'pkiVariableexpenseID',
-    's_variableexpense_code' => 'sVariableexpenseCode',
-    'obj_variableexpense_description' => 'objVariableexpenseDescription',
-    'e_variableexpense_taxable' => 'eVariableexpenseTaxable',
-    'b_variableexpense_isactive' => 'bVariableexpenseIsactive'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

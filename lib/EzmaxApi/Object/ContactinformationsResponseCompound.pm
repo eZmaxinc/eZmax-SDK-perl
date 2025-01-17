@@ -31,12 +31,13 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::AddressResponse;
+use EzmaxApi::Object::ContactinformationsResponse;
 use EzmaxApi::Object::EmailResponse;
 use EzmaxApi::Object::FieldEContactinformationsType;
 use EzmaxApi::Object::PhoneResponseCompound;
 use EzmaxApi::Object::WebsiteResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::ContactinformationsResponse");
 
 #
 #A Contactinformations Object
@@ -89,12 +90,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object ContactinformationsResponse
+    $self->EzmaxApi::Object::ContactinformationsResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call ContactinformationsResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::ContactinformationsResponse::to_hash };
 
     return $_hash;
 }
@@ -125,6 +132,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (ContactinformationsResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::ContactinformationsResponse::TO_JSON };
 
     return $_data;
 }
@@ -193,6 +203,9 @@ sub from_hash {
         }
     }
 
+    # call parent (ContactinformationsResponse) from_hash
+    $self->EzmaxApi::Object::ContactinformationsResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -224,83 +237,6 @@ __PACKAGE__->class_documentation({description => 'A Contactinformations Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_contactinformations_id' => {
-        datatype => 'int',
-        base_name => 'pkiContactinformationsID',
-        description => 'The unique ID of the Contactinformations',
-        format => '',
-        read_only => '',
-            },
-    'fki_address_id_default' => {
-        datatype => 'int',
-        base_name => 'fkiAddressIDDefault',
-        description => 'The unique ID of the Address',
-        format => '',
-        read_only => '',
-            },
-    'fki_phone_id_default' => {
-        datatype => 'int',
-        base_name => 'fkiPhoneIDDefault',
-        description => 'The unique ID of the Phone.',
-        format => '',
-        read_only => '',
-            },
-    'fki_email_id_default' => {
-        datatype => 'int',
-        base_name => 'fkiEmailIDDefault',
-        description => 'The unique ID of the Email',
-        format => '',
-        read_only => '',
-            },
-    'fki_website_id_default' => {
-        datatype => 'int',
-        base_name => 'fkiWebsiteIDDefault',
-        description => 'The unique ID of the Website Default',
-        format => '',
-        read_only => '',
-            },
-    'e_contactinformations_type' => {
-        datatype => 'FieldEContactinformationsType',
-        base_name => 'eContactinformationsType',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_contactinformations_url' => {
-        datatype => 'string',
-        base_name => 'sContactinformationsUrl',
-        description => 'The url of the Contactinformations',
-        format => '',
-        read_only => '',
-            },
-    'obj_address_default' => {
-        datatype => 'AddressResponse',
-        base_name => 'objAddressDefault',
-        description => 'An Address Object and children to create a complete structure',
-        format => '',
-        read_only => '',
-            },
-    'obj_phone_default' => {
-        datatype => 'PhoneResponseCompound',
-        base_name => 'objPhoneDefault',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'obj_email_default' => {
-        datatype => 'EmailResponse',
-        base_name => 'objEmailDefault',
-        description => 'An Email Object and children to create a complete structure',
-        format => '',
-        read_only => '',
-            },
-    'obj_website_default' => {
-        datatype => 'WebsiteResponse',
-        base_name => 'objWebsiteDefault',
-        description => 'A Website Object and children to create a complete structure',
-        format => '',
-        read_only => '',
-            },
     'a_obj_address' => {
         datatype => 'ARRAY[AddressResponseCompound]',
         base_name => 'a_objAddress',
@@ -332,17 +268,6 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_contactinformations_id' => 'int',
-    'fki_address_id_default' => 'int',
-    'fki_phone_id_default' => 'int',
-    'fki_email_id_default' => 'int',
-    'fki_website_id_default' => 'int',
-    'e_contactinformations_type' => 'FieldEContactinformationsType',
-    's_contactinformations_url' => 'string',
-    'obj_address_default' => 'AddressResponse',
-    'obj_phone_default' => 'PhoneResponseCompound',
-    'obj_email_default' => 'EmailResponse',
-    'obj_website_default' => 'WebsiteResponse',
     'a_obj_address' => 'ARRAY[AddressResponseCompound]',
     'a_obj_phone' => 'ARRAY[PhoneResponseCompound]',
     'a_obj_email' => 'ARRAY[EmailResponseCompound]',
@@ -350,17 +275,6 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_contactinformations_id' => 'pkiContactinformationsID',
-    'fki_address_id_default' => 'fkiAddressIDDefault',
-    'fki_phone_id_default' => 'fkiPhoneIDDefault',
-    'fki_email_id_default' => 'fkiEmailIDDefault',
-    'fki_website_id_default' => 'fkiWebsiteIDDefault',
-    'e_contactinformations_type' => 'eContactinformationsType',
-    's_contactinformations_url' => 'sContactinformationsUrl',
-    'obj_address_default' => 'objAddressDefault',
-    'obj_phone_default' => 'objPhoneDefault',
-    'obj_email_default' => 'objEmailDefault',
-    'obj_website_default' => 'objWebsiteDefault',
     'a_obj_address' => 'a_objAddress',
     'a_obj_phone' => 'a_objPhone',
     'a_obj_email' => 'a_objEmail',

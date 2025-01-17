@@ -32,8 +32,9 @@ use DateTime;
 
 use EzmaxApi::Object::EmailRequest;
 use EzmaxApi::Object::MultilingualUsergroupName;
+use EzmaxApi::Object::UsergroupRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::UsergroupRequest");
 
 #
 #A Usergroup Object and children
@@ -86,12 +87,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object UsergroupRequest
+    $self->EzmaxApi::Object::UsergroupRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call UsergroupRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::UsergroupRequest::to_hash };
 
     return $_hash;
 }
@@ -122,6 +129,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (UsergroupRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::UsergroupRequest::TO_JSON };
 
     return $_data;
 }
@@ -190,6 +200,9 @@ sub from_hash {
         }
     }
 
+    # call parent (UsergroupRequest) from_hash
+    $self->EzmaxApi::Object::UsergroupRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -221,39 +234,14 @@ __PACKAGE__->class_documentation({description => 'A Usergroup Object and childre
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_usergroup_id' => {
-        datatype => 'int',
-        base_name => 'pkiUsergroupID',
-        description => 'The unique ID of the Usergroup',
-        format => '',
-        read_only => '',
-            },
-    'obj_email' => {
-        datatype => 'EmailRequest',
-        base_name => 'objEmail',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'obj_usergroup_name' => {
-        datatype => 'MultilingualUsergroupName',
-        base_name => 'objUsergroupName',
-        description => '',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_usergroup_id' => 'int',
-    'obj_email' => 'EmailRequest',
-    'obj_usergroup_name' => 'MultilingualUsergroupName'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_usergroup_id' => 'pkiUsergroupID',
-    'obj_email' => 'objEmail',
-    'obj_usergroup_name' => 'objUsergroupName'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

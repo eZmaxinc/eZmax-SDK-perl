@@ -30,10 +30,11 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CustomerRequest;
 use EzmaxApi::Object::FieldECustomerMarketingcorrespondence;
 use EzmaxApi::Object::FieldECustomerType;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::CustomerRequest");
 
 #
 #A Customer Object and children
@@ -86,12 +87,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object CustomerRequest
+    $self->EzmaxApi::Object::CustomerRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call CustomerRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::CustomerRequest::to_hash };
 
     return $_hash;
 }
@@ -122,6 +129,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (CustomerRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::CustomerRequest::TO_JSON };
 
     return $_data;
 }
@@ -190,6 +200,9 @@ sub from_hash {
         }
     }
 
+    # call parent (CustomerRequest) from_hash
+    $self->EzmaxApi::Object::CustomerRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -221,471 +234,14 @@ __PACKAGE__->class_documentation({description => 'A Customer Object and children
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_customer_id' => {
-        datatype => 'int',
-        base_name => 'pkiCustomerID',
-        description => 'The unique ID of the Customer.',
-        format => '',
-        read_only => '',
-            },
-    'fki_company_id' => {
-        datatype => 'int',
-        base_name => 'fkiCompanyID',
-        description => 'The unique ID of the Company',
-        format => '',
-        read_only => '',
-            },
-    'fki_customergroup_id' => {
-        datatype => 'int',
-        base_name => 'fkiCustomergroupID',
-        description => 'The unique ID of the Customergroup',
-        format => '',
-        read_only => '',
-            },
-    's_customer_name' => {
-        datatype => 'string',
-        base_name => 'sCustomerName',
-        description => 'The name of the Customer',
-        format => '',
-        read_only => '',
-            },
-    'fki_contactinformations_id' => {
-        datatype => 'int',
-        base_name => 'fkiContactinformationsID',
-        description => 'The unique ID of the Contactinformations',
-        format => '',
-        read_only => '',
-            },
-    'fki_contactcontainer_id' => {
-        datatype => 'int',
-        base_name => 'fkiContactcontainerID',
-        description => 'The unique ID of the Contactcontainer',
-        format => '',
-        read_only => '',
-            },
-    'fki_image_id' => {
-        datatype => 'int',
-        base_name => 'fkiImageID',
-        description => 'The unique ID of the Image',
-        format => '',
-        read_only => '',
-            },
-    'fki_glaccountcontainer_id' => {
-        datatype => 'int',
-        base_name => 'fkiGlaccountcontainerID',
-        description => 'The unique ID of the Glaccountcontainer',
-        format => '',
-        read_only => '',
-            },
-    'fki_language_id' => {
-        datatype => 'int',
-        base_name => 'fkiLanguageID',
-        description => 'The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|',
-        format => '',
-        read_only => '',
-            },
-    'fki_department_id' => {
-        datatype => 'int',
-        base_name => 'fkiDepartmentID',
-        description => 'The unique ID of the Department',
-        format => '',
-        read_only => '',
-            },
-    'fki_paymentmethod_id' => {
-        datatype => 'int',
-        base_name => 'fkiPaymentmethodID',
-        description => 'The unique ID of the Paymentmethod',
-        format => '',
-        read_only => '',
-            },
-    'fki_electronicfundstransferbankaccount_id' => {
-        datatype => 'int',
-        base_name => 'fkiElectronicfundstransferbankaccountID',
-        description => 'The unique ID of the Electronicfundstransferbankaccount',
-        format => '',
-        read_only => '',
-            },
-    'fki_electronicfundstransferbankaccount_id_directdebit' => {
-        datatype => 'int',
-        base_name => 'fkiElectronicfundstransferbankaccountIDDirectdebit',
-        description => 'The unique ID of the Electronicfundstransferbankaccount',
-        format => '',
-        read_only => '',
-            },
-    'fki_sendingmethod_id' => {
-        datatype => 'int',
-        base_name => 'fkiSendingmethodID',
-        description => 'The unique ID of the Sendingmethod',
-        format => '',
-        read_only => '',
-            },
-    'fki_taxassignment_id' => {
-        datatype => 'int',
-        base_name => 'fkiTaxassignmentID',
-        description => 'The unique ID of the Taxassignment.  Valid values:  |Value|Description| |-|-| |1|No tax| |2|GST| |3|HST (ON)| |4|HST (NB)| |5|HST (NS)| |6|HST (NL)| |7|HST (PE)| |8|GST + QST (QC)| |9|GST + QST (QC) Non-Recoverable| |10|GST + PST (BC)| |11|GST + PST (SK)| |12|GST + RST (MB)| |13|GST + PST (BC) Non-Recoverable| |14|GST + PST (SK) Non-Recoverable| |15|GST + RST (MB) Non-Recoverable|',
-        format => '',
-        read_only => '',
-            },
-    'fki_attendancestatus_id' => {
-        datatype => 'int',
-        base_name => 'fkiAttendancestatusID',
-        description => 'The unique ID of the Attendancestatus',
-        format => '',
-        read_only => '',
-            },
-    'fki_agent_id_variableexpensechargeto' => {
-        datatype => 'int',
-        base_name => 'fkiAgentIDVariableexpensechargeto',
-        description => 'The unique ID of the Agent.',
-        format => '',
-        read_only => '',
-            },
-    'fki_broker_id_variableexpensechargeto' => {
-        datatype => 'int',
-        base_name => 'fkiBrokerIDVariableexpensechargeto',
-        description => 'The unique ID of the Broker.',
-        format => '',
-        read_only => '',
-            },
-    'fki_customer_id_variableexpensechargeto' => {
-        datatype => 'int',
-        base_name => 'fkiCustomerIDVariableexpensechargeto',
-        description => 'The unique ID of the Customer.',
-        format => '',
-        read_only => '',
-            },
-    'fki_glaccountcontainer_id_variableexpensechargeto' => {
-        datatype => 'int',
-        base_name => 'fkiGlaccountcontainerIDVariableexpensechargeto',
-        description => 'The unique ID of the Glaccountcontainer',
-        format => '',
-        read_only => '',
-            },
-    'fki_agent_id_supplychargechargeto' => {
-        datatype => 'int',
-        base_name => 'fkiAgentIDSupplychargechargeto',
-        description => 'The unique ID of the Agent.',
-        format => '',
-        read_only => '',
-            },
-    'fki_broker_id_supplychargechargeto' => {
-        datatype => 'int',
-        base_name => 'fkiBrokerIDSupplychargechargeto',
-        description => 'The unique ID of the Broker.',
-        format => '',
-        read_only => '',
-            },
-    'fki_customer_id_supplychargechargeto' => {
-        datatype => 'int',
-        base_name => 'fkiCustomerIDSupplychargechargeto',
-        description => 'The unique ID of the Customer.',
-        format => '',
-        read_only => '',
-            },
-    'fki_glaccountcontainer_id_supplychargechargeto' => {
-        datatype => 'int',
-        base_name => 'fkiGlaccountcontainerIDSupplychargechargeto',
-        description => 'The unique ID of the Glaccountcontainer',
-        format => '',
-        read_only => '',
-            },
-    'fki_invoicealternatelogo_id' => {
-        datatype => 'int',
-        base_name => 'fkiInvoicealternatelogoID',
-        description => 'The unique ID of the Invoicealternatelogo',
-        format => '',
-        read_only => '',
-            },
-    'fki_synchronizationlinkserver_id' => {
-        datatype => 'int',
-        base_name => 'fkiSynchronizationlinkserverID',
-        description => 'The unique ID of the Synchronizationlinkserver',
-        format => '',
-        read_only => '',
-            },
-    'efki_user_id' => {
-        datatype => 'int',
-        base_name => 'efkiUserID',
-        description => 'The unique ID of the User',
-        format => '',
-        read_only => '',
-            },
-    'efks_customer_code' => {
-        datatype => 'string',
-        base_name => 'efksCustomerCode',
-        description => 'The code of the Customer',
-        format => '',
-        read_only => '',
-            },
-    's_customer_code' => {
-        datatype => 'string',
-        base_name => 'sCustomerCode',
-        description => 'The code of the Customer',
-        format => '',
-        read_only => '',
-            },
-    'd_customer_fulltimeequivalent' => {
-        datatype => 'string',
-        base_name => 'dCustomerFulltimeequivalent',
-        description => 'The fulltimeequivalent of the Customer',
-        format => '',
-        read_only => '',
-            },
-    'i_customer_photocopiercode' => {
-        datatype => 'int',
-        base_name => 'iCustomerPhotocopiercode',
-        description => 'The photocopiercode of the Customer',
-        format => '',
-        read_only => '',
-            },
-    'i_customer_longdistancecode' => {
-        datatype => 'int',
-        base_name => 'iCustomerLongdistancecode',
-        description => 'The longdistancecode of the Customer',
-        format => '',
-        read_only => '',
-            },
-    'i_customer_timewindowstart' => {
-        datatype => 'int',
-        base_name => 'iCustomerTimewindowstart',
-        description => 'The timewindowstart of the Customer',
-        format => '',
-        read_only => '',
-            },
-    'i_customer_timewindowend' => {
-        datatype => 'int',
-        base_name => 'iCustomerTimewindowend',
-        description => 'The timewindowend of the Customer',
-        format => '',
-        read_only => '',
-            },
-    'd_customer_minimumchargeableinterests' => {
-        datatype => 'string',
-        base_name => 'dCustomerMinimumchargeableinterests',
-        description => 'The minimumchargeableinterests of the Customer',
-        format => '',
-        read_only => '',
-            },
-    'dt_customer_birthdate' => {
-        datatype => 'string',
-        base_name => 'dtCustomerBirthdate',
-        description => 'The birthdate of the Customer',
-        format => '',
-        read_only => '',
-            },
-    'dt_customer_transfer' => {
-        datatype => 'string',
-        base_name => 'dtCustomerTransfer',
-        description => 'The transfer of the Customer',
-        format => '',
-        read_only => '',
-            },
-    'dt_customer_transferappointment' => {
-        datatype => 'string',
-        base_name => 'dtCustomerTransferappointment',
-        description => 'The transferappointment of the Customer',
-        format => '',
-        read_only => '',
-            },
-    'dt_customer_transfersurvey' => {
-        datatype => 'string',
-        base_name => 'dtCustomerTransfersurvey',
-        description => 'The transfersurvey of the Customer',
-        format => '',
-        read_only => '',
-            },
-    'b_customer_isactive' => {
-        datatype => 'boolean',
-        base_name => 'bCustomerIsactive',
-        description => 'Whether the customer is active or not',
-        format => '',
-        read_only => '',
-            },
-    'b_customer_variableexpensefinanced' => {
-        datatype => 'boolean',
-        base_name => 'bCustomerVariableexpensefinanced',
-        description => 'Whether if it&#39;s an variableexpensefinanced',
-        format => '',
-        read_only => '',
-            },
-    'b_customer_variableexpensefinancedtaxes' => {
-        datatype => 'boolean',
-        base_name => 'bCustomerVariableexpensefinancedtaxes',
-        description => 'Whether if it&#39;s an variableexpensefinancedtaxes',
-        format => '',
-        read_only => '',
-            },
-    'b_customer_supplychargefinanced' => {
-        datatype => 'boolean',
-        base_name => 'bCustomerSupplychargefinanced',
-        description => 'Whether if it&#39;s an supplychargefinanced',
-        format => '',
-        read_only => '',
-            },
-    'b_customer_supplychargefinancedtaxes' => {
-        datatype => 'boolean',
-        base_name => 'bCustomerSupplychargefinancedtaxes',
-        description => 'Whether if it&#39;s an supplychargefinancedtaxes',
-        format => '',
-        read_only => '',
-            },
-    'b_customer_attendance' => {
-        datatype => 'boolean',
-        base_name => 'bCustomerAttendance',
-        description => 'Whether if it&#39;s an attendance',
-        format => '',
-        read_only => '',
-            },
-    'e_customer_type' => {
-        datatype => 'FieldECustomerType',
-        base_name => 'eCustomerType',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_customer_marketingcorrespondence' => {
-        datatype => 'FieldECustomerMarketingcorrespondence',
-        base_name => 'eCustomerMarketingcorrespondence',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'b_customer_blackcopycarbon' => {
-        datatype => 'boolean',
-        base_name => 'bCustomerBlackcopycarbon',
-        description => 'Whether if it&#39;s an blackcopycarbon',
-        format => '',
-        read_only => '',
-            },
-    'b_customer_unsubscribeinfo' => {
-        datatype => 'boolean',
-        base_name => 'bCustomerUnsubscribeinfo',
-        description => 'Whether if it&#39;s an unsubscribeinfo',
-        format => '',
-        read_only => '',
-            },
-    't_customer_comment' => {
-        datatype => 'string',
-        base_name => 'tCustomerComment',
-        description => 'The comment of the Customer',
-        format => '',
-        read_only => '',
-            },
-    'importid' => {
-        datatype => 'string',
-        base_name => 'IMPORTID',
-        description => '',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_customer_id' => 'int',
-    'fki_company_id' => 'int',
-    'fki_customergroup_id' => 'int',
-    's_customer_name' => 'string',
-    'fki_contactinformations_id' => 'int',
-    'fki_contactcontainer_id' => 'int',
-    'fki_image_id' => 'int',
-    'fki_glaccountcontainer_id' => 'int',
-    'fki_language_id' => 'int',
-    'fki_department_id' => 'int',
-    'fki_paymentmethod_id' => 'int',
-    'fki_electronicfundstransferbankaccount_id' => 'int',
-    'fki_electronicfundstransferbankaccount_id_directdebit' => 'int',
-    'fki_sendingmethod_id' => 'int',
-    'fki_taxassignment_id' => 'int',
-    'fki_attendancestatus_id' => 'int',
-    'fki_agent_id_variableexpensechargeto' => 'int',
-    'fki_broker_id_variableexpensechargeto' => 'int',
-    'fki_customer_id_variableexpensechargeto' => 'int',
-    'fki_glaccountcontainer_id_variableexpensechargeto' => 'int',
-    'fki_agent_id_supplychargechargeto' => 'int',
-    'fki_broker_id_supplychargechargeto' => 'int',
-    'fki_customer_id_supplychargechargeto' => 'int',
-    'fki_glaccountcontainer_id_supplychargechargeto' => 'int',
-    'fki_invoicealternatelogo_id' => 'int',
-    'fki_synchronizationlinkserver_id' => 'int',
-    'efki_user_id' => 'int',
-    'efks_customer_code' => 'string',
-    's_customer_code' => 'string',
-    'd_customer_fulltimeequivalent' => 'string',
-    'i_customer_photocopiercode' => 'int',
-    'i_customer_longdistancecode' => 'int',
-    'i_customer_timewindowstart' => 'int',
-    'i_customer_timewindowend' => 'int',
-    'd_customer_minimumchargeableinterests' => 'string',
-    'dt_customer_birthdate' => 'string',
-    'dt_customer_transfer' => 'string',
-    'dt_customer_transferappointment' => 'string',
-    'dt_customer_transfersurvey' => 'string',
-    'b_customer_isactive' => 'boolean',
-    'b_customer_variableexpensefinanced' => 'boolean',
-    'b_customer_variableexpensefinancedtaxes' => 'boolean',
-    'b_customer_supplychargefinanced' => 'boolean',
-    'b_customer_supplychargefinancedtaxes' => 'boolean',
-    'b_customer_attendance' => 'boolean',
-    'e_customer_type' => 'FieldECustomerType',
-    'e_customer_marketingcorrespondence' => 'FieldECustomerMarketingcorrespondence',
-    'b_customer_blackcopycarbon' => 'boolean',
-    'b_customer_unsubscribeinfo' => 'boolean',
-    't_customer_comment' => 'string',
-    'importid' => 'string'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_customer_id' => 'pkiCustomerID',
-    'fki_company_id' => 'fkiCompanyID',
-    'fki_customergroup_id' => 'fkiCustomergroupID',
-    's_customer_name' => 'sCustomerName',
-    'fki_contactinformations_id' => 'fkiContactinformationsID',
-    'fki_contactcontainer_id' => 'fkiContactcontainerID',
-    'fki_image_id' => 'fkiImageID',
-    'fki_glaccountcontainer_id' => 'fkiGlaccountcontainerID',
-    'fki_language_id' => 'fkiLanguageID',
-    'fki_department_id' => 'fkiDepartmentID',
-    'fki_paymentmethod_id' => 'fkiPaymentmethodID',
-    'fki_electronicfundstransferbankaccount_id' => 'fkiElectronicfundstransferbankaccountID',
-    'fki_electronicfundstransferbankaccount_id_directdebit' => 'fkiElectronicfundstransferbankaccountIDDirectdebit',
-    'fki_sendingmethod_id' => 'fkiSendingmethodID',
-    'fki_taxassignment_id' => 'fkiTaxassignmentID',
-    'fki_attendancestatus_id' => 'fkiAttendancestatusID',
-    'fki_agent_id_variableexpensechargeto' => 'fkiAgentIDVariableexpensechargeto',
-    'fki_broker_id_variableexpensechargeto' => 'fkiBrokerIDVariableexpensechargeto',
-    'fki_customer_id_variableexpensechargeto' => 'fkiCustomerIDVariableexpensechargeto',
-    'fki_glaccountcontainer_id_variableexpensechargeto' => 'fkiGlaccountcontainerIDVariableexpensechargeto',
-    'fki_agent_id_supplychargechargeto' => 'fkiAgentIDSupplychargechargeto',
-    'fki_broker_id_supplychargechargeto' => 'fkiBrokerIDSupplychargechargeto',
-    'fki_customer_id_supplychargechargeto' => 'fkiCustomerIDSupplychargechargeto',
-    'fki_glaccountcontainer_id_supplychargechargeto' => 'fkiGlaccountcontainerIDSupplychargechargeto',
-    'fki_invoicealternatelogo_id' => 'fkiInvoicealternatelogoID',
-    'fki_synchronizationlinkserver_id' => 'fkiSynchronizationlinkserverID',
-    'efki_user_id' => 'efkiUserID',
-    'efks_customer_code' => 'efksCustomerCode',
-    's_customer_code' => 'sCustomerCode',
-    'd_customer_fulltimeequivalent' => 'dCustomerFulltimeequivalent',
-    'i_customer_photocopiercode' => 'iCustomerPhotocopiercode',
-    'i_customer_longdistancecode' => 'iCustomerLongdistancecode',
-    'i_customer_timewindowstart' => 'iCustomerTimewindowstart',
-    'i_customer_timewindowend' => 'iCustomerTimewindowend',
-    'd_customer_minimumchargeableinterests' => 'dCustomerMinimumchargeableinterests',
-    'dt_customer_birthdate' => 'dtCustomerBirthdate',
-    'dt_customer_transfer' => 'dtCustomerTransfer',
-    'dt_customer_transferappointment' => 'dtCustomerTransferappointment',
-    'dt_customer_transfersurvey' => 'dtCustomerTransfersurvey',
-    'b_customer_isactive' => 'bCustomerIsactive',
-    'b_customer_variableexpensefinanced' => 'bCustomerVariableexpensefinanced',
-    'b_customer_variableexpensefinancedtaxes' => 'bCustomerVariableexpensefinancedtaxes',
-    'b_customer_supplychargefinanced' => 'bCustomerSupplychargefinanced',
-    'b_customer_supplychargefinancedtaxes' => 'bCustomerSupplychargefinancedtaxes',
-    'b_customer_attendance' => 'bCustomerAttendance',
-    'e_customer_type' => 'eCustomerType',
-    'e_customer_marketingcorrespondence' => 'eCustomerMarketingcorrespondence',
-    'b_customer_blackcopycarbon' => 'bCustomerBlackcopycarbon',
-    'b_customer_unsubscribeinfo' => 'bCustomerUnsubscribeinfo',
-    't_customer_comment' => 'tCustomerComment',
-    'importid' => 'IMPORTID'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

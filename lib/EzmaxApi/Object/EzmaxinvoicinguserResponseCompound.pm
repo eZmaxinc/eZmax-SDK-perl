@@ -31,9 +31,10 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CustomContactNameResponse;
+use EzmaxApi::Object::EzmaxinvoicinguserResponse;
 use EzmaxApi::Object::FieldEEzmaxinvoicinguserVariationezsign;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzmaxinvoicinguserResponse");
 
 #
 #A Ezmaxinvoicinguser Object
@@ -86,12 +87,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzmaxinvoicinguserResponse
+    $self->EzmaxApi::Object::EzmaxinvoicinguserResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzmaxinvoicinguserResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzmaxinvoicinguserResponse::to_hash };
 
     return $_hash;
 }
@@ -122,6 +129,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzmaxinvoicinguserResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzmaxinvoicinguserResponse::TO_JSON };
 
     return $_data;
 }
@@ -190,6 +200,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzmaxinvoicinguserResponse) from_hash
+    $self->EzmaxApi::Object::EzmaxinvoicinguserResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -221,69 +234,6 @@ __PACKAGE__->class_documentation({description => 'A Ezmaxinvoicinguser Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezmaxinvoicinguser_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzmaxinvoicinguserID',
-        description => 'The unique ID of the Ezmaxinvoicinguser',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezmaxinvoicing_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzmaxinvoicingID',
-        description => 'The unique ID of the Ezmaxinvoicing',
-        format => '',
-        read_only => '',
-            },
-    'fki_billingentityinternal_id' => {
-        datatype => 'int',
-        base_name => 'fkiBillingentityinternalID',
-        description => 'The unique ID of the Billingentityinternal.',
-        format => '',
-        read_only => '',
-            },
-    's_billingentityinternal_description_x' => {
-        datatype => 'string',
-        base_name => 'sBillingentityinternalDescriptionX',
-        description => 'The description of the Billingentityinternal in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    'fki_user_id' => {
-        datatype => 'int',
-        base_name => 'fkiUserID',
-        description => 'The unique ID of the User',
-        format => '',
-        read_only => '',
-            },
-    'i_ezmaxinvoicinguser_ezsigndocument' => {
-        datatype => 'int',
-        base_name => 'iEzmaxinvoicinguserEzsigndocument',
-        description => 'The number of ezsign documents',
-        format => '',
-        read_only => '',
-            },
-    'b_ezmaxinvoicinguser_ezsignaccount' => {
-        datatype => 'boolean',
-        base_name => 'bEzmaxinvoicinguserEzsignaccount',
-        description => 'Whether there is an eZsign account',
-        format => '',
-        read_only => '',
-            },
-    'b_ezmaxinvoicinguser_billableezsign' => {
-        datatype => 'boolean',
-        base_name => 'bEzmaxinvoicinguserBillableezsign',
-        description => 'Whether it is billable for eZsign',
-        format => '',
-        read_only => '',
-            },
-    'e_ezmaxinvoicinguser_variationezsign' => {
-        datatype => 'FieldEEzmaxinvoicinguserVariationezsign',
-        base_name => 'eEzmaxinvoicinguserVariationezsign',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'obj_contact_name' => {
         datatype => 'CustomContactNameResponse',
         base_name => 'objContactName',
@@ -294,28 +244,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezmaxinvoicinguser_id' => 'int',
-    'fki_ezmaxinvoicing_id' => 'int',
-    'fki_billingentityinternal_id' => 'int',
-    's_billingentityinternal_description_x' => 'string',
-    'fki_user_id' => 'int',
-    'i_ezmaxinvoicinguser_ezsigndocument' => 'int',
-    'b_ezmaxinvoicinguser_ezsignaccount' => 'boolean',
-    'b_ezmaxinvoicinguser_billableezsign' => 'boolean',
-    'e_ezmaxinvoicinguser_variationezsign' => 'FieldEEzmaxinvoicinguserVariationezsign',
     'obj_contact_name' => 'CustomContactNameResponse'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezmaxinvoicinguser_id' => 'pkiEzmaxinvoicinguserID',
-    'fki_ezmaxinvoicing_id' => 'fkiEzmaxinvoicingID',
-    'fki_billingentityinternal_id' => 'fkiBillingentityinternalID',
-    's_billingentityinternal_description_x' => 'sBillingentityinternalDescriptionX',
-    'fki_user_id' => 'fkiUserID',
-    'i_ezmaxinvoicinguser_ezsigndocument' => 'iEzmaxinvoicinguserEzsigndocument',
-    'b_ezmaxinvoicinguser_ezsignaccount' => 'bEzmaxinvoicinguserEzsignaccount',
-    'b_ezmaxinvoicinguser_billableezsign' => 'bEzmaxinvoicinguserBillableezsign',
-    'e_ezmaxinvoicinguser_variationezsign' => 'eEzmaxinvoicinguserVariationezsign',
     'obj_contact_name' => 'objContactName'
 } );
 

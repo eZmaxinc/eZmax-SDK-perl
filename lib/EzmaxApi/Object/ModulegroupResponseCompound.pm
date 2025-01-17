@@ -31,8 +31,9 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::ModuleResponseCompound;
+use EzmaxApi::Object::ModulegroupResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::ModulegroupResponse");
 
 #
 #A Modulegroup Object
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object ModulegroupResponse
+    $self->EzmaxApi::Object::ModulegroupResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call ModulegroupResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::ModulegroupResponse::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (ModulegroupResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::ModulegroupResponse::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (ModulegroupResponse) from_hash
+    $self->EzmaxApi::Object::ModulegroupResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -220,20 +233,6 @@ __PACKAGE__->class_documentation({description => 'A Modulegroup Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_modulegroup_id' => {
-        datatype => 'int',
-        base_name => 'pkiModulegroupID',
-        description => 'The unique ID of the Modulegroup',
-        format => '',
-        read_only => '',
-            },
-    's_modulegroup_name_x' => {
-        datatype => 'string',
-        base_name => 'sModulegroupNameX',
-        description => 'The name of the Modulegroup in the language of the requester',
-        format => '',
-        read_only => '',
-            },
     'a_obj_module' => {
         datatype => 'ARRAY[ModuleResponseCompound]',
         base_name => 'a_objModule',
@@ -244,14 +243,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_modulegroup_id' => 'int',
-    's_modulegroup_name_x' => 'string',
     'a_obj_module' => 'ARRAY[ModuleResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_modulegroup_id' => 'pkiModulegroupID',
-    's_modulegroup_name_x' => 'sModulegroupNameX',
     'a_obj_module' => 'a_objModule'
 } );
 

@@ -33,12 +33,13 @@ use DateTime;
 use EzmaxApi::Object::CustomDropdownElementRequest;
 use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::EzsignformfieldRequestCompound;
+use EzmaxApi::Object::EzsignformfieldgroupRequest;
 use EzmaxApi::Object::EzsignformfieldgroupsignerRequest;
 use EzmaxApi::Object::FieldEEzsignformfieldgroupSignerrequirement;
 use EzmaxApi::Object::FieldEEzsignformfieldgroupTooltipposition;
 use EzmaxApi::Object::FieldEEzsignformfieldgroupType;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignformfieldgroupRequest");
 
 #
 #An Ezsignformfieldgroup Object and children to create a complete structure
@@ -91,12 +92,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsignformfieldgroupRequest
+    $self->EzmaxApi::Object::EzsignformfieldgroupRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsignformfieldgroupRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignformfieldgroupRequest::to_hash };
 
     return $_hash;
 }
@@ -127,6 +134,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsignformfieldgroupRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignformfieldgroupRequest::TO_JSON };
 
     return $_data;
 }
@@ -195,6 +205,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsignformfieldgroupRequest) from_hash
+    $self->EzmaxApi::Object::EzsignformfieldgroupRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -226,125 +239,6 @@ __PACKAGE__->class_documentation({description => 'An Ezsignformfieldgroup Object
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsignformfieldgroup_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsignformfieldgroupID',
-        description => 'The unique ID of the Ezsignformfieldgroup',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsigndocument_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsigndocumentID',
-        description => 'The unique ID of the Ezsigndocument',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignformfieldgroup_type' => {
-        datatype => 'FieldEEzsignformfieldgroupType',
-        base_name => 'eEzsignformfieldgroupType',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignformfieldgroup_signerrequirement' => {
-        datatype => 'FieldEEzsignformfieldgroupSignerrequirement',
-        base_name => 'eEzsignformfieldgroupSignerrequirement',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignformfieldgroup_label' => {
-        datatype => 'string',
-        base_name => 'sEzsignformfieldgroupLabel',
-        description => 'The Label for the Ezsignformfieldgroup',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignformfieldgroup_step' => {
-        datatype => 'int',
-        base_name => 'iEzsignformfieldgroupStep',
-        description => 'The step when the Ezsignsigner will be invited to fill the form fields',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignformfieldgroup_defaultvalue' => {
-        datatype => 'string',
-        base_name => 'sEzsignformfieldgroupDefaultvalue',
-        description => 'The default value for the Ezsignformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sCompany} | Company name | eZmax Solutions Inc. | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignformfieldgroup_filledmin' => {
-        datatype => 'int',
-        base_name => 'iEzsignformfieldgroupFilledmin',
-        description => 'The minimum number of Ezsignformfield that must be filled in the Ezsignformfieldgroup',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignformfieldgroup_filledmax' => {
-        datatype => 'int',
-        base_name => 'iEzsignformfieldgroupFilledmax',
-        description => 'The maximum number of Ezsignformfield that must be filled in the Ezsignformfieldgroup',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsignformfieldgroup_readonly' => {
-        datatype => 'boolean',
-        base_name => 'bEzsignformfieldgroupReadonly',
-        description => 'Whether the Ezsignformfieldgroup is read only or not.',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsignformfieldgroup_maxlength' => {
-        datatype => 'int',
-        base_name => 'iEzsignformfieldgroupMaxlength',
-        description => 'The maximum length for the value in the Ezsignformfieldgroup  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsignformfieldgroup_encrypted' => {
-        datatype => 'boolean',
-        base_name => 'bEzsignformfieldgroupEncrypted',
-        description => 'Whether the Ezsignformfieldgroup is encrypted in the database or not. Encrypted values are not displayed on the Ezsigndocument. This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignformfieldgroup_regexp' => {
-        datatype => 'string',
-        base_name => 'sEzsignformfieldgroupRegexp',
-        description => 'A regular expression to indicate what values are acceptable for the Ezsignformfieldgroup.  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignformfieldgroup_textvalidationcustommessage' => {
-        datatype => 'string',
-        base_name => 'sEzsignformfieldgroupTextvalidationcustommessage',
-        description => 'Description of validation rule. Show by signatory.',
-        format => '',
-        read_only => '',
-            },
-    't_ezsignformfieldgroup_tooltip' => {
-        datatype => 'string',
-        base_name => 'tEzsignformfieldgroupTooltip',
-        description => 'A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignformfieldgroup_tooltipposition' => {
-        datatype => 'FieldEEzsignformfieldgroupTooltipposition',
-        base_name => 'eEzsignformfieldgroupTooltipposition',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsignformfieldgroup_textvalidation' => {
-        datatype => 'EnumTextvalidation',
-        base_name => 'eEzsignformfieldgroupTextvalidation',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'a_obj_ezsignformfieldgroupsigner' => {
         datatype => 'ARRAY[EzsignformfieldgroupsignerRequestCompound]',
         base_name => 'a_objEzsignformfieldgroupsigner',
@@ -369,46 +263,12 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsignformfieldgroup_id' => 'int',
-    'fki_ezsigndocument_id' => 'int',
-    'e_ezsignformfieldgroup_type' => 'FieldEEzsignformfieldgroupType',
-    'e_ezsignformfieldgroup_signerrequirement' => 'FieldEEzsignformfieldgroupSignerrequirement',
-    's_ezsignformfieldgroup_label' => 'string',
-    'i_ezsignformfieldgroup_step' => 'int',
-    's_ezsignformfieldgroup_defaultvalue' => 'string',
-    'i_ezsignformfieldgroup_filledmin' => 'int',
-    'i_ezsignformfieldgroup_filledmax' => 'int',
-    'b_ezsignformfieldgroup_readonly' => 'boolean',
-    'i_ezsignformfieldgroup_maxlength' => 'int',
-    'b_ezsignformfieldgroup_encrypted' => 'boolean',
-    's_ezsignformfieldgroup_regexp' => 'string',
-    's_ezsignformfieldgroup_textvalidationcustommessage' => 'string',
-    't_ezsignformfieldgroup_tooltip' => 'string',
-    'e_ezsignformfieldgroup_tooltipposition' => 'FieldEEzsignformfieldgroupTooltipposition',
-    'e_ezsignformfieldgroup_textvalidation' => 'EnumTextvalidation',
     'a_obj_ezsignformfieldgroupsigner' => 'ARRAY[EzsignformfieldgroupsignerRequestCompound]',
     'a_obj_dropdown_element' => 'ARRAY[CustomDropdownElementRequestCompound]',
     'a_obj_ezsignformfield' => 'ARRAY[EzsignformfieldRequestCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsignformfieldgroup_id' => 'pkiEzsignformfieldgroupID',
-    'fki_ezsigndocument_id' => 'fkiEzsigndocumentID',
-    'e_ezsignformfieldgroup_type' => 'eEzsignformfieldgroupType',
-    'e_ezsignformfieldgroup_signerrequirement' => 'eEzsignformfieldgroupSignerrequirement',
-    's_ezsignformfieldgroup_label' => 'sEzsignformfieldgroupLabel',
-    'i_ezsignformfieldgroup_step' => 'iEzsignformfieldgroupStep',
-    's_ezsignformfieldgroup_defaultvalue' => 'sEzsignformfieldgroupDefaultvalue',
-    'i_ezsignformfieldgroup_filledmin' => 'iEzsignformfieldgroupFilledmin',
-    'i_ezsignformfieldgroup_filledmax' => 'iEzsignformfieldgroupFilledmax',
-    'b_ezsignformfieldgroup_readonly' => 'bEzsignformfieldgroupReadonly',
-    'i_ezsignformfieldgroup_maxlength' => 'iEzsignformfieldgroupMaxlength',
-    'b_ezsignformfieldgroup_encrypted' => 'bEzsignformfieldgroupEncrypted',
-    's_ezsignformfieldgroup_regexp' => 'sEzsignformfieldgroupRegexp',
-    's_ezsignformfieldgroup_textvalidationcustommessage' => 'sEzsignformfieldgroupTextvalidationcustommessage',
-    't_ezsignformfieldgroup_tooltip' => 'tEzsignformfieldgroupTooltip',
-    'e_ezsignformfieldgroup_tooltipposition' => 'eEzsignformfieldgroupTooltipposition',
-    'e_ezsignformfieldgroup_textvalidation' => 'eEzsignformfieldgroupTextvalidation',
     'a_obj_ezsignformfieldgroupsigner' => 'a_objEzsignformfieldgroupsigner',
     'a_obj_dropdown_element' => 'a_objDropdownElement',
     'a_obj_ezsignformfield' => 'a_objEzsignformfield'

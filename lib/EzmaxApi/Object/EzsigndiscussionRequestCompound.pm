@@ -31,8 +31,9 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::DiscussionRequest;
+use EzmaxApi::Object::EzsigndiscussionRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsigndiscussionRequest");
 
 #
 #A Ezsigndiscussion Object and children
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsigndiscussionRequest
+    $self->EzmaxApi::Object::EzsigndiscussionRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsigndiscussionRequest to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsigndiscussionRequest::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsigndiscussionRequest) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsigndiscussionRequest::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsigndiscussionRequest) from_hash
+    $self->EzmaxApi::Object::EzsigndiscussionRequest::from_hash($hash);
+
     return $self;
 }
 
@@ -220,66 +233,14 @@ __PACKAGE__->class_documentation({description => 'A Ezsigndiscussion Object and 
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsigndiscussion_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsigndiscussionID',
-        description => 'The unique ID of the Ezsigndiscussion',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsigndocument_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsigndocumentID',
-        description => 'The unique ID of the Ezsigndocument',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigndiscussion_pagenumber' => {
-        datatype => 'int',
-        base_name => 'iEzsigndiscussionPagenumber',
-        description => 'The page number in the Ezsigndocument for the Ezsigndiscussion',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigndiscussion_x' => {
-        datatype => 'int',
-        base_name => 'iEzsigndiscussionX',
-        description => 'The x of the Ezsigndiscussion',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigndiscussion_y' => {
-        datatype => 'int',
-        base_name => 'iEzsigndiscussionY',
-        description => 'The y of the Ezsigndiscussion',
-        format => '',
-        read_only => '',
-            },
-    'obj_discussion' => {
-        datatype => 'DiscussionRequest',
-        base_name => 'objDiscussion',
-        description => '',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsigndiscussion_id' => 'int',
-    'fki_ezsigndocument_id' => 'int',
-    'i_ezsigndiscussion_pagenumber' => 'int',
-    'i_ezsigndiscussion_x' => 'int',
-    'i_ezsigndiscussion_y' => 'int',
-    'obj_discussion' => 'DiscussionRequest'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsigndiscussion_id' => 'pkiEzsigndiscussionID',
-    'fki_ezsigndocument_id' => 'fkiEzsigndocumentID',
-    'i_ezsigndiscussion_pagenumber' => 'iEzsigndiscussionPagenumber',
-    'i_ezsigndiscussion_x' => 'iEzsigndiscussionX',
-    'i_ezsigndiscussion_y' => 'iEzsigndiscussionY',
-    'obj_discussion' => 'objDiscussion'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

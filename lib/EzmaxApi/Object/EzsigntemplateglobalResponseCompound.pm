@@ -30,12 +30,13 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EzsigntemplateglobalResponse;
 use EzmaxApi::Object::EzsigntemplateglobaldocumentResponse;
 use EzmaxApi::Object::EzsigntemplateglobalsignerResponseCompound;
 use EzmaxApi::Object::FieldEEzsigntemplateglobalModule;
 use EzmaxApi::Object::FieldEEzsigntemplateglobalSupplier;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsigntemplateglobalResponse");
 
 #
 #A Ezsigntemplateglobal Object
@@ -88,12 +89,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsigntemplateglobalResponse
+    $self->EzmaxApi::Object::EzsigntemplateglobalResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsigntemplateglobalResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsigntemplateglobalResponse::to_hash };
 
     return $_hash;
 }
@@ -124,6 +131,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsigntemplateglobalResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsigntemplateglobalResponse::TO_JSON };
 
     return $_data;
 }
@@ -192,6 +202,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsigntemplateglobalResponse) from_hash
+    $self->EzmaxApi::Object::EzsigntemplateglobalResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -223,76 +236,6 @@ __PACKAGE__->class_documentation({description => 'A Ezsigntemplateglobal Object'
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsigntemplateglobal_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsigntemplateglobalID',
-        description => 'The unique ID of the Ezsigntemplateglobal',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsigntemplateglobaldocument_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsigntemplateglobaldocumentID',
-        description => 'The unique ID of the Ezsigntemplateglobaldocument',
-        format => '',
-        read_only => '',
-            },
-    'fki_module_id' => {
-        datatype => 'int',
-        base_name => 'fkiModuleID',
-        description => 'The unique ID of the Module',
-        format => '',
-        read_only => '',
-            },
-    's_module_name_x' => {
-        datatype => 'string',
-        base_name => 'sModuleNameX',
-        description => 'The Name of the Module in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    'fki_language_id' => {
-        datatype => 'int',
-        base_name => 'fkiLanguageID',
-        description => 'The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|',
-        format => '',
-        read_only => '',
-            },
-    's_language_name_x' => {
-        datatype => 'string',
-        base_name => 'sLanguageNameX',
-        description => 'The Name of the Language in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsigntemplateglobal_module' => {
-        datatype => 'FieldEEzsigntemplateglobalModule',
-        base_name => 'eEzsigntemplateglobalModule',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsigntemplateglobal_supplier' => {
-        datatype => 'FieldEEzsigntemplateglobalSupplier',
-        base_name => 'eEzsigntemplateglobalSupplier',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_ezsigntemplateglobal_code' => {
-        datatype => 'string',
-        base_name => 'sEzsigntemplateglobalCode',
-        description => 'The Code of the Ezsigntemplateglobal',
-        format => '',
-        read_only => '',
-            },
-    's_ezsigntemplateglobal_description' => {
-        datatype => 'string',
-        base_name => 'sEzsigntemplateglobalDescription',
-        description => 'The description of the Ezsigntemplate',
-        format => '',
-        read_only => '',
-            },
     'obj_ezsigntemplateglobaldocument' => {
         datatype => 'EzsigntemplateglobaldocumentResponse',
         base_name => 'objEzsigntemplateglobaldocument',
@@ -310,31 +253,11 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsigntemplateglobal_id' => 'int',
-    'fki_ezsigntemplateglobaldocument_id' => 'int',
-    'fki_module_id' => 'int',
-    's_module_name_x' => 'string',
-    'fki_language_id' => 'int',
-    's_language_name_x' => 'string',
-    'e_ezsigntemplateglobal_module' => 'FieldEEzsigntemplateglobalModule',
-    'e_ezsigntemplateglobal_supplier' => 'FieldEEzsigntemplateglobalSupplier',
-    's_ezsigntemplateglobal_code' => 'string',
-    's_ezsigntemplateglobal_description' => 'string',
     'obj_ezsigntemplateglobaldocument' => 'EzsigntemplateglobaldocumentResponse',
     'a_obj_ezsigntemplateglobalsigner' => 'ARRAY[EzsigntemplateglobalsignerResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsigntemplateglobal_id' => 'pkiEzsigntemplateglobalID',
-    'fki_ezsigntemplateglobaldocument_id' => 'fkiEzsigntemplateglobaldocumentID',
-    'fki_module_id' => 'fkiModuleID',
-    's_module_name_x' => 'sModuleNameX',
-    'fki_language_id' => 'fkiLanguageID',
-    's_language_name_x' => 'sLanguageNameX',
-    'e_ezsigntemplateglobal_module' => 'eEzsigntemplateglobalModule',
-    'e_ezsigntemplateglobal_supplier' => 'eEzsigntemplateglobalSupplier',
-    's_ezsigntemplateglobal_code' => 'sEzsigntemplateglobalCode',
-    's_ezsigntemplateglobal_description' => 'sEzsigntemplateglobalDescription',
     'obj_ezsigntemplateglobaldocument' => 'objEzsigntemplateglobaldocument',
     'a_obj_ezsigntemplateglobalsigner' => 'a_objEzsigntemplateglobalsigner'
 } );

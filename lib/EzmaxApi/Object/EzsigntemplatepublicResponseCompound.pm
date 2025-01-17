@@ -32,9 +32,10 @@ use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::CustomEzsignfolderezsigntemplatepublicResponse;
+use EzmaxApi::Object::EzsigntemplatepublicResponse;
 use EzmaxApi::Object::FieldEEzsigntemplatepublicLimittype;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsigntemplatepublicResponse");
 
 #
 #A Ezsigntemplatepublic Object
@@ -87,12 +88,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object EzsigntemplatepublicResponse
+    $self->EzmaxApi::Object::EzsigntemplatepublicResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call EzsigntemplatepublicResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsigntemplatepublicResponse::to_hash };
 
     return $_hash;
 }
@@ -123,6 +130,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (EzsigntemplatepublicResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::EzsigntemplatepublicResponse::TO_JSON };
 
     return $_data;
 }
@@ -191,6 +201,9 @@ sub from_hash {
         }
     }
 
+    # call parent (EzsigntemplatepublicResponse) from_hash
+    $self->EzmaxApi::Object::EzsigntemplatepublicResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -222,132 +235,6 @@ __PACKAGE__->class_documentation({description => 'A Ezsigntemplatepublic Object'
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_ezsigntemplatepublic_id' => {
-        datatype => 'int',
-        base_name => 'pkiEzsigntemplatepublicID',
-        description => 'The unique ID of the Ezsigntemplatepublic',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsignfoldertype_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsignfoldertypeID',
-        description => 'The unique ID of the Ezsignfoldertype.',
-        format => '',
-        read_only => '',
-            },
-    's_ezsignfoldertype_name_x' => {
-        datatype => 'string',
-        base_name => 'sEzsignfoldertypeNameX',
-        description => 'The name of the Ezsignfoldertype in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    'fki_userlogintype_id' => {
-        datatype => 'int',
-        base_name => 'fkiUserlogintypeID',
-        description => 'The unique ID of the Userlogintype  Valid values:  |Value|Description|Detail| |-|-|-| |1|**Email Only**|The Ezsignsigner will receive a secure link by email| |2|**Email and phone or SMS**|The Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**| |3|**Email and secret question**|The Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer| |4|**In person only**|The Ezsignsigner will only be able to sign \&quot;In-Person\&quot; and there won&#39;t be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type| |5|**In person with phone or SMS**|The Ezsignsigner will only be able to sign \&quot;In-Person\&quot; and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**| |6|**Embedded**|The Ezsignsigner will only be able to sign in the embedded solution. No email will be sent for invitation to sign. **Additional fee applies**|   |7|**Embedded with phone or SMS**|The Ezsignsigner will only be able to sign in the embedded solution and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**|   |8|**No validation**|The Ezsignsigner will not receive an email and won&#39;t have to validate his connection using 2 factor. **Additional fee applies**|      |9|**Sms only**|The Ezsignsigner will not receive an email but will will need to authenticate using SMS. **Additional fee applies**|     ',
-        format => '',
-        read_only => '',
-            },
-    's_userlogintype_description_x' => {
-        datatype => 'string',
-        base_name => 'sUserlogintypeDescriptionX',
-        description => 'The description of the Userlogintype in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsigntemplate_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsigntemplateID',
-        description => 'The unique ID of the Ezsigntemplate',
-        format => '',
-        read_only => '',
-            },
-    'fki_ezsigntemplatepackage_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsigntemplatepackageID',
-        description => 'The unique ID of the Ezsigntemplatepackage',
-        format => '',
-        read_only => '',
-            },
-    's_ezsigntemplatepublic_description' => {
-        datatype => 'string',
-        base_name => 'sEzsigntemplatepublicDescription',
-        description => 'The description of the Ezsigntemplatepublic',
-        format => '',
-        read_only => '',
-            },
-    's_ezsigntemplatepublic_referenceid' => {
-        datatype => 'string',
-        base_name => 'sEzsigntemplatepublicReferenceid',
-        description => 'The referenceid of the Ezsigntemplatepublic',
-        format => '',
-        read_only => '',
-            },
-    'b_ezsigntemplatepublic_isactive' => {
-        datatype => 'boolean',
-        base_name => 'bEzsigntemplatepublicIsactive',
-        description => 'Whether the ezsigntemplatepublic is active or not',
-        format => '',
-        read_only => '',
-            },
-    't_ezsigntemplatepublic_note' => {
-        datatype => 'string',
-        base_name => 'tEzsigntemplatepublicNote',
-        description => 'The note of the Ezsigntemplatepublic',
-        format => '',
-        read_only => '',
-            },
-    'e_ezsigntemplatepublic_limittype' => {
-        datatype => 'FieldEEzsigntemplatepublicLimittype',
-        base_name => 'eEzsigntemplatepublicLimittype',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigntemplatepublic_limit' => {
-        datatype => 'int',
-        base_name => 'iEzsigntemplatepublicLimit',
-        description => 'The limit of the Ezsigntemplatepublic',
-        format => '',
-        read_only => '',
-            },
-    'i_ezsigntemplatepublic_limitexceeded' => {
-        datatype => 'int',
-        base_name => 'iEzsigntemplatepublicLimitexceeded',
-        description => 'The limitexceeded of the Ezsigntemplatepublic',
-        format => '',
-        read_only => '',
-            },
-    'dt_ezsigntemplatepublic_limitexceededsince' => {
-        datatype => 'string',
-        base_name => 'dtEzsigntemplatepublicLimitexceededsince',
-        description => 'The limitexceededsince of the Ezsigntemplatepublic',
-        format => '',
-        read_only => '',
-            },
-    's_ezsigntemplatepublic_url' => {
-        datatype => 'string',
-        base_name => 'sEzsigntemplatepublicUrl',
-        description => 'The url of the Ezsigntemplatepublic  You can add these value as query parameters to prefill the corresponding role  |Parameter|Description| |-|-| |sEzsigntemplatesignerDescription|The role to fill| |sContactFirstname|The contact firstname| |sContactLastname|The contact lastname| |sEmailAddress|The contact email| |sPhoneE164|The contact phone number| |sPhoneE164Cell|The contact cell phone number|',
-        format => '',
-        read_only => '',
-            },
-    's_ezsigntemplatepublic_ezsigntemplatedescription' => {
-        datatype => 'string',
-        base_name => 'sEzsigntemplatepublicEzsigntemplatedescription',
-        description => 'The Ezsigntemplate/Ezsigntemplatepackage description',
-        format => '',
-        read_only => '',
-            },
-    'obj_audit' => {
-        datatype => 'CommonAudit',
-        base_name => 'objAudit',
-        description => '',
-        format => '',
-        read_only => '',
-            },
     'a_obj_ezsignfolderezsigntemplatepublic' => {
         datatype => 'ARRAY[CustomEzsignfolderezsigntemplatepublicResponse]',
         base_name => 'a_objEzsignfolderezsigntemplatepublic',
@@ -358,46 +245,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_ezsigntemplatepublic_id' => 'int',
-    'fki_ezsignfoldertype_id' => 'int',
-    's_ezsignfoldertype_name_x' => 'string',
-    'fki_userlogintype_id' => 'int',
-    's_userlogintype_description_x' => 'string',
-    'fki_ezsigntemplate_id' => 'int',
-    'fki_ezsigntemplatepackage_id' => 'int',
-    's_ezsigntemplatepublic_description' => 'string',
-    's_ezsigntemplatepublic_referenceid' => 'string',
-    'b_ezsigntemplatepublic_isactive' => 'boolean',
-    't_ezsigntemplatepublic_note' => 'string',
-    'e_ezsigntemplatepublic_limittype' => 'FieldEEzsigntemplatepublicLimittype',
-    'i_ezsigntemplatepublic_limit' => 'int',
-    'i_ezsigntemplatepublic_limitexceeded' => 'int',
-    'dt_ezsigntemplatepublic_limitexceededsince' => 'string',
-    's_ezsigntemplatepublic_url' => 'string',
-    's_ezsigntemplatepublic_ezsigntemplatedescription' => 'string',
-    'obj_audit' => 'CommonAudit',
     'a_obj_ezsignfolderezsigntemplatepublic' => 'ARRAY[CustomEzsignfolderezsigntemplatepublicResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_ezsigntemplatepublic_id' => 'pkiEzsigntemplatepublicID',
-    'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
-    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
-    'fki_userlogintype_id' => 'fkiUserlogintypeID',
-    's_userlogintype_description_x' => 'sUserlogintypeDescriptionX',
-    'fki_ezsigntemplate_id' => 'fkiEzsigntemplateID',
-    'fki_ezsigntemplatepackage_id' => 'fkiEzsigntemplatepackageID',
-    's_ezsigntemplatepublic_description' => 'sEzsigntemplatepublicDescription',
-    's_ezsigntemplatepublic_referenceid' => 'sEzsigntemplatepublicReferenceid',
-    'b_ezsigntemplatepublic_isactive' => 'bEzsigntemplatepublicIsactive',
-    't_ezsigntemplatepublic_note' => 'tEzsigntemplatepublicNote',
-    'e_ezsigntemplatepublic_limittype' => 'eEzsigntemplatepublicLimittype',
-    'i_ezsigntemplatepublic_limit' => 'iEzsigntemplatepublicLimit',
-    'i_ezsigntemplatepublic_limitexceeded' => 'iEzsigntemplatepublicLimitexceeded',
-    'dt_ezsigntemplatepublic_limitexceededsince' => 'dtEzsigntemplatepublicLimitexceededsince',
-    's_ezsigntemplatepublic_url' => 'sEzsigntemplatepublicUrl',
-    's_ezsigntemplatepublic_ezsigntemplatedescription' => 'sEzsigntemplatepublicEzsigntemplatedescription',
-    'obj_audit' => 'objAudit',
     'a_obj_ezsignfolderezsigntemplatepublic' => 'a_objEzsignfolderezsigntemplatepublic'
 } );
 

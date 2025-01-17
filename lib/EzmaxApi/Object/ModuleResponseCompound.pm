@@ -30,9 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::ModuleResponse;
 use EzmaxApi::Object::ModulesectionResponseCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::ModuleResponse");
 
 #
 #A Module Object
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object ModuleResponse
+    $self->EzmaxApi::Object::ModuleResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call ModuleResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::ModuleResponse::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (ModuleResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::ModuleResponse::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (ModuleResponse) from_hash
+    $self->EzmaxApi::Object::ModuleResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -220,48 +233,6 @@ __PACKAGE__->class_documentation({description => 'A Module Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_module_id' => {
-        datatype => 'int',
-        base_name => 'pkiModuleID',
-        description => 'The unique ID of the Module',
-        format => '',
-        read_only => '',
-            },
-    'fki_modulegroup_id' => {
-        datatype => 'int',
-        base_name => 'fkiModulegroupID',
-        description => 'The unique ID of the Modulegroup',
-        format => '',
-        read_only => '',
-            },
-    'e_module_internalname' => {
-        datatype => 'string',
-        base_name => 'eModuleInternalname',
-        description => 'The Internal name of the Module.  This is theoretically an enum field but there are so many possibles values we decided not to list them all.',
-        format => '',
-        read_only => '',
-            },
-    's_module_name_x' => {
-        datatype => 'string',
-        base_name => 'sModuleNameX',
-        description => 'The Name of the Module in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    'b_module_registered' => {
-        datatype => 'boolean',
-        base_name => 'bModuleRegistered',
-        description => 'Whether the Module is registered or not',
-        format => '',
-        read_only => '',
-            },
-    'b_module_registeredapi' => {
-        datatype => 'boolean',
-        base_name => 'bModuleRegisteredapi',
-        description => 'Whether the Module is registered or not for api use',
-        format => '',
-        read_only => '',
-            },
     'a_obj_modulesection' => {
         datatype => 'ARRAY[ModulesectionResponseCompound]',
         base_name => 'a_objModulesection',
@@ -272,22 +243,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_module_id' => 'int',
-    'fki_modulegroup_id' => 'int',
-    'e_module_internalname' => 'string',
-    's_module_name_x' => 'string',
-    'b_module_registered' => 'boolean',
-    'b_module_registeredapi' => 'boolean',
     'a_obj_modulesection' => 'ARRAY[ModulesectionResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_module_id' => 'pkiModuleID',
-    'fki_modulegroup_id' => 'fkiModulegroupID',
-    'e_module_internalname' => 'eModuleInternalname',
-    's_module_name_x' => 'sModuleNameX',
-    'b_module_registered' => 'bModuleRegistered',
-    'b_module_registeredapi' => 'bModuleRegisteredapi',
     'a_obj_modulesection' => 'a_objModulesection'
 } );
 

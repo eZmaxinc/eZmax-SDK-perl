@@ -36,8 +36,9 @@ use EzmaxApi::Object::FieldESystemconfigurationEzsignofficeplan;
 use EzmaxApi::Object::FieldESystemconfigurationLanguage1;
 use EzmaxApi::Object::FieldESystemconfigurationLanguage2;
 use EzmaxApi::Object::FieldESystemconfigurationNewexternaluseraction;
+use EzmaxApi::Object::SystemconfigurationResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::SystemconfigurationResponse");
 
 #
 #A Systemconfiguration Object
@@ -90,12 +91,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object SystemconfigurationResponse
+    $self->EzmaxApi::Object::SystemconfigurationResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call SystemconfigurationResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::SystemconfigurationResponse::to_hash };
 
     return $_hash;
 }
@@ -126,6 +133,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (SystemconfigurationResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::SystemconfigurationResponse::TO_JSON };
 
     return $_data;
 }
@@ -194,6 +204,9 @@ sub from_hash {
         }
     }
 
+    # call parent (SystemconfigurationResponse) from_hash
+    $self->EzmaxApi::Object::SystemconfigurationResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -225,165 +238,14 @@ __PACKAGE__->class_documentation({description => 'A Systemconfiguration Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_systemconfiguration_id' => {
-        datatype => 'int',
-        base_name => 'pkiSystemconfigurationID',
-        description => 'The unique ID of the Systemconfiguration',
-        format => '',
-        read_only => '',
-            },
-    'fki_systemconfigurationtype_id' => {
-        datatype => 'int',
-        base_name => 'fkiSystemconfigurationtypeID',
-        description => 'The unique ID of the Systemconfigurationtype',
-        format => '',
-        read_only => '',
-            },
-    'fki_branding_id' => {
-        datatype => 'int',
-        base_name => 'fkiBrandingID',
-        description => 'The unique ID of the Branding',
-        format => '',
-        read_only => '',
-            },
-    's_systemconfigurationtype_description_x' => {
-        datatype => 'string',
-        base_name => 'sSystemconfigurationtypeDescriptionX',
-        description => 'The description of the Systemconfigurationtype in the language of the requester',
-        format => '',
-        read_only => '',
-            },
-    'e_systemconfiguration_newexternaluseraction' => {
-        datatype => 'FieldESystemconfigurationNewexternaluseraction',
-        base_name => 'eSystemconfigurationNewexternaluseraction',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_systemconfiguration_language1' => {
-        datatype => 'FieldESystemconfigurationLanguage1',
-        base_name => 'eSystemconfigurationLanguage1',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_systemconfiguration_language2' => {
-        datatype => 'FieldESystemconfigurationLanguage2',
-        base_name => 'eSystemconfigurationLanguage2',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_systemconfiguration_ezsign' => {
-        datatype => 'FieldESystemconfigurationEzsign',
-        base_name => 'eSystemconfigurationEzsign',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'e_systemconfiguration_ezsignofficeplan' => {
-        datatype => 'FieldESystemconfigurationEzsignofficeplan',
-        base_name => 'eSystemconfigurationEzsignofficeplan',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'b_systemconfiguration_ezsignpaidbyoffice' => {
-        datatype => 'boolean',
-        base_name => 'bSystemconfigurationEzsignpaidbyoffice',
-        description => 'Whether if Ezsign is paid by the company or not',
-        format => '',
-        read_only => '',
-            },
-    'b_systemconfiguration_ezsignpersonnal' => {
-        datatype => 'boolean',
-        base_name => 'bSystemconfigurationEzsignpersonnal',
-        description => 'Whether if we allow the creation of personal files in eZsign',
-        format => '',
-        read_only => '',
-            },
-    'b_systemconfiguration_hascreditcardmerchant' => {
-        datatype => 'boolean',
-        base_name => 'bSystemconfigurationHascreditcardmerchant',
-        description => 'Whether there is a creditcard merchant configured or not',
-        format => '',
-        read_only => '',
-            },
-    'b_systemconfiguration_isdisposalactive' => {
-        datatype => 'boolean',
-        base_name => 'bSystemconfigurationIsdisposalactive',
-        description => 'Whether is Disposal processus is active or not',
-        format => '',
-        read_only => '',
-            },
-    'b_systemconfiguration_sspr' => {
-        datatype => 'boolean',
-        base_name => 'bSystemconfigurationSspr',
-        description => 'Whether if we allow SSPR',
-        format => '',
-        read_only => '',
-            },
-    'dt_systemconfiguration_readonlyexpirationstart' => {
-        datatype => 'string',
-        base_name => 'dtSystemconfigurationReadonlyexpirationstart',
-        description => 'The start date where the system will be in read only',
-        format => '',
-        read_only => '',
-            },
-    'dt_systemconfiguration_readonlyexpirationend' => {
-        datatype => 'string',
-        base_name => 'dtSystemconfigurationReadonlyexpirationend',
-        description => 'The end date where the system will be in read only',
-        format => '',
-        read_only => '',
-            },
-    'obj_branding' => {
-        datatype => 'CustomBrandingResponse',
-        base_name => 'objBranding',
-        description => '',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_systemconfiguration_id' => 'int',
-    'fki_systemconfigurationtype_id' => 'int',
-    'fki_branding_id' => 'int',
-    's_systemconfigurationtype_description_x' => 'string',
-    'e_systemconfiguration_newexternaluseraction' => 'FieldESystemconfigurationNewexternaluseraction',
-    'e_systemconfiguration_language1' => 'FieldESystemconfigurationLanguage1',
-    'e_systemconfiguration_language2' => 'FieldESystemconfigurationLanguage2',
-    'e_systemconfiguration_ezsign' => 'FieldESystemconfigurationEzsign',
-    'e_systemconfiguration_ezsignofficeplan' => 'FieldESystemconfigurationEzsignofficeplan',
-    'b_systemconfiguration_ezsignpaidbyoffice' => 'boolean',
-    'b_systemconfiguration_ezsignpersonnal' => 'boolean',
-    'b_systemconfiguration_hascreditcardmerchant' => 'boolean',
-    'b_systemconfiguration_isdisposalactive' => 'boolean',
-    'b_systemconfiguration_sspr' => 'boolean',
-    'dt_systemconfiguration_readonlyexpirationstart' => 'string',
-    'dt_systemconfiguration_readonlyexpirationend' => 'string',
-    'obj_branding' => 'CustomBrandingResponse'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_systemconfiguration_id' => 'pkiSystemconfigurationID',
-    'fki_systemconfigurationtype_id' => 'fkiSystemconfigurationtypeID',
-    'fki_branding_id' => 'fkiBrandingID',
-    's_systemconfigurationtype_description_x' => 'sSystemconfigurationtypeDescriptionX',
-    'e_systemconfiguration_newexternaluseraction' => 'eSystemconfigurationNewexternaluseraction',
-    'e_systemconfiguration_language1' => 'eSystemconfigurationLanguage1',
-    'e_systemconfiguration_language2' => 'eSystemconfigurationLanguage2',
-    'e_systemconfiguration_ezsign' => 'eSystemconfigurationEzsign',
-    'e_systemconfiguration_ezsignofficeplan' => 'eSystemconfigurationEzsignofficeplan',
-    'b_systemconfiguration_ezsignpaidbyoffice' => 'bSystemconfigurationEzsignpaidbyoffice',
-    'b_systemconfiguration_ezsignpersonnal' => 'bSystemconfigurationEzsignpersonnal',
-    'b_systemconfiguration_hascreditcardmerchant' => 'bSystemconfigurationHascreditcardmerchant',
-    'b_systemconfiguration_isdisposalactive' => 'bSystemconfigurationIsdisposalactive',
-    'b_systemconfiguration_sspr' => 'bSystemconfigurationSspr',
-    'dt_systemconfiguration_readonlyexpirationstart' => 'dtSystemconfigurationReadonlyexpirationstart',
-    'dt_systemconfiguration_readonlyexpirationend' => 'dtSystemconfigurationReadonlyexpirationend',
-    'obj_branding' => 'objBranding'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -32,8 +32,9 @@ use DateTime;
 
 use EzmaxApi::Object::FieldENotificationpreferenceStatus;
 use EzmaxApi::Object::MultilingualNotificationtestName;
+use EzmaxApi::Object::NotificationtestResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::NotificationtestResponse");
 
 #
 #A Notificationtest Object in the context of getNotificationtests
@@ -86,12 +87,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object NotificationtestResponse
+    $self->EzmaxApi::Object::NotificationtestResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call NotificationtestResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::NotificationtestResponse::to_hash };
 
     return $_hash;
 }
@@ -122,6 +129,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (NotificationtestResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::NotificationtestResponse::TO_JSON };
 
     return $_data;
 }
@@ -190,6 +200,9 @@ sub from_hash {
         }
     }
 
+    # call parent (NotificationtestResponse) from_hash
+    $self->EzmaxApi::Object::NotificationtestResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -221,41 +234,6 @@ __PACKAGE__->class_documentation({description => 'A Notificationtest Object in t
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_notificationtest_id' => {
-        datatype => 'int',
-        base_name => 'pkiNotificationtestID',
-        description => 'The unique ID of the Notificationtest',
-        format => '',
-        read_only => '',
-            },
-    'obj_notificationtest_name' => {
-        datatype => 'MultilingualNotificationtestName',
-        base_name => 'objNotificationtestName',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    'fki_notificationsubsection_id' => {
-        datatype => 'int',
-        base_name => 'fkiNotificationsubsectionID',
-        description => 'The unique ID of the Notificationsubsection',
-        format => '',
-        read_only => '',
-            },
-    's_notificationtest_function' => {
-        datatype => 'string',
-        base_name => 'sNotificationtestFunction',
-        description => 'The function name of the Notificationtest',
-        format => '',
-        read_only => '',
-            },
-    's_notificationtest_name_x' => {
-        datatype => 'string',
-        base_name => 'sNotificationtestNameX',
-        description => 'The name of the Notificationtest in the language of the requester',
-        format => '',
-        read_only => '',
-            },
     'e_notificationpreference_status' => {
         datatype => 'FieldENotificationpreferenceStatus',
         base_name => 'eNotificationpreferenceStatus',
@@ -273,21 +251,11 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_notificationtest_id' => 'int',
-    'obj_notificationtest_name' => 'MultilingualNotificationtestName',
-    'fki_notificationsubsection_id' => 'int',
-    's_notificationtest_function' => 'string',
-    's_notificationtest_name_x' => 'string',
     'e_notificationpreference_status' => 'FieldENotificationpreferenceStatus',
     'i_notificationtest' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_notificationtest_id' => 'pkiNotificationtestID',
-    'obj_notificationtest_name' => 'objNotificationtestName',
-    'fki_notificationsubsection_id' => 'fkiNotificationsubsectionID',
-    's_notificationtest_function' => 'sNotificationtestFunction',
-    's_notificationtest_name_x' => 'sNotificationtestNameX',
     'e_notificationpreference_status' => 'eNotificationpreferenceStatus',
     'i_notificationtest' => 'iNotificationtest'
 } );

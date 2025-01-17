@@ -30,8 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CreditcarddetailResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::CreditcarddetailResponse");
 
 #
 #A Creditcarddetail Object
@@ -84,12 +85,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object CreditcarddetailResponse
+    $self->EzmaxApi::Object::CreditcarddetailResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call CreditcarddetailResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::CreditcarddetailResponse::to_hash };
 
     return $_hash;
 }
@@ -120,6 +127,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (CreditcarddetailResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::CreditcarddetailResponse::TO_JSON };
 
     return $_data;
 }
@@ -188,6 +198,9 @@ sub from_hash {
         }
     }
 
+    # call parent (CreditcarddetailResponse) from_hash
+    $self->EzmaxApi::Object::CreditcarddetailResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -219,84 +232,14 @@ __PACKAGE__->class_documentation({description => 'A Creditcarddetail Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_creditcarddetail_id' => {
-        datatype => 'int',
-        base_name => 'pkiCreditcarddetailID',
-        description => 'The unique ID of the Creditcarddetail',
-        format => '',
-        read_only => '',
-            },
-    'fki_creditcardtype_id' => {
-        datatype => 'int',
-        base_name => 'fkiCreditcardtypeID',
-        description => 'The unique ID of the Creditcardtype',
-        format => '',
-        read_only => '',
-            },
-    'i_creditcarddetail_lastdigits' => {
-        datatype => 'int',
-        base_name => 'iCreditcarddetailLastdigits',
-        description => 'The last digits of the Creditcarddetail',
-        format => '',
-        read_only => '',
-            },
-    'i_creditcarddetail_expirationmonth' => {
-        datatype => 'int',
-        base_name => 'iCreditcarddetailExpirationmonth',
-        description => 'The expirationmonth of the Creditcarddetail',
-        format => '',
-        read_only => '',
-            },
-    'i_creditcarddetail_expirationyear' => {
-        datatype => 'int',
-        base_name => 'iCreditcarddetailExpirationyear',
-        description => 'The expirationyear of the Creditcarddetail',
-        format => '',
-        read_only => '',
-            },
-    's_creditcarddetail_civic' => {
-        datatype => 'string',
-        base_name => 'sCreditcarddetailCivic',
-        description => 'The civic of the Creditcarddetail',
-        format => '',
-        read_only => '',
-            },
-    's_creditcarddetail_street' => {
-        datatype => 'string',
-        base_name => 'sCreditcarddetailStreet',
-        description => 'The street of the Creditcarddetail',
-        format => '',
-        read_only => '',
-            },
-    's_creditcarddetail_zip' => {
-        datatype => 'string',
-        base_name => 'sCreditcarddetailZip',
-        description => 'The zip of the Creditcarddetail',
-        format => '',
-        read_only => '',
-            },
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_creditcarddetail_id' => 'int',
-    'fki_creditcardtype_id' => 'int',
-    'i_creditcarddetail_lastdigits' => 'int',
-    'i_creditcarddetail_expirationmonth' => 'int',
-    'i_creditcarddetail_expirationyear' => 'int',
-    's_creditcarddetail_civic' => 'string',
-    's_creditcarddetail_street' => 'string',
-    's_creditcarddetail_zip' => 'string'
+    
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_creditcarddetail_id' => 'pkiCreditcarddetailID',
-    'fki_creditcardtype_id' => 'fkiCreditcardtypeID',
-    'i_creditcarddetail_lastdigits' => 'iCreditcarddetailLastdigits',
-    'i_creditcarddetail_expirationmonth' => 'iCreditcarddetailExpirationmonth',
-    'i_creditcarddetail_expirationyear' => 'iCreditcarddetailExpirationyear',
-    's_creditcarddetail_civic' => 'sCreditcarddetailCivic',
-    's_creditcarddetail_street' => 'sCreditcarddetailStreet',
-    's_creditcarddetail_zip' => 'sCreditcarddetailZip'
+    
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

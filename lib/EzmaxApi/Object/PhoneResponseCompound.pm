@@ -31,8 +31,9 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::FieldEPhoneType;
+use EzmaxApi::Object::PhoneResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable");
+use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::PhoneResponse");
 
 #
 #A Phone Object and children to create a complete structure
@@ -85,12 +86,18 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
+
+    # initialize parent object PhoneResponse
+    $self->EzmaxApi::Object::PhoneResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
+
+    # call PhoneResponse to_hash and then combine hash
+    $_hash = { %$_hash, %$self->EzmaxApi::Object::PhoneResponse::to_hash };
 
     return $_hash;
 }
@@ -121,6 +128,9 @@ sub TO_JSON {
             }
         }
     }
+
+    # combine parent (PhoneResponse) TO_JSON
+    $_data = { %$_data, %$self->EzmaxApi::Object::PhoneResponse::TO_JSON };
 
     return $_data;
 }
@@ -189,6 +199,9 @@ sub from_hash {
         }
     }
 
+    # call parent (PhoneResponse) from_hash
+    $self->EzmaxApi::Object::PhoneResponse::from_hash($hash);
+
     return $self;
 }
 
@@ -220,41 +233,6 @@ __PACKAGE__->class_documentation({description => 'A Phone Object and children to
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'pki_phone_id' => {
-        datatype => 'int',
-        base_name => 'pkiPhoneID',
-        description => 'The unique ID of the Phone.',
-        format => '',
-        read_only => '',
-            },
-    'fki_phonetype_id' => {
-        datatype => 'int',
-        base_name => 'fkiPhonetypeID',
-        description => 'The unique ID of the Phonetype.  Valid values:  |Value|Description| |-|-| |1|Office| |2|Home| |3|Mobile| |4|Fax| |5|Pager| |6|Toll Free|',
-        format => '',
-        read_only => '',
-            },
-    'e_phone_type' => {
-        datatype => 'FieldEPhoneType',
-        base_name => 'ePhoneType',
-        description => '',
-        format => '',
-        read_only => '',
-            },
-    's_phone_e164' => {
-        datatype => 'string',
-        base_name => 'sPhoneE164',
-        description => 'A phone number in E.164 Format',
-        format => '',
-        read_only => '',
-            },
-    's_phone_extension' => {
-        datatype => 'string',
-        base_name => 'sPhoneExtension',
-        description => 'The extension of the phone number.  The extension is the \&quot;123\&quot; section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers',
-        format => '',
-        read_only => '',
-            },
     'b_phone_international' => {
         datatype => 'boolean',
         base_name => 'bPhoneInternational',
@@ -265,20 +243,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
-    'pki_phone_id' => 'int',
-    'fki_phonetype_id' => 'int',
-    'e_phone_type' => 'FieldEPhoneType',
-    's_phone_e164' => 'string',
-    's_phone_extension' => 'string',
     'b_phone_international' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
-    'pki_phone_id' => 'pkiPhoneID',
-    'fki_phonetype_id' => 'fkiPhonetypeID',
-    'e_phone_type' => 'ePhoneType',
-    's_phone_e164' => 'sPhoneE164',
-    's_phone_extension' => 'sPhoneExtension',
     'b_phone_international' => 'bPhoneInternational'
 } );
 
