@@ -30,10 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::CreditcardclientResponse;
 use EzmaxApi::Object::CreditcarddetailResponseCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::CreditcardclientResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Creditcardclient Object
@@ -86,18 +85,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object CreditcardclientResponse
-    $self->EzmaxApi::Object::CreditcardclientResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call CreditcardclientResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::CreditcardclientResponse::to_hash };
 
     return $_hash;
 }
@@ -128,9 +121,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (CreditcardclientResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::CreditcardclientResponse::TO_JSON };
 
     return $_data;
 }
@@ -199,9 +189,6 @@ sub from_hash {
         }
     }
 
-    # call parent (CreditcardclientResponse) from_hash
-    $self->EzmaxApi::Object::CreditcardclientResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -233,14 +220,75 @@ __PACKAGE__->class_documentation({description => 'A Creditcardclient Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_creditcardclient_id' => {
+        datatype => 'int',
+        base_name => 'pkiCreditcardclientID',
+        description => 'The unique ID of the Creditcardclient',
+        format => '',
+        read_only => '',
+            },
+    'fki_creditcarddetail_id' => {
+        datatype => 'int',
+        base_name => 'fkiCreditcarddetailID',
+        description => 'The unique ID of the Creditcarddetail',
+        format => '',
+        read_only => '',
+            },
+    'b_creditcardclientrelation_isdefault' => {
+        datatype => 'boolean',
+        base_name => 'bCreditcardclientrelationIsdefault',
+        description => 'Whether if it&#39;s the creditcardclient is the default one',
+        format => '',
+        read_only => '',
+            },
+    's_creditcardclient_description' => {
+        datatype => 'string',
+        base_name => 'sCreditcardclientDescription',
+        description => 'The description of the Creditcardclient',
+        format => '',
+        read_only => '',
+            },
+    'b_creditcardclient_allowedcompanypayment' => {
+        datatype => 'boolean',
+        base_name => 'bCreditcardclientAllowedcompanypayment',
+        description => 'Whether if it&#39;s an allowedagencypayment',
+        format => '',
+        read_only => '',
+            },
+    'b_creditcardclient_allowedtranquillit' => {
+        datatype => 'boolean',
+        base_name => 'bCreditcardclientAllowedtranquillit',
+        description => 'Whether if it&#39;s an allowedtranquillit',
+        format => '',
+        read_only => '',
+            },
+    'obj_creditcarddetail' => {
+        datatype => 'CreditcarddetailResponseCompound',
+        base_name => 'objCreditcarddetail',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_creditcardclient_id' => 'int',
+    'fki_creditcarddetail_id' => 'int',
+    'b_creditcardclientrelation_isdefault' => 'boolean',
+    's_creditcardclient_description' => 'string',
+    'b_creditcardclient_allowedcompanypayment' => 'boolean',
+    'b_creditcardclient_allowedtranquillit' => 'boolean',
+    'obj_creditcarddetail' => 'CreditcarddetailResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_creditcardclient_id' => 'pkiCreditcardclientID',
+    'fki_creditcarddetail_id' => 'fkiCreditcarddetailID',
+    'b_creditcardclientrelation_isdefault' => 'bCreditcardclientrelationIsdefault',
+    's_creditcardclient_description' => 'sCreditcardclientDescription',
+    'b_creditcardclient_allowedcompanypayment' => 'bCreditcardclientAllowedcompanypayment',
+    'b_creditcardclient_allowedtranquillit' => 'bCreditcardclientAllowedtranquillit',
+    'obj_creditcarddetail' => 'objCreditcarddetail'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -213,10 +213,10 @@ sub ezsignbulksend_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignbulksend_delete_object_v1' } = {
         summary => 'Delete an existing Ezsignbulksend',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsignbulksendDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsignbulksendDeleteObjectV1Response
 #
 sub ezsignbulksend_delete_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub ezsignbulksend_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsignbulksendDeleteObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -286,10 +286,10 @@ sub ezsignbulksend_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignbulksend_edit_object_v1' } = {
         summary => 'Edit an existing Ezsignbulksend',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsignbulksendEditObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsignbulksendEditObjectV1Response
 #
 sub ezsignbulksend_edit_object_v1 {
     my ($self, %args) = @_;
@@ -342,7 +342,7 @@ sub ezsignbulksend_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsignbulksendEditObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -824,10 +824,10 @@ sub ezsignbulksend_get_object_v2 {
     __PACKAGE__->method_documentation->{ 'ezsignbulksend_reorder_v1' } = {
         summary => 'Reorder Ezsignbulksenddocumentmappings in the Ezsignbulksend',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsignbulksendReorderV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsignbulksendReorderV1Response
 #
 sub ezsignbulksend_reorder_v1 {
     my ($self, %args) = @_;
@@ -880,7 +880,7 @@ sub ezsignbulksend_reorder_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsignbulksendReorderV1Response', $response);
     return $_response_object;
 }
 

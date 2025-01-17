@@ -30,7 +30,6 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsignfoldertypeResponse;
 use EzmaxApi::Object::FieldEEzsignfoldertypeCompletion;
 use EzmaxApi::Object::FieldEEzsignfoldertypeDisposal;
 use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
@@ -38,7 +37,7 @@ use EzmaxApi::Object::FieldEEzsignfoldertypeSendreminderfrequency;
 use EzmaxApi::Object::MultilingualEzsignfoldertypeName;
 use EzmaxApi::Object::UserlogintypeResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignfoldertypeResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezsignfoldertype Object
@@ -91,18 +90,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsignfoldertypeResponse
-    $self->EzmaxApi::Object::EzsignfoldertypeResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsignfoldertypeResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignfoldertypeResponse::to_hash };
 
     return $_hash;
 }
@@ -133,9 +126,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsignfoldertypeResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignfoldertypeResponse::TO_JSON };
 
     return $_data;
 }
@@ -204,9 +194,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsignfoldertypeResponse) from_hash
-    $self->EzmaxApi::Object::EzsignfoldertypeResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -238,6 +225,349 @@ __PACKAGE__->class_documentation({description => 'A Ezsignfoldertype Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignfoldertype_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignfoldertypeID',
+        description => 'The unique ID of the Ezsignfoldertype.',
+        format => '',
+        read_only => '',
+            },
+    'obj_ezsignfoldertype_name' => {
+        datatype => 'MultilingualEzsignfoldertypeName',
+        base_name => 'objEzsignfoldertypeName',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'fki_branding_id' => {
+        datatype => 'int',
+        base_name => 'fkiBrandingID',
+        description => 'The unique ID of the Branding',
+        format => '',
+        read_only => '',
+            },
+    'fki_billingentityinternal_id' => {
+        datatype => 'int',
+        base_name => 'fkiBillingentityinternalID',
+        description => 'The unique ID of the Billingentityinternal.',
+        format => '',
+        read_only => '',
+            },
+    'fki_usergroup_id' => {
+        datatype => 'int',
+        base_name => 'fkiUsergroupID',
+        description => 'The unique ID of the Usergroup',
+        format => '',
+        read_only => '',
+            },
+    'fki_usergroup_id_restricted' => {
+        datatype => 'int',
+        base_name => 'fkiUsergroupIDRestricted',
+        description => 'The unique ID of the Usergroup',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigntsarequirement_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigntsarequirementID',
+        description => 'The unique ID of the Ezsigntsarequirement.  Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values:  |Value|Description| |-|-| |1|No. TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server&#39;s time.| |2|Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server&#39;s time. **Additional fee applies**| |3|Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**|',
+        format => '',
+        read_only => '',
+            },
+    's_branding_description_x' => {
+        datatype => 'string',
+        base_name => 'sBrandingDescriptionX',
+        description => 'The Description of the Branding in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    's_billingentityinternal_description_x' => {
+        datatype => 'string',
+        base_name => 'sBillingentityinternalDescriptionX',
+        description => 'The description of the Billingentityinternal in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigntsarequirement_description_x' => {
+        datatype => 'string',
+        base_name => 'sEzsigntsarequirementDescriptionX',
+        description => 'The description of the Ezsigntsarequirement in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    's_email_address_signed' => {
+        datatype => 'string',
+        base_name => 'sEmailAddressSigned',
+        description => 'The email address.',
+        format => '',
+        read_only => '',
+            },
+    's_email_address_summary' => {
+        datatype => 'string',
+        base_name => 'sEmailAddressSummary',
+        description => 'The email address.',
+        format => '',
+        read_only => '',
+            },
+    's_usergroup_name_x' => {
+        datatype => 'string',
+        base_name => 'sUsergroupNameX',
+        description => 'The Name of the Usergroup in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    's_usergroup_name_x_restricted' => {
+        datatype => 'string',
+        base_name => 'sUsergroupNameXRestricted',
+        description => 'The Name of the Usergroup in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignfoldertype_privacylevel' => {
+        datatype => 'FieldEEzsignfoldertypePrivacylevel',
+        base_name => 'eEzsignfoldertypePrivacylevel',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignfoldertype_sendreminderfrequency' => {
+        datatype => 'FieldEEzsignfoldertypeSendreminderfrequency',
+        base_name => 'eEzsignfoldertypeSendreminderfrequency',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignfoldertype_archivaldays' => {
+        datatype => 'int',
+        base_name => 'iEzsignfoldertypeArchivaldays',
+        description => 'The number of days before the archival of Ezsignfolders created using this Ezsignfoldertype',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignfoldertype_disposal' => {
+        datatype => 'FieldEEzsignfoldertypeDisposal',
+        base_name => 'eEzsignfoldertypeDisposal',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignfoldertype_completion' => {
+        datatype => 'FieldEEzsignfoldertypeCompletion',
+        base_name => 'eEzsignfoldertypeCompletion',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignfoldertype_disposaldays' => {
+        datatype => 'int',
+        base_name => 'iEzsignfoldertypeDisposaldays',
+        description => 'The number of days after the archival before the disposal of the Ezsignfolder',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignfoldertype_deadlinedays' => {
+        datatype => 'int',
+        base_name => 'iEzsignfoldertypeDeadlinedays',
+        description => 'The number of days to get all Ezsignsignatures',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_automaticsignature' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeAutomaticsignature',
+        description => 'Whether we allow the automatic signature by an User',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_delegate' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeDelegate',
+        description => 'Wheter if delegation of signature is allowed to another user or not',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_discussion' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeDiscussion',
+        description => 'Wheter if creating a new Discussion is allowed or not',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_reassignezsignsigner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeReassignezsignsigner',
+        description => 'Wheter if Reassignment of signature is allowed by a signatory to another signatory or not',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_reassignuser' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeReassignuser',
+        description => 'Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_reassigngroup' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeReassigngroup',
+        description => 'Wheter if Reassignment of signatures of the groups to which the user belongs is authorized by a user to himself',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendsignedtoezsignsigner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendsignedtoezsignsigner',
+        description => 'Whether we send an email to Ezsignsigner  when document is completed',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendsignedtouser' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendsignedtouser',
+        description => 'Whether we send an email to User who signed when document is completed',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendattachmentezsignsigner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendattachmentezsignsigner',
+        description => 'Whether we send the Ezsigndocument in the email to Ezsignsigner',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendproofezsignsigner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendproofezsignsigner',
+        description => 'Whether we send the proof in the email to Ezsignsigner',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendattachmentuser' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendattachmentuser',
+        description => 'Whether we send the Ezsigndocument in the email to User',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendproofuser' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendproofuser',
+        description => 'Whether we send the proof in the email to User',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendproofemail' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendproofemail',
+        description => 'Whether we send the proof in the email to external recipient',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeAllowdownloadattachmentezsignsigner',
+        description => 'Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_allowdownloadproofezsignsigner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeAllowdownloadproofezsignsigner',
+        description => 'Whether we allow the proof to be downloaded by an Ezsignsigner',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendproofreceivealldocument' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendproofreceivealldocument',
+        description => 'Whether we send the proof to user and Ezsignsigner who receive all documents.',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendsignedtodocumentowner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendsignedtodocumentowner',
+        description => 'Whether we send the signed Ezsigndocument to the Ezsigndocument&#39;s owner',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendsignedtofolderowner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendsignedtofolderowner',
+        description => 'Whether we send the signed Ezsigndocument to the Ezsignfolder&#39;s owner',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendsignedtofullgroup' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendsignedtofullgroup',
+        description => 'Whether we send the signed Ezsigndocument to the Usergroup that has acces to all Ezsignfolders',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendsignedtolimitedgroup' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendsignedtolimitedgroup',
+        description => 'THIS FIELD WILL BE DELETED. Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendsignedtocolleague' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendsignedtocolleague',
+        description => 'Whether we send the signed Ezsigndocument to the colleagues',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendsummarytodocumentowner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendsummarytodocumentowner',
+        description => 'Whether we send the summary to the Ezsigndocument&#39;s owner',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendsummarytofolderowner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendsummarytofolderowner',
+        description => 'Whether we send the summary to the Ezsignfolder&#39;s owner',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendsummarytofullgroup' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendsummarytofullgroup',
+        description => 'Whether we send the summary to the Usergroup that has acces to all Ezsignfolders',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendsummarytolimitedgroup' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendsummarytolimitedgroup',
+        description => 'Whether we send the summary to the Usergroup that has acces to only their own Ezsignfolders',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_sendsummarytocolleague' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSendsummarytocolleague',
+        description => 'Whether we send the summary to the colleagues',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_isactive' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeIsactive',
+        description => 'Whether the Ezsignfoldertype is active or not',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_userlogintype' => {
+        datatype => 'ARRAY[UserlogintypeResponse]',
+        base_name => 'a_objUserlogintype',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'a_fki_user_id_signed' => {
         datatype => 'ARRAY[int]',
         base_name => 'a_fkiUserIDSigned',
@@ -255,11 +585,109 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezsignfoldertype_id' => 'int',
+    'obj_ezsignfoldertype_name' => 'MultilingualEzsignfoldertypeName',
+    'fki_branding_id' => 'int',
+    'fki_billingentityinternal_id' => 'int',
+    'fki_usergroup_id' => 'int',
+    'fki_usergroup_id_restricted' => 'int',
+    'fki_ezsigntsarequirement_id' => 'int',
+    's_branding_description_x' => 'string',
+    's_billingentityinternal_description_x' => 'string',
+    's_ezsigntsarequirement_description_x' => 'string',
+    's_email_address_signed' => 'string',
+    's_email_address_summary' => 'string',
+    's_usergroup_name_x' => 'string',
+    's_usergroup_name_x_restricted' => 'string',
+    'e_ezsignfoldertype_privacylevel' => 'FieldEEzsignfoldertypePrivacylevel',
+    'e_ezsignfoldertype_sendreminderfrequency' => 'FieldEEzsignfoldertypeSendreminderfrequency',
+    'i_ezsignfoldertype_archivaldays' => 'int',
+    'e_ezsignfoldertype_disposal' => 'FieldEEzsignfoldertypeDisposal',
+    'e_ezsignfoldertype_completion' => 'FieldEEzsignfoldertypeCompletion',
+    'i_ezsignfoldertype_disposaldays' => 'int',
+    'i_ezsignfoldertype_deadlinedays' => 'int',
+    'b_ezsignfoldertype_automaticsignature' => 'boolean',
+    'b_ezsignfoldertype_delegate' => 'boolean',
+    'b_ezsignfoldertype_discussion' => 'boolean',
+    'b_ezsignfoldertype_reassignezsignsigner' => 'boolean',
+    'b_ezsignfoldertype_reassignuser' => 'boolean',
+    'b_ezsignfoldertype_reassigngroup' => 'boolean',
+    'b_ezsignfoldertype_sendsignedtoezsignsigner' => 'boolean',
+    'b_ezsignfoldertype_sendsignedtouser' => 'boolean',
+    'b_ezsignfoldertype_sendattachmentezsignsigner' => 'boolean',
+    'b_ezsignfoldertype_sendproofezsignsigner' => 'boolean',
+    'b_ezsignfoldertype_sendattachmentuser' => 'boolean',
+    'b_ezsignfoldertype_sendproofuser' => 'boolean',
+    'b_ezsignfoldertype_sendproofemail' => 'boolean',
+    'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => 'boolean',
+    'b_ezsignfoldertype_allowdownloadproofezsignsigner' => 'boolean',
+    'b_ezsignfoldertype_sendproofreceivealldocument' => 'boolean',
+    'b_ezsignfoldertype_sendsignedtodocumentowner' => 'boolean',
+    'b_ezsignfoldertype_sendsignedtofolderowner' => 'boolean',
+    'b_ezsignfoldertype_sendsignedtofullgroup' => 'boolean',
+    'b_ezsignfoldertype_sendsignedtolimitedgroup' => 'boolean',
+    'b_ezsignfoldertype_sendsignedtocolleague' => 'boolean',
+    'b_ezsignfoldertype_sendsummarytodocumentowner' => 'boolean',
+    'b_ezsignfoldertype_sendsummarytofolderowner' => 'boolean',
+    'b_ezsignfoldertype_sendsummarytofullgroup' => 'boolean',
+    'b_ezsignfoldertype_sendsummarytolimitedgroup' => 'boolean',
+    'b_ezsignfoldertype_sendsummarytocolleague' => 'boolean',
+    'b_ezsignfoldertype_isactive' => 'boolean',
+    'a_obj_userlogintype' => 'ARRAY[UserlogintypeResponse]',
     'a_fki_user_id_signed' => 'ARRAY[int]',
     'a_fki_user_id_summary' => 'ARRAY[int]'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezsignfoldertype_id' => 'pkiEzsignfoldertypeID',
+    'obj_ezsignfoldertype_name' => 'objEzsignfoldertypeName',
+    'fki_branding_id' => 'fkiBrandingID',
+    'fki_billingentityinternal_id' => 'fkiBillingentityinternalID',
+    'fki_usergroup_id' => 'fkiUsergroupID',
+    'fki_usergroup_id_restricted' => 'fkiUsergroupIDRestricted',
+    'fki_ezsigntsarequirement_id' => 'fkiEzsigntsarequirementID',
+    's_branding_description_x' => 'sBrandingDescriptionX',
+    's_billingentityinternal_description_x' => 'sBillingentityinternalDescriptionX',
+    's_ezsigntsarequirement_description_x' => 'sEzsigntsarequirementDescriptionX',
+    's_email_address_signed' => 'sEmailAddressSigned',
+    's_email_address_summary' => 'sEmailAddressSummary',
+    's_usergroup_name_x' => 'sUsergroupNameX',
+    's_usergroup_name_x_restricted' => 'sUsergroupNameXRestricted',
+    'e_ezsignfoldertype_privacylevel' => 'eEzsignfoldertypePrivacylevel',
+    'e_ezsignfoldertype_sendreminderfrequency' => 'eEzsignfoldertypeSendreminderfrequency',
+    'i_ezsignfoldertype_archivaldays' => 'iEzsignfoldertypeArchivaldays',
+    'e_ezsignfoldertype_disposal' => 'eEzsignfoldertypeDisposal',
+    'e_ezsignfoldertype_completion' => 'eEzsignfoldertypeCompletion',
+    'i_ezsignfoldertype_disposaldays' => 'iEzsignfoldertypeDisposaldays',
+    'i_ezsignfoldertype_deadlinedays' => 'iEzsignfoldertypeDeadlinedays',
+    'b_ezsignfoldertype_automaticsignature' => 'bEzsignfoldertypeAutomaticsignature',
+    'b_ezsignfoldertype_delegate' => 'bEzsignfoldertypeDelegate',
+    'b_ezsignfoldertype_discussion' => 'bEzsignfoldertypeDiscussion',
+    'b_ezsignfoldertype_reassignezsignsigner' => 'bEzsignfoldertypeReassignezsignsigner',
+    'b_ezsignfoldertype_reassignuser' => 'bEzsignfoldertypeReassignuser',
+    'b_ezsignfoldertype_reassigngroup' => 'bEzsignfoldertypeReassigngroup',
+    'b_ezsignfoldertype_sendsignedtoezsignsigner' => 'bEzsignfoldertypeSendsignedtoezsignsigner',
+    'b_ezsignfoldertype_sendsignedtouser' => 'bEzsignfoldertypeSendsignedtouser',
+    'b_ezsignfoldertype_sendattachmentezsignsigner' => 'bEzsignfoldertypeSendattachmentezsignsigner',
+    'b_ezsignfoldertype_sendproofezsignsigner' => 'bEzsignfoldertypeSendproofezsignsigner',
+    'b_ezsignfoldertype_sendattachmentuser' => 'bEzsignfoldertypeSendattachmentuser',
+    'b_ezsignfoldertype_sendproofuser' => 'bEzsignfoldertypeSendproofuser',
+    'b_ezsignfoldertype_sendproofemail' => 'bEzsignfoldertypeSendproofemail',
+    'b_ezsignfoldertype_allowdownloadattachmentezsignsigner' => 'bEzsignfoldertypeAllowdownloadattachmentezsignsigner',
+    'b_ezsignfoldertype_allowdownloadproofezsignsigner' => 'bEzsignfoldertypeAllowdownloadproofezsignsigner',
+    'b_ezsignfoldertype_sendproofreceivealldocument' => 'bEzsignfoldertypeSendproofreceivealldocument',
+    'b_ezsignfoldertype_sendsignedtodocumentowner' => 'bEzsignfoldertypeSendsignedtodocumentowner',
+    'b_ezsignfoldertype_sendsignedtofolderowner' => 'bEzsignfoldertypeSendsignedtofolderowner',
+    'b_ezsignfoldertype_sendsignedtofullgroup' => 'bEzsignfoldertypeSendsignedtofullgroup',
+    'b_ezsignfoldertype_sendsignedtolimitedgroup' => 'bEzsignfoldertypeSendsignedtolimitedgroup',
+    'b_ezsignfoldertype_sendsignedtocolleague' => 'bEzsignfoldertypeSendsignedtocolleague',
+    'b_ezsignfoldertype_sendsummarytodocumentowner' => 'bEzsignfoldertypeSendsummarytodocumentowner',
+    'b_ezsignfoldertype_sendsummarytofolderowner' => 'bEzsignfoldertypeSendsummarytofolderowner',
+    'b_ezsignfoldertype_sendsummarytofullgroup' => 'bEzsignfoldertypeSendsummarytofullgroup',
+    'b_ezsignfoldertype_sendsummarytolimitedgroup' => 'bEzsignfoldertypeSendsummarytolimitedgroup',
+    'b_ezsignfoldertype_sendsummarytocolleague' => 'bEzsignfoldertypeSendsummarytocolleague',
+    'b_ezsignfoldertype_isactive' => 'bEzsignfoldertypeIsactive',
+    'a_obj_userlogintype' => 'a_objUserlogintype',
     'a_fki_user_id_signed' => 'a_fkiUserIDSigned',
     'a_fki_user_id_summary' => 'a_fkiUserIDSummary'
 } );

@@ -31,8 +31,9 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
+use EzmaxApi::Object::CustomEzmaxinvoicingEzsigndocumentResponse;
+use EzmaxApi::Object::CustomEzmaxinvoicingEzsignfolderResponse;
 use EzmaxApi::Object::CustomEzmaxpricingResponse;
-use EzmaxApi::Object::EzmaxinvoicingResponse;
 use EzmaxApi::Object::EzmaxinvoicingagentResponseCompound;
 use EzmaxApi::Object::EzmaxinvoicingcontractResponseCompound;
 use EzmaxApi::Object::EzmaxinvoicingsummaryexternalResponseCompound;
@@ -41,7 +42,7 @@ use EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponseCompound;
 use EzmaxApi::Object::EzmaxinvoicinguserResponseCompound;
 use EzmaxApi::Object::FieldEEzmaxinvoicingPaymenttype;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzmaxinvoicingResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezmaxinvoicing Object
@@ -94,18 +95,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzmaxinvoicingResponse
-    $self->EzmaxApi::Object::EzmaxinvoicingResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzmaxinvoicingResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzmaxinvoicingResponse::to_hash };
 
     return $_hash;
 }
@@ -136,9 +131,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzmaxinvoicingResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzmaxinvoicingResponse::TO_JSON };
 
     return $_data;
 }
@@ -207,9 +199,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzmaxinvoicingResponse) from_hash
-    $self->EzmaxApi::Object::EzmaxinvoicingResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -241,6 +230,97 @@ __PACKAGE__->class_documentation({description => 'A Ezmaxinvoicing Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezmaxinvoicing_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzmaxinvoicingID',
+        description => 'The unique ID of the Ezmaxinvoicing',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezmaxinvoicingcontract_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzmaxinvoicingcontractID',
+        description => 'The unique ID of the Ezmaxinvoicingcontract',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezmaxpricing_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzmaxpricingID',
+        description => 'The unique ID of the Ezmaxpricing',
+        format => '',
+        read_only => '',
+            },
+    'fki_systemconfigurationtype_id' => {
+        datatype => 'int',
+        base_name => 'fkiSystemconfigurationtypeID',
+        description => 'The unique ID of the Systemconfigurationtype',
+        format => '',
+        read_only => '',
+            },
+    's_systemconfigurationtype_description_x' => {
+        datatype => 'string',
+        base_name => 'sSystemconfigurationtypeDescriptionX',
+        description => 'The description of the Systemconfigurationtype in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    'yyyymm_ezmaxinvoicing' => {
+        datatype => 'string',
+        base_name => 'yyyymmEzmaxinvoicing',
+        description => 'The YYYYMM period of the Ezmaxinvoicing',
+        format => '',
+        read_only => '',
+            },
+    'i_ezmaxinvoicing_days' => {
+        datatype => 'int',
+        base_name => 'iEzmaxinvoicingDays',
+        description => 'The number of days invoiced',
+        format => '',
+        read_only => '',
+            },
+    'e_ezmaxinvoicing_paymenttype' => {
+        datatype => 'FieldEEzmaxinvoicingPaymenttype',
+        base_name => 'eEzmaxinvoicingPaymenttype',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'd_ezmaxinvoicing_rebatepaymenttype' => {
+        datatype => 'string',
+        base_name => 'dEzmaxinvoicingRebatepaymenttype',
+        description => 'The percentage of rebate depending of the payment type',
+        format => '',
+        read_only => '',
+            },
+    'i_ezmaxinvoicing_contractlength' => {
+        datatype => 'int',
+        base_name => 'iEzmaxinvoicingContractlength',
+        description => 'The length of the contract in years',
+        format => '',
+        read_only => '',
+            },
+    'd_ezmaxinvoicing_rebatecontractlength' => {
+        datatype => 'string',
+        base_name => 'dEzmaxinvoicingRebatecontractlength',
+        description => 'The percentage of rebate depending of the contract length',
+        format => '',
+        read_only => '',
+            },
+    'b_ezmaxinvoicing_rebate_ezsignallagents' => {
+        datatype => 'boolean',
+        base_name => 'bEzmaxinvoicingRebateEzsignallagents',
+        description => 'Whether the rebate for eZsign is for all agents',
+        format => '',
+        read_only => '',
+            },
+    'obj_audit' => {
+        datatype => 'CommonAudit',
+        base_name => 'objAudit',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'obj_ezmaxinvoicingcontract' => {
         datatype => 'EzmaxinvoicingcontractResponseCompound',
         base_name => 'objEzmaxinvoicingcontract',
@@ -307,6 +387,19 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezmaxinvoicing_id' => 'int',
+    'fki_ezmaxinvoicingcontract_id' => 'int',
+    'fki_ezmaxpricing_id' => 'int',
+    'fki_systemconfigurationtype_id' => 'int',
+    's_systemconfigurationtype_description_x' => 'string',
+    'yyyymm_ezmaxinvoicing' => 'string',
+    'i_ezmaxinvoicing_days' => 'int',
+    'e_ezmaxinvoicing_paymenttype' => 'FieldEEzmaxinvoicingPaymenttype',
+    'd_ezmaxinvoicing_rebatepaymenttype' => 'string',
+    'i_ezmaxinvoicing_contractlength' => 'int',
+    'd_ezmaxinvoicing_rebatecontractlength' => 'string',
+    'b_ezmaxinvoicing_rebate_ezsignallagents' => 'boolean',
+    'obj_audit' => 'CommonAudit',
     'obj_ezmaxinvoicingcontract' => 'EzmaxinvoicingcontractResponseCompound',
     'obj_ezmaxpricing' => 'CustomEzmaxpricingResponse',
     'a_obj_ezmaxinvoicingsummaryglobal' => 'ARRAY[EzmaxinvoicingsummaryglobalResponseCompound]',
@@ -319,6 +412,19 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezmaxinvoicing_id' => 'pkiEzmaxinvoicingID',
+    'fki_ezmaxinvoicingcontract_id' => 'fkiEzmaxinvoicingcontractID',
+    'fki_ezmaxpricing_id' => 'fkiEzmaxpricingID',
+    'fki_systemconfigurationtype_id' => 'fkiSystemconfigurationtypeID',
+    's_systemconfigurationtype_description_x' => 'sSystemconfigurationtypeDescriptionX',
+    'yyyymm_ezmaxinvoicing' => 'yyyymmEzmaxinvoicing',
+    'i_ezmaxinvoicing_days' => 'iEzmaxinvoicingDays',
+    'e_ezmaxinvoicing_paymenttype' => 'eEzmaxinvoicingPaymenttype',
+    'd_ezmaxinvoicing_rebatepaymenttype' => 'dEzmaxinvoicingRebatepaymenttype',
+    'i_ezmaxinvoicing_contractlength' => 'iEzmaxinvoicingContractlength',
+    'd_ezmaxinvoicing_rebatecontractlength' => 'dEzmaxinvoicingRebatecontractlength',
+    'b_ezmaxinvoicing_rebate_ezsignallagents' => 'bEzmaxinvoicingRebateEzsignallagents',
+    'obj_audit' => 'objAudit',
     'obj_ezmaxinvoicingcontract' => 'objEzmaxinvoicingcontract',
     'obj_ezmaxpricing' => 'objEzmaxpricing',
     'a_obj_ezmaxinvoicingsummaryglobal' => 'a_objEzmaxinvoicingsummaryglobal',

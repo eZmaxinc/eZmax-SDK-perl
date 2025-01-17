@@ -30,11 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::ContactResponse;
 use EzmaxApi::Object::ContactinformationsResponseCompound;
 use EzmaxApi::Object::FieldEContactType;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::ContactResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Contact Object
@@ -87,18 +86,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object ContactResponse
-    $self->EzmaxApi::Object::ContactResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call ContactResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::ContactResponse::to_hash };
 
     return $_hash;
 }
@@ -129,9 +122,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (ContactResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::ContactResponse::TO_JSON };
 
     return $_data;
 }
@@ -200,9 +190,6 @@ sub from_hash {
         }
     }
 
-    # call parent (ContactResponse) from_hash
-    $self->EzmaxApi::Object::ContactResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -234,14 +221,129 @@ __PACKAGE__->class_documentation({description => 'A Contact Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_contact_id' => {
+        datatype => 'int',
+        base_name => 'pkiContactID',
+        description => 'The unique ID of the Contact',
+        format => '',
+        read_only => '',
+            },
+    'fki_language_id' => {
+        datatype => 'int',
+        base_name => 'fkiLanguageID',
+        description => 'The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|',
+        format => '',
+        read_only => '',
+            },
+    'fki_contacttitle_id' => {
+        datatype => 'int',
+        base_name => 'fkiContacttitleID',
+        description => 'The unique ID of the Contacttitle.  Valid values:  |Value|Description| |-|-| |1|Ms.| |2|Mr.| |4|(Blank)| |5|Me (For Notaries)|',
+        format => '',
+        read_only => '',
+            },
+    'fki_contactinformations_id' => {
+        datatype => 'int',
+        base_name => 'fkiContactinformationsID',
+        description => 'The unique ID of the Contactinformations',
+        format => '',
+        read_only => '',
+            },
+    'dt_contact_birthdate' => {
+        datatype => 'string',
+        base_name => 'dtContactBirthdate',
+        description => 'The Birth Date of the contact',
+        format => '',
+        read_only => '',
+            },
+    'e_contact_type' => {
+        datatype => 'FieldEContactType',
+        base_name => 'eContactType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_contact_firstname' => {
+        datatype => 'string',
+        base_name => 'sContactFirstname',
+        description => 'The First name of the contact',
+        format => '',
+        read_only => '',
+            },
+    's_contact_lastname' => {
+        datatype => 'string',
+        base_name => 'sContactLastname',
+        description => 'The Last name of the contact',
+        format => '',
+        read_only => '',
+            },
+    's_contact_company' => {
+        datatype => 'string',
+        base_name => 'sContactCompany',
+        description => 'The Company name of the contact',
+        format => '',
+        read_only => '',
+            },
+    's_contact_occupation' => {
+        datatype => 'string',
+        base_name => 'sContactOccupation',
+        description => 'The occupation of the Contact',
+        format => '',
+        read_only => '',
+            },
+    't_contact_note' => {
+        datatype => 'string',
+        base_name => 'tContactNote',
+        description => 'The note of the Contact',
+        format => '',
+        read_only => '',
+            },
+    'b_contact_isactive' => {
+        datatype => 'boolean',
+        base_name => 'bContactIsactive',
+        description => 'Whether the contact is active or not',
+        format => '',
+        read_only => '',
+            },
+    'obj_contactinformations' => {
+        datatype => 'ContactinformationsResponseCompound',
+        base_name => 'objContactinformations',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_contact_id' => 'int',
+    'fki_language_id' => 'int',
+    'fki_contacttitle_id' => 'int',
+    'fki_contactinformations_id' => 'int',
+    'dt_contact_birthdate' => 'string',
+    'e_contact_type' => 'FieldEContactType',
+    's_contact_firstname' => 'string',
+    's_contact_lastname' => 'string',
+    's_contact_company' => 'string',
+    's_contact_occupation' => 'string',
+    't_contact_note' => 'string',
+    'b_contact_isactive' => 'boolean',
+    'obj_contactinformations' => 'ContactinformationsResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_contact_id' => 'pkiContactID',
+    'fki_language_id' => 'fkiLanguageID',
+    'fki_contacttitle_id' => 'fkiContacttitleID',
+    'fki_contactinformations_id' => 'fkiContactinformationsID',
+    'dt_contact_birthdate' => 'dtContactBirthdate',
+    'e_contact_type' => 'eContactType',
+    's_contact_firstname' => 'sContactFirstname',
+    's_contact_lastname' => 'sContactLastname',
+    's_contact_company' => 'sContactCompany',
+    's_contact_occupation' => 'sContactOccupation',
+    't_contact_note' => 'tContactNote',
+    'b_contact_isactive' => 'bContactIsactive',
+    'obj_contactinformations' => 'objContactinformations'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

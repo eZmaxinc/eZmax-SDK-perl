@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigntemplatedocument_flatten_v1**
-> CommonResponse ezsigntemplatedocument_flatten_v1(pki_ezsigntemplatedocument_id => $pki_ezsigntemplatedocument_id, body => $body)
+> EzsigntemplatedocumentFlattenV1Response ezsigntemplatedocument_flatten_v1(pki_ezsigntemplatedocument_id => $pki_ezsigntemplatedocument_id, body => $body)
 
 Flatten
 
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplatedocumentFlattenV1Response**](EzsigntemplatedocumentFlattenV1Response.md)
 
 ### Authorization
 
@@ -703,7 +703,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigntemplatedocument_patch_object_v1**
-> CommonResponse ezsigntemplatedocument_patch_object_v1(pki_ezsigntemplatedocument_id => $pki_ezsigntemplatedocument_id, ezsigntemplatedocument_patch_object_v1_request => $ezsigntemplatedocument_patch_object_v1_request)
+> EzsigntemplatedocumentPatchObjectV1Response ezsigntemplatedocument_patch_object_v1(pki_ezsigntemplatedocument_id => $pki_ezsigntemplatedocument_id, ezsigntemplatedocument_patch_object_v1_request => $ezsigntemplatedocument_patch_object_v1_request)
 
 Patch an existing Ezsigntemplatedocument
 
@@ -742,7 +742,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplatedocumentPatchObjectV1Response**](EzsigntemplatedocumentPatchObjectV1Response.md)
 
 ### Authorization
 

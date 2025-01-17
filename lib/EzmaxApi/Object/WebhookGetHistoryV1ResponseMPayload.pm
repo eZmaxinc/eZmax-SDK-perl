@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::CustomWebhooklogResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 

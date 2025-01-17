@@ -31,12 +31,11 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::EnumHorizontalalignment;
-use EzmaxApi::Object::EzsignelementdependencyResponse;
-use EzmaxApi::Object::EzsignformfieldResponse;
+use EzmaxApi::Object::EzsignelementdependencyResponseCompound;
 use EzmaxApi::Object::FieldEEzsignformfieldDependencyrequirement;
 use EzmaxApi::Object::TextstylestaticResponseCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignformfieldResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #An Ezsignformfield Object and children to create a complete structure
@@ -89,18 +88,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsignformfieldResponse
-    $self->EzmaxApi::Object::EzsignformfieldResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsignformfieldResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignformfieldResponse::to_hash };
 
     return $_hash;
 }
@@ -131,9 +124,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsignformfieldResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignformfieldResponse::TO_JSON };
 
     return $_data;
 }
@@ -202,9 +192,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsignformfieldResponse) from_hash
-    $self->EzmaxApi::Object::EzsignformfieldResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -236,6 +223,104 @@ __PACKAGE__->class_documentation({description => 'An Ezsignformfield Object and 
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignformfield_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignformfieldID',
+        description => 'The unique ID of the Ezsignformfield',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignpage_pagenumber' => {
+        datatype => 'int',
+        base_name => 'iEzsignpagePagenumber',
+        description => 'The page number in the Ezsigndocument',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignformfield_label' => {
+        datatype => 'string',
+        base_name => 'sEzsignformfieldLabel',
+        description => 'The Label for the Ezsignformfield',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignformfield_value' => {
+        datatype => 'string',
+        base_name => 'sEzsignformfieldValue',
+        description => 'The value for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is Checkbox or Radio',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignformfield_x' => {
+        datatype => 'int',
+        base_name => 'iEzsignformfieldX',
+        description => 'The X coordinate (Horizontal) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignformfield_y' => {
+        datatype => 'int',
+        base_name => 'iEzsignformfieldY',
+        description => 'The Y coordinate (Vertical) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 3 inches from the top border of the page, you would use \&quot;300\&quot; for the Y coordinate.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignformfield_width' => {
+        datatype => 'int',
+        base_name => 'iEzsignformfieldWidth',
+        description => 'The Width of the Ezsignformfield in pixels calculated at 100 DPI',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignformfield_height' => {
+        datatype => 'int',
+        base_name => 'iEzsignformfieldHeight',
+        description => 'The Height of the Ezsignformfield in pixels calculated at 100 DPI ',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignformfield_autocomplete' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignformfieldAutocomplete',
+        description => 'Whether the Ezsignformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsignformfieldgroupType is **Text**',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignformfield_selected' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignformfieldSelected',
+        description => 'Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignformfield_enteredvalue' => {
+        datatype => 'string',
+        base_name => 'sEzsignformfieldEnteredvalue',
+        description => 'This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea**',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignformfield_dependencyrequirement' => {
+        datatype => 'FieldEEzsignformfieldDependencyrequirement',
+        base_name => 'eEzsignformfieldDependencyrequirement',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignformfield_horizontalalignment' => {
+        datatype => 'EnumHorizontalalignment',
+        base_name => 'eEzsignformfieldHorizontalalignment',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_textstylestatic' => {
+        datatype => 'TextstylestaticResponseCompound',
+        base_name => 'objTextstylestatic',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'a_obj_ezsignelementdependency' => {
         datatype => 'ARRAY[EzsignelementdependencyResponseCompound]',
         base_name => 'a_objEzsignelementdependency',
@@ -246,10 +331,38 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezsignformfield_id' => 'int',
+    'i_ezsignpage_pagenumber' => 'int',
+    's_ezsignformfield_label' => 'string',
+    's_ezsignformfield_value' => 'string',
+    'i_ezsignformfield_x' => 'int',
+    'i_ezsignformfield_y' => 'int',
+    'i_ezsignformfield_width' => 'int',
+    'i_ezsignformfield_height' => 'int',
+    'b_ezsignformfield_autocomplete' => 'boolean',
+    'b_ezsignformfield_selected' => 'boolean',
+    's_ezsignformfield_enteredvalue' => 'string',
+    'e_ezsignformfield_dependencyrequirement' => 'FieldEEzsignformfieldDependencyrequirement',
+    'e_ezsignformfield_horizontalalignment' => 'EnumHorizontalalignment',
+    'obj_textstylestatic' => 'TextstylestaticResponseCompound',
     'a_obj_ezsignelementdependency' => 'ARRAY[EzsignelementdependencyResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezsignformfield_id' => 'pkiEzsignformfieldID',
+    'i_ezsignpage_pagenumber' => 'iEzsignpagePagenumber',
+    's_ezsignformfield_label' => 'sEzsignformfieldLabel',
+    's_ezsignformfield_value' => 'sEzsignformfieldValue',
+    'i_ezsignformfield_x' => 'iEzsignformfieldX',
+    'i_ezsignformfield_y' => 'iEzsignformfieldY',
+    'i_ezsignformfield_width' => 'iEzsignformfieldWidth',
+    'i_ezsignformfield_height' => 'iEzsignformfieldHeight',
+    'b_ezsignformfield_autocomplete' => 'bEzsignformfieldAutocomplete',
+    'b_ezsignformfield_selected' => 'bEzsignformfieldSelected',
+    's_ezsignformfield_enteredvalue' => 'sEzsignformfieldEnteredvalue',
+    'e_ezsignformfield_dependencyrequirement' => 'eEzsignformfieldDependencyrequirement',
+    'e_ezsignformfield_horizontalalignment' => 'eEzsignformfieldHorizontalalignment',
+    'obj_textstylestatic' => 'objTextstylestatic',
     'a_obj_ezsignelementdependency' => 'a_objEzsignelementdependency'
 } );
 

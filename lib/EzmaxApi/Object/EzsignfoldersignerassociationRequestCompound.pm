@@ -30,10 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsignfoldersignerassociationRequest;
 use EzmaxApi::Object::EzsignsignerRequestCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignfoldersignerassociationRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #An Ezsignfoldersignerassociation Object and children to create a complete structure
@@ -86,18 +85,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsignfoldersignerassociationRequest
-    $self->EzmaxApi::Object::EzsignfoldersignerassociationRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsignfoldersignerassociationRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignfoldersignerassociationRequest::to_hash };
 
     return $_hash;
 }
@@ -128,9 +121,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsignfoldersignerassociationRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignfoldersignerassociationRequest::TO_JSON };
 
     return $_data;
 }
@@ -199,9 +189,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsignfoldersignerassociationRequest) from_hash
-    $self->EzmaxApi::Object::EzsignfoldersignerassociationRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -233,6 +220,48 @@ __PACKAGE__->class_documentation({description => 'An Ezsignfoldersignerassociati
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignfoldersignerassociation_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignfoldersignerassociationID',
+        description => 'The unique ID of the Ezsignfoldersignerassociation',
+        format => '',
+        read_only => '',
+            },
+    'fki_user_id' => {
+        datatype => 'int',
+        base_name => 'fkiUserID',
+        description => 'The unique ID of the User',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignsignergroup_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignsignergroupID',
+        description => 'The unique ID of the Ezsignsignergroup',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignfolder_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignfolderID',
+        description => 'The unique ID of the Ezsignfolder',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldersignerassociation_receivecopy' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldersignerassociationReceivecopy',
+        description => 'If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain&#39;t required to sign the document.',
+        format => '',
+        read_only => '',
+            },
+    't_ezsignfoldersignerassociation_message' => {
+        datatype => 'string',
+        base_name => 'tEzsignfoldersignerassociationMessage',
+        description => 'A custom text message that will be added to the email sent.',
+        format => '',
+        read_only => '',
+            },
     'obj_ezsignsigner' => {
         datatype => 'EzsignsignerRequestCompound',
         base_name => 'objEzsignsigner',
@@ -243,10 +272,22 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezsignfoldersignerassociation_id' => 'int',
+    'fki_user_id' => 'int',
+    'fki_ezsignsignergroup_id' => 'int',
+    'fki_ezsignfolder_id' => 'int',
+    'b_ezsignfoldersignerassociation_receivecopy' => 'boolean',
+    't_ezsignfoldersignerassociation_message' => 'string',
     'obj_ezsignsigner' => 'EzsignsignerRequestCompound'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezsignfoldersignerassociation_id' => 'pkiEzsignfoldersignerassociationID',
+    'fki_user_id' => 'fkiUserID',
+    'fki_ezsignsignergroup_id' => 'fkiEzsignsignergroupID',
+    'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
+    'b_ezsignfoldersignerassociation_receivecopy' => 'bEzsignfoldersignerassociationReceivecopy',
+    't_ezsignfoldersignerassociation_message' => 'tEzsignfoldersignerassociationMessage',
     'obj_ezsignsigner' => 'objEzsignsigner'
 } );
 

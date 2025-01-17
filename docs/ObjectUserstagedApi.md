@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **userstaged_delete_object_v1**
-> CommonResponse userstaged_delete_object_v1(pki_userstaged_id => $pki_userstaged_id)
+> UserstagedDeleteObjectV1Response userstaged_delete_object_v1(pki_userstaged_id => $pki_userstaged_id)
 
 Delete an existing Userstaged
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**UserstagedDeleteObjectV1Response**](UserstagedDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **userstaged_map_v1**
-> CommonResponse userstaged_map_v1(pki_userstaged_id => $pki_userstaged_id, userstaged_map_v1_request => $userstaged_map_v1_request)
+> UserstagedMapV1Response userstaged_map_v1(pki_userstaged_id => $pki_userstaged_id, userstaged_map_v1_request => $userstaged_map_v1_request)
 
 Map the Userstaged to an existing user
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**UserstagedMapV1Response**](UserstagedMapV1Response.md)
 
 ### Authorization
 

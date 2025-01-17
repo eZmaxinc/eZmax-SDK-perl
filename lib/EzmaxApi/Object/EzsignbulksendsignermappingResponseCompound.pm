@@ -30,9 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsignbulksendsignermappingResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignbulksendsignermappingResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezsignbulksendsignermapping Object
@@ -85,18 +84,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsignbulksendsignermappingResponse
-    $self->EzmaxApi::Object::EzsignbulksendsignermappingResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsignbulksendsignermappingResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignbulksendsignermappingResponse::to_hash };
 
     return $_hash;
 }
@@ -127,9 +120,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsignbulksendsignermappingResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignbulksendsignermappingResponse::TO_JSON };
 
     return $_data;
 }
@@ -198,9 +188,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsignbulksendsignermappingResponse) from_hash
-    $self->EzmaxApi::Object::EzsignbulksendsignermappingResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -232,14 +219,48 @@ __PACKAGE__->class_documentation({description => 'A Ezsignbulksendsignermapping 
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignbulksendsignermapping_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignbulksendsignermappingID',
+        description => 'The unique ID of the Ezsignbulksendsignermapping',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignbulksend_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignbulksendID',
+        description => 'The unique ID of the Ezsignbulksend',
+        format => '',
+        read_only => '',
+            },
+    'fki_user_id' => {
+        datatype => 'int',
+        base_name => 'fkiUserID',
+        description => 'The unique ID of the User',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignbulksendsignermapping_description' => {
+        datatype => 'string',
+        base_name => 'sEzsignbulksendsignermappingDescription',
+        description => 'The description of the Ezsignbulksendsignermapping',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_ezsignbulksendsignermapping_id' => 'int',
+    'fki_ezsignbulksend_id' => 'int',
+    'fki_user_id' => 'int',
+    's_ezsignbulksendsignermapping_description' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_ezsignbulksendsignermapping_id' => 'pkiEzsignbulksendsignermappingID',
+    'fki_ezsignbulksend_id' => 'fkiEzsignbulksendID',
+    'fki_user_id' => 'fkiUserID',
+    's_ezsignbulksendsignermapping_description' => 'sEzsignbulksendsignermappingDescription'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

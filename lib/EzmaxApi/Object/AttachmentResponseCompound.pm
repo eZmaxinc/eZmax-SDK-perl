@@ -30,14 +30,13 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::AttachmentResponse;
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::FieldEAttachmentDocumenttype;
 use EzmaxApi::Object::FieldEAttachmentPrivacy;
 use EzmaxApi::Object::FieldEAttachmentType;
 use EzmaxApi::Object::FieldEAttachmentVerified;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::AttachmentResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Attachment Object
@@ -90,18 +89,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object AttachmentResponse
-    $self->EzmaxApi::Object::AttachmentResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call AttachmentResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::AttachmentResponse::to_hash };
 
     return $_hash;
 }
@@ -132,9 +125,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (AttachmentResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::AttachmentResponse::TO_JSON };
 
     return $_data;
 }
@@ -203,9 +193,6 @@ sub from_hash {
         }
     }
 
-    # call parent (AttachmentResponse) from_hash
-    $self->EzmaxApi::Object::AttachmentResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -237,14 +224,561 @@ __PACKAGE__->class_documentation({description => 'A Attachment Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_attachment_id' => {
+        datatype => 'int',
+        base_name => 'pkiAttachmentID',
+        description => 'The unique ID of the Attachment.',
+        format => '',
+        read_only => '',
+            },
+    'fki_computer_id' => {
+        datatype => 'int',
+        base_name => 'fkiComputerID',
+        description => 'The unique ID of the Computer',
+        format => '',
+        read_only => '',
+            },
+    'fki_adjustment_id' => {
+        datatype => 'int',
+        base_name => 'fkiAdjustmentID',
+        description => 'The unique ID of the Adjustment',
+        format => '',
+        read_only => '',
+            },
+    'fki_agent_id' => {
+        datatype => 'int',
+        base_name => 'fkiAgentID',
+        description => 'The unique ID of the Agent.',
+        format => '',
+        read_only => '',
+            },
+    'fki_bankaccount_id' => {
+        datatype => 'int',
+        base_name => 'fkiBankaccountID',
+        description => 'The unique ID of the Bankaccount',
+        format => '',
+        read_only => '',
+            },
+    'fki_broker_id' => {
+        datatype => 'int',
+        base_name => 'fkiBrokerID',
+        description => 'The unique ID of the Broker.',
+        format => '',
+        read_only => '',
+            },
+    'fki_commissionadvance_id' => {
+        datatype => 'int',
+        base_name => 'fkiCommissionadvanceID',
+        description => 'The unique ID of the Commissionadvance',
+        format => '',
+        read_only => '',
+            },
+    'fki_communication_id' => {
+        datatype => 'int',
+        base_name => 'fkiCommunicationID',
+        description => 'The unique ID of the Communication.',
+        format => '',
+        read_only => '',
+            },
+    'fki_customer_id' => {
+        datatype => 'int',
+        base_name => 'fkiCustomerID',
+        description => 'The unique ID of the Customer.',
+        format => '',
+        read_only => '',
+            },
+    'fki_customertemplate_id' => {
+        datatype => 'int',
+        base_name => 'fkiCustomertemplateID',
+        description => 'The unique ID of the Customertemplate',
+        format => '',
+        read_only => '',
+            },
+    'fki_deposit_id' => {
+        datatype => 'int',
+        base_name => 'fkiDepositID',
+        description => 'The unique ID of the Deposit',
+        format => '',
+        read_only => '',
+            },
+    'fki_deposittransitcheque_id' => {
+        datatype => 'int',
+        base_name => 'fkiDeposittransitchequeID',
+        description => 'The unique ID of the Deposittransitcheque',
+        format => '',
+        read_only => '',
+            },
+    'fki_electronicfundstransfer_id' => {
+        datatype => 'int',
+        base_name => 'fkiElectronicfundstransferID',
+        description => 'The unique ID of the Electronicfundstransfer',
+        format => '',
+        read_only => '',
+            },
+    'fki_employee_id' => {
+        datatype => 'int',
+        base_name => 'fkiEmployeeID',
+        description => 'The unique ID of the Employee.',
+        format => '',
+        read_only => '',
+            },
+    'fki_externalbroker_id' => {
+        datatype => 'int',
+        base_name => 'fkiExternalbrokerID',
+        description => 'The unique ID of the Externalbroker.',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezcomadvanceserver_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzcomadvanceserverID',
+        description => 'The unique ID of the Ezcomadvanceserver',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezcomcompany_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzcomcompanyID',
+        description => 'The unique ID of the Ezcomcompany',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigndocument_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigndocumentID',
+        description => 'The unique ID of the Ezsigndocument',
+        format => '',
+        read_only => '',
+            },
+    'fki_ghacqcontract_id' => {
+        datatype => 'int',
+        base_name => 'fkiGhacqcontractID',
+        description => 'The unique ID of the Ghacqcontract',
+        format => '',
+        read_only => '',
+            },
+    'fki_inscription_id' => {
+        datatype => 'int',
+        base_name => 'fkiInscriptionID',
+        description => 'The unique ID of the Inscription.',
+        format => '',
+        read_only => '',
+            },
+    'fki_inscriptiontemp_id' => {
+        datatype => 'int',
+        base_name => 'fkiInscriptiontempID',
+        description => 'The unique ID of the Inscriptiontemp',
+        format => '',
+        read_only => '',
+            },
+    'fki_inscriptionnotauthenticated_id' => {
+        datatype => 'int',
+        base_name => 'fkiInscriptionnotauthenticatedID',
+        description => 'The unique ID of the Inscriptionnotauthenticated.',
+        format => '',
+        read_only => '',
+            },
+    'fki_invoice_id' => {
+        datatype => 'int',
+        base_name => 'fkiInvoiceID',
+        description => 'The unique ID of the Invoice.',
+        format => '',
+        read_only => '',
+            },
+    'fki_buyercontract_id' => {
+        datatype => 'int',
+        base_name => 'fkiBuyercontractID',
+        description => 'The unique ID of the Buyercontract',
+        format => '',
+        read_only => '',
+            },
+    'fki_franchisebroker_id' => {
+        datatype => 'int',
+        base_name => 'fkiFranchisebrokerID',
+        description => 'The unique ID of the Franchisebroker',
+        format => '',
+        read_only => '',
+            },
+    'fki_franchiseagence_id' => {
+        datatype => 'int',
+        base_name => 'fkiFranchiseagenceID',
+        description => 'The unique ID of the Franchiseagence',
+        format => '',
+        read_only => '',
+            },
+    'fki_franchiseoffice_id' => {
+        datatype => 'int',
+        base_name => 'fkiFranchiseofficeID',
+        description => 'The unique ID of the Franchisereoffice',
+        format => '',
+        read_only => '',
+            },
+    'fki_franchisefranchise_id' => {
+        datatype => 'int',
+        base_name => 'fkiFranchisefranchiseID',
+        description => 'The unique ID of the Franchisefranchise',
+        format => '',
+        read_only => '',
+            },
+    'fki_franchisecomplaint_id' => {
+        datatype => 'int',
+        base_name => 'fkiFranchisecomplaintID',
+        description => 'The unique ID of the Franchisecomplaint',
+        format => '',
+        read_only => '',
+            },
+    'fki_lead_id' => {
+        datatype => 'int',
+        base_name => 'fkiLeadID',
+        description => 'The unique ID of the Lead',
+        format => '',
+        read_only => '',
+            },
+    'fki_marketingprogram_id' => {
+        datatype => 'int',
+        base_name => 'fkiMarketingprogramID',
+        description => 'The unique ID of the Marketingprogram',
+        format => '',
+        read_only => '',
+            },
+    'fki_marketingfollow_id' => {
+        datatype => 'int',
+        base_name => 'fkiMarketingfollowID',
+        description => 'The unique ID of the Marketingfollow',
+        format => '',
+        read_only => '',
+            },
+    'fki_notary_id' => {
+        datatype => 'int',
+        base_name => 'fkiNotaryID',
+        description => 'The unique ID of the Notary.',
+        format => '',
+        read_only => '',
+            },
+    'fki_officetaxreport_id' => {
+        datatype => 'int',
+        base_name => 'fkiOfficetaxreportID',
+        description => 'The unique ID of the Officetaxreport',
+        format => '',
+        read_only => '',
+            },
+    'fki_otherincome_id' => {
+        datatype => 'int',
+        base_name => 'fkiOtherincomeID',
+        description => 'The unique ID of the Otherincome',
+        format => '',
+        read_only => '',
+            },
+    'fki_paymentpreparation_id' => {
+        datatype => 'int',
+        base_name => 'fkiPaymentpreparationID',
+        description => 'The unique ID of the Paymentpreparation',
+        format => '',
+        read_only => '',
+            },
+    'fki_purchase_id' => {
+        datatype => 'int',
+        base_name => 'fkiPurchaseID',
+        description => 'The unique ID of the Purchase',
+        format => '',
+        read_only => '',
+            },
+    'fki_salary_id' => {
+        datatype => 'int',
+        base_name => 'fkiSalaryID',
+        description => 'The unique ID of the Salary',
+        format => '',
+        read_only => '',
+            },
+    'fki_supplier_id' => {
+        datatype => 'int',
+        base_name => 'fkiSupplierID',
+        description => 'The unique ID of the Supplier.',
+        format => '',
+        read_only => '',
+            },
+    'fki_tranqcontract_id' => {
+        datatype => 'int',
+        base_name => 'fkiTranqcontractID',
+        description => 'The unique ID of the Tranqcontract',
+        format => '',
+        read_only => '',
+            },
+    'fki_template_id' => {
+        datatype => 'int',
+        base_name => 'fkiTemplateID',
+        description => 'The unique ID of the Template',
+        format => '',
+        read_only => '',
+            },
+    'fki_inscriptionchecklist_id' => {
+        datatype => 'int',
+        base_name => 'fkiInscriptionchecklistID',
+        description => 'The unique ID of the Inscriptionchecklist',
+        format => '',
+        read_only => '',
+            },
+    'fki_folder_id' => {
+        datatype => 'int',
+        base_name => 'fkiFolderID',
+        description => 'The unique ID of the Folder',
+        format => '',
+        read_only => '',
+            },
+    'fki_rejectedoffertopurchase_id' => {
+        datatype => 'int',
+        base_name => 'fkiRejectedoffertopurchaseID',
+        description => 'The unique ID of the Rejectedoffertopurchase',
+        format => '',
+        read_only => '',
+            },
+    'fki_disclosure_id' => {
+        datatype => 'int',
+        base_name => 'fkiDisclosureID',
+        description => 'The unique ID of the Disclosure',
+        format => '',
+        read_only => '',
+            },
+    'fki_reconciliation_id' => {
+        datatype => 'int',
+        base_name => 'fkiReconciliationID',
+        description => 'The unique ID of the Reconciliation',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigndocument_id_reference' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigndocumentIDReference',
+        description => 'The unique ID of the Ezsigndocument',
+        format => '',
+        read_only => '',
+            },
+    'e_attachment_documenttype' => {
+        datatype => 'FieldEAttachmentDocumenttype',
+        base_name => 'eAttachmentDocumenttype',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_attachment_name' => {
+        datatype => 'string',
+        base_name => 'sAttachmentName',
+        description => 'The name of the Attachment',
+        format => '',
+        read_only => '',
+            },
+    'e_attachment_privacy' => {
+        datatype => 'FieldEAttachmentPrivacy',
+        base_name => 'eAttachmentPrivacy',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'fki_user_id_specific' => {
+        datatype => 'int',
+        base_name => 'fkiUserIDSpecific',
+        description => 'The unique ID of the User',
+        format => '',
+        read_only => '',
+            },
+    'e_attachment_type' => {
+        datatype => 'FieldEAttachmentType',
+        base_name => 'eAttachmentType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'i_attachment_size' => {
+        datatype => 'int',
+        base_name => 'iAttachmentSize',
+        description => 'The size of the Attachment',
+        format => '',
+        read_only => '',
+            },
+    'i_attachment_ed_mmoduleflag' => {
+        datatype => 'int',
+        base_name => 'iAttachmentEDMmoduleflag',
+        description => 'The edmmoduleflag of the Attachment',
+        format => '',
+        read_only => '',
+            },
+    's_attachment_md5' => {
+        datatype => 'string',
+        base_name => 'sAttachmentMD5',
+        description => 'The md5 of the Attachment',
+        format => '',
+        read_only => '',
+            },
+    'b_attachment_deleted' => {
+        datatype => 'boolean',
+        base_name => 'bAttachmentDeleted',
+        description => 'Whether if it&#39;s deleted',
+        format => '',
+        read_only => '',
+            },
+    'b_attachment_valid' => {
+        datatype => 'boolean',
+        base_name => 'bAttachmentValid',
+        description => 'Whether if it&#39;s valid',
+        format => '',
+        read_only => '',
+            },
+    'e_attachment_verified' => {
+        datatype => 'FieldEAttachmentVerified',
+        base_name => 'eAttachmentVerified',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    't_attachment_rejectioncomment' => {
+        datatype => 'string',
+        base_name => 'tAttachmentRejectioncomment',
+        description => 'The rejectioncomment of the Attachment',
+        format => '',
+        read_only => '',
+            },
+    'fki_user_id_owner' => {
+        datatype => 'int',
+        base_name => 'fkiUserIDOwner',
+        description => 'The unique ID of the User',
+        format => '',
+        read_only => '',
+            },
+    'obj_audit' => {
+        datatype => 'CommonAudit',
+        base_name => 'objAudit',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_attachment_id' => 'int',
+    'fki_computer_id' => 'int',
+    'fki_adjustment_id' => 'int',
+    'fki_agent_id' => 'int',
+    'fki_bankaccount_id' => 'int',
+    'fki_broker_id' => 'int',
+    'fki_commissionadvance_id' => 'int',
+    'fki_communication_id' => 'int',
+    'fki_customer_id' => 'int',
+    'fki_customertemplate_id' => 'int',
+    'fki_deposit_id' => 'int',
+    'fki_deposittransitcheque_id' => 'int',
+    'fki_electronicfundstransfer_id' => 'int',
+    'fki_employee_id' => 'int',
+    'fki_externalbroker_id' => 'int',
+    'fki_ezcomadvanceserver_id' => 'int',
+    'fki_ezcomcompany_id' => 'int',
+    'fki_ezsigndocument_id' => 'int',
+    'fki_ghacqcontract_id' => 'int',
+    'fki_inscription_id' => 'int',
+    'fki_inscriptiontemp_id' => 'int',
+    'fki_inscriptionnotauthenticated_id' => 'int',
+    'fki_invoice_id' => 'int',
+    'fki_buyercontract_id' => 'int',
+    'fki_franchisebroker_id' => 'int',
+    'fki_franchiseagence_id' => 'int',
+    'fki_franchiseoffice_id' => 'int',
+    'fki_franchisefranchise_id' => 'int',
+    'fki_franchisecomplaint_id' => 'int',
+    'fki_lead_id' => 'int',
+    'fki_marketingprogram_id' => 'int',
+    'fki_marketingfollow_id' => 'int',
+    'fki_notary_id' => 'int',
+    'fki_officetaxreport_id' => 'int',
+    'fki_otherincome_id' => 'int',
+    'fki_paymentpreparation_id' => 'int',
+    'fki_purchase_id' => 'int',
+    'fki_salary_id' => 'int',
+    'fki_supplier_id' => 'int',
+    'fki_tranqcontract_id' => 'int',
+    'fki_template_id' => 'int',
+    'fki_inscriptionchecklist_id' => 'int',
+    'fki_folder_id' => 'int',
+    'fki_rejectedoffertopurchase_id' => 'int',
+    'fki_disclosure_id' => 'int',
+    'fki_reconciliation_id' => 'int',
+    'fki_ezsigndocument_id_reference' => 'int',
+    'e_attachment_documenttype' => 'FieldEAttachmentDocumenttype',
+    's_attachment_name' => 'string',
+    'e_attachment_privacy' => 'FieldEAttachmentPrivacy',
+    'fki_user_id_specific' => 'int',
+    'e_attachment_type' => 'FieldEAttachmentType',
+    'i_attachment_size' => 'int',
+    'i_attachment_ed_mmoduleflag' => 'int',
+    's_attachment_md5' => 'string',
+    'b_attachment_deleted' => 'boolean',
+    'b_attachment_valid' => 'boolean',
+    'e_attachment_verified' => 'FieldEAttachmentVerified',
+    't_attachment_rejectioncomment' => 'string',
+    'fki_user_id_owner' => 'int',
+    'obj_audit' => 'CommonAudit'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_attachment_id' => 'pkiAttachmentID',
+    'fki_computer_id' => 'fkiComputerID',
+    'fki_adjustment_id' => 'fkiAdjustmentID',
+    'fki_agent_id' => 'fkiAgentID',
+    'fki_bankaccount_id' => 'fkiBankaccountID',
+    'fki_broker_id' => 'fkiBrokerID',
+    'fki_commissionadvance_id' => 'fkiCommissionadvanceID',
+    'fki_communication_id' => 'fkiCommunicationID',
+    'fki_customer_id' => 'fkiCustomerID',
+    'fki_customertemplate_id' => 'fkiCustomertemplateID',
+    'fki_deposit_id' => 'fkiDepositID',
+    'fki_deposittransitcheque_id' => 'fkiDeposittransitchequeID',
+    'fki_electronicfundstransfer_id' => 'fkiElectronicfundstransferID',
+    'fki_employee_id' => 'fkiEmployeeID',
+    'fki_externalbroker_id' => 'fkiExternalbrokerID',
+    'fki_ezcomadvanceserver_id' => 'fkiEzcomadvanceserverID',
+    'fki_ezcomcompany_id' => 'fkiEzcomcompanyID',
+    'fki_ezsigndocument_id' => 'fkiEzsigndocumentID',
+    'fki_ghacqcontract_id' => 'fkiGhacqcontractID',
+    'fki_inscription_id' => 'fkiInscriptionID',
+    'fki_inscriptiontemp_id' => 'fkiInscriptiontempID',
+    'fki_inscriptionnotauthenticated_id' => 'fkiInscriptionnotauthenticatedID',
+    'fki_invoice_id' => 'fkiInvoiceID',
+    'fki_buyercontract_id' => 'fkiBuyercontractID',
+    'fki_franchisebroker_id' => 'fkiFranchisebrokerID',
+    'fki_franchiseagence_id' => 'fkiFranchiseagenceID',
+    'fki_franchiseoffice_id' => 'fkiFranchiseofficeID',
+    'fki_franchisefranchise_id' => 'fkiFranchisefranchiseID',
+    'fki_franchisecomplaint_id' => 'fkiFranchisecomplaintID',
+    'fki_lead_id' => 'fkiLeadID',
+    'fki_marketingprogram_id' => 'fkiMarketingprogramID',
+    'fki_marketingfollow_id' => 'fkiMarketingfollowID',
+    'fki_notary_id' => 'fkiNotaryID',
+    'fki_officetaxreport_id' => 'fkiOfficetaxreportID',
+    'fki_otherincome_id' => 'fkiOtherincomeID',
+    'fki_paymentpreparation_id' => 'fkiPaymentpreparationID',
+    'fki_purchase_id' => 'fkiPurchaseID',
+    'fki_salary_id' => 'fkiSalaryID',
+    'fki_supplier_id' => 'fkiSupplierID',
+    'fki_tranqcontract_id' => 'fkiTranqcontractID',
+    'fki_template_id' => 'fkiTemplateID',
+    'fki_inscriptionchecklist_id' => 'fkiInscriptionchecklistID',
+    'fki_folder_id' => 'fkiFolderID',
+    'fki_rejectedoffertopurchase_id' => 'fkiRejectedoffertopurchaseID',
+    'fki_disclosure_id' => 'fkiDisclosureID',
+    'fki_reconciliation_id' => 'fkiReconciliationID',
+    'fki_ezsigndocument_id_reference' => 'fkiEzsigndocumentIDReference',
+    'e_attachment_documenttype' => 'eAttachmentDocumenttype',
+    's_attachment_name' => 'sAttachmentName',
+    'e_attachment_privacy' => 'eAttachmentPrivacy',
+    'fki_user_id_specific' => 'fkiUserIDSpecific',
+    'e_attachment_type' => 'eAttachmentType',
+    'i_attachment_size' => 'iAttachmentSize',
+    'i_attachment_ed_mmoduleflag' => 'iAttachmentEDMmoduleflag',
+    's_attachment_md5' => 'sAttachmentMD5',
+    'b_attachment_deleted' => 'bAttachmentDeleted',
+    'b_attachment_valid' => 'bAttachmentValid',
+    'e_attachment_verified' => 'eAttachmentVerified',
+    't_attachment_rejectioncomment' => 'tAttachmentRejectioncomment',
+    'fki_user_id_owner' => 'fkiUserIDOwner',
+    'obj_audit' => 'objAudit'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

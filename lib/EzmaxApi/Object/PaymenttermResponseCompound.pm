@@ -33,9 +33,8 @@ use DateTime;
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::FieldEPaymenttermType;
 use EzmaxApi::Object::MultilingualPaymenttermDescription;
-use EzmaxApi::Object::PaymenttermResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::PaymenttermResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Paymentterm Object
@@ -88,18 +87,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object PaymenttermResponse
-    $self->EzmaxApi::Object::PaymenttermResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call PaymenttermResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::PaymenttermResponse::to_hash };
 
     return $_hash;
 }
@@ -130,9 +123,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (PaymenttermResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::PaymenttermResponse::TO_JSON };
 
     return $_data;
 }
@@ -201,9 +191,6 @@ sub from_hash {
         }
     }
 
-    # call parent (PaymenttermResponse) from_hash
-    $self->EzmaxApi::Object::PaymenttermResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -235,14 +222,75 @@ __PACKAGE__->class_documentation({description => 'A Paymentterm Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_paymentterm_id' => {
+        datatype => 'int',
+        base_name => 'pkiPaymenttermID',
+        description => 'The unique ID of the Paymentterm',
+        format => '',
+        read_only => '',
+            },
+    's_paymentterm_code' => {
+        datatype => 'string',
+        base_name => 'sPaymenttermCode',
+        description => 'The code of the Paymentterm',
+        format => '',
+        read_only => '',
+            },
+    'e_paymentterm_type' => {
+        datatype => 'FieldEPaymenttermType',
+        base_name => 'ePaymenttermType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'i_paymentterm_day' => {
+        datatype => 'int',
+        base_name => 'iPaymenttermDay',
+        description => 'The day of the Paymentterm',
+        format => '',
+        read_only => '',
+            },
+    'obj_paymentterm_description' => {
+        datatype => 'MultilingualPaymenttermDescription',
+        base_name => 'objPaymenttermDescription',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'b_paymentterm_isactive' => {
+        datatype => 'boolean',
+        base_name => 'bPaymenttermIsactive',
+        description => 'Whether the Paymentterm is active or not',
+        format => '',
+        read_only => '',
+            },
+    'obj_audit' => {
+        datatype => 'CommonAudit',
+        base_name => 'objAudit',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_paymentterm_id' => 'int',
+    's_paymentterm_code' => 'string',
+    'e_paymentterm_type' => 'FieldEPaymenttermType',
+    'i_paymentterm_day' => 'int',
+    'obj_paymentterm_description' => 'MultilingualPaymenttermDescription',
+    'b_paymentterm_isactive' => 'boolean',
+    'obj_audit' => 'CommonAudit'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_paymentterm_id' => 'pkiPaymenttermID',
+    's_paymentterm_code' => 'sPaymenttermCode',
+    'e_paymentterm_type' => 'ePaymenttermType',
+    'i_paymentterm_day' => 'iPaymenttermDay',
+    'obj_paymentterm_description' => 'objPaymenttermDescription',
+    'b_paymentterm_isactive' => 'bPaymenttermIsactive',
+    'obj_audit' => 'objAudit'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -31,9 +31,8 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::ContactRequestCompoundV2;
-use EzmaxApi::Object::EzsignuserRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignuserRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezsignuser Object and children
@@ -86,18 +85,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsignuserRequest
-    $self->EzmaxApi::Object::EzsignuserRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsignuserRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignuserRequest::to_hash };
 
     return $_hash;
 }
@@ -128,9 +121,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsignuserRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignuserRequest::TO_JSON };
 
     return $_data;
 }
@@ -199,9 +189,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsignuserRequest) from_hash
-    $self->EzmaxApi::Object::EzsignuserRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -233,14 +220,39 @@ __PACKAGE__->class_documentation({description => 'A Ezsignuser Object and childr
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignuser_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignuserID',
+        description => 'The unique ID of the Ezsignuser',
+        format => '',
+        read_only => '',
+            },
+    'fki_contact_id' => {
+        datatype => 'int',
+        base_name => 'fkiContactID',
+        description => 'The unique ID of the Contact',
+        format => '',
+        read_only => '',
+            },
+    'obj_contact' => {
+        datatype => 'ContactRequestCompoundV2',
+        base_name => 'objContact',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_ezsignuser_id' => 'int',
+    'fki_contact_id' => 'int',
+    'obj_contact' => 'ContactRequestCompoundV2'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_ezsignuser_id' => 'pkiEzsignuserID',
+    'fki_contact_id' => 'fkiContactID',
+    'obj_contact' => 'objContact'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

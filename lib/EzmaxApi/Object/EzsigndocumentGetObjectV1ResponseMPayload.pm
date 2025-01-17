@@ -33,11 +33,10 @@ use DateTime;
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::ComputedEEzsigndocumentSteptype;
 use EzmaxApi::Object::CustomEzsignfoldersignerassociationstatusResponse;
-use EzmaxApi::Object::EzsigndocumentResponseCompound;
 use EzmaxApi::Object::EzsigndocumentdependencyResponse;
 use EzmaxApi::Object::FieldEEzsigndocumentStep;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsigndocumentResponseCompound");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #Payload for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}
@@ -90,18 +89,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsigndocumentResponseCompound
-    $self->EzmaxApi::Object::EzsigndocumentResponseCompound::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsigndocumentResponseCompound to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsigndocumentResponseCompound::to_hash };
 
     return $_hash;
 }
@@ -132,9 +125,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsigndocumentResponseCompound) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsigndocumentResponseCompound::TO_JSON };
 
     return $_data;
 }
@@ -203,9 +193,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsigndocumentResponseCompound) from_hash
-    $self->EzmaxApi::Object::EzsigndocumentResponseCompound::from_hash($hash);
-
     return $self;
 }
 
@@ -237,14 +224,291 @@ __PACKAGE__->class_documentation({description => 'Payload for GET /1/object/ezsi
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsigndocument_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsigndocumentID',
+        description => 'The unique ID of the Ezsigndocument',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignfolder_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignfolderID',
+        description => 'The unique ID of the Ezsignfolder',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignfoldersignerassociation_id_declinedtosign' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignfoldersignerassociationIDDeclinedtosign',
+        description => 'The unique ID of the Ezsignfoldersignerassociation',
+        format => '',
+        read_only => '',
+            },
+    'dt_ezsigndocument_duedate' => {
+        datatype => 'string',
+        base_name => 'dtEzsigndocumentDuedate',
+        description => 'The maximum date and time at which the Ezsigndocument can be signed.',
+        format => '',
+        read_only => '',
+            },
+    'dt_ezsignform_completed' => {
+        datatype => 'string',
+        base_name => 'dtEzsignformCompleted',
+        description => 'The date and time at which the Ezsignform has been completed.',
+        format => '',
+        read_only => '',
+            },
+    'fki_language_id' => {
+        datatype => 'int',
+        base_name => 'fkiLanguageID',
+        description => 'The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigndocument_name' => {
+        datatype => 'string',
+        base_name => 'sEzsigndocumentName',
+        description => 'The name of the document that will be presented to Ezsignfoldersignerassociations',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsigndocument_step' => {
+        datatype => 'FieldEEzsigndocumentStep',
+        base_name => 'eEzsigndocumentStep',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'dt_ezsigndocument_firstsend' => {
+        datatype => 'string',
+        base_name => 'dtEzsigndocumentFirstsend',
+        description => 'The date and time when the Ezsigndocument was first sent.',
+        format => '',
+        read_only => '',
+            },
+    'dt_ezsigndocument_lastsend' => {
+        datatype => 'string',
+        base_name => 'dtEzsigndocumentLastsend',
+        description => 'The date and time when the Ezsigndocument was sent the last time.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_order' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentOrder',
+        description => 'The order in which the Ezsigndocument will be presented to the signatory in the Ezsignfolder.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_pagetotal' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentPagetotal',
+        description => 'The number of pages in the Ezsigndocument.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_signaturesigned' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentSignaturesigned',
+        description => 'The number of signatures that were signed in the document.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_signaturetotal' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentSignaturetotal',
+        description => 'The number of total signatures that were requested in the Ezsigndocument.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_formfieldtotal' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentFormfieldtotal',
+        description => 'The number of total Ezsignformfield that were requested in the Ezsigndocument.',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigndocument_md5initial' => {
+        datatype => 'string',
+        base_name => 'sEzsigndocumentMD5initial',
+        description => 'MD5 Hash of the initial PDF Document before signatures were applied to it.',
+        format => '',
+        read_only => '',
+            },
+    't_ezsigndocument_declinedtosignreason' => {
+        datatype => 'string',
+        base_name => 'tEzsigndocumentDeclinedtosignreason',
+        description => 'A custom text message that will contain the refusal message if the Ezsigndocument is declined to sign',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigndocument_md5signed' => {
+        datatype => 'string',
+        base_name => 'sEzsigndocumentMD5signed',
+        description => 'MD5 Hash of the final PDF Document after all signatures were applied to it.',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsigndocument_ezsignform' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigndocumentEzsignform',
+        description => 'If the Ezsigndocument contains an Ezsignform or not',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsigndocument_hassignedsignatures' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigndocumentHassignedsignatures',
+        description => 'If the Ezsigndocument contains signed signatures (From internal or external sources)',
+        format => '',
+        read_only => '',
+            },
+    'obj_audit' => {
+        datatype => 'CommonAudit',
+        base_name => 'objAudit',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigndocument_externalid' => {
+        datatype => 'string',
+        base_name => 'sEzsigndocumentExternalid',
+        description => 'This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. ',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_ezsignsignatureattachmenttotal' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentEzsignsignatureattachmenttotal',
+        description => 'The number of Ezsigndocumentattachment total',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_ezsigndiscussiontotal' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentEzsigndiscussiontotal',
+        description => 'The total number of Ezsigndiscussions',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsigndocument_steptype' => {
+        datatype => 'ComputedEEzsigndocumentSteptype',
+        base_name => 'eEzsigndocumentSteptype',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_stepformtotal' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentStepformtotal',
+        description => 'The total number of steps in the form filling phase',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_stepformcurrent' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentStepformcurrent',
+        description => 'The current step in the form filling phase',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_stepsignaturetotal' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentStepsignaturetotal',
+        description => 'The total number of steps in the signature filling phase',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigndocument_stepsignature_current' => {
+        datatype => 'int',
+        base_name => 'iEzsigndocumentStepsignatureCurrent',
+        description => 'The current step in the signature phase',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_ezsignfoldersignerassociationstatus' => {
+        datatype => 'ARRAY[CustomEzsignfoldersignerassociationstatusResponse]',
+        base_name => 'a_objEzsignfoldersignerassociationstatus',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_ezsigndocumentdependency' => {
+        datatype => 'ARRAY[EzsigndocumentdependencyResponse]',
+        base_name => 'a_objEzsigndocumentdependency',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_ezsigndocument_id' => 'int',
+    'fki_ezsignfolder_id' => 'int',
+    'fki_ezsignfoldersignerassociation_id_declinedtosign' => 'int',
+    'dt_ezsigndocument_duedate' => 'string',
+    'dt_ezsignform_completed' => 'string',
+    'fki_language_id' => 'int',
+    's_ezsigndocument_name' => 'string',
+    'e_ezsigndocument_step' => 'FieldEEzsigndocumentStep',
+    'dt_ezsigndocument_firstsend' => 'string',
+    'dt_ezsigndocument_lastsend' => 'string',
+    'i_ezsigndocument_order' => 'int',
+    'i_ezsigndocument_pagetotal' => 'int',
+    'i_ezsigndocument_signaturesigned' => 'int',
+    'i_ezsigndocument_signaturetotal' => 'int',
+    'i_ezsigndocument_formfieldtotal' => 'int',
+    's_ezsigndocument_md5initial' => 'string',
+    't_ezsigndocument_declinedtosignreason' => 'string',
+    's_ezsigndocument_md5signed' => 'string',
+    'b_ezsigndocument_ezsignform' => 'boolean',
+    'b_ezsigndocument_hassignedsignatures' => 'boolean',
+    'obj_audit' => 'CommonAudit',
+    's_ezsigndocument_externalid' => 'string',
+    'i_ezsigndocument_ezsignsignatureattachmenttotal' => 'int',
+    'i_ezsigndocument_ezsigndiscussiontotal' => 'int',
+    'e_ezsigndocument_steptype' => 'ComputedEEzsigndocumentSteptype',
+    'i_ezsigndocument_stepformtotal' => 'int',
+    'i_ezsigndocument_stepformcurrent' => 'int',
+    'i_ezsigndocument_stepsignaturetotal' => 'int',
+    'i_ezsigndocument_stepsignature_current' => 'int',
+    'a_obj_ezsignfoldersignerassociationstatus' => 'ARRAY[CustomEzsignfoldersignerassociationstatusResponse]',
+    'a_obj_ezsigndocumentdependency' => 'ARRAY[EzsigndocumentdependencyResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_ezsigndocument_id' => 'pkiEzsigndocumentID',
+    'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
+    'fki_ezsignfoldersignerassociation_id_declinedtosign' => 'fkiEzsignfoldersignerassociationIDDeclinedtosign',
+    'dt_ezsigndocument_duedate' => 'dtEzsigndocumentDuedate',
+    'dt_ezsignform_completed' => 'dtEzsignformCompleted',
+    'fki_language_id' => 'fkiLanguageID',
+    's_ezsigndocument_name' => 'sEzsigndocumentName',
+    'e_ezsigndocument_step' => 'eEzsigndocumentStep',
+    'dt_ezsigndocument_firstsend' => 'dtEzsigndocumentFirstsend',
+    'dt_ezsigndocument_lastsend' => 'dtEzsigndocumentLastsend',
+    'i_ezsigndocument_order' => 'iEzsigndocumentOrder',
+    'i_ezsigndocument_pagetotal' => 'iEzsigndocumentPagetotal',
+    'i_ezsigndocument_signaturesigned' => 'iEzsigndocumentSignaturesigned',
+    'i_ezsigndocument_signaturetotal' => 'iEzsigndocumentSignaturetotal',
+    'i_ezsigndocument_formfieldtotal' => 'iEzsigndocumentFormfieldtotal',
+    's_ezsigndocument_md5initial' => 'sEzsigndocumentMD5initial',
+    't_ezsigndocument_declinedtosignreason' => 'tEzsigndocumentDeclinedtosignreason',
+    's_ezsigndocument_md5signed' => 'sEzsigndocumentMD5signed',
+    'b_ezsigndocument_ezsignform' => 'bEzsigndocumentEzsignform',
+    'b_ezsigndocument_hassignedsignatures' => 'bEzsigndocumentHassignedsignatures',
+    'obj_audit' => 'objAudit',
+    's_ezsigndocument_externalid' => 'sEzsigndocumentExternalid',
+    'i_ezsigndocument_ezsignsignatureattachmenttotal' => 'iEzsigndocumentEzsignsignatureattachmenttotal',
+    'i_ezsigndocument_ezsigndiscussiontotal' => 'iEzsigndocumentEzsigndiscussiontotal',
+    'e_ezsigndocument_steptype' => 'eEzsigndocumentSteptype',
+    'i_ezsigndocument_stepformtotal' => 'iEzsigndocumentStepformtotal',
+    'i_ezsigndocument_stepformcurrent' => 'iEzsigndocumentStepformcurrent',
+    'i_ezsigndocument_stepsignaturetotal' => 'iEzsigndocumentStepsignaturetotal',
+    'i_ezsigndocument_stepsignature_current' => 'iEzsigndocumentStepsignatureCurrent',
+    'a_obj_ezsignfoldersignerassociationstatus' => 'a_objEzsignfoldersignerassociationstatus',
+    'a_obj_ezsigndocumentdependency' => 'a_objEzsigndocumentdependency'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

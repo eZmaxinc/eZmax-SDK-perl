@@ -30,9 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::UsergroupexternalmembershipResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::UsergroupexternalmembershipResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Usergroupexternalmembership Object
@@ -85,18 +84,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object UsergroupexternalmembershipResponse
-    $self->EzmaxApi::Object::UsergroupexternalmembershipResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call UsergroupexternalmembershipResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::UsergroupexternalmembershipResponse::to_hash };
 
     return $_hash;
 }
@@ -127,9 +120,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (UsergroupexternalmembershipResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::UsergroupexternalmembershipResponse::TO_JSON };
 
     return $_data;
 }
@@ -198,9 +188,6 @@ sub from_hash {
         }
     }
 
-    # call parent (UsergroupexternalmembershipResponse) from_hash
-    $self->EzmaxApi::Object::UsergroupexternalmembershipResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -232,14 +219,84 @@ __PACKAGE__->class_documentation({description => 'A Usergroupexternalmembership 
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_usergroupexternalmembership_id' => {
+        datatype => 'int',
+        base_name => 'pkiUsergroupexternalmembershipID',
+        description => 'The unique ID of the Usergroupexternalmembership',
+        format => '',
+        read_only => '',
+            },
+    'fki_usergroupexternal_id' => {
+        datatype => 'int',
+        base_name => 'fkiUsergroupexternalID',
+        description => 'The unique ID of the Usergroupexternal',
+        format => '',
+        read_only => '',
+            },
+    'fki_user_id' => {
+        datatype => 'int',
+        base_name => 'fkiUserID',
+        description => 'The unique ID of the User',
+        format => '',
+        read_only => '',
+            },
+    's_user_firstname' => {
+        datatype => 'string',
+        base_name => 'sUserFirstname',
+        description => 'The first name of the user',
+        format => '',
+        read_only => '',
+            },
+    's_user_lastname' => {
+        datatype => 'string',
+        base_name => 'sUserLastname',
+        description => 'The last name of the user',
+        format => '',
+        read_only => '',
+            },
+    's_user_loginname' => {
+        datatype => 'string',
+        base_name => 'sUserLoginname',
+        description => 'The login name of the User.',
+        format => '',
+        read_only => '',
+            },
+    's_email_address' => {
+        datatype => 'string',
+        base_name => 'sEmailAddress',
+        description => 'The email address.',
+        format => '',
+        read_only => '',
+            },
+    's_usergroupexternal_name' => {
+        datatype => 'string',
+        base_name => 'sUsergroupexternalName',
+        description => 'The name of the Usergroupexternal',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_usergroupexternalmembership_id' => 'int',
+    'fki_usergroupexternal_id' => 'int',
+    'fki_user_id' => 'int',
+    's_user_firstname' => 'string',
+    's_user_lastname' => 'string',
+    's_user_loginname' => 'string',
+    's_email_address' => 'string',
+    's_usergroupexternal_name' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_usergroupexternalmembership_id' => 'pkiUsergroupexternalmembershipID',
+    'fki_usergroupexternal_id' => 'fkiUsergroupexternalID',
+    'fki_user_id' => 'fkiUserID',
+    's_user_firstname' => 'sUserFirstname',
+    's_user_lastname' => 'sUserLastname',
+    's_user_loginname' => 'sUserLoginname',
+    's_email_address' => 'sEmailAddress',
+    's_usergroupexternal_name' => 'sUsergroupexternalName'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

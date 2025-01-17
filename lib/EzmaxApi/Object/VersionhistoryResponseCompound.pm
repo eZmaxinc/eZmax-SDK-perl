@@ -33,9 +33,8 @@ use DateTime;
 use EzmaxApi::Object::FieldEVersionhistoryType;
 use EzmaxApi::Object::FieldEVersionhistoryUsertype;
 use EzmaxApi::Object::MultilingualVersionhistoryDetail;
-use EzmaxApi::Object::VersionhistoryResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::VersionhistoryResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Versionhistory Object
@@ -88,18 +87,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object VersionhistoryResponse
-    $self->EzmaxApi::Object::VersionhistoryResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call VersionhistoryResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::VersionhistoryResponse::to_hash };
 
     return $_hash;
 }
@@ -130,9 +123,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (VersionhistoryResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::VersionhistoryResponse::TO_JSON };
 
     return $_data;
 }
@@ -201,9 +191,6 @@ sub from_hash {
         }
     }
 
-    # call parent (VersionhistoryResponse) from_hash
-    $self->EzmaxApi::Object::VersionhistoryResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -235,14 +222,111 @@ __PACKAGE__->class_documentation({description => 'A Versionhistory Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_versionhistory_id' => {
+        datatype => 'int',
+        base_name => 'pkiVersionhistoryID',
+        description => 'The unique ID of the Versionhistory',
+        format => '',
+        read_only => '',
+            },
+    'fki_module_id' => {
+        datatype => 'int',
+        base_name => 'fkiModuleID',
+        description => 'The unique ID of the Module',
+        format => '',
+        read_only => '',
+            },
+    'fki_modulesection_id' => {
+        datatype => 'int',
+        base_name => 'fkiModulesectionID',
+        description => 'The unique ID of the Modulesection',
+        format => '',
+        read_only => '',
+            },
+    's_module_name_x' => {
+        datatype => 'string',
+        base_name => 'sModuleNameX',
+        description => 'The Name of the Module in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    's_modulesection_name_x' => {
+        datatype => 'string',
+        base_name => 'sModulesectionNameX',
+        description => 'The Name of the Modulesection in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    'e_versionhistory_usertype' => {
+        datatype => 'FieldEVersionhistoryUsertype',
+        base_name => 'eVersionhistoryUsertype',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_versionhistory_detail' => {
+        datatype => 'MultilingualVersionhistoryDetail',
+        base_name => 'objVersionhistoryDetail',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'dt_versionhistory_date' => {
+        datatype => 'string',
+        base_name => 'dtVersionhistoryDate',
+        description => 'The date  at which the Versionhistory was published or should be published',
+        format => '',
+        read_only => '',
+            },
+    'dt_versionhistory_dateend' => {
+        datatype => 'string',
+        base_name => 'dtVersionhistoryDateend',
+        description => 'The date  at which the Versionhistory will no longer be visible',
+        format => '',
+        read_only => '',
+            },
+    'e_versionhistory_type' => {
+        datatype => 'FieldEVersionhistoryType',
+        base_name => 'eVersionhistoryType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'b_versionhistory_draft' => {
+        datatype => 'boolean',
+        base_name => 'bVersionhistoryDraft',
+        description => 'Whether the Versionhistory is published or still a draft',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_versionhistory_id' => 'int',
+    'fki_module_id' => 'int',
+    'fki_modulesection_id' => 'int',
+    's_module_name_x' => 'string',
+    's_modulesection_name_x' => 'string',
+    'e_versionhistory_usertype' => 'FieldEVersionhistoryUsertype',
+    'obj_versionhistory_detail' => 'MultilingualVersionhistoryDetail',
+    'dt_versionhistory_date' => 'string',
+    'dt_versionhistory_dateend' => 'string',
+    'e_versionhistory_type' => 'FieldEVersionhistoryType',
+    'b_versionhistory_draft' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_versionhistory_id' => 'pkiVersionhistoryID',
+    'fki_module_id' => 'fkiModuleID',
+    'fki_modulesection_id' => 'fkiModulesectionID',
+    's_module_name_x' => 'sModuleNameX',
+    's_modulesection_name_x' => 'sModulesectionNameX',
+    'e_versionhistory_usertype' => 'eVersionhistoryUsertype',
+    'obj_versionhistory_detail' => 'objVersionhistoryDetail',
+    'dt_versionhistory_date' => 'dtVersionhistoryDate',
+    'dt_versionhistory_dateend' => 'dtVersionhistoryDateend',
+    'e_versionhistory_type' => 'eVersionhistoryType',
+    'b_versionhistory_draft' => 'bVersionhistoryDraft'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

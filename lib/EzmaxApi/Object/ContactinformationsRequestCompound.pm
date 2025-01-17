@@ -30,13 +30,12 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::AddressRequest;
-use EzmaxApi::Object::ContactinformationsRequest;
-use EzmaxApi::Object::EmailRequest;
-use EzmaxApi::Object::PhoneRequest;
-use EzmaxApi::Object::WebsiteRequest;
+use EzmaxApi::Object::AddressRequestCompound;
+use EzmaxApi::Object::EmailRequestCompound;
+use EzmaxApi::Object::PhoneRequestCompound;
+use EzmaxApi::Object::WebsiteRequestCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::ContactinformationsRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Contactinformations Object and children to create a complete structure
@@ -89,18 +88,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object ContactinformationsRequest
-    $self->EzmaxApi::Object::ContactinformationsRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call ContactinformationsRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::ContactinformationsRequest::to_hash };
 
     return $_hash;
 }
@@ -131,9 +124,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (ContactinformationsRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::ContactinformationsRequest::TO_JSON };
 
     return $_data;
 }
@@ -202,9 +192,6 @@ sub from_hash {
         }
     }
 
-    # call parent (ContactinformationsRequest) from_hash
-    $self->EzmaxApi::Object::ContactinformationsRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -236,6 +223,34 @@ __PACKAGE__->class_documentation({description => 'A Contactinformations Object a
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'i_address_default' => {
+        datatype => 'int',
+        base_name => 'iAddressDefault',
+        description => 'The index in the a_objAddress array (zero based index) representing the Address object that should become the default one.  You can leave the value to 0 if the array is empty.',
+        format => '',
+        read_only => '',
+            },
+    'i_phone_default' => {
+        datatype => 'int',
+        base_name => 'iPhoneDefault',
+        description => 'The index in the a_objPhone array (zero based index) representing the Phone object that should become the default one.  You can leave the value to 0 if the array is empty.',
+        format => '',
+        read_only => '',
+            },
+    'i_email_default' => {
+        datatype => 'int',
+        base_name => 'iEmailDefault',
+        description => 'The index in the a_objEmail array (zero based index) representing the Email object that should become the default one.  You can leave the value to 0 if the array is empty.',
+        format => '',
+        read_only => '',
+            },
+    'i_website_default' => {
+        datatype => 'int',
+        base_name => 'iWebsiteDefault',
+        description => 'The index in the a_objWebsite array (zero based index) representing the Website object that should become the default one.  You can leave the value to 0 if the array is empty.',
+        format => '',
+        read_only => '',
+            },
     'a_obj_address' => {
         datatype => 'ARRAY[AddressRequestCompound]',
         base_name => 'a_objAddress',
@@ -267,6 +282,10 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'i_address_default' => 'int',
+    'i_phone_default' => 'int',
+    'i_email_default' => 'int',
+    'i_website_default' => 'int',
     'a_obj_address' => 'ARRAY[AddressRequestCompound]',
     'a_obj_phone' => 'ARRAY[PhoneRequestCompound]',
     'a_obj_email' => 'ARRAY[EmailRequestCompound]',
@@ -274,6 +293,10 @@ __PACKAGE__->openapi_types( {
 } );
 
 __PACKAGE__->attribute_map( {
+    'i_address_default' => 'iAddressDefault',
+    'i_phone_default' => 'iPhoneDefault',
+    'i_email_default' => 'iEmailDefault',
+    'i_website_default' => 'iWebsiteDefault',
     'a_obj_address' => 'a_objAddress',
     'a_obj_phone' => 'a_objPhone',
     'a_obj_email' => 'a_objEmail',

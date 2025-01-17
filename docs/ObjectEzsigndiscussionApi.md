@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigndiscussion_delete_object_v1**
-> CommonResponse ezsigndiscussion_delete_object_v1(pki_ezsigndiscussion_id => $pki_ezsigndiscussion_id)
+> EzsigndiscussionDeleteObjectV1Response ezsigndiscussion_delete_object_v1(pki_ezsigndiscussion_id => $pki_ezsigndiscussion_id)
 
 Delete an existing Ezsigndiscussion
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigndiscussionDeleteObjectV1Response**](EzsigndiscussionDeleteObjectV1Response.md)
 
 ### Authorization
 

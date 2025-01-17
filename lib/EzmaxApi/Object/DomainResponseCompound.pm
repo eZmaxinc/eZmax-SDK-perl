@@ -31,9 +31,9 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
-use EzmaxApi::Object::DomainResponse;
+use EzmaxApi::Object::CustomDnsrecordResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::DomainResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Domain Object
@@ -86,18 +86,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object DomainResponse
-    $self->EzmaxApi::Object::DomainResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call DomainResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::DomainResponse::to_hash };
 
     return $_hash;
 }
@@ -128,9 +122,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (DomainResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::DomainResponse::TO_JSON };
 
     return $_data;
 }
@@ -199,9 +190,6 @@ sub from_hash {
         }
     }
 
-    # call parent (DomainResponse) from_hash
-    $self->EzmaxApi::Object::DomainResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -233,6 +221,48 @@ __PACKAGE__->class_documentation({description => 'A Domain Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_domain_id' => {
+        datatype => 'int',
+        base_name => 'pkiDomainID',
+        description => 'The unique ID of the Domain',
+        format => '',
+        read_only => '',
+            },
+    's_domain_name' => {
+        datatype => 'string',
+        base_name => 'sDomainName',
+        description => 'The name of the Domain',
+        format => '',
+        read_only => '',
+            },
+    'b_domain_validdkim' => {
+        datatype => 'boolean',
+        base_name => 'bDomainValiddkim',
+        description => 'Whether the DKIM is valid or not',
+        format => '',
+        read_only => '',
+            },
+    'b_domain_validmailfrom' => {
+        datatype => 'boolean',
+        base_name => 'bDomainValidmailfrom',
+        description => 'Whether the mail from is valid or not',
+        format => '',
+        read_only => '',
+            },
+    'b_domain_validcustomer' => {
+        datatype => 'boolean',
+        base_name => 'bDomainValidcustomer',
+        description => 'Whether the customer has access to it or not',
+        format => '',
+        read_only => '',
+            },
+    'obj_audit' => {
+        datatype => 'CommonAudit',
+        base_name => 'objAudit',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'a_obj_dnsrecord' => {
         datatype => 'ARRAY[CustomDnsrecordResponse]',
         base_name => 'a_objDnsrecord',
@@ -243,10 +273,22 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_domain_id' => 'int',
+    's_domain_name' => 'string',
+    'b_domain_validdkim' => 'boolean',
+    'b_domain_validmailfrom' => 'boolean',
+    'b_domain_validcustomer' => 'boolean',
+    'obj_audit' => 'CommonAudit',
     'a_obj_dnsrecord' => 'ARRAY[CustomDnsrecordResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_domain_id' => 'pkiDomainID',
+    's_domain_name' => 'sDomainName',
+    'b_domain_validdkim' => 'bDomainValiddkim',
+    'b_domain_validmailfrom' => 'bDomainValidmailfrom',
+    'b_domain_validcustomer' => 'bDomainValidcustomer',
+    'obj_audit' => 'objAudit',
     'a_obj_dnsrecord' => 'a_objDnsrecord'
 } );
 

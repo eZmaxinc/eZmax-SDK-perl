@@ -30,11 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsigntemplateRequestV3;
 use EzmaxApi::Object::FieldEEzsigntemplateRecognition;
 use EzmaxApi::Object::FieldEEzsigntemplateType;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsigntemplateRequestV3");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezsigntemplate Object and children
@@ -87,18 +86,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsigntemplateRequestV3
-    $self->EzmaxApi::Object::EzsigntemplateRequestV3::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsigntemplateRequestV3 to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsigntemplateRequestV3::to_hash };
 
     return $_hash;
 }
@@ -129,9 +122,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsigntemplateRequestV3) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsigntemplateRequestV3::TO_JSON };
 
     return $_data;
 }
@@ -200,9 +190,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsigntemplateRequestV3) from_hash
-    $self->EzmaxApi::Object::EzsigntemplateRequestV3::from_hash($hash);
-
     return $self;
 }
 
@@ -234,14 +221,111 @@ __PACKAGE__->class_documentation({description => 'A Ezsigntemplate Object and ch
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsigntemplate_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsigntemplateID',
+        description => 'The unique ID of the Ezsigntemplate',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignfoldertype_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignfoldertypeID',
+        description => 'The unique ID of the Ezsignfoldertype.',
+        format => '',
+        read_only => '',
+            },
+    'fki_language_id' => {
+        datatype => 'int',
+        base_name => 'fkiLanguageID',
+        description => 'The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezdoctemplatedocument_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzdoctemplatedocumentID',
+        description => 'The unique ID of the Ezdoctemplatedocument',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigntemplate_description' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplateDescription',
+        description => 'The description of the Ezsigntemplate',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigntemplate_externaldescription' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplateExternaldescription',
+        description => 'The external description of the Ezsigntemplate',
+        format => '',
+        read_only => '',
+            },
+    't_ezsigntemplate_comment' => {
+        datatype => 'string',
+        base_name => 'tEzsigntemplateComment',
+        description => 'The comment of the Ezsigntemplate',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsigntemplate_recognition' => {
+        datatype => 'FieldEEzsigntemplateRecognition',
+        base_name => 'eEzsigntemplateRecognition',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigntemplate_filenameregexp' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplateFilenameregexp',
+        description => 'The filename regexp of the Ezsigntemplate.',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsigntemplate_adminonly' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplateAdminonly',
+        description => 'Whether the Ezsigntemplate can be accessed by admin users only (eUserType&#x3D;Normal)',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsigntemplate_type' => {
+        datatype => 'FieldEEzsigntemplateType',
+        base_name => 'eEzsigntemplateType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_ezsigntemplate_id' => 'int',
+    'fki_ezsignfoldertype_id' => 'int',
+    'fki_language_id' => 'int',
+    'fki_ezdoctemplatedocument_id' => 'int',
+    's_ezsigntemplate_description' => 'string',
+    's_ezsigntemplate_externaldescription' => 'string',
+    't_ezsigntemplate_comment' => 'string',
+    'e_ezsigntemplate_recognition' => 'FieldEEzsigntemplateRecognition',
+    's_ezsigntemplate_filenameregexp' => 'string',
+    'b_ezsigntemplate_adminonly' => 'boolean',
+    'e_ezsigntemplate_type' => 'FieldEEzsigntemplateType'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_ezsigntemplate_id' => 'pkiEzsigntemplateID',
+    'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
+    'fki_language_id' => 'fkiLanguageID',
+    'fki_ezdoctemplatedocument_id' => 'fkiEzdoctemplatedocumentID',
+    's_ezsigntemplate_description' => 'sEzsigntemplateDescription',
+    's_ezsigntemplate_externaldescription' => 'sEzsigntemplateExternaldescription',
+    't_ezsigntemplate_comment' => 'tEzsigntemplateComment',
+    'e_ezsigntemplate_recognition' => 'eEzsigntemplateRecognition',
+    's_ezsigntemplate_filenameregexp' => 'sEzsigntemplateFilenameregexp',
+    'b_ezsigntemplate_adminonly' => 'bEzsigntemplateAdminonly',
+    'e_ezsigntemplate_type' => 'eEzsigntemplateType'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

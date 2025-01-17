@@ -30,11 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsignbulksenddocumentmappingResponse;
 use EzmaxApi::Object::EzsigntemplateResponseCompound;
 use EzmaxApi::Object::EzsigntemplatepackageResponseCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignbulksenddocumentmappingResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezsignbulksenddocumentmapping Object
@@ -87,18 +86,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsignbulksenddocumentmappingResponse
-    $self->EzmaxApi::Object::EzsignbulksenddocumentmappingResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsignbulksenddocumentmappingResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignbulksenddocumentmappingResponse::to_hash };
 
     return $_hash;
 }
@@ -129,9 +122,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsignbulksenddocumentmappingResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignbulksenddocumentmappingResponse::TO_JSON };
 
     return $_data;
 }
@@ -200,9 +190,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsignbulksenddocumentmappingResponse) from_hash
-    $self->EzmaxApi::Object::EzsignbulksenddocumentmappingResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -234,6 +221,41 @@ __PACKAGE__->class_documentation({description => 'A Ezsignbulksenddocumentmappin
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignbulksenddocumentmapping_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignbulksenddocumentmappingID',
+        description => 'The unique ID of the Ezsignbulksenddocumentmapping.',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignbulksend_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignbulksendID',
+        description => 'The unique ID of the Ezsignbulksend',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigntemplatepackage_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigntemplatepackageID',
+        description => 'The unique ID of the Ezsigntemplatepackage',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigntemplate_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigntemplateID',
+        description => 'The unique ID of the Ezsigntemplate',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignbulksenddocumentmapping_order' => {
+        datatype => 'int',
+        base_name => 'iEzsignbulksenddocumentmappingOrder',
+        description => 'The order in which the Ezsigntemplate or Ezsigntemplatepackage will be presented to the signatory in the Ezsignfolder.',
+        format => '',
+        read_only => '',
+            },
     'obj_ezsigntemplate' => {
         datatype => 'EzsigntemplateResponseCompound',
         base_name => 'objEzsigntemplate',
@@ -251,11 +273,21 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezsignbulksenddocumentmapping_id' => 'int',
+    'fki_ezsignbulksend_id' => 'int',
+    'fki_ezsigntemplatepackage_id' => 'int',
+    'fki_ezsigntemplate_id' => 'int',
+    'i_ezsignbulksenddocumentmapping_order' => 'int',
     'obj_ezsigntemplate' => 'EzsigntemplateResponseCompound',
     'obj_ezsigntemplatepackage' => 'EzsigntemplatepackageResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezsignbulksenddocumentmapping_id' => 'pkiEzsignbulksenddocumentmappingID',
+    'fki_ezsignbulksend_id' => 'fkiEzsignbulksendID',
+    'fki_ezsigntemplatepackage_id' => 'fkiEzsigntemplatepackageID',
+    'fki_ezsigntemplate_id' => 'fkiEzsigntemplateID',
+    'i_ezsignbulksenddocumentmapping_order' => 'iEzsignbulksenddocumentmappingOrder',
     'obj_ezsigntemplate' => 'objEzsigntemplate',
     'obj_ezsigntemplatepackage' => 'objEzsigntemplatepackage'
 } );

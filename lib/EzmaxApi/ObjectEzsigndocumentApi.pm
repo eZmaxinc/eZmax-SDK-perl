@@ -71,10 +71,10 @@ sub new {
     __PACKAGE__->method_documentation->{ 'ezsigndocument_apply_ezsigntemplate_v1' } = {
         summary => 'Apply an Ezsigntemplate to the Ezsigndocument.',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigndocumentApplyEzsigntemplateV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigndocumentApplyEzsigntemplateV1Response
 #
 sub ezsigndocument_apply_ezsigntemplate_v1 {
     my ($self, %args) = @_;
@@ -127,7 +127,7 @@ sub ezsigndocument_apply_ezsigntemplate_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentApplyEzsigntemplateV1Response', $response);
     return $_response_object;
 }
 
@@ -598,10 +598,10 @@ sub ezsigndocument_create_object_v3 {
     __PACKAGE__->method_documentation->{ 'ezsigndocument_decline_to_sign_v1' } = {
         summary => 'Decline to sign',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigndocumentDeclineToSignV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigndocumentDeclineToSignV1Response
 #
 sub ezsigndocument_decline_to_sign_v1 {
     my ($self, %args) = @_;
@@ -654,7 +654,7 @@ sub ezsigndocument_decline_to_sign_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentDeclineToSignV1Response', $response);
     return $_response_object;
 }
 
@@ -675,10 +675,10 @@ sub ezsigndocument_decline_to_sign_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigndocument_delete_object_v1' } = {
         summary => 'Delete an existing Ezsigndocument',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigndocumentDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigndocumentDeleteObjectV1Response
 #
 sub ezsigndocument_delete_object_v1 {
     my ($self, %args) = @_;
@@ -721,7 +721,7 @@ sub ezsigndocument_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentDeleteObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -1080,10 +1080,10 @@ sub ezsigndocument_edit_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigndocument_end_prematurely_v1' } = {
         summary => 'End prematurely',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigndocumentEndPrematurelyV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigndocumentEndPrematurelyV1Response
 #
 sub ezsigndocument_end_prematurely_v1 {
     my ($self, %args) = @_;
@@ -1136,7 +1136,7 @@ sub ezsigndocument_end_prematurely_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentEndPrematurelyV1Response', $response);
     return $_response_object;
 }
 
@@ -1246,10 +1246,10 @@ sub ezsigndocument_extract_text_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigndocument_flatten_v1' } = {
         summary => 'Flatten',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigndocumentFlattenV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigndocumentFlattenV1Response
 #
 sub ezsigndocument_flatten_v1 {
     my ($self, %args) = @_;
@@ -1302,7 +1302,7 @@ sub ezsigndocument_flatten_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentFlattenV1Response', $response);
     return $_response_object;
 }
 
@@ -2368,10 +2368,10 @@ sub ezsigndocument_get_words_positions_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigndocument_patch_object_v1' } = {
         summary => 'Patch an existing Ezsigndocument',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigndocumentPatchObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigndocumentPatchObjectV1Response
 #
 sub ezsigndocument_patch_object_v1 {
     my ($self, %args) = @_;
@@ -2424,7 +2424,7 @@ sub ezsigndocument_patch_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentPatchObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -2451,10 +2451,10 @@ sub ezsigndocument_patch_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigndocument_submit_ezsignform_v1' } = {
         summary => 'Submit the Ezsignform',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigndocumentSubmitEzsignformV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigndocumentSubmitEzsignformV1Response
 #
 sub ezsigndocument_submit_ezsignform_v1 {
     my ($self, %args) = @_;
@@ -2507,7 +2507,7 @@ sub ezsigndocument_submit_ezsignform_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentSubmitEzsignformV1Response', $response);
     return $_response_object;
 }
 
@@ -2534,10 +2534,10 @@ sub ezsigndocument_submit_ezsignform_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigndocument_unsend_v1' } = {
         summary => 'Unsend the Ezsigndocument',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigndocumentUnsendV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigndocumentUnsendV1Response
 #
 sub ezsigndocument_unsend_v1 {
     my ($self, %args) = @_;
@@ -2590,7 +2590,7 @@ sub ezsigndocument_unsend_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentUnsendV1Response', $response);
     return $_response_object;
 }
 

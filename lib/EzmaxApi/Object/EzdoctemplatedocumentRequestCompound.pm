@@ -30,11 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzdoctemplatedocumentRequest;
 use EzmaxApi::Object::FieldEEzdoctemplatedocumentPrivacylevel;
 use EzmaxApi::Object::MultilingualEzdoctemplatedocumentName;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzdoctemplatedocumentRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezdoctemplatedocument Object and children
@@ -87,18 +86,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzdoctemplatedocumentRequest
-    $self->EzmaxApi::Object::EzdoctemplatedocumentRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzdoctemplatedocumentRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzdoctemplatedocumentRequest::to_hash };
 
     return $_hash;
 }
@@ -129,9 +122,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzdoctemplatedocumentRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzdoctemplatedocumentRequest::TO_JSON };
 
     return $_data;
 }
@@ -200,9 +190,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzdoctemplatedocumentRequest) from_hash
-    $self->EzmaxApi::Object::EzdoctemplatedocumentRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -234,14 +221,84 @@ __PACKAGE__->class_documentation({description => 'A Ezdoctemplatedocument Object
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezdoctemplatedocument_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzdoctemplatedocumentID',
+        description => 'The unique ID of the Ezdoctemplatedocument',
+        format => '',
+        read_only => '',
+            },
+    'fki_language_id' => {
+        datatype => 'int',
+        base_name => 'fkiLanguageID',
+        description => 'The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignfoldertype_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignfoldertypeID',
+        description => 'The unique ID of the Ezsignfoldertype.',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezdoctemplatetype_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzdoctemplatetypeID',
+        description => 'The unique ID of the Ezdoctemplatetype',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezdoctemplatefieldtypecategory_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzdoctemplatefieldtypecategoryID',
+        description => 'The unique ID of the Ezdoctemplatefieldtypecategory',
+        format => '',
+        read_only => '',
+            },
+    'e_ezdoctemplatedocument_privacylevel' => {
+        datatype => 'FieldEEzdoctemplatedocumentPrivacylevel',
+        base_name => 'eEzdoctemplatedocumentPrivacylevel',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'b_ezdoctemplatedocument_isactive' => {
+        datatype => 'boolean',
+        base_name => 'bEzdoctemplatedocumentIsactive',
+        description => 'Whether the ezdoctemplatedocument is active or not',
+        format => '',
+        read_only => '',
+            },
+    'obj_ezdoctemplatedocument_name' => {
+        datatype => 'MultilingualEzdoctemplatedocumentName',
+        base_name => 'objEzdoctemplatedocumentName',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_ezdoctemplatedocument_id' => 'int',
+    'fki_language_id' => 'int',
+    'fki_ezsignfoldertype_id' => 'int',
+    'fki_ezdoctemplatetype_id' => 'int',
+    'fki_ezdoctemplatefieldtypecategory_id' => 'int',
+    'e_ezdoctemplatedocument_privacylevel' => 'FieldEEzdoctemplatedocumentPrivacylevel',
+    'b_ezdoctemplatedocument_isactive' => 'boolean',
+    'obj_ezdoctemplatedocument_name' => 'MultilingualEzdoctemplatedocumentName'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_ezdoctemplatedocument_id' => 'pkiEzdoctemplatedocumentID',
+    'fki_language_id' => 'fkiLanguageID',
+    'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
+    'fki_ezdoctemplatetype_id' => 'fkiEzdoctemplatetypeID',
+    'fki_ezdoctemplatefieldtypecategory_id' => 'fkiEzdoctemplatefieldtypecategoryID',
+    'e_ezdoctemplatedocument_privacylevel' => 'eEzdoctemplatedocumentPrivacylevel',
+    'b_ezdoctemplatedocument_isactive' => 'bEzdoctemplatedocumentIsactive',
+    'obj_ezdoctemplatedocument_name' => 'objEzdoctemplatedocumentName'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

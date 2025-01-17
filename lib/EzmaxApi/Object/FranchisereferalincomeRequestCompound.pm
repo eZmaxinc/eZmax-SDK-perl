@@ -32,9 +32,8 @@ use DateTime;
 
 use EzmaxApi::Object::AddressRequest;
 use EzmaxApi::Object::ContactRequestCompound;
-use EzmaxApi::Object::FranchisereferalincomeRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::FranchisereferalincomeRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Franchisereferalincome Object and children to create a complete structure
@@ -87,18 +86,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object FranchisereferalincomeRequest
-    $self->EzmaxApi::Object::FranchisereferalincomeRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call FranchisereferalincomeRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::FranchisereferalincomeRequest::to_hash };
 
     return $_hash;
 }
@@ -129,9 +122,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (FranchisereferalincomeRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::FranchisereferalincomeRequest::TO_JSON };
 
     return $_data;
 }
@@ -200,9 +190,6 @@ sub from_hash {
         }
     }
 
-    # call parent (FranchisereferalincomeRequest) from_hash
-    $self->EzmaxApi::Object::FranchisereferalincomeRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -234,6 +221,90 @@ __PACKAGE__->class_documentation({description => 'A Franchisereferalincome Objec
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_franchisereferalincome_id' => {
+        datatype => 'int',
+        base_name => 'pkiFranchisereferalincomeID',
+        description => 'The unique ID of the Franchisereferalincome',
+        format => '',
+        read_only => '',
+            },
+    'fki_franchisebroker_id' => {
+        datatype => 'int',
+        base_name => 'fkiFranchisebrokerID',
+        description => 'The unique ID of the Franchisebroker',
+        format => '',
+        read_only => '',
+            },
+    'fki_franchisereferalincomeprogram_id' => {
+        datatype => 'int',
+        base_name => 'fkiFranchisereferalincomeprogramID',
+        description => 'The unique ID of the Franchisereferalincomeprogram',
+        format => '',
+        read_only => '',
+            },
+    'fki_period_id' => {
+        datatype => 'int',
+        base_name => 'fkiPeriodID',
+        description => 'The unique ID of the Period',
+        format => '',
+        read_only => '',
+            },
+    'd_franchisereferalincome_loan' => {
+        datatype => 'string',
+        base_name => 'dFranchisereferalincomeLoan',
+        description => 'The loan amount',
+        format => '',
+        read_only => '',
+            },
+    'd_franchisereferalincome_franchiseamount' => {
+        datatype => 'string',
+        base_name => 'dFranchisereferalincomeFranchiseamount',
+        description => 'The amount that will be given to the franchise',
+        format => '',
+        read_only => '',
+            },
+    'd_franchisereferalincome_franchisoramount' => {
+        datatype => 'string',
+        base_name => 'dFranchisereferalincomeFranchisoramount',
+        description => 'The amount that will be kept by the franchisor',
+        format => '',
+        read_only => '',
+            },
+    'd_franchisereferalincome_agentamount' => {
+        datatype => 'string',
+        base_name => 'dFranchisereferalincomeAgentamount',
+        description => 'The amount that will be given to the agent',
+        format => '',
+        read_only => '',
+            },
+    'dt_franchisereferalincome_disbursed' => {
+        datatype => 'string',
+        base_name => 'dtFranchisereferalincomeDisbursed',
+        description => 'The date the amounts were disbursed',
+        format => '',
+        read_only => '',
+            },
+    't_franchisereferalincome_comment' => {
+        datatype => 'string',
+        base_name => 'tFranchisereferalincomeComment',
+        description => 'Comment about the transaction',
+        format => '',
+        read_only => '',
+            },
+    'fki_franchiseoffice_id' => {
+        datatype => 'int',
+        base_name => 'fkiFranchiseofficeID',
+        description => 'The unique ID of the Franchisereoffice',
+        format => '',
+        read_only => '',
+            },
+    's_franchisereferalincome_remoteid' => {
+        datatype => 'string',
+        base_name => 'sFranchisereferalincomeRemoteid',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'obj_address' => {
         datatype => 'AddressRequest',
         base_name => 'objAddress',
@@ -251,11 +322,35 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_franchisereferalincome_id' => 'int',
+    'fki_franchisebroker_id' => 'int',
+    'fki_franchisereferalincomeprogram_id' => 'int',
+    'fki_period_id' => 'int',
+    'd_franchisereferalincome_loan' => 'string',
+    'd_franchisereferalincome_franchiseamount' => 'string',
+    'd_franchisereferalincome_franchisoramount' => 'string',
+    'd_franchisereferalincome_agentamount' => 'string',
+    'dt_franchisereferalincome_disbursed' => 'string',
+    't_franchisereferalincome_comment' => 'string',
+    'fki_franchiseoffice_id' => 'int',
+    's_franchisereferalincome_remoteid' => 'string',
     'obj_address' => 'AddressRequest',
     'a_obj_contact' => 'ARRAY[ContactRequestCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_franchisereferalincome_id' => 'pkiFranchisereferalincomeID',
+    'fki_franchisebroker_id' => 'fkiFranchisebrokerID',
+    'fki_franchisereferalincomeprogram_id' => 'fkiFranchisereferalincomeprogramID',
+    'fki_period_id' => 'fkiPeriodID',
+    'd_franchisereferalincome_loan' => 'dFranchisereferalincomeLoan',
+    'd_franchisereferalincome_franchiseamount' => 'dFranchisereferalincomeFranchiseamount',
+    'd_franchisereferalincome_franchisoramount' => 'dFranchisereferalincomeFranchisoramount',
+    'd_franchisereferalincome_agentamount' => 'dFranchisereferalincomeAgentamount',
+    'dt_franchisereferalincome_disbursed' => 'dtFranchisereferalincomeDisbursed',
+    't_franchisereferalincome_comment' => 'tFranchisereferalincomeComment',
+    'fki_franchiseoffice_id' => 'fkiFranchiseofficeID',
+    's_franchisereferalincome_remoteid' => 'sFranchisereferalincomeRemoteid',
     'obj_address' => 'objAddress',
     'a_obj_contact' => 'a_objContact'
 } );

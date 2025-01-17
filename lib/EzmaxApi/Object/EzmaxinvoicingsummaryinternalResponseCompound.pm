@@ -30,11 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponse;
 use EzmaxApi::Object::EzmaxinvoicingsummaryinternaldetailResponseCompound;
 use EzmaxApi::Object::MultilingualEzmaxinvoicingsummaryinternalDescription;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezmaxinvoicingsummaryinternal Object
@@ -87,18 +86,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzmaxinvoicingsummaryinternalResponse
-    $self->EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzmaxinvoicingsummaryinternalResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponse::to_hash };
 
     return $_hash;
 }
@@ -129,9 +122,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzmaxinvoicingsummaryinternalResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponse::TO_JSON };
 
     return $_data;
 }
@@ -200,9 +190,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzmaxinvoicingsummaryinternalResponse) from_hash
-    $self->EzmaxApi::Object::EzmaxinvoicingsummaryinternalResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -234,6 +221,48 @@ __PACKAGE__->class_documentation({description => 'A Ezmaxinvoicingsummaryinterna
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezmaxinvoicingsummaryinternal_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzmaxinvoicingsummaryinternalID',
+        description => 'The unique ID of the Ezmaxinvoicingsummaryinternal',
+        format => '',
+        read_only => '',
+            },
+    'obj_ezmaxinvoicingsummaryinternal_description' => {
+        datatype => 'MultilingualEzmaxinvoicingsummaryinternalDescription',
+        base_name => 'objEzmaxinvoicingsummaryinternalDescription',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_ezmaxinvoicingsummaryinternal_description_x' => {
+        datatype => 'string',
+        base_name => 'sEzmaxinvoicingsummaryinternalDescriptionX',
+        description => 'The Ezmaxinvoicingsummaryinternal description in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezmaxinvoicing_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzmaxinvoicingID',
+        description => 'The unique ID of the Ezmaxinvoicing',
+        format => '',
+        read_only => '',
+            },
+    'fki_billingentityinternal_id' => {
+        datatype => 'int',
+        base_name => 'fkiBillingentityinternalID',
+        description => 'The unique ID of the Billingentityinternal.',
+        format => '',
+        read_only => '',
+            },
+    's_billingentityinternal_description_x' => {
+        datatype => 'string',
+        base_name => 'sBillingentityinternalDescriptionX',
+        description => 'The description of the Billingentityinternal in the language of the requester',
+        format => '',
+        read_only => '',
+            },
     'a_obj_ezmaxinvoicingsummaryinternaldetail' => {
         datatype => 'ARRAY[EzmaxinvoicingsummaryinternaldetailResponseCompound]',
         base_name => 'a_objEzmaxinvoicingsummaryinternaldetail',
@@ -244,10 +273,22 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezmaxinvoicingsummaryinternal_id' => 'int',
+    'obj_ezmaxinvoicingsummaryinternal_description' => 'MultilingualEzmaxinvoicingsummaryinternalDescription',
+    's_ezmaxinvoicingsummaryinternal_description_x' => 'string',
+    'fki_ezmaxinvoicing_id' => 'int',
+    'fki_billingentityinternal_id' => 'int',
+    's_billingentityinternal_description_x' => 'string',
     'a_obj_ezmaxinvoicingsummaryinternaldetail' => 'ARRAY[EzmaxinvoicingsummaryinternaldetailResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezmaxinvoicingsummaryinternal_id' => 'pkiEzmaxinvoicingsummaryinternalID',
+    'obj_ezmaxinvoicingsummaryinternal_description' => 'objEzmaxinvoicingsummaryinternalDescription',
+    's_ezmaxinvoicingsummaryinternal_description_x' => 'sEzmaxinvoicingsummaryinternalDescriptionX',
+    'fki_ezmaxinvoicing_id' => 'fkiEzmaxinvoicingID',
+    'fki_billingentityinternal_id' => 'fkiBillingentityinternalID',
+    's_billingentityinternal_description_x' => 'sBillingentityinternalDescriptionX',
     'a_obj_ezmaxinvoicingsummaryinternaldetail' => 'a_objEzmaxinvoicingsummaryinternaldetail'
 } );
 

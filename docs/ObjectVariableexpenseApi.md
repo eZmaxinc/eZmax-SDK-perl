@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **variableexpense_edit_object_v1**
-> CommonResponse variableexpense_edit_object_v1(pki_variableexpense_id => $pki_variableexpense_id, variableexpense_edit_object_v1_request => $variableexpense_edit_object_v1_request)
+> VariableexpenseEditObjectV1Response variableexpense_edit_object_v1(pki_variableexpense_id => $pki_variableexpense_id, variableexpense_edit_object_v1_request => $variableexpense_edit_object_v1_request)
 
 Edit an existing Variableexpense
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**VariableexpenseEditObjectV1Response**](VariableexpenseEditObjectV1Response.md)
 
 ### Authorization
 

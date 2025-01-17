@@ -30,9 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::DomainRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::DomainRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Domain Object and children
@@ -85,18 +84,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object DomainRequest
-    $self->EzmaxApi::Object::DomainRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call DomainRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::DomainRequest::to_hash };
 
     return $_hash;
 }
@@ -127,9 +120,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (DomainRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::DomainRequest::TO_JSON };
 
     return $_data;
 }
@@ -198,9 +188,6 @@ sub from_hash {
         }
     }
 
-    # call parent (DomainRequest) from_hash
-    $self->EzmaxApi::Object::DomainRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -232,14 +219,30 @@ __PACKAGE__->class_documentation({description => 'A Domain Object and children',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_domain_id' => {
+        datatype => 'int',
+        base_name => 'pkiDomainID',
+        description => 'The unique ID of the Domain',
+        format => '',
+        read_only => '',
+            },
+    's_domain_name' => {
+        datatype => 'string',
+        base_name => 'sDomainName',
+        description => 'The name of the Domain',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_domain_id' => 'int',
+    's_domain_name' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_domain_id' => 'pkiDomainID',
+    's_domain_name' => 'sDomainName'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

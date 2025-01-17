@@ -130,10 +130,10 @@ sub webhook_create_object_v2 {
     __PACKAGE__->method_documentation->{ 'webhook_delete_object_v1' } = {
         summary => 'Delete an existing Webhook',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'WebhookDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return WebhookDeleteObjectV1Response
 #
 sub webhook_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub webhook_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('WebhookDeleteObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub webhook_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'webhook_edit_object_v1' } = {
         summary => 'Edit an existing Webhook',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'WebhookEditObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return WebhookEditObjectV1Response
 #
 sub webhook_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub webhook_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('WebhookEditObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -617,10 +617,10 @@ sub webhook_regenerate_apikey_v1 {
     __PACKAGE__->method_documentation->{ 'webhook_send_webhook_v1' } = {
         summary => 'Emit a Webhook event',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'WebhookSendWebhookV1Response',
         };
 }
-# @return CommonResponse
+# @return WebhookSendWebhookV1Response
 #
 sub webhook_send_webhook_v1 {
     my ($self, %args) = @_;
@@ -661,7 +661,7 @@ sub webhook_send_webhook_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('WebhookSendWebhookV1Response', $response);
     return $_response_object;
 }
 
@@ -688,10 +688,10 @@ sub webhook_send_webhook_v1 {
     __PACKAGE__->method_documentation->{ 'webhook_test_v1' } = {
         summary => 'Test the Webhook by calling the Url',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'WebhookTestV1Response',
         };
 }
-# @return CommonResponse
+# @return WebhookTestV1Response
 #
 sub webhook_test_v1 {
     my ($self, %args) = @_;
@@ -744,7 +744,7 @@ sub webhook_test_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('WebhookTestV1Response', $response);
     return $_response_object;
 }
 

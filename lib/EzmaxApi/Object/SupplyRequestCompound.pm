@@ -31,9 +31,8 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::MultilingualSupplyDescription;
-use EzmaxApi::Object::SupplyRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::SupplyRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Supply Object and children
@@ -86,18 +85,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object SupplyRequest
-    $self->EzmaxApi::Object::SupplyRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call SupplyRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::SupplyRequest::to_hash };
 
     return $_hash;
 }
@@ -128,9 +121,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (SupplyRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::SupplyRequest::TO_JSON };
 
     return $_data;
 }
@@ -199,9 +189,6 @@ sub from_hash {
         }
     }
 
-    # call parent (SupplyRequest) from_hash
-    $self->EzmaxApi::Object::SupplyRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -233,14 +220,93 @@ __PACKAGE__->class_documentation({description => 'A Supply Object and children',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_supply_id' => {
+        datatype => 'int',
+        base_name => 'pkiSupplyID',
+        description => 'The unique ID of the Supply',
+        format => '',
+        read_only => '',
+            },
+    'fki_glaccount_id' => {
+        datatype => 'int',
+        base_name => 'fkiGlaccountID',
+        description => 'The unique ID of the Glaccount',
+        format => '',
+        read_only => '',
+            },
+    'fki_glaccountcontainer_id' => {
+        datatype => 'int',
+        base_name => 'fkiGlaccountcontainerID',
+        description => 'The unique ID of the Glaccountcontainer',
+        format => '',
+        read_only => '',
+            },
+    'fki_variableexpense_id' => {
+        datatype => 'int',
+        base_name => 'fkiVariableexpenseID',
+        description => 'The unique ID of the Variableexpense',
+        format => '',
+        read_only => '',
+            },
+    's_supply_code' => {
+        datatype => 'string',
+        base_name => 'sSupplyCode',
+        description => 'The code of the Supply',
+        format => '',
+        read_only => '',
+            },
+    'obj_supply_description' => {
+        datatype => 'MultilingualSupplyDescription',
+        base_name => 'objSupplyDescription',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'd_supply_unitprice' => {
+        datatype => 'string',
+        base_name => 'dSupplyUnitprice',
+        description => 'The unit price of the Supply',
+        format => '',
+        read_only => '',
+            },
+    'b_supply_isactive' => {
+        datatype => 'boolean',
+        base_name => 'bSupplyIsactive',
+        description => 'Whether the supply is active or not',
+        format => '',
+        read_only => '',
+            },
+    'b_supply_variableprice' => {
+        datatype => 'boolean',
+        base_name => 'bSupplyVariableprice',
+        description => 'Whether if the price is variable',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_supply_id' => 'int',
+    'fki_glaccount_id' => 'int',
+    'fki_glaccountcontainer_id' => 'int',
+    'fki_variableexpense_id' => 'int',
+    's_supply_code' => 'string',
+    'obj_supply_description' => 'MultilingualSupplyDescription',
+    'd_supply_unitprice' => 'string',
+    'b_supply_isactive' => 'boolean',
+    'b_supply_variableprice' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_supply_id' => 'pkiSupplyID',
+    'fki_glaccount_id' => 'fkiGlaccountID',
+    'fki_glaccountcontainer_id' => 'fkiGlaccountcontainerID',
+    'fki_variableexpense_id' => 'fkiVariableexpenseID',
+    's_supply_code' => 'sSupplyCode',
+    'obj_supply_description' => 'objSupplyDescription',
+    'd_supply_unitprice' => 'dSupplyUnitprice',
+    'b_supply_isactive' => 'bSupplyIsactive',
+    'b_supply_variableprice' => 'bSupplyVariableprice'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

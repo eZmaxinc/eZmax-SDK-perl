@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::ApikeyRequest;
+use EzmaxApi::Object::ApikeyRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -221,16 +221,16 @@ __PACKAGE__->class_documentation({description => 'Request for PUT /1/object/apik
 
 __PACKAGE__->method_documentation({
     'obj_apikey' => {
-        datatype => 'ApikeyRequest',
+        datatype => 'ApikeyRequestCompound',
         base_name => 'objApikey',
-        description => 'An Apikey Object and children to create a complete structure',
+        description => '',
         format => '',
         read_only => '',
             },
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_apikey' => 'ApikeyRequest'
+    'obj_apikey' => 'ApikeyRequestCompound'
 } );
 
 __PACKAGE__->attribute_map( {

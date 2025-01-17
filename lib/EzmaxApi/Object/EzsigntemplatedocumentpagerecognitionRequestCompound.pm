@@ -30,11 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsigntemplatedocumentpagerecognitionRequest;
 use EzmaxApi::Object::FieldEEzsigntemplatedocumentpagerecognitionOperator;
 use EzmaxApi::Object::FieldEEzsigntemplatedocumentpagerecognitionSection;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsigntemplatedocumentpagerecognitionRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezsigntemplatedocumentpagerecognition Object and children
@@ -87,18 +86,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsigntemplatedocumentpagerecognitionRequest
-    $self->EzmaxApi::Object::EzsigntemplatedocumentpagerecognitionRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsigntemplatedocumentpagerecognitionRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsigntemplatedocumentpagerecognitionRequest::to_hash };
 
     return $_hash;
 }
@@ -129,9 +122,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsigntemplatedocumentpagerecognitionRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsigntemplatedocumentpagerecognitionRequest::TO_JSON };
 
     return $_data;
 }
@@ -200,9 +190,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsigntemplatedocumentpagerecognitionRequest) from_hash
-    $self->EzmaxApi::Object::EzsigntemplatedocumentpagerecognitionRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -234,14 +221,102 @@ __PACKAGE__->class_documentation({description => 'A Ezsigntemplatedocumentpagere
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsigntemplatedocumentpagerecognition_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsigntemplatedocumentpagerecognitionID',
+        description => 'The unique ID of the Ezsigntemplatedocumentpagerecognition',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigntemplatedocumentpage_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigntemplatedocumentpageID',
+        description => 'The unique ID of the Ezsigntemplatedocumentpage',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsigntemplatedocumentpagerecognition_operator' => {
+        datatype => 'FieldEEzsigntemplatedocumentpagerecognitionOperator',
+        base_name => 'eEzsigntemplatedocumentpagerecognitionOperator',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsigntemplatedocumentpagerecognition_section' => {
+        datatype => 'FieldEEzsigntemplatedocumentpagerecognitionSection',
+        base_name => 'eEzsigntemplatedocumentpagerecognitionSection',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigntemplatedocumentpagerecognition_similarpercentage' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatedocumentpagerecognitionSimilarpercentage',
+        description => 'The similarpercentage of the Ezsigntemplatedocumentpagerecognition',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigntemplatedocumentpagerecognition_x' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatedocumentpagerecognitionX',
+        description => 'The x of the Ezsigntemplatedocumentpagerecognition',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigntemplatedocumentpagerecognition_y' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatedocumentpagerecognitionY',
+        description => 'The y of the Ezsigntemplatedocumentpagerecognition',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigntemplatedocumentpagerecognition_width' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatedocumentpagerecognitionWidth',
+        description => 'The width of the Ezsigntemplatedocumentpagerecognition',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigntemplatedocumentpagerecognition_height' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatedocumentpagerecognitionHeight',
+        description => 'The height of the Ezsigntemplatedocumentpagerecognition',
+        format => '',
+        read_only => '',
+            },
+    't_ezsigntemplatedocumentpagerecognition_text' => {
+        datatype => 'string',
+        base_name => 'tEzsigntemplatedocumentpagerecognitionText',
+        description => 'The text of the Ezsigntemplatedocumentpagerecognition',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_ezsigntemplatedocumentpagerecognition_id' => 'int',
+    'fki_ezsigntemplatedocumentpage_id' => 'int',
+    'e_ezsigntemplatedocumentpagerecognition_operator' => 'FieldEEzsigntemplatedocumentpagerecognitionOperator',
+    'e_ezsigntemplatedocumentpagerecognition_section' => 'FieldEEzsigntemplatedocumentpagerecognitionSection',
+    'i_ezsigntemplatedocumentpagerecognition_similarpercentage' => 'int',
+    'i_ezsigntemplatedocumentpagerecognition_x' => 'int',
+    'i_ezsigntemplatedocumentpagerecognition_y' => 'int',
+    'i_ezsigntemplatedocumentpagerecognition_width' => 'int',
+    'i_ezsigntemplatedocumentpagerecognition_height' => 'int',
+    't_ezsigntemplatedocumentpagerecognition_text' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_ezsigntemplatedocumentpagerecognition_id' => 'pkiEzsigntemplatedocumentpagerecognitionID',
+    'fki_ezsigntemplatedocumentpage_id' => 'fkiEzsigntemplatedocumentpageID',
+    'e_ezsigntemplatedocumentpagerecognition_operator' => 'eEzsigntemplatedocumentpagerecognitionOperator',
+    'e_ezsigntemplatedocumentpagerecognition_section' => 'eEzsigntemplatedocumentpagerecognitionSection',
+    'i_ezsigntemplatedocumentpagerecognition_similarpercentage' => 'iEzsigntemplatedocumentpagerecognitionSimilarpercentage',
+    'i_ezsigntemplatedocumentpagerecognition_x' => 'iEzsigntemplatedocumentpagerecognitionX',
+    'i_ezsigntemplatedocumentpagerecognition_y' => 'iEzsigntemplatedocumentpagerecognitionY',
+    'i_ezsigntemplatedocumentpagerecognition_width' => 'iEzsigntemplatedocumentpagerecognitionWidth',
+    'i_ezsigntemplatedocumentpagerecognition_height' => 'iEzsigntemplatedocumentpagerecognitionHeight',
+    't_ezsigntemplatedocumentpagerecognition_text' => 'tEzsigntemplatedocumentpagerecognitionText'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

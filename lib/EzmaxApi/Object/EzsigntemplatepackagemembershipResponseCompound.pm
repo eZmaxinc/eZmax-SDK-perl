@@ -31,10 +31,9 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::EzsigntemplateResponseCompound;
-use EzmaxApi::Object::EzsigntemplatepackagemembershipResponse;
 use EzmaxApi::Object::EzsigntemplatepackagesignermembershipResponseCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsigntemplatepackagemembershipResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezsigntemplatepackagemembership Object
@@ -87,18 +86,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsigntemplatepackagemembershipResponse
-    $self->EzmaxApi::Object::EzsigntemplatepackagemembershipResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsigntemplatepackagemembershipResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsigntemplatepackagemembershipResponse::to_hash };
 
     return $_hash;
 }
@@ -129,9 +122,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsigntemplatepackagemembershipResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsigntemplatepackagemembershipResponse::TO_JSON };
 
     return $_data;
 }
@@ -200,9 +190,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsigntemplatepackagemembershipResponse) from_hash
-    $self->EzmaxApi::Object::EzsigntemplatepackagemembershipResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -234,6 +221,34 @@ __PACKAGE__->class_documentation({description => 'A Ezsigntemplatepackagemembers
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsigntemplatepackagemembership_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsigntemplatepackagemembershipID',
+        description => 'The unique ID of the Ezsigntemplatepackagemembership',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigntemplatepackage_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigntemplatepackageID',
+        description => 'The unique ID of the Ezsigntemplatepackage',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigntemplate_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigntemplateID',
+        description => 'The unique ID of the Ezsigntemplate',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsigntemplatepackagemembership_order' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatepackagemembershipOrder',
+        description => 'The order in which the Ezsigntemplate will be imported when using an Ezsigntemplatepackage.',
+        format => '',
+        read_only => '',
+            },
     'obj_ezsigntemplate' => {
         datatype => 'EzsigntemplateResponseCompound',
         base_name => 'objEzsigntemplate',
@@ -251,11 +266,19 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezsigntemplatepackagemembership_id' => 'int',
+    'fki_ezsigntemplatepackage_id' => 'int',
+    'fki_ezsigntemplate_id' => 'int',
+    'i_ezsigntemplatepackagemembership_order' => 'int',
     'obj_ezsigntemplate' => 'EzsigntemplateResponseCompound',
     'a_obj_ezsigntemplatepackagesignermembership' => 'ARRAY[EzsigntemplatepackagesignermembershipResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezsigntemplatepackagemembership_id' => 'pkiEzsigntemplatepackagemembershipID',
+    'fki_ezsigntemplatepackage_id' => 'fkiEzsigntemplatepackageID',
+    'fki_ezsigntemplate_id' => 'fkiEzsigntemplateID',
+    'i_ezsigntemplatepackagemembership_order' => 'iEzsigntemplatepackagemembershipOrder',
     'obj_ezsigntemplate' => 'objEzsigntemplate',
     'a_obj_ezsigntemplatepackagesignermembership' => 'a_objEzsigntemplatepackagesignermembership'
 } );

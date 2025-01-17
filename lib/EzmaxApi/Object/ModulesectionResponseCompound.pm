@@ -30,10 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::ModulesectionResponse;
-use EzmaxApi::Object::PermissionResponse;
+use EzmaxApi::Object::PermissionResponseCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::ModulesectionResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Modulesection Object
@@ -86,18 +85,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object ModulesectionResponse
-    $self->EzmaxApi::Object::ModulesectionResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call ModulesectionResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::ModulesectionResponse::to_hash };
 
     return $_hash;
 }
@@ -128,9 +121,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (ModulesectionResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::ModulesectionResponse::TO_JSON };
 
     return $_data;
 }
@@ -199,9 +189,6 @@ sub from_hash {
         }
     }
 
-    # call parent (ModulesectionResponse) from_hash
-    $self->EzmaxApi::Object::ModulesectionResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -233,6 +220,34 @@ __PACKAGE__->class_documentation({description => 'A Modulesection Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_modulesection_id' => {
+        datatype => 'int',
+        base_name => 'pkiModulesectionID',
+        description => 'The unique ID of the Modulesection',
+        format => '',
+        read_only => '',
+            },
+    'fki_module_id' => {
+        datatype => 'int',
+        base_name => 'fkiModuleID',
+        description => 'The unique ID of the Module',
+        format => '',
+        read_only => '',
+            },
+    's_modulesection_internalname' => {
+        datatype => 'string',
+        base_name => 'sModulesectionInternalname',
+        description => 'The Internal name of the Module section.',
+        format => '',
+        read_only => '',
+            },
+    's_modulesection_name_x' => {
+        datatype => 'string',
+        base_name => 'sModulesectionNameX',
+        description => 'The Name of the Modulesection in the language of the requester',
+        format => '',
+        read_only => '',
+            },
     'a_obj_permission' => {
         datatype => 'ARRAY[PermissionResponseCompound]',
         base_name => 'a_objPermission',
@@ -243,10 +258,18 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_modulesection_id' => 'int',
+    'fki_module_id' => 'int',
+    's_modulesection_internalname' => 'string',
+    's_modulesection_name_x' => 'string',
     'a_obj_permission' => 'ARRAY[PermissionResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_modulesection_id' => 'pkiModulesectionID',
+    'fki_module_id' => 'fkiModuleID',
+    's_modulesection_internalname' => 'sModulesectionInternalname',
+    's_modulesection_name_x' => 'sModulesectionNameX',
     'a_obj_permission' => 'a_objPermission'
 } );
 

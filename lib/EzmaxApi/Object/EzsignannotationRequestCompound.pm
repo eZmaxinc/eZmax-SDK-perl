@@ -32,11 +32,10 @@ use DateTime;
 
 use EzmaxApi::Object::EnumHorizontalalignment;
 use EzmaxApi::Object::EnumVerticalalignment;
-use EzmaxApi::Object::EzsignannotationRequest;
 use EzmaxApi::Object::FieldEEzsignannotationType;
 use EzmaxApi::Object::TextstylestaticRequestCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignannotationRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezsignannotation Object and children
@@ -89,18 +88,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsignannotationRequest
-    $self->EzmaxApi::Object::EzsignannotationRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsignannotationRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignannotationRequest::to_hash };
 
     return $_hash;
 }
@@ -131,9 +124,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsignannotationRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignannotationRequest::TO_JSON };
 
     return $_data;
 }
@@ -202,9 +192,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsignannotationRequest) from_hash
-    $self->EzmaxApi::Object::EzsignannotationRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -236,6 +223,83 @@ __PACKAGE__->class_documentation({description => 'A Ezsignannotation Object and 
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignannotation_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignannotationID',
+        description => 'The unique ID of the Ezsignannotation',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigndocument_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigndocumentID',
+        description => 'The unique ID of the Ezsigndocument',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignannotation_horizontalalignment' => {
+        datatype => 'EnumHorizontalalignment',
+        base_name => 'eEzsignannotationHorizontalalignment',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignannotation_verticalalignment' => {
+        datatype => 'EnumVerticalalignment',
+        base_name => 'eEzsignannotationVerticalalignment',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignannotation_type' => {
+        datatype => 'FieldEEzsignannotationType',
+        base_name => 'eEzsignannotationType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignannotation_x' => {
+        datatype => 'int',
+        base_name => 'iEzsignannotationX',
+        description => 'The X coordinate (Horizontal) where to put the Ezsignannotation on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignannotation 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignannotation_y' => {
+        datatype => 'int',
+        base_name => 'iEzsignannotationY',
+        description => 'The Y coordinate (Vertical) where to put the Ezsignannotation on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignannotation 3 inches from the top border of the page, you would use \&quot;300\&quot; for the Y coordinate.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignannotation_width' => {
+        datatype => 'int',
+        base_name => 'iEzsignannotationWidth',
+        description => 'The Width of the Ezsignannotation.  Width is calculated at 100dpi (dot per inch). So for example, if you want to have the width of the Ezsignannotation to be 3 inches, you would use \&quot;300\&quot; for the Width.',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignannotation_height' => {
+        datatype => 'int',
+        base_name => 'iEzsignannotationHeight',
+        description => 'The Height of the Ezsignannotation.  Height is calculated at 100dpi (dot per inch). So for example, if you want to have the height of the Ezsignannotation to be 2 inches, you would use \&quot;200\&quot; for the Height.  This can only be set if eEzsignannotationType is **StrikethroughBlock** or **Text**',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignannotation_text' => {
+        datatype => 'string',
+        base_name => 'sEzsignannotationText',
+        description => 'The Text of the Ezsignannotation',
+        format => '',
+        read_only => '',
+            },
+    'i_ezsignpage_pagenumber' => {
+        datatype => 'int',
+        base_name => 'iEzsignpagePagenumber',
+        description => 'The page number in the Ezsigndocument',
+        format => '',
+        read_only => '',
+            },
     'obj_textstylestatic' => {
         datatype => 'TextstylestaticRequestCompound',
         base_name => 'objTextstylestatic',
@@ -246,10 +310,32 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezsignannotation_id' => 'int',
+    'fki_ezsigndocument_id' => 'int',
+    'e_ezsignannotation_horizontalalignment' => 'EnumHorizontalalignment',
+    'e_ezsignannotation_verticalalignment' => 'EnumVerticalalignment',
+    'e_ezsignannotation_type' => 'FieldEEzsignannotationType',
+    'i_ezsignannotation_x' => 'int',
+    'i_ezsignannotation_y' => 'int',
+    'i_ezsignannotation_width' => 'int',
+    'i_ezsignannotation_height' => 'int',
+    's_ezsignannotation_text' => 'string',
+    'i_ezsignpage_pagenumber' => 'int',
     'obj_textstylestatic' => 'TextstylestaticRequestCompound'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezsignannotation_id' => 'pkiEzsignannotationID',
+    'fki_ezsigndocument_id' => 'fkiEzsigndocumentID',
+    'e_ezsignannotation_horizontalalignment' => 'eEzsignannotationHorizontalalignment',
+    'e_ezsignannotation_verticalalignment' => 'eEzsignannotationVerticalalignment',
+    'e_ezsignannotation_type' => 'eEzsignannotationType',
+    'i_ezsignannotation_x' => 'iEzsignannotationX',
+    'i_ezsignannotation_y' => 'iEzsignannotationY',
+    'i_ezsignannotation_width' => 'iEzsignannotationWidth',
+    'i_ezsignannotation_height' => 'iEzsignannotationHeight',
+    's_ezsignannotation_text' => 'sEzsignannotationText',
+    'i_ezsignpage_pagenumber' => 'iEzsignpagePagenumber',
     'obj_textstylestatic' => 'objTextstylestatic'
 } );
 

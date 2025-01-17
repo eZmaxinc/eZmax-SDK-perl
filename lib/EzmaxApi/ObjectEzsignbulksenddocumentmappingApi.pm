@@ -130,10 +130,10 @@ sub ezsignbulksenddocumentmapping_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignbulksenddocumentmapping_delete_object_v1' } = {
         summary => 'Delete an existing Ezsignbulksenddocumentmapping',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsignbulksenddocumentmappingDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsignbulksenddocumentmappingDeleteObjectV1Response
 #
 sub ezsignbulksenddocumentmapping_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub ezsignbulksenddocumentmapping_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsignbulksenddocumentmappingDeleteObjectV1Response', $response);
     return $_response_object;
 }
 

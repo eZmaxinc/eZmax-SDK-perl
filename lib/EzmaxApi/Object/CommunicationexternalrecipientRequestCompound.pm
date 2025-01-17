@@ -30,10 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::CommunicationexternalrecipientRequest;
 use EzmaxApi::Object::FieldECommunicationexternalrecipientType;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::CommunicationexternalrecipientRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Communicationexternalrecipient Object and children
@@ -86,18 +85,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object CommunicationexternalrecipientRequest
-    $self->EzmaxApi::Object::CommunicationexternalrecipientRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call CommunicationexternalrecipientRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::CommunicationexternalrecipientRequest::to_hash };
 
     return $_hash;
 }
@@ -128,9 +121,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (CommunicationexternalrecipientRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::CommunicationexternalrecipientRequest::TO_JSON };
 
     return $_data;
 }
@@ -199,9 +189,6 @@ sub from_hash {
         }
     }
 
-    # call parent (CommunicationexternalrecipientRequest) from_hash
-    $self->EzmaxApi::Object::CommunicationexternalrecipientRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -233,14 +220,57 @@ __PACKAGE__->class_documentation({description => 'A Communicationexternalrecipie
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_communicationexternalrecipient_id' => {
+        datatype => 'int',
+        base_name => 'pkiCommunicationexternalrecipientID',
+        description => 'The unique ID of the Communicationexternalrecipient',
+        format => '',
+        read_only => '',
+            },
+    's_email_address' => {
+        datatype => 'string',
+        base_name => 'sEmailAddress',
+        description => 'The email address.',
+        format => '',
+        read_only => '',
+            },
+    's_phone_e164' => {
+        datatype => 'string',
+        base_name => 'sPhoneE164',
+        description => 'A phone number in E.164 Format',
+        format => '',
+        read_only => '',
+            },
+    'e_communicationexternalrecipient_type' => {
+        datatype => 'FieldECommunicationexternalrecipientType',
+        base_name => 'eCommunicationexternalrecipientType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_communicationexternalrecipient_name' => {
+        datatype => 'string',
+        base_name => 'sCommunicationexternalrecipientName',
+        description => 'The name of the Communicationexternalrecipient',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_communicationexternalrecipient_id' => 'int',
+    's_email_address' => 'string',
+    's_phone_e164' => 'string',
+    'e_communicationexternalrecipient_type' => 'FieldECommunicationexternalrecipientType',
+    's_communicationexternalrecipient_name' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_communicationexternalrecipient_id' => 'pkiCommunicationexternalrecipientID',
+    's_email_address' => 'sEmailAddress',
+    's_phone_e164' => 'sPhoneE164',
+    'e_communicationexternalrecipient_type' => 'eCommunicationexternalrecipientType',
+    's_communicationexternalrecipient_name' => 'sCommunicationexternalrecipientName'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

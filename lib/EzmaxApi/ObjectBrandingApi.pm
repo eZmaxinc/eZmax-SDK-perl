@@ -136,10 +136,10 @@ sub branding_create_object_v2 {
     __PACKAGE__->method_documentation->{ 'branding_edit_object_v2' } = {
         summary => 'Edit an existing Branding',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'BrandingEditObjectV2Response',
         };
 }
-# @return CommonResponse
+# @return BrandingEditObjectV2Response
 #
 sub branding_edit_object_v2 {
     my ($self, %args) = @_;
@@ -192,7 +192,7 @@ sub branding_edit_object_v2 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('BrandingEditObjectV2Response', $response);
     return $_response_object;
 }
 

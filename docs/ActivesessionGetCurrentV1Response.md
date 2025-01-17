@@ -8,7 +8,9 @@ use EzmaxApi::Object::ActivesessionGetCurrentV1Response;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**m_payload** | [**ActivesessionResponseCompound**](ActivesessionResponseCompound.md) | Payload for GET /1/object/activesession/getCurrent | 
+**obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | 
+**obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
+**m_payload** | [**ActivesessionGetCurrentV1ResponseMPayload**](ActivesessionGetCurrentV1ResponseMPayload.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

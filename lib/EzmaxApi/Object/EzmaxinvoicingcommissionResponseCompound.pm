@@ -31,9 +31,8 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CustomContactNameResponse;
-use EzmaxApi::Object::EzmaxinvoicingcommissionResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzmaxinvoicingcommissionResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezmaxinvoicingcommission Object
@@ -86,18 +85,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzmaxinvoicingcommissionResponse
-    $self->EzmaxApi::Object::EzmaxinvoicingcommissionResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzmaxinvoicingcommissionResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzmaxinvoicingcommissionResponse::to_hash };
 
     return $_hash;
 }
@@ -128,9 +121,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzmaxinvoicingcommissionResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzmaxinvoicingcommissionResponse::TO_JSON };
 
     return $_data;
 }
@@ -199,9 +189,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzmaxinvoicingcommissionResponse) from_hash
-    $self->EzmaxApi::Object::EzmaxinvoicingcommissionResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -233,6 +220,62 @@ __PACKAGE__->class_documentation({description => 'A Ezmaxinvoicingcommission Obj
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezmaxinvoicingcommission_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzmaxinvoicingcommissionID',
+        description => 'The unique ID of the Ezmaxinvoicingcommission',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezmaxinvoicingsummaryglobal_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzmaxinvoicingsummaryglobalID',
+        description => 'The unique ID of the Ezmaxinvoicingsummaryglobal',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezmaxpartner_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzmaxpartnerID',
+        description => 'The unique ID of the Ezmaxpartner',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezmaxrepresentative_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzmaxrepresentativeID',
+        description => 'The unique ID of the Ezmaxrepresentative',
+        format => '',
+        read_only => '',
+            },
+    'dt_ezmaxinvoicingcommission_start' => {
+        datatype => 'string',
+        base_name => 'dtEzmaxinvoicingcommissionStart',
+        description => 'The start date for the Ezmaxinvoicingcommission',
+        format => '',
+        read_only => '',
+            },
+    'dt_ezmaxinvoicingcommission_end' => {
+        datatype => 'string',
+        base_name => 'dtEzmaxinvoicingcommissionEnd',
+        description => 'The end date for the Ezmaxinvoicingcommission',
+        format => '',
+        read_only => '',
+            },
+    'i_ezmaxinvoicingcommission_days' => {
+        datatype => 'int',
+        base_name => 'iEzmaxinvoicingcommissionDays',
+        description => 'This is the number of days during the month on which the Ezmaxinvoigcommission applies',
+        format => '',
+        read_only => '',
+            },
+    'd_ezmaxinvoicingcommission_amount' => {
+        datatype => 'string',
+        base_name => 'dEzmaxinvoicingcommissionAmount',
+        description => 'The amount of Ezmaxinvoicingcommission',
+        format => '',
+        read_only => '',
+            },
     'obj_contact_name' => {
         datatype => 'CustomContactNameResponse',
         base_name => 'objContactName',
@@ -243,10 +286,26 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezmaxinvoicingcommission_id' => 'int',
+    'fki_ezmaxinvoicingsummaryglobal_id' => 'int',
+    'fki_ezmaxpartner_id' => 'int',
+    'fki_ezmaxrepresentative_id' => 'int',
+    'dt_ezmaxinvoicingcommission_start' => 'string',
+    'dt_ezmaxinvoicingcommission_end' => 'string',
+    'i_ezmaxinvoicingcommission_days' => 'int',
+    'd_ezmaxinvoicingcommission_amount' => 'string',
     'obj_contact_name' => 'CustomContactNameResponse'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezmaxinvoicingcommission_id' => 'pkiEzmaxinvoicingcommissionID',
+    'fki_ezmaxinvoicingsummaryglobal_id' => 'fkiEzmaxinvoicingsummaryglobalID',
+    'fki_ezmaxpartner_id' => 'fkiEzmaxpartnerID',
+    'fki_ezmaxrepresentative_id' => 'fkiEzmaxrepresentativeID',
+    'dt_ezmaxinvoicingcommission_start' => 'dtEzmaxinvoicingcommissionStart',
+    'dt_ezmaxinvoicingcommission_end' => 'dtEzmaxinvoicingcommissionEnd',
+    'i_ezmaxinvoicingcommission_days' => 'iEzmaxinvoicingcommissionDays',
+    'd_ezmaxinvoicingcommission_amount' => 'dEzmaxinvoicingcommissionAmount',
     'obj_contact_name' => 'objContactName'
 } );
 

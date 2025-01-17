@@ -30,9 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsignbulksenddocumentmappingRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignbulksenddocumentmappingRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezsignbulksenddocumentmapping Object and children
@@ -85,18 +84,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsignbulksenddocumentmappingRequest
-    $self->EzmaxApi::Object::EzsignbulksenddocumentmappingRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsignbulksenddocumentmappingRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignbulksenddocumentmappingRequest::to_hash };
 
     return $_hash;
 }
@@ -127,9 +120,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsignbulksenddocumentmappingRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignbulksenddocumentmappingRequest::TO_JSON };
 
     return $_data;
 }
@@ -198,9 +188,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsignbulksenddocumentmappingRequest) from_hash
-    $self->EzmaxApi::Object::EzsignbulksenddocumentmappingRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -232,14 +219,48 @@ __PACKAGE__->class_documentation({description => 'A Ezsignbulksenddocumentmappin
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignbulksenddocumentmapping_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignbulksenddocumentmappingID',
+        description => 'The unique ID of the Ezsignbulksenddocumentmapping.',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignbulksend_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignbulksendID',
+        description => 'The unique ID of the Ezsignbulksend',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigntemplatepackage_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigntemplatepackageID',
+        description => 'The unique ID of the Ezsigntemplatepackage',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigntemplate_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigntemplateID',
+        description => 'The unique ID of the Ezsigntemplate',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_ezsignbulksenddocumentmapping_id' => 'int',
+    'fki_ezsignbulksend_id' => 'int',
+    'fki_ezsigntemplatepackage_id' => 'int',
+    'fki_ezsigntemplate_id' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_ezsignbulksenddocumentmapping_id' => 'pkiEzsignbulksenddocumentmappingID',
+    'fki_ezsignbulksend_id' => 'fkiEzsignbulksendID',
+    'fki_ezsigntemplatepackage_id' => 'fkiEzsigntemplatepackageID',
+    'fki_ezsigntemplate_id' => 'fkiEzsigntemplateID'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

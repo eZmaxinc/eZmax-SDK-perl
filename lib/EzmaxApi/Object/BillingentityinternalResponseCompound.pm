@@ -30,11 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::BillingentityinternalResponse;
 use EzmaxApi::Object::BillingentityinternalproductResponseCompound;
 use EzmaxApi::Object::MultilingualBillingentityinternalDescription;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::BillingentityinternalResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Billingentityinternal Object
@@ -87,18 +86,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object BillingentityinternalResponse
-    $self->EzmaxApi::Object::BillingentityinternalResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call BillingentityinternalResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::BillingentityinternalResponse::to_hash };
 
     return $_hash;
 }
@@ -129,9 +122,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (BillingentityinternalResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::BillingentityinternalResponse::TO_JSON };
 
     return $_data;
 }
@@ -200,9 +190,6 @@ sub from_hash {
         }
     }
 
-    # call parent (BillingentityinternalResponse) from_hash
-    $self->EzmaxApi::Object::BillingentityinternalResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -234,6 +221,20 @@ __PACKAGE__->class_documentation({description => 'A Billingentityinternal Object
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_billingentityinternal_id' => {
+        datatype => 'int',
+        base_name => 'pkiBillingentityinternalID',
+        description => 'The unique ID of the Billingentityinternal.',
+        format => '',
+        read_only => '',
+            },
+    'obj_billingentityinternal_description' => {
+        datatype => 'MultilingualBillingentityinternalDescription',
+        base_name => 'objBillingentityinternalDescription',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'a_obj_billingentityinternalproduct' => {
         datatype => 'ARRAY[BillingentityinternalproductResponseCompound]',
         base_name => 'a_objBillingentityinternalproduct',
@@ -244,10 +245,14 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_billingentityinternal_id' => 'int',
+    'obj_billingentityinternal_description' => 'MultilingualBillingentityinternalDescription',
     'a_obj_billingentityinternalproduct' => 'ARRAY[BillingentityinternalproductResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_billingentityinternal_id' => 'pkiBillingentityinternalID',
+    'obj_billingentityinternal_description' => 'objBillingentityinternalDescription',
     'a_obj_billingentityinternalproduct' => 'a_objBillingentityinternalproduct'
 } );
 

@@ -30,9 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::DiscussionRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::DiscussionRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Discussion Object and children
@@ -85,18 +84,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object DiscussionRequest
-    $self->EzmaxApi::Object::DiscussionRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call DiscussionRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::DiscussionRequest::to_hash };
 
     return $_hash;
 }
@@ -127,9 +120,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (DiscussionRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::DiscussionRequest::TO_JSON };
 
     return $_data;
 }
@@ -198,9 +188,6 @@ sub from_hash {
         }
     }
 
-    # call parent (DiscussionRequest) from_hash
-    $self->EzmaxApi::Object::DiscussionRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -232,14 +219,39 @@ __PACKAGE__->class_documentation({description => 'A Discussion Object and childr
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_discussion_id' => {
+        datatype => 'int',
+        base_name => 'pkiDiscussionID',
+        description => 'The unique ID of the Discussion',
+        format => '',
+        read_only => '',
+            },
+    's_discussion_description' => {
+        datatype => 'string',
+        base_name => 'sDiscussionDescription',
+        description => 'The description of the Discussion',
+        format => '',
+        read_only => '',
+            },
+    'b_discussion_closed' => {
+        datatype => 'boolean',
+        base_name => 'bDiscussionClosed',
+        description => 'Whether if it&#39;s an closed',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_discussion_id' => 'int',
+    's_discussion_description' => 'string',
+    'b_discussion_closed' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_discussion_id' => 'pkiDiscussionID',
+    's_discussion_description' => 'sDiscussionDescription',
+    'b_discussion_closed' => 'bDiscussionClosed'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

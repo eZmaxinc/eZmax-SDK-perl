@@ -130,10 +130,10 @@ sub subnet_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'subnet_delete_object_v1' } = {
         summary => 'Delete an existing Subnet',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'SubnetDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return SubnetDeleteObjectV1Response
 #
 sub subnet_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub subnet_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('SubnetDeleteObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub subnet_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'subnet_edit_object_v1' } = {
         summary => 'Edit an existing Subnet',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'SubnetEditObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return SubnetEditObjectV1Response
 #
 sub subnet_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub subnet_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('SubnetEditObjectV1Response', $response);
     return $_response_object;
 }
 

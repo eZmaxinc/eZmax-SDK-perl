@@ -31,12 +31,11 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
-use EzmaxApi::Object::EzsignbulksendResponse;
 use EzmaxApi::Object::EzsignbulksenddocumentmappingResponseCompound;
 use EzmaxApi::Object::EzsignbulksendsignermappingResponse;
 use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignbulksendResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #An Ezsignbulksend Object and children to create a complete structure
@@ -89,18 +88,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsignbulksendResponse
-    $self->EzmaxApi::Object::EzsignbulksendResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsignbulksendResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignbulksendResponse::to_hash };
 
     return $_hash;
 }
@@ -131,9 +124,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsignbulksendResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignbulksendResponse::TO_JSON };
 
     return $_data;
 }
@@ -202,9 +192,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsignbulksendResponse) from_hash
-    $self->EzmaxApi::Object::EzsignbulksendResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -236,6 +223,83 @@ __PACKAGE__->class_documentation({description => 'An Ezsignbulksend Object and c
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignbulksend_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignbulksendID',
+        description => 'The unique ID of the Ezsignbulksend',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignfoldertype_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignfoldertypeID',
+        description => 'The unique ID of the Ezsignfoldertype.',
+        format => '',
+        read_only => '',
+            },
+    'fki_language_id' => {
+        datatype => 'int',
+        base_name => 'fkiLanguageID',
+        description => 'The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|',
+        format => '',
+        read_only => '',
+            },
+    's_language_name_x' => {
+        datatype => 'string',
+        base_name => 'sLanguageNameX',
+        description => 'The Name of the Language in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignfoldertype_privacylevel' => {
+        datatype => 'FieldEEzsignfoldertypePrivacylevel',
+        base_name => 'eEzsignfoldertypePrivacylevel',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignfoldertype_name_x' => {
+        datatype => 'string',
+        base_name => 'sEzsignfoldertypeNameX',
+        description => 'The name of the Ezsignfoldertype in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignbulksend_description' => {
+        datatype => 'string',
+        base_name => 'sEzsignbulksendDescription',
+        description => 'The description of the Ezsignbulksend',
+        format => '',
+        read_only => '',
+            },
+    't_ezsignbulksend_note' => {
+        datatype => 'string',
+        base_name => 'tEzsignbulksendNote',
+        description => 'Note about the Ezsignbulksend',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignbulksend_needvalidation' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignbulksendNeedvalidation',
+        description => 'Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignbulksend_isactive' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignbulksendIsactive',
+        description => 'Whether the Ezsignbulksend is active or not',
+        format => '',
+        read_only => '',
+            },
+    'obj_audit' => {
+        datatype => 'CommonAudit',
+        base_name => 'objAudit',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'a_obj_ezsignbulksenddocumentmapping' => {
         datatype => 'ARRAY[EzsignbulksenddocumentmappingResponseCompound]',
         base_name => 'a_objEzsignbulksenddocumentmapping',
@@ -253,11 +317,33 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezsignbulksend_id' => 'int',
+    'fki_ezsignfoldertype_id' => 'int',
+    'fki_language_id' => 'int',
+    's_language_name_x' => 'string',
+    'e_ezsignfoldertype_privacylevel' => 'FieldEEzsignfoldertypePrivacylevel',
+    's_ezsignfoldertype_name_x' => 'string',
+    's_ezsignbulksend_description' => 'string',
+    't_ezsignbulksend_note' => 'string',
+    'b_ezsignbulksend_needvalidation' => 'boolean',
+    'b_ezsignbulksend_isactive' => 'boolean',
+    'obj_audit' => 'CommonAudit',
     'a_obj_ezsignbulksenddocumentmapping' => 'ARRAY[EzsignbulksenddocumentmappingResponseCompound]',
     'a_obj_ezsignbulksendsignermapping' => 'ARRAY[EzsignbulksendsignermappingResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezsignbulksend_id' => 'pkiEzsignbulksendID',
+    'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
+    'fki_language_id' => 'fkiLanguageID',
+    's_language_name_x' => 'sLanguageNameX',
+    'e_ezsignfoldertype_privacylevel' => 'eEzsignfoldertypePrivacylevel',
+    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
+    's_ezsignbulksend_description' => 'sEzsignbulksendDescription',
+    't_ezsignbulksend_note' => 'tEzsignbulksendNote',
+    'b_ezsignbulksend_needvalidation' => 'bEzsignbulksendNeedvalidation',
+    'b_ezsignbulksend_isactive' => 'bEzsignbulksendIsactive',
+    'obj_audit' => 'objAudit',
     'a_obj_ezsignbulksenddocumentmapping' => 'a_objEzsignbulksenddocumentmapping',
     'a_obj_ezsignbulksendsignermapping' => 'a_objEzsignbulksendsignermapping'
 } );

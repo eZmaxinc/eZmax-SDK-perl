@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **usergroupexternal_delete_object_v1**
-> CommonResponse usergroupexternal_delete_object_v1(pki_usergroupexternal_id => $pki_usergroupexternal_id)
+> UsergroupexternalDeleteObjectV1Response usergroupexternal_delete_object_v1(pki_usergroupexternal_id => $pki_usergroupexternal_id)
 
 Delete an existing Usergroupexternal
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**UsergroupexternalDeleteObjectV1Response**](UsergroupexternalDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **usergroupexternal_edit_object_v1**
-> CommonResponse usergroupexternal_edit_object_v1(pki_usergroupexternal_id => $pki_usergroupexternal_id, usergroupexternal_edit_object_v1_request => $usergroupexternal_edit_object_v1_request)
+> UsergroupexternalEditObjectV1Response usergroupexternal_edit_object_v1(pki_usergroupexternal_id => $pki_usergroupexternal_id, usergroupexternal_edit_object_v1_request => $usergroupexternal_edit_object_v1_request)
 
 Edit an existing Usergroupexternal
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**UsergroupexternalEditObjectV1Response**](UsergroupexternalEditObjectV1Response.md)
 
 ### Authorization
 

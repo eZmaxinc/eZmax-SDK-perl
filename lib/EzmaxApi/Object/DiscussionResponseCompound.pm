@@ -31,11 +31,10 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CustomDiscussionconfigurationResponse;
-use EzmaxApi::Object::DiscussionResponse;
 use EzmaxApi::Object::DiscussionmembershipResponseCompound;
 use EzmaxApi::Object::DiscussionmessageResponseCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::DiscussionResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Discussion Object
@@ -88,18 +87,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object DiscussionResponse
-    $self->EzmaxApi::Object::DiscussionResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call DiscussionResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::DiscussionResponse::to_hash };
 
     return $_hash;
 }
@@ -130,9 +123,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (DiscussionResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::DiscussionResponse::TO_JSON };
 
     return $_data;
 }
@@ -201,9 +191,6 @@ sub from_hash {
         }
     }
 
-    # call parent (DiscussionResponse) from_hash
-    $self->EzmaxApi::Object::DiscussionResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -235,6 +222,55 @@ __PACKAGE__->class_documentation({description => 'A Discussion Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_discussion_id' => {
+        datatype => 'int',
+        base_name => 'pkiDiscussionID',
+        description => 'The unique ID of the Discussion',
+        format => '',
+        read_only => '',
+            },
+    's_discussion_description' => {
+        datatype => 'string',
+        base_name => 'sDiscussionDescription',
+        description => 'The description of the Discussion',
+        format => '',
+        read_only => '',
+            },
+    'b_discussion_closed' => {
+        datatype => 'boolean',
+        base_name => 'bDiscussionClosed',
+        description => 'Whether if it&#39;s an closed',
+        format => '',
+        read_only => '',
+            },
+    'dt_discussion_lastread' => {
+        datatype => 'string',
+        base_name => 'dtDiscussionLastread',
+        description => 'The date the Discussion was last read',
+        format => '',
+        read_only => '',
+            },
+    'i_discussionmessage_count' => {
+        datatype => 'int',
+        base_name => 'iDiscussionmessageCount',
+        description => 'The count of Attachment.',
+        format => '',
+        read_only => '',
+            },
+    'i_discussionmessage_countunread' => {
+        datatype => 'int',
+        base_name => 'iDiscussionmessageCountunread',
+        description => 'The count of Attachment.',
+        format => '',
+        read_only => '',
+            },
+    'obj_discussionconfiguration' => {
+        datatype => 'CustomDiscussionconfigurationResponse',
+        base_name => 'objDiscussionconfiguration',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'a_obj_discussionmembership' => {
         datatype => 'ARRAY[DiscussionmembershipResponseCompound]',
         base_name => 'a_objDiscussionmembership',
@@ -252,11 +288,25 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_discussion_id' => 'int',
+    's_discussion_description' => 'string',
+    'b_discussion_closed' => 'boolean',
+    'dt_discussion_lastread' => 'string',
+    'i_discussionmessage_count' => 'int',
+    'i_discussionmessage_countunread' => 'int',
+    'obj_discussionconfiguration' => 'CustomDiscussionconfigurationResponse',
     'a_obj_discussionmembership' => 'ARRAY[DiscussionmembershipResponseCompound]',
     'a_obj_discussionmessage' => 'ARRAY[DiscussionmessageResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_discussion_id' => 'pkiDiscussionID',
+    's_discussion_description' => 'sDiscussionDescription',
+    'b_discussion_closed' => 'bDiscussionClosed',
+    'dt_discussion_lastread' => 'dtDiscussionLastread',
+    'i_discussionmessage_count' => 'iDiscussionmessageCount',
+    'i_discussionmessage_countunread' => 'iDiscussionmessageCountunread',
+    'obj_discussionconfiguration' => 'objDiscussionconfiguration',
     'a_obj_discussionmembership' => 'a_objDiscussionmembership',
     'a_obj_discussionmessage' => 'a_objDiscussionmessage'
 } );

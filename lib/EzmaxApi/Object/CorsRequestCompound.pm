@@ -30,9 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::CorsRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::CorsRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Cors Object and children
@@ -85,18 +84,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object CorsRequest
-    $self->EzmaxApi::Object::CorsRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call CorsRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::CorsRequest::to_hash };
 
     return $_hash;
 }
@@ -127,9 +120,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (CorsRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::CorsRequest::TO_JSON };
 
     return $_data;
 }
@@ -198,9 +188,6 @@ sub from_hash {
         }
     }
 
-    # call parent (CorsRequest) from_hash
-    $self->EzmaxApi::Object::CorsRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -232,14 +219,39 @@ __PACKAGE__->class_documentation({description => 'A Cors Object and children',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_cors_id' => {
+        datatype => 'int',
+        base_name => 'pkiCorsID',
+        description => 'The unique ID of the Cors',
+        format => '',
+        read_only => '',
+            },
+    'fki_apikey_id' => {
+        datatype => 'int',
+        base_name => 'fkiApikeyID',
+        description => 'The unique ID of the Apikey',
+        format => '',
+        read_only => '',
+            },
+    's_cors_entryurl' => {
+        datatype => 'string',
+        base_name => 'sCorsEntryurl',
+        description => 'The entryurl of the Cors',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_cors_id' => 'int',
+    'fki_apikey_id' => 'int',
+    's_cors_entryurl' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_cors_id' => 'pkiCorsID',
+    'fki_apikey_id' => 'fkiApikeyID',
+    's_cors_entryurl' => 'sCorsEntryurl'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

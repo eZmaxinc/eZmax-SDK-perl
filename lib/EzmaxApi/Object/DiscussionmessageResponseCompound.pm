@@ -31,10 +31,9 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
-use EzmaxApi::Object::DiscussionmessageResponse;
 use EzmaxApi::Object::FieldEDiscussionmessageStatus;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::DiscussionmessageResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Discussionmessage Object and children
@@ -87,18 +86,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object DiscussionmessageResponse
-    $self->EzmaxApi::Object::DiscussionmessageResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call DiscussionmessageResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::DiscussionmessageResponse::to_hash };
 
     return $_hash;
 }
@@ -129,9 +122,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (DiscussionmessageResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::DiscussionmessageResponse::TO_JSON };
 
     return $_data;
 }
@@ -200,9 +190,6 @@ sub from_hash {
         }
     }
 
-    # call parent (DiscussionmessageResponse) from_hash
-    $self->EzmaxApi::Object::DiscussionmessageResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -234,14 +221,93 @@ __PACKAGE__->class_documentation({description => 'A Discussionmessage Object and
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_discussionmessage_id' => {
+        datatype => 'int',
+        base_name => 'pkiDiscussionmessageID',
+        description => 'The unique ID of the Discussionmessage',
+        format => '',
+        read_only => '',
+            },
+    'fki_discussion_id' => {
+        datatype => 'int',
+        base_name => 'fkiDiscussionID',
+        description => 'The unique ID of the Discussion',
+        format => '',
+        read_only => '',
+            },
+    'fki_discussionmembership_id' => {
+        datatype => 'int',
+        base_name => 'fkiDiscussionmembershipID',
+        description => 'The unique ID of the Discussionmembership',
+        format => '',
+        read_only => '',
+            },
+    'fki_discussionmembership_id_actionrequired' => {
+        datatype => 'int',
+        base_name => 'fkiDiscussionmembershipIDActionrequired',
+        description => 'The unique ID of the Discussionmembership',
+        format => '',
+        read_only => '',
+            },
+    'e_discussionmessage_status' => {
+        datatype => 'FieldEDiscussionmessageStatus',
+        base_name => 'eDiscussionmessageStatus',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    't_discussionmessage_content' => {
+        datatype => 'string',
+        base_name => 'tDiscussionmessageContent',
+        description => 'The content of the Discussionmessage',
+        format => '',
+        read_only => '',
+            },
+    's_discussionmessage_creatorname' => {
+        datatype => 'string',
+        base_name => 'sDiscussionmessageCreatorname',
+        description => 'The name the creator of the Discussionmessage.',
+        format => '',
+        read_only => '',
+            },
+    's_discussionmessage_actionrequiredname' => {
+        datatype => 'string',
+        base_name => 'sDiscussionmessageActionrequiredname',
+        description => 'The name the Actionrequired of the Discussionmessage.',
+        format => '',
+        read_only => '',
+            },
+    'obj_audit' => {
+        datatype => 'CommonAudit',
+        base_name => 'objAudit',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_discussionmessage_id' => 'int',
+    'fki_discussion_id' => 'int',
+    'fki_discussionmembership_id' => 'int',
+    'fki_discussionmembership_id_actionrequired' => 'int',
+    'e_discussionmessage_status' => 'FieldEDiscussionmessageStatus',
+    't_discussionmessage_content' => 'string',
+    's_discussionmessage_creatorname' => 'string',
+    's_discussionmessage_actionrequiredname' => 'string',
+    'obj_audit' => 'CommonAudit'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_discussionmessage_id' => 'pkiDiscussionmessageID',
+    'fki_discussion_id' => 'fkiDiscussionID',
+    'fki_discussionmembership_id' => 'fkiDiscussionmembershipID',
+    'fki_discussionmembership_id_actionrequired' => 'fkiDiscussionmembershipIDActionrequired',
+    'e_discussionmessage_status' => 'eDiscussionmessageStatus',
+    't_discussionmessage_content' => 'tDiscussionmessageContent',
+    's_discussionmessage_creatorname' => 'sDiscussionmessageCreatorname',
+    's_discussionmessage_actionrequiredname' => 'sDiscussionmessageActionrequiredname',
+    'obj_audit' => 'objAudit'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

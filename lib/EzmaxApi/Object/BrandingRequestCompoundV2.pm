@@ -30,12 +30,11 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::BrandingRequestV2;
 use EzmaxApi::Object::FieldEBrandingAlignlogo;
 use EzmaxApi::Object::FieldEBrandingLogo;
 use EzmaxApi::Object::MultilingualBrandingDescription;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::BrandingRequestV2");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Branding Object and children
@@ -88,18 +87,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object BrandingRequestV2
-    $self->EzmaxApi::Object::BrandingRequestV2::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call BrandingRequestV2 to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::BrandingRequestV2::to_hash };
 
     return $_hash;
 }
@@ -130,9 +123,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (BrandingRequestV2) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::BrandingRequestV2::TO_JSON };
 
     return $_data;
 }
@@ -201,9 +191,6 @@ sub from_hash {
         }
     }
 
-    # call parent (BrandingRequestV2) from_hash
-    $self->EzmaxApi::Object::BrandingRequestV2::from_hash($hash);
-
     return $self;
 }
 
@@ -235,14 +222,93 @@ __PACKAGE__->class_documentation({description => 'A Branding Object and children
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_branding_id' => {
+        datatype => 'int',
+        base_name => 'pkiBrandingID',
+        description => 'The unique ID of the Branding',
+        format => '',
+        read_only => '',
+            },
+    'obj_branding_description' => {
+        datatype => 'MultilingualBrandingDescription',
+        base_name => 'objBrandingDescription',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_branding_logo' => {
+        datatype => 'FieldEBrandingLogo',
+        base_name => 'eBrandingLogo',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_branding_alignlogo' => {
+        datatype => 'FieldEBrandingAlignlogo',
+        base_name => 'eBrandingAlignlogo',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_branding_base64' => {
+        datatype => 'string',
+        base_name => 'sBrandingBase64',
+        description => 'The Base64 encoded binary content of the branding logo. This need to match image type selected in eBrandingLogo if you supply an image. If you select &#39;Default&#39;, the logo will be deleted and the default one will be used.',
+        format => '',
+        read_only => '',
+            },
+    'i_branding_color' => {
+        datatype => 'int',
+        base_name => 'iBrandingColor',
+        description => 'The primary color. This is a RGB color converted into integer',
+        format => '',
+        read_only => '',
+            },
+    's_branding_name' => {
+        datatype => 'string',
+        base_name => 'sBrandingName',
+        description => 'The name of the Branding  This value will only be set if you wish to overwrite the default name. If you want to keep the default name, leave this property empty',
+        format => '',
+        read_only => '',
+            },
+    's_email_address' => {
+        datatype => 'string',
+        base_name => 'sEmailAddress',
+        description => 'The email address.',
+        format => '',
+        read_only => '',
+            },
+    'b_branding_isactive' => {
+        datatype => 'boolean',
+        base_name => 'bBrandingIsactive',
+        description => 'Whether the Branding is active or not',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_branding_id' => 'int',
+    'obj_branding_description' => 'MultilingualBrandingDescription',
+    'e_branding_logo' => 'FieldEBrandingLogo',
+    'e_branding_alignlogo' => 'FieldEBrandingAlignlogo',
+    's_branding_base64' => 'string',
+    'i_branding_color' => 'int',
+    's_branding_name' => 'string',
+    's_email_address' => 'string',
+    'b_branding_isactive' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_branding_id' => 'pkiBrandingID',
+    'obj_branding_description' => 'objBrandingDescription',
+    'e_branding_logo' => 'eBrandingLogo',
+    'e_branding_alignlogo' => 'eBrandingAlignlogo',
+    's_branding_base64' => 'sBrandingBase64',
+    'i_branding_color' => 'iBrandingColor',
+    's_branding_name' => 'sBrandingName',
+    's_email_address' => 'sEmailAddress',
+    'b_branding_isactive' => 'bBrandingIsactive'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

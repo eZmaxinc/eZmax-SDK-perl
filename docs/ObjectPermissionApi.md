@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **permission_delete_object_v1**
-> CommonResponse permission_delete_object_v1(pki_permission_id => $pki_permission_id)
+> PermissionDeleteObjectV1Response permission_delete_object_v1(pki_permission_id => $pki_permission_id)
 
 Delete an existing Permission
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**PermissionDeleteObjectV1Response**](PermissionDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **permission_edit_object_v1**
-> CommonResponse permission_edit_object_v1(pki_permission_id => $pki_permission_id, permission_edit_object_v1_request => $permission_edit_object_v1_request)
+> PermissionEditObjectV1Response permission_edit_object_v1(pki_permission_id => $pki_permission_id, permission_edit_object_v1_request => $permission_edit_object_v1_request)
 
 Edit an existing Permission
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**PermissionEditObjectV1Response**](PermissionEditObjectV1Response.md)
 
 ### Authorization
 

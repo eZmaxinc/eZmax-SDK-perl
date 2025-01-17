@@ -30,9 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsigntemplateglobalsignerResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsigntemplateglobalsignerResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezsigntemplateglobalsigner Object
@@ -85,18 +84,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsigntemplateglobalsignerResponse
-    $self->EzmaxApi::Object::EzsigntemplateglobalsignerResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsigntemplateglobalsignerResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsigntemplateglobalsignerResponse::to_hash };
 
     return $_hash;
 }
@@ -127,9 +120,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsigntemplateglobalsignerResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsigntemplateglobalsignerResponse::TO_JSON };
 
     return $_data;
 }
@@ -198,9 +188,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsigntemplateglobalsignerResponse) from_hash
-    $self->EzmaxApi::Object::EzsigntemplateglobalsignerResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -232,14 +219,39 @@ __PACKAGE__->class_documentation({description => 'A Ezsigntemplateglobalsigner O
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsigntemplateglobalsigner_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsigntemplateglobalsignerID',
+        description => 'The unique ID of the Ezsigntemplateglobalsigner',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigntemplateglobal_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigntemplateglobalID',
+        description => 'The unique ID of the Ezsigntemplateglobal',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigntemplateglobalsigner_description' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplateglobalsignerDescription',
+        description => 'The description of the Ezsigntemplateglobalsigner',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_ezsigntemplateglobalsigner_id' => 'int',
+    'fki_ezsigntemplateglobal_id' => 'int',
+    's_ezsigntemplateglobalsigner_description' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_ezsigntemplateglobalsigner_id' => 'pkiEzsigntemplateglobalsignerID',
+    'fki_ezsigntemplateglobal_id' => 'fkiEzsigntemplateglobalID',
+    's_ezsigntemplateglobalsigner_description' => 'sEzsigntemplateglobalsignerDescription'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

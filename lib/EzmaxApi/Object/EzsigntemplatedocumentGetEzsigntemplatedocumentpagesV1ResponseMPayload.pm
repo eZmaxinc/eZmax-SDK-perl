@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsigntemplatedocumentpageResponse;
+use EzmaxApi::Object::EzsigntemplatedocumentpageResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 

@@ -30,10 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::AttachmentlogResponse;
 use EzmaxApi::Object::FieldEAttachmentlogType;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::AttachmentlogResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Attachmentlog Object
@@ -86,18 +85,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object AttachmentlogResponse
-    $self->EzmaxApi::Object::AttachmentlogResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call AttachmentlogResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::AttachmentlogResponse::to_hash };
 
     return $_hash;
 }
@@ -128,9 +121,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (AttachmentlogResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::AttachmentlogResponse::TO_JSON };
 
     return $_data;
 }
@@ -199,9 +189,6 @@ sub from_hash {
         }
     }
 
-    # call parent (AttachmentlogResponse) from_hash
-    $self->EzmaxApi::Object::AttachmentlogResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -233,14 +220,57 @@ __PACKAGE__->class_documentation({description => 'A Attachmentlog Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'fki_attachment_id' => {
+        datatype => 'int',
+        base_name => 'fkiAttachmentID',
+        description => 'The unique ID of the Attachment.',
+        format => '',
+        read_only => '',
+            },
+    'fki_user_id' => {
+        datatype => 'int',
+        base_name => 'fkiUserID',
+        description => 'The unique ID of the User',
+        format => '',
+        read_only => '',
+            },
+    'dt_attachmentlog_datetime' => {
+        datatype => 'string',
+        base_name => 'dtAttachmentlogDatetime',
+        description => 'The created date',
+        format => '',
+        read_only => '',
+            },
+    'e_attachmentlog_type' => {
+        datatype => 'FieldEAttachmentlogType',
+        base_name => 'eAttachmentlogType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_attachmentlog_detail' => {
+        datatype => 'string',
+        base_name => 'sAttachmentlogDetail',
+        description => 'The additionnal detail',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'fki_attachment_id' => 'int',
+    'fki_user_id' => 'int',
+    'dt_attachmentlog_datetime' => 'string',
+    'e_attachmentlog_type' => 'FieldEAttachmentlogType',
+    's_attachmentlog_detail' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'fki_attachment_id' => 'fkiAttachmentID',
+    'fki_user_id' => 'fkiUserID',
+    'dt_attachmentlog_datetime' => 'dtAttachmentlogDatetime',
+    'e_attachmentlog_type' => 'eAttachmentlogType',
+    's_attachmentlog_detail' => 'sAttachmentlogDetail'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

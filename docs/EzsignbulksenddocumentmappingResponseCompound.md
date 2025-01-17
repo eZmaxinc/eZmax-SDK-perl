@@ -8,6 +8,11 @@ use EzmaxApi::Object::EzsignbulksenddocumentmappingResponseCompound;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pki_ezsignbulksenddocumentmapping_id** | **int** | The unique ID of the Ezsignbulksenddocumentmapping. | 
+**fki_ezsignbulksend_id** | **int** | The unique ID of the Ezsignbulksend | 
+**fki_ezsigntemplatepackage_id** | **int** | The unique ID of the Ezsigntemplatepackage | [optional] 
+**fki_ezsigntemplate_id** | **int** | The unique ID of the Ezsigntemplate | [optional] 
+**i_ezsignbulksenddocumentmapping_order** | **int** | The order in which the Ezsigntemplate or Ezsigntemplatepackage will be presented to the signatory in the Ezsignfolder. | 
 **obj_ezsigntemplate** | [**EzsigntemplateResponseCompound**](EzsigntemplateResponseCompound.md) |  | [optional] 
 **obj_ezsigntemplatepackage** | [**EzsigntemplatepackageResponseCompound**](EzsigntemplatepackageResponseCompound.md) |  | [optional] 
 

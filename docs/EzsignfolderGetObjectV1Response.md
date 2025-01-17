@@ -8,7 +8,9 @@ use EzmaxApi::Object::EzsignfolderGetObjectV1Response;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**m_payload** | [**EzsignfolderResponseCompound**](EzsignfolderResponseCompound.md) | Payload for GET /1/object/ezsignfolder/{pkiEzsignfolderID} | 
+**obj_debug_payload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | 
+**obj_debug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
+**m_payload** | [**EzsignfolderGetObjectV1ResponseMPayload**](EzsignfolderGetObjectV1ResponseMPayload.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

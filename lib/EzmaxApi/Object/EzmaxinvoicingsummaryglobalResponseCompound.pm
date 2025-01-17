@@ -31,9 +31,8 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::EzmaxinvoicingcommissionResponseCompound;
-use EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezmaxinvoicingsummaryglobal Object
@@ -86,18 +85,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzmaxinvoicingsummaryglobalResponse
-    $self->EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzmaxinvoicingsummaryglobalResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponse::to_hash };
 
     return $_hash;
 }
@@ -128,9 +121,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzmaxinvoicingsummaryglobalResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponse::TO_JSON };
 
     return $_data;
 }
@@ -199,9 +189,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzmaxinvoicingsummaryglobalResponse) from_hash
-    $self->EzmaxApi::Object::EzmaxinvoicingsummaryglobalResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -233,6 +220,139 @@ __PACKAGE__->class_documentation({description => 'A Ezmaxinvoicingsummaryglobal 
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezmaxinvoicingsummaryglobal_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzmaxinvoicingsummaryglobalID',
+        description => 'The unique ID of the Ezmaxinvoicingsummaryglobal',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezmaxinvoicing_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzmaxinvoicingID',
+        description => 'The unique ID of the Ezmaxinvoicing',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezmaxproduct_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzmaxproductID',
+        description => 'The unique ID of the Ezmaxproduct',
+        format => '',
+        read_only => '',
+            },
+    's_ezmaxproduct_description_x' => {
+        datatype => 'string',
+        base_name => 'sEzmaxproductDescriptionX',
+        description => 'The description of the Ezmaxproduct in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    'dt_ezmaxinvoicingsummaryglobal_start' => {
+        datatype => 'string',
+        base_name => 'dtEzmaxinvoicingsummaryglobalStart',
+        description => 'The start date for the Ezmaxinvoicingsummaryglobal',
+        format => '',
+        read_only => '',
+            },
+    'dt_ezmaxinvoicingsummaryglobal_end' => {
+        datatype => 'string',
+        base_name => 'dtEzmaxinvoicingsummaryglobalEnd',
+        description => 'The end date for the Ezmaxinvoicingsummaryglobal',
+        format => '',
+        read_only => '',
+            },
+    'i_ezmaxinvoicingsummaryglobal_days' => {
+        datatype => 'int',
+        base_name => 'iEzmaxinvoicingsummaryglobalDays',
+        description => 'The number of days for the Ezmaxinvoicingsummaryglobal',
+        format => '',
+        read_only => '',
+            },
+    'd_ezmaxinvoicingsummaryglobal_countreal' => {
+        datatype => 'string',
+        base_name => 'dEzmaxinvoicingsummaryglobalCountreal',
+        description => 'The count item calculated',
+        format => '',
+        read_only => '',
+            },
+    'd_ezmaxinvoicingsummaryglobal_countbilled' => {
+        datatype => 'string',
+        base_name => 'dEzmaxinvoicingsummaryglobalCountbilled',
+        description => 'The count item billed',
+        format => '',
+        read_only => '',
+            },
+    'd_ezmaxinvoicingsummaryglobal_subtotal' => {
+        datatype => 'string',
+        base_name => 'dEzmaxinvoicingsummaryglobalSubtotal',
+        description => 'The Ezmaxinvoicingsummaryglobal subtotal',
+        format => '',
+        read_only => '',
+            },
+    'd_ezmaxinvoicingsummaryglobal_rebateamount' => {
+        datatype => 'string',
+        base_name => 'dEzmaxinvoicingsummaryglobalRebateamount',
+        description => 'The rebate amount for the Ezmaxinvoicingsummaryglobal',
+        format => '',
+        read_only => '',
+            },
+    'd_ezmaxinvoicingsummaryglobal_rebatepercent' => {
+        datatype => 'string',
+        base_name => 'dEzmaxinvoicingsummaryglobalRebatepercent',
+        description => 'The rebate percentage of the Ezmaxinvoicingsummaryglobal',
+        format => '',
+        read_only => '',
+            },
+    'd_ezmaxinvoicingsummaryglobal_rebatetotal' => {
+        datatype => 'string',
+        base_name => 'dEzmaxinvoicingsummaryglobalRebatetotal',
+        description => 'The rebate amount total for the Ezmaxinvoicingsummaryglobal',
+        format => '',
+        read_only => '',
+            },
+    'd_ezmaxinvoicingsummaryglobal_total' => {
+        datatype => 'string',
+        base_name => 'dEzmaxinvoicingsummaryglobalTotal',
+        description => 'The Ezmaxinvoicingsummaryglobal total',
+        format => '',
+        read_only => '',
+            },
+    'd_ezmaxinvoicingsummaryglobal_representative' => {
+        datatype => 'string',
+        base_name => 'dEzmaxinvoicingsummaryglobalRepresentative',
+        description => 'The amount of commission for the representative',
+        format => '',
+        read_only => '',
+            },
+    'd_ezmaxinvoicingsummaryglobal_partner' => {
+        datatype => 'string',
+        base_name => 'dEzmaxinvoicingsummaryglobalPartner',
+        description => 'The amount of commission for the partner',
+        format => '',
+        read_only => '',
+            },
+    'd_ezmaxinvoicingsummaryglobal_net' => {
+        datatype => 'string',
+        base_name => 'dEzmaxinvoicingsummaryglobalNet',
+        description => 'The net amount of the Ezmaxinvoicingsummaryglobal',
+        format => '',
+        read_only => '',
+            },
+    'b_ezmaxinvoicingsummaryglobal_adjustment' => {
+        datatype => 'boolean',
+        base_name => 'bEzmaxinvoicingsummaryglobalAdjustment',
+        description => 'Whether it is adjustment for the Ezmaxinvoicingsummaryglobal',
+        format => '',
+        read_only => '',
+            },
+    't_ezmaxproduct_help_x' => {
+        datatype => 'string',
+        base_name => 'tEzmaxproductHelpX',
+        description => 'The help message of the Ezmaxproduct in the language of the requester',
+        format => '',
+        read_only => '',
+            },
     'a_obj_ezmaxinvoicingcommission' => {
         datatype => 'ARRAY[EzmaxinvoicingcommissionResponseCompound]',
         base_name => 'a_objEzmaxinvoicingcommission',
@@ -243,10 +363,48 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezmaxinvoicingsummaryglobal_id' => 'int',
+    'fki_ezmaxinvoicing_id' => 'int',
+    'fki_ezmaxproduct_id' => 'int',
+    's_ezmaxproduct_description_x' => 'string',
+    'dt_ezmaxinvoicingsummaryglobal_start' => 'string',
+    'dt_ezmaxinvoicingsummaryglobal_end' => 'string',
+    'i_ezmaxinvoicingsummaryglobal_days' => 'int',
+    'd_ezmaxinvoicingsummaryglobal_countreal' => 'string',
+    'd_ezmaxinvoicingsummaryglobal_countbilled' => 'string',
+    'd_ezmaxinvoicingsummaryglobal_subtotal' => 'string',
+    'd_ezmaxinvoicingsummaryglobal_rebateamount' => 'string',
+    'd_ezmaxinvoicingsummaryglobal_rebatepercent' => 'string',
+    'd_ezmaxinvoicingsummaryglobal_rebatetotal' => 'string',
+    'd_ezmaxinvoicingsummaryglobal_total' => 'string',
+    'd_ezmaxinvoicingsummaryglobal_representative' => 'string',
+    'd_ezmaxinvoicingsummaryglobal_partner' => 'string',
+    'd_ezmaxinvoicingsummaryglobal_net' => 'string',
+    'b_ezmaxinvoicingsummaryglobal_adjustment' => 'boolean',
+    't_ezmaxproduct_help_x' => 'string',
     'a_obj_ezmaxinvoicingcommission' => 'ARRAY[EzmaxinvoicingcommissionResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezmaxinvoicingsummaryglobal_id' => 'pkiEzmaxinvoicingsummaryglobalID',
+    'fki_ezmaxinvoicing_id' => 'fkiEzmaxinvoicingID',
+    'fki_ezmaxproduct_id' => 'fkiEzmaxproductID',
+    's_ezmaxproduct_description_x' => 'sEzmaxproductDescriptionX',
+    'dt_ezmaxinvoicingsummaryglobal_start' => 'dtEzmaxinvoicingsummaryglobalStart',
+    'dt_ezmaxinvoicingsummaryglobal_end' => 'dtEzmaxinvoicingsummaryglobalEnd',
+    'i_ezmaxinvoicingsummaryglobal_days' => 'iEzmaxinvoicingsummaryglobalDays',
+    'd_ezmaxinvoicingsummaryglobal_countreal' => 'dEzmaxinvoicingsummaryglobalCountreal',
+    'd_ezmaxinvoicingsummaryglobal_countbilled' => 'dEzmaxinvoicingsummaryglobalCountbilled',
+    'd_ezmaxinvoicingsummaryglobal_subtotal' => 'dEzmaxinvoicingsummaryglobalSubtotal',
+    'd_ezmaxinvoicingsummaryglobal_rebateamount' => 'dEzmaxinvoicingsummaryglobalRebateamount',
+    'd_ezmaxinvoicingsummaryglobal_rebatepercent' => 'dEzmaxinvoicingsummaryglobalRebatepercent',
+    'd_ezmaxinvoicingsummaryglobal_rebatetotal' => 'dEzmaxinvoicingsummaryglobalRebatetotal',
+    'd_ezmaxinvoicingsummaryglobal_total' => 'dEzmaxinvoicingsummaryglobalTotal',
+    'd_ezmaxinvoicingsummaryglobal_representative' => 'dEzmaxinvoicingsummaryglobalRepresentative',
+    'd_ezmaxinvoicingsummaryglobal_partner' => 'dEzmaxinvoicingsummaryglobalPartner',
+    'd_ezmaxinvoicingsummaryglobal_net' => 'dEzmaxinvoicingsummaryglobalNet',
+    'b_ezmaxinvoicingsummaryglobal_adjustment' => 'bEzmaxinvoicingsummaryglobalAdjustment',
+    't_ezmaxproduct_help_x' => 'tEzmaxproductHelpX',
     'a_obj_ezmaxinvoicingcommission' => 'a_objEzmaxinvoicingcommission'
 } );
 

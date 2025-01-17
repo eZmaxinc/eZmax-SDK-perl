@@ -30,9 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsignsignergroupmembershipResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsignsignergroupmembershipResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezsignsignergroupmembership Object
@@ -85,18 +84,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsignsignergroupmembershipResponse
-    $self->EzmaxApi::Object::EzsignsignergroupmembershipResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsignsignergroupmembershipResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsignsignergroupmembershipResponse::to_hash };
 
     return $_hash;
 }
@@ -127,9 +120,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsignsignergroupmembershipResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsignsignergroupmembershipResponse::TO_JSON };
 
     return $_data;
 }
@@ -198,9 +188,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsignsignergroupmembershipResponse) from_hash
-    $self->EzmaxApi::Object::EzsignsignergroupmembershipResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -232,14 +219,57 @@ __PACKAGE__->class_documentation({description => 'A Ezsignsignergroupmembership 
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsignsignergroupmembership_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsignsignergroupmembershipID',
+        description => 'The unique ID of the Ezsignsignergroupmembership',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignsignergroup_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignsignergroupID',
+        description => 'The unique ID of the Ezsignsignergroup',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignsigner_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignsignerID',
+        description => 'The unique ID of the Ezsignsigner',
+        format => '',
+        read_only => '',
+            },
+    'fki_user_id' => {
+        datatype => 'int',
+        base_name => 'fkiUserID',
+        description => 'The unique ID of the User',
+        format => '',
+        read_only => '',
+            },
+    'fki_usergroup_id' => {
+        datatype => 'int',
+        base_name => 'fkiUsergroupID',
+        description => 'The unique ID of the Usergroup',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_ezsignsignergroupmembership_id' => 'int',
+    'fki_ezsignsignergroup_id' => 'int',
+    'fki_ezsignsigner_id' => 'int',
+    'fki_user_id' => 'int',
+    'fki_usergroup_id' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_ezsignsignergroupmembership_id' => 'pkiEzsignsignergroupmembershipID',
+    'fki_ezsignsignergroup_id' => 'fkiEzsignsignergroupID',
+    'fki_ezsignsigner_id' => 'fkiEzsignsignerID',
+    'fki_user_id' => 'fkiUserID',
+    'fki_usergroup_id' => 'fkiUsergroupID'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

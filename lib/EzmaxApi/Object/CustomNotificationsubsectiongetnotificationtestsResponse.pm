@@ -32,9 +32,8 @@ use DateTime;
 
 use EzmaxApi::Object::CustomNotificationtestgetnotificationtestsResponse;
 use EzmaxApi::Object::MultilingualNotificationsubsectionName;
-use EzmaxApi::Object::NotificationsubsectionResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::NotificationsubsectionResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Notificationsubsection Object in the context of getNotificationtests
@@ -87,18 +86,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object NotificationsubsectionResponse
-    $self->EzmaxApi::Object::NotificationsubsectionResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call NotificationsubsectionResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::NotificationsubsectionResponse::to_hash };
 
     return $_hash;
 }
@@ -129,9 +122,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (NotificationsubsectionResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::NotificationsubsectionResponse::TO_JSON };
 
     return $_data;
 }
@@ -200,9 +190,6 @@ sub from_hash {
         }
     }
 
-    # call parent (NotificationsubsectionResponse) from_hash
-    $self->EzmaxApi::Object::NotificationsubsectionResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -234,6 +221,41 @@ __PACKAGE__->class_documentation({description => 'A Notificationsubsection Objec
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_notificationsubsection_id' => {
+        datatype => 'int',
+        base_name => 'pkiNotificationsubsectionID',
+        description => 'The unique ID of the Notificationsubsection',
+        format => '',
+        read_only => '',
+            },
+    'fki_notificationsection_id' => {
+        datatype => 'int',
+        base_name => 'fkiNotificationsectionID',
+        description => 'The unique ID of the Notificationsection',
+        format => '',
+        read_only => '',
+            },
+    'obj_notificationsubsection_name' => {
+        datatype => 'MultilingualNotificationsubsectionName',
+        base_name => 'objNotificationsubsectionName',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_notificationsection_name_x' => {
+        datatype => 'string',
+        base_name => 'sNotificationsectionNameX',
+        description => 'The name of the Notificationsection in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    's_notificationsubsection_name_x' => {
+        datatype => 'string',
+        base_name => 'sNotificationsubsectionNameX',
+        description => 'The name of the Notificationsubsection in the language of the requester',
+        format => '',
+        read_only => '',
+            },
     'a_obj_notificationtest' => {
         datatype => 'ARRAY[CustomNotificationtestgetnotificationtestsResponse]',
         base_name => 'a_objNotificationtest',
@@ -244,10 +266,20 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_notificationsubsection_id' => 'int',
+    'fki_notificationsection_id' => 'int',
+    'obj_notificationsubsection_name' => 'MultilingualNotificationsubsectionName',
+    's_notificationsection_name_x' => 'string',
+    's_notificationsubsection_name_x' => 'string',
     'a_obj_notificationtest' => 'ARRAY[CustomNotificationtestgetnotificationtestsResponse]'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_notificationsubsection_id' => 'pkiNotificationsubsectionID',
+    'fki_notificationsection_id' => 'fkiNotificationsectionID',
+    'obj_notificationsubsection_name' => 'objNotificationsubsectionName',
+    's_notificationsection_name_x' => 'sNotificationsectionNameX',
+    's_notificationsubsection_name_x' => 'sNotificationsubsectionNameX',
     'a_obj_notificationtest' => 'a_objNotificationtest'
 } );
 

@@ -551,10 +551,10 @@ sub ezsigntemplatedocument_extract_text_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigntemplatedocument_flatten_v1' } = {
         summary => 'Flatten',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigntemplatedocumentFlattenV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigntemplatedocumentFlattenV1Response
 #
 sub ezsigntemplatedocument_flatten_v1 {
     my ($self, %args) = @_;
@@ -607,7 +607,7 @@ sub ezsigntemplatedocument_flatten_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatedocumentFlattenV1Response', $response);
     return $_response_object;
 }
 
@@ -1052,10 +1052,10 @@ sub ezsigntemplatedocument_get_words_positions_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigntemplatedocument_patch_object_v1' } = {
         summary => 'Patch an existing Ezsigntemplatedocument',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigntemplatedocumentPatchObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigntemplatedocumentPatchObjectV1Response
 #
 sub ezsigntemplatedocument_patch_object_v1 {
     my ($self, %args) = @_;
@@ -1108,7 +1108,7 @@ sub ezsigntemplatedocument_patch_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatedocumentPatchObjectV1Response', $response);
     return $_response_object;
 }
 

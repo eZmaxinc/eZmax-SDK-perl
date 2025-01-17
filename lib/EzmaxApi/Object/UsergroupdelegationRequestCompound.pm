@@ -30,9 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::UsergroupdelegationRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::UsergroupdelegationRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Usergroupdelegation Object and children
@@ -85,18 +84,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object UsergroupdelegationRequest
-    $self->EzmaxApi::Object::UsergroupdelegationRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call UsergroupdelegationRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::UsergroupdelegationRequest::to_hash };
 
     return $_hash;
 }
@@ -127,9 +120,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (UsergroupdelegationRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::UsergroupdelegationRequest::TO_JSON };
 
     return $_data;
 }
@@ -198,9 +188,6 @@ sub from_hash {
         }
     }
 
-    # call parent (UsergroupdelegationRequest) from_hash
-    $self->EzmaxApi::Object::UsergroupdelegationRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -232,14 +219,39 @@ __PACKAGE__->class_documentation({description => 'A Usergroupdelegation Object a
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_usergroupdelegation_id' => {
+        datatype => 'int',
+        base_name => 'pkiUsergroupdelegationID',
+        description => 'The unique ID of the Usergroupdelegation',
+        format => '',
+        read_only => '',
+            },
+    'fki_usergroup_id' => {
+        datatype => 'int',
+        base_name => 'fkiUsergroupID',
+        description => 'The unique ID of the Usergroup',
+        format => '',
+        read_only => '',
+            },
+    'fki_user_id' => {
+        datatype => 'int',
+        base_name => 'fkiUserID',
+        description => 'The unique ID of the User',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_usergroupdelegation_id' => 'int',
+    'fki_usergroup_id' => 'int',
+    'fki_user_id' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_usergroupdelegation_id' => 'pkiUsergroupdelegationID',
+    'fki_usergroup_id' => 'fkiUsergroupID',
+    'fki_user_id' => 'fkiUserID'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

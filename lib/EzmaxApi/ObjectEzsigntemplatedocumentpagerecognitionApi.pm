@@ -130,10 +130,10 @@ sub ezsigntemplatedocumentpagerecognition_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigntemplatedocumentpagerecognition_delete_object_v1' } = {
         summary => 'Delete an existing Ezsigntemplatedocumentpagerecognition',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response
 #
 sub ezsigntemplatedocumentpagerecognition_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub ezsigntemplatedocumentpagerecognition_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub ezsigntemplatedocumentpagerecognition_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigntemplatedocumentpagerecognition_edit_object_v1' } = {
         summary => 'Edit an existing Ezsigntemplatedocumentpagerecognition',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigntemplatedocumentpagerecognitionEditObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigntemplatedocumentpagerecognitionEditObjectV1Response
 #
 sub ezsigntemplatedocumentpagerecognition_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub ezsigntemplatedocumentpagerecognition_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatedocumentpagerecognitionEditObjectV1Response', $response);
     return $_response_object;
 }
 

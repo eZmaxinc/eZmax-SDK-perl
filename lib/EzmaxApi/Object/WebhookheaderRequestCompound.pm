@@ -30,9 +30,8 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::WebhookheaderRequest;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::WebhookheaderRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Webhookheader Object
@@ -85,18 +84,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object WebhookheaderRequest
-    $self->EzmaxApi::Object::WebhookheaderRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call WebhookheaderRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::WebhookheaderRequest::to_hash };
 
     return $_hash;
 }
@@ -127,9 +120,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (WebhookheaderRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::WebhookheaderRequest::TO_JSON };
 
     return $_data;
 }
@@ -198,9 +188,6 @@ sub from_hash {
         }
     }
 
-    # call parent (WebhookheaderRequest) from_hash
-    $self->EzmaxApi::Object::WebhookheaderRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -232,14 +219,39 @@ __PACKAGE__->class_documentation({description => 'A Webhookheader Object',
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_webhookheader_id' => {
+        datatype => 'int',
+        base_name => 'pkiWebhookheaderID',
+        description => 'The unique ID of the Webhookheader',
+        format => '',
+        read_only => '',
+            },
+    's_webhookheader_name' => {
+        datatype => 'string',
+        base_name => 'sWebhookheaderName',
+        description => 'The Name of the Webhookheader',
+        format => '',
+        read_only => '',
+            },
+    's_webhookheader_value' => {
+        datatype => 'string',
+        base_name => 'sWebhookheaderValue',
+        description => 'The Value of the Webhookheader',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    
+    'pki_webhookheader_id' => 'int',
+    's_webhookheader_name' => 'string',
+    's_webhookheader_value' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    
+    'pki_webhookheader_id' => 'pkiWebhookheaderID',
+    's_webhookheader_name' => 'sWebhookheaderName',
+    's_webhookheader_value' => 'sWebhookheaderValue'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

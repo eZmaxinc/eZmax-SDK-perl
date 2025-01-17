@@ -30,12 +30,11 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::ActivesessionResponseCompound;
-use EzmaxApi::Object::CommonResponse;
+use EzmaxApi::Object::ActivesessionGetCurrentV1ResponseMPayload;
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::CommonResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #Response for GET /1/object/activesession/getCurrent
@@ -88,18 +87,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object CommonResponse
-    $self->EzmaxApi::Object::CommonResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call CommonResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::CommonResponse::to_hash };
 
     return $_hash;
 }
@@ -130,9 +123,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (CommonResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::CommonResponse::TO_JSON };
 
     return $_data;
 }
@@ -201,9 +191,6 @@ sub from_hash {
         }
     }
 
-    # call parent (CommonResponse) from_hash
-    $self->EzmaxApi::Object::CommonResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -235,20 +222,38 @@ __PACKAGE__->class_documentation({description => 'Response for GET /1/object/act
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'obj_debug_payload' => {
+        datatype => 'CommonResponseObjDebugPayload',
+        base_name => 'objDebugPayload',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'obj_debug' => {
+        datatype => 'CommonResponseObjDebug',
+        base_name => 'objDebug',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'm_payload' => {
-        datatype => 'ActivesessionResponseCompound',
+        datatype => 'ActivesessionGetCurrentV1ResponseMPayload',
         base_name => 'mPayload',
-        description => 'Payload for GET /1/object/activesession/getCurrent',
+        description => '',
         format => '',
         read_only => '',
             },
 });
 
 __PACKAGE__->openapi_types( {
-    'm_payload' => 'ActivesessionResponseCompound'
+    'obj_debug_payload' => 'CommonResponseObjDebugPayload',
+    'obj_debug' => 'CommonResponseObjDebug',
+    'm_payload' => 'ActivesessionGetCurrentV1ResponseMPayload'
 } );
 
 __PACKAGE__->attribute_map( {
+    'obj_debug_payload' => 'objDebugPayload',
+    'obj_debug' => 'objDebug',
     'm_payload' => 'mPayload'
 } );
 

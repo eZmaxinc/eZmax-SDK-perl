@@ -30,12 +30,11 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::AttemptResponse;
-use EzmaxApi::Object::CommonWebhook;
+use EzmaxApi::Object::AttemptResponseCompound;
 use EzmaxApi::Object::CustomWebhookResponse;
 use EzmaxApi::Object::EzsigndocumentResponse;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::CommonWebhook");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #This is the base Webhook object
@@ -88,18 +87,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object CommonWebhook
-    $self->EzmaxApi::Object::CommonWebhook::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call CommonWebhook to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::CommonWebhook::to_hash };
 
     return $_hash;
 }
@@ -130,9 +123,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (CommonWebhook) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::CommonWebhook::TO_JSON };
 
     return $_data;
 }
@@ -201,9 +191,6 @@ sub from_hash {
         }
     }
 
-    # call parent (CommonWebhook) from_hash
-    $self->EzmaxApi::Object::CommonWebhook::from_hash($hash);
-
     return $self;
 }
 
@@ -235,6 +222,20 @@ __PACKAGE__->class_documentation({description => 'This is the base Webhook objec
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'obj_webhook' => {
+        datatype => 'CustomWebhookResponse',
+        base_name => 'objWebhook',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'a_obj_attempt' => {
+        datatype => 'ARRAY[AttemptResponseCompound]',
+        base_name => 'a_objAttempt',
+        description => 'An array containing details of previous attempts that were made to deliver the message. The array is empty if it&#39;s the first attempt.',
+        format => '',
+        read_only => '',
+            },
     'obj_ezsigndocument' => {
         datatype => 'EzsigndocumentResponse',
         base_name => 'objEzsigndocument',
@@ -245,10 +246,14 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'obj_webhook' => 'CustomWebhookResponse',
+    'a_obj_attempt' => 'ARRAY[AttemptResponseCompound]',
     'obj_ezsigndocument' => 'EzsigndocumentResponse'
 } );
 
 __PACKAGE__->attribute_map( {
+    'obj_webhook' => 'objWebhook',
+    'a_obj_attempt' => 'a_objAttempt',
     'obj_ezsigndocument' => 'objEzsigndocument'
 } );
 

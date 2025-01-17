@@ -30,10 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::ContactRequest;
 use EzmaxApi::Object::ContactinformationsRequestCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::ContactRequest");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Contact Object and children to create a complete structure
@@ -86,18 +85,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object ContactRequest
-    $self->EzmaxApi::Object::ContactRequest::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call ContactRequest to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::ContactRequest::to_hash };
 
     return $_hash;
 }
@@ -128,9 +121,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (ContactRequest) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::ContactRequest::TO_JSON };
 
     return $_data;
 }
@@ -199,9 +189,6 @@ sub from_hash {
         }
     }
 
-    # call parent (ContactRequest) from_hash
-    $self->EzmaxApi::Object::ContactRequest::from_hash($hash);
-
     return $self;
 }
 
@@ -233,6 +220,48 @@ __PACKAGE__->class_documentation({description => 'A Contact Object and children 
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'fki_contacttitle_id' => {
+        datatype => 'int',
+        base_name => 'fkiContacttitleID',
+        description => 'The unique ID of the Contacttitle.  Valid values:  |Value|Description| |-|-| |1|Ms.| |2|Mr.| |4|(Blank)| |5|Me (For Notaries)|',
+        format => '',
+        read_only => '',
+            },
+    'fki_language_id' => {
+        datatype => 'int',
+        base_name => 'fkiLanguageID',
+        description => 'The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|',
+        format => '',
+        read_only => '',
+            },
+    's_contact_firstname' => {
+        datatype => 'string',
+        base_name => 'sContactFirstname',
+        description => 'The First name of the contact',
+        format => '',
+        read_only => '',
+            },
+    's_contact_lastname' => {
+        datatype => 'string',
+        base_name => 'sContactLastname',
+        description => 'The Last name of the contact',
+        format => '',
+        read_only => '',
+            },
+    's_contact_company' => {
+        datatype => 'string',
+        base_name => 'sContactCompany',
+        description => 'The Company name of the contact',
+        format => '',
+        read_only => '',
+            },
+    'dt_contact_birthdate' => {
+        datatype => 'string',
+        base_name => 'dtContactBirthdate',
+        description => 'The Birth Date of the contact',
+        format => '',
+        read_only => '',
+            },
     'obj_contactinformations' => {
         datatype => 'ContactinformationsRequestCompound',
         base_name => 'objContactinformations',
@@ -243,10 +272,22 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'fki_contacttitle_id' => 'int',
+    'fki_language_id' => 'int',
+    's_contact_firstname' => 'string',
+    's_contact_lastname' => 'string',
+    's_contact_company' => 'string',
+    'dt_contact_birthdate' => 'string',
     'obj_contactinformations' => 'ContactinformationsRequestCompound'
 } );
 
 __PACKAGE__->attribute_map( {
+    'fki_contacttitle_id' => 'fkiContacttitleID',
+    'fki_language_id' => 'fkiLanguageID',
+    's_contact_firstname' => 'sContactFirstname',
+    's_contact_lastname' => 'sContactLastname',
+    's_contact_company' => 'sContactCompany',
+    'dt_contact_birthdate' => 'dtContactBirthdate',
     'obj_contactinformations' => 'objContactinformations'
 } );
 

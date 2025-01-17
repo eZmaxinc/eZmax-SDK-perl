@@ -30,11 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsigntemplatepackageResponse;
 use EzmaxApi::Object::EzsigntemplatepackagemembershipResponseCompound;
 use EzmaxApi::Object::EzsigntemplatepackagesignerResponseCompound;
 
-use base ("Class::Accessor", "Class::Data::Inheritable", "EzmaxApi::Object::EzsigntemplatepackageResponse");
+use base ("Class::Accessor", "Class::Data::Inheritable");
 
 #
 #A Ezsigntemplatepackage Object
@@ -87,18 +86,12 @@ sub init
         my $args_key = $self->attribute_map->{$attribute};
         $self->$attribute( $args{ $args_key } );
     }
-
-    # initialize parent object EzsigntemplatepackageResponse
-    $self->EzmaxApi::Object::EzsigntemplatepackageResponse::init(%args);
 }
 
 # return perl hash
 sub to_hash {
     my $self = shift;
     my $_hash = decode_json(JSON->new->convert_blessed->encode($self));
-
-    # call EzsigntemplatepackageResponse to_hash and then combine hash
-    $_hash = { %$_hash, %$self->EzmaxApi::Object::EzsigntemplatepackageResponse::to_hash };
 
     return $_hash;
 }
@@ -129,9 +122,6 @@ sub TO_JSON {
             }
         }
     }
-
-    # combine parent (EzsigntemplatepackageResponse) TO_JSON
-    $_data = { %$_data, %$self->EzmaxApi::Object::EzsigntemplatepackageResponse::TO_JSON };
 
     return $_data;
 }
@@ -200,9 +190,6 @@ sub from_hash {
         }
     }
 
-    # call parent (EzsigntemplatepackageResponse) from_hash
-    $self->EzmaxApi::Object::EzsigntemplatepackageResponse::from_hash($hash);
-
     return $self;
 }
 
@@ -234,6 +221,90 @@ __PACKAGE__->class_documentation({description => 'A Ezsigntemplatepackage Object
 }                                 );
 
 __PACKAGE__->method_documentation({
+    'pki_ezsigntemplatepackage_id' => {
+        datatype => 'int',
+        base_name => 'pkiEzsigntemplatepackageID',
+        description => 'The unique ID of the Ezsigntemplatepackage',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignfoldertype_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignfoldertypeID',
+        description => 'The unique ID of the Ezsignfoldertype.',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezdoctemplatedocument_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzdoctemplatedocumentID',
+        description => 'The unique ID of the Ezdoctemplatedocument',
+        format => '',
+        read_only => '',
+            },
+    'fki_language_id' => {
+        datatype => 'int',
+        base_name => 'fkiLanguageID',
+        description => 'The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|',
+        format => '',
+        read_only => '',
+            },
+    's_ezdoctemplatedocument_name_x' => {
+        datatype => 'string',
+        base_name => 'sEzdoctemplatedocumentNameX',
+        description => 'The name of the Ezdoctemplatedocument in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    's_language_name_x' => {
+        datatype => 'string',
+        base_name => 'sLanguageNameX',
+        description => 'The Name of the Language in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigntemplatepackage_description' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplatepackageDescription',
+        description => 'The description of the Ezsigntemplatepackage',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsigntemplatepackage_adminonly' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplatepackageAdminonly',
+        description => 'Whether the Ezsigntemplatepackage can be accessed by admin users only (eUserType&#x3D;Normal)',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsigntemplatepackage_needvalidation' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplatepackageNeedvalidation',
+        description => 'Whether the Ezsignbulksend was automatically modified and needs a manual validation',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsigntemplatepackage_isactive' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplatepackageIsactive',
+        description => 'Whether the Ezsigntemplatepackage is active or not',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignfoldertype_name_x' => {
+        datatype => 'string',
+        base_name => 'sEzsignfoldertypeNameX',
+        description => 'The name of the Ezsignfoldertype in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsigntemplatepackage_editallowed' => {
+        datatype => 'boolean',
+        base_name => 'bEzsigntemplatepackageEditallowed',
+        description => 'Whether the Ezsigntemplatepackage if allowed to edit or not',
+        format => '',
+        read_only => '',
+            },
     'a_obj_ezsigntemplatepackagesigner' => {
         datatype => 'ARRAY[EzsigntemplatepackagesignerResponseCompound]',
         base_name => 'a_objEzsigntemplatepackagesigner',
@@ -251,11 +322,35 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->openapi_types( {
+    'pki_ezsigntemplatepackage_id' => 'int',
+    'fki_ezsignfoldertype_id' => 'int',
+    'fki_ezdoctemplatedocument_id' => 'int',
+    'fki_language_id' => 'int',
+    's_ezdoctemplatedocument_name_x' => 'string',
+    's_language_name_x' => 'string',
+    's_ezsigntemplatepackage_description' => 'string',
+    'b_ezsigntemplatepackage_adminonly' => 'boolean',
+    'b_ezsigntemplatepackage_needvalidation' => 'boolean',
+    'b_ezsigntemplatepackage_isactive' => 'boolean',
+    's_ezsignfoldertype_name_x' => 'string',
+    'b_ezsigntemplatepackage_editallowed' => 'boolean',
     'a_obj_ezsigntemplatepackagesigner' => 'ARRAY[EzsigntemplatepackagesignerResponseCompound]',
     'a_obj_ezsigntemplatepackagemembership' => 'ARRAY[EzsigntemplatepackagemembershipResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
+    'pki_ezsigntemplatepackage_id' => 'pkiEzsigntemplatepackageID',
+    'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
+    'fki_ezdoctemplatedocument_id' => 'fkiEzdoctemplatedocumentID',
+    'fki_language_id' => 'fkiLanguageID',
+    's_ezdoctemplatedocument_name_x' => 'sEzdoctemplatedocumentNameX',
+    's_language_name_x' => 'sLanguageNameX',
+    's_ezsigntemplatepackage_description' => 'sEzsigntemplatepackageDescription',
+    'b_ezsigntemplatepackage_adminonly' => 'bEzsigntemplatepackageAdminonly',
+    'b_ezsigntemplatepackage_needvalidation' => 'bEzsigntemplatepackageNeedvalidation',
+    'b_ezsigntemplatepackage_isactive' => 'bEzsigntemplatepackageIsactive',
+    's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
+    'b_ezsigntemplatepackage_editallowed' => 'bEzsigntemplatepackageEditallowed',
     'a_obj_ezsigntemplatepackagesigner' => 'a_objEzsigntemplatepackagesigner',
     'a_obj_ezsigntemplatepackagemembership' => 'a_objEzsigntemplatepackagemembership'
 } );
