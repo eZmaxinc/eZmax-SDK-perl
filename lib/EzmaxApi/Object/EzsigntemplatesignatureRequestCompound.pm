@@ -31,8 +31,8 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::EnumTextvalidation;
-use EzmaxApi::Object::EzsigntemplateelementdependencyRequest;
-use EzmaxApi::Object::EzsigntemplatesignaturecustomdateRequest;
+use EzmaxApi::Object::EzsigntemplateelementdependencyRequestCompound;
+use EzmaxApi::Object::EzsigntemplatesignaturecustomdateRequestCompound;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureAttachmentnamesource;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureConsultationtrigger;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureDependencyrequirement;

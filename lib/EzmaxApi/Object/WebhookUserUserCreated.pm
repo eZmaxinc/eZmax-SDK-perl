@@ -30,9 +30,9 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::AttemptResponse;
+use EzmaxApi::Object::AttemptResponseCompound;
 use EzmaxApi::Object::CustomWebhookResponse;
-use EzmaxApi::Object::UserResponse;
+use EzmaxApi::Object::UserResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -237,9 +237,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_user' => {
-        datatype => 'UserResponse',
+        datatype => 'UserResponseCompound',
         base_name => 'objUser',
-        description => 'A User Object and children to create a complete structure',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -248,7 +248,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'obj_webhook' => 'CustomWebhookResponse',
     'a_obj_attempt' => 'ARRAY[AttemptResponseCompound]',
-    'obj_user' => 'UserResponse'
+    'obj_user' => 'UserResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {

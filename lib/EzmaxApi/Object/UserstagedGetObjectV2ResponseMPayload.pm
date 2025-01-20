@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::UserstagedResponse;
+use EzmaxApi::Object::UserstagedResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -221,16 +221,16 @@ __PACKAGE__->class_documentation({description => 'Payload for GET /2/object/user
 
 __PACKAGE__->method_documentation({
     'obj_userstaged' => {
-        datatype => 'UserstagedResponse',
+        datatype => 'UserstagedResponseCompound',
         base_name => 'objUserstaged',
-        description => 'A Userstaged Object',
+        description => '',
         format => '',
         read_only => '',
             },
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_userstaged' => 'UserstagedResponse'
+    'obj_userstaged' => 'UserstagedResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {

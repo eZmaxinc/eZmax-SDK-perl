@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigntemplatepackagemembership_delete_object_v1**
-> CommonResponse ezsigntemplatepackagemembership_delete_object_v1(pki_ezsigntemplatepackagemembership_id => $pki_ezsigntemplatepackagemembership_id)
+> EzsigntemplatepackagemembershipDeleteObjectV1Response ezsigntemplatepackagemembership_delete_object_v1(pki_ezsigntemplatepackagemembership_id => $pki_ezsigntemplatepackagemembership_id)
 
 Delete an existing Ezsigntemplatepackagemembership
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplatepackagemembershipDeleteObjectV1Response**](EzsigntemplatepackagemembershipDeleteObjectV1Response.md)
 
 ### Authorization
 

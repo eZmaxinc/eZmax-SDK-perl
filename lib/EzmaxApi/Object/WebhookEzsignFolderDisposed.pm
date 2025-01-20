@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::AttemptResponse;
+use EzmaxApi::Object::AttemptResponseCompound;
 use EzmaxApi::Object::CustomWebhookResponse;
 use EzmaxApi::Object::EzsignfolderResponse;
 

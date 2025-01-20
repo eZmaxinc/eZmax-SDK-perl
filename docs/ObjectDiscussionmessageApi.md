@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **discussionmessage_delete_object_v1**
-> CommonResponse discussionmessage_delete_object_v1(pki_discussionmessage_id => $pki_discussionmessage_id)
+> DiscussionmessageDeleteObjectV1Response discussionmessage_delete_object_v1(pki_discussionmessage_id => $pki_discussionmessage_id)
 
 Delete an existing Discussionmessage
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**DiscussionmessageDeleteObjectV1Response**](DiscussionmessageDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **discussionmessage_patch_object_v1**
-> CommonResponse discussionmessage_patch_object_v1(pki_discussionmessage_id => $pki_discussionmessage_id, discussionmessage_patch_object_v1_request => $discussionmessage_patch_object_v1_request)
+> DiscussionmessagePatchObjectV1Response discussionmessage_patch_object_v1(pki_discussionmessage_id => $pki_discussionmessage_id, discussionmessage_patch_object_v1_request => $discussionmessage_patch_object_v1_request)
 
 Patch an existing Discussionmessage
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**DiscussionmessagePatchObjectV1Response**](DiscussionmessagePatchObjectV1Response.md)
 
 ### Authorization
 

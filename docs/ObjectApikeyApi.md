@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apikey_edit_object_v1**
-> CommonResponse apikey_edit_object_v1(pki_apikey_id => $pki_apikey_id, apikey_edit_object_v1_request => $apikey_edit_object_v1_request)
+> ApikeyEditObjectV1Response apikey_edit_object_v1(pki_apikey_id => $pki_apikey_id, apikey_edit_object_v1_request => $apikey_edit_object_v1_request)
 
 Edit an existing Apikey
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**ApikeyEditObjectV1Response**](ApikeyEditObjectV1Response.md)
 
 ### Authorization
 

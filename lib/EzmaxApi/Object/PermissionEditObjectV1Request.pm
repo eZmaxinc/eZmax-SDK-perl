@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::PermissionRequest;
+use EzmaxApi::Object::PermissionRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -221,16 +221,16 @@ __PACKAGE__->class_documentation({description => 'Request for PUT /1/object/perm
 
 __PACKAGE__->method_documentation({
     'obj_permission' => {
-        datatype => 'PermissionRequest',
+        datatype => 'PermissionRequestCompound',
         base_name => 'objPermission',
-        description => 'A Permission Object and children to create a complete structure',
+        description => '',
         format => '',
         read_only => '',
             },
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_permission' => 'PermissionRequest'
+    'obj_permission' => 'PermissionRequestCompound'
 } );
 
 __PACKAGE__->attribute_map( {

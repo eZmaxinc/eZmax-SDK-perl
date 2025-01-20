@@ -284,10 +284,10 @@ sub user_edit_colleagues_v2 {
     __PACKAGE__->method_documentation->{ 'user_edit_object_v1' } = {
         summary => 'Edit an existing User',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'UserEditObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return UserEditObjectV1Response
 #
 sub user_edit_object_v1 {
     my ($self, %args) = @_;
@@ -340,7 +340,7 @@ sub user_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('UserEditObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -1190,10 +1190,10 @@ sub user_get_usergroups_v1 {
     __PACKAGE__->method_documentation->{ 'user_send_password_reset_v1' } = {
         summary => 'Send password reset',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'UserSendPasswordResetV1Response',
         };
 }
-# @return CommonResponse
+# @return UserSendPasswordResetV1Response
 #
 sub user_send_password_reset_v1 {
     my ($self, %args) = @_;
@@ -1246,7 +1246,7 @@ sub user_send_password_reset_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('UserSendPasswordResetV1Response', $response);
     return $_response_object;
 }
 

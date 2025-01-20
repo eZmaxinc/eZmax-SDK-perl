@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **webhook_delete_object_v1**
-> CommonResponse webhook_delete_object_v1(pki_webhook_id => $pki_webhook_id)
+> WebhookDeleteObjectV1Response webhook_delete_object_v1(pki_webhook_id => $pki_webhook_id)
 
 Delete an existing Webhook
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**WebhookDeleteObjectV1Response**](WebhookDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **webhook_edit_object_v1**
-> CommonResponse webhook_edit_object_v1(pki_webhook_id => $pki_webhook_id, webhook_edit_object_v1_request => $webhook_edit_object_v1_request)
+> WebhookEditObjectV1Response webhook_edit_object_v1(pki_webhook_id => $pki_webhook_id, webhook_edit_object_v1_request => $webhook_edit_object_v1_request)
 
 Edit an existing Webhook
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**WebhookEditObjectV1Response**](WebhookEditObjectV1Response.md)
 
 ### Authorization
 
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **webhook_send_webhook_v1**
-> CommonResponse webhook_send_webhook_v1(webhook_send_webhook_v1_request => $webhook_send_webhook_v1_request)
+> WebhookSendWebhookV1Response webhook_send_webhook_v1(webhook_send_webhook_v1_request => $webhook_send_webhook_v1_request)
 
 Emit a Webhook event
 
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**WebhookSendWebhookV1Response**](WebhookSendWebhookV1Response.md)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **webhook_test_v1**
-> CommonResponse webhook_test_v1(pki_webhook_id => $pki_webhook_id, body => $body)
+> WebhookTestV1Response webhook_test_v1(pki_webhook_id => $pki_webhook_id, body => $body)
 
 Test the Webhook by calling the Url
 
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**WebhookTestV1Response**](WebhookTestV1Response.md)
 
 ### Authorization
 

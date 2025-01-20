@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **discussion_delete_object_v1**
-> CommonResponse discussion_delete_object_v1(pki_discussion_id => $pki_discussion_id)
+> DiscussionDeleteObjectV1Response discussion_delete_object_v1(pki_discussion_id => $pki_discussion_id)
 
 Delete an existing Discussion
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**DiscussionDeleteObjectV1Response**](DiscussionDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **discussion_patch_object_v1**
-> CommonResponse discussion_patch_object_v1(pki_discussion_id => $pki_discussion_id, discussion_patch_object_v1_request => $discussion_patch_object_v1_request)
+> DiscussionPatchObjectV1Response discussion_patch_object_v1(pki_discussion_id => $pki_discussion_id, discussion_patch_object_v1_request => $discussion_patch_object_v1_request)
 
 Patch an existing Discussion
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**DiscussionPatchObjectV1Response**](DiscussionPatchObjectV1Response.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **discussion_update_discussionreadstatus_v1**
-> CommonResponse discussion_update_discussionreadstatus_v1(pki_discussion_id => $pki_discussion_id, discussion_update_discussionreadstatus_v1_request => $discussion_update_discussionreadstatus_v1_request)
+> DiscussionUpdateDiscussionreadstatusV1Response discussion_update_discussionreadstatus_v1(pki_discussion_id => $pki_discussion_id, discussion_update_discussionreadstatus_v1_request => $discussion_update_discussionreadstatus_v1_request)
 
 Update the read status of the discussion
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**DiscussionUpdateDiscussionreadstatusV1Response**](DiscussionUpdateDiscussionreadstatusV1Response.md)
 
 ### Authorization
 

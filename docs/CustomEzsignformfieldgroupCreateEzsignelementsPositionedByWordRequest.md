@@ -25,8 +25,8 @@ Name | Type | Description | Notes
 **t_ezsignformfieldgroup_tooltip** | **string** | A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup | [optional] 
 **e_ezsignformfieldgroup_tooltipposition** | [**FieldEEzsignformfieldgroupTooltipposition**](FieldEEzsignformfieldgroupTooltipposition.md) |  | [optional] 
 **e_ezsignformfieldgroup_textvalidation** | [**EnumTextvalidation**](EnumTextvalidation.md) |  | [optional] 
-**a_obj_ezsignformfieldgroupsigner** | [**ARRAY[EzsignformfieldgroupsignerRequestCompound]**](EzsignformfieldgroupsignerRequest.md) |  | 
-**a_obj_dropdown_element** | [**ARRAY[CustomDropdownElementRequestCompound]**](CustomDropdownElementRequest.md) |  | [optional] 
+**a_obj_ezsignformfieldgroupsigner** | [**ARRAY[EzsignformfieldgroupsignerRequestCompound]**](EzsignformfieldgroupsignerRequestCompound.md) |  | 
+**a_obj_dropdown_element** | [**ARRAY[CustomDropdownElementRequestCompound]**](CustomDropdownElementRequestCompound.md) |  | [optional] 
 **a_obj_ezsignformfield** | [**ARRAY[EzsignformfieldRequestCompound]**](EzsignformfieldRequestCompound.md) |  | 
 **obj_createezsignelementspositionedbyword** | [**CustomCreateEzsignelementsPositionedByWordRequest**](CustomCreateEzsignelementsPositionedByWordRequest.md) |  | 
 

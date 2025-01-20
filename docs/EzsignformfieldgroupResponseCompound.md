@@ -26,8 +26,8 @@ Name | Type | Description | Notes
 **t_ezsignformfieldgroup_tooltip** | **string** | A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup | [optional] 
 **e_ezsignformfieldgroup_tooltipposition** | [**FieldEEzsignformfieldgroupTooltipposition**](FieldEEzsignformfieldgroupTooltipposition.md) |  | [optional] 
 **a_obj_ezsignformfield** | [**ARRAY[EzsignformfieldResponseCompound]**](EzsignformfieldResponseCompound.md) |  | 
-**a_obj_dropdown_element** | [**ARRAY[CustomDropdownElementResponseCompound]**](CustomDropdownElementResponse.md) |  | [optional] 
-**a_obj_ezsignformfieldgroupsigner** | [**ARRAY[EzsignformfieldgroupsignerResponseCompound]**](EzsignformfieldgroupsignerResponse.md) |  | 
+**a_obj_dropdown_element** | [**ARRAY[CustomDropdownElementResponseCompound]**](CustomDropdownElementResponseCompound.md) |  | [optional] 
+**a_obj_ezsignformfieldgroupsigner** | [**ARRAY[EzsignformfieldgroupsignerResponseCompound]**](EzsignformfieldgroupsignerResponseCompound.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

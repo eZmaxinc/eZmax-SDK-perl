@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **creditcardclient_delete_object_v1**
-> CommonResponse creditcardclient_delete_object_v1(pki_creditcardclient_id => $pki_creditcardclient_id)
+> CreditcardclientDeleteObjectV1Response creditcardclient_delete_object_v1(pki_creditcardclient_id => $pki_creditcardclient_id)
 
 Delete an existing Creditcardclient
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**CreditcardclientDeleteObjectV1Response**](CreditcardclientDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **creditcardclient_edit_object_v1**
-> CommonResponse creditcardclient_edit_object_v1(pki_creditcardclient_id => $pki_creditcardclient_id, creditcardclient_edit_object_v1_request => $creditcardclient_edit_object_v1_request)
+> CreditcardclientEditObjectV1Response creditcardclient_edit_object_v1(pki_creditcardclient_id => $pki_creditcardclient_id, creditcardclient_edit_object_v1_request => $creditcardclient_edit_object_v1_request)
 
 Edit an existing Creditcardclient
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**CreditcardclientEditObjectV1Response**](CreditcardclientEditObjectV1Response.md)
 
 ### Authorization
 
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **creditcardclient_patch_object_v1**
-> CommonResponse creditcardclient_patch_object_v1(pki_creditcardclient_id => $pki_creditcardclient_id, creditcardclient_patch_object_v1_request => $creditcardclient_patch_object_v1_request)
+> CreditcardclientPatchObjectV1Response creditcardclient_patch_object_v1(pki_creditcardclient_id => $pki_creditcardclient_id, creditcardclient_patch_object_v1_request => $creditcardclient_patch_object_v1_request)
 
 Patch an existing Creditcardclient
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**CreditcardclientPatchObjectV1Response**](CreditcardclientPatchObjectV1Response.md)
 
 ### Authorization
 

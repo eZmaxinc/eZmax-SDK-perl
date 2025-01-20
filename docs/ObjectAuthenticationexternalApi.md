@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authenticationexternal_delete_object_v1**
-> CommonResponse authenticationexternal_delete_object_v1(pki_authenticationexternal_id => $pki_authenticationexternal_id)
+> AuthenticationexternalDeleteObjectV1Response authenticationexternal_delete_object_v1(pki_authenticationexternal_id => $pki_authenticationexternal_id)
 
 Delete an existing Authenticationexternal
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**AuthenticationexternalDeleteObjectV1Response**](AuthenticationexternalDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authenticationexternal_edit_object_v1**
-> CommonResponse authenticationexternal_edit_object_v1(pki_authenticationexternal_id => $pki_authenticationexternal_id, authenticationexternal_edit_object_v1_request => $authenticationexternal_edit_object_v1_request)
+> AuthenticationexternalEditObjectV1Response authenticationexternal_edit_object_v1(pki_authenticationexternal_id => $pki_authenticationexternal_id, authenticationexternal_edit_object_v1_request => $authenticationexternal_edit_object_v1_request)
 
 Edit an existing Authenticationexternal
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**AuthenticationexternalEditObjectV1Response**](AuthenticationexternalEditObjectV1Response.md)
 
 ### Authorization
 
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authenticationexternal_reset_authorization_v1**
-> CommonResponse authenticationexternal_reset_authorization_v1(pki_authenticationexternal_id => $pki_authenticationexternal_id, body => $body)
+> AuthenticationexternalResetAuthorizationV1Response authenticationexternal_reset_authorization_v1(pki_authenticationexternal_id => $pki_authenticationexternal_id, body => $body)
 
 Reset the Authenticationexternal authorization
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**AuthenticationexternalResetAuthorizationV1Response**](AuthenticationexternalResetAuthorizationV1Response.md)
 
 ### Authorization
 

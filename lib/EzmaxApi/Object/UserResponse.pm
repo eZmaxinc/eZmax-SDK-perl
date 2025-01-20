@@ -31,7 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
-use EzmaxApi::Object::EmailResponse;
+use EzmaxApi::Object::EmailResponseCompound;
 use EzmaxApi::Object::FieldEUserEzsignaccess;
 use EzmaxApi::Object::FieldEUserLogintype;
 use EzmaxApi::Object::FieldEUserOrigin;
@@ -318,9 +318,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_email' => {
-        datatype => 'EmailResponse',
+        datatype => 'EmailResponseCompound',
         base_name => 'objEmail',
-        description => 'An Email Object and children to create a complete structure',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -508,7 +508,7 @@ __PACKAGE__->openapi_types( {
     's_timezone_name' => 'string',
     'fki_language_id' => 'int',
     's_language_name_x' => 'string',
-    'obj_email' => 'EmailResponse',
+    'obj_email' => 'EmailResponseCompound',
     'fki_billingentityinternal_id' => 'int',
     's_billingentityinternal_description_x' => 'string',
     'obj_phone_home' => 'PhoneResponseCompound',

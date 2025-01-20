@@ -130,10 +130,10 @@ sub ezsignsignergroup_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignsignergroup_delete_object_v1' } = {
         summary => 'Delete an existing Ezsignsignergroup',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsignsignergroupDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsignsignergroupDeleteObjectV1Response
 #
 sub ezsignsignergroup_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub ezsignsignergroup_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsignsignergroupDeleteObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -286,10 +286,10 @@ sub ezsignsignergroup_edit_ezsignsignergroupmemberships_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignsignergroup_edit_object_v1' } = {
         summary => 'Edit an existing Ezsignsignergroup',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsignsignergroupEditObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsignsignergroupEditObjectV1Response
 #
 sub ezsignsignergroup_edit_object_v1 {
     my ($self, %args) = @_;
@@ -342,7 +342,7 @@ sub ezsignsignergroup_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsignsignergroupEditObjectV1Response', $response);
     return $_response_object;
 }
 

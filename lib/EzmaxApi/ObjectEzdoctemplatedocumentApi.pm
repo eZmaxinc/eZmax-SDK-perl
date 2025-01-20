@@ -199,10 +199,10 @@ sub ezdoctemplatedocument_download_v1 {
     __PACKAGE__->method_documentation->{ 'ezdoctemplatedocument_edit_object_v1' } = {
         summary => 'Edit an existing Ezdoctemplatedocument',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzdoctemplatedocumentEditObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzdoctemplatedocumentEditObjectV1Response
 #
 sub ezdoctemplatedocument_edit_object_v1 {
     my ($self, %args) = @_;
@@ -255,7 +255,7 @@ sub ezdoctemplatedocument_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzdoctemplatedocumentEditObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -580,10 +580,10 @@ sub ezdoctemplatedocument_get_object_v2 {
     __PACKAGE__->method_documentation->{ 'ezdoctemplatedocument_patch_object_v1' } = {
         summary => 'Patch an existing Ezdoctemplatedocument',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzdoctemplatedocumentPatchObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzdoctemplatedocumentPatchObjectV1Response
 #
 sub ezdoctemplatedocument_patch_object_v1 {
     my ($self, %args) = @_;
@@ -636,7 +636,7 @@ sub ezdoctemplatedocument_patch_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzdoctemplatedocumentPatchObjectV1Response', $response);
     return $_response_object;
 }
 

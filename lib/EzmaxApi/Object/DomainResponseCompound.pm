@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
+use EzmaxApi::Object::CustomDnsrecordResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 

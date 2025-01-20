@@ -130,10 +130,10 @@ sub ezsignsignergroupmembership_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignsignergroupmembership_delete_object_v1' } = {
         summary => 'Delete an existing Ezsignsignergroupmembership',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsignsignergroupmembershipDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsignsignergroupmembershipDeleteObjectV1Response
 #
 sub ezsignsignergroupmembership_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub ezsignsignergroupmembership_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsignsignergroupmembershipDeleteObjectV1Response', $response);
     return $_response_object;
 }
 

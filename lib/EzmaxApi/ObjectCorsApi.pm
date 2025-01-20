@@ -130,10 +130,10 @@ sub cors_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'cors_delete_object_v1' } = {
         summary => 'Delete an existing Cors',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'CorsDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return CorsDeleteObjectV1Response
 #
 sub cors_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub cors_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('CorsDeleteObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub cors_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'cors_edit_object_v1' } = {
         summary => 'Edit an existing Cors',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'CorsEditObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return CorsEditObjectV1Response
 #
 sub cors_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub cors_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('CorsEditObjectV1Response', $response);
     return $_response_object;
 }
 

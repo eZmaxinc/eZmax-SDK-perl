@@ -130,10 +130,10 @@ sub discussionmembership_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'discussionmembership_delete_object_v1' } = {
         summary => 'Delete an existing Discussionmembership',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'DiscussionmembershipDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return DiscussionmembershipDeleteObjectV1Response
 #
 sub discussionmembership_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub discussionmembership_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('DiscussionmembershipDeleteObjectV1Response', $response);
     return $_response_object;
 }
 

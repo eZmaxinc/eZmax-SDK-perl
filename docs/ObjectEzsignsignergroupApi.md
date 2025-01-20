@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignsignergroup_delete_object_v1**
-> CommonResponse ezsignsignergroup_delete_object_v1(pki_ezsignsignergroup_id => $pki_ezsignsignergroup_id)
+> EzsignsignergroupDeleteObjectV1Response ezsignsignergroup_delete_object_v1(pki_ezsignsignergroup_id => $pki_ezsignsignergroup_id)
 
 Delete an existing Ezsignsignergroup
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignsignergroupDeleteObjectV1Response**](EzsignsignergroupDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignsignergroup_edit_object_v1**
-> CommonResponse ezsignsignergroup_edit_object_v1(pki_ezsignsignergroup_id => $pki_ezsignsignergroup_id, ezsignsignergroup_edit_object_v1_request => $ezsignsignergroup_edit_object_v1_request)
+> EzsignsignergroupEditObjectV1Response ezsignsignergroup_edit_object_v1(pki_ezsignsignergroup_id => $pki_ezsignsignergroup_id, ezsignsignergroup_edit_object_v1_request => $ezsignsignergroup_edit_object_v1_request)
 
 Edit an existing Ezsignsignergroup
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignsignergroupEditObjectV1Response**](EzsignsignergroupEditObjectV1Response.md)
 
 ### Authorization
 

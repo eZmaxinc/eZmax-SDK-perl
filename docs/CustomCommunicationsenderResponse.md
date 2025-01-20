@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **fki_phonelineshared_id** | **int** | The unique ID of the Phonelineshared | [optional] 
 **e_communicationsender_objecttype** | **string** |  | 
 **obj_contact_name** | [**CustomContactNameResponse**](CustomContactNameResponse.md) |  | 
-**obj_email** | [**EmailResponse**](EmailResponse.md) | An Email Object and children to create a complete structure | [optional] 
+**obj_email** | [**EmailResponseCompound**](EmailResponseCompound.md) |  | [optional] 
 **obj_phone_fax** | [**PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional] 
 **obj_phone_sms** | [**PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional] 
 
