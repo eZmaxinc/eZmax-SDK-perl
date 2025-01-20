@@ -32,7 +32,7 @@ use DateTime;
 
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
-use EzmaxApi::Object::EzsignfolderGetObjectV1ResponseMPayload;
+use EzmaxApi::Object::EzsignfolderResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -237,9 +237,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'm_payload' => {
-        datatype => 'EzsignfolderGetObjectV1ResponseMPayload',
+        datatype => 'EzsignfolderResponseCompound',
         base_name => 'mPayload',
-        description => '',
+        description => 'Payload for GET /1/object/ezsignfolder/{pkiEzsignfolderID}',
         format => '',
         read_only => '',
             },
@@ -248,7 +248,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'obj_debug_payload' => 'CommonResponseObjDebugPayload',
     'obj_debug' => 'CommonResponseObjDebug',
-    'm_payload' => 'EzsignfolderGetObjectV1ResponseMPayload'
+    'm_payload' => 'EzsignfolderResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {

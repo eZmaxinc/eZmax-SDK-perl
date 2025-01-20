@@ -136,10 +136,10 @@ sub usergroup_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'usergroup_edit_object_v1' } = {
         summary => 'Edit an existing Usergroup',
         params => $params,
-        returns => 'UsergroupEditObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return UsergroupEditObjectV1Response
+# @return CommonResponse
 #
 sub usergroup_edit_object_v1 {
     my ($self, %args) = @_;
@@ -192,7 +192,7 @@ sub usergroup_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('UsergroupEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

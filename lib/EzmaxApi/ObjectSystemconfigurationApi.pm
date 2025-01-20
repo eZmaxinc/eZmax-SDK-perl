@@ -71,10 +71,10 @@ sub new {
     __PACKAGE__->method_documentation->{ 'systemconfiguration_edit_object_v1' } = {
         summary => 'Edit an existing Systemconfiguration',
         params => $params,
-        returns => 'SystemconfigurationEditObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return SystemconfigurationEditObjectV1Response
+# @return CommonResponse
 #
 sub systemconfiguration_edit_object_v1 {
     my ($self, %args) = @_;
@@ -127,7 +127,7 @@ sub systemconfiguration_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('SystemconfigurationEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

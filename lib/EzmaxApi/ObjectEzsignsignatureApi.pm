@@ -260,10 +260,10 @@ sub ezsignsignature_create_object_v3 {
     __PACKAGE__->method_documentation->{ 'ezsignsignature_delete_object_v1' } = {
         summary => 'Delete an existing Ezsignsignature',
         params => $params,
-        returns => 'EzsignsignatureDeleteObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsignsignatureDeleteObjectV1Response
+# @return CommonResponse
 #
 sub ezsignsignature_delete_object_v1 {
     my ($self, %args) = @_;
@@ -306,7 +306,7 @@ sub ezsignsignature_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignsignatureDeleteObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -333,10 +333,10 @@ sub ezsignsignature_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignsignature_edit_object_v2' } = {
         summary => 'Edit an existing Ezsignsignature',
         params => $params,
-        returns => 'EzsignsignatureEditObjectV2Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsignsignatureEditObjectV2Response
+# @return CommonResponse
 #
 sub ezsignsignature_edit_object_v2 {
     my ($self, %args) = @_;
@@ -389,7 +389,7 @@ sub ezsignsignature_edit_object_v2 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignsignatureEditObjectV2Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsignfolderRequestCompound;
+use EzmaxApi::Object::EzsignfolderRequest;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 

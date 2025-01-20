@@ -31,10 +31,10 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CustomCreateEzsignelementsPositionedByWordRequest;
-use EzmaxApi::Object::CustomDropdownElementRequestCompound;
+use EzmaxApi::Object::CustomDropdownElementRequest;
 use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::EzsignformfieldRequestCompound;
-use EzmaxApi::Object::EzsignformfieldgroupsignerRequestCompound;
+use EzmaxApi::Object::EzsignformfieldgroupsignerRequest;
 use EzmaxApi::Object::FieldEEzsignformfieldgroupSignerrequirement;
 use EzmaxApi::Object::FieldEEzsignformfieldgroupTooltipposition;
 use EzmaxApi::Object::FieldEEzsignformfieldgroupType;

@@ -148,10 +148,10 @@ sub userstaged_create_user_v1 {
     __PACKAGE__->method_documentation->{ 'userstaged_delete_object_v1' } = {
         summary => 'Delete an existing Userstaged',
         params => $params,
-        returns => 'UserstagedDeleteObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return UserstagedDeleteObjectV1Response
+# @return CommonResponse
 #
 sub userstaged_delete_object_v1 {
     my ($self, %args) = @_;
@@ -194,7 +194,7 @@ sub userstaged_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('UserstagedDeleteObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -392,10 +392,10 @@ sub userstaged_get_object_v2 {
     __PACKAGE__->method_documentation->{ 'userstaged_map_v1' } = {
         summary => 'Map the Userstaged to an existing user',
         params => $params,
-        returns => 'UserstagedMapV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return UserstagedMapV1Response
+# @return CommonResponse
 #
 sub userstaged_map_v1 {
     my ($self, %args) = @_;
@@ -448,7 +448,7 @@ sub userstaged_map_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('UserstagedMapV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

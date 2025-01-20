@@ -130,10 +130,10 @@ sub ezsigndiscussion_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigndiscussion_delete_object_v1' } = {
         summary => 'Delete an existing Ezsigndiscussion',
         params => $params,
-        returns => 'EzsigndiscussionDeleteObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsigndiscussionDeleteObjectV1Response
+# @return CommonResponse
 #
 sub ezsigndiscussion_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub ezsigndiscussion_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsigndiscussionDeleteObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

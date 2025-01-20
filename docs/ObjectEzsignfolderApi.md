@@ -44,7 +44,7 @@ Method | HTTP request | Description
 
 
 # **ezsignfolder_archive_v1**
-> EzsignfolderArchiveV1Response ezsignfolder_archive_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, body => $body)
+> CommonResponse ezsignfolder_archive_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, body => $body)
 
 Archive the Ezsignfolder
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfolderArchiveV1Response**](EzsignfolderArchiveV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfolder_delete_object_v1**
-> EzsignfolderDeleteObjectV1Response ezsignfolder_delete_object_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id)
+> CommonResponse ezsignfolder_delete_object_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id)
 
 Delete an existing Ezsignfolder
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfolderDeleteObjectV1Response**](EzsignfolderDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfolder_dispose_ezsignfolders_v1**
-> EzsignfolderDisposeEzsignfoldersV1Response ezsignfolder_dispose_ezsignfolders_v1(ezsignfolder_dispose_ezsignfolders_v1_request => $ezsignfolder_dispose_ezsignfolders_v1_request)
+> CommonResponse ezsignfolder_dispose_ezsignfolders_v1(ezsignfolder_dispose_ezsignfolders_v1_request => $ezsignfolder_dispose_ezsignfolders_v1_request)
 
 Dispose Ezsignfolders
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfolderDisposeEzsignfoldersV1Response**](EzsignfolderDisposeEzsignfoldersV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfolder_dispose_v1**
-> EzsignfolderDisposeV1Response ezsignfolder_dispose_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, body => $body)
+> CommonResponse ezsignfolder_dispose_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, body => $body)
 
 Dispose the Ezsignfolder
 
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfolderDisposeV1Response**](EzsignfolderDisposeV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfolder_edit_object_v3**
-> EzsignfolderEditObjectV3Response ezsignfolder_edit_object_v3(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_edit_object_v3_request => $ezsignfolder_edit_object_v3_request)
+> CommonResponse ezsignfolder_edit_object_v3(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_edit_object_v3_request => $ezsignfolder_edit_object_v3_request)
 
 Edit an existing Ezsignfolder
 
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfolderEditObjectV3Response**](EzsignfolderEditObjectV3Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfolder_end_prematurely_v1**
-> EzsignfolderEndPrematurelyV1Response ezsignfolder_end_prematurely_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, body => $body)
+> CommonResponse ezsignfolder_end_prematurely_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, body => $body)
 
 End prematurely
 
@@ -546,7 +546,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfolderEndPrematurelyV1Response**](EzsignfolderEndPrematurelyV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -1437,7 +1437,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfolder_reorder_v1**
-> EzsignfolderReorderV1Response ezsignfolder_reorder_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_reorder_v1_request => $ezsignfolder_reorder_v1_request)
+> CommonResponse ezsignfolder_reorder_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_reorder_v1_request => $ezsignfolder_reorder_v1_request)
 
 Reorder Ezsigndocuments in the Ezsignfolder
 
@@ -1474,7 +1474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfolderReorderV1Response**](EzsignfolderReorderV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -1488,7 +1488,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfolder_reorder_v2**
-> EzsignfolderReorderV2Response ezsignfolder_reorder_v2(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_reorder_v2_request => $ezsignfolder_reorder_v2_request)
+> CommonResponse ezsignfolder_reorder_v2(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_reorder_v2_request => $ezsignfolder_reorder_v2_request)
 
 Reorder Ezsigndocuments in the Ezsignfolder
 
@@ -1525,7 +1525,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfolderReorderV2Response**](EzsignfolderReorderV2Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -1539,7 +1539,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfolder_send_v1**
-> EzsignfolderSendV1Response ezsignfolder_send_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_send_v1_request => $ezsignfolder_send_v1_request)
+> CommonResponse ezsignfolder_send_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_send_v1_request => $ezsignfolder_send_v1_request)
 
 Send the Ezsignfolder to the signatories for signature
 
@@ -1578,7 +1578,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfolderSendV1Response**](EzsignfolderSendV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -1592,7 +1592,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfolder_send_v3**
-> EzsignfolderSendV3Response ezsignfolder_send_v3(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_send_v3_request => $ezsignfolder_send_v3_request)
+> CommonResponse ezsignfolder_send_v3(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_send_v3_request => $ezsignfolder_send_v3_request)
 
 Send the Ezsignfolder to the signatories for signature
 
@@ -1631,7 +1631,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfolderSendV3Response**](EzsignfolderSendV3Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -1645,7 +1645,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfolder_unsend_v1**
-> EzsignfolderUnsendV1Response ezsignfolder_unsend_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, body => $body)
+> CommonResponse ezsignfolder_unsend_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, body => $body)
 
 Unsend the Ezsignfolder
 
@@ -1684,7 +1684,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfolderUnsendV1Response**](EzsignfolderUnsendV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

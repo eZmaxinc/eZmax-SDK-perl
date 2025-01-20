@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **supply_delete_object_v1**
-> SupplyDeleteObjectV1Response supply_delete_object_v1(pki_supply_id => $pki_supply_id)
+> CommonResponse supply_delete_object_v1(pki_supply_id => $pki_supply_id)
 
 Delete an existing Supply
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SupplyDeleteObjectV1Response**](SupplyDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **supply_edit_object_v1**
-> SupplyEditObjectV1Response supply_edit_object_v1(pki_supply_id => $pki_supply_id, supply_edit_object_v1_request => $supply_edit_object_v1_request)
+> CommonResponse supply_edit_object_v1(pki_supply_id => $pki_supply_id, supply_edit_object_v1_request => $supply_edit_object_v1_request)
 
 Edit an existing Supply
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SupplyEditObjectV1Response**](SupplyEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

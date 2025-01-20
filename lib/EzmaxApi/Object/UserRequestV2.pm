@@ -30,11 +30,11 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EmailRequestCompound;
+use EzmaxApi::Object::EmailRequest;
 use EzmaxApi::Object::FieldEUserEzsignaccess;
 use EzmaxApi::Object::FieldEUserLogintype;
 use EzmaxApi::Object::FieldEUserType;
-use EzmaxApi::Object::PhoneRequestCompoundV2;
+use EzmaxApi::Object::PhoneRequestV2;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -288,9 +288,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_email' => {
-        datatype => 'EmailRequestCompound',
+        datatype => 'EmailRequest',
         base_name => 'objEmail',
-        description => '',
+        description => 'An Email Object and children to create a complete structure',
         format => '',
         read_only => '',
             },
@@ -302,16 +302,16 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_phone_home' => {
-        datatype => 'PhoneRequestCompoundV2',
+        datatype => 'PhoneRequestV2',
         base_name => 'objPhoneHome',
-        description => '',
+        description => 'A Phone Object and children to create a complete structure',
         format => '',
         read_only => '',
             },
     'obj_phone_sms' => {
-        datatype => 'PhoneRequestCompoundV2',
+        datatype => 'PhoneRequestV2',
         base_name => 'objPhoneSMS',
-        description => '',
+        description => 'A Phone Object and children to create a complete structure',
         format => '',
         read_only => '',
             },
@@ -432,10 +432,10 @@ __PACKAGE__->openapi_types( {
     'fki_department_id_default' => 'int',
     'fki_timezone_id' => 'int',
     'fki_language_id' => 'int',
-    'obj_email' => 'EmailRequestCompound',
+    'obj_email' => 'EmailRequest',
     'fki_billingentityinternal_id' => 'int',
-    'obj_phone_home' => 'PhoneRequestCompoundV2',
-    'obj_phone_sms' => 'PhoneRequestCompoundV2',
+    'obj_phone_home' => 'PhoneRequestV2',
+    'obj_phone_sms' => 'PhoneRequestV2',
     'fki_secretquestion_id' => 'int',
     's_user_secretresponse' => 'string',
     'fki_module_id_form' => 'int',

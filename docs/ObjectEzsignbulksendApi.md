@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignbulksend_delete_object_v1**
-> EzsignbulksendDeleteObjectV1Response ezsignbulksend_delete_object_v1(pki_ezsignbulksend_id => $pki_ezsignbulksend_id)
+> CommonResponse ezsignbulksend_delete_object_v1(pki_ezsignbulksend_id => $pki_ezsignbulksend_id)
 
 Delete an existing Ezsignbulksend
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignbulksendDeleteObjectV1Response**](EzsignbulksendDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignbulksend_edit_object_v1**
-> EzsignbulksendEditObjectV1Response ezsignbulksend_edit_object_v1(pki_ezsignbulksend_id => $pki_ezsignbulksend_id, ezsignbulksend_edit_object_v1_request => $ezsignbulksend_edit_object_v1_request)
+> CommonResponse ezsignbulksend_edit_object_v1(pki_ezsignbulksend_id => $pki_ezsignbulksend_id, ezsignbulksend_edit_object_v1_request => $ezsignbulksend_edit_object_v1_request)
 
 Edit an existing Ezsignbulksend
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignbulksendEditObjectV1Response**](EzsignbulksendEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignbulksend_reorder_v1**
-> EzsignbulksendReorderV1Response ezsignbulksend_reorder_v1(pki_ezsignbulksend_id => $pki_ezsignbulksend_id, ezsignbulksend_reorder_v1_request => $ezsignbulksend_reorder_v1_request)
+> CommonResponse ezsignbulksend_reorder_v1(pki_ezsignbulksend_id => $pki_ezsignbulksend_id, ezsignbulksend_reorder_v1_request => $ezsignbulksend_reorder_v1_request)
 
 Reorder Ezsignbulksenddocumentmappings in the Ezsignbulksend
 
@@ -582,7 +582,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignbulksendReorderV1Response**](EzsignbulksendReorderV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

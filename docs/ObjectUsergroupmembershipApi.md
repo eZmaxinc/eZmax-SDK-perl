@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **usergroupmembership_delete_object_v1**
-> UsergroupmembershipDeleteObjectV1Response usergroupmembership_delete_object_v1(pki_usergroupmembership_id => $pki_usergroupmembership_id)
+> CommonResponse usergroupmembership_delete_object_v1(pki_usergroupmembership_id => $pki_usergroupmembership_id)
 
 Delete an existing Usergroupmembership
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsergroupmembershipDeleteObjectV1Response**](UsergroupmembershipDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **usergroupmembership_edit_object_v1**
-> UsergroupmembershipEditObjectV1Response usergroupmembership_edit_object_v1(pki_usergroupmembership_id => $pki_usergroupmembership_id, usergroupmembership_edit_object_v1_request => $usergroupmembership_edit_object_v1_request)
+> CommonResponse usergroupmembership_edit_object_v1(pki_usergroupmembership_id => $pki_usergroupmembership_id, usergroupmembership_edit_object_v1_request => $usergroupmembership_edit_object_v1_request)
 
 Edit an existing Usergroupmembership
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsergroupmembershipEditObjectV1Response**](UsergroupmembershipEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

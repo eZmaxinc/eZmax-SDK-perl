@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **discussionmembership_delete_object_v1**
-> DiscussionmembershipDeleteObjectV1Response discussionmembership_delete_object_v1(pki_discussionmembership_id => $pki_discussionmembership_id)
+> CommonResponse discussionmembership_delete_object_v1(pki_discussionmembership_id => $pki_discussionmembership_id)
 
 Delete an existing Discussionmembership
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DiscussionmembershipDeleteObjectV1Response**](DiscussionmembershipDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

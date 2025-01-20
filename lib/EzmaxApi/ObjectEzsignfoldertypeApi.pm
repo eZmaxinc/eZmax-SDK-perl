@@ -136,10 +136,10 @@ sub ezsignfoldertype_create_object_v3 {
     __PACKAGE__->method_documentation->{ 'ezsignfoldertype_edit_object_v3' } = {
         summary => 'Edit an existing Ezsignfoldertype',
         params => $params,
-        returns => 'EzsignfoldertypeEditObjectV3Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsignfoldertypeEditObjectV3Response
+# @return CommonResponse
 #
 sub ezsignfoldertype_edit_object_v3 {
     my ($self, %args) = @_;
@@ -192,7 +192,7 @@ sub ezsignfoldertype_edit_object_v3 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignfoldertypeEditObjectV3Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

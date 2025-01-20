@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **subnet_delete_object_v1**
-> SubnetDeleteObjectV1Response subnet_delete_object_v1(pki_subnet_id => $pki_subnet_id)
+> CommonResponse subnet_delete_object_v1(pki_subnet_id => $pki_subnet_id)
 
 Delete an existing Subnet
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SubnetDeleteObjectV1Response**](SubnetDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **subnet_edit_object_v1**
-> SubnetEditObjectV1Response subnet_edit_object_v1(pki_subnet_id => $pki_subnet_id, subnet_edit_object_v1_request => $subnet_edit_object_v1_request)
+> CommonResponse subnet_edit_object_v1(pki_subnet_id => $pki_subnet_id, subnet_edit_object_v1_request => $subnet_edit_object_v1_request)
 
 Edit an existing Subnet
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SubnetEditObjectV1Response**](SubnetEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

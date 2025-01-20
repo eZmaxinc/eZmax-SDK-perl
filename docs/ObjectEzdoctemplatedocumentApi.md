@@ -124,7 +124,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezdoctemplatedocument_edit_object_v1**
-> EzdoctemplatedocumentEditObjectV1Response ezdoctemplatedocument_edit_object_v1(pki_ezdoctemplatedocument_id => $pki_ezdoctemplatedocument_id, ezdoctemplatedocument_edit_object_v1_request => $ezdoctemplatedocument_edit_object_v1_request)
+> CommonResponse ezdoctemplatedocument_edit_object_v1(pki_ezdoctemplatedocument_id => $pki_ezdoctemplatedocument_id, ezdoctemplatedocument_edit_object_v1_request => $ezdoctemplatedocument_edit_object_v1_request)
 
 Edit an existing Ezdoctemplatedocument
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzdoctemplatedocumentEditObjectV1Response**](EzdoctemplatedocumentEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezdoctemplatedocument_patch_object_v1**
-> EzdoctemplatedocumentPatchObjectV1Response ezdoctemplatedocument_patch_object_v1(pki_ezdoctemplatedocument_id => $pki_ezdoctemplatedocument_id, ezdoctemplatedocument_patch_object_v1_request => $ezdoctemplatedocument_patch_object_v1_request)
+> CommonResponse ezdoctemplatedocument_patch_object_v1(pki_ezdoctemplatedocument_id => $pki_ezdoctemplatedocument_id, ezdoctemplatedocument_patch_object_v1_request => $ezdoctemplatedocument_patch_object_v1_request)
 
 Patch an existing Ezdoctemplatedocument
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzdoctemplatedocumentPatchObjectV1Response**](EzdoctemplatedocumentPatchObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

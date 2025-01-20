@@ -32,7 +32,7 @@ use DateTime;
 
 use EzmaxApi::Object::CommonResponseObjDebug;
 use EzmaxApi::Object::CommonResponseObjDebugPayload;
-use EzmaxApi::Object::EzmaxinvoicingGetProvisionalV1ResponseMPayload;
+use EzmaxApi::Object::EzmaxinvoicingResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -237,9 +237,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'm_payload' => {
-        datatype => 'EzmaxinvoicingGetProvisionalV1ResponseMPayload',
+        datatype => 'EzmaxinvoicingResponseCompound',
         base_name => 'mPayload',
-        description => '',
+        description => 'Payload for GET /1/object/ezmaxinvoicing/getProvisional',
         format => '',
         read_only => '',
             },
@@ -248,7 +248,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'obj_debug_payload' => 'CommonResponseObjDebugPayload',
     'obj_debug' => 'CommonResponseObjDebug',
-    'm_payload' => 'EzmaxinvoicingGetProvisionalV1ResponseMPayload'
+    'm_payload' => 'EzmaxinvoicingResponseCompound'
 } );
 
 __PACKAGE__->attribute_map( {

@@ -31,7 +31,6 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::EzsignfolderRequest;
-use EzmaxApi::Object::EzsignfolderRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -229,9 +228,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_ezsignfolder_compound' => {
-        datatype => 'EzsignfolderRequestCompound',
+        datatype => 'EzsignfolderRequest',
         base_name => 'objEzsignfolderCompound',
-        description => '',
+        description => 'An Ezsignfolder Object and children to create a complete structure',
         format => '',
         read_only => '',
             },
@@ -239,7 +238,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'obj_ezsignfolder' => 'EzsignfolderRequest',
-    'obj_ezsignfolder_compound' => 'EzsignfolderRequestCompound'
+    'obj_ezsignfolder_compound' => 'EzsignfolderRequest'
 } );
 
 __PACKAGE__->attribute_map( {

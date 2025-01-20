@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **ezsignuser_edit_object_v1**
-> EzsignuserEditObjectV1Response ezsignuser_edit_object_v1(pki_ezsignuser_id => $pki_ezsignuser_id, ezsignuser_edit_object_v1_request => $ezsignuser_edit_object_v1_request)
+> CommonResponse ezsignuser_edit_object_v1(pki_ezsignuser_id => $pki_ezsignuser_id, ezsignuser_edit_object_v1_request => $ezsignuser_edit_object_v1_request)
 
 Edit an existing Ezsignuser
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignuserEditObjectV1Response**](EzsignuserEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

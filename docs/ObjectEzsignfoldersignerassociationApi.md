@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfoldersignerassociation_delete_object_v1**
-> EzsignfoldersignerassociationDeleteObjectV1Response ezsignfoldersignerassociation_delete_object_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id)
+> CommonResponse ezsignfoldersignerassociation_delete_object_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id)
 
 Delete an existing Ezsignfoldersignerassociation
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfoldersignerassociationDeleteObjectV1Response**](EzsignfoldersignerassociationDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfoldersignerassociation_edit_object_v1**
-> EzsignfoldersignerassociationEditObjectV1Response ezsignfoldersignerassociation_edit_object_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_edit_object_v1_request => $ezsignfoldersignerassociation_edit_object_v1_request)
+> CommonResponse ezsignfoldersignerassociation_edit_object_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_edit_object_v1_request => $ezsignfoldersignerassociation_edit_object_v1_request)
 
 Edit an existing Ezsignfoldersignerassociation
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfoldersignerassociationEditObjectV1Response**](EzsignfoldersignerassociationEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfoldersignerassociation_force_disconnect_v1**
-> EzsignfoldersignerassociationForceDisconnectV1Response ezsignfoldersignerassociation_force_disconnect_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id, body => $body)
+> CommonResponse ezsignfoldersignerassociation_force_disconnect_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id, body => $body)
 
 Disconnects the Ezsignfoldersignerassociation
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfoldersignerassociationForceDisconnectV1Response**](EzsignfoldersignerassociationForceDisconnectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfoldersignerassociation_patch_object_v1**
-> EzsignfoldersignerassociationPatchObjectV1Response ezsignfoldersignerassociation_patch_object_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_patch_object_v1_request => $ezsignfoldersignerassociation_patch_object_v1_request)
+> CommonResponse ezsignfoldersignerassociation_patch_object_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_patch_object_v1_request => $ezsignfoldersignerassociation_patch_object_v1_request)
 
 Patch an existing Ezsignfoldersignerassociation
 
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfoldersignerassociationPatchObjectV1Response**](EzsignfoldersignerassociationPatchObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfoldersignerassociation_reassign_v1**
-> EzsignfoldersignerassociationReassignV1Response ezsignfoldersignerassociation_reassign_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_reassign_v1_request => $ezsignfoldersignerassociation_reassign_v1_request)
+> CommonResponse ezsignfoldersignerassociation_reassign_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_reassign_v1_request => $ezsignfoldersignerassociation_reassign_v1_request)
 
 Reassign remaining unsigned signatures and forms
 
@@ -578,7 +578,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfoldersignerassociationReassignV1Response**](EzsignfoldersignerassociationReassignV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

@@ -278,10 +278,10 @@ sub ezsignfoldersignerassociation_create_object_v2 {
     __PACKAGE__->method_documentation->{ 'ezsignfoldersignerassociation_delete_object_v1' } = {
         summary => 'Delete an existing Ezsignfoldersignerassociation',
         params => $params,
-        returns => 'EzsignfoldersignerassociationDeleteObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsignfoldersignerassociationDeleteObjectV1Response
+# @return CommonResponse
 #
 sub ezsignfoldersignerassociation_delete_object_v1 {
     my ($self, %args) = @_;
@@ -324,7 +324,7 @@ sub ezsignfoldersignerassociation_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignfoldersignerassociationDeleteObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -351,10 +351,10 @@ sub ezsignfoldersignerassociation_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignfoldersignerassociation_edit_object_v1' } = {
         summary => 'Edit an existing Ezsignfoldersignerassociation',
         params => $params,
-        returns => 'EzsignfoldersignerassociationEditObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsignfoldersignerassociationEditObjectV1Response
+# @return CommonResponse
 #
 sub ezsignfoldersignerassociation_edit_object_v1 {
     my ($self, %args) = @_;
@@ -407,7 +407,7 @@ sub ezsignfoldersignerassociation_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignfoldersignerassociationEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -434,10 +434,10 @@ sub ezsignfoldersignerassociation_edit_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignfoldersignerassociation_force_disconnect_v1' } = {
         summary => 'Disconnects the Ezsignfoldersignerassociation',
         params => $params,
-        returns => 'EzsignfoldersignerassociationForceDisconnectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsignfoldersignerassociationForceDisconnectV1Response
+# @return CommonResponse
 #
 sub ezsignfoldersignerassociation_force_disconnect_v1 {
     my ($self, %args) = @_;
@@ -490,7 +490,7 @@ sub ezsignfoldersignerassociation_force_disconnect_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignfoldersignerassociationForceDisconnectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -718,10 +718,10 @@ sub ezsignfoldersignerassociation_get_object_v2 {
     __PACKAGE__->method_documentation->{ 'ezsignfoldersignerassociation_patch_object_v1' } = {
         summary => 'Patch an existing Ezsignfoldersignerassociation',
         params => $params,
-        returns => 'EzsignfoldersignerassociationPatchObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsignfoldersignerassociationPatchObjectV1Response
+# @return CommonResponse
 #
 sub ezsignfoldersignerassociation_patch_object_v1 {
     my ($self, %args) = @_;
@@ -774,7 +774,7 @@ sub ezsignfoldersignerassociation_patch_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignfoldersignerassociationPatchObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -801,10 +801,10 @@ sub ezsignfoldersignerassociation_patch_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignfoldersignerassociation_reassign_v1' } = {
         summary => 'Reassign remaining unsigned signatures and forms',
         params => $params,
-        returns => 'EzsignfoldersignerassociationReassignV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsignfoldersignerassociationReassignV1Response
+# @return CommonResponse
 #
 sub ezsignfoldersignerassociation_reassign_v1 {
     my ($self, %args) = @_;
@@ -857,7 +857,7 @@ sub ezsignfoldersignerassociation_reassign_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignfoldersignerassociationReassignV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

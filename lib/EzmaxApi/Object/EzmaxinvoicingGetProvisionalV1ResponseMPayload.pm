@@ -31,8 +31,6 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
-use EzmaxApi::Object::CustomEzmaxinvoicingEzsigndocumentResponse;
-use EzmaxApi::Object::CustomEzmaxinvoicingEzsignfolderResponse;
 use EzmaxApi::Object::CustomEzmaxpricingResponse;
 use EzmaxApi::Object::EzmaxinvoicingagentResponseCompound;
 use EzmaxApi::Object::EzmaxinvoicingcontractResponseCompound;
