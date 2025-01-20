@@ -71,10 +71,10 @@ sub new {
     __PACKAGE__->method_documentation->{ 'ezsignpage_consult_v1' } = {
         summary => 'Consult an Ezsignpage',
         params => $params,
-        returns => 'EzsignpageConsultV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsignpageConsultV1Response
+# @return CommonResponse
 #
 sub ezsignpage_consult_v1 {
     my ($self, %args) = @_;
@@ -127,7 +127,7 @@ sub ezsignpage_consult_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignpageConsultV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

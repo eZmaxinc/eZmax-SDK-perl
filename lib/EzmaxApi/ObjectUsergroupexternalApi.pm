@@ -130,10 +130,10 @@ sub usergroupexternal_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'usergroupexternal_delete_object_v1' } = {
         summary => 'Delete an existing Usergroupexternal',
         params => $params,
-        returns => 'UsergroupexternalDeleteObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return UsergroupexternalDeleteObjectV1Response
+# @return CommonResponse
 #
 sub usergroupexternal_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub usergroupexternal_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('UsergroupexternalDeleteObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub usergroupexternal_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'usergroupexternal_edit_object_v1' } = {
         summary => 'Edit an existing Usergroupexternal',
         params => $params,
-        returns => 'UsergroupexternalEditObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return UsergroupexternalEditObjectV1Response
+# @return CommonResponse
 #
 sub usergroupexternal_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub usergroupexternal_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('UsergroupexternalEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

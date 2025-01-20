@@ -46,7 +46,7 @@ Method | HTTP request | Description
 
 
 # **ezsigndocument_apply_ezsigntemplate_v1**
-> EzsigndocumentApplyEzsigntemplateV1Response ezsigndocument_apply_ezsigntemplate_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplate_v1_request => $ezsigndocument_apply_ezsigntemplate_v1_request)
+> CommonResponse ezsigndocument_apply_ezsigntemplate_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsigndocument_apply_ezsigntemplate_v1_request => $ezsigndocument_apply_ezsigntemplate_v1_request)
 
 Apply an Ezsigntemplate to the Ezsigndocument.
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsigndocumentApplyEzsigntemplateV1Response**](EzsigndocumentApplyEzsigntemplateV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigndocument_decline_to_sign_v1**
-> EzsigndocumentDeclineToSignV1Response ezsigndocument_decline_to_sign_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsigndocument_decline_to_sign_v1_request => $ezsigndocument_decline_to_sign_v1_request)
+> CommonResponse ezsigndocument_decline_to_sign_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsigndocument_decline_to_sign_v1_request => $ezsigndocument_decline_to_sign_v1_request)
 
 Decline to sign
 
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsigndocumentDeclineToSignV1Response**](EzsigndocumentDeclineToSignV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigndocument_delete_object_v1**
-> EzsigndocumentDeleteObjectV1Response ezsigndocument_delete_object_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id)
+> CommonResponse ezsigndocument_delete_object_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id)
 
 Delete an existing Ezsigndocument
 
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsigndocumentDeleteObjectV1Response**](EzsigndocumentDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -727,7 +727,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigndocument_end_prematurely_v1**
-> EzsigndocumentEndPrematurelyV1Response ezsigndocument_end_prematurely_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, body => $body)
+> CommonResponse ezsigndocument_end_prematurely_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, body => $body)
 
 End prematurely
 
@@ -766,7 +766,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsigndocumentEndPrematurelyV1Response**](EzsigndocumentEndPrematurelyV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -833,7 +833,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigndocument_flatten_v1**
-> EzsigndocumentFlattenV1Response ezsigndocument_flatten_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, body => $body)
+> CommonResponse ezsigndocument_flatten_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, body => $body)
 
 Flatten
 
@@ -872,7 +872,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsigndocumentFlattenV1Response**](EzsigndocumentFlattenV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -1653,7 +1653,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigndocument_patch_object_v1**
-> EzsigndocumentPatchObjectV1Response ezsigndocument_patch_object_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsigndocument_patch_object_v1_request => $ezsigndocument_patch_object_v1_request)
+> CommonResponse ezsigndocument_patch_object_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsigndocument_patch_object_v1_request => $ezsigndocument_patch_object_v1_request)
 
 Patch an existing Ezsigndocument
 
@@ -1692,7 +1692,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsigndocumentPatchObjectV1Response**](EzsigndocumentPatchObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -1706,7 +1706,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigndocument_submit_ezsignform_v1**
-> EzsigndocumentSubmitEzsignformV1Response ezsigndocument_submit_ezsignform_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsigndocument_submit_ezsignform_v1_request => $ezsigndocument_submit_ezsignform_v1_request)
+> CommonResponse ezsigndocument_submit_ezsignform_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsigndocument_submit_ezsignform_v1_request => $ezsigndocument_submit_ezsignform_v1_request)
 
 Submit the Ezsignform
 
@@ -1745,7 +1745,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsigndocumentSubmitEzsignformV1Response**](EzsigndocumentSubmitEzsignformV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -1759,7 +1759,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigndocument_unsend_v1**
-> EzsigndocumentUnsendV1Response ezsigndocument_unsend_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, body => $body)
+> CommonResponse ezsigndocument_unsend_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, body => $body)
 
 Unsend the Ezsigndocument
 
@@ -1798,7 +1798,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsigndocumentUnsendV1Response**](EzsigndocumentUnsendV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

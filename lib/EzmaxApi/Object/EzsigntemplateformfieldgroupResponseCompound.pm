@@ -30,10 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::CustomDropdownElementResponseCompound;
+use EzmaxApi::Object::CustomDropdownElementResponse;
 use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::EzsigntemplateformfieldResponseCompound;
-use EzmaxApi::Object::EzsigntemplateformfieldgroupsignerResponseCompound;
+use EzmaxApi::Object::EzsigntemplateformfieldgroupsignerResponse;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldgroupSignerrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldgroupTooltipposition;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldgroupType;

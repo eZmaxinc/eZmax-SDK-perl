@@ -130,10 +130,10 @@ sub usergroupdelegation_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'usergroupdelegation_delete_object_v1' } = {
         summary => 'Delete an existing Usergroupdelegation',
         params => $params,
-        returns => 'UsergroupdelegationDeleteObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return UsergroupdelegationDeleteObjectV1Response
+# @return CommonResponse
 #
 sub usergroupdelegation_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub usergroupdelegation_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('UsergroupdelegationDeleteObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub usergroupdelegation_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'usergroupdelegation_edit_object_v1' } = {
         summary => 'Edit an existing Usergroupdelegation',
         params => $params,
-        returns => 'UsergroupdelegationEditObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return UsergroupdelegationEditObjectV1Response
+# @return CommonResponse
 #
 sub usergroupdelegation_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub usergroupdelegation_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('UsergroupdelegationEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

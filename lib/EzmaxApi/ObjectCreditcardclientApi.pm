@@ -130,10 +130,10 @@ sub creditcardclient_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'creditcardclient_delete_object_v1' } = {
         summary => 'Delete an existing Creditcardclient',
         params => $params,
-        returns => 'CreditcardclientDeleteObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return CreditcardclientDeleteObjectV1Response
+# @return CommonResponse
 #
 sub creditcardclient_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub creditcardclient_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CreditcardclientDeleteObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub creditcardclient_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'creditcardclient_edit_object_v1' } = {
         summary => 'Edit an existing Creditcardclient',
         params => $params,
-        returns => 'CreditcardclientEditObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return CreditcardclientEditObjectV1Response
+# @return CommonResponse
 #
 sub creditcardclient_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub creditcardclient_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CreditcardclientEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -557,10 +557,10 @@ sub creditcardclient_get_object_v2 {
     __PACKAGE__->method_documentation->{ 'creditcardclient_patch_object_v1' } = {
         summary => 'Patch an existing Creditcardclient',
         params => $params,
-        returns => 'CreditcardclientPatchObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return CreditcardclientPatchObjectV1Response
+# @return CommonResponse
 #
 sub creditcardclient_patch_object_v1 {
     my ($self, %args) = @_;
@@ -613,7 +613,7 @@ sub creditcardclient_patch_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CreditcardclientPatchObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

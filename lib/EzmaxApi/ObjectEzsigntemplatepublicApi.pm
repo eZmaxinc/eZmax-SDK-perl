@@ -201,10 +201,10 @@ sub ezsigntemplatepublic_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigntemplatepublic_edit_object_v1' } = {
         summary => 'Edit an existing Ezsigntemplatepublic',
         params => $params,
-        returns => 'EzsigntemplatepublicEditObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsigntemplatepublicEditObjectV1Response
+# @return CommonResponse
 #
 sub ezsigntemplatepublic_edit_object_v1 {
     my ($self, %args) = @_;
@@ -257,7 +257,7 @@ sub ezsigntemplatepublic_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatepublicEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignbulksendsignermapping_delete_object_v1**
-> EzsignbulksendsignermappingDeleteObjectV1Response ezsignbulksendsignermapping_delete_object_v1(pki_ezsignbulksendsignermapping_id => $pki_ezsignbulksendsignermapping_id)
+> CommonResponse ezsignbulksendsignermapping_delete_object_v1(pki_ezsignbulksendsignermapping_id => $pki_ezsignbulksendsignermapping_id)
 
 Delete an existing Ezsignbulksendsignermapping
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignbulksendsignermappingDeleteObjectV1Response**](EzsignbulksendsignermappingDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

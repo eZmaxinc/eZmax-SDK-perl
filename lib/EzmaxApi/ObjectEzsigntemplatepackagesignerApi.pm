@@ -203,10 +203,10 @@ sub ezsigntemplatepackagesigner_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigntemplatepackagesigner_edit_object_v1' } = {
         summary => 'Edit an existing Ezsigntemplatepackagesigner',
         params => $params,
-        returns => 'EzsigntemplatepackagesignerEditObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsigntemplatepackagesignerEditObjectV1Response
+# @return CommonResponse
 #
 sub ezsigntemplatepackagesigner_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub ezsigntemplatepackagesigner_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatepackagesignerEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

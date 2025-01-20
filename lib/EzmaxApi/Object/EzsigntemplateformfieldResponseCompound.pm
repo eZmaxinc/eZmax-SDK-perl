@@ -31,7 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::EnumHorizontalalignment;
-use EzmaxApi::Object::EzsigntemplateelementdependencyResponseCompound;
+use EzmaxApi::Object::EzsigntemplateelementdependencyResponse;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldPositioning;
 use EzmaxApi::Object::FieldEEzsigntemplateformfieldPositioningoccurence;

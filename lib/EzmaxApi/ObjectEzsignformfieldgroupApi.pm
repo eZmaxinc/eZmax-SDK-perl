@@ -130,10 +130,10 @@ sub ezsignformfieldgroup_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignformfieldgroup_delete_object_v1' } = {
         summary => 'Delete an existing Ezsignformfieldgroup',
         params => $params,
-        returns => 'EzsignformfieldgroupDeleteObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsignformfieldgroupDeleteObjectV1Response
+# @return CommonResponse
 #
 sub ezsignformfieldgroup_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub ezsignformfieldgroup_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignformfieldgroupDeleteObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub ezsignformfieldgroup_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignformfieldgroup_edit_object_v1' } = {
         summary => 'Edit an existing Ezsignformfieldgroup',
         params => $params,
-        returns => 'EzsignformfieldgroupEditObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsignformfieldgroupEditObjectV1Response
+# @return CommonResponse
 #
 sub ezsignformfieldgroup_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub ezsignformfieldgroup_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignformfieldgroupEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

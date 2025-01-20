@@ -32,7 +32,7 @@ use DateTime;
 
 use EzmaxApi::Object::CommunicationexternalrecipientRequestCompound;
 use EzmaxApi::Object::CommunicationrecipientRequestCompound;
-use EzmaxApi::Object::CommunicationreferenceRequestCompound;
+use EzmaxApi::Object::CommunicationreferenceRequest;
 use EzmaxApi::Object::CustomCommunicationattachmentRequest;
 use EzmaxApi::Object::CustomCommunicationsenderRequest;
 use EzmaxApi::Object::FieldECommunicationImportance;

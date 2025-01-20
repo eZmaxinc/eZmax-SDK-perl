@@ -130,10 +130,10 @@ sub ezsignannotation_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignannotation_delete_object_v1' } = {
         summary => 'Delete an existing Ezsignannotation',
         params => $params,
-        returns => 'EzsignannotationDeleteObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsignannotationDeleteObjectV1Response
+# @return CommonResponse
 #
 sub ezsignannotation_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub ezsignannotation_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignannotationDeleteObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub ezsignannotation_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsignannotation_edit_object_v1' } = {
         summary => 'Edit an existing Ezsignannotation',
         params => $params,
-        returns => 'EzsignannotationEditObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return EzsignannotationEditObjectV1Response
+# @return CommonResponse
 #
 sub ezsignannotation_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub ezsignannotation_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('EzsignannotationEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

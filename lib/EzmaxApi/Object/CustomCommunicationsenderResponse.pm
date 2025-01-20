@@ -31,7 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CustomContactNameResponse;
-use EzmaxApi::Object::EmailResponseCompound;
+use EzmaxApi::Object::EmailResponse;
 use EzmaxApi::Object::PhoneResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -272,9 +272,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_email' => {
-        datatype => 'EmailResponseCompound',
+        datatype => 'EmailResponse',
         base_name => 'objEmail',
-        description => '',
+        description => 'An Email Object and children to create a complete structure',
         format => '',
         read_only => '',
             },
@@ -302,7 +302,7 @@ __PACKAGE__->openapi_types( {
     'fki_phonelineshared_id' => 'int',
     'e_communicationsender_objecttype' => 'string',
     'obj_contact_name' => 'CustomContactNameResponse',
-    'obj_email' => 'EmailResponseCompound',
+    'obj_email' => 'EmailResponse',
     'obj_phone_fax' => 'PhoneResponseCompound',
     'obj_phone_sms' => 'PhoneResponseCompound'
 } );

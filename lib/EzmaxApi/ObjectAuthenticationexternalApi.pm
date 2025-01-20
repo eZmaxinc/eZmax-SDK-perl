@@ -130,10 +130,10 @@ sub authenticationexternal_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'authenticationexternal_delete_object_v1' } = {
         summary => 'Delete an existing Authenticationexternal',
         params => $params,
-        returns => 'AuthenticationexternalDeleteObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return AuthenticationexternalDeleteObjectV1Response
+# @return CommonResponse
 #
 sub authenticationexternal_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub authenticationexternal_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('AuthenticationexternalDeleteObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub authenticationexternal_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'authenticationexternal_edit_object_v1' } = {
         summary => 'Edit an existing Authenticationexternal',
         params => $params,
-        returns => 'AuthenticationexternalEditObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return AuthenticationexternalEditObjectV1Response
+# @return CommonResponse
 #
 sub authenticationexternal_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub authenticationexternal_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('AuthenticationexternalEditObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 
@@ -557,10 +557,10 @@ sub authenticationexternal_get_object_v2 {
     __PACKAGE__->method_documentation->{ 'authenticationexternal_reset_authorization_v1' } = {
         summary => 'Reset the Authenticationexternal authorization',
         params => $params,
-        returns => 'AuthenticationexternalResetAuthorizationV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return AuthenticationexternalResetAuthorizationV1Response
+# @return CommonResponse
 #
 sub authenticationexternal_reset_authorization_v1 {
     my ($self, %args) = @_;
@@ -613,7 +613,7 @@ sub authenticationexternal_reset_authorization_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('AuthenticationexternalResetAuthorizationV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

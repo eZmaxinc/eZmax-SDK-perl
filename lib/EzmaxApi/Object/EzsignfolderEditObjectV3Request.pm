@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EzsignfolderRequestCompoundV3;
+use EzmaxApi::Object::EzsignfolderRequestV3;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -221,16 +221,16 @@ __PACKAGE__->class_documentation({description => 'Request for PUT /3/object/ezsi
 
 __PACKAGE__->method_documentation({
     'obj_ezsignfolder' => {
-        datatype => 'EzsignfolderRequestCompoundV3',
+        datatype => 'EzsignfolderRequestV3',
         base_name => 'objEzsignfolder',
-        description => '',
+        description => 'An Ezsignfolder Object and children to create a complete structure',
         format => '',
         read_only => '',
             },
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_ezsignfolder' => 'EzsignfolderRequestCompoundV3'
+    'obj_ezsignfolder' => 'EzsignfolderRequestV3'
 } );
 
 __PACKAGE__->attribute_map( {

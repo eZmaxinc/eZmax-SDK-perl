@@ -130,10 +130,10 @@ sub domain_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'domain_delete_object_v1' } = {
         summary => 'Delete an existing Domain',
         params => $params,
-        returns => 'DomainDeleteObjectV1Response',
+        returns => 'CommonResponse',
         };
 }
-# @return DomainDeleteObjectV1Response
+# @return CommonResponse
 #
 sub domain_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub domain_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('DomainDeleteObjectV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
     return $_response_object;
 }
 

@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **usergroupdelegation_delete_object_v1**
-> UsergroupdelegationDeleteObjectV1Response usergroupdelegation_delete_object_v1(pki_usergroupdelegation_id => $pki_usergroupdelegation_id)
+> CommonResponse usergroupdelegation_delete_object_v1(pki_usergroupdelegation_id => $pki_usergroupdelegation_id)
 
 Delete an existing Usergroupdelegation
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsergroupdelegationDeleteObjectV1Response**](UsergroupdelegationDeleteObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **usergroupdelegation_edit_object_v1**
-> UsergroupdelegationEditObjectV1Response usergroupdelegation_edit_object_v1(pki_usergroupdelegation_id => $pki_usergroupdelegation_id, usergroupdelegation_edit_object_v1_request => $usergroupdelegation_edit_object_v1_request)
+> CommonResponse usergroupdelegation_edit_object_v1(pki_usergroupdelegation_id => $pki_usergroupdelegation_id, usergroupdelegation_edit_object_v1_request => $usergroupdelegation_edit_object_v1_request)
 
 Edit an existing Usergroupdelegation
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsergroupdelegationEditObjectV1Response**](UsergroupdelegationEditObjectV1Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

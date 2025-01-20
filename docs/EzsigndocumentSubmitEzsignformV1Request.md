@@ -9,7 +9,7 @@ use EzmaxApi::Object::EzsigndocumentSubmitEzsignformV1Request;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **b_ezsignform_isdraft** | **boolean** | Whether the Ezsignform submitted is a draft or not. | 
-**a_obj_ezsignformfieldgroup** | [**ARRAY[CustomEzsignformfieldgroupRequest]**](CustomEzsignformfieldgroupRequest.md) |  | 
+**a_obj_ezsignformfieldgroup** | **ARRAY[CustomEzsignformfieldgroupRequest]** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

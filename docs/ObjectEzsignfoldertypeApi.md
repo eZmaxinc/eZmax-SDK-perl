@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfoldertype_edit_object_v3**
-> EzsignfoldertypeEditObjectV3Response ezsignfoldertype_edit_object_v3(pki_ezsignfoldertype_id => $pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v3_request => $ezsignfoldertype_edit_object_v3_request)
+> CommonResponse ezsignfoldertype_edit_object_v3(pki_ezsignfoldertype_id => $pki_ezsignfoldertype_id, ezsignfoldertype_edit_object_v3_request => $ezsignfoldertype_edit_object_v3_request)
 
 Edit an existing Ezsignfoldertype
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EzsignfoldertypeEditObjectV3Response**](EzsignfoldertypeEditObjectV3Response.md)
+[**CommonResponse**](CommonResponse.md)
 
 ### Authorization
 

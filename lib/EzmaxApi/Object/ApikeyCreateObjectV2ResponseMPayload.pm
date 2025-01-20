@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::ApikeyResponseCompound;
+use EzmaxApi::Object::ApikeyResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 

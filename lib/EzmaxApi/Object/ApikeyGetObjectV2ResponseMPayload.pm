@@ -30,7 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::ApikeyResponseCompound;
+use EzmaxApi::Object::ApikeyResponse;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -221,16 +221,16 @@ __PACKAGE__->class_documentation({description => 'Payload for GET /2/object/apik
 
 __PACKAGE__->method_documentation({
     'obj_apikey' => {
-        datatype => 'ApikeyResponseCompound',
+        datatype => 'ApikeyResponse',
         base_name => 'objApikey',
-        description => '',
+        description => 'An Apikey Object and children to create a complete structure',
         format => '',
         read_only => '',
             },
 });
 
 __PACKAGE__->openapi_types( {
-    'obj_apikey' => 'ApikeyResponseCompound'
+    'obj_apikey' => 'ApikeyResponse'
 } );
 
 __PACKAGE__->attribute_map( {
