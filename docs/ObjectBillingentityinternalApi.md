@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **billingentityinternal_edit_object_v1**
-> CommonResponse billingentityinternal_edit_object_v1(pki_billingentityinternal_id => $pki_billingentityinternal_id, billingentityinternal_edit_object_v1_request => $billingentityinternal_edit_object_v1_request)
+> BillingentityinternalEditObjectV1Response billingentityinternal_edit_object_v1(pki_billingentityinternal_id => $pki_billingentityinternal_id, billingentityinternal_edit_object_v1_request => $billingentityinternal_edit_object_v1_request)
 
 Edit an existing Billingentityinternal
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**BillingentityinternalEditObjectV1Response**](BillingentityinternalEditObjectV1Response.md)
 
 ### Authorization
 

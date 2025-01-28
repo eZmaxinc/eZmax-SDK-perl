@@ -30,11 +30,11 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::EmailRequest;
+use EzmaxApi::Object::EmailRequestCompound;
 use EzmaxApi::Object::FieldEUserEzsignaccess;
 use EzmaxApi::Object::FieldEUserLogintype;
 use EzmaxApi::Object::FieldEUserType;
-use EzmaxApi::Object::PhoneRequest;
+use EzmaxApi::Object::PhoneRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -288,9 +288,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_email' => {
-        datatype => 'EmailRequest',
+        datatype => 'EmailRequestCompound',
         base_name => 'objEmail',
-        description => 'An Email Object and children to create a complete structure',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -302,16 +302,16 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_phone_home' => {
-        datatype => 'PhoneRequest',
+        datatype => 'PhoneRequestCompound',
         base_name => 'objPhoneHome',
-        description => 'A Phone Object and children to create a complete structure',
+        description => '',
         format => '',
         read_only => '',
             },
     'obj_phone_sms' => {
-        datatype => 'PhoneRequest',
+        datatype => 'PhoneRequestCompound',
         base_name => 'objPhoneSMS',
-        description => 'A Phone Object and children to create a complete structure',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -432,10 +432,10 @@ __PACKAGE__->openapi_types( {
     'fki_department_id_default' => 'int',
     'fki_timezone_id' => 'int',
     'fki_language_id' => 'int',
-    'obj_email' => 'EmailRequest',
+    'obj_email' => 'EmailRequestCompound',
     'fki_billingentityinternal_id' => 'int',
-    'obj_phone_home' => 'PhoneRequest',
-    'obj_phone_sms' => 'PhoneRequest',
+    'obj_phone_home' => 'PhoneRequestCompound',
+    'obj_phone_sms' => 'PhoneRequestCompound',
     'fki_secretquestion_id' => 'int',
     's_user_secretresponse' => 'string',
     'fki_module_id_form' => 'int',

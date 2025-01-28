@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignannotation_delete_object_v1**
-> CommonResponse ezsignannotation_delete_object_v1(pki_ezsignannotation_id => $pki_ezsignannotation_id)
+> EzsignannotationDeleteObjectV1Response ezsignannotation_delete_object_v1(pki_ezsignannotation_id => $pki_ezsignannotation_id)
 
 Delete an existing Ezsignannotation
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignannotationDeleteObjectV1Response**](EzsignannotationDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignannotation_edit_object_v1**
-> CommonResponse ezsignannotation_edit_object_v1(pki_ezsignannotation_id => $pki_ezsignannotation_id, ezsignannotation_edit_object_v1_request => $ezsignannotation_edit_object_v1_request)
+> EzsignannotationEditObjectV1Response ezsignannotation_edit_object_v1(pki_ezsignannotation_id => $pki_ezsignannotation_id, ezsignannotation_edit_object_v1_request => $ezsignannotation_edit_object_v1_request)
 
 Edit an existing Ezsignannotation
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignannotationEditObjectV1Response**](EzsignannotationEditObjectV1Response.md)
 
 ### Authorization
 

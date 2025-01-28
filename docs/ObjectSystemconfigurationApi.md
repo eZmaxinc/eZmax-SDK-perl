@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **systemconfiguration_edit_object_v1**
-> CommonResponse systemconfiguration_edit_object_v1(pki_systemconfiguration_id => $pki_systemconfiguration_id, systemconfiguration_edit_object_v1_request => $systemconfiguration_edit_object_v1_request)
+> SystemconfigurationEditObjectV1Response systemconfiguration_edit_object_v1(pki_systemconfiguration_id => $pki_systemconfiguration_id, systemconfiguration_edit_object_v1_request => $systemconfiguration_edit_object_v1_request)
 
 Edit an existing Systemconfiguration
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**SystemconfigurationEditObjectV1Response**](SystemconfigurationEditObjectV1Response.md)
 
 ### Authorization
 

@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigntemplatepackagesigner_edit_object_v1**
-> CommonResponse ezsigntemplatepackagesigner_edit_object_v1(pki_ezsigntemplatepackagesigner_id => $pki_ezsigntemplatepackagesigner_id, ezsigntemplatepackagesigner_edit_object_v1_request => $ezsigntemplatepackagesigner_edit_object_v1_request)
+> EzsigntemplatepackagesignerEditObjectV1Response ezsigntemplatepackagesigner_edit_object_v1(pki_ezsigntemplatepackagesigner_id => $pki_ezsigntemplatepackagesigner_id, ezsigntemplatepackagesigner_edit_object_v1_request => $ezsigntemplatepackagesigner_edit_object_v1_request)
 
 Edit an existing Ezsigntemplatepackagesigner
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplatepackagesignerEditObjectV1Response**](EzsigntemplatepackagesignerEditObjectV1Response.md)
 
 ### Authorization
 

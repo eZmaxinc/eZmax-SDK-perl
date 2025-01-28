@@ -71,10 +71,10 @@ sub new {
     __PACKAGE__->method_documentation->{ 'ezsignuser_edit_object_v1' } = {
         summary => 'Edit an existing Ezsignuser',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsignuserEditObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsignuserEditObjectV1Response
 #
 sub ezsignuser_edit_object_v1 {
     my ($self, %args) = @_;
@@ -127,7 +127,7 @@ sub ezsignuser_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsignuserEditObjectV1Response', $response);
     return $_response_object;
 }
 

@@ -8,7 +8,7 @@ use EzmaxApi::Object::EzsignfolderEditObjectV3Request;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**obj_ezsignfolder** | [**EzsignfolderRequestV3**](EzsignfolderRequestV3.md) | An Ezsignfolder Object and children to create a complete structure | 
+**obj_ezsignfolder** | [**EzsignfolderRequestCompoundV3**](EzsignfolderRequestCompoundV3.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

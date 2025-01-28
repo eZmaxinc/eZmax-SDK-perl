@@ -130,10 +130,10 @@ sub ezsigntemplatepackage_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigntemplatepackage_delete_object_v1' } = {
         summary => 'Delete an existing Ezsigntemplatepackage',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigntemplatepackageDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigntemplatepackageDeleteObjectV1Response
 #
 sub ezsigntemplatepackage_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub ezsigntemplatepackage_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatepackageDeleteObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -286,10 +286,10 @@ sub ezsigntemplatepackage_edit_ezsigntemplatepackagesigners_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigntemplatepackage_edit_object_v1' } = {
         summary => 'Edit an existing Ezsigntemplatepackage',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigntemplatepackageEditObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigntemplatepackageEditObjectV1Response
 #
 sub ezsigntemplatepackage_edit_object_v1 {
     my ($self, %args) = @_;
@@ -342,7 +342,7 @@ sub ezsigntemplatepackage_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatepackageEditObjectV1Response', $response);
     return $_response_object;
 }
 

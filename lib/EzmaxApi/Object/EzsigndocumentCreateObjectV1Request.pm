@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::EzsigndocumentRequest;
+use EzmaxApi::Object::EzsigndocumentRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -228,9 +229,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_ezsigndocument_compound' => {
-        datatype => 'EzsigndocumentRequest',
+        datatype => 'EzsigndocumentRequestCompound',
         base_name => 'objEzsigndocumentCompound',
-        description => 'An Ezsigndocument Object and children to create a complete structure',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -238,7 +239,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'obj_ezsigndocument' => 'EzsigndocumentRequest',
-    'obj_ezsigndocument_compound' => 'EzsigndocumentRequest'
+    'obj_ezsigndocument_compound' => 'EzsigndocumentRequestCompound'
 } );
 
 __PACKAGE__->attribute_map( {

@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cors_delete_object_v1**
-> CommonResponse cors_delete_object_v1(pki_cors_id => $pki_cors_id)
+> CorsDeleteObjectV1Response cors_delete_object_v1(pki_cors_id => $pki_cors_id)
 
 Delete an existing Cors
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**CorsDeleteObjectV1Response**](CorsDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cors_edit_object_v1**
-> CommonResponse cors_edit_object_v1(pki_cors_id => $pki_cors_id, cors_edit_object_v1_request => $cors_edit_object_v1_request)
+> CorsEditObjectV1Response cors_edit_object_v1(pki_cors_id => $pki_cors_id, cors_edit_object_v1_request => $cors_edit_object_v1_request)
 
 Edit an existing Cors
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**CorsEditObjectV1Response**](CorsEditObjectV1Response.md)
 
 ### Authorization
 

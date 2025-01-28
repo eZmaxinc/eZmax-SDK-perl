@@ -130,10 +130,10 @@ sub usergroupmembership_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'usergroupmembership_delete_object_v1' } = {
         summary => 'Delete an existing Usergroupmembership',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'UsergroupmembershipDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return UsergroupmembershipDeleteObjectV1Response
 #
 sub usergroupmembership_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub usergroupmembership_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('UsergroupmembershipDeleteObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub usergroupmembership_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'usergroupmembership_edit_object_v1' } = {
         summary => 'Edit an existing Usergroupmembership',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'UsergroupmembershipEditObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return UsergroupmembershipEditObjectV1Response
 #
 sub usergroupmembership_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub usergroupmembership_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('UsergroupmembershipEditObjectV1Response', $response);
     return $_response_object;
 }
 

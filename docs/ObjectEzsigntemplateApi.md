@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigntemplate_delete_object_v1**
-> CommonResponse ezsigntemplate_delete_object_v1(pki_ezsigntemplate_id => $pki_ezsigntemplate_id)
+> EzsigntemplateDeleteObjectV1Response ezsigntemplate_delete_object_v1(pki_ezsigntemplate_id => $pki_ezsigntemplate_id)
 
 Delete an existing Ezsigntemplate
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplateDeleteObjectV1Response**](EzsigntemplateDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsigntemplate_edit_object_v3**
-> CommonResponse ezsigntemplate_edit_object_v3(pki_ezsigntemplate_id => $pki_ezsigntemplate_id, ezsigntemplate_edit_object_v3_request => $ezsigntemplate_edit_object_v3_request)
+> EzsigntemplateEditObjectV3Response ezsigntemplate_edit_object_v3(pki_ezsigntemplate_id => $pki_ezsigntemplate_id, ezsigntemplate_edit_object_v3_request => $ezsigntemplate_edit_object_v3_request)
 
 Edit an existing Ezsigntemplate
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsigntemplateEditObjectV3Response**](EzsigntemplateEditObjectV3Response.md)
 
 ### Authorization
 

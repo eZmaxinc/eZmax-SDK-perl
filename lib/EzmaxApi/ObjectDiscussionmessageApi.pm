@@ -130,10 +130,10 @@ sub discussionmessage_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'discussionmessage_delete_object_v1' } = {
         summary => 'Delete an existing Discussionmessage',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'DiscussionmessageDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return DiscussionmessageDeleteObjectV1Response
 #
 sub discussionmessage_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub discussionmessage_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('DiscussionmessageDeleteObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub discussionmessage_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'discussionmessage_patch_object_v1' } = {
         summary => 'Patch an existing Discussionmessage',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'DiscussionmessagePatchObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return DiscussionmessagePatchObjectV1Response
 #
 sub discussionmessage_patch_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub discussionmessage_patch_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('DiscussionmessagePatchObjectV1Response', $response);
     return $_response_object;
 }
 

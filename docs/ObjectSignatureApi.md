@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **signature_delete_object_v1**
-> CommonResponse signature_delete_object_v1(pki_signature_id => $pki_signature_id)
+> SignatureDeleteObjectV1Response signature_delete_object_v1(pki_signature_id => $pki_signature_id)
 
 Delete an existing Signature
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**SignatureDeleteObjectV1Response**](SignatureDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **signature_edit_object_v1**
-> CommonResponse signature_edit_object_v1(pki_signature_id => $pki_signature_id, signature_edit_object_v1_request => $signature_edit_object_v1_request)
+> SignatureEditObjectV1Response signature_edit_object_v1(pki_signature_id => $pki_signature_id, signature_edit_object_v1_request => $signature_edit_object_v1_request)
 
 Edit an existing Signature
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**SignatureEditObjectV1Response**](SignatureEditObjectV1Response.md)
 
 ### Authorization
 

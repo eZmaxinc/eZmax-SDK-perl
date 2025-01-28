@@ -136,10 +136,10 @@ sub billingentityinternal_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'billingentityinternal_edit_object_v1' } = {
         summary => 'Edit an existing Billingentityinternal',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'BillingentityinternalEditObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return BillingentityinternalEditObjectV1Response
 #
 sub billingentityinternal_edit_object_v1 {
     my ($self, %args) = @_;
@@ -192,7 +192,7 @@ sub billingentityinternal_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('BillingentityinternalEditObjectV1Response', $response);
     return $_response_object;
 }
 

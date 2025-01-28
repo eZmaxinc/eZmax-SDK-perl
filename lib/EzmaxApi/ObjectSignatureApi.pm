@@ -130,10 +130,10 @@ sub signature_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'signature_delete_object_v1' } = {
         summary => 'Delete an existing Signature',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'SignatureDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return SignatureDeleteObjectV1Response
 #
 sub signature_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub signature_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('SignatureDeleteObjectV1Response', $response);
     return $_response_object;
 }
 
@@ -203,10 +203,10 @@ sub signature_delete_object_v1 {
     __PACKAGE__->method_documentation->{ 'signature_edit_object_v1' } = {
         summary => 'Edit an existing Signature',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'SignatureEditObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return SignatureEditObjectV1Response
 #
 sub signature_edit_object_v1 {
     my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub signature_edit_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('SignatureEditObjectV1Response', $response);
     return $_response_object;
 }
 

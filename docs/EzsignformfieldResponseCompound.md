@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **e_ezsignformfield_dependencyrequirement** | [**FieldEEzsignformfieldDependencyrequirement**](FieldEEzsignformfieldDependencyrequirement.md) |  | [optional] 
 **e_ezsignformfield_horizontalalignment** | [**EnumHorizontalalignment**](EnumHorizontalalignment.md) |  | [optional] 
 **obj_textstylestatic** | [**TextstylestaticResponseCompound**](TextstylestaticResponseCompound.md) |  | [optional] 
-**a_obj_ezsignelementdependency** | [**ARRAY[EzsignelementdependencyResponseCompound]**](EzsignelementdependencyResponse.md) |  | [optional] 
+**a_obj_ezsignelementdependency** | [**ARRAY[EzsignelementdependencyResponseCompound]**](EzsignelementdependencyResponseCompound.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

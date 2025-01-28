@@ -130,10 +130,10 @@ sub ezsigntemplatepackagemembership_create_object_v1 {
     __PACKAGE__->method_documentation->{ 'ezsigntemplatepackagemembership_delete_object_v1' } = {
         summary => 'Delete an existing Ezsigntemplatepackagemembership',
         params => $params,
-        returns => 'CommonResponse',
+        returns => 'EzsigntemplatepackagemembershipDeleteObjectV1Response',
         };
 }
-# @return CommonResponse
+# @return EzsigntemplatepackagemembershipDeleteObjectV1Response
 #
 sub ezsigntemplatepackagemembership_delete_object_v1 {
     my ($self, %args) = @_;
@@ -176,7 +176,7 @@ sub ezsigntemplatepackagemembership_delete_object_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('CommonResponse', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatepackagemembershipDeleteObjectV1Response', $response);
     return $_response_object;
 }
 

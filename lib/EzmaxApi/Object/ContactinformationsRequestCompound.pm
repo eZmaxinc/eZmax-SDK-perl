@@ -30,10 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::AddressRequest;
-use EzmaxApi::Object::EmailRequest;
-use EzmaxApi::Object::PhoneRequest;
-use EzmaxApi::Object::WebsiteRequest;
+use EzmaxApi::Object::AddressRequestCompound;
+use EzmaxApi::Object::EmailRequestCompound;
+use EzmaxApi::Object::PhoneRequestCompound;
+use EzmaxApi::Object::WebsiteRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 

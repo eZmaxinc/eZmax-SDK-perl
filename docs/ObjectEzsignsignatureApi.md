@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignsignature_delete_object_v1**
-> CommonResponse ezsignsignature_delete_object_v1(pki_ezsignsignature_id => $pki_ezsignsignature_id)
+> EzsignsignatureDeleteObjectV1Response ezsignsignature_delete_object_v1(pki_ezsignsignature_id => $pki_ezsignsignature_id)
 
 Delete an existing Ezsignsignature
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignsignatureDeleteObjectV1Response**](EzsignsignatureDeleteObjectV1Response.md)
 
 ### Authorization
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignsignature_edit_object_v2**
-> CommonResponse ezsignsignature_edit_object_v2(pki_ezsignsignature_id => $pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request => $ezsignsignature_edit_object_v2_request)
+> EzsignsignatureEditObjectV2Response ezsignsignature_edit_object_v2(pki_ezsignsignature_id => $pki_ezsignsignature_id, ezsignsignature_edit_object_v2_request => $ezsignsignature_edit_object_v2_request)
 
 Edit an existing Ezsignsignature
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommonResponse**](CommonResponse.md)
+[**EzsignsignatureEditObjectV2Response**](EzsignsignatureEditObjectV2Response.md)
 
 ### Authorization
 

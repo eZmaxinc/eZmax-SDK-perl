@@ -30,11 +30,11 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
-use EzmaxApi::Object::AddressResponse;
-use EzmaxApi::Object::EmailResponse;
+use EzmaxApi::Object::AddressResponseCompound;
+use EzmaxApi::Object::EmailResponseCompound;
 use EzmaxApi::Object::FieldEContactinformationsType;
 use EzmaxApi::Object::PhoneResponseCompound;
-use EzmaxApi::Object::WebsiteResponse;
+use EzmaxApi::Object::WebsiteResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -274,9 +274,9 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_address_default' => {
-        datatype => 'AddressResponse',
+        datatype => 'AddressResponseCompound',
         base_name => 'objAddressDefault',
-        description => 'An Address Object and children to create a complete structure',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -288,16 +288,16 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'obj_email_default' => {
-        datatype => 'EmailResponse',
+        datatype => 'EmailResponseCompound',
         base_name => 'objEmailDefault',
-        description => 'An Email Object and children to create a complete structure',
+        description => '',
         format => '',
         read_only => '',
             },
     'obj_website_default' => {
-        datatype => 'WebsiteResponse',
+        datatype => 'WebsiteResponseCompound',
         base_name => 'objWebsiteDefault',
-        description => 'A Website Object and children to create a complete structure',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -339,10 +339,10 @@ __PACKAGE__->openapi_types( {
     'fki_website_id_default' => 'int',
     'e_contactinformations_type' => 'FieldEContactinformationsType',
     's_contactinformations_url' => 'string',
-    'obj_address_default' => 'AddressResponse',
+    'obj_address_default' => 'AddressResponseCompound',
     'obj_phone_default' => 'PhoneResponseCompound',
-    'obj_email_default' => 'EmailResponse',
-    'obj_website_default' => 'WebsiteResponse',
+    'obj_email_default' => 'EmailResponseCompound',
+    'obj_website_default' => 'WebsiteResponseCompound',
     'a_obj_address' => 'ARRAY[AddressResponseCompound]',
     'a_obj_phone' => 'ARRAY[PhoneResponseCompound]',
     'a_obj_email' => 'ARRAY[EmailResponseCompound]',
