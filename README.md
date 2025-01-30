@@ -1365,6 +1365,7 @@ use EzmaxApi::Object::EzsigntemplatepublicCreateEzsignfolderV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepublicCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepublicCreateObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepublicCreateObjectV1ResponseMPayload;
+use EzmaxApi::Object::EzsigntemplatepublicDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepublicEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepublicEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Request;
@@ -3147,6 +3148,7 @@ use EzmaxApi::Object::EzsigntemplatepublicCreateEzsignfolderV1ResponseMPayload;
 use EzmaxApi::Object::EzsigntemplatepublicCreateObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepublicCreateObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepublicCreateObjectV1ResponseMPayload;
+use EzmaxApi::Object::EzsigntemplatepublicDeleteObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepublicEditObjectV1Request;
 use EzmaxApi::Object::EzsigntemplatepublicEditObjectV1Response;
 use EzmaxApi::Object::EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Request;
@@ -4108,6 +4110,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsigntemplatepackagesignermembershipApi* | [**ezsigntemplatepackagesignermembership_get_object_v2**](docs/ObjectEzsigntemplatepackagesignermembershipApi.md#ezsigntemplatepackagesignermembership_get_object_v2) | **GET** /2/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID} | Retrieve an existing Ezsigntemplatepackagesignermembership
 *ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublic_create_ezsignfolder_v1**](docs/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_create_ezsignfolder_v1) | **POST** /1/object/ezsigntemplatepublic/createEzsignfolder | Create an Ezsignfolder
 *ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublic_create_object_v1**](docs/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_create_object_v1) | **POST** /1/object/ezsigntemplatepublic | Create a new Ezsigntemplatepublic
+*ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublic_delete_object_v1**](docs/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_delete_object_v1) | **DELETE** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID} | Delete an existing Ezsigntemplatepublic
 *ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublic_edit_object_v1**](docs/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_edit_object_v1) | **PUT** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID} | Edit an existing Ezsigntemplatepublic
 *ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublic_get_ezsigntemplatepublic_details_v1**](docs/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_get_ezsigntemplatepublic_details_v1) | **POST** /1/object/ezsigntemplatepublic/getEzsigntemplatepublicDetails | Retrieve the Ezsigntemplatepublic details
 *ObjectEzsigntemplatepublicApi* | [**ezsigntemplatepublic_get_forms_data_v1**](docs/ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_get_forms_data_v1) | **GET** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID}/getFormsData | Retrieve an existing Ezsigntemplatepublic&#39;s forms data
@@ -5298,6 +5301,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigntemplatepublicCreateObjectV1Request](docs/EzsigntemplatepublicCreateObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatepublicCreateObjectV1Response](docs/EzsigntemplatepublicCreateObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatepublicCreateObjectV1ResponseMPayload](docs/EzsigntemplatepublicCreateObjectV1ResponseMPayload.md)
+ - [EzmaxApi::Object::EzsigntemplatepublicDeleteObjectV1Response](docs/EzsigntemplatepublicDeleteObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatepublicEditObjectV1Request](docs/EzsigntemplatepublicEditObjectV1Request.md)
  - [EzmaxApi::Object::EzsigntemplatepublicEditObjectV1Response](docs/EzsigntemplatepublicEditObjectV1Response.md)
  - [EzmaxApi::Object::EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Request](docs/EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Request.md)

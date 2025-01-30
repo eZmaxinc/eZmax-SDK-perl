@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ezsigntemplatepublic_create_ezsignfolder_v1**](ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_create_ezsignfolder_v1) | **POST** /1/object/ezsigntemplatepublic/createEzsignfolder | Create an Ezsignfolder
 [**ezsigntemplatepublic_create_object_v1**](ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_create_object_v1) | **POST** /1/object/ezsigntemplatepublic | Create a new Ezsigntemplatepublic
+[**ezsigntemplatepublic_delete_object_v1**](ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_delete_object_v1) | **DELETE** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID} | Delete an existing Ezsigntemplatepublic
 [**ezsigntemplatepublic_edit_object_v1**](ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_edit_object_v1) | **PUT** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID} | Edit an existing Ezsigntemplatepublic
 [**ezsigntemplatepublic_get_ezsigntemplatepublic_details_v1**](ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_get_ezsigntemplatepublic_details_v1) | **POST** /1/object/ezsigntemplatepublic/getEzsigntemplatepublicDetails | Retrieve the Ezsigntemplatepublic details
 [**ezsigntemplatepublic_get_forms_data_v1**](ObjectEzsigntemplatepublicApi.md#ezsigntemplatepublic_get_forms_data_v1) | **GET** /1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID}/getFormsData | Retrieve an existing Ezsigntemplatepublic&#39;s forms data
@@ -118,6 +119,57 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigntemplatepublic_delete_object_v1**
+> EzsigntemplatepublicDeleteObjectV1Response ezsigntemplatepublic_delete_object_v1(pki_ezsigntemplatepublic_id => $pki_ezsigntemplatepublic_id)
+
+Delete an existing Ezsigntemplatepublic
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsigntemplatepublicApi;
+my $api_instance = EzmaxApi::ObjectEzsigntemplatepublicApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsigntemplatepublic_id = 56; # int | The unique ID of the Ezsigntemplatepublic
+
+eval {
+    my $result = $api_instance->ezsigntemplatepublic_delete_object_v1(pki_ezsigntemplatepublic_id => $pki_ezsigntemplatepublic_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsigntemplatepublicApi->ezsigntemplatepublic_delete_object_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsigntemplatepublic_id** | **int**| The unique ID of the Ezsigntemplatepublic | 
+
+### Return type
+
+[**EzsigntemplatepublicDeleteObjectV1Response**](EzsigntemplatepublicDeleteObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

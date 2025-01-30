@@ -179,6 +179,73 @@ sub ezsigntemplatepublic_create_object_v1 {
 }
 
 #
+# ezsigntemplatepublic_delete_object_v1
+#
+# Delete an existing Ezsigntemplatepublic
+#
+# @param int $pki_ezsigntemplatepublic_id The unique ID of the Ezsigntemplatepublic (required)
+{
+    my $params = {
+    'pki_ezsigntemplatepublic_id' => {
+        data_type => 'int',
+        description => 'The unique ID of the Ezsigntemplatepublic',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigntemplatepublic_delete_object_v1' } = {
+        summary => 'Delete an existing Ezsigntemplatepublic',
+        params => $params,
+        returns => 'EzsigntemplatepublicDeleteObjectV1Response',
+        };
+}
+# @return EzsigntemplatepublicDeleteObjectV1Response
+#
+sub ezsigntemplatepublic_delete_object_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigntemplatepublic_id' is set
+    unless (exists $args{'pki_ezsigntemplatepublic_id'}) {
+      croak("Missing the required parameter 'pki_ezsigntemplatepublic_id' when calling ezsigntemplatepublic_delete_object_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID}';
+
+    my $_method = 'DELETE';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsigntemplatepublic_id'}) {
+        my $_base_variable = "{" . "pkiEzsigntemplatepublicID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigntemplatepublic_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatepublicDeleteObjectV1Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsigntemplatepublic_edit_object_v1
 #
 # Edit an existing Ezsigntemplatepublic
