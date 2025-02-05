@@ -255,6 +255,7 @@ use EzmaxApi::ObjectCountryApi;
 use EzmaxApi::ObjectCreditcardclientApi;
 use EzmaxApi::ObjectCreditcardmerchantApi;
 use EzmaxApi::ObjectCreditcardtypeApi;
+use EzmaxApi::ObjectCurrencyApi;
 use EzmaxApi::ObjectCustomerApi;
 use EzmaxApi::ObjectDepartmentApi;
 use EzmaxApi::ObjectDiscussionApi;
@@ -609,6 +610,9 @@ use EzmaxApi::Object::CreditcardmerchantResponseCompound;
 use EzmaxApi::Object::CreditcardtypeAutocompleteElementResponse;
 use EzmaxApi::Object::CreditcardtypeGetAutocompleteV2Response;
 use EzmaxApi::Object::CreditcardtypeGetAutocompleteV2ResponseMPayload;
+use EzmaxApi::Object::CurrencyAutocompleteElementResponse;
+use EzmaxApi::Object::CurrencyGetAutocompleteV2Response;
+use EzmaxApi::Object::CurrencyGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::CustomApikey;
 use EzmaxApi::Object::CustomApikeyfederation;
 use EzmaxApi::Object::CustomAttachmentResponse;
@@ -2041,6 +2045,7 @@ use EzmaxApi::ObjectCountryApi;
 use EzmaxApi::ObjectCreditcardclientApi;
 use EzmaxApi::ObjectCreditcardmerchantApi;
 use EzmaxApi::ObjectCreditcardtypeApi;
+use EzmaxApi::ObjectCurrencyApi;
 use EzmaxApi::ObjectCustomerApi;
 use EzmaxApi::ObjectDepartmentApi;
 use EzmaxApi::ObjectDiscussionApi;
@@ -2392,6 +2397,9 @@ use EzmaxApi::Object::CreditcardmerchantResponseCompound;
 use EzmaxApi::Object::CreditcardtypeAutocompleteElementResponse;
 use EzmaxApi::Object::CreditcardtypeGetAutocompleteV2Response;
 use EzmaxApi::Object::CreditcardtypeGetAutocompleteV2ResponseMPayload;
+use EzmaxApi::Object::CurrencyAutocompleteElementResponse;
+use EzmaxApi::Object::CurrencyGetAutocompleteV2Response;
+use EzmaxApi::Object::CurrencyGetAutocompleteV2ResponseMPayload;
 use EzmaxApi::Object::CustomApikey;
 use EzmaxApi::Object::CustomApikeyfederation;
 use EzmaxApi::Object::CustomAttachmentResponse;
@@ -3886,6 +3894,7 @@ Class | Method | HTTP request | Description
 *ObjectCreditcardmerchantApi* | [**creditcardmerchant_get_list_v1**](docs/ObjectCreditcardmerchantApi.md#creditcardmerchant_get_list_v1) | **GET** /1/object/creditcardmerchant/getList | Retrieve Creditcardmerchant list
 *ObjectCreditcardmerchantApi* | [**creditcardmerchant_get_object_v2**](docs/ObjectCreditcardmerchantApi.md#creditcardmerchant_get_object_v2) | **GET** /2/object/creditcardmerchant/{pkiCreditcardmerchantID} | Retrieve an existing Creditcardmerchant
 *ObjectCreditcardtypeApi* | [**creditcardtype_get_autocomplete_v2**](docs/ObjectCreditcardtypeApi.md#creditcardtype_get_autocomplete_v2) | **GET** /2/object/creditcardtype/getAutocomplete/{sSelector} | Retrieve Creditcardtypes and IDs
+*ObjectCurrencyApi* | [**currency_get_autocomplete_v2**](docs/ObjectCurrencyApi.md#currency_get_autocomplete_v2) | **GET** /2/object/currency/getAutocomplete/{sSelector} | Retrieve Currencies and IDs
 *ObjectCustomerApi* | [**customer_create_object_v1**](docs/ObjectCustomerApi.md#customer_create_object_v1) | **POST** /1/object/customer | Create a new Customer
 *ObjectCustomerApi* | [**customer_get_object_v2**](docs/ObjectCustomerApi.md#customer_get_object_v2) | **GET** /2/object/customer/{pkiCustomerID} | Retrieve an existing Customer
 *ObjectDepartmentApi* | [**department_get_autocomplete_v2**](docs/ObjectDepartmentApi.md#department_get_autocomplete_v2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
@@ -4545,6 +4554,9 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CreditcardtypeAutocompleteElementResponse](docs/CreditcardtypeAutocompleteElementResponse.md)
  - [EzmaxApi::Object::CreditcardtypeGetAutocompleteV2Response](docs/CreditcardtypeGetAutocompleteV2Response.md)
  - [EzmaxApi::Object::CreditcardtypeGetAutocompleteV2ResponseMPayload](docs/CreditcardtypeGetAutocompleteV2ResponseMPayload.md)
+ - [EzmaxApi::Object::CurrencyAutocompleteElementResponse](docs/CurrencyAutocompleteElementResponse.md)
+ - [EzmaxApi::Object::CurrencyGetAutocompleteV2Response](docs/CurrencyGetAutocompleteV2Response.md)
+ - [EzmaxApi::Object::CurrencyGetAutocompleteV2ResponseMPayload](docs/CurrencyGetAutocompleteV2ResponseMPayload.md)
  - [EzmaxApi::Object::CustomApikey](docs/CustomApikey.md)
  - [EzmaxApi::Object::CustomApikeyfederation](docs/CustomApikeyfederation.md)
  - [EzmaxApi::Object::CustomAttachmentResponse](docs/CustomAttachmentResponse.md)
