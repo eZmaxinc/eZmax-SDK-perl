@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **fki_ezsignfoldersignerassociation_id** | **int** | The unique ID of the Ezsignfoldersignerassociation | 
 **fki_ezsignsigningreason_id** | **int** | The unique ID of the Ezsignsigningreason | [optional] 
 **fki_font_id** | **int** | The unique ID of the Font | [optional] 
+**s_currency_description_x** | **string** | The description of the Currency in the language of the requester | [optional] 
 **s_ezsignsigningreason_description_x** | **string** | The description of the Ezsignsigningreason in the language of the requester | [optional] 
 **i_ezsignpage_pagenumber** | **int** | The page number in the Ezsigndocument | 
 **i_ezsignsignature_x** | **int** | The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate. | 
@@ -52,6 +53,7 @@ Name | Type | Description | Notes
 **obj_creditcardtransaction** | [**CustomCreditcardtransactionResponse**](CustomCreditcardtransactionResponse.md) |  | [optional] 
 **a_obj_ezsignelementdependency** | [**ARRAY[EzsignelementdependencyResponseCompound]**](EzsignelementdependencyResponseCompound.md) |  | [optional] 
 **obj_timezone** | [**CustomTimezoneWithCodeResponse**](CustomTimezoneWithCodeResponse.md) |  | [optional] 
+**a_obj_ezsignsignaturepaymentdetail** | [**ARRAY[EzsignsignaturepaymentdetailRequestCompound]**](EzsignsignaturepaymentdetailRequestCompound.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

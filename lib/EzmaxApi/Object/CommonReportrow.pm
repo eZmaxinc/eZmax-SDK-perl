@@ -227,6 +227,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_variableobject' => {
+        datatype => 'HASH[string,object]',
+        base_name => 'objVariableobject',
+        description => 'A Variable object without predefined property names',
+        format => '',
+        read_only => '',
+            },
     'i_reportrow_height' => {
         datatype => 'int',
         base_name => 'iReportrowHeight',
@@ -238,11 +245,13 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'a_obj_reportcell' => 'ARRAY[CommonReportcell]',
+    'obj_variableobject' => 'HASH[string,object]',
     'i_reportrow_height' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
     'a_obj_reportcell' => 'a_objReportcell',
+    'obj_variableobject' => 'objVariableobject',
     'i_reportrow_height' => 'iReportrowHeight'
 } );
 

@@ -9,6 +9,7 @@ use EzmaxApi::Object::CommonReportrow;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **a_obj_reportcell** | [**ARRAY[CommonReportcell]**](CommonReportcell.md) |  | 
+**obj_variableobject** | **HASH[string,object]** | A Variable object without predefined property names | 
 **i_reportrow_height** | **int** | The reportrow height in pixels | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

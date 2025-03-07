@@ -32,6 +32,7 @@ use DateTime;
 
 use EzmaxApi::Object::CommonReport;
 use EzmaxApi::Object::CommonReportcellstyle;
+use EzmaxApi::Object::CommonReportgroupParameter;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -235,16 +236,34 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_reportgroup_parameter' => {
+        datatype => 'ARRAY[CommonReportgroupParameter]',
+        base_name => 'a_objReportgroupParameter',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_reportgroup_filename' => {
+        datatype => 'string',
+        base_name => 'sReportgroupFilename',
+        description => 'The name of the file',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'a_obj_report' => 'ARRAY[CommonReport]',
-    'a_obj_reportcellstyle_custom' => 'ARRAY[CommonReportcellstyle]'
+    'a_obj_reportcellstyle_custom' => 'ARRAY[CommonReportcellstyle]',
+    'a_obj_reportgroup_parameter' => 'ARRAY[CommonReportgroupParameter]',
+    's_reportgroup_filename' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'a_obj_report' => 'a_objReport',
-    'a_obj_reportcellstyle_custom' => 'a_objReportcellstyleCustom'
+    'a_obj_reportcellstyle_custom' => 'a_objReportcellstyleCustom',
+    'a_obj_reportgroup_parameter' => 'a_objReportgroupParameter',
+    's_reportgroup_filename' => 'sReportgroupFilename'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

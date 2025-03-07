@@ -233,16 +233,34 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_reportcell_content' => {
+        datatype => 'string',
+        base_name => 'sReportcellContent',
+        description => 'The content of this Reportcell',
+        format => '',
+        read_only => '',
+            },
+    'i_reportcell_column' => {
+        datatype => 'int',
+        base_name => 'iReportcellColumn',
+        description => 'Position of the column where it is placed',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'i_reportcell_columnspan' => 'int',
-    'i_reportcell_rowspan' => 'int'
+    'i_reportcell_rowspan' => 'int',
+    's_reportcell_content' => 'string',
+    'i_reportcell_column' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
     'i_reportcell_columnspan' => 'iReportcellColumnspan',
-    'i_reportcell_rowspan' => 'iReportcellRowspan'
+    'i_reportcell_rowspan' => 'iReportcellRowspan',
+    's_reportcell_content' => 'sReportcellContent',
+    'i_reportcell_column' => 'iReportcellColumn'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

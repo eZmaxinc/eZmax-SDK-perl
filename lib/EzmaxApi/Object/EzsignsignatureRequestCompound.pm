@@ -242,6 +242,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_paymentgateway_id' => {
+        datatype => 'int',
+        base_name => 'fkiPaymentgatewayID',
+        description => 'The unique ID of the Paymentgateway',
+        format => '',
+        read_only => '',
+            },
     'i_ezsignpage_pagenumber' => {
         datatype => 'int',
         base_name => 'iEzsignpagePagenumber',
@@ -443,6 +450,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'pki_ezsignsignature_id' => 'int',
     'fki_ezsignfoldersignerassociation_id' => 'int',
+    'fki_paymentgateway_id' => 'int',
     'i_ezsignpage_pagenumber' => 'int',
     'i_ezsignsignature_x' => 'int',
     'i_ezsignsignature_y' => 'int',
@@ -476,6 +484,7 @@ __PACKAGE__->openapi_types( {
 __PACKAGE__->attribute_map( {
     'pki_ezsignsignature_id' => 'pkiEzsignsignatureID',
     'fki_ezsignfoldersignerassociation_id' => 'fkiEzsignfoldersignerassociationID',
+    'fki_paymentgateway_id' => 'fkiPaymentgatewayID',
     'i_ezsignpage_pagenumber' => 'iEzsignpagePagenumber',
     'i_ezsignsignature_x' => 'iEzsignsignatureX',
     'i_ezsignsignature_y' => 'iEzsignsignatureY',

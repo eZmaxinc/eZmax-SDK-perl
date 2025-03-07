@@ -227,14 +227,32 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_report_paginate' => {
+        datatype => 'boolean',
+        base_name => 'bReportPaginate',
+        description => 'Whether we display pagination in the report',
+        format => '',
+        read_only => '',
+            },
+    's_report_title' => {
+        datatype => 'string',
+        base_name => 'sReportTitle',
+        description => 'The title of this Report',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
-    'a_obj_reportsection' => 'ARRAY[CommonReportsection]'
+    'a_obj_reportsection' => 'ARRAY[CommonReportsection]',
+    'b_report_paginate' => 'boolean',
+    's_report_title' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    'a_obj_reportsection' => 'a_objReportsection'
+    'a_obj_reportsection' => 'a_objReportsection',
+    'b_report_paginate' => 'bReportPaginate',
+    's_report_title' => 'sReportTitle'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

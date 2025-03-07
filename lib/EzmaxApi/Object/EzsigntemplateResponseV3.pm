@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
+use EzmaxApi::Object::CustomEzsignfoldertypeTemplateResponse;
 use EzmaxApi::Object::FieldEEzsigntemplateRecognition;
 use EzmaxApi::Object::FieldEEzsigntemplateType;
 
@@ -243,6 +244,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_ezsignfoldertype' => {
+        datatype => 'CustomEzsignfoldertypeTemplateResponse',
+        base_name => 'objEzsignfoldertype',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'fki_language_id' => {
         datatype => 'int',
         base_name => 'fkiLanguageID',
@@ -347,6 +355,7 @@ __PACKAGE__->openapi_types( {
     'pki_ezsigntemplate_id' => 'int',
     'fki_ezsigntemplatedocument_id' => 'int',
     'fki_ezsignfoldertype_id' => 'int',
+    'obj_ezsignfoldertype' => 'CustomEzsignfoldertypeTemplateResponse',
     'fki_language_id' => 'int',
     'fki_ezdoctemplatedocument_id' => 'int',
     's_ezdoctemplatedocument_name_x' => 'string',
@@ -367,6 +376,7 @@ __PACKAGE__->attribute_map( {
     'pki_ezsigntemplate_id' => 'pkiEzsigntemplateID',
     'fki_ezsigntemplatedocument_id' => 'fkiEzsigntemplatedocumentID',
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
+    'obj_ezsignfoldertype' => 'objEzsignfoldertype',
     'fki_language_id' => 'fkiLanguageID',
     'fki_ezdoctemplatedocument_id' => 'fkiEzdoctemplatedocumentID',
     's_ezdoctemplatedocument_name_x' => 'sEzdoctemplatedocumentNameX',

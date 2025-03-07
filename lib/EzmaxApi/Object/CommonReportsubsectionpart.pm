@@ -234,16 +234,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_s_variableobject_property' => {
+        datatype => 'ARRAY[string]',
+        base_name => 'a_sVariableobjectProperty',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'e_reportsubsectionpart_type' => 'string',
-    'a_obj_reportrow' => 'ARRAY[CommonReportrow]'
+    'a_obj_reportrow' => 'ARRAY[CommonReportrow]',
+    'a_s_variableobject_property' => 'ARRAY[string]'
 } );
 
 __PACKAGE__->attribute_map( {
     'e_reportsubsectionpart_type' => 'eReportsubsectionpartType',
-    'a_obj_reportrow' => 'a_objReportrow'
+    'a_obj_reportrow' => 'a_objReportrow',
+    'a_s_variableobject_property' => 'a_sVariableobjectProperty'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

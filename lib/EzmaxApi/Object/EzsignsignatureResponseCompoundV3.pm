@@ -35,6 +35,7 @@ use EzmaxApi::Object::CustomCreditcardtransactionResponse;
 use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::EzsignelementdependencyResponseCompound;
 use EzmaxApi::Object::EzsignsignaturecustomdateResponseCompoundV2;
+use EzmaxApi::Object::EzsignsignaturepaymentdetailResponseCompound;
 use EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource;
 use EzmaxApi::Object::FieldEEzsignsignatureConsultationtrigger;
 use EzmaxApi::Object::FieldEEzsignsignatureDependencyrequirement;
@@ -263,6 +264,13 @@ __PACKAGE__->method_documentation({
         datatype => 'int',
         base_name => 'fkiFontID',
         description => 'The unique ID of the Font',
+        format => '',
+        read_only => '',
+            },
+    's_currency_description_x' => {
+        datatype => 'string',
+        base_name => 'sCurrencyDescriptionX',
+        description => 'The description of the Currency in the language of the requester',
         format => '',
         read_only => '',
             },
@@ -525,6 +533,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_ezsignsignaturepaymentdetail' => {
+        datatype => 'ARRAY[EzsignsignaturepaymentdetailResponseCompound]',
+        base_name => 'a_objEzsignsignaturepaymentdetail',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -533,6 +548,7 @@ __PACKAGE__->openapi_types( {
     'fki_ezsignfoldersignerassociation_id' => 'int',
     'fki_ezsignsigningreason_id' => 'int',
     'fki_font_id' => 'int',
+    's_currency_description_x' => 'string',
     's_ezsignsigningreason_description_x' => 'string',
     'i_ezsignpage_pagenumber' => 'int',
     'i_ezsignsignature_x' => 'int',
@@ -569,7 +585,8 @@ __PACKAGE__->openapi_types( {
     'b_ezsignsignature_customdate' => 'boolean',
     'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateResponseCompoundV2]',
     'obj_creditcardtransaction' => 'CustomCreditcardtransactionResponse',
-    'a_obj_ezsignelementdependency' => 'ARRAY[EzsignelementdependencyResponseCompound]'
+    'a_obj_ezsignelementdependency' => 'ARRAY[EzsignelementdependencyResponseCompound]',
+    'a_obj_ezsignsignaturepaymentdetail' => 'ARRAY[EzsignsignaturepaymentdetailResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -578,6 +595,7 @@ __PACKAGE__->attribute_map( {
     'fki_ezsignfoldersignerassociation_id' => 'fkiEzsignfoldersignerassociationID',
     'fki_ezsignsigningreason_id' => 'fkiEzsignsigningreasonID',
     'fki_font_id' => 'fkiFontID',
+    's_currency_description_x' => 'sCurrencyDescriptionX',
     's_ezsignsigningreason_description_x' => 'sEzsignsigningreasonDescriptionX',
     'i_ezsignpage_pagenumber' => 'iEzsignpagePagenumber',
     'i_ezsignsignature_x' => 'iEzsignsignatureX',
@@ -614,7 +632,8 @@ __PACKAGE__->attribute_map( {
     'b_ezsignsignature_customdate' => 'bEzsignsignatureCustomdate',
     'a_obj_ezsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate',
     'obj_creditcardtransaction' => 'objCreditcardtransaction',
-    'a_obj_ezsignelementdependency' => 'a_objEzsignelementdependency'
+    'a_obj_ezsignelementdependency' => 'a_objEzsignelementdependency',
+    'a_obj_ezsignsignaturepaymentdetail' => 'a_objEzsignsignaturepaymentdetail'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

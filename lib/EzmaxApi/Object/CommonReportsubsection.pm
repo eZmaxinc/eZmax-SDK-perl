@@ -241,18 +241,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_reportsubsection_title' => {
+        datatype => 'string',
+        base_name => 'sReportsubsectionTitle',
+        description => 'The title of this Reportsubsection',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'obj_reportsubsectionpart_header' => 'CommonReportsubsectionpart',
     'obj_reportsubsectionpart_body' => 'CommonReportsubsectionpart',
-    'obj_reportsubsectionpart_footer' => 'CommonReportsubsectionpart'
+    'obj_reportsubsectionpart_footer' => 'CommonReportsubsectionpart',
+    's_reportsubsection_title' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'obj_reportsubsectionpart_header' => 'objReportsubsectionpartHeader',
     'obj_reportsubsectionpart_body' => 'objReportsubsectionpartBody',
-    'obj_reportsubsectionpart_footer' => 'objReportsubsectionpartFooter'
+    'obj_reportsubsectionpart_footer' => 'objReportsubsectionpartFooter',
+    's_reportsubsection_title' => 'sReportsubsectionTitle'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -257,6 +257,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_reportsection_title' => {
+        datatype => 'string',
+        base_name => 'sReportsectionTitle',
+        description => 'The title of this Reportsection',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -264,7 +271,8 @@ __PACKAGE__->openapi_types( {
     'a_obj_reportcolumn' => 'ARRAY[CommonReportcolumn]',
     'e_reportsection_horizontalalignment' => 'EnumHorizontalalignment',
     'i_reportsection_columncount' => 'int',
-    'i_reportsection_width' => 'int'
+    'i_reportsection_width' => 'int',
+    's_reportsection_title' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -272,7 +280,8 @@ __PACKAGE__->attribute_map( {
     'a_obj_reportcolumn' => 'a_objReportcolumn',
     'e_reportsection_horizontalalignment' => 'eReportsectionHorizontalalignment',
     'i_reportsection_columncount' => 'iReportsectionColumncount',
-    'i_reportsection_width' => 'iReportsectionWidth'
+    'i_reportsection_width' => 'iReportsectionWidth',
+    's_reportsection_title' => 'sReportsectionTitle'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

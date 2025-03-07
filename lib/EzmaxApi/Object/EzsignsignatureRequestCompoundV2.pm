@@ -33,6 +33,7 @@ use DateTime;
 use EzmaxApi::Object::EnumTextvalidation;
 use EzmaxApi::Object::EzsignelementdependencyRequestCompound;
 use EzmaxApi::Object::EzsignsignaturecustomdateRequestCompoundV2;
+use EzmaxApi::Object::EzsignsignaturepaymentdetailRequestCompound;
 use EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource;
 use EzmaxApi::Object::FieldEEzsignsignatureConsultationtrigger;
 use EzmaxApi::Object::FieldEEzsignsignatureDependencyrequirement;
@@ -242,6 +243,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_paymentgateway_id' => {
+        datatype => 'int',
+        base_name => 'fkiPaymentgatewayID',
+        description => 'The unique ID of the Paymentgateway',
+        format => '',
+        read_only => '',
+            },
     'i_ezsignpage_pagenumber' => {
         datatype => 'int',
         base_name => 'iEzsignpagePagenumber',
@@ -438,11 +446,19 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_ezsignsignaturepaymentdetail' => {
+        datatype => 'ARRAY[EzsignsignaturepaymentdetailRequestCompound]',
+        base_name => 'a_objEzsignsignaturepaymentdetail',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_ezsignsignature_id' => 'int',
     'fki_ezsignfoldersignerassociation_id' => 'int',
+    'fki_paymentgateway_id' => 'int',
     'i_ezsignpage_pagenumber' => 'int',
     'i_ezsignsignature_x' => 'int',
     'i_ezsignsignature_y' => 'int',
@@ -470,12 +486,14 @@ __PACKAGE__->openapi_types( {
     'e_ezsignsignature_dependencyrequirement' => 'FieldEEzsignsignatureDependencyrequirement',
     'b_ezsignsignature_customdate' => 'boolean',
     'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateRequestCompoundV2]',
-    'a_obj_ezsignelementdependency' => 'ARRAY[EzsignelementdependencyRequestCompound]'
+    'a_obj_ezsignelementdependency' => 'ARRAY[EzsignelementdependencyRequestCompound]',
+    'a_obj_ezsignsignaturepaymentdetail' => 'ARRAY[EzsignsignaturepaymentdetailRequestCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_ezsignsignature_id' => 'pkiEzsignsignatureID',
     'fki_ezsignfoldersignerassociation_id' => 'fkiEzsignfoldersignerassociationID',
+    'fki_paymentgateway_id' => 'fkiPaymentgatewayID',
     'i_ezsignpage_pagenumber' => 'iEzsignpagePagenumber',
     'i_ezsignsignature_x' => 'iEzsignsignatureX',
     'i_ezsignsignature_y' => 'iEzsignsignatureY',
@@ -503,7 +521,8 @@ __PACKAGE__->attribute_map( {
     'e_ezsignsignature_dependencyrequirement' => 'eEzsignsignatureDependencyrequirement',
     'b_ezsignsignature_customdate' => 'bEzsignsignatureCustomdate',
     'a_obj_ezsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate',
-    'a_obj_ezsignelementdependency' => 'a_objEzsignelementdependency'
+    'a_obj_ezsignelementdependency' => 'a_objEzsignelementdependency',
+    'a_obj_ezsignsignaturepaymentdetail' => 'a_objEzsignsignaturepaymentdetail'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

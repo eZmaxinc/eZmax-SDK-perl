@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonReportcellstyle;
+use EzmaxApi::Object::EnumReportdataType;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -234,16 +235,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_reportcolumn_type' => {
+        datatype => 'EnumReportdataType',
+        base_name => 'eReportcolumnType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'obj_reportcellstyle_default' => 'CommonReportcellstyle',
-    'i_reportcolumn_width' => 'int'
+    'i_reportcolumn_width' => 'int',
+    'e_reportcolumn_type' => 'EnumReportdataType'
 } );
 
 __PACKAGE__->attribute_map( {
     'obj_reportcellstyle_default' => 'objReportcellstyleDefault',
-    'i_reportcolumn_width' => 'iReportcolumnWidth'
+    'i_reportcolumn_width' => 'iReportcolumnWidth',
+    'e_reportcolumn_type' => 'eReportcolumnType'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

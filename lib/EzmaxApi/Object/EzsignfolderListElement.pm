@@ -361,6 +361,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'dt_ezsignfolder_close' => {
+        datatype => 'string',
+        base_name => 'dtEzsignfolderClose',
+        description => 'The date and time at which the Ezsignfolder was closed. Either by applying the last signature or by completing it prematurely.',
+        format => '',
+        read_only => '',
+            },
+    'dt_ezsignfolder_archive' => {
+        datatype => 'string',
+        base_name => 'dtEzsignfolderArchive',
+        description => 'The date and time at which the Ezsignfolder was archived.',
+        format => '',
+        read_only => '',
+            },
+    'dt_ezsignfolder_dispose' => {
+        datatype => 'string',
+        base_name => 'dtEzsignfolderDispose',
+        description => 'The date and time at which the Ezsignfolder was disposed.',
+        format => '',
+        read_only => '',
+            },
     'b_ezsignfolder_signer' => {
         datatype => 'boolean',
         base_name => 'bEzsignfolderSigner',
@@ -391,6 +412,9 @@ __PACKAGE__->openapi_types( {
     'd_ezsignfolder_completedpercentage' => 'string',
     'd_ezsignfolder_formcompletedpercentage' => 'string',
     'd_ezsignfolder_signaturecompletedpercentage' => 'string',
+    'dt_ezsignfolder_close' => 'string',
+    'dt_ezsignfolder_archive' => 'string',
+    'dt_ezsignfolder_dispose' => 'string',
     'b_ezsignfolder_signer' => 'boolean'
 } );
 
@@ -415,6 +439,9 @@ __PACKAGE__->attribute_map( {
     'd_ezsignfolder_completedpercentage' => 'dEzsignfolderCompletedpercentage',
     'd_ezsignfolder_formcompletedpercentage' => 'dEzsignfolderFormcompletedpercentage',
     'd_ezsignfolder_signaturecompletedpercentage' => 'dEzsignfolderSignaturecompletedpercentage',
+    'dt_ezsignfolder_close' => 'dtEzsignfolderClose',
+    'dt_ezsignfolder_archive' => 'dtEzsignfolderArchive',
+    'dt_ezsignfolder_dispose' => 'dtEzsignfolderDispose',
     'b_ezsignfolder_signer' => 'bEzsignfolderSigner'
 } );
 

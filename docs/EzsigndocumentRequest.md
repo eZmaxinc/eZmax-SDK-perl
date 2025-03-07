@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **fki_ezsignfolder_id** | **int** | The unique ID of the Ezsignfolder | 
 **fki_ezsigntemplate_id** | **int** | The unique ID of the Ezsigntemplate | [optional] 
 **fki_ezsignfoldersignerassociation_id** | **int** | The unique ID of the Ezsignfoldersignerassociation | [optional] 
+**fki_ezsignimportdocument_id** | **int** | The unique ID of the Ezsignimportdocument | [optional] 
 **fki_language_id** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | 
 **e_ezsigndocument_source** | **string** | Indicates where to look for the document binary content. | 
 **e_ezsigndocument_format** | **string** | Indicates the format of the document. | [optional] 

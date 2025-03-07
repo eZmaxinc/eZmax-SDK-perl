@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::CommonFile;
+use EzmaxApi::Object::CustomCreditcardRequest;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -269,6 +270,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_creditcard' => {
+        datatype => 'CustomCreditcardRequest',
+        base_name => 'objCreditcard',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'b_is_automatic' => {
         datatype => 'boolean',
         base_name => 'bIsAutomatic',
@@ -286,6 +294,7 @@ __PACKAGE__->openapi_types( {
     's_attachments_refusal_reason' => 'string',
     's_svg' => 'string',
     'a_obj_file' => 'ARRAY[CommonFile]',
+    'obj_creditcard' => 'CustomCreditcardRequest',
     'b_is_automatic' => 'boolean'
 } );
 
@@ -297,6 +306,7 @@ __PACKAGE__->attribute_map( {
     's_attachments_refusal_reason' => 'sAttachmentsRefusalReason',
     's_svg' => 'sSvg',
     'a_obj_file' => 'a_objFile',
+    'obj_creditcard' => 'objCreditcard',
     'b_is_automatic' => 'bIsAutomatic'
 } );
 
