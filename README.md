@@ -267,7 +267,6 @@ use EzmaxApi::ObjectEmailtypeApi;
 use EzmaxApi::ObjectEzdoctemplatedocumentApi;
 use EzmaxApi::ObjectEzdoctemplatefieldtypecategoryApi;
 use EzmaxApi::ObjectEzdoctemplatetypeApi;
-use EzmaxApi::ObjectEzmaxcaseApi;
 use EzmaxApi::ObjectEzmaxinvoicingApi;
 use EzmaxApi::ObjectEzmaxproductApi;
 use EzmaxApi::ObjectEzsignannotationApi;
@@ -783,9 +782,6 @@ use EzmaxApi::Object::EzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPa
 use EzmaxApi::Object::EzdoctemplatetypeAutocompleteElementResponse;
 use EzmaxApi::Object::EzdoctemplatetypeGetAutocompleteV2Response;
 use EzmaxApi::Object::EzdoctemplatetypeGetAutocompleteV2ResponseMPayload;
-use EzmaxApi::Object::EzmaxcasePatchObjectV1Request;
-use EzmaxApi::Object::EzmaxcasePatchObjectV1Response;
-use EzmaxApi::Object::EzmaxcaseRequestPatch;
 use EzmaxApi::Object::EzmaxinvoicingAutocompleteElementResponse;
 use EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2Response;
 use EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2ResponseMPayload;
@@ -2103,7 +2099,6 @@ use EzmaxApi::ObjectEmailtypeApi;
 use EzmaxApi::ObjectEzdoctemplatedocumentApi;
 use EzmaxApi::ObjectEzdoctemplatefieldtypecategoryApi;
 use EzmaxApi::ObjectEzdoctemplatetypeApi;
-use EzmaxApi::ObjectEzmaxcaseApi;
 use EzmaxApi::ObjectEzmaxinvoicingApi;
 use EzmaxApi::ObjectEzmaxproductApi;
 use EzmaxApi::ObjectEzsignannotationApi;
@@ -2616,9 +2611,6 @@ use EzmaxApi::Object::EzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPa
 use EzmaxApi::Object::EzdoctemplatetypeAutocompleteElementResponse;
 use EzmaxApi::Object::EzdoctemplatetypeGetAutocompleteV2Response;
 use EzmaxApi::Object::EzdoctemplatetypeGetAutocompleteV2ResponseMPayload;
-use EzmaxApi::Object::EzmaxcasePatchObjectV1Request;
-use EzmaxApi::Object::EzmaxcasePatchObjectV1Response;
-use EzmaxApi::Object::EzmaxcaseRequestPatch;
 use EzmaxApi::Object::EzmaxinvoicingAutocompleteElementResponse;
 use EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2Response;
 use EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2ResponseMPayload;
@@ -4016,7 +4008,6 @@ Class | Method | HTTP request | Description
 *ObjectEzdoctemplatedocumentApi* | [**ezdoctemplatedocument_patch_object_v1**](docs/ObjectEzdoctemplatedocumentApi.md#ezdoctemplatedocument_patch_object_v1) | **PATCH** /1/object/ezdoctemplatedocument/{pkiEzdoctemplatedocumentID} | Patch an existing Ezdoctemplatedocument
 *ObjectEzdoctemplatefieldtypecategoryApi* | [**ezdoctemplatefieldtypecategory_get_autocomplete_v2**](docs/ObjectEzdoctemplatefieldtypecategoryApi.md#ezdoctemplatefieldtypecategory_get_autocomplete_v2) | **GET** /2/object/ezdoctemplatefieldtypecategory/getAutocomplete/{sSelector} | Retrieve Ezdoctemplatefieldtypecategorys and IDs
 *ObjectEzdoctemplatetypeApi* | [**ezdoctemplatetype_get_autocomplete_v2**](docs/ObjectEzdoctemplatetypeApi.md#ezdoctemplatetype_get_autocomplete_v2) | **GET** /2/object/ezdoctemplatetype/getAutocomplete/{sSelector} | Retrieve Ezdoctemplatetypes and IDs
-*ObjectEzmaxcaseApi* | [**ezmaxcase_patch_object_v1**](docs/ObjectEzmaxcaseApi.md#ezmaxcase_patch_object_v1) | **PATCH** /1/object/ezmaxcase/{pkiEzmaxcaseID} | Patch an existing Ezmaxcase
 *ObjectEzmaxinvoicingApi* | [**ezmaxinvoicing_get_autocomplete_v2**](docs/ObjectEzmaxinvoicingApi.md#ezmaxinvoicing_get_autocomplete_v2) | **GET** /2/object/ezmaxinvoicing/getAutocomplete/{sSelector} | Retrieve Ezmaxinvoicings and IDs
 *ObjectEzmaxinvoicingApi* | [**ezmaxinvoicing_get_object_v2**](docs/ObjectEzmaxinvoicingApi.md#ezmaxinvoicing_get_object_v2) | **GET** /2/object/ezmaxinvoicing/{pkiEzmaxinvoicingID} | Retrieve an existing Ezmaxinvoicing
 *ObjectEzmaxinvoicingApi* | [**ezmaxinvoicing_get_provisional_v1**](docs/ObjectEzmaxinvoicingApi.md#ezmaxinvoicing_get_provisional_v1) | **GET** /1/object/ezmaxinvoicing/getProvisional | Retrieve provisional Ezmaxinvoicing
@@ -4824,9 +4815,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzdoctemplatetypeAutocompleteElementResponse](docs/EzdoctemplatetypeAutocompleteElementResponse.md)
  - [EzmaxApi::Object::EzdoctemplatetypeGetAutocompleteV2Response](docs/EzdoctemplatetypeGetAutocompleteV2Response.md)
  - [EzmaxApi::Object::EzdoctemplatetypeGetAutocompleteV2ResponseMPayload](docs/EzdoctemplatetypeGetAutocompleteV2ResponseMPayload.md)
- - [EzmaxApi::Object::EzmaxcasePatchObjectV1Request](docs/EzmaxcasePatchObjectV1Request.md)
- - [EzmaxApi::Object::EzmaxcasePatchObjectV1Response](docs/EzmaxcasePatchObjectV1Response.md)
- - [EzmaxApi::Object::EzmaxcaseRequestPatch](docs/EzmaxcaseRequestPatch.md)
  - [EzmaxApi::Object::EzmaxinvoicingAutocompleteElementResponse](docs/EzmaxinvoicingAutocompleteElementResponse.md)
  - [EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2Response](docs/EzmaxinvoicingGetAutocompleteV2Response.md)
  - [EzmaxApi::Object::EzmaxinvoicingGetAutocompleteV2ResponseMPayload](docs/EzmaxinvoicingGetAutocompleteV2ResponseMPayload.md)

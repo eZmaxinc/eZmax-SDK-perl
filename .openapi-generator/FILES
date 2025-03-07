@@ -434,9 +434,6 @@ docs/EzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayload.md
 docs/EzdoctemplatetypeAutocompleteElementResponse.md
 docs/EzdoctemplatetypeGetAutocompleteV2Response.md
 docs/EzdoctemplatetypeGetAutocompleteV2ResponseMPayload.md
-docs/EzmaxcasePatchObjectV1Request.md
-docs/EzmaxcasePatchObjectV1Response.md
-docs/EzmaxcaseRequestPatch.md
 docs/EzmaxinvoicingAutocompleteElementResponse.md
 docs/EzmaxinvoicingGetAutocompleteV2Response.md
 docs/EzmaxinvoicingGetAutocompleteV2ResponseMPayload.md
@@ -1359,7 +1356,6 @@ docs/ObjectEmailtypeApi.md
 docs/ObjectEzdoctemplatedocumentApi.md
 docs/ObjectEzdoctemplatefieldtypecategoryApi.md
 docs/ObjectEzdoctemplatetypeApi.md
-docs/ObjectEzmaxcaseApi.md
 docs/ObjectEzmaxinvoicingApi.md
 docs/ObjectEzmaxproductApi.md
 docs/ObjectEzsignannotationApi.md
@@ -2263,9 +2259,6 @@ lib/EzmaxApi/Object/EzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayl
 lib/EzmaxApi/Object/EzdoctemplatetypeAutocompleteElementResponse.pm
 lib/EzmaxApi/Object/EzdoctemplatetypeGetAutocompleteV2Response.pm
 lib/EzmaxApi/Object/EzdoctemplatetypeGetAutocompleteV2ResponseMPayload.pm
-lib/EzmaxApi/Object/EzmaxcasePatchObjectV1Request.pm
-lib/EzmaxApi/Object/EzmaxcasePatchObjectV1Response.pm
-lib/EzmaxApi/Object/EzmaxcaseRequestPatch.pm
 lib/EzmaxApi/Object/EzmaxinvoicingAutocompleteElementResponse.pm
 lib/EzmaxApi/Object/EzmaxinvoicingGetAutocompleteV2Response.pm
 lib/EzmaxApi/Object/EzmaxinvoicingGetAutocompleteV2ResponseMPayload.pm
@@ -3567,7 +3560,6 @@ lib/EzmaxApi/ObjectEmailtypeApi.pm
 lib/EzmaxApi/ObjectEzdoctemplatedocumentApi.pm
 lib/EzmaxApi/ObjectEzdoctemplatefieldtypecategoryApi.pm
 lib/EzmaxApi/ObjectEzdoctemplatetypeApi.pm
-lib/EzmaxApi/ObjectEzmaxcaseApi.pm
 lib/EzmaxApi/ObjectEzmaxinvoicingApi.pm
 lib/EzmaxApi/ObjectEzmaxproductApi.pm
 lib/EzmaxApi/ObjectEzsignannotationApi.pm
