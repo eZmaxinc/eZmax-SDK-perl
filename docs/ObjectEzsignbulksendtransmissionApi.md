@@ -9,11 +9,69 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**ezsignbulksendtransmission_get_batch_file_v1**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmission_get_batch_file_v1) | **GET** /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getBatchFile | Retrieve file to download documents in batch
 [**ezsignbulksendtransmission_get_csv_errors_v1**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmission_get_csv_errors_v1) | **GET** /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getCsvErrors | Retrieve an existing Ezsignbulksendtransmission&#39;s Csv containing errors
 [**ezsignbulksendtransmission_get_ezsignsignatures_automatic_v1**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmission_get_ezsignsignatures_automatic_v1) | **GET** /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getEzsignsignaturesAutomatic | Retrieve an existing Ezsignbulksendtransmission&#39;s automatic Ezsignsignatures
 [**ezsignbulksendtransmission_get_forms_data_v1**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmission_get_forms_data_v1) | **GET** /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getFormsData | Retrieve an existing Ezsignbulksendtransmission&#39;s forms data
 [**ezsignbulksendtransmission_get_object_v2**](ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmission_get_object_v2) | **GET** /2/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID} | Retrieve an existing Ezsignbulksendtransmission
 
+
+# **ezsignbulksendtransmission_get_batch_file_v1**
+> string ezsignbulksendtransmission_get_batch_file_v1(pki_ezsignbulksendtransmission_id => $pki_ezsignbulksendtransmission_id, b_include_signed => $b_include_signed, b_include_attachment => $b_include_attachment, b_include_proofdocument => $b_include_proofdocument, b_include_proof => $b_include_proof)
+
+Retrieve file to download documents in batch
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignbulksendtransmissionApi;
+my $api_instance = EzmaxApi::ObjectEzsignbulksendtransmissionApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsignbulksendtransmission_id = 56; # int | 
+my $b_include_signed = null; # boolean | Include final document once all signatures were applied
+my $b_include_attachment = null; # boolean | Include attached files in signatures
+my $b_include_proofdocument = null; # boolean | Include the evidence report
+my $b_include_proof = null; # boolean | include the complete evidence archive including all of the above and more
+
+eval {
+    my $result = $api_instance->ezsignbulksendtransmission_get_batch_file_v1(pki_ezsignbulksendtransmission_id => $pki_ezsignbulksendtransmission_id, b_include_signed => $b_include_signed, b_include_attachment => $b_include_attachment, b_include_proofdocument => $b_include_proofdocument, b_include_proof => $b_include_proof);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignbulksendtransmissionApi->ezsignbulksendtransmission_get_batch_file_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsignbulksendtransmission_id** | **int**|  | 
+ **b_include_signed** | **boolean**| Include final document once all signatures were applied | [optional] 
+ **b_include_attachment** | **boolean**| Include attached files in signatures | [optional] 
+ **b_include_proofdocument** | **boolean**| Include the evidence report | [optional] 
+ **b_include_proof** | **boolean**| include the complete evidence archive including all of the above and more | [optional] 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignbulksendtransmission_get_csv_errors_v1**
 > string ezsignbulksendtransmission_get_csv_errors_v1(pki_ezsignbulksendtransmission_id => $pki_ezsignbulksendtransmission_id)

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **s_user_firstname** | **string** | The first name of the user | 
 **s_user_lastname** | **string** | The last name of the user | 
 **s_email_address** | **string** | The email address. | 
+**e_user_type** | [**FieldEUserType**](FieldEUserType.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

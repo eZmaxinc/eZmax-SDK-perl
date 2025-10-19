@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**tranqcontract_get_communication_list_v1**](ObjectTranqcontractApi.md#tranqcontract_get_communication_list_v1) | **GET** /1/object/tranqcontract/{pkiTranqcontractID}/getCommunicationList | Retrieve Communication list
 [**tranqcontract_get_communicationrecipients_v1**](ObjectTranqcontractApi.md#tranqcontract_get_communicationrecipients_v1) | **GET** /1/object/tranqcontract/{pkiTranqcontractID}/getCommunicationrecipients | Retrieve Tranqcontract&#39;s Communicationrecipient
 [**tranqcontract_get_communicationsenders_v1**](ObjectTranqcontractApi.md#tranqcontract_get_communicationsenders_v1) | **GET** /1/object/tranqcontract/{pkiTranqcontractID}/getCommunicationsenders | Retrieve Tranqcontract&#39;s Communicationsender
+[**tranqcontract_import_into_edmv1**](ObjectTranqcontractApi.md#tranqcontract_import_into_edmv1) | **POST** /1/object/tranqcontract/{pkiTranqcontractID}/importIntoEDM | Import attachments into the Tranqcontract
 
 
 # **tranqcontract_get_communication_count_v1**
@@ -215,6 +216,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **tranqcontract_import_into_edmv1**
+> TranqcontractImportIntoEDMV1Response tranqcontract_import_into_edmv1(pki_tranqcontract_id => $pki_tranqcontract_id, tranqcontract_import_into_edmv1_request => $tranqcontract_import_into_edmv1_request)
+
+Import attachments into the Tranqcontract
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectTranqcontractApi;
+my $api_instance = EzmaxApi::ObjectTranqcontractApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_tranqcontract_id = 56; # int | 
+my $tranqcontract_import_into_edmv1_request = EzmaxApi::Object::TranqcontractImportIntoEDMV1Request->new(); # TranqcontractImportIntoEDMV1Request | 
+
+eval {
+    my $result = $api_instance->tranqcontract_import_into_edmv1(pki_tranqcontract_id => $pki_tranqcontract_id, tranqcontract_import_into_edmv1_request => $tranqcontract_import_into_edmv1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectTranqcontractApi->tranqcontract_import_into_edmv1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_tranqcontract_id** | **int**|  | 
+ **tranqcontract_import_into_edmv1_request** | [**TranqcontractImportIntoEDMV1Request**](TranqcontractImportIntoEDMV1Request.md)|  | 
+
+### Return type
+
+[**TranqcontractImportIntoEDMV1Response**](TranqcontractImportIntoEDMV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

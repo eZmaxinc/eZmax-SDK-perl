@@ -12,11 +12,14 @@ Method | HTTP request | Description
 [**ezsignsignature_create_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature
 [**ezsignsignature_create_object_v2**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v2) | **POST** /2/object/ezsignsignature | Create a new Ezsignsignature
 [**ezsignsignature_create_object_v3**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v3) | **POST** /3/object/ezsignsignature | Create a new Ezsignsignature
+[**ezsignsignature_create_object_v4**](ObjectEzsignsignatureApi.md#ezsignsignature_create_object_v4) | **POST** /4/object/ezsignsignature | Create a new Ezsignsignature
 [**ezsignsignature_delete_object_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_delete_object_v1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
 [**ezsignsignature_edit_object_v2**](ObjectEzsignsignatureApi.md#ezsignsignature_edit_object_v2) | **PUT** /2/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature
+[**ezsignsignature_edit_object_v3**](ObjectEzsignsignatureApi.md#ezsignsignature_edit_object_v3) | **PUT** /3/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature
 [**ezsignsignature_get_ezsignsignatureattachment_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_ezsignsignatureattachment_v1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getEzsignsignatureattachment | Retrieve an existing Ezsignsignature&#39;s Ezsignsignatureattachments
 [**ezsignsignature_get_ezsignsignatures_automatic_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_get_ezsignsignatures_automatic_v1) | **GET** /1/object/ezsignsignature/getEzsignsignaturesAutomatic | Retrieve all automatic Ezsignsignatures
 [**ezsignsignature_get_object_v3**](ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v3) | **GET** /3/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
+[**ezsignsignature_get_object_v4**](ObjectEzsignsignatureApi.md#ezsignsignature_get_object_v4) | **GET** /4/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
 [**ezsignsignature_sign_v1**](ObjectEzsignsignatureApi.md#ezsignsignature_sign_v1) | **POST** /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign | Sign the Ezsignsignature
 
 
@@ -25,7 +28,7 @@ Method | HTTP request | Description
 
 Create a new Ezsignsignature
 
-The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
+The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.  Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Example
 ```perl
@@ -76,7 +79,7 @@ Name | Type | Description  | Notes
 
 Create a new Ezsignsignature
 
-The endpoint allows to create one or many elements at once.
+The endpoint allows to create one or many elements at once.  Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Example
 ```perl
@@ -127,7 +130,7 @@ Name | Type | Description  | Notes
 
 Create a new Ezsignsignature
 
-The endpoint allows to create one or many elements at once.
+The endpoint allows to create one or many elements at once.  Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Example
 ```perl
@@ -161,6 +164,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsignsignatureCreateObjectV3Response**](EzsignsignatureCreateObjectV3Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignsignature_create_object_v4**
+> EzsignsignatureCreateObjectV4Response ezsignsignature_create_object_v4(ezsignsignature_create_object_v4_request => $ezsignsignature_create_object_v4_request)
+
+Create a new Ezsignsignature
+
+The endpoint allows to create one or many elements at once.
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignsignatureApi;
+my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $ezsignsignature_create_object_v4_request = EzmaxApi::Object::EzsignsignatureCreateObjectV4Request->new(); # EzsignsignatureCreateObjectV4Request | 
+
+eval {
+    my $result = $api_instance->ezsignsignature_create_object_v4(ezsignsignature_create_object_v4_request => $ezsignsignature_create_object_v4_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignsignatureApi->ezsignsignature_create_object_v4: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ezsignsignature_create_object_v4_request** | [**EzsignsignatureCreateObjectV4Request**](EzsignsignatureCreateObjectV4Request.md)|  | 
+
+### Return type
+
+[**EzsignsignatureCreateObjectV4Response**](EzsignsignatureCreateObjectV4Response.md)
 
 ### Authorization
 
@@ -229,7 +283,7 @@ Name | Type | Description  | Notes
 
 Edit an existing Ezsignsignature
 
-
+Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Example
 ```perl
@@ -265,6 +319,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsignsignatureEditObjectV2Response**](EzsignsignatureEditObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignsignature_edit_object_v3**
+> EzsignsignatureEditObjectV3Response ezsignsignature_edit_object_v3(pki_ezsignsignature_id => $pki_ezsignsignature_id, ezsignsignature_edit_object_v3_request => $ezsignsignature_edit_object_v3_request)
+
+Edit an existing Ezsignsignature
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignsignatureApi;
+my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsignsignature_id = 56; # int | 
+my $ezsignsignature_edit_object_v3_request = EzmaxApi::Object::EzsignsignatureEditObjectV3Request->new(); # EzsignsignatureEditObjectV3Request | 
+
+eval {
+    my $result = $api_instance->ezsignsignature_edit_object_v3(pki_ezsignsignature_id => $pki_ezsignsignature_id, ezsignsignature_edit_object_v3_request => $ezsignsignature_edit_object_v3_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignsignatureApi->ezsignsignature_edit_object_v3: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsignsignature_id** | **int**|  | 
+ **ezsignsignature_edit_object_v3_request** | [**EzsignsignatureEditObjectV3Request**](EzsignsignatureEditObjectV3Request.md)|  | 
+
+### Return type
+
+[**EzsignsignatureEditObjectV3Response**](EzsignsignatureEditObjectV3Response.md)
 
 ### Authorization
 
@@ -378,7 +485,7 @@ This endpoint does not need any parameter.
 
 Retrieve an existing Ezsignsignature
 
-
+Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
 
 ### Example
 ```perl
@@ -412,6 +519,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsignsignatureGetObjectV3Response**](EzsignsignatureGetObjectV3Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignsignature_get_object_v4**
+> EzsignsignatureGetObjectV4Response ezsignsignature_get_object_v4(pki_ezsignsignature_id => $pki_ezsignsignature_id)
+
+Retrieve an existing Ezsignsignature
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignsignatureApi;
+my $api_instance = EzmaxApi::ObjectEzsignsignatureApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsignsignature_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->ezsignsignature_get_object_v4(pki_ezsignsignature_id => $pki_ezsignsignature_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignsignatureApi->ezsignsignature_get_object_v4: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsignsignature_id** | **int**|  | 
+
+### Return type
+
+[**EzsignsignatureGetObjectV4Response**](EzsignsignatureGetObjectV4Response.md)
 
 ### Authorization
 

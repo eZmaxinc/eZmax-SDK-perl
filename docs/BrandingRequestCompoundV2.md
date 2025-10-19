@@ -9,6 +9,7 @@ use EzmaxApi::Object::BrandingRequestCompoundV2;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pki_branding_id** | **int** | The unique ID of the Branding | [optional] 
+**fki_domain_id** | **int** | The unique ID of the Domain | [optional] 
 **obj_branding_description** | [**MultilingualBrandingDescription**](MultilingualBrandingDescription.md) |  | 
 **e_branding_logo** | [**FieldEBrandingLogo**](FieldEBrandingLogo.md) |  | 
 **e_branding_alignlogo** | [**FieldEBrandingAlignlogo**](FieldEBrandingAlignlogo.md) |  | [optional] 

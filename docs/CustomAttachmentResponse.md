@@ -62,7 +62,7 @@ Name | Type | Description | Notes
 **e_attachment_type** | [**FieldEAttachmentType**](FieldEAttachmentType.md) |  | 
 **i_attachment_size** | **int** | The size of the Attachment | 
 **i_attachment_ed_mmoduleflag** | **int** | The edmmoduleflag of the Attachment | [optional] 
-**s_attachment_md5** | **string** | The md5 of the Attachment | 
+**s_attachment_md5** | **string** | The MD5 of the Attachment | 
 **b_attachment_deleted** | **boolean** | Whether if it&#39;s deleted | 
 **b_attachment_valid** | **boolean** | Whether if it&#39;s valid | 
 **e_attachment_verified** | [**FieldEAttachmentVerified**](FieldEAttachmentVerified.md) |  | 

@@ -9,14 +9,14 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**communication_get_communication_body_v1**](ObjectCommunicationApi.md#communication_get_communication_body_v1) | **GET** /1/object/communication/{pkiCommunicationID}/getCommunicationBody | Retrieve the communication body.
+[**communication_get_communication_body_v1**](ObjectCommunicationApi.md#communication_get_communication_body_v1) | **GET** /1/object/communication/{pkiCommunicationID}/getCommunicationBody | Retrieve the communication body
 [**communication_send_v1**](ObjectCommunicationApi.md#communication_send_v1) | **POST** /1/object/communication/send | Send a new Communication
 
 
 # **communication_get_communication_body_v1**
 > communication_get_communication_body_v1(pki_communication_id => $pki_communication_id)
 
-Retrieve the communication body.
+Retrieve the communication body
 
 This endpoint returns the communication body.
 

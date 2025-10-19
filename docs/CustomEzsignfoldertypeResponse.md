@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **i_ezsignfoldertype_deadlinedays** | **int** | The number of days to get all Ezsignsignatures | [optional] 
 **i_ezsignfoldertype_fontsizeannotation** | **int** | Font size for annotations | [optional] 
 **i_ezsignfoldertype_fontsizeformfield** | **int** | Font size for form fields | [optional] 
+**e_ezsignfoldertype_documentmerge** | [**FieldEEzsignfoldertypeDocumentmerge**](FieldEEzsignfoldertypeDocumentmerge.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

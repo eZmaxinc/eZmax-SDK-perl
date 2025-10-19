@@ -9,10 +9,12 @@ use EzmaxApi::Object::CreditcardmerchantResponse;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pki_creditcardmerchant_id** | **int** | The unique ID of the Creditcardmerchant | 
-**fki_bankaccount_id** | **int** | The unique ID of the Bankaccount | 
+**fki_bankaccount_id** | **int** | The unique ID of the Bankaccount | [optional] 
+**fki_language_id** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | 
+**s_language_name_x** | **string** | The Name of the Language in the language of the requester | 
+**fki_currency_id** | **int** | The unique ID of the Currency. | 
+**s_currency_description_x** | **string** | The description of the Currency in the language of the requester | 
 **s_bankaccount_bankname** | **string** | The name of the bank | [optional] 
-**fki_language_id** | **int** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | [optional] 
-**s_language_name_x** | **string** | The Name of the Language in the language of the requester | [optional] 
 **b_creditcardmerchant_denyvisa** | **boolean** | Whether if visa are denied | 
 **b_creditcardmerchant_denymastercard** | **boolean** | Whether if mastercard are denied | 
 **b_creditcardmerchant_denyamex** | **boolean** | Whether if amex are denied | 

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **fki_company_id** | **int** | The unique ID of the Company | 
 **fki_customergroup_id** | **int** | The unique ID of the Customergroup | 
 **s_customer_name** | **string** | The name of the Customer | 
+**s_customer_note** | **string** | A note for the Customer | [optional] 
 **fki_contactinformations_id** | **int** | The unique ID of the Contactinformations | 
 **fki_contactcontainer_id** | **int** | The unique ID of the Contactcontainer | 
 **fki_image_id** | **int** | The unique ID of the Image | 

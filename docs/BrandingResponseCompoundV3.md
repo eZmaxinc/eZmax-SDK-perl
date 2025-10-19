@@ -9,6 +9,8 @@ use EzmaxApi::Object::BrandingResponseCompoundV3;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pki_branding_id** | **int** | The unique ID of the Branding | 
+**fki_domain_id** | **int** | The unique ID of the Domain | [optional] 
+**s_domain_name** | **string** | The name of the Domain | [optional] 
 **fki_email_id** | **int** | The unique ID of the Email | [optional] 
 **obj_branding_description** | [**MultilingualBrandingDescription**](MultilingualBrandingDescription.md) |  | 
 **s_branding_description_x** | **string** | The Description of the Branding in the language of the requester | 
