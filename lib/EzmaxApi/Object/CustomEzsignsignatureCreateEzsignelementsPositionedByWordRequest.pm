@@ -39,6 +39,8 @@ use EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource;
 use EzmaxApi::Object::FieldEEzsignsignatureConsultationtrigger;
 use EzmaxApi::Object::FieldEEzsignsignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsignsignatureFont;
+use EzmaxApi::Object::FieldEEzsignsignatureSignaturepad;
+use EzmaxApi::Object::FieldEEzsignsignatureSignaturepadrequired;
 use EzmaxApi::Object::FieldEEzsignsignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
 
@@ -300,6 +302,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignsignature_signaturepad' => {
+        datatype => 'FieldEEzsignsignatureSignaturepad',
+        base_name => 'eEzsignsignatureSignaturepad',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignsignature_signaturepadrequired' => {
+        datatype => 'FieldEEzsignsignatureSignaturepadrequired',
+        base_name => 'eEzsignsignatureSignaturepadrequired',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'fki_ezsigndocument_id' => {
         datatype => 'int',
         base_name => 'fkiEzsigndocumentID',
@@ -440,6 +456,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsignsignature_creditcardcustomamount' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignsignatureCreditcardcustomamount',
+        description => 'Whether we can enter a custom amount while signing an Ezsignsignature &#39;Creditcard&#39; or not',
+        format => '',
+        read_only => '',
+            },
     'b_ezsignsignature_customdate' => {
         datatype => 'boolean',
         base_name => 'bEzsignsignatureCustomdate',
@@ -488,6 +511,8 @@ __PACKAGE__->openapi_types( {
     'i_ezsignsignature_height' => 'int',
     'i_ezsignsignature_step' => 'int',
     'e_ezsignsignature_type' => 'FieldEEzsignsignatureType',
+    'e_ezsignsignature_signaturepad' => 'FieldEEzsignsignatureSignaturepad',
+    'e_ezsignsignature_signaturepadrequired' => 'FieldEEzsignsignatureSignaturepadrequired',
     'fki_ezsigndocument_id' => 'int',
     't_ezsignsignature_tooltip' => 'string',
     'e_ezsignsignature_tooltipposition' => 'FieldEEzsignsignatureTooltipposition',
@@ -508,6 +533,7 @@ __PACKAGE__->openapi_types( {
     'e_ezsignsignature_dependencyrequirement' => 'FieldEEzsignsignatureDependencyrequirement',
     's_ezsignsignature_creditcardamountdescription' => 'string',
     'd_ezsignsignature_creditcardamount' => 'string',
+    'b_ezsignsignature_creditcardcustomamount' => 'boolean',
     'b_ezsignsignature_customdate' => 'boolean',
     'a_obj_ezsignsignaturecustomdate' => 'ARRAY[EzsignsignaturecustomdateRequestCompound]',
     'a_obj_ezsignelementdependency' => 'ARRAY[EzsignelementdependencyRequestCompound]',
@@ -526,6 +552,8 @@ __PACKAGE__->attribute_map( {
     'i_ezsignsignature_height' => 'iEzsignsignatureHeight',
     'i_ezsignsignature_step' => 'iEzsignsignatureStep',
     'e_ezsignsignature_type' => 'eEzsignsignatureType',
+    'e_ezsignsignature_signaturepad' => 'eEzsignsignatureSignaturepad',
+    'e_ezsignsignature_signaturepadrequired' => 'eEzsignsignatureSignaturepadrequired',
     'fki_ezsigndocument_id' => 'fkiEzsigndocumentID',
     't_ezsignsignature_tooltip' => 'tEzsignsignatureTooltip',
     'e_ezsignsignature_tooltipposition' => 'eEzsignsignatureTooltipposition',
@@ -546,6 +574,7 @@ __PACKAGE__->attribute_map( {
     'e_ezsignsignature_dependencyrequirement' => 'eEzsignsignatureDependencyrequirement',
     's_ezsignsignature_creditcardamountdescription' => 'sEzsignsignatureCreditcardamountdescription',
     'd_ezsignsignature_creditcardamount' => 'dEzsignsignatureCreditcardamount',
+    'b_ezsignsignature_creditcardcustomamount' => 'bEzsignsignatureCreditcardcustomamount',
     'b_ezsignsignature_customdate' => 'bEzsignsignatureCustomdate',
     'a_obj_ezsignsignaturecustomdate' => 'a_objEzsignsignaturecustomdate',
     'a_obj_ezsignelementdependency' => 'a_objEzsignelementdependency',

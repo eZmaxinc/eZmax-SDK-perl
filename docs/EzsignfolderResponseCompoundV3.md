@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **dt_ezsignfolder_archive** | **string** | The date and time at which the Ezsignfolder was archived. | [optional] 
 **dt_ezsignfolder_dispose** | **string** | The date and time at which the Ezsignfolder was disposed. | [optional] 
 **t_ezsignfolder_message** | **string** | A custom text message that will be added to the email sent. | [optional] 
+**e_ezsignfolder_messageorder** | [**FieldEEzsignfolderMessageorder**](FieldEEzsignfolderMessageorder.md) |  | [optional] 
 **obj_audit** | [**CommonAudit**](CommonAudit.md) |  | [optional] 
 **s_ezsignfolder_externalid** | **string** | This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format.  | [optional] 
 **e_ezsignfolder_access** | [**ComputedEEzsignfolderAccess**](ComputedEEzsignfolderAccess.md) |  | [optional] 

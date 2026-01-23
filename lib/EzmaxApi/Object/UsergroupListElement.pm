@@ -240,18 +240,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_count_inactiveuser' => {
+        datatype => 'int',
+        base_name => 'iCountInactiveuser',
+        description => 'Number of inactive users in group',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_usergroup_id' => 'int',
     's_usergroup_name_x' => 'string',
-    'i_count_user' => 'int'
+    'i_count_user' => 'int',
+    'i_count_inactiveuser' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_usergroup_id' => 'pkiUsergroupID',
     's_usergroup_name_x' => 'sUsergroupNameX',
-    'i_count_user' => 'iCountUser'
+    'i_count_user' => 'iCountUser',
+    'i_count_inactiveuser' => 'iCountInactiveuser'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

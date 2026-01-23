@@ -246,6 +246,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_timezone_id_default' => {
+        datatype => 'int',
+        base_name => 'fkiTimezoneIDDefault',
+        description => 'The unique ID of the Timezone',
+        format => '',
+        read_only => '',
+            },
+    's_timezone_name_default' => {
+        datatype => 'string',
+        base_name => 'sTimezoneNameDefault',
+        description => 'The description of the Timezone',
+        format => '',
+        read_only => '',
+            },
     's_systemconfigurationtype_description_x' => {
         datatype => 'string',
         base_name => 'sSystemconfigurationtypeDescriptionX',
@@ -344,12 +358,21 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_systemconfiguration_ezsignreminderhoursend' => {
+        datatype => 'int',
+        base_name => 'iSystemconfigurationEzsignreminderhoursend',
+        description => 'The hour we will send the eZsign reminders',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_systemconfiguration_id' => 'int',
     'fki_systemconfigurationtype_id' => 'int',
     'fki_branding_id' => 'int',
+    'fki_timezone_id_default' => 'int',
+    's_timezone_name_default' => 'string',
     's_systemconfigurationtype_description_x' => 'string',
     'e_systemconfiguration_newexternaluseraction' => 'FieldESystemconfigurationNewexternaluseraction',
     'e_systemconfiguration_language1' => 'FieldESystemconfigurationLanguage1',
@@ -363,13 +386,16 @@ __PACKAGE__->openapi_types( {
     'b_systemconfiguration_sspr' => 'boolean',
     'dt_systemconfiguration_readonlyexpirationstart' => 'string',
     'dt_systemconfiguration_readonlyexpirationend' => 'string',
-    'obj_branding' => 'CustomBrandingResponse'
+    'obj_branding' => 'CustomBrandingResponse',
+    'i_systemconfiguration_ezsignreminderhoursend' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_systemconfiguration_id' => 'pkiSystemconfigurationID',
     'fki_systemconfigurationtype_id' => 'fkiSystemconfigurationtypeID',
     'fki_branding_id' => 'fkiBrandingID',
+    'fki_timezone_id_default' => 'fkiTimezoneIDDefault',
+    's_timezone_name_default' => 'sTimezoneNameDefault',
     's_systemconfigurationtype_description_x' => 'sSystemconfigurationtypeDescriptionX',
     'e_systemconfiguration_newexternaluseraction' => 'eSystemconfigurationNewexternaluseraction',
     'e_systemconfiguration_language1' => 'eSystemconfigurationLanguage1',
@@ -383,7 +409,8 @@ __PACKAGE__->attribute_map( {
     'b_systemconfiguration_sspr' => 'bSystemconfigurationSspr',
     'dt_systemconfiguration_readonlyexpirationstart' => 'dtSystemconfigurationReadonlyexpirationstart',
     'dt_systemconfiguration_readonlyexpirationend' => 'dtSystemconfigurationReadonlyexpirationend',
-    'obj_branding' => 'objBranding'
+    'obj_branding' => 'objBranding',
+    'i_systemconfiguration_ezsignreminderhoursend' => 'iSystemconfigurationEzsignreminderhoursend'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

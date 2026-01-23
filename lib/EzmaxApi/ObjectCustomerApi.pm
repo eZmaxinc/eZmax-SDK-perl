@@ -49,71 +49,6 @@ sub new {
 
 
 #
-# customer_create_object_v1
-#
-# Create a new Customer
-#
-# @param CustomerCreateObjectV1Request $customer_create_object_v1_request  (required)
-{
-    my $params = {
-    'customer_create_object_v1_request' => {
-        data_type => 'CustomerCreateObjectV1Request',
-        description => '',
-        required => '1',
-    },
-    };
-    __PACKAGE__->method_documentation->{ 'customer_create_object_v1' } = {
-        summary => 'Create a new Customer',
-        params => $params,
-        returns => 'CustomerCreateObjectV1Response',
-        };
-}
-# @return CustomerCreateObjectV1Response
-#
-sub customer_create_object_v1 {
-    my ($self, %args) = @_;
-
-    # verify the required parameter 'customer_create_object_v1_request' is set
-    unless (exists $args{'customer_create_object_v1_request'}) {
-      croak("Missing the required parameter 'customer_create_object_v1_request' when calling customer_create_object_v1");
-    }
-
-    # parse inputs
-    my $_resource_path = '/1/object/customer';
-
-    my $_method = 'POST';
-    my $query_params = {};
-    my $header_params = {};
-    my $form_params = {};
-
-    # 'Accept' and 'Content-Type' header
-    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
-    if ($_header_accept) {
-        $header_params->{'Accept'} = $_header_accept;
-    }
-    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
-
-    my $_body_data;
-    # body params
-    if ( exists $args{'customer_create_object_v1_request'}) {
-        $_body_data = $args{'customer_create_object_v1_request'};
-    }
-
-    # authentication setting, if any
-    my $auth_settings = [qw(Authorization )];
-
-    # make the API Call
-    my $response = $self->{api_client}->call_api($_resource_path, $_method,
-                                           $query_params, $form_params,
-                                           $header_params, $_body_data, $auth_settings);
-    if (!$response) {
-        return;
-    }
-    my $_response_object = $self->{api_client}->deserialize('CustomerCreateObjectV1Response', $response);
-    return $_response_object;
-}
-
-#
 # customer_get_autocomplete_v2
 #
 # Retrieve Customers and IDs
@@ -214,110 +149,6 @@ sub customer_get_autocomplete_v2 {
 }
 
 #
-# customer_get_list_v1
-#
-# Retrieve Customer list
-#
-# @param string $e_order_by Specify how you want the results to be sorted (optional)
-# @param int $i_row_max  (optional)
-# @param int $i_row_offset  (optional, default to 0)
-# @param HeaderAcceptLanguage $accept_language  (optional)
-# @param string $s_filter  (optional)
-{
-    my $params = {
-    'e_order_by' => {
-        data_type => 'string',
-        description => 'Specify how you want the results to be sorted',
-        required => '0',
-    },
-    'i_row_max' => {
-        data_type => 'int',
-        description => '',
-        required => '0',
-    },
-    'i_row_offset' => {
-        data_type => 'int',
-        description => '',
-        required => '0',
-    },
-    'accept_language' => {
-        data_type => 'HeaderAcceptLanguage',
-        description => '',
-        required => '0',
-    },
-    's_filter' => {
-        data_type => 'string',
-        description => '',
-        required => '0',
-    },
-    };
-    __PACKAGE__->method_documentation->{ 'customer_get_list_v1' } = {
-        summary => 'Retrieve Customer list',
-        params => $params,
-        returns => 'CustomerGetListV1Response',
-        };
-}
-# @return CustomerGetListV1Response
-#
-sub customer_get_list_v1 {
-    my ($self, %args) = @_;
-
-    # parse inputs
-    my $_resource_path = '/1/object/customer/getList';
-
-    my $_method = 'GET';
-    my $query_params = {};
-    my $header_params = {};
-    my $form_params = {};
-
-    # 'Accept' and 'Content-Type' header
-    my $_header_accept = $self->{api_client}->select_header_accept('application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    if ($_header_accept) {
-        $header_params->{'Accept'} = $_header_accept;
-    }
-    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
-
-    # query params
-    if ( exists $args{'e_order_by'}) {
-        $query_params->{'eOrderBy'} = $self->{api_client}->to_query_value($args{'e_order_by'});
-    }
-
-    # query params
-    if ( exists $args{'i_row_max'}) {
-        $query_params->{'iRowMax'} = $self->{api_client}->to_query_value($args{'i_row_max'});
-    }
-
-    # query params
-    if ( exists $args{'i_row_offset'}) {
-        $query_params->{'iRowOffset'} = $self->{api_client}->to_query_value($args{'i_row_offset'});
-    }
-
-    # query params
-    if ( exists $args{'s_filter'}) {
-        $query_params->{'sFilter'} = $self->{api_client}->to_query_value($args{'s_filter'});
-    }
-
-    # header params
-    if ( exists $args{'accept_language'}) {
-        $header_params->{'Accept-Language'} = $self->{api_client}->to_header_value($args{'accept_language'});
-    }
-
-    my $_body_data;
-    # authentication setting, if any
-    my $auth_settings = [qw(Authorization )];
-
-    # make the API Call
-    my $response = $self->{api_client}->call_api($_resource_path, $_method,
-                                           $query_params, $form_params,
-                                           $header_params, $_body_data, $auth_settings);
-    if (!$response) {
-        return;
-    }
-    my $_response_object = $self->{api_client}->deserialize('CustomerGetListV1Response', $response);
-    return $_response_object;
-}
-
-#
 # customer_get_object_v2
 #
 # Retrieve an existing Customer
@@ -387,7 +218,7 @@ sub customer_get_object_v2 {
 #
 # customer_import_into_edmv1
 #
-# Import attachments into the Buyercontract
+# Import attachments into the Customer
 #
 # @param int $pki_customer_id  (required)
 # @param CustomerImportIntoEDMV1Request $customer_import_into_edmv1_request  (required)
@@ -405,7 +236,7 @@ sub customer_get_object_v2 {
     },
     };
     __PACKAGE__->method_documentation->{ 'customer_import_into_edmv1' } = {
-        summary => 'Import attachments into the Buyercontract',
+        summary => 'Import attachments into the Customer',
         params => $params,
         returns => 'CustomerImportIntoEDMV1Response',
         };

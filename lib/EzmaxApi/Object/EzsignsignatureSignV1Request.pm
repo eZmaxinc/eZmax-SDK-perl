@@ -235,6 +235,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'd_ezsignsignature_creditcardamount' => {
+        datatype => 'string',
+        base_name => 'dEzsignsignatureCreditcardamount',
+        description => 'The amount of the Creditcard signature',
+        format => '',
+        read_only => '',
+            },
     's_value' => {
         datatype => 'string',
         base_name => 'sValue',
@@ -289,6 +296,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'fki_ezsignsigningreason_id' => 'int',
     'fki_font_id' => 'int',
+    'd_ezsignsignature_creditcardamount' => 'string',
     's_value' => 'string',
     'e_attachments_confirmation_decision' => 'string',
     's_attachments_refusal_reason' => 'string',
@@ -301,6 +309,7 @@ __PACKAGE__->openapi_types( {
 __PACKAGE__->attribute_map( {
     'fki_ezsignsigningreason_id' => 'fkiEzsignsigningreasonID',
     'fki_font_id' => 'fkiFontID',
+    'd_ezsignsignature_creditcardamount' => 'dEzsignsignatureCreditcardamount',
     's_value' => 'sValue',
     'e_attachments_confirmation_decision' => 'eAttachmentsConfirmationDecision',
     's_attachments_refusal_reason' => 'sAttachmentsRefusalReason',

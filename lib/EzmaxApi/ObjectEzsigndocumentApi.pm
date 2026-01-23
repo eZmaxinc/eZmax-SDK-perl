@@ -975,6 +975,89 @@ sub ezsigndocument_edit_ezsignformfieldgroups_v1 {
 }
 
 #
+# ezsigndocument_edit_ezsignformfieldgroups_v2
+#
+# Edit multiple Ezsignformfieldgroups
+#
+# @param int $pki_ezsigndocument_id  (required)
+# @param EzsigndocumentEditEzsignformfieldgroupsV2Request $ezsigndocument_edit_ezsignformfieldgroups_v2_request  (required)
+{
+    my $params = {
+    'pki_ezsigndocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsigndocument_edit_ezsignformfieldgroups_v2_request' => {
+        data_type => 'EzsigndocumentEditEzsignformfieldgroupsV2Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_edit_ezsignformfieldgroups_v2' } = {
+        summary => 'Edit multiple Ezsignformfieldgroups',
+        params => $params,
+        returns => 'EzsigndocumentEditEzsignformfieldgroupsV2Response',
+        };
+}
+# @return EzsigndocumentEditEzsignformfieldgroupsV2Response
+#
+sub ezsigndocument_edit_ezsignformfieldgroups_v2 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigndocument_id' is set
+    unless (exists $args{'pki_ezsigndocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_edit_ezsignformfieldgroups_v2");
+    }
+
+    # verify the required parameter 'ezsigndocument_edit_ezsignformfieldgroups_v2_request' is set
+    unless (exists $args{'ezsigndocument_edit_ezsignformfieldgroups_v2_request'}) {
+      croak("Missing the required parameter 'ezsigndocument_edit_ezsignformfieldgroups_v2_request' when calling ezsigndocument_edit_ezsignformfieldgroups_v2");
+    }
+
+    # parse inputs
+    my $_resource_path = '/2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups';
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsigndocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigndocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigndocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsigndocument_edit_ezsignformfieldgroups_v2_request'}) {
+        $_body_data = $args{'ezsigndocument_edit_ezsignformfieldgroups_v2_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentEditEzsignformfieldgroupsV2Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsigndocument_edit_ezsignsignatures_v1
 #
 # Edit multiple Ezsignsignatures
@@ -1603,6 +1686,73 @@ sub ezsigndocument_get_actionable_elements_v2 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('EzsigndocumentGetActionableElementsV2Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsigndocument_get_actionable_elements_v3
+#
+# Retrieve actionable elements for the Ezsigndocument
+#
+# @param int $pki_ezsigndocument_id  (required)
+{
+    my $params = {
+    'pki_ezsigndocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_get_actionable_elements_v3' } = {
+        summary => 'Retrieve actionable elements for the Ezsigndocument',
+        params => $params,
+        returns => 'EzsigndocumentGetActionableElementsV3Response',
+        };
+}
+# @return EzsigndocumentGetActionableElementsV3Response
+#
+sub ezsigndocument_get_actionable_elements_v3 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigndocument_id' is set
+    unless (exists $args{'pki_ezsigndocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_get_actionable_elements_v3");
+    }
+
+    # parse inputs
+    my $_resource_path = '/3/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsigndocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigndocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigndocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentGetActionableElementsV3Response', $response);
     return $_response_object;
 }
 

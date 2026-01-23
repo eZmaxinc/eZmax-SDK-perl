@@ -269,6 +269,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_lead_contacts' => {
+        datatype => 'string',
+        base_name => 'sLeadContacts',
+        description => 'The contacts&#39; name of the Lead',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -278,7 +285,8 @@ __PACKAGE__->openapi_types( {
     'e_lead_status' => 'FieldELeadStatus',
     'dt_lead_expiration' => 'string',
     'b_lead_isactive' => 'boolean',
-    's_lead_code' => 'string'
+    's_lead_code' => 'string',
+    's_lead_contacts' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -288,7 +296,8 @@ __PACKAGE__->attribute_map( {
     'e_lead_status' => 'eLeadStatus',
     'dt_lead_expiration' => 'dtLeadExpiration',
     'b_lead_isactive' => 'bLeadIsactive',
-    's_lead_code' => 'sLeadCode'
+    's_lead_code' => 'sLeadCode',
+    's_lead_contacts' => 'sLeadContacts'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

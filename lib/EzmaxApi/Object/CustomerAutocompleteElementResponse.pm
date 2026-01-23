@@ -240,6 +240,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_customer_code' => {
+        datatype => 'string',
+        base_name => 'sCustomerCode',
+        description => 'The code of the Customer',
+        format => '',
+        read_only => '',
+            },
     'b_customer_isactive' => {
         datatype => 'boolean',
         base_name => 'bCustomerIsactive',
@@ -253,6 +260,7 @@ __PACKAGE__->openapi_types( {
     'pki_customer_id' => 'int',
     'fki_department_id' => 'int',
     's_customer_name' => 'string',
+    's_customer_code' => 'string',
     'b_customer_isactive' => 'boolean'
 } );
 
@@ -260,6 +268,7 @@ __PACKAGE__->attribute_map( {
     'pki_customer_id' => 'pkiCustomerID',
     'fki_department_id' => 'fkiDepartmentID',
     's_customer_name' => 'sCustomerName',
+    's_customer_code' => 'sCustomerCode',
     'b_customer_isactive' => 'bCustomerIsactive'
 } );
 

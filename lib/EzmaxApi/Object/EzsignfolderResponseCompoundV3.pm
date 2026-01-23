@@ -36,6 +36,7 @@ use EzmaxApi::Object::CustomEzsignfoldertypeResponse;
 use EzmaxApi::Object::CustomTimezoneWithCodeResponse;
 use EzmaxApi::Object::FieldEEzsignfolderCompletion;
 use EzmaxApi::Object::FieldEEzsignfolderDocumentdependency;
+use EzmaxApi::Object::FieldEEzsignfolderMessageorder;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -408,6 +409,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignfolder_messageorder' => {
+        datatype => 'FieldEEzsignfolderMessageorder',
+        base_name => 'eEzsignfolderMessageorder',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'obj_audit' => {
         datatype => 'CommonAudit',
         base_name => 'objAudit',
@@ -465,6 +473,7 @@ __PACKAGE__->openapi_types( {
     'dt_ezsignfolder_archive' => 'string',
     'dt_ezsignfolder_dispose' => 'string',
     't_ezsignfolder_message' => 'string',
+    'e_ezsignfolder_messageorder' => 'FieldEEzsignfolderMessageorder',
     'obj_audit' => 'CommonAudit',
     's_ezsignfolder_externalid' => 'string',
     'e_ezsignfolder_access' => 'ComputedEEzsignfolderAccess',
@@ -498,6 +507,7 @@ __PACKAGE__->attribute_map( {
     'dt_ezsignfolder_archive' => 'dtEzsignfolderArchive',
     'dt_ezsignfolder_dispose' => 'dtEzsignfolderDispose',
     't_ezsignfolder_message' => 'tEzsignfolderMessage',
+    'e_ezsignfolder_messageorder' => 'eEzsignfolderMessageorder',
     'obj_audit' => 'objAudit',
     's_ezsignfolder_externalid' => 'sEzsignfolderExternalid',
     'e_ezsignfolder_access' => 'eEzsignfolderAccess',

@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**ezsignbulksend_create_object_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_create_object_v1) | **POST** /1/object/ezsignbulksend | Create a new Ezsignbulksend
 [**ezsignbulksend_create_object_v2**](ObjectEzsignbulksendApi.md#ezsignbulksend_create_object_v2) | **POST** /2/object/ezsignbulksend | Create a new Ezsignbulksend
 [**ezsignbulksend_delete_object_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_delete_object_v1) | **DELETE** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Delete an existing Ezsignbulksend
-[**ezsignbulksend_edit_object_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_edit_object_v1) | **PUT** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend
 [**ezsignbulksend_edit_object_v2**](ObjectEzsignbulksendApi.md#ezsignbulksend_edit_object_v2) | **PUT** /2/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend
 [**ezsignbulksend_get_batch_file_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_batch_file_v1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getBatchFile | Retrieve file to download documents in batch
 [**ezsignbulksend_get_csv_template_v1**](ObjectEzsignbulksendApi.md#ezsignbulksend_get_csv_template_v1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getCsvTemplate | Retrieve an existing Ezsignbulksend&#39;s empty Csv template
@@ -226,59 +225,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ezsignbulksend_edit_object_v1**
-> EzsignbulksendEditObjectV1Response ezsignbulksend_edit_object_v1(pki_ezsignbulksend_id => $pki_ezsignbulksend_id, ezsignbulksend_edit_object_v1_request => $ezsignbulksend_edit_object_v1_request)
-
-Edit an existing Ezsignbulksend
-
-
-
-### Example
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectEzsignbulksendApi;
-my $api_instance = EzmaxApi::ObjectEzsignbulksendApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $pki_ezsignbulksend_id = 56; # int | 
-my $ezsignbulksend_edit_object_v1_request = EzmaxApi::Object::EzsignbulksendEditObjectV1Request->new(); # EzsignbulksendEditObjectV1Request | 
-
-eval {
-    my $result = $api_instance->ezsignbulksend_edit_object_v1(pki_ezsignbulksend_id => $pki_ezsignbulksend_id, ezsignbulksend_edit_object_v1_request => $ezsignbulksend_edit_object_v1_request);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling ObjectEzsignbulksendApi->ezsignbulksend_edit_object_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pki_ezsignbulksend_id** | **int**|  | 
- **ezsignbulksend_edit_object_v1_request** | [**EzsignbulksendEditObjectV1Request**](EzsignbulksendEditObjectV1Request.md)|  | 
-
-### Return type
-
-[**EzsignbulksendEditObjectV1Response**](EzsignbulksendEditObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -9,7 +9,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ezsignfoldersignerassociation_create_embedded_url_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_create_embedded_url_v1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing
 [**ezsignfoldersignerassociation_create_embedded_url_v2**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_create_embedded_url_v2) | **POST** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing
 [**ezsignfoldersignerassociation_create_object_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_create_object_v1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation
 [**ezsignfoldersignerassociation_create_object_v2**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_create_object_v2) | **POST** /2/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation
@@ -23,65 +22,12 @@ Method | HTTP request | Description
 [**ezsignfoldersignerassociation_reassign_v1**](ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociation_reassign_v1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/reassign | Reassign remaining unsigned signatures and forms
 
 
-# **ezsignfoldersignerassociation_create_embedded_url_v1**
-> EzsignfoldersignerassociationCreateEmbeddedUrlV1Response ezsignfoldersignerassociation_create_embedded_url_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_create_embedded_url_v1_request => $ezsignfoldersignerassociation_create_embedded_url_v1_request)
-
-Creates an Url to allow embedded signing
-
-This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
-
-### Example
-```perl
-use Data::Dumper;
-use EzmaxApi::ObjectEzsignfoldersignerassociationApi;
-my $api_instance = EzmaxApi::ObjectEzsignfoldersignerassociationApi->new(
-
-    # Configure API key authorization: Authorization
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
-);
-
-my $pki_ezsignfoldersignerassociation_id = 56; # int | 
-my $ezsignfoldersignerassociation_create_embedded_url_v1_request = EzmaxApi::Object::EzsignfoldersignerassociationCreateEmbeddedUrlV1Request->new(); # EzsignfoldersignerassociationCreateEmbeddedUrlV1Request | 
-
-eval {
-    my $result = $api_instance->ezsignfoldersignerassociation_create_embedded_url_v1(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_create_embedded_url_v1_request => $ezsignfoldersignerassociation_create_embedded_url_v1_request);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling ObjectEzsignfoldersignerassociationApi->ezsignfoldersignerassociation_create_embedded_url_v1: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pki_ezsignfoldersignerassociation_id** | **int**|  | 
- **ezsignfoldersignerassociation_create_embedded_url_v1_request** | [**EzsignfoldersignerassociationCreateEmbeddedUrlV1Request**](EzsignfoldersignerassociationCreateEmbeddedUrlV1Request.md)|  | 
-
-### Return type
-
-[**EzsignfoldersignerassociationCreateEmbeddedUrlV1Response**](EzsignfoldersignerassociationCreateEmbeddedUrlV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **ezsignfoldersignerassociation_create_embedded_url_v2**
 > EzsignfoldersignerassociationCreateEmbeddedUrlV2Response ezsignfoldersignerassociation_create_embedded_url_v2(pki_ezsignfoldersignerassociation_id => $pki_ezsignfoldersignerassociation_id, ezsignfoldersignerassociation_create_embedded_url_v2_request => $ezsignfoldersignerassociation_create_embedded_url_v2_request)
 
 Creates an Url to allow embedded signing
 
-This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.  ### Iframe Communication (postMessage)  If the signing page is embedded in an `iframe`, the application sends events to the parent window via `window.postMessage`.  The message structure is defined as follows:  ```json {   \"source\": \"ezsign\",   \"type\": \"eEzsignEvent\",   \"payload\": \"CompletedEzsignfolder\" } ```  * **source**: Always `'ezsign'`. * **type**: Always `'eEzsignEvent'`. * **payload**: Corresponds to the **eEzsignEvent** values listed in the table above (e.g., `SessionTimeout`, `CompletedStep`, etc.).  #### Example listener  ```javascript window.addEventListener('message', (event) => {     const { source, type, payload } = event.data;         if (source === 'ezsign' && type === 'eEzsignEvent') {         console.log('Event received:', payload);     } }); ``` 
 
 ### Example
 ```perl

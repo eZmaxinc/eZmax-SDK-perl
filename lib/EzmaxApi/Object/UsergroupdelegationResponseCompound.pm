@@ -268,6 +268,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_user_isactive' => {
+        datatype => 'boolean',
+        base_name => 'bUserIsactive',
+        description => 'Whether the User is active or not',
+        format => '',
+        read_only => '',
+            },
     's_usergroup_name_x' => {
         datatype => 'string',
         base_name => 'sUsergroupNameX',
@@ -285,6 +292,7 @@ __PACKAGE__->openapi_types( {
     's_user_lastname' => 'string',
     's_user_loginname' => 'string',
     's_email_address' => 'string',
+    'b_user_isactive' => 'boolean',
     's_usergroup_name_x' => 'string'
 } );
 
@@ -296,6 +304,7 @@ __PACKAGE__->attribute_map( {
     's_user_lastname' => 'sUserLastname',
     's_user_loginname' => 'sUserLoginname',
     's_email_address' => 'sEmailAddress',
+    'b_user_isactive' => 'bUserIsactive',
     's_usergroup_name_x' => 'sUsergroupNameX'
 } );
 

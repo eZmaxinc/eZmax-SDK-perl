@@ -41,6 +41,8 @@ use EzmaxApi::Object::FieldEEzsignsignatureAttachmentnamesource;
 use EzmaxApi::Object::FieldEEzsignsignatureConsultationtrigger;
 use EzmaxApi::Object::FieldEEzsignsignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsignsignatureFont;
+use EzmaxApi::Object::FieldEEzsignsignatureSignaturepad;
+use EzmaxApi::Object::FieldEEzsignsignatureSignaturepadrequired;
 use EzmaxApi::Object::FieldEEzsignsignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsignsignatureType;
 use EzmaxApi::Object::SignatureResponseCompound;
@@ -296,6 +298,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsignsignature_creditcardcustomamount' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignsignatureCreditcardcustomamount',
+        description => 'Whether we can enter a custom amount while signing an Ezsignsignature &#39;Creditcard&#39; or not',
+        format => '',
+        read_only => '',
+            },
     's_ezsignsigningreason_description_x' => {
         datatype => 'string',
         base_name => 'sEzsignsigningreasonDescriptionX',
@@ -355,6 +364,20 @@ __PACKAGE__->method_documentation({
     'e_ezsignsignature_type' => {
         datatype => 'FieldEEzsignsignatureType',
         base_name => 'eEzsignsignatureType',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignsignature_signaturepad' => {
+        datatype => 'FieldEEzsignsignatureSignaturepad',
+        base_name => 'eEzsignsignatureSignaturepad',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignsignature_signaturepadrequired' => {
+        datatype => 'FieldEEzsignsignatureSignaturepadrequired',
+        base_name => 'eEzsignsignatureSignaturepadrequired',
         description => '',
         format => '',
         read_only => '',
@@ -588,6 +611,7 @@ __PACKAGE__->openapi_types( {
     's_currency_description_x' => 'string',
     'd_ezsignsignature_creditcardamount' => 'string',
     's_ezsignsignature_creditcardamountdescription' => 'string',
+    'b_ezsignsignature_creditcardcustomamount' => 'boolean',
     's_ezsignsigningreason_description_x' => 'string',
     'i_ezsignpage_pagenumber' => 'int',
     'i_ezsignsignature_x' => 'int',
@@ -597,6 +621,8 @@ __PACKAGE__->openapi_types( {
     'i_ezsignsignature_step' => 'int',
     'i_ezsignsignature_stepadjusted' => 'int',
     'e_ezsignsignature_type' => 'FieldEEzsignsignatureType',
+    'e_ezsignsignature_signaturepad' => 'FieldEEzsignsignatureSignaturepad',
+    'e_ezsignsignature_signaturepadrequired' => 'FieldEEzsignsignatureSignaturepadrequired',
     't_ezsignsignature_tooltip' => 'string',
     'e_ezsignsignature_tooltipposition' => 'FieldEEzsignsignatureTooltipposition',
     'e_ezsignsignature_font' => 'FieldEEzsignsignatureFont',
@@ -640,6 +666,7 @@ __PACKAGE__->attribute_map( {
     's_currency_description_x' => 'sCurrencyDescriptionX',
     'd_ezsignsignature_creditcardamount' => 'dEzsignsignatureCreditcardamount',
     's_ezsignsignature_creditcardamountdescription' => 'sEzsignsignatureCreditcardamountdescription',
+    'b_ezsignsignature_creditcardcustomamount' => 'bEzsignsignatureCreditcardcustomamount',
     's_ezsignsigningreason_description_x' => 'sEzsignsigningreasonDescriptionX',
     'i_ezsignpage_pagenumber' => 'iEzsignpagePagenumber',
     'i_ezsignsignature_x' => 'iEzsignsignatureX',
@@ -649,6 +676,8 @@ __PACKAGE__->attribute_map( {
     'i_ezsignsignature_step' => 'iEzsignsignatureStep',
     'i_ezsignsignature_stepadjusted' => 'iEzsignsignatureStepadjusted',
     'e_ezsignsignature_type' => 'eEzsignsignatureType',
+    'e_ezsignsignature_signaturepad' => 'eEzsignsignatureSignaturepad',
+    'e_ezsignsignature_signaturepadrequired' => 'eEzsignsignatureSignaturepadrequired',
     't_ezsignsignature_tooltip' => 'tEzsignsignatureTooltip',
     'e_ezsignsignature_tooltipposition' => 'eEzsignsignatureTooltipposition',
     'e_ezsignsignature_font' => 'eEzsignsignatureFont',

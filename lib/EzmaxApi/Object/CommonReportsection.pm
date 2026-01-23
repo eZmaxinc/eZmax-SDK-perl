@@ -242,18 +242,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_reportsection_tabname' => {
+        datatype => 'string',
+        base_name => 'sReportsectionTabname',
+        description => 'The name of tab in excel version',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'a_obj_reportsubsection' => 'ARRAY[CommonReportsubsection]',
     'e_reportsection_horizontalalignment' => 'EnumHorizontalalignment',
-    's_reportsection_title' => 'string'
+    's_reportsection_title' => 'string',
+    's_reportsection_tabname' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'a_obj_reportsubsection' => 'a_objReportsubsection',
     'e_reportsection_horizontalalignment' => 'eReportsectionHorizontalalignment',
-    's_reportsection_title' => 'sReportsectionTitle'
+    's_reportsection_title' => 'sReportsectionTitle',
+    's_reportsection_tabname' => 'sReportsectionTabname'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

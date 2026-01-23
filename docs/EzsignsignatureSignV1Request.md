@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fki_ezsignsigningreason_id** | **int** | The unique ID of the Ezsignsigningreason | [optional] 
 **fki_font_id** | **int** | The unique ID of the Font | [optional] 
+**d_ezsignsignature_creditcardamount** | **string** | The amount of the Creditcard signature | [optional] 
 **s_value** | **string** | The value required for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **City**, **FieldText** or **FieldTextarea** | [optional] 
 **e_attachments_confirmation_decision** | **string** | Whether the attachment are accepted or refused.  This can only be set if eEzsignsignatureType is **AttachmentsConfirmation** | [optional] 
 **s_attachments_refusal_reason** | **string** | The reason of refused.  This can only be set if eEzsignsignatureType is **AttachmentsConfirmation** | [optional] 

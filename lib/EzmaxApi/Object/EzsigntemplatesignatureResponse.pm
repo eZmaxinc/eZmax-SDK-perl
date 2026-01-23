@@ -37,6 +37,8 @@ use EzmaxApi::Object::FieldEEzsigntemplatesignatureDependencyrequirement;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureFont;
 use EzmaxApi::Object::FieldEEzsigntemplatesignaturePositioning;
 use EzmaxApi::Object::FieldEEzsigntemplatesignaturePositioningoccurence;
+use EzmaxApi::Object::FieldEEzsigntemplatesignatureSignaturepad;
+use EzmaxApi::Object::FieldEEzsigntemplatesignatureSignaturepadrequired;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureTooltipposition;
 use EzmaxApi::Object::FieldEEzsigntemplatesignatureType;
 
@@ -333,6 +335,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsigntemplatesignature_signaturepad' => {
+        datatype => 'FieldEEzsigntemplatesignatureSignaturepad',
+        base_name => 'eEzsigntemplatesignatureSignaturepad',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsigntemplatesignature_signaturepadrequired' => {
+        datatype => 'FieldEEzsigntemplatesignatureSignaturepadrequired',
+        base_name => 'eEzsigntemplatesignatureSignaturepadrequired',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'e_ezsigntemplatesignature_consultationtrigger' => {
         datatype => 'FieldEEzsigntemplatesignatureConsultationtrigger',
         base_name => 'eEzsigntemplatesignatureConsultationtrigger',
@@ -491,6 +507,8 @@ __PACKAGE__->openapi_types( {
     'i_ezsigntemplatesignature_height' => 'int',
     'i_ezsigntemplatesignature_step' => 'int',
     'e_ezsigntemplatesignature_type' => 'FieldEEzsigntemplatesignatureType',
+    'e_ezsigntemplatesignature_signaturepad' => 'FieldEEzsigntemplatesignatureSignaturepad',
+    'e_ezsigntemplatesignature_signaturepadrequired' => 'FieldEEzsigntemplatesignatureSignaturepadrequired',
     'e_ezsigntemplatesignature_consultationtrigger' => 'FieldEEzsigntemplatesignatureConsultationtrigger',
     't_ezsigntemplatesignature_tooltip' => 'string',
     'e_ezsigntemplatesignature_tooltipposition' => 'FieldEEzsigntemplatesignatureTooltipposition',
@@ -529,6 +547,8 @@ __PACKAGE__->attribute_map( {
     'i_ezsigntemplatesignature_height' => 'iEzsigntemplatesignatureHeight',
     'i_ezsigntemplatesignature_step' => 'iEzsigntemplatesignatureStep',
     'e_ezsigntemplatesignature_type' => 'eEzsigntemplatesignatureType',
+    'e_ezsigntemplatesignature_signaturepad' => 'eEzsigntemplatesignatureSignaturepad',
+    'e_ezsigntemplatesignature_signaturepadrequired' => 'eEzsigntemplatesignatureSignaturepadrequired',
     'e_ezsigntemplatesignature_consultationtrigger' => 'eEzsigntemplatesignatureConsultationtrigger',
     't_ezsigntemplatesignature_tooltip' => 'tEzsigntemplatesignatureTooltip',
     'e_ezsigntemplatesignature_tooltipposition' => 'eEzsigntemplatesignatureTooltipposition',

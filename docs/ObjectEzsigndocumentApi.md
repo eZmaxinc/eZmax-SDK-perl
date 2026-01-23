@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**ezsigndocument_delete_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_delete_object_v1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
 [**ezsigndocument_edit_ezsignannotations_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignannotations_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignannotations | Edit multiple Ezsignannotations
 [**ezsigndocument_edit_ezsignformfieldgroups_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignformfieldgroups_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups
+[**ezsigndocument_edit_ezsignformfieldgroups_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignformfieldgroups_v2) | **PUT** /2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups
 [**ezsigndocument_edit_ezsignsignatures_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignsignatures_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures
 [**ezsigndocument_edit_ezsignsignatures_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_ezsignsignatures_v2) | **PUT** /2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures
 [**ezsigndocument_edit_object_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_edit_object_v1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Edit an existing Ezsigndocument
@@ -29,6 +30,7 @@ Method | HTTP request | Description
 [**ezsigndocument_flatten_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_flatten_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten | Flatten
 [**ezsigndocument_get_actionable_elements_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
 [**ezsigndocument_get_actionable_elements_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
+[**ezsigndocument_get_actionable_elements_v3**](ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v3) | **GET** /3/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
 [**ezsigndocument_get_attachments_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_attachments_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getAttachments | Retrieve Ezsigndocument&#39;s Attachments
 [**ezsigndocument_get_completed_elements_v1**](ObjectEzsigndocumentApi.md#ezsigndocument_get_completed_elements_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements | Retrieve completed elements for the Ezsigndocument
 [**ezsigndocument_get_completed_elements_v2**](ObjectEzsigndocumentApi.md#ezsigndocument_get_completed_elements_v2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements | Retrieve completed elements for the Ezsigndocument
@@ -680,6 +682,59 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ezsigndocument_edit_ezsignformfieldgroups_v2**
+> EzsigndocumentEditEzsignformfieldgroupsV2Response ezsigndocument_edit_ezsignformfieldgroups_v2(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsigndocument_edit_ezsignformfieldgroups_v2_request => $ezsigndocument_edit_ezsignformfieldgroups_v2_request)
+
+Edit multiple Ezsignformfieldgroups
+
+Using this endpoint, you can edit multiple Ezsignformfieldgroups at the same time.
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsigndocumentApi;
+my $api_instance = EzmaxApi::ObjectEzsigndocumentApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsigndocument_id = 56; # int | 
+my $ezsigndocument_edit_ezsignformfieldgroups_v2_request = EzmaxApi::Object::EzsigndocumentEditEzsignformfieldgroupsV2Request->new(); # EzsigndocumentEditEzsignformfieldgroupsV2Request | 
+
+eval {
+    my $result = $api_instance->ezsigndocument_edit_ezsignformfieldgroups_v2(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsigndocument_edit_ezsignformfieldgroups_v2_request => $ezsigndocument_edit_ezsignformfieldgroups_v2_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsigndocumentApi->ezsigndocument_edit_ezsignformfieldgroups_v2: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsigndocument_id** | **int**|  | 
+ **ezsigndocument_edit_ezsignformfieldgroups_v2_request** | [**EzsigndocumentEditEzsignformfieldgroupsV2Request**](EzsigndocumentEditEzsignformfieldgroupsV2Request.md)|  | 
+
+### Return type
+
+[**EzsigndocumentEditEzsignformfieldgroupsV2Response**](EzsigndocumentEditEzsignformfieldgroupsV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ezsigndocument_edit_ezsignsignatures_v1**
 > EzsigndocumentEditEzsignsignaturesV1Response ezsigndocument_edit_ezsignsignatures_v1(pki_ezsigndocument_id => $pki_ezsigndocument_id, ezsigndocument_edit_ezsignsignatures_v1_request => $ezsigndocument_edit_ezsignsignatures_v1_request)
 
@@ -1088,6 +1143,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsigndocumentGetActionableElementsV2Response**](EzsigndocumentGetActionableElementsV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigndocument_get_actionable_elements_v3**
+> EzsigndocumentGetActionableElementsV3Response ezsigndocument_get_actionable_elements_v3(pki_ezsigndocument_id => $pki_ezsigndocument_id)
+
+Retrieve actionable elements for the Ezsigndocument
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsigndocumentApi;
+my $api_instance = EzmaxApi::ObjectEzsigndocumentApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsigndocument_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->ezsigndocument_get_actionable_elements_v3(pki_ezsigndocument_id => $pki_ezsigndocument_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsigndocumentApi->ezsigndocument_get_actionable_elements_v3: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsigndocument_id** | **int**|  | 
+
+### Return type
+
+[**EzsigndocumentGetActionableElementsV3Response**](EzsigndocumentGetActionableElementsV3Response.md)
 
 ### Authorization
 
