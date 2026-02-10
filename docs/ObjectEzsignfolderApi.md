@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ezsignfolder_batch_download_v1**
-> string ezsignfolder_batch_download_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request => $ezsignfolder_batch_download_v1_request, accept => $accept)
+> string ezsignfolder_batch_download_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request => $ezsignfolder_batch_download_v1_request)
 
 Download multiples files from an Ezsignfolder
 
@@ -118,10 +118,9 @@ my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
 
 my $pki_ezsignfolder_id = 56; # int | 
 my $ezsignfolder_batch_download_v1_request = EzmaxApi::Object::EzsignfolderBatchDownloadV1Request->new(); # EzsignfolderBatchDownloadV1Request | 
-my $accept = "accept_example"; # string | Test csharp
 
 eval {
-    my $result = $api_instance->ezsignfolder_batch_download_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request => $ezsignfolder_batch_download_v1_request, accept => $accept);
+    my $result = $api_instance->ezsignfolder_batch_download_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, ezsignfolder_batch_download_v1_request => $ezsignfolder_batch_download_v1_request);
     print Dumper($result);
 };
 if ($@) {
@@ -135,7 +134,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pki_ezsignfolder_id** | **int**|  | 
  **ezsignfolder_batch_download_v1_request** | [**EzsignfolderBatchDownloadV1Request**](EzsignfolderBatchDownloadV1Request.md)|  | 
- **accept** | **string**| Test csharp | [optional] 
 
 ### Return type
 

@@ -138,7 +138,6 @@ sub ezsignfolder_archive_v1 {
 #
 # @param int $pki_ezsignfolder_id  (required)
 # @param EzsignfolderBatchDownloadV1Request $ezsignfolder_batch_download_v1_request  (required)
-# @param string $accept Test csharp (optional)
 {
     my $params = {
     'pki_ezsignfolder_id' => {
@@ -150,11 +149,6 @@ sub ezsignfolder_archive_v1 {
         data_type => 'EzsignfolderBatchDownloadV1Request',
         description => '',
         required => '1',
-    },
-    'accept' => {
-        data_type => 'string',
-        description => 'Test csharp',
-        required => '0',
     },
     };
     __PACKAGE__->method_documentation->{ 'ezsignfolder_batch_download_v1' } = {
@@ -192,11 +186,6 @@ sub ezsignfolder_batch_download_v1 {
         $header_params->{'Accept'} = $_header_accept;
     }
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
-
-    # header params
-    if ( exists $args{'accept'}) {
-        $header_params->{'Accept'} = $self->{api_client}->to_header_value($args{'accept'});
-    }
 
     # path params
     if ( exists $args{'pki_ezsignfolder_id'}) {
