@@ -1,0 +1,14 @@
+# EzmaxApi::Object::FieldEEzsigntemplateglobalannotationVerticalalignment
+
+## Load the model package
+```perl
+use EzmaxApi::Object::FieldEEzsigntemplateglobalannotationVerticalalignment;
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
