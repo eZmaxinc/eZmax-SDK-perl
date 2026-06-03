@@ -406,6 +406,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_user_ezsigntemplaterolegrouping' => {
+        datatype => 'boolean',
+        base_name => 'bUserEzsigntemplaterolegrouping',
+        description => 'Whether we group or not the Ezsigntemplate roles',
+        format => '',
+        read_only => '',
+            },
     'dt_user_ezsignprepaidexpiration' => {
         datatype => 'string',
         base_name => 'dtUserEzsignprepaidexpiration',
@@ -455,6 +462,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_activesession_maillinglistrequest' => {
+        datatype => 'boolean',
+        base_name => 'bActivesessionMaillinglistrequest',
+        description => 'If you need to ask which mailing lists this user wants to subscribe to',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -483,13 +497,15 @@ __PACKAGE__->openapi_types( {
     'e_user_ezsignaccess' => 'FieldEUserEzsignaccess',
     'e_user_ezsignprepaid' => 'FieldEUserEzsignprepaid',
     'b_user_ezsigntrial' => 'boolean',
+    'b_user_ezsigntemplaterolegrouping' => 'boolean',
     'dt_user_ezsignprepaidexpiration' => 'string',
     'dt_user_npsrequest' => 'string',
     'a_pki_permission_id' => 'ARRAY[int]',
     'obj_user_real' => 'ActivesessionResponseCompoundUser',
     'obj_user_cloned' => 'ActivesessionResponseCompoundUser',
     'obj_apikey' => 'ActivesessionResponseCompoundApikey',
-    'a_e_module_internalname' => 'ARRAY[string]'
+    'a_e_module_internalname' => 'ARRAY[string]',
+    'b_activesession_maillinglistrequest' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -518,13 +534,15 @@ __PACKAGE__->attribute_map( {
     'e_user_ezsignaccess' => 'eUserEzsignaccess',
     'e_user_ezsignprepaid' => 'eUserEzsignprepaid',
     'b_user_ezsigntrial' => 'bUserEzsigntrial',
+    'b_user_ezsigntemplaterolegrouping' => 'bUserEzsigntemplaterolegrouping',
     'dt_user_ezsignprepaidexpiration' => 'dtUserEzsignprepaidexpiration',
     'dt_user_npsrequest' => 'dtUserNpsrequest',
     'a_pki_permission_id' => 'a_pkiPermissionID',
     'obj_user_real' => 'objUserReal',
     'obj_user_cloned' => 'objUserCloned',
     'obj_apikey' => 'objApikey',
-    'a_e_module_internalname' => 'a_eModuleInternalname'
+    'a_e_module_internalname' => 'a_eModuleInternalname',
+    'b_activesession_maillinglistrequest' => 'bActivesessionMaillinglistrequest'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

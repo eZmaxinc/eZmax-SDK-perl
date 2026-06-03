@@ -33,6 +33,7 @@ use DateTime;
 use EzmaxApi::Object::FieldEEzsigntemplateglobalannotationHorizontalalignment;
 use EzmaxApi::Object::FieldEEzsigntemplateglobalannotationType;
 use EzmaxApi::Object::FieldEEzsigntemplateglobalannotationVerticalalignment;
+use EzmaxApi::Object::TextstylestaticRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -229,17 +230,17 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'fki_ezsigntemplateglobaldocumentpage_id' => {
-        datatype => 'int',
-        base_name => 'fkiEzsigntemplateglobaldocumentpageID',
-        description => 'The unique ID of the Ezsigntemplateglobaldocumentpage',
-        format => '',
-        read_only => '',
-            },
     'fki_textstylestatic_id' => {
         datatype => 'int',
         base_name => 'fkiTextstylestaticID',
         description => 'The unique ID of the Textstylestatic',
+        format => '',
+        read_only => '',
+            },
+    'obj_textstylestatic' => {
+        datatype => 'TextstylestaticRequestCompound',
+        base_name => 'objTextstylestatic',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -292,6 +293,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_ezsigntemplateglobaldocumentpage_pagenumber' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplateglobaldocumentpagePagenumber',
+        description => 'The page number in the Ezsigntemplateglobaldocument',
+        format => '',
+        read_only => '',
+            },
     's_ezsigntemplateglobalannotation_description' => {
         datatype => 'string',
         base_name => 'sEzsigntemplateglobalannotationDescription',
@@ -317,8 +325,8 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'pki_ezsigntemplateglobalannotation_id' => 'int',
-    'fki_ezsigntemplateglobaldocumentpage_id' => 'int',
     'fki_textstylestatic_id' => 'int',
+    'obj_textstylestatic' => 'TextstylestaticRequestCompound',
     'e_ezsigntemplateglobalannotation_horizontalalignment' => 'FieldEEzsigntemplateglobalannotationHorizontalalignment',
     'e_ezsigntemplateglobalannotation_verticalalignment' => 'FieldEEzsigntemplateglobalannotationVerticalalignment',
     'e_ezsigntemplateglobalannotation_type' => 'FieldEEzsigntemplateglobalannotationType',
@@ -326,6 +334,7 @@ __PACKAGE__->openapi_types( {
     'i_ezsigntemplateglobalannotation_y' => 'int',
     'i_ezsigntemplateglobalannotation_width' => 'int',
     'i_ezsigntemplateglobalannotation_height' => 'int',
+    'i_ezsigntemplateglobaldocumentpage_pagenumber' => 'int',
     's_ezsigntemplateglobalannotation_description' => 'string',
     's_ezsigntemplateglobalannotation_defaulttext' => 'string',
     's_ezsigntemplateglobalannotation_dropdownvalues' => 'string'
@@ -333,8 +342,8 @@ __PACKAGE__->openapi_types( {
 
 __PACKAGE__->attribute_map( {
     'pki_ezsigntemplateglobalannotation_id' => 'pkiEzsigntemplateglobalannotationID',
-    'fki_ezsigntemplateglobaldocumentpage_id' => 'fkiEzsigntemplateglobaldocumentpageID',
     'fki_textstylestatic_id' => 'fkiTextstylestaticID',
+    'obj_textstylestatic' => 'objTextstylestatic',
     'e_ezsigntemplateglobalannotation_horizontalalignment' => 'eEzsigntemplateglobalannotationHorizontalalignment',
     'e_ezsigntemplateglobalannotation_verticalalignment' => 'eEzsigntemplateglobalannotationVerticalalignment',
     'e_ezsigntemplateglobalannotation_type' => 'eEzsigntemplateglobalannotationType',
@@ -342,6 +351,7 @@ __PACKAGE__->attribute_map( {
     'i_ezsigntemplateglobalannotation_y' => 'iEzsigntemplateglobalannotationY',
     'i_ezsigntemplateglobalannotation_width' => 'iEzsigntemplateglobalannotationWidth',
     'i_ezsigntemplateglobalannotation_height' => 'iEzsigntemplateglobalannotationHeight',
+    'i_ezsigntemplateglobaldocumentpage_pagenumber' => 'iEzsigntemplateglobaldocumentpagePagenumber',
     's_ezsigntemplateglobalannotation_description' => 'sEzsigntemplateglobalannotationDescription',
     's_ezsigntemplateglobalannotation_defaulttext' => 'sEzsigntemplateglobalannotationDefaulttext',
     's_ezsigntemplateglobalannotation_dropdownvalues' => 'sEzsigntemplateglobalannotationDropdownvalues'

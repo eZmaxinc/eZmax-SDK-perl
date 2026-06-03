@@ -38,6 +38,7 @@ use EzmaxApi::Object::FieldEEzsignfoldertypeDocumentmerge;
 use EzmaxApi::Object::FieldEEzsignfoldertypePdfanoncompliantaction;
 use EzmaxApi::Object::FieldEEzsignfoldertypePdfarequirement;
 use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
+use EzmaxApi::Object::FieldEEzsignfoldertypeSignaturedatedisplay;
 use EzmaxApi::Object::FieldEEzsignfoldertypeSigneraccess;
 use EzmaxApi::Object::MultilingualEzsignfoldertypeName;
 use EzmaxApi::Object::UsergroupResponse;
@@ -294,6 +295,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsignfoldertype_signaturedatedisplay' => {
+        datatype => 'FieldEEzsignfoldertypeSignaturedatedisplay',
+        base_name => 'eEzsignfoldertypeSignaturedatedisplay',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignfoldertype_signaturedatecustomformat' => {
+        datatype => 'string',
+        base_name => 'sEzsignfoldertypeSignaturedatecustomformat',
+        description => 'The custom date format to use  You can use the codes below and they will be replaced at signature time. Text values like month and day names will be rendered in the proper language. Other text will be left as-is.  The codes examples below are based on the following datetime: Thursday, January 6, 2022 at 08:07:09 EST  For example, the format \&quot;Signature date: {MM}/{DD}/{YYYY} {hh}:{mm}\&quot; would become \&quot;Signature date: 01/06/2022 08:07\&quot;  **Year**  | Code | Example | | - | - | | {YYYY} | 2022 | | {YY} | 22 |  **Month**  | Code | Example | | - | - | | {MonthCapitalize} | Janvier | | {Month} | janvier | | {MM} | 01 | | {M} | 1 |  **Day**  | Code | Example | | - | - | | {DayCapitalize} | Jeudi | | {Day} | jeudi | | {DD} | 06 | | {D} | 6 |  **Hour**  | Code | Example | | - | - | | {hh} | 08 |  **Minute**  | Code | Example | | - | - | | {mm} | 07 |  **Second**  | Code | Example | | - | - | | {ss} | 09 |        **Timezone**  | Code | Example | | - | - | | {Z} | EST |       **Time**  | Code | Example | | - | - | | {Time} | 08:07:09 |   | {TimeZ} | 08:07:09 EST |     **Date**  | Code | Example | | - | - | | {Date} | 2022-01-06 |   | {DateText} | 1er Janvier 2022 |  **Full**  | Code | Example | | - | - | | {DateTime} | 2022-01-06 08:07:09 |   | {DateTimeZ} | 2022-01-06 08:07:09 EST | ',
+        format => '',
+        read_only => '',
+            },
     'e_ezsignfoldertype_documentdependency' => {
         datatype => 'FieldEEzsignfoldertypeDocumentdependency',
         base_name => 'eEzsignfoldertypeDocumentdependency',
@@ -381,7 +396,7 @@ __PACKAGE__->method_documentation({
     'i_ezsignfoldertype_sendreminderfirstdays' => {
         datatype => 'int',
         base_name => 'iEzsignfoldertypeSendreminderfirstdays',
-        description => 'The number of days before the the first reminder sending',
+        description => 'The number of days before the first reminder sending',
         format => '',
         read_only => '',
             },
@@ -487,6 +502,34 @@ __PACKAGE__->method_documentation({
         datatype => 'boolean',
         base_name => 'bEzsignfoldertypeReassigngroup',
         description => 'Wheter if Reassignment of signatures of the groups to which the user belongs is authorized by a user to himself',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_senddocumentmergetoemail' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSenddocumentmergetoemail',
+        description => 'Whether we send the merged documents in the email to external recipient',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_senddocumentmergetoezsignsigner' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSenddocumentmergetoezsignsigner',
+        description => 'Whether we send the merged documents in the email to Ezsignsigner',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_senddocumentmergetoreceivealldocument' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSenddocumentmergetoreceivealldocument',
+        description => 'Whether we send the merged documents in the email to user and Ezsignsigner who receive all documents.',
+        format => '',
+        read_only => '',
+            },
+    'b_ezsignfoldertype_senddocumentmergetouser' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfoldertypeSenddocumentmergetouser',
+        description => 'Whether we send the merged documents in the email to User',
         format => '',
         read_only => '',
             },
@@ -747,6 +790,8 @@ __PACKAGE__->openapi_types( {
     'fki_font_id_formfield' => 'int',
     'fki_font_id_signature' => 'int',
     'fki_pdfalevel_id_convert' => 'int',
+    'e_ezsignfoldertype_signaturedatedisplay' => 'FieldEEzsignfoldertypeSignaturedatedisplay',
+    's_ezsignfoldertype_signaturedatecustomformat' => 'string',
     'e_ezsignfoldertype_documentdependency' => 'FieldEEzsignfoldertypeDocumentdependency',
     's_branding_description_x' => 'string',
     's_billingentityinternal_description_x' => 'string',
@@ -775,6 +820,10 @@ __PACKAGE__->openapi_types( {
     'b_ezsignfoldertype_reassignezsignsigner' => 'boolean',
     'b_ezsignfoldertype_reassignuser' => 'boolean',
     'b_ezsignfoldertype_reassigngroup' => 'boolean',
+    'b_ezsignfoldertype_senddocumentmergetoemail' => 'boolean',
+    'b_ezsignfoldertype_senddocumentmergetoezsignsigner' => 'boolean',
+    'b_ezsignfoldertype_senddocumentmergetoreceivealldocument' => 'boolean',
+    'b_ezsignfoldertype_senddocumentmergetouser' => 'boolean',
     'b_ezsignfoldertype_sendsignedtoezsignsigner' => 'boolean',
     'b_ezsignfoldertype_sendsignedtouser' => 'boolean',
     'b_ezsignfoldertype_sendattachmentezsignsigner' => 'boolean',
@@ -822,6 +871,8 @@ __PACKAGE__->attribute_map( {
     'fki_font_id_formfield' => 'fkiFontIDFormfield',
     'fki_font_id_signature' => 'fkiFontIDSignature',
     'fki_pdfalevel_id_convert' => 'fkiPdfalevelIDConvert',
+    'e_ezsignfoldertype_signaturedatedisplay' => 'eEzsignfoldertypeSignaturedatedisplay',
+    's_ezsignfoldertype_signaturedatecustomformat' => 'sEzsignfoldertypeSignaturedatecustomformat',
     'e_ezsignfoldertype_documentdependency' => 'eEzsignfoldertypeDocumentdependency',
     's_branding_description_x' => 'sBrandingDescriptionX',
     's_billingentityinternal_description_x' => 'sBillingentityinternalDescriptionX',
@@ -850,6 +901,10 @@ __PACKAGE__->attribute_map( {
     'b_ezsignfoldertype_reassignezsignsigner' => 'bEzsignfoldertypeReassignezsignsigner',
     'b_ezsignfoldertype_reassignuser' => 'bEzsignfoldertypeReassignuser',
     'b_ezsignfoldertype_reassigngroup' => 'bEzsignfoldertypeReassigngroup',
+    'b_ezsignfoldertype_senddocumentmergetoemail' => 'bEzsignfoldertypeSenddocumentmergetoemail',
+    'b_ezsignfoldertype_senddocumentmergetoezsignsigner' => 'bEzsignfoldertypeSenddocumentmergetoezsignsigner',
+    'b_ezsignfoldertype_senddocumentmergetoreceivealldocument' => 'bEzsignfoldertypeSenddocumentmergetoreceivealldocument',
+    'b_ezsignfoldertype_senddocumentmergetouser' => 'bEzsignfoldertypeSenddocumentmergetouser',
     'b_ezsignfoldertype_sendsignedtoezsignsigner' => 'bEzsignfoldertypeSendsignedtoezsignsigner',
     'b_ezsignfoldertype_sendsignedtouser' => 'bEzsignfoldertypeSendsignedtouser',
     'b_ezsignfoldertype_sendattachmentezsignsigner' => 'bEzsignfoldertypeSendattachmentezsignsigner',

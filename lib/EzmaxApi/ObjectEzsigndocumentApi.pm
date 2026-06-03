@@ -215,6 +215,89 @@ sub ezsigndocument_apply_ezsigntemplate_v2 {
 }
 
 #
+# ezsigndocument_apply_ezsigntemplate_v3
+#
+# Apply an Ezsigntemplate to the Ezsigndocument
+#
+# @param int $pki_ezsigndocument_id  (required)
+# @param EzsigndocumentApplyEzsigntemplateV3Request $ezsigndocument_apply_ezsigntemplate_v3_request  (required)
+{
+    my $params = {
+    'pki_ezsigndocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsigndocument_apply_ezsigntemplate_v3_request' => {
+        data_type => 'EzsigndocumentApplyEzsigntemplateV3Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_apply_ezsigntemplate_v3' } = {
+        summary => 'Apply an Ezsigntemplate to the Ezsigndocument',
+        params => $params,
+        returns => 'EzsigndocumentApplyEzsigntemplateV3Response',
+        };
+}
+# @return EzsigndocumentApplyEzsigntemplateV3Response
+#
+sub ezsigndocument_apply_ezsigntemplate_v3 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigndocument_id' is set
+    unless (exists $args{'pki_ezsigndocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_apply_ezsigntemplate_v3");
+    }
+
+    # verify the required parameter 'ezsigndocument_apply_ezsigntemplate_v3_request' is set
+    unless (exists $args{'ezsigndocument_apply_ezsigntemplate_v3_request'}) {
+      croak("Missing the required parameter 'ezsigndocument_apply_ezsigntemplate_v3_request' when calling ezsigndocument_apply_ezsigntemplate_v3");
+    }
+
+    # parse inputs
+    my $_resource_path = '/3/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsigndocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigndocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigndocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsigndocument_apply_ezsigntemplate_v3_request'}) {
+        $_body_data = $args{'ezsigndocument_apply_ezsigntemplate_v3_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentApplyEzsigntemplateV3Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsigndocument_apply_ezsigntemplateglobal_v1
 #
 # Apply an Ezsigntemplateglobal to the Ezsigndocument
@@ -294,6 +377,89 @@ sub ezsigndocument_apply_ezsigntemplateglobal_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('EzsigndocumentApplyEzsigntemplateglobalV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsigndocument_apply_ezsigntemplateglobal_v2
+#
+# Apply an Ezsigntemplateglobal to the Ezsigndocument
+#
+# @param int $pki_ezsigndocument_id  (required)
+# @param EzsigndocumentApplyEzsigntemplateglobalV2Request $ezsigndocument_apply_ezsigntemplateglobal_v2_request  (required)
+{
+    my $params = {
+    'pki_ezsigndocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsigndocument_apply_ezsigntemplateglobal_v2_request' => {
+        data_type => 'EzsigndocumentApplyEzsigntemplateglobalV2Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_apply_ezsigntemplateglobal_v2' } = {
+        summary => 'Apply an Ezsigntemplateglobal to the Ezsigndocument',
+        params => $params,
+        returns => 'EzsigndocumentApplyEzsigntemplateglobalV2Response',
+        };
+}
+# @return EzsigndocumentApplyEzsigntemplateglobalV2Response
+#
+sub ezsigndocument_apply_ezsigntemplateglobal_v2 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigndocument_id' is set
+    unless (exists $args{'pki_ezsigndocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_apply_ezsigntemplateglobal_v2");
+    }
+
+    # verify the required parameter 'ezsigndocument_apply_ezsigntemplateglobal_v2_request' is set
+    unless (exists $args{'ezsigndocument_apply_ezsigntemplateglobal_v2_request'}) {
+      croak("Missing the required parameter 'ezsigndocument_apply_ezsigntemplateglobal_v2_request' when calling ezsigndocument_apply_ezsigntemplateglobal_v2");
+    }
+
+    # parse inputs
+    my $_resource_path = '/2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsigndocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigndocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigndocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsigndocument_apply_ezsigntemplateglobal_v2_request'}) {
+        $_body_data = $args{'ezsigndocument_apply_ezsigntemplateglobal_v2_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentApplyEzsigntemplateglobalV2Response', $response);
     return $_response_object;
 }
 

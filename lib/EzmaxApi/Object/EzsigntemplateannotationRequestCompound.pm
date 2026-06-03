@@ -33,6 +33,7 @@ use DateTime;
 use EzmaxApi::Object::FieldEEzsigntemplateannotationHorizontalalignment;
 use EzmaxApi::Object::FieldEEzsigntemplateannotationType;
 use EzmaxApi::Object::FieldEEzsigntemplateannotationVerticalalignment;
+use EzmaxApi::Object::TextstylestaticRequestCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -229,17 +230,10 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    'fki_ezsigntemplatedocumentpage_id' => {
+    'fki_ezsigntemplatedocument_id' => {
         datatype => 'int',
-        base_name => 'fkiEzsigntemplatedocumentpageID',
-        description => 'The unique ID of the Ezsigntemplatedocumentpage',
-        format => '',
-        read_only => '',
-            },
-    'fki_textstylestatic_id' => {
-        datatype => 'int',
-        base_name => 'fkiTextstylestaticID',
-        description => 'The unique ID of the Textstylestatic',
+        base_name => 'fkiEzsigntemplatedocumentID',
+        description => 'The unique ID of the Ezsigntemplatedocument',
         format => '',
         read_only => '',
             },
@@ -292,6 +286,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_ezsigntemplatedocumentpage_pagenumber' => {
+        datatype => 'int',
+        base_name => 'iEzsigntemplatedocumentpagePagenumber',
+        description => 'The page number in the Ezsigntemplatedocument',
+        format => '',
+        read_only => '',
+            },
     's_ezsigntemplateannotation_description' => {
         datatype => 'string',
         base_name => 'sEzsigntemplateannotationDescription',
@@ -306,10 +307,17 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    's_ezsigntemplateannotationn_dropdownvalues' => {
+    's_ezsigntemplateannotation_dropdownvalues' => {
         datatype => 'string',
-        base_name => 'sEzsigntemplateannotationnDropdownvalues',
+        base_name => 'sEzsigntemplateannotationDropdownvalues',
         description => 'The ndropdownvalues of the Ezsigntemplateannotation',
+        format => '',
+        read_only => '',
+            },
+    'obj_textstylestatic' => {
+        datatype => 'TextstylestaticRequestCompound',
+        base_name => 'objTextstylestatic',
+        description => '',
         format => '',
         read_only => '',
             },
@@ -317,8 +325,7 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'pki_ezsigntemplateannotation_id' => 'int',
-    'fki_ezsigntemplatedocumentpage_id' => 'int',
-    'fki_textstylestatic_id' => 'int',
+    'fki_ezsigntemplatedocument_id' => 'int',
     'e_ezsigntemplateannotation_horizontalalignment' => 'FieldEEzsigntemplateannotationHorizontalalignment',
     'e_ezsigntemplateannotation_verticalalignment' => 'FieldEEzsigntemplateannotationVerticalalignment',
     'e_ezsigntemplateannotation_type' => 'FieldEEzsigntemplateannotationType',
@@ -326,15 +333,16 @@ __PACKAGE__->openapi_types( {
     'i_ezsigntemplateannotation_y' => 'int',
     'i_ezsigntemplateannotation_width' => 'int',
     'i_ezsigntemplateannotation_height' => 'int',
+    'i_ezsigntemplatedocumentpage_pagenumber' => 'int',
     's_ezsigntemplateannotation_description' => 'string',
     's_ezsigntemplateannotation_defaulttext' => 'string',
-    's_ezsigntemplateannotationn_dropdownvalues' => 'string'
+    's_ezsigntemplateannotation_dropdownvalues' => 'string',
+    'obj_textstylestatic' => 'TextstylestaticRequestCompound'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_ezsigntemplateannotation_id' => 'pkiEzsigntemplateannotationID',
-    'fki_ezsigntemplatedocumentpage_id' => 'fkiEzsigntemplatedocumentpageID',
-    'fki_textstylestatic_id' => 'fkiTextstylestaticID',
+    'fki_ezsigntemplatedocument_id' => 'fkiEzsigntemplatedocumentID',
     'e_ezsigntemplateannotation_horizontalalignment' => 'eEzsigntemplateannotationHorizontalalignment',
     'e_ezsigntemplateannotation_verticalalignment' => 'eEzsigntemplateannotationVerticalalignment',
     'e_ezsigntemplateannotation_type' => 'eEzsigntemplateannotationType',
@@ -342,9 +350,11 @@ __PACKAGE__->attribute_map( {
     'i_ezsigntemplateannotation_y' => 'iEzsigntemplateannotationY',
     'i_ezsigntemplateannotation_width' => 'iEzsigntemplateannotationWidth',
     'i_ezsigntemplateannotation_height' => 'iEzsigntemplateannotationHeight',
+    'i_ezsigntemplatedocumentpage_pagenumber' => 'iEzsigntemplatedocumentpagePagenumber',
     's_ezsigntemplateannotation_description' => 'sEzsigntemplateannotationDescription',
     's_ezsigntemplateannotation_defaulttext' => 'sEzsigntemplateannotationDefaulttext',
-    's_ezsigntemplateannotationn_dropdownvalues' => 'sEzsigntemplateannotationnDropdownvalues'
+    's_ezsigntemplateannotation_dropdownvalues' => 'sEzsigntemplateannotationDropdownvalues',
+    'obj_textstylestatic' => 'objTextstylestatic'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

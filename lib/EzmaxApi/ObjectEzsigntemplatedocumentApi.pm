@@ -177,6 +177,89 @@ sub ezsigntemplatedocument_download_v1 {
 }
 
 #
+# ezsigntemplatedocument_edit_ezsigntemplateannotations_v1
+#
+# Edit multiple Ezsigntemplateannotations
+#
+# @param int $pki_ezsigntemplatedocument_id  (required)
+# @param EzsigntemplatedocumentEditEzsigntemplateannotationsV1Request $ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_request  (required)
+{
+    my $params = {
+    'pki_ezsigntemplatedocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_request' => {
+        data_type => 'EzsigntemplatedocumentEditEzsigntemplateannotationsV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigntemplatedocument_edit_ezsigntemplateannotations_v1' } = {
+        summary => 'Edit multiple Ezsigntemplateannotations',
+        params => $params,
+        returns => 'EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response',
+        };
+}
+# @return EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response
+#
+sub ezsigntemplatedocument_edit_ezsigntemplateannotations_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigntemplatedocument_id' is set
+    unless (exists $args{'pki_ezsigntemplatedocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigntemplatedocument_id' when calling ezsigntemplatedocument_edit_ezsigntemplateannotations_v1");
+    }
+
+    # verify the required parameter 'ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_request' is set
+    unless (exists $args{'ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_request'}) {
+      croak("Missing the required parameter 'ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_request' when calling ezsigntemplatedocument_edit_ezsigntemplateannotations_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateannotations';
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsigntemplatedocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigntemplatedocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigntemplatedocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_request'}) {
+        $_body_data = $args{'ezsigntemplatedocument_edit_ezsigntemplateannotations_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsigntemplatedocument_edit_ezsigntemplatedocumentpagerecognitions_v1
 #
 # Edit multiple Ezsigntemplatedocumentpagerecognitions
@@ -754,6 +837,73 @@ sub ezsigntemplatedocument_flatten_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('EzsigntemplatedocumentFlattenV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsigntemplatedocument_get_ezsigntemplateannotations_v1
+#
+# Retrieve an existing Ezsigntemplatedocument's Ezsigntemplateannotations
+#
+# @param int $pki_ezsigntemplatedocument_id  (required)
+{
+    my $params = {
+    'pki_ezsigntemplatedocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigntemplatedocument_get_ezsigntemplateannotations_v1' } = {
+        summary => 'Retrieve an existing Ezsigntemplatedocument&#39;s Ezsigntemplateannotations',
+        params => $params,
+        returns => 'EzsigntemplatedocumentGetEzsigntemplateannotationsV1Response',
+        };
+}
+# @return EzsigntemplatedocumentGetEzsigntemplateannotationsV1Response
+#
+sub ezsigntemplatedocument_get_ezsigntemplateannotations_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigntemplatedocument_id' is set
+    unless (exists $args{'pki_ezsigntemplatedocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigntemplatedocument_id' when calling ezsigntemplatedocument_get_ezsigntemplateannotations_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateannotations';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsigntemplatedocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigntemplatedocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigntemplatedocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigntemplatedocumentGetEzsigntemplateannotationsV1Response', $response);
     return $_response_object;
 }
 

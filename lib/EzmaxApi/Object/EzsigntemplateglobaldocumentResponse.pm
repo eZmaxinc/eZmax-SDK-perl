@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldEEzsigntemplateglobaldocumentAcceptationtype;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -233,6 +234,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_ezsigntemplateglobaldocument_acceptationtype' => {
+        datatype => 'FieldEEzsigntemplateglobaldocumentAcceptationtype',
+        base_name => 'eEzsigntemplateglobaldocumentAcceptationtype',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'i_ezsigntemplateglobaldocument_pagetotal' => {
         datatype => 'int',
         base_name => 'iEzsigntemplateglobaldocumentPagetotal',
@@ -252,6 +260,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'pki_ezsigntemplateglobaldocument_id' => 'int',
     's_ezsigntemplateglobaldocument_name' => 'string',
+    'e_ezsigntemplateglobaldocument_acceptationtype' => 'FieldEEzsigntemplateglobaldocumentAcceptationtype',
     'i_ezsigntemplateglobaldocument_pagetotal' => 'int',
     'i_ezsigntemplateglobaldocument_signaturetotal' => 'int'
 } );
@@ -259,6 +268,7 @@ __PACKAGE__->openapi_types( {
 __PACKAGE__->attribute_map( {
     'pki_ezsigntemplateglobaldocument_id' => 'pkiEzsigntemplateglobaldocumentID',
     's_ezsigntemplateglobaldocument_name' => 'sEzsigntemplateglobaldocumentName',
+    'e_ezsigntemplateglobaldocument_acceptationtype' => 'eEzsigntemplateglobaldocumentAcceptationtype',
     'i_ezsigntemplateglobaldocument_pagetotal' => 'iEzsigntemplateglobaldocumentPagetotal',
     'i_ezsigntemplateglobaldocument_signaturetotal' => 'iEzsigntemplateglobaldocumentSignaturetotal'
 } );

@@ -32,6 +32,7 @@ use DateTime;
 
 use EzmaxApi::Object::CommonAudit;
 use EzmaxApi::Object::CustomEzsignfoldertypeTemplateResponse;
+use EzmaxApi::Object::EzsigntemplateannotationResponseCompound;
 use EzmaxApi::Object::EzsigntemplatedocumentResponse;
 use EzmaxApi::Object::EzsigntemplatesignerResponseCompound;
 use EzmaxApi::Object::FieldEEzsigntemplateRecognition;
@@ -365,6 +366,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_ezsigntemplateannotation' => {
+        datatype => 'ARRAY[EzsigntemplateannotationResponseCompound]',
+        base_name => 'a_objEzsigntemplateannotation',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -387,7 +395,8 @@ __PACKAGE__->openapi_types( {
     'b_ezsigntemplate_editallowed' => 'boolean',
     'e_ezsigntemplate_type' => 'FieldEEzsigntemplateType',
     'obj_ezsigntemplatedocument' => 'EzsigntemplatedocumentResponse',
-    'a_obj_ezsigntemplatesigner' => 'ARRAY[EzsigntemplatesignerResponseCompound]'
+    'a_obj_ezsigntemplatesigner' => 'ARRAY[EzsigntemplatesignerResponseCompound]',
+    'a_obj_ezsigntemplateannotation' => 'ARRAY[EzsigntemplateannotationResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -410,7 +419,8 @@ __PACKAGE__->attribute_map( {
     'b_ezsigntemplate_editallowed' => 'bEzsigntemplateEditallowed',
     'e_ezsigntemplate_type' => 'eEzsigntemplateType',
     'obj_ezsigntemplatedocument' => 'objEzsigntemplatedocument',
-    'a_obj_ezsigntemplatesigner' => 'a_objEzsigntemplatesigner'
+    'a_obj_ezsigntemplatesigner' => 'a_objEzsigntemplatesigner',
+    'a_obj_ezsigntemplateannotation' => 'a_objEzsigntemplateannotation'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

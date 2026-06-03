@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **d_buyercontract_minimumprice** | **string** | The minimumprice of the Buyercontract | 
 **d_buyercontract_maximumprice** | **string** | The maximumprice of the Buyercontract | 
 **e_buyercontract_type** | [**FieldEBuyercontractType**](FieldEBuyercontractType.md) |  | 
+**s_buyercontract_contract** | **string** | The number of the Buyercontract | [optional] 
 **dt_buyercontract_date** | **string** | The date of the Buyercontract | 
 **dt_buyercontract_expirationdate** | **string** | The expirationdate of the Buyercontract | [optional] 
 **b_buyercontract_isactive** | **boolean** | Whether the buyercontract is active or not | 

@@ -625,6 +625,89 @@ sub ezsignfolder_dispose_v1 {
 }
 
 #
+# ezsignfolder_duplicate_v1
+#
+# Duplicate the Ezsignfolder
+#
+# @param int $pki_ezsignfolder_id  (required)
+# @param EzsignfolderDuplicateV1Request $ezsignfolder_duplicate_v1_request  (required)
+{
+    my $params = {
+    'pki_ezsignfolder_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsignfolder_duplicate_v1_request' => {
+        data_type => 'EzsignfolderDuplicateV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignfolder_duplicate_v1' } = {
+        summary => 'Duplicate the Ezsignfolder',
+        params => $params,
+        returns => 'EzsignfolderDuplicateV1Response',
+        };
+}
+# @return EzsignfolderDuplicateV1Response
+#
+sub ezsignfolder_duplicate_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignfolder_id' is set
+    unless (exists $args{'pki_ezsignfolder_id'}) {
+      croak("Missing the required parameter 'pki_ezsignfolder_id' when calling ezsignfolder_duplicate_v1");
+    }
+
+    # verify the required parameter 'ezsignfolder_duplicate_v1_request' is set
+    unless (exists $args{'ezsignfolder_duplicate_v1_request'}) {
+      croak("Missing the required parameter 'ezsignfolder_duplicate_v1_request' when calling ezsignfolder_duplicate_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignfolder/{pkiEzsignfolderID}/duplicate';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsignfolder_id'}) {
+        my $_base_variable = "{" . "pkiEzsignfolderID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignfolder_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsignfolder_duplicate_v1_request'}) {
+        $_body_data = $args{'ezsignfolder_duplicate_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignfolderDuplicateV1Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsignfolder_edit_object_v3
 #
 # Edit an existing Ezsignfolder
@@ -1394,6 +1477,73 @@ sub ezsignfolder_get_communicationsenders_v1 {
 }
 
 #
+# ezsignfolder_get_ezsignannotations_v1
+#
+# Retrieve an existing Ezsignfolder's Ezsignannotations
+#
+# @param int $pki_ezsignfolder_id  (required)
+{
+    my $params = {
+    'pki_ezsignfolder_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignfolder_get_ezsignannotations_v1' } = {
+        summary => 'Retrieve an existing Ezsignfolder&#39;s Ezsignannotations',
+        params => $params,
+        returns => 'EzsignfolderGetEzsignannotationsV1Response',
+        };
+}
+# @return EzsignfolderGetEzsignannotationsV1Response
+#
+sub ezsignfolder_get_ezsignannotations_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignfolder_id' is set
+    unless (exists $args{'pki_ezsignfolder_id'}) {
+      croak("Missing the required parameter 'pki_ezsignfolder_id' when calling ezsignfolder_get_ezsignannotations_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignannotations';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsignfolder_id'}) {
+        my $_base_variable = "{" . "pkiEzsignfolderID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignfolder_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignfolderGetEzsignannotationsV1Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsignfolder_get_ezsigndocuments_v1
 #
 # Retrieve an existing Ezsignfolder's Ezsigndocuments
@@ -1595,6 +1745,73 @@ sub ezsignfolder_get_ezsignfoldersignerassociations_v1 {
 }
 
 #
+# ezsignfolder_get_ezsignformfieldgroups_v1
+#
+# Retrieve an existing Ezsignfolder's Ezsignformfieldgroups
+#
+# @param int $pki_ezsignfolder_id  (required)
+{
+    my $params = {
+    'pki_ezsignfolder_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignfolder_get_ezsignformfieldgroups_v1' } = {
+        summary => 'Retrieve an existing Ezsignfolder&#39;s Ezsignformfieldgroups',
+        params => $params,
+        returns => 'EzsignfolderGetEzsignformfieldgroupsV1Response',
+        };
+}
+# @return EzsignfolderGetEzsignformfieldgroupsV1Response
+#
+sub ezsignfolder_get_ezsignformfieldgroups_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignfolder_id' is set
+    unless (exists $args{'pki_ezsignfolder_id'}) {
+      croak("Missing the required parameter 'pki_ezsignfolder_id' when calling ezsignfolder_get_ezsignformfieldgroups_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignformfieldgroups';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsignfolder_id'}) {
+        my $_base_variable = "{" . "pkiEzsignfolderID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignfolder_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignfolderGetEzsignformfieldgroupsV1Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsignfolder_get_ezsignsignatures_automatic_v1
 #
 # Retrieve an existing Ezsignfolder's automatic Ezsignsignatures
@@ -1658,6 +1875,73 @@ sub ezsignfolder_get_ezsignsignatures_automatic_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('EzsignfolderGetEzsignsignaturesAutomaticV1Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsignfolder_get_ezsignsignatures_v1
+#
+# Retrieve an existing Ezsignfolder's Ezsignsignatures
+#
+# @param int $pki_ezsignfolder_id  (required)
+{
+    my $params = {
+    'pki_ezsignfolder_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignfolder_get_ezsignsignatures_v1' } = {
+        summary => 'Retrieve an existing Ezsignfolder&#39;s Ezsignsignatures',
+        params => $params,
+        returns => 'EzsignfolderGetEzsignsignaturesV1Response',
+        };
+}
+# @return EzsignfolderGetEzsignsignaturesV1Response
+#
+sub ezsignfolder_get_ezsignsignatures_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignfolder_id' is set
+    unless (exists $args{'pki_ezsignfolder_id'}) {
+      croak("Missing the required parameter 'pki_ezsignfolder_id' when calling ezsignfolder_get_ezsignsignatures_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignsignatures';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_ezsignfolder_id'}) {
+        my $_base_variable = "{" . "pkiEzsignfolderID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignfolder_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignfolderGetEzsignsignaturesV1Response', $response);
     return $_response_object;
 }
 
@@ -2279,6 +2563,89 @@ sub ezsignfolder_import_ezsigntemplatepackage_v2 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('EzsignfolderImportEzsigntemplatepackageV2Response', $response);
+    return $_response_object;
+}
+
+#
+# ezsignfolder_import_ezsigntemplatepackage_v3
+#
+# Import an Ezsigntemplatepackage in the Ezsignfolder
+#
+# @param int $pki_ezsignfolder_id  (required)
+# @param EzsignfolderImportEzsigntemplatepackageV3Request $ezsignfolder_import_ezsigntemplatepackage_v3_request  (required)
+{
+    my $params = {
+    'pki_ezsignfolder_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'ezsignfolder_import_ezsigntemplatepackage_v3_request' => {
+        data_type => 'EzsignfolderImportEzsigntemplatepackageV3Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsignfolder_import_ezsigntemplatepackage_v3' } = {
+        summary => 'Import an Ezsigntemplatepackage in the Ezsignfolder',
+        params => $params,
+        returns => 'EzsignfolderImportEzsigntemplatepackageV3Response',
+        };
+}
+# @return EzsignfolderImportEzsigntemplatepackageV3Response
+#
+sub ezsignfolder_import_ezsigntemplatepackage_v3 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsignfolder_id' is set
+    unless (exists $args{'pki_ezsignfolder_id'}) {
+      croak("Missing the required parameter 'pki_ezsignfolder_id' when calling ezsignfolder_import_ezsigntemplatepackage_v3");
+    }
+
+    # verify the required parameter 'ezsignfolder_import_ezsigntemplatepackage_v3_request' is set
+    unless (exists $args{'ezsignfolder_import_ezsigntemplatepackage_v3_request'}) {
+      croak("Missing the required parameter 'ezsignfolder_import_ezsigntemplatepackage_v3_request' when calling ezsignfolder_import_ezsigntemplatepackage_v3");
+    }
+
+    # parse inputs
+    my $_resource_path = '/3/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_ezsignfolder_id'}) {
+        my $_base_variable = "{" . "pkiEzsignfolderID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsignfolder_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'ezsignfolder_import_ezsigntemplatepackage_v3_request'}) {
+        $_body_data = $args{'ezsignfolder_import_ezsigntemplatepackage_v3_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsignfolderImportEzsigntemplatepackageV3Response', $response);
     return $_response_object;
 }
 

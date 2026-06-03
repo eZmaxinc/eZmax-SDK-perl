@@ -261,6 +261,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_ezmaxpartner_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzmaxpartnerID',
+        description => 'The unique ID of the Ezmaxpartner',
+        format => '',
+        read_only => '',
+            },
     'fki_company_id_default' => {
         datatype => 'int',
         base_name => 'fkiCompanyIDDefault',
@@ -355,7 +362,7 @@ __PACKAGE__->method_documentation({
     'fki_secretquestion_id' => {
         datatype => 'int',
         base_name => 'fkiSecretquestionID',
-        description => 'The unique ID of the Secretquestion.  Valid values:  |Value|Description| |-|-| |1|The name of the hospital in which you were born| |2|The name of your grade school| |3|The last name of your favorite teacher| |4|Your favorite sports team| |5|Your favorite TV show| |6|Your favorite movie| |7|The name of the street on which you grew up| |8|The name of your first employer| |9|Your first car| |10|Your favorite food| |11|The name of your first pet| |12|Favorite musician/band| |13|What instrument you play| |14|Your father&#39;s middle name| |15|Your mother&#39;s maiden name| |16|Name of your eldest child| |17|Your spouse&#39;s middle name| |18|Favorite restaurant| |19|Childhood nickname| |20|Favorite vacation destination| |21|Your boat&#39;s name| |22|Date of Birth (YYYY-MM-DD)| |22|Secret Code| |22|Your reference code|',
+        description => 'The unique ID of the Secretquestion.  Valid values:  |Value|Description| |-|-| |1|The name of the hospital in which you were born| |2|The name of your grade school| |3|The last name of your favorite teacher| |4|Your favorite sports team| |5|Your favorite TV show| |6|Your favorite movie| |7|The name of the street on which you grew up| |8|The name of your first employer| |9|Your first car| |10|Your favorite food| |11|The name of your first pet| |12|Favorite musician/band| |13|What instrument you play| |14|Your father&#39;s middle name| |15|Your mother&#39;s maiden name| |16|Name of your eldest child| |17|Your spouse&#39;s middle name| |18|Favorite restaurant| |19|Childhood nickname| |20|Favorite vacation destination| |21|Your boat&#39;s name| |22|Date of Birth (YYYY-MM-DD)| |23|Secret Code| |24|Your reference code| |25|What are the last 4 digits of your SIN| |26|What is your postal code| |27|What is your employee number| |28|What is your manager’s first name| |29|What is your file number| |30|What is your client/member number| |31|What is your license number| |32|What are the last 4 digits of your phone number| |33|What is your student number|',
         format => '',
         read_only => '',
             },
@@ -457,6 +464,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_user_suspended' => {
+        datatype => 'boolean',
+        base_name => 'bUserSuspended',
+        description => 'Whether the User is suspended or not',
+        format => '',
+        read_only => '',
+            },
     'b_user_validatebyadministration' => {
         datatype => 'boolean',
         base_name => 'bUserValidatebyadministration',
@@ -485,6 +499,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_user_ezsigntemplaterolegrouping' => {
+        datatype => 'boolean',
+        base_name => 'bUserEzsigntemplaterolegrouping',
+        description => 'Whether we group or not the Ezsigntemplate roles',
+        format => '',
+        read_only => '',
+            },
     'obj_audit' => {
         datatype => 'CommonAudit',
         base_name => 'objAudit',
@@ -500,6 +521,7 @@ __PACKAGE__->openapi_types( {
     'fki_broker_id' => 'int',
     'fki_assistant_id' => 'int',
     'fki_employee_id' => 'int',
+    'fki_ezmaxpartner_id' => 'int',
     'fki_company_id_default' => 'int',
     's_company_name_x' => 'string',
     'fki_department_id_default' => 'int',
@@ -528,10 +550,12 @@ __PACKAGE__->openapi_types( {
     'dt_user_passwordchanged' => 'string',
     'dt_user_ezsignprepaidexpiration' => 'string',
     'b_user_isactive' => 'boolean',
+    'b_user_suspended' => 'boolean',
     'b_user_validatebyadministration' => 'boolean',
     'b_user_validatebydirector' => 'boolean',
     'b_user_attachmentautoverified' => 'boolean',
     'b_user_changepassword' => 'boolean',
+    'b_user_ezsigntemplaterolegrouping' => 'boolean',
     'obj_audit' => 'CommonAudit'
 } );
 
@@ -541,6 +565,7 @@ __PACKAGE__->attribute_map( {
     'fki_broker_id' => 'fkiBrokerID',
     'fki_assistant_id' => 'fkiAssistantID',
     'fki_employee_id' => 'fkiEmployeeID',
+    'fki_ezmaxpartner_id' => 'fkiEzmaxpartnerID',
     'fki_company_id_default' => 'fkiCompanyIDDefault',
     's_company_name_x' => 'sCompanyNameX',
     'fki_department_id_default' => 'fkiDepartmentIDDefault',
@@ -569,10 +594,12 @@ __PACKAGE__->attribute_map( {
     'dt_user_passwordchanged' => 'dtUserPasswordchanged',
     'dt_user_ezsignprepaidexpiration' => 'dtUserEzsignprepaidexpiration',
     'b_user_isactive' => 'bUserIsactive',
+    'b_user_suspended' => 'bUserSuspended',
     'b_user_validatebyadministration' => 'bUserValidatebyadministration',
     'b_user_validatebydirector' => 'bUserValidatebydirector',
     'b_user_attachmentautoverified' => 'bUserAttachmentautoverified',
     'b_user_changepassword' => 'bUserChangepassword',
+    'b_user_ezsigntemplaterolegrouping' => 'bUserEzsigntemplaterolegrouping',
     'obj_audit' => 'objAudit'
 } );
 

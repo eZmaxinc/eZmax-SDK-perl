@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::FieldEEzsignfolderCompletion;
+use EzmaxApi::Object::FieldEEzsignfolderSource;
 use EzmaxApi::Object::FieldEEzsignfolderStep;
 use EzmaxApi::Object::FieldEEzsignfoldertypePrivacylevel;
 
@@ -236,6 +237,55 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_ezsignbulksend_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignbulksendID',
+        description => 'The unique ID of the Ezsignbulksend',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignbulksend_description' => {
+        datatype => 'string',
+        base_name => 'sEzsignbulksendDescription',
+        description => 'The description of the Ezsignbulksend',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsignbulksendtransmission_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsignbulksendtransmissionID',
+        description => 'The unique ID of the Ezsignbulksendtransmission',
+        format => '',
+        read_only => '',
+            },
+    's_ezsignbulksendtransmission_description' => {
+        datatype => 'string',
+        base_name => 'sEzsignbulksendtransmissionDescription',
+        description => 'The description of the Ezsignbulksendtransmission',
+        format => '',
+        read_only => '',
+            },
+    'fki_ezsigntemplatepublic_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzsigntemplatepublicID',
+        description => 'The unique ID of the Ezsigntemplatepublic',
+        format => '',
+        read_only => '',
+            },
+    's_ezsigntemplatepublic_description' => {
+        datatype => 'string',
+        base_name => 'sEzsigntemplatepublicDescription',
+        description => 'The description of the Ezsigntemplatepublic',
+        format => '',
+        read_only => '',
+            },
+    'e_ezsignfolder_source' => {
+        datatype => 'FieldEEzsignfolderSource',
+        base_name => 'eEzsignfolderSource',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'e_ezsignfoldertype_privacylevel' => {
         datatype => 'FieldEEzsignfoldertypePrivacylevel',
         base_name => 'eEzsignfoldertypePrivacylevel',
@@ -397,11 +447,25 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'b_ezsignfolder_ismyown' => {
+        datatype => 'boolean',
+        base_name => 'bEzsignfolderIsmyown',
+        description => 'Whether the Ezsignfolder is my own or not',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_ezsignfolder_id' => 'int',
     'fki_ezsignfoldertype_id' => 'int',
+    'fki_ezsignbulksend_id' => 'int',
+    's_ezsignbulksend_description' => 'string',
+    'fki_ezsignbulksendtransmission_id' => 'int',
+    's_ezsignbulksendtransmission_description' => 'string',
+    'fki_ezsigntemplatepublic_id' => 'int',
+    's_ezsigntemplatepublic_description' => 'string',
+    'e_ezsignfolder_source' => 'FieldEEzsignfolderSource',
     'e_ezsignfoldertype_privacylevel' => 'FieldEEzsignfoldertypePrivacylevel',
     's_ezsignfoldertype_name_x' => 'string',
     's_ezsignfolder_description' => 'string',
@@ -424,12 +488,20 @@ __PACKAGE__->openapi_types( {
     'dt_ezsignfolder_close' => 'string',
     'dt_ezsignfolder_archive' => 'string',
     'dt_ezsignfolder_dispose' => 'string',
-    'b_ezsignfolder_signer' => 'boolean'
+    'b_ezsignfolder_signer' => 'boolean',
+    'b_ezsignfolder_ismyown' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_ezsignfolder_id' => 'pkiEzsignfolderID',
     'fki_ezsignfoldertype_id' => 'fkiEzsignfoldertypeID',
+    'fki_ezsignbulksend_id' => 'fkiEzsignbulksendID',
+    's_ezsignbulksend_description' => 'sEzsignbulksendDescription',
+    'fki_ezsignbulksendtransmission_id' => 'fkiEzsignbulksendtransmissionID',
+    's_ezsignbulksendtransmission_description' => 'sEzsignbulksendtransmissionDescription',
+    'fki_ezsigntemplatepublic_id' => 'fkiEzsigntemplatepublicID',
+    's_ezsigntemplatepublic_description' => 'sEzsigntemplatepublicDescription',
+    'e_ezsignfolder_source' => 'eEzsignfolderSource',
     'e_ezsignfoldertype_privacylevel' => 'eEzsignfoldertypePrivacylevel',
     's_ezsignfoldertype_name_x' => 'sEzsignfoldertypeNameX',
     's_ezsignfolder_description' => 'sEzsignfolderDescription',
@@ -452,7 +524,8 @@ __PACKAGE__->attribute_map( {
     'dt_ezsignfolder_close' => 'dtEzsignfolderClose',
     'dt_ezsignfolder_archive' => 'dtEzsignfolderArchive',
     'dt_ezsignfolder_dispose' => 'dtEzsignfolderDispose',
-    'b_ezsignfolder_signer' => 'bEzsignfolderSigner'
+    'b_ezsignfolder_signer' => 'bEzsignfolderSigner',
+    'b_ezsignfolder_ismyown' => 'bEzsignfolderIsmyown'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

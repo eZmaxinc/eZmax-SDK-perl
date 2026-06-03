@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::EzsigntemplateglobalannotationResponseCompound;
 use EzmaxApi::Object::EzsigntemplateglobaldocumentResponse;
 use EzmaxApi::Object::EzsigntemplateglobalsignerResponseCompound;
 use EzmaxApi::Object::FieldEEzsigntemplateglobalModule;
@@ -307,6 +308,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'a_obj_ezsigntemplateglobalannotation' => {
+        datatype => 'ARRAY[EzsigntemplateglobalannotationResponseCompound]',
+        base_name => 'a_objEzsigntemplateglobalannotation',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -321,7 +329,8 @@ __PACKAGE__->openapi_types( {
     's_ezsigntemplateglobal_code' => 'string',
     's_ezsigntemplateglobal_description' => 'string',
     'obj_ezsigntemplateglobaldocument' => 'EzsigntemplateglobaldocumentResponse',
-    'a_obj_ezsigntemplateglobalsigner' => 'ARRAY[EzsigntemplateglobalsignerResponseCompound]'
+    'a_obj_ezsigntemplateglobalsigner' => 'ARRAY[EzsigntemplateglobalsignerResponseCompound]',
+    'a_obj_ezsigntemplateglobalannotation' => 'ARRAY[EzsigntemplateglobalannotationResponseCompound]'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -336,7 +345,8 @@ __PACKAGE__->attribute_map( {
     's_ezsigntemplateglobal_code' => 'sEzsigntemplateglobalCode',
     's_ezsigntemplateglobal_description' => 'sEzsigntemplateglobalDescription',
     'obj_ezsigntemplateglobaldocument' => 'objEzsigntemplateglobaldocument',
-    'a_obj_ezsigntemplateglobalsigner' => 'a_objEzsigntemplateglobalsigner'
+    'a_obj_ezsigntemplateglobalsigner' => 'a_objEzsigntemplateglobalsigner',
+    'a_obj_ezsigntemplateglobalannotation' => 'a_objEzsigntemplateglobalannotation'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

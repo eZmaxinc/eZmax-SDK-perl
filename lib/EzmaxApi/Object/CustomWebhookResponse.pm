@@ -385,6 +385,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_ezmaxpartnerproductstagewebhook_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzmaxpartnerproductstagewebhookID',
+        description => 'The unique ID of the Ezmaxpartnerproductstagewebhook',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -410,7 +417,8 @@ __PACKAGE__->openapi_types( {
     'a_obj_webhookheader' => 'ARRAY[WebhookheaderResponseCompound]',
     'pks_customer_code' => 'string',
     'b_webhook_test' => 'boolean',
-    'e_webhook_emittype' => 'string'
+    'e_webhook_emittype' => 'string',
+    'fki_ezmaxpartnerproductstagewebhook_id' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -436,7 +444,8 @@ __PACKAGE__->attribute_map( {
     'a_obj_webhookheader' => 'a_objWebhookheader',
     'pks_customer_code' => 'pksCustomerCode',
     'b_webhook_test' => 'bWebhookTest',
-    'e_webhook_emittype' => 'eWebhookEmittype'
+    'e_webhook_emittype' => 'eWebhookEmittype',
+    'fki_ezmaxpartnerproductstagewebhook_id' => 'fkiEzmaxpartnerproductstagewebhookID'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

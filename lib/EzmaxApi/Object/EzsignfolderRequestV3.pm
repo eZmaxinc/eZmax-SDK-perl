@@ -279,7 +279,7 @@ __PACKAGE__->method_documentation({
     'i_ezsignfolder_sendreminderfirstdays' => {
         datatype => 'int',
         base_name => 'iEzsignfolderSendreminderfirstdays',
-        description => 'The number of days before the the first reminder sending',
+        description => 'The number of days before the first reminder sending',
         format => '',
         read_only => '',
             },

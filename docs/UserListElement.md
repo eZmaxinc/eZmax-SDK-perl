@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **s_user_lastname** | **string** | The last name of the user | 
 **s_user_loginname** | **string** | The login name of the User. | 
 **b_user_isactive** | **boolean** | Whether the User is active or not | 
+**b_user_suspended** | **boolean** | Whether the User is suspended or not | [optional] 
 **e_user_type** | [**FieldEUserType**](FieldEUserType.md) |  | 
 **e_user_origin** | [**FieldEUserOrigin**](FieldEUserOrigin.md) |  | 
 **e_user_ezsignaccess** | [**FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  | 

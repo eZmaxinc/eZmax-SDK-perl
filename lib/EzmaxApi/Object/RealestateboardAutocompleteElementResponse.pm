@@ -222,7 +222,7 @@ __PACKAGE__->method_documentation({
     'pki_realestateboard_id' => {
         datatype => 'int',
         base_name => 'pkiRealestateboardID',
-        description => 'The unique ID of the Activesession',
+        description => 'The unique ID of the Realestateboard',
         format => '',
         read_only => '',
             },

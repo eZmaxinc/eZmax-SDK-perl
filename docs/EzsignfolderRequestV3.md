@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **s_ezsignfolder_description** | **string** | The description of the Ezsignfolder | 
 **t_ezsignfolder_note** | **string** | Note about the Ezsignfolder | [optional] 
 **t_ezsignfolder_message** | **string** | A custom text message that will be added to the email sent. | [optional] 
-**i_ezsignfolder_sendreminderfirstdays** | **int** | The number of days before the the first reminder sending | 
+**i_ezsignfolder_sendreminderfirstdays** | **int** | The number of days before the first reminder sending | 
 **i_ezsignfolder_sendreminderotherdays** | **int** | The number of days after the first reminder sending | 
 **s_ezsignfolder_externalid** | **string** | This field can be used to store an External ID from the client&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format.  | [optional] 
 

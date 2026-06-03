@@ -10,6 +10,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pki_ezsignfolder_id** | **int** | The unique ID of the Ezsignfolder | 
 **fki_ezsignfoldertype_id** | **int** | The unique ID of the Ezsignfoldertype. | 
+**fki_ezsignbulksend_id** | **int** | The unique ID of the Ezsignbulksend | [optional] 
+**s_ezsignbulksend_description** | **string** | The description of the Ezsignbulksend | [optional] 
+**fki_ezsignbulksendtransmission_id** | **int** | The unique ID of the Ezsignbulksendtransmission | [optional] 
+**s_ezsignbulksendtransmission_description** | **string** | The description of the Ezsignbulksendtransmission | [optional] 
+**fki_ezsigntemplatepublic_id** | **int** | The unique ID of the Ezsigntemplatepublic | [optional] 
+**s_ezsigntemplatepublic_description** | **string** | The description of the Ezsigntemplatepublic | [optional] 
+**e_ezsignfolder_source** | [**FieldEEzsignfolderSource**](FieldEEzsignfolderSource.md) |  | 
 **e_ezsignfoldertype_privacylevel** | [**FieldEEzsignfoldertypePrivacylevel**](FieldEEzsignfoldertypePrivacylevel.md) |  | 
 **s_ezsignfoldertype_name_x** | **string** | The name of the Ezsignfoldertype in the language of the requester | 
 **s_ezsignfolder_description** | **string** | The description of the Ezsignfolder | 
@@ -33,6 +40,7 @@ Name | Type | Description | Notes
 **dt_ezsignfolder_archive** | **string** | The date and time at which the Ezsignfolder was archived. | [optional] 
 **dt_ezsignfolder_dispose** | **string** | The date and time at which the Ezsignfolder was disposed. | [optional] 
 **b_ezsignfolder_signer** | **boolean** | Whether the Ezsignfolder has an Ezsignsignatures that need to be signed or an Ezsignformfieldgroups that need to be filled by the current user | [optional] 
+**b_ezsignfolder_ismyown** | **boolean** | Whether the Ezsignfolder is my own or not | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

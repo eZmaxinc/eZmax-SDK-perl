@@ -18,12 +18,14 @@ Method | HTTP request | Description
 [**user_get_autocomplete_v2**](ObjectUserApi.md#user_get_autocomplete_v2) | **GET** /2/object/user/getAutocomplete/{sSelector} | Retrieve Users and IDs
 [**user_get_colleagues_v2**](ObjectUserApi.md#user_get_colleagues_v2) | **GET** /2/object/user/{pkiUserID}/getColleagues | Retrieve an existing User&#39;s Colleagues
 [**user_get_effective_permissions_v1**](ObjectUserApi.md#user_get_effective_permissions_v1) | **GET** /1/object/user/{pkiUserID}/getEffectivePermissions | Retrieve an existing User&#39;s Effective Permissions
+[**user_get_ezmaxcustomeruser_v1**](ObjectUserApi.md#user_get_ezmaxcustomeruser_v1) | **GET** /1/object/user/{pkiUserID}/getEzmaxcustomeruser | Returns the Ezmaxcustomeruser for the User
 [**user_get_list_v1**](ObjectUserApi.md#user_get_list_v1) | **GET** /1/object/user/getList | Retrieve User list
 [**user_get_object_v2**](ObjectUserApi.md#user_get_object_v2) | **GET** /2/object/user/{pkiUserID} | Retrieve an existing User
 [**user_get_permissions_v1**](ObjectUserApi.md#user_get_permissions_v1) | **GET** /1/object/user/{pkiUserID}/getPermissions | Retrieve an existing User&#39;s Permissions
 [**user_get_subnets_v1**](ObjectUserApi.md#user_get_subnets_v1) | **GET** /1/object/user/{pkiUserID}/getSubnets | Retrieve an existing User&#39;s Subnets
 [**user_get_usergroupexternals_v1**](ObjectUserApi.md#user_get_usergroupexternals_v1) | **GET** /1/object/user/{pkiUserID}/getUsergroupexternals | Get User&#39;s Usergroupexternals
 [**user_get_usergroups_v1**](ObjectUserApi.md#user_get_usergroups_v1) | **GET** /1/object/user/{pkiUserID}/getUsergroups | Get User&#39;s Usergroups
+[**user_impersonate_v1**](ObjectUserApi.md#user_impersonate_v1) | **POST** /1/object/user/{pkiUserID}/impersonate | Impersonate the user
 [**user_send_password_reset_v1**](ObjectUserApi.md#user_send_password_reset_v1) | **POST** /1/object/user/{pkiUserID}/sendPasswordReset | Send password reset
 
 
@@ -494,6 +496,57 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **user_get_ezmaxcustomeruser_v1**
+> UserGetEzmaxcustomeruserV1Response user_get_ezmaxcustomeruser_v1(pki_user_id => $pki_user_id)
+
+Returns the Ezmaxcustomeruser for the User
+
+Returns the Ezmaxcustomeruser for the User
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectUserApi;
+my $api_instance = EzmaxApi::ObjectUserApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_user_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->user_get_ezmaxcustomeruser_v1(pki_user_id => $pki_user_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectUserApi->user_get_ezmaxcustomeruser_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_user_id** | **int**|  | 
+
+### Return type
+
+[**UserGetEzmaxcustomeruserV1Response**](UserGetEzmaxcustomeruserV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **user_get_list_v1**
 > UserGetListV1Response user_get_list_v1(e_order_by => $e_order_by, i_row_max => $i_row_max, i_row_offset => $i_row_offset, accept_language => $accept_language, s_filter => $s_filter)
 
@@ -796,6 +849,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_impersonate_v1**
+> UserImpersonateV1Response user_impersonate_v1(pki_user_id => $pki_user_id, user_impersonate_v1_request => $user_impersonate_v1_request)
+
+Impersonate the user
+
+Using this endpoint, you can impersonate the user.
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectUserApi;
+my $api_instance = EzmaxApi::ObjectUserApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_user_id = 56; # int | 
+my $user_impersonate_v1_request = EzmaxApi::Object::UserImpersonateV1Request->new(); # UserImpersonateV1Request | 
+
+eval {
+    my $result = $api_instance->user_impersonate_v1(pki_user_id => $pki_user_id, user_impersonate_v1_request => $user_impersonate_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectUserApi->user_impersonate_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_user_id** | **int**|  | 
+ **user_impersonate_v1_request** | [**UserImpersonateV1Request**](UserImpersonateV1Request.md)|  | 
+
+### Return type
+
+[**UserImpersonateV1Response**](UserImpersonateV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
