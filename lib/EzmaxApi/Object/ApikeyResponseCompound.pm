@@ -236,6 +236,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_ezmaxpartnerproductstage_id' => {
+        datatype => 'int',
+        base_name => 'fkiEzmaxpartnerproductstageID',
+        description => 'The unique ID of the Ezmaxpartnerproductstage',
+        format => '',
+        read_only => '',
+            },
     'obj_apikey_description' => {
         datatype => 'MultilingualApikeyDescription',
         base_name => 'objApikeyDescription',
@@ -290,6 +297,7 @@ __PACKAGE__->method_documentation({
 __PACKAGE__->openapi_types( {
     'pki_apikey_id' => 'int',
     'fki_user_id' => 'int',
+    'fki_ezmaxpartnerproductstage_id' => 'int',
     'obj_apikey_description' => 'MultilingualApikeyDescription',
     'obj_contact_name' => 'CustomContactNameResponse',
     's_apikey_apikey' => 'string',
@@ -302,6 +310,7 @@ __PACKAGE__->openapi_types( {
 __PACKAGE__->attribute_map( {
     'pki_apikey_id' => 'pkiApikeyID',
     'fki_user_id' => 'fkiUserID',
+    'fki_ezmaxpartnerproductstage_id' => 'fkiEzmaxpartnerproductstageID',
     'obj_apikey_description' => 'objApikeyDescription',
     'obj_contact_name' => 'objContactName',
     's_apikey_apikey' => 'sApikeyApikey',

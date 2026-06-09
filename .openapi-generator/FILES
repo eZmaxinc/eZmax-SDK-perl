@@ -1825,10 +1825,7 @@ docs/ScimServiceProviderConfig.md
 docs/ScimServiceProviderConfigApi.md
 docs/ScimServiceProviderConfigBulk.md
 docs/ScimServiceProviderConfigChangePassword.md
-docs/ScimServiceProviderConfigEtag.md
 docs/ScimServiceProviderConfigFilter.md
-docs/ScimServiceProviderConfigPatch.md
-docs/ScimServiceProviderConfigSort.md
 docs/ScimUser.md
 docs/ScimUserList.md
 docs/ScimUsersApi.md
@@ -3831,10 +3828,7 @@ lib/EzmaxApi/Object/ScimGroupMember.pm
 lib/EzmaxApi/Object/ScimServiceProviderConfig.pm
 lib/EzmaxApi/Object/ScimServiceProviderConfigBulk.pm
 lib/EzmaxApi/Object/ScimServiceProviderConfigChangePassword.pm
-lib/EzmaxApi/Object/ScimServiceProviderConfigEtag.pm
 lib/EzmaxApi/Object/ScimServiceProviderConfigFilter.pm
-lib/EzmaxApi/Object/ScimServiceProviderConfigPatch.pm
-lib/EzmaxApi/Object/ScimServiceProviderConfigSort.pm
 lib/EzmaxApi/Object/ScimUser.pm
 lib/EzmaxApi/Object/ScimUserList.pm
 lib/EzmaxApi/Object/SecretquestionAutocompleteElementResponse.pm
