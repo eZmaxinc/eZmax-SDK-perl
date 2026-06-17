@@ -232,6 +232,7 @@ cpanm --quiet --no-interactive Class::Accessor Test::Exception Test::More Log::A
 
 To load the API packages:
 ```perl
+use EzmaxApi::DocumentationEzmaxpartnerApi;
 use EzmaxApi::GlobalCustomerApi;
 use EzmaxApi::GlobalEzmaxclientApi;
 use EzmaxApi::GlobalEzmaxcustomerApi;
@@ -699,6 +700,7 @@ use EzmaxApi::Object::CustomEzmaxcustomeruserResponse;
 use EzmaxApi::Object::CustomEzmaxinvoicingEzsigndocumentResponse;
 use EzmaxApi::Object::CustomEzmaxinvoicingEzsignfolderResponse;
 use EzmaxApi::Object::CustomEzmaxpartnerListElement;
+use EzmaxApi::Object::CustomEzmaxpartnerproductSubscribe;
 use EzmaxApi::Object::CustomEzmaxpricingResponse;
 use EzmaxApi::Object::CustomEzsigndocumentDuplicateRequest;
 use EzmaxApi::Object::CustomEzsigndocumentEzsignsignaturesAutomaticResponse;
@@ -791,6 +793,8 @@ use EzmaxApi::Object::DiscussionmessageRequestCompound;
 use EzmaxApi::Object::DiscussionmessageRequestPatch;
 use EzmaxApi::Object::DiscussionmessageResponse;
 use EzmaxApi::Object::DiscussionmessageResponseCompound;
+use EzmaxApi::Object::DocumentationSubscribeV1Request;
+use EzmaxApi::Object::DocumentationSubscribeV1Response;
 use EzmaxApi::Object::DomainAutocompleteElementResponse;
 use EzmaxApi::Object::DomainCreateObjectV1Request;
 use EzmaxApi::Object::DomainCreateObjectV1Response;
@@ -1049,6 +1053,8 @@ use EzmaxApi::Object::EzsigndocumentExtractTextV1Request;
 use EzmaxApi::Object::EzsigndocumentExtractTextV1Response;
 use EzmaxApi::Object::EzsigndocumentExtractTextV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentFlattenV1Response;
+use EzmaxApi::Object::EzsigndocumentGetActionableElementsForSignerV1Response;
+use EzmaxApi::Object::EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetActionableElementsV1Response;
 use EzmaxApi::Object::EzsigndocumentGetActionableElementsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetActionableElementsV2Response;
@@ -1133,6 +1139,8 @@ use EzmaxApi::Object::EzsignfolderDuplicateV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderEditObjectV3Request;
 use EzmaxApi::Object::EzsignfolderEditObjectV3Response;
 use EzmaxApi::Object::EzsignfolderEndPrematurelyV1Response;
+use EzmaxApi::Object::EzsignfolderGetActionableElementsForSignerV1Response;
+use EzmaxApi::Object::EzsignfolderGetActionableElementsForSignerV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetActionableElementsV1Response;
 use EzmaxApi::Object::EzsignfolderGetActionableElementsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetActionableElementsV2Response;
@@ -2324,6 +2332,8 @@ use EzmaxApi::Object::WebhookCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::WebhookDeleteObjectV1Response;
 use EzmaxApi::Object::WebhookEditObjectV1Request;
 use EzmaxApi::Object::WebhookEditObjectV1Response;
+use EzmaxApi::Object::WebhookEzmaxpartnerproductSubscribe;
+use EzmaxApi::Object::WebhookEzmaxpartnerproductUnsubscribe;
 use EzmaxApi::Object::WebhookEzsignDocumentCompleted;
 use EzmaxApi::Object::WebhookEzsignDocumentFormCompleted;
 use EzmaxApi::Object::WebhookEzsignDocumentUnsent;
@@ -2379,6 +2389,7 @@ use lib 'lib';
 use strict;
 use warnings;
 # load the API package
+use EzmaxApi::DocumentationEzmaxpartnerApi;
 use EzmaxApi::GlobalCustomerApi;
 use EzmaxApi::GlobalEzmaxclientApi;
 use EzmaxApi::GlobalEzmaxcustomerApi;
@@ -2843,6 +2854,7 @@ use EzmaxApi::Object::CustomEzmaxcustomeruserResponse;
 use EzmaxApi::Object::CustomEzmaxinvoicingEzsigndocumentResponse;
 use EzmaxApi::Object::CustomEzmaxinvoicingEzsignfolderResponse;
 use EzmaxApi::Object::CustomEzmaxpartnerListElement;
+use EzmaxApi::Object::CustomEzmaxpartnerproductSubscribe;
 use EzmaxApi::Object::CustomEzmaxpricingResponse;
 use EzmaxApi::Object::CustomEzsigndocumentDuplicateRequest;
 use EzmaxApi::Object::CustomEzsigndocumentEzsignsignaturesAutomaticResponse;
@@ -2935,6 +2947,8 @@ use EzmaxApi::Object::DiscussionmessageRequestCompound;
 use EzmaxApi::Object::DiscussionmessageRequestPatch;
 use EzmaxApi::Object::DiscussionmessageResponse;
 use EzmaxApi::Object::DiscussionmessageResponseCompound;
+use EzmaxApi::Object::DocumentationSubscribeV1Request;
+use EzmaxApi::Object::DocumentationSubscribeV1Response;
 use EzmaxApi::Object::DomainAutocompleteElementResponse;
 use EzmaxApi::Object::DomainCreateObjectV1Request;
 use EzmaxApi::Object::DomainCreateObjectV1Response;
@@ -3193,6 +3207,8 @@ use EzmaxApi::Object::EzsigndocumentExtractTextV1Request;
 use EzmaxApi::Object::EzsigndocumentExtractTextV1Response;
 use EzmaxApi::Object::EzsigndocumentExtractTextV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentFlattenV1Response;
+use EzmaxApi::Object::EzsigndocumentGetActionableElementsForSignerV1Response;
+use EzmaxApi::Object::EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetActionableElementsV1Response;
 use EzmaxApi::Object::EzsigndocumentGetActionableElementsV1ResponseMPayload;
 use EzmaxApi::Object::EzsigndocumentGetActionableElementsV2Response;
@@ -3277,6 +3293,8 @@ use EzmaxApi::Object::EzsignfolderDuplicateV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderEditObjectV3Request;
 use EzmaxApi::Object::EzsignfolderEditObjectV3Response;
 use EzmaxApi::Object::EzsignfolderEndPrematurelyV1Response;
+use EzmaxApi::Object::EzsignfolderGetActionableElementsForSignerV1Response;
+use EzmaxApi::Object::EzsignfolderGetActionableElementsForSignerV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetActionableElementsV1Response;
 use EzmaxApi::Object::EzsignfolderGetActionableElementsV1ResponseMPayload;
 use EzmaxApi::Object::EzsignfolderGetActionableElementsV2Response;
@@ -4468,6 +4486,8 @@ use EzmaxApi::Object::WebhookCreateObjectV2ResponseMPayload;
 use EzmaxApi::Object::WebhookDeleteObjectV1Response;
 use EzmaxApi::Object::WebhookEditObjectV1Request;
 use EzmaxApi::Object::WebhookEditObjectV1Response;
+use EzmaxApi::Object::WebhookEzmaxpartnerproductSubscribe;
+use EzmaxApi::Object::WebhookEzmaxpartnerproductUnsubscribe;
 use EzmaxApi::Object::WebhookEzsignDocumentCompleted;
 use EzmaxApi::Object::WebhookEzsignDocumentFormCompleted;
 use EzmaxApi::Object::WebhookEzsignDocumentUnsent;
@@ -4517,18 +4537,21 @@ use EzmaxApi::Object::WebsocketResponseInformationV1MPayload;
 use Data::Dumper;
 
 
-my $api_instance = EzmaxApi::GlobalCustomerApi->new(
+my $api_instance = EzmaxApi::DocumentationEzmaxpartnerApi->new(
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $pks_customer_code = "pks_customer_code_example"; # string | 
-my $s_infrastructureproduct_code = "s_infrastructureproduct_code_example"; # string | The infrastructure product Code  If undefined, \"appcluster01\" is assumed
+my $documentation_subscribe_v1_request = EzmaxApi::Object::DocumentationSubscribeV1Request->new(); # DocumentationSubscribeV1Request | 
 
 eval {
-    my $result = $api_instance->global_customer_get_endpoint_v1(pks_customer_code => $pks_customer_code, s_infrastructureproduct_code => $s_infrastructureproduct_code);
+    my $result = $api_instance->documentation_subscribe_v1(documentation_subscribe_v1_request => $documentation_subscribe_v1_request);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling GlobalCustomerApi->global_customer_get_endpoint_v1: $@\n";
+    warn "Exception when calling DocumentationEzmaxpartnerApi->documentation_subscribe_v1: $@\n";
 }
 
 ```
@@ -4539,6 +4562,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DocumentationEzmaxpartnerApi* | [**documentation_subscribe_v1**](docs/DocumentationEzmaxpartnerApi.md#documentation_subscribe_v1) | **POST** /1/documentation/subscribe | Subscribe to an Ezmaxparnerproductstage
 *GlobalCustomerApi* | [**global_customer_get_endpoint_v1**](docs/GlobalCustomerApi.md#global_customer_get_endpoint_v1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
 *GlobalEzmaxclientApi* | [**global_ezmaxclient_version_v1**](docs/GlobalEzmaxclientApi.md#global_ezmaxclient_version_v1) | **GET** /1/ezmaxclient/{pksEzmaxclientOs}/version | Retrieve the latest version of the Ezmaxclient
 *GlobalEzmaxcustomerApi* | [**global_ezmaxcustomer_get_configuration_v1**](docs/GlobalEzmaxcustomerApi.md#global_ezmaxcustomer_get_configuration_v1) | **GET** /1/ezmaxcustomer/{pksEzmaxcustomerCode}/getConfiguration | Get ezmaxcustomer configuration
@@ -4717,6 +4741,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsigndocumentApi* | [**ezsigndocument_end_prematurely_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_end_prematurely_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely
 *ObjectEzsigndocumentApi* | [**ezsigndocument_extract_text_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_extract_text_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/extractText | Extract text from Ezsigndocument area
 *ObjectEzsigndocumentApi* | [**ezsigndocument_flatten_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_flatten_v1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten | Flatten
+*ObjectEzsigndocumentApi* | [**ezsigndocument_get_actionable_elements_for_signer_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_for_signer_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElementsForSigner | Retrieve actionable elements of a user for the Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocument_get_actionable_elements_v1**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocument_get_actionable_elements_v2**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
 *ObjectEzsigndocumentApi* | [**ezsigndocument_get_actionable_elements_v3**](docs/ObjectEzsigndocumentApi.md#ezsigndocument_get_actionable_elements_v3) | **GET** /3/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
@@ -4752,6 +4777,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfolderApi* | [**ezsignfolder_duplicate_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_duplicate_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/duplicate | Duplicate the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolder_edit_object_v3**](docs/ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v3) | **PUT** /3/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolder_end_prematurely_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_end_prematurely_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/endPrematurely | End prematurely
+*ObjectEzsignfolderApi* | [**ezsignfolder_get_actionable_elements_for_signer_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_for_signer_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElementsForSigner | Retrieve actionable elements of a user for the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_actionable_elements_v1**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_actionable_elements_v2**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
 *ObjectEzsignfolderApi* | [**ezsignfolder_get_actionable_elements_v3**](docs/ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v3) | **GET** /3/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
@@ -5425,6 +5451,7 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::CustomEzmaxinvoicingEzsigndocumentResponse](docs/CustomEzmaxinvoicingEzsigndocumentResponse.md)
  - [EzmaxApi::Object::CustomEzmaxinvoicingEzsignfolderResponse](docs/CustomEzmaxinvoicingEzsignfolderResponse.md)
  - [EzmaxApi::Object::CustomEzmaxpartnerListElement](docs/CustomEzmaxpartnerListElement.md)
+ - [EzmaxApi::Object::CustomEzmaxpartnerproductSubscribe](docs/CustomEzmaxpartnerproductSubscribe.md)
  - [EzmaxApi::Object::CustomEzmaxpricingResponse](docs/CustomEzmaxpricingResponse.md)
  - [EzmaxApi::Object::CustomEzsigndocumentDuplicateRequest](docs/CustomEzsigndocumentDuplicateRequest.md)
  - [EzmaxApi::Object::CustomEzsigndocumentEzsignsignaturesAutomaticResponse](docs/CustomEzsigndocumentEzsignsignaturesAutomaticResponse.md)
@@ -5517,6 +5544,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::DiscussionmessageRequestPatch](docs/DiscussionmessageRequestPatch.md)
  - [EzmaxApi::Object::DiscussionmessageResponse](docs/DiscussionmessageResponse.md)
  - [EzmaxApi::Object::DiscussionmessageResponseCompound](docs/DiscussionmessageResponseCompound.md)
+ - [EzmaxApi::Object::DocumentationSubscribeV1Request](docs/DocumentationSubscribeV1Request.md)
+ - [EzmaxApi::Object::DocumentationSubscribeV1Response](docs/DocumentationSubscribeV1Response.md)
  - [EzmaxApi::Object::DomainAutocompleteElementResponse](docs/DomainAutocompleteElementResponse.md)
  - [EzmaxApi::Object::DomainCreateObjectV1Request](docs/DomainCreateObjectV1Request.md)
  - [EzmaxApi::Object::DomainCreateObjectV1Response](docs/DomainCreateObjectV1Response.md)
@@ -5775,6 +5804,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsigndocumentExtractTextV1Response](docs/EzsigndocumentExtractTextV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentExtractTextV1ResponseMPayload](docs/EzsigndocumentExtractTextV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentFlattenV1Response](docs/EzsigndocumentFlattenV1Response.md)
+ - [EzmaxApi::Object::EzsigndocumentGetActionableElementsForSignerV1Response](docs/EzsigndocumentGetActionableElementsForSignerV1Response.md)
+ - [EzmaxApi::Object::EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload](docs/EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetActionableElementsV1Response](docs/EzsigndocumentGetActionableElementsV1Response.md)
  - [EzmaxApi::Object::EzsigndocumentGetActionableElementsV1ResponseMPayload](docs/EzsigndocumentGetActionableElementsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsigndocumentGetActionableElementsV2Response](docs/EzsigndocumentGetActionableElementsV2Response.md)
@@ -5859,6 +5890,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzsignfolderEditObjectV3Request](docs/EzsignfolderEditObjectV3Request.md)
  - [EzmaxApi::Object::EzsignfolderEditObjectV3Response](docs/EzsignfolderEditObjectV3Response.md)
  - [EzmaxApi::Object::EzsignfolderEndPrematurelyV1Response](docs/EzsignfolderEndPrematurelyV1Response.md)
+ - [EzmaxApi::Object::EzsignfolderGetActionableElementsForSignerV1Response](docs/EzsignfolderGetActionableElementsForSignerV1Response.md)
+ - [EzmaxApi::Object::EzsignfolderGetActionableElementsForSignerV1ResponseMPayload](docs/EzsignfolderGetActionableElementsForSignerV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetActionableElementsV1Response](docs/EzsignfolderGetActionableElementsV1Response.md)
  - [EzmaxApi::Object::EzsignfolderGetActionableElementsV1ResponseMPayload](docs/EzsignfolderGetActionableElementsV1ResponseMPayload.md)
  - [EzmaxApi::Object::EzsignfolderGetActionableElementsV2Response](docs/EzsignfolderGetActionableElementsV2Response.md)
@@ -7050,6 +7083,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::WebhookDeleteObjectV1Response](docs/WebhookDeleteObjectV1Response.md)
  - [EzmaxApi::Object::WebhookEditObjectV1Request](docs/WebhookEditObjectV1Request.md)
  - [EzmaxApi::Object::WebhookEditObjectV1Response](docs/WebhookEditObjectV1Response.md)
+ - [EzmaxApi::Object::WebhookEzmaxpartnerproductSubscribe](docs/WebhookEzmaxpartnerproductSubscribe.md)
+ - [EzmaxApi::Object::WebhookEzmaxpartnerproductUnsubscribe](docs/WebhookEzmaxpartnerproductUnsubscribe.md)
  - [EzmaxApi::Object::WebhookEzsignDocumentCompleted](docs/WebhookEzsignDocumentCompleted.md)
  - [EzmaxApi::Object::WebhookEzsignDocumentFormCompleted](docs/WebhookEzsignDocumentFormCompleted.md)
  - [EzmaxApi::Object::WebhookEzsignDocumentUnsent](docs/WebhookEzsignDocumentUnsent.md)

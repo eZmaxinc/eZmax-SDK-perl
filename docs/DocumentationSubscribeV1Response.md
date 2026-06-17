@@ -1,14 +1,14 @@
-# EzmaxApi::Object::UserImpersonateV1Request
+# EzmaxApi::Object::DocumentationSubscribeV1Response
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::UserImpersonateV1Request;
+use EzmaxApi::Object::DocumentationSubscribeV1Response;
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**i_expiration_minutes** | **int** | The number of minute before key is no longer active | 
+**s_external_id** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

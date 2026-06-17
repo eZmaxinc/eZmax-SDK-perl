@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**ezsignfolder_duplicate_v1**](ObjectEzsignfolderApi.md#ezsignfolder_duplicate_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/duplicate | Duplicate the Ezsignfolder
 [**ezsignfolder_edit_object_v3**](ObjectEzsignfolderApi.md#ezsignfolder_edit_object_v3) | **PUT** /3/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder
 [**ezsignfolder_end_prematurely_v1**](ObjectEzsignfolderApi.md#ezsignfolder_end_prematurely_v1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/endPrematurely | End prematurely
+[**ezsignfolder_get_actionable_elements_for_signer_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_for_signer_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElementsForSigner | Retrieve actionable elements of a user for the Ezsignfolder
 [**ezsignfolder_get_actionable_elements_v1**](ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
 [**ezsignfolder_get_actionable_elements_v2**](ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
 [**ezsignfolder_get_actionable_elements_v3**](ObjectEzsignfolderApi.md#ezsignfolder_get_actionable_elements_v3) | **GET** /3/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder
@@ -616,6 +617,63 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignfolder_get_actionable_elements_for_signer_v1**
+> EzsignfolderGetActionableElementsForSignerV1Response ezsignfolder_get_actionable_elements_for_signer_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, e_signer_type => $e_signer_type, fki_ezsignsigner_id => $fki_ezsignsigner_id, fki_user_id => $fki_user_id)
+
+Retrieve actionable elements of a user for the Ezsignfolder
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by an user at the current step in the process
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsignfolderApi;
+my $api_instance = EzmaxApi::ObjectEzsignfolderApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsignfolder_id = 56; # int | 
+my $e_signer_type = "e_signer_type_example"; # string | 
+my $fki_ezsignsigner_id = 56; # int | 
+my $fki_user_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->ezsignfolder_get_actionable_elements_for_signer_v1(pki_ezsignfolder_id => $pki_ezsignfolder_id, e_signer_type => $e_signer_type, fki_ezsignsigner_id => $fki_ezsignsigner_id, fki_user_id => $fki_user_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsignfolderApi->ezsignfolder_get_actionable_elements_for_signer_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsignfolder_id** | **int**|  | 
+ **e_signer_type** | **string**|  | 
+ **fki_ezsignsigner_id** | **int**|  | [optional] 
+ **fki_user_id** | **int**|  | [optional] 
+
+### Return type
+
+[**EzsignfolderGetActionableElementsForSignerV1Response**](EzsignfolderGetActionableElementsForSignerV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

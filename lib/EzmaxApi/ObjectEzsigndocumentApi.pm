@@ -1722,6 +1722,111 @@ sub ezsigndocument_flatten_v1 {
 }
 
 #
+# ezsigndocument_get_actionable_elements_for_signer_v1
+#
+# Retrieve actionable elements of a user for the Ezsigndocument
+#
+# @param int $pki_ezsigndocument_id  (required)
+# @param string $e_signer_type  (required)
+# @param int $fki_ezsignsigner_id  (optional)
+# @param int $fki_user_id  (optional)
+{
+    my $params = {
+    'pki_ezsigndocument_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'e_signer_type' => {
+        data_type => 'string',
+        description => '',
+        required => '1',
+    },
+    'fki_ezsignsigner_id' => {
+        data_type => 'int',
+        description => '',
+        required => '0',
+    },
+    'fki_user_id' => {
+        data_type => 'int',
+        description => '',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'ezsigndocument_get_actionable_elements_for_signer_v1' } = {
+        summary => 'Retrieve actionable elements of a user for the Ezsigndocument',
+        params => $params,
+        returns => 'EzsigndocumentGetActionableElementsForSignerV1Response',
+        };
+}
+# @return EzsigndocumentGetActionableElementsForSignerV1Response
+#
+sub ezsigndocument_get_actionable_elements_for_signer_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_ezsigndocument_id' is set
+    unless (exists $args{'pki_ezsigndocument_id'}) {
+      croak("Missing the required parameter 'pki_ezsigndocument_id' when calling ezsigndocument_get_actionable_elements_for_signer_v1");
+    }
+
+    # verify the required parameter 'e_signer_type' is set
+    unless (exists $args{'e_signer_type'}) {
+      croak("Missing the required parameter 'e_signer_type' when calling ezsigndocument_get_actionable_elements_for_signer_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElementsForSigner';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # query params
+    if ( exists $args{'e_signer_type'}) {
+        $query_params->{'eSignerType'} = $self->{api_client}->to_query_value($args{'e_signer_type'});
+    }
+
+    # query params
+    if ( exists $args{'fki_ezsignsigner_id'}) {
+        $query_params->{'fkiEzsignsignerID'} = $self->{api_client}->to_query_value($args{'fki_ezsignsigner_id'});
+    }
+
+    # query params
+    if ( exists $args{'fki_user_id'}) {
+        $query_params->{'fkiUserID'} = $self->{api_client}->to_query_value($args{'fki_user_id'});
+    }
+
+    # path params
+    if ( exists $args{'pki_ezsigndocument_id'}) {
+        my $_base_variable = "{" . "pkiEzsigndocumentID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_ezsigndocument_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EzsigndocumentGetActionableElementsForSignerV1Response', $response);
+    return $_response_object;
+}
+
+#
 # ezsigndocument_get_actionable_elements_v1
 #
 # Retrieve actionable elements for the Ezsigndocument

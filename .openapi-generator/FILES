@@ -327,6 +327,7 @@ docs/CustomEzmaxcustomeruserResponse.md
 docs/CustomEzmaxinvoicingEzsigndocumentResponse.md
 docs/CustomEzmaxinvoicingEzsignfolderResponse.md
 docs/CustomEzmaxpartnerListElement.md
+docs/CustomEzmaxpartnerproductSubscribe.md
 docs/CustomEzmaxpricingResponse.md
 docs/CustomEzsigndocumentDuplicateRequest.md
 docs/CustomEzsigndocumentEzsignsignaturesAutomaticResponse.md
@@ -419,6 +420,9 @@ docs/DiscussionmessageRequestCompound.md
 docs/DiscussionmessageRequestPatch.md
 docs/DiscussionmessageResponse.md
 docs/DiscussionmessageResponseCompound.md
+docs/DocumentationEzmaxpartnerApi.md
+docs/DocumentationSubscribeV1Request.md
+docs/DocumentationSubscribeV1Response.md
 docs/DomainAutocompleteElementResponse.md
 docs/DomainCreateObjectV1Request.md
 docs/DomainCreateObjectV1Response.md
@@ -677,6 +681,8 @@ docs/EzsigndocumentExtractTextV1Request.md
 docs/EzsigndocumentExtractTextV1Response.md
 docs/EzsigndocumentExtractTextV1ResponseMPayload.md
 docs/EzsigndocumentFlattenV1Response.md
+docs/EzsigndocumentGetActionableElementsForSignerV1Response.md
+docs/EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload.md
 docs/EzsigndocumentGetActionableElementsV1Response.md
 docs/EzsigndocumentGetActionableElementsV1ResponseMPayload.md
 docs/EzsigndocumentGetActionableElementsV2Response.md
@@ -761,6 +767,8 @@ docs/EzsignfolderDuplicateV1ResponseMPayload.md
 docs/EzsignfolderEditObjectV3Request.md
 docs/EzsignfolderEditObjectV3Response.md
 docs/EzsignfolderEndPrematurelyV1Response.md
+docs/EzsignfolderGetActionableElementsForSignerV1Response.md
+docs/EzsignfolderGetActionableElementsForSignerV1ResponseMPayload.md
 docs/EzsignfolderGetActionableElementsV1Response.md
 docs/EzsignfolderGetActionableElementsV1ResponseMPayload.md
 docs/EzsignfolderGetActionableElementsV2Response.md
@@ -2091,6 +2099,8 @@ docs/WebhookCreateObjectV2ResponseMPayload.md
 docs/WebhookDeleteObjectV1Response.md
 docs/WebhookEditObjectV1Request.md
 docs/WebhookEditObjectV1Response.md
+docs/WebhookEzmaxpartnerproductSubscribe.md
+docs/WebhookEzmaxpartnerproductUnsubscribe.md
 docs/WebhookEzsignDocumentCompleted.md
 docs/WebhookEzsignDocumentFormCompleted.md
 docs/WebhookEzsignDocumentUnsent.md
@@ -2139,6 +2149,7 @@ git_push.sh
 lib/EzmaxApi/ApiClient.pm
 lib/EzmaxApi/ApiFactory.pm
 lib/EzmaxApi/Configuration.pm
+lib/EzmaxApi/DocumentationEzmaxpartnerApi.pm
 lib/EzmaxApi/GlobalCustomerApi.pm
 lib/EzmaxApi/GlobalEzmaxclientApi.pm
 lib/EzmaxApi/GlobalEzmaxcustomerApi.pm
@@ -2468,6 +2479,7 @@ lib/EzmaxApi/Object/CustomEzmaxcustomeruserResponse.pm
 lib/EzmaxApi/Object/CustomEzmaxinvoicingEzsigndocumentResponse.pm
 lib/EzmaxApi/Object/CustomEzmaxinvoicingEzsignfolderResponse.pm
 lib/EzmaxApi/Object/CustomEzmaxpartnerListElement.pm
+lib/EzmaxApi/Object/CustomEzmaxpartnerproductSubscribe.pm
 lib/EzmaxApi/Object/CustomEzmaxpricingResponse.pm
 lib/EzmaxApi/Object/CustomEzsigndocumentDuplicateRequest.pm
 lib/EzmaxApi/Object/CustomEzsigndocumentEzsignsignaturesAutomaticResponse.pm
@@ -2560,6 +2572,8 @@ lib/EzmaxApi/Object/DiscussionmessageRequestCompound.pm
 lib/EzmaxApi/Object/DiscussionmessageRequestPatch.pm
 lib/EzmaxApi/Object/DiscussionmessageResponse.pm
 lib/EzmaxApi/Object/DiscussionmessageResponseCompound.pm
+lib/EzmaxApi/Object/DocumentationSubscribeV1Request.pm
+lib/EzmaxApi/Object/DocumentationSubscribeV1Response.pm
 lib/EzmaxApi/Object/DomainAutocompleteElementResponse.pm
 lib/EzmaxApi/Object/DomainCreateObjectV1Request.pm
 lib/EzmaxApi/Object/DomainCreateObjectV1Response.pm
@@ -2818,6 +2832,8 @@ lib/EzmaxApi/Object/EzsigndocumentExtractTextV1Request.pm
 lib/EzmaxApi/Object/EzsigndocumentExtractTextV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentExtractTextV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigndocumentFlattenV1Response.pm
+lib/EzmaxApi/Object/EzsigndocumentGetActionableElementsForSignerV1Response.pm
+lib/EzmaxApi/Object/EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigndocumentGetActionableElementsV1Response.pm
 lib/EzmaxApi/Object/EzsigndocumentGetActionableElementsV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsigndocumentGetActionableElementsV2Response.pm
@@ -2902,6 +2918,8 @@ lib/EzmaxApi/Object/EzsignfolderDuplicateV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignfolderEditObjectV3Request.pm
 lib/EzmaxApi/Object/EzsignfolderEditObjectV3Response.pm
 lib/EzmaxApi/Object/EzsignfolderEndPrematurelyV1Response.pm
+lib/EzmaxApi/Object/EzsignfolderGetActionableElementsForSignerV1Response.pm
+lib/EzmaxApi/Object/EzsignfolderGetActionableElementsForSignerV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignfolderGetActionableElementsV1Response.pm
 lib/EzmaxApi/Object/EzsignfolderGetActionableElementsV1ResponseMPayload.pm
 lib/EzmaxApi/Object/EzsignfolderGetActionableElementsV2Response.pm
@@ -4093,6 +4111,8 @@ lib/EzmaxApi/Object/WebhookCreateObjectV2ResponseMPayload.pm
 lib/EzmaxApi/Object/WebhookDeleteObjectV1Response.pm
 lib/EzmaxApi/Object/WebhookEditObjectV1Request.pm
 lib/EzmaxApi/Object/WebhookEditObjectV1Response.pm
+lib/EzmaxApi/Object/WebhookEzmaxpartnerproductSubscribe.pm
+lib/EzmaxApi/Object/WebhookEzmaxpartnerproductUnsubscribe.pm
 lib/EzmaxApi/Object/WebhookEzsignDocumentCompleted.pm
 lib/EzmaxApi/Object/WebhookEzsignDocumentFormCompleted.pm
 lib/EzmaxApi/Object/WebhookEzsignDocumentUnsent.pm
