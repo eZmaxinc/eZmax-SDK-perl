@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **dt_inscriptionnotauthenticated_transactiondate_real** | **string** | The transactiondatereal of the Inscriptionnotauthenticated | [optional] 
 **b_inscriptionnotauthenticated_conditional** | **boolean** | Whether the inscriptionnotauthenticated is conditional | [optional] 
 **b_inscriptionnotauthenticated_isactive** | **boolean** | Whether the inscriptionnotauthenticated is active or not | [optional] 
+**b_inscriptionnotauthenticated_draft** | **boolean** | Whether the inscriptionnotauthenticated is a draft or not | [optional] 
 **s_address_civic** | **string** | The Civic number. | [optional] 
 **s_address_street** | **string** | The Street Name | [optional] 
 **s_address_suite** | **string** | The Suite or appartment number | [optional] 

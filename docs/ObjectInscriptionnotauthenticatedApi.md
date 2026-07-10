@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**inscriptionnotauthenticated_get_communicationsenders_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_communicationsenders_v1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationsenders | Retrieve Inscriptionnotauthenticated&#39;s Communicationsender
 [**inscriptionnotauthenticated_get_inscriptionnotauthenticatedconditions_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_inscriptionnotauthenticatedconditions_v1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getInscriptionnotauthenticatedconditions | Retrieve Inscriptionnotauthenticated conditions
 [**inscriptionnotauthenticated_get_list_v1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_list_v1) | **GET** /1/object/inscriptionnotauthenticated/getList | Retrieve Inscriptionnotauthenticated list
+[**inscriptionnotauthenticated_get_object_v2**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_get_object_v2) | **GET** /2/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID} | Retrieve an existing Inscriptionnotauthenticated
 [**inscriptionnotauthenticated_import_into_edmv1**](ObjectInscriptionnotauthenticatedApi.md#inscriptionnotauthenticated_import_into_edmv1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/importIntoEDM | Import attachments into the Inscriptionnotauthenticated
 
 
@@ -383,6 +384,57 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **inscriptionnotauthenticated_get_object_v2**
+> InscriptionnotauthenticatedGetObjectV2Response inscriptionnotauthenticated_get_object_v2(pki_inscriptionnotauthenticated_id => $pki_inscriptionnotauthenticated_id)
+
+Retrieve an existing Inscriptionnotauthenticated
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectInscriptionnotauthenticatedApi;
+my $api_instance = EzmaxApi::ObjectInscriptionnotauthenticatedApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_inscriptionnotauthenticated_id = 56; # int | The unique ID of the Inscriptionnotauthenticated
+
+eval {
+    my $result = $api_instance->inscriptionnotauthenticated_get_object_v2(pki_inscriptionnotauthenticated_id => $pki_inscriptionnotauthenticated_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectInscriptionnotauthenticatedApi->inscriptionnotauthenticated_get_object_v2: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_inscriptionnotauthenticated_id** | **int**| The unique ID of the Inscriptionnotauthenticated | 
+
+### Return type
+
+[**InscriptionnotauthenticatedGetObjectV2Response**](InscriptionnotauthenticatedGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
