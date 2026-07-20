@@ -421,7 +421,6 @@ docs/DiscussionmessageRequestCompound.md
 docs/DiscussionmessageRequestPatch.md
 docs/DiscussionmessageResponse.md
 docs/DiscussionmessageResponseCompound.md
-docs/DocumentationEzmaxpartnerApi.md
 docs/DocumentationSubscribeV1Request.md
 docs/DocumentationSubscribeV1Response.md
 docs/DomainAutocompleteElementResponse.md
@@ -470,6 +469,7 @@ docs/EnumHorizontalalignment.md
 docs/EnumReportdataType.md
 docs/EnumTextvalidation.md
 docs/EnumVerticalalignment.md
+docs/ExternalEzmaxpartnerApi.md
 docs/ExternalbrokerImportIntoEDMV1Request.md
 docs/ExternalbrokerImportIntoEDMV1Response.md
 docs/ExternalbrokerImportIntoEDMV1ResponseMPayload.md
@@ -1311,6 +1311,7 @@ docs/FieldEActivesessionOrigin.md
 docs/FieldEActivesessionRealestateinprogress.md
 docs/FieldEActivesessionUsertype.md
 docs/FieldEActivesessionWeekdaystart.md
+docs/FieldEAgentSchedule.md
 docs/FieldEAttachmentDocumenttype.md
 docs/FieldEAttachmentPrivacy.md
 docs/FieldEAttachmentType.md
@@ -1452,6 +1453,7 @@ docs/FieldEWebhookEzmaxpartnerevent.md
 docs/FieldEWebhookEzsignevent.md
 docs/FieldEWebhookManagementevent.md
 docs/FieldEWebhookModule.md
+docs/FieldEWebhookRealestateevent.md
 docs/FieldEtInscriptionnotauthenticatedMortgagetype.md
 docs/FieldPksEzmaxclientOs.md
 docs/FontAutocompleteElementResponse.md
@@ -1869,7 +1871,10 @@ docs/ScimServiceProviderConfig.md
 docs/ScimServiceProviderConfigApi.md
 docs/ScimServiceProviderConfigBulk.md
 docs/ScimServiceProviderConfigChangePassword.md
+docs/ScimServiceProviderConfigEtag.md
 docs/ScimServiceProviderConfigFilter.md
+docs/ScimServiceProviderConfigPatch.md
+docs/ScimServiceProviderConfigSort.md
 docs/ScimUser.md
 docs/ScimUserList.md
 docs/ScimUsersApi.md
@@ -2154,6 +2159,10 @@ docs/WebhookGetListV1ResponseMPayload.md
 docs/WebhookGetObjectV2Response.md
 docs/WebhookGetObjectV2ResponseMPayload.md
 docs/WebhookListElement.md
+docs/WebhookRealestateInscriptionCreated.md
+docs/WebhookRealestateInscriptionModified.md
+docs/WebhookRealestateInscriptionnotauthenticatedCreated.md
+docs/WebhookRealestateInscriptionnotauthenticatedModified.md
 docs/WebhookRegenerateApikeyV1Request.md
 docs/WebhookRegenerateApikeyV1Response.md
 docs/WebhookRegenerateApikeyV1ResponseMPayload.md
@@ -2185,7 +2194,7 @@ git_push.sh
 lib/EzmaxApi/ApiClient.pm
 lib/EzmaxApi/ApiFactory.pm
 lib/EzmaxApi/Configuration.pm
-lib/EzmaxApi/DocumentationEzmaxpartnerApi.pm
+lib/EzmaxApi/ExternalEzmaxpartnerApi.pm
 lib/EzmaxApi/GlobalCustomerApi.pm
 lib/EzmaxApi/GlobalEzmaxclientApi.pm
 lib/EzmaxApi/GlobalEzmaxcustomerApi.pm
@@ -3498,6 +3507,7 @@ lib/EzmaxApi/Object/FieldEActivesessionOrigin.pm
 lib/EzmaxApi/Object/FieldEActivesessionRealestateinprogress.pm
 lib/EzmaxApi/Object/FieldEActivesessionUsertype.pm
 lib/EzmaxApi/Object/FieldEActivesessionWeekdaystart.pm
+lib/EzmaxApi/Object/FieldEAgentSchedule.pm
 lib/EzmaxApi/Object/FieldEAttachmentDocumenttype.pm
 lib/EzmaxApi/Object/FieldEAttachmentPrivacy.pm
 lib/EzmaxApi/Object/FieldEAttachmentType.pm
@@ -3639,6 +3649,7 @@ lib/EzmaxApi/Object/FieldEWebhookEzmaxpartnerevent.pm
 lib/EzmaxApi/Object/FieldEWebhookEzsignevent.pm
 lib/EzmaxApi/Object/FieldEWebhookManagementevent.pm
 lib/EzmaxApi/Object/FieldEWebhookModule.pm
+lib/EzmaxApi/Object/FieldEWebhookRealestateevent.pm
 lib/EzmaxApi/Object/FieldEtInscriptionnotauthenticatedMortgagetype.pm
 lib/EzmaxApi/Object/FieldPksEzmaxclientOs.pm
 lib/EzmaxApi/Object/FontAutocompleteElementResponse.pm
@@ -3918,7 +3929,10 @@ lib/EzmaxApi/Object/ScimGroupMember.pm
 lib/EzmaxApi/Object/ScimServiceProviderConfig.pm
 lib/EzmaxApi/Object/ScimServiceProviderConfigBulk.pm
 lib/EzmaxApi/Object/ScimServiceProviderConfigChangePassword.pm
+lib/EzmaxApi/Object/ScimServiceProviderConfigEtag.pm
 lib/EzmaxApi/Object/ScimServiceProviderConfigFilter.pm
+lib/EzmaxApi/Object/ScimServiceProviderConfigPatch.pm
+lib/EzmaxApi/Object/ScimServiceProviderConfigSort.pm
 lib/EzmaxApi/Object/ScimUser.pm
 lib/EzmaxApi/Object/ScimUserList.pm
 lib/EzmaxApi/Object/SecretquestionAutocompleteElementResponse.pm
@@ -4202,6 +4216,10 @@ lib/EzmaxApi/Object/WebhookGetListV1ResponseMPayload.pm
 lib/EzmaxApi/Object/WebhookGetObjectV2Response.pm
 lib/EzmaxApi/Object/WebhookGetObjectV2ResponseMPayload.pm
 lib/EzmaxApi/Object/WebhookListElement.pm
+lib/EzmaxApi/Object/WebhookRealestateInscriptionCreated.pm
+lib/EzmaxApi/Object/WebhookRealestateInscriptionModified.pm
+lib/EzmaxApi/Object/WebhookRealestateInscriptionnotauthenticatedCreated.pm
+lib/EzmaxApi/Object/WebhookRealestateInscriptionnotauthenticatedModified.pm
 lib/EzmaxApi/Object/WebhookRegenerateApikeyV1Request.pm
 lib/EzmaxApi/Object/WebhookRegenerateApikeyV1Response.pm
 lib/EzmaxApi/Object/WebhookRegenerateApikeyV1ResponseMPayload.pm

@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::MultilingualEzmaxpartnerLogourl;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -268,6 +269,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'obj_ezmaxpartner_logourl' => {
+        datatype => 'MultilingualEzmaxpartnerLogourl',
+        base_name => 'objEzmaxpartnerLogourl',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -277,7 +285,8 @@ __PACKAGE__->openapi_types( {
     's_ezmaxpartner_shortdescription_x' => 'string',
     's_ezmaxpartner_name_x' => 'string',
     's_ezmaxpartner_phone_e164_x' => 'string',
-    's_ezmaxpartner_url_x' => 'string'
+    's_ezmaxpartner_url_x' => 'string',
+    'obj_ezmaxpartner_logourl' => 'MultilingualEzmaxpartnerLogourl'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -287,7 +296,8 @@ __PACKAGE__->attribute_map( {
     's_ezmaxpartner_shortdescription_x' => 'sEzmaxpartnerShortdescriptionX',
     's_ezmaxpartner_name_x' => 'sEzmaxpartnerNameX',
     's_ezmaxpartner_phone_e164_x' => 'sEzmaxpartnerPhoneE164X',
-    's_ezmaxpartner_url_x' => 'sEzmaxpartnerUrlX'
+    's_ezmaxpartner_url_x' => 'sEzmaxpartnerUrlX',
+    'obj_ezmaxpartner_logourl' => 'objEzmaxpartnerLogourl'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

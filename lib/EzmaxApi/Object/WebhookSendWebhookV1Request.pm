@@ -33,6 +33,7 @@ use DateTime;
 use EzmaxApi::Object::CustomEWebhookEzsignevent;
 use EzmaxApi::Object::FieldEWebhookManagementevent;
 use EzmaxApi::Object::FieldEWebhookModule;
+use EzmaxApi::Object::FieldEWebhookRealestateevent;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -243,6 +244,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_webhook_realestateevent' => {
+        datatype => 'FieldEWebhookRealestateevent',
+        base_name => 'eWebhookRealestateevent',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'fki_ezsignfolder_id' => {
         datatype => 'int',
         base_name => 'fkiEzsignfolderID',
@@ -284,6 +292,7 @@ __PACKAGE__->openapi_types( {
     'e_webhook_module' => 'FieldEWebhookModule',
     'e_webhook_ezsignevent' => 'CustomEWebhookEzsignevent',
     'e_webhook_managementevent' => 'FieldEWebhookManagementevent',
+    'e_webhook_realestateevent' => 'FieldEWebhookRealestateevent',
     'fki_ezsignfolder_id' => 'int',
     'fki_ezsigndocument_id' => 'int',
     'fki_ezsignsigner_id' => 'int',
@@ -295,6 +304,7 @@ __PACKAGE__->attribute_map( {
     'e_webhook_module' => 'eWebhookModule',
     'e_webhook_ezsignevent' => 'eWebhookEzsignevent',
     'e_webhook_managementevent' => 'eWebhookManagementevent',
+    'e_webhook_realestateevent' => 'eWebhookRealestateevent',
     'fki_ezsignfolder_id' => 'fkiEzsignfolderID',
     'fki_ezsigndocument_id' => 'fkiEzsigndocumentID',
     'fki_ezsignsigner_id' => 'fkiEzsignsignerID',

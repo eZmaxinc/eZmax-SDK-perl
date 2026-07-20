@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **e_webhook_module** | [**FieldEWebhookModule**](FieldEWebhookModule.md) |  | 
 **e_webhook_ezsignevent** | [**FieldEWebhookEzsignevent**](FieldEWebhookEzsignevent.md) |  | [optional] 
 **e_webhook_managementevent** | [**FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional] 
+**e_webhook_realestateevent** | [**FieldEWebhookRealestateevent**](FieldEWebhookRealestateevent.md) |  | [optional] 
 **s_webhook_url** | **string** | The URL of the Webhook callback | 
 **s_webhook_emailfailed** | **string** | The email that will receive the Webhook in case all attempts fail | 
 **b_webhook_isactive** | **boolean** | Whether the Webhook is active or not | 

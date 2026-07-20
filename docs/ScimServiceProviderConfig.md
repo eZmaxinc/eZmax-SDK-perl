@@ -12,10 +12,10 @@ Name | Type | Description | Notes
 **bulk** | [**ScimServiceProviderConfigBulk**](ScimServiceProviderConfigBulk.md) |  | 
 **change_password** | [**ScimServiceProviderConfigChangePassword**](ScimServiceProviderConfigChangePassword.md) |  | 
 **documentation_uri** | **string** | An HTTP-addressable URL pointing to the service provider&#39;s human-consumable help documentation | 
-**etag** | [**ScimServiceProviderConfigChangePassword**](ScimServiceProviderConfigChangePassword.md) |  | 
+**etag** | [**ScimServiceProviderConfigEtag**](ScimServiceProviderConfigEtag.md) |  | 
 **filter** | [**ScimServiceProviderConfigFilter**](ScimServiceProviderConfigFilter.md) |  | 
-**patch** | [**ScimServiceProviderConfigChangePassword**](ScimServiceProviderConfigChangePassword.md) |  | 
-**sort** | [**ScimServiceProviderConfigChangePassword**](ScimServiceProviderConfigChangePassword.md) |  | 
+**patch** | [**ScimServiceProviderConfigPatch**](ScimServiceProviderConfigPatch.md) |  | 
+**sort** | [**ScimServiceProviderConfigSort**](ScimServiceProviderConfigSort.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

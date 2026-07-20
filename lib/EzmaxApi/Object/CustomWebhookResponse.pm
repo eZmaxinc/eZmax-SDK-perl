@@ -35,6 +35,7 @@ use EzmaxApi::Object::FieldEWebhookEzmaxpartnerevent;
 use EzmaxApi::Object::FieldEWebhookEzsignevent;
 use EzmaxApi::Object::FieldEWebhookManagementevent;
 use EzmaxApi::Object::FieldEWebhookModule;
+use EzmaxApi::Object::FieldEWebhookRealestateevent;
 use EzmaxApi::Object::WebhookheaderResponseCompound;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -288,6 +289,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_webhook_realestateevent' => {
+        datatype => 'FieldEWebhookRealestateevent',
+        base_name => 'eWebhookRealestateevent',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     's_webhook_url' => {
         datatype => 'string',
         base_name => 'sWebhookUrl',
@@ -412,6 +420,7 @@ __PACKAGE__->openapi_types( {
     'e_webhook_ezmaxpartnerevent' => 'FieldEWebhookEzmaxpartnerevent',
     'e_webhook_ezsignevent' => 'FieldEWebhookEzsignevent',
     'e_webhook_managementevent' => 'FieldEWebhookManagementevent',
+    'e_webhook_realestateevent' => 'FieldEWebhookRealestateevent',
     's_webhook_url' => 'string',
     's_webhook_emailfailed' => 'string',
     's_webhook_apikey' => 'string',
@@ -440,6 +449,7 @@ __PACKAGE__->attribute_map( {
     'e_webhook_ezmaxpartnerevent' => 'eWebhookEzmaxpartnerevent',
     'e_webhook_ezsignevent' => 'eWebhookEzsignevent',
     'e_webhook_managementevent' => 'eWebhookManagementevent',
+    'e_webhook_realestateevent' => 'eWebhookRealestateevent',
     's_webhook_url' => 'sWebhookUrl',
     's_webhook_emailfailed' => 'sWebhookEmailfailed',
     's_webhook_apikey' => 'sWebhookApikey',

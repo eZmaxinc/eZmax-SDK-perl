@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use EzmaxApi::Object::FieldEInscriptionStep;
+use EzmaxApi::Object::FieldEInscriptionType;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -241,6 +242,41 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_inscriptiontype_name_x' => {
+        datatype => 'string',
+        base_name => 'sInscriptiontypeNameX',
+        description => 'The name of the Inscriptiontype in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    'fki_inscriptionbuildingtype_id' => {
+        datatype => 'int',
+        base_name => 'fkiInscriptionbuildingtypeID',
+        description => 'The unique ID of the Inscriptionbuildingtype',
+        format => '',
+        read_only => '',
+            },
+    's_inscriptionbuildingtype_name_x' => {
+        datatype => 'string',
+        base_name => 'sInscriptionbuildingtypeNameX',
+        description => 'The name of the Inscriptionbuildingtype in the language of the requester',
+        format => '',
+        read_only => '',
+            },
+    'fki_inscriptioncategory_id' => {
+        datatype => 'int',
+        base_name => 'fkiInscriptioncategoryID',
+        description => 'The unique ID of the Inscriptioncategory',
+        format => '',
+        read_only => '',
+            },
+    's_inscriptioncategory_name_x' => {
+        datatype => 'string',
+        base_name => 'sInscriptioncategoryNameX',
+        description => 'The name of the Inscriptioncategory in the language of the requester',
+        format => '',
+        read_only => '',
+            },
     'fki_buyercontract_id' => {
         datatype => 'int',
         base_name => 'fkiBuyercontractID',
@@ -255,16 +291,16 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
-    's_inscriptiontype_name_x' => {
-        datatype => 'string',
-        base_name => 'sInscriptiontypeNameX',
-        description => 'The name of the Inscriptiontype in the language of the requester',
-        format => '',
-        read_only => '',
-            },
     'e_inscription_step' => {
         datatype => 'FieldEInscriptionStep',
         base_name => 'eInscriptionStep',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'e_inscription_type' => {
+        datatype => 'FieldEInscriptionType',
+        base_name => 'eInscriptionType',
         description => '',
         format => '',
         read_only => '',
@@ -458,16 +494,28 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'i_inscription_unit' => {
+        datatype => 'int',
+        base_name => 'iInscriptionUnit',
+        description => 'The unit of the Inscription',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'pki_inscription_id' => 'int',
     'pki_inscriptionnotauthenticated_id' => 'int',
     'fki_inscriptiontype_id' => 'int',
+    's_inscriptiontype_name_x' => 'string',
+    'fki_inscriptionbuildingtype_id' => 'int',
+    's_inscriptionbuildingtype_name_x' => 'string',
+    'fki_inscriptioncategory_id' => 'int',
+    's_inscriptioncategory_name_x' => 'string',
     'fki_buyercontract_id' => 'int',
     's_buyercontract_contract' => 'string',
-    's_inscriptiontype_name_x' => 'string',
     'e_inscription_step' => 'FieldEInscriptionStep',
+    'e_inscription_type' => 'FieldEInscriptionType',
     's_inscription_civicend' => 'string',
     's_inscription_mls' => 'string',
     's_inscription_contract' => 'string',
@@ -494,17 +542,23 @@ __PACKAGE__->openapi_types( {
     's_province_name_x' => 'string',
     'fki_country_id' => 'int',
     's_country_name_x' => 'string',
-    's_inscriptionnotauthenticated_offertopurchasenumber' => 'string'
+    's_inscriptionnotauthenticated_offertopurchasenumber' => 'string',
+    'i_inscription_unit' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
     'pki_inscription_id' => 'pkiInscriptionID',
     'pki_inscriptionnotauthenticated_id' => 'pkiInscriptionnotauthenticatedID',
     'fki_inscriptiontype_id' => 'fkiInscriptiontypeID',
+    's_inscriptiontype_name_x' => 'sInscriptiontypeNameX',
+    'fki_inscriptionbuildingtype_id' => 'fkiInscriptionbuildingtypeID',
+    's_inscriptionbuildingtype_name_x' => 'sInscriptionbuildingtypeNameX',
+    'fki_inscriptioncategory_id' => 'fkiInscriptioncategoryID',
+    's_inscriptioncategory_name_x' => 'sInscriptioncategoryNameX',
     'fki_buyercontract_id' => 'fkiBuyercontractID',
     's_buyercontract_contract' => 'sBuyercontractContract',
-    's_inscriptiontype_name_x' => 'sInscriptiontypeNameX',
     'e_inscription_step' => 'eInscriptionStep',
+    'e_inscription_type' => 'eInscriptionType',
     's_inscription_civicend' => 'sInscriptionCivicend',
     's_inscription_mls' => 'sInscriptionMLS',
     's_inscription_contract' => 'sInscriptionContract',
@@ -531,7 +585,8 @@ __PACKAGE__->attribute_map( {
     's_province_name_x' => 'sProvinceNameX',
     'fki_country_id' => 'fkiCountryID',
     's_country_name_x' => 'sCountryNameX',
-    's_inscriptionnotauthenticated_offertopurchasenumber' => 'sInscriptionnotauthenticatedOffertopurchasenumber'
+    's_inscriptionnotauthenticated_offertopurchasenumber' => 'sInscriptionnotauthenticatedOffertopurchasenumber',
+    'i_inscription_unit' => 'iInscriptionUnit'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -33,6 +33,7 @@ use DateTime;
 use EzmaxApi::Object::FieldEWebhookEzsignevent;
 use EzmaxApi::Object::FieldEWebhookManagementevent;
 use EzmaxApi::Object::FieldEWebhookModule;
+use EzmaxApi::Object::FieldEWebhookRealestateevent;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -278,6 +279,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_webhook_realestateevent' => {
+        datatype => 'FieldEWebhookRealestateevent',
+        base_name => 'eWebhookRealestateevent',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'b_webhook_isactive' => {
         datatype => 'boolean',
         base_name => 'bWebhookIsactive',
@@ -303,6 +311,7 @@ __PACKAGE__->openapi_types( {
     'e_webhook_module' => 'FieldEWebhookModule',
     'e_webhook_ezsignevent' => 'FieldEWebhookEzsignevent',
     'e_webhook_managementevent' => 'FieldEWebhookManagementevent',
+    'e_webhook_realestateevent' => 'FieldEWebhookRealestateevent',
     'b_webhook_isactive' => 'boolean',
     'b_webhook_issigned' => 'boolean'
 } );
@@ -316,6 +325,7 @@ __PACKAGE__->attribute_map( {
     'e_webhook_module' => 'eWebhookModule',
     'e_webhook_ezsignevent' => 'eWebhookEzsignevent',
     'e_webhook_managementevent' => 'eWebhookManagementevent',
+    'e_webhook_realestateevent' => 'eWebhookRealestateevent',
     'b_webhook_isactive' => 'bWebhookIsactive',
     'b_webhook_issigned' => 'bWebhookIssigned'
 } );

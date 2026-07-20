@@ -33,7 +33,10 @@ use DateTime;
 use EzmaxApi::Object::ScimAuthenticationScheme;
 use EzmaxApi::Object::ScimServiceProviderConfigBulk;
 use EzmaxApi::Object::ScimServiceProviderConfigChangePassword;
+use EzmaxApi::Object::ScimServiceProviderConfigEtag;
 use EzmaxApi::Object::ScimServiceProviderConfigFilter;
+use EzmaxApi::Object::ScimServiceProviderConfigPatch;
+use EzmaxApi::Object::ScimServiceProviderConfigSort;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -252,7 +255,7 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'etag' => {
-        datatype => 'ScimServiceProviderConfigChangePassword',
+        datatype => 'ScimServiceProviderConfigEtag',
         base_name => 'etag',
         description => '',
         format => '',
@@ -266,14 +269,14 @@ __PACKAGE__->method_documentation({
         read_only => '',
             },
     'patch' => {
-        datatype => 'ScimServiceProviderConfigChangePassword',
+        datatype => 'ScimServiceProviderConfigPatch',
         base_name => 'patch',
         description => '',
         format => '',
         read_only => '',
             },
     'sort' => {
-        datatype => 'ScimServiceProviderConfigChangePassword',
+        datatype => 'ScimServiceProviderConfigSort',
         base_name => 'sort',
         description => '',
         format => '',
@@ -286,10 +289,10 @@ __PACKAGE__->openapi_types( {
     'bulk' => 'ScimServiceProviderConfigBulk',
     'change_password' => 'ScimServiceProviderConfigChangePassword',
     'documentation_uri' => 'string',
-    'etag' => 'ScimServiceProviderConfigChangePassword',
+    'etag' => 'ScimServiceProviderConfigEtag',
     'filter' => 'ScimServiceProviderConfigFilter',
-    'patch' => 'ScimServiceProviderConfigChangePassword',
-    'sort' => 'ScimServiceProviderConfigChangePassword'
+    'patch' => 'ScimServiceProviderConfigPatch',
+    'sort' => 'ScimServiceProviderConfigSort'
 } );
 
 __PACKAGE__->attribute_map( {

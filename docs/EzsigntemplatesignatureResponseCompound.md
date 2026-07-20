@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **fki_paymentgateway_id** | **int** | The unique ID of the Paymentgateway | [optional] 
 **b_ezsigntemplatesignature_handwritten** | **boolean** | Whether the Ezsigntemplatesignature must be handwritten or not when eEzsigntemplatesignatureType &#x3D; Signature. | [optional] 
 **b_ezsigntemplatesignature_reason** | **boolean** | Whether the Ezsigntemplatesignature must include a reason or not when eEzsigntemplatesignatureType &#x3D; Signature. | [optional] 
+**b_ezsigntemplatesignature_creditcardcustomamount** | **boolean** | Whether we can enter a custom amount while signing an Ezsigntemplatesignature &#39;Creditcard&#39; or not | [optional] 
 **e_ezsigntemplatesignature_positioning** | [**FieldEEzsigntemplatesignaturePositioning**](FieldEEzsigntemplatesignaturePositioning.md) |  | [optional] 
 **i_ezsigntemplatedocumentpage_pagenumber** | **int** | The page number in the Ezsigntemplatedocument | 
 **i_ezsigntemplatesignature_x** | **int** | The X coordinate (Horizontal) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate. | [optional] 

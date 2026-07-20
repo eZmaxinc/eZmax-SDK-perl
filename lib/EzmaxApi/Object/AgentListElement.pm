@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use EzmaxApi::Object::FieldEAgentSchedule;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -373,6 +374,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'e_agent_schedule' => {
+        datatype => 'FieldEAgentSchedule',
+        base_name => 'eAgentSchedule',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'b_agent_tranquillit' => {
         datatype => 'boolean',
         base_name => 'bAgentTranquillit',
@@ -545,6 +553,7 @@ __PACKAGE__->openapi_types( {
     'dt_agent_senioritydate' => 'string',
     'dt_agent_sickleavestart' => 'string',
     'dt_agent_sickleaveend' => 'string',
+    'e_agent_schedule' => 'FieldEAgentSchedule',
     'b_agent_tranquillit' => 'boolean',
     'b_agent_residentiallicense' => 'boolean',
     'b_agent_commerciallicense' => 'boolean',
@@ -591,6 +600,7 @@ __PACKAGE__->attribute_map( {
     'dt_agent_senioritydate' => 'dtAgentSenioritydate',
     'dt_agent_sickleavestart' => 'dtAgentSickleavestart',
     'dt_agent_sickleaveend' => 'dtAgentSickleaveend',
+    'e_agent_schedule' => 'eAgentSchedule',
     'b_agent_tranquillit' => 'bAgentTranquillit',
     'b_agent_residentiallicense' => 'bAgentResidentiallicense',
     'b_agent_commerciallicense' => 'bAgentCommerciallicense',
