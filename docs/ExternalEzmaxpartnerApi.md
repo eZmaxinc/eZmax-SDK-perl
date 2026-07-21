@@ -9,11 +9,11 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**externalpartner_subscribe_v1**](ExternalEzmaxpartnerApi.md#externalpartner_subscribe_v1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage
+[**ezmaxpartner_subscribe_v1**](ExternalEzmaxpartnerApi.md#ezmaxpartner_subscribe_v1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage
 
 
-# **externalpartner_subscribe_v1**
-> DocumentationSubscribeV1Response externalpartner_subscribe_v1(documentation_subscribe_v1_request => $documentation_subscribe_v1_request)
+# **ezmaxpartner_subscribe_v1**
+> EzmaxpartnerSubscribeV1Response ezmaxpartner_subscribe_v1(ezmaxpartner_subscribe_v1_request => $ezmaxpartner_subscribe_v1_request)
 
 Subscribe to an Ezmaxparnerproductstage
 
@@ -31,14 +31,14 @@ my $api_instance = EzmaxApi::ExternalEzmaxpartnerApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $documentation_subscribe_v1_request = EzmaxApi::Object::DocumentationSubscribeV1Request->new(); # DocumentationSubscribeV1Request | 
+my $ezmaxpartner_subscribe_v1_request = EzmaxApi::Object::EzmaxpartnerSubscribeV1Request->new(); # EzmaxpartnerSubscribeV1Request | 
 
 eval {
-    my $result = $api_instance->externalpartner_subscribe_v1(documentation_subscribe_v1_request => $documentation_subscribe_v1_request);
+    my $result = $api_instance->ezmaxpartner_subscribe_v1(ezmaxpartner_subscribe_v1_request => $ezmaxpartner_subscribe_v1_request);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ExternalEzmaxpartnerApi->externalpartner_subscribe_v1: $@\n";
+    warn "Exception when calling ExternalEzmaxpartnerApi->ezmaxpartner_subscribe_v1: $@\n";
 }
 ```
 
@@ -46,11 +46,11 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **documentation_subscribe_v1_request** | [**DocumentationSubscribeV1Request**](DocumentationSubscribeV1Request.md)|  | 
+ **ezmaxpartner_subscribe_v1_request** | [**EzmaxpartnerSubscribeV1Request**](EzmaxpartnerSubscribeV1Request.md)|  | 
 
 ### Return type
 
-[**DocumentationSubscribeV1Response**](DocumentationSubscribeV1Response.md)
+[**EzmaxpartnerSubscribeV1Response**](EzmaxpartnerSubscribeV1Response.md)
 
 ### Authorization
 

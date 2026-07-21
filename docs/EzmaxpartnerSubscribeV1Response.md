@@ -1,8 +1,8 @@
-# EzmaxApi::Object::DocumentationSubscribeV1Response
+# EzmaxApi::Object::EzmaxpartnerSubscribeV1Response
 
 ## Load the model package
 ```perl
-use EzmaxApi::Object::DocumentationSubscribeV1Response;
+use EzmaxApi::Object::EzmaxpartnerSubscribeV1Response;
 ```
 
 ## Properties

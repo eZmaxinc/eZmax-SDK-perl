@@ -49,33 +49,33 @@ sub new {
 
 
 #
-# externalpartner_subscribe_v1
+# ezmaxpartner_subscribe_v1
 #
 # Subscribe to an Ezmaxparnerproductstage
 #
-# @param DocumentationSubscribeV1Request $documentation_subscribe_v1_request  (required)
+# @param EzmaxpartnerSubscribeV1Request $ezmaxpartner_subscribe_v1_request  (required)
 {
     my $params = {
-    'documentation_subscribe_v1_request' => {
-        data_type => 'DocumentationSubscribeV1Request',
+    'ezmaxpartner_subscribe_v1_request' => {
+        data_type => 'EzmaxpartnerSubscribeV1Request',
         description => '',
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'externalpartner_subscribe_v1' } = {
+    __PACKAGE__->method_documentation->{ 'ezmaxpartner_subscribe_v1' } = {
         summary => 'Subscribe to an Ezmaxparnerproductstage',
         params => $params,
-        returns => 'DocumentationSubscribeV1Response',
+        returns => 'EzmaxpartnerSubscribeV1Response',
         };
 }
-# @return DocumentationSubscribeV1Response
+# @return EzmaxpartnerSubscribeV1Response
 #
-sub externalpartner_subscribe_v1 {
+sub ezmaxpartner_subscribe_v1 {
     my ($self, %args) = @_;
 
-    # verify the required parameter 'documentation_subscribe_v1_request' is set
-    unless (exists $args{'documentation_subscribe_v1_request'}) {
-      croak("Missing the required parameter 'documentation_subscribe_v1_request' when calling externalpartner_subscribe_v1");
+    # verify the required parameter 'ezmaxpartner_subscribe_v1_request' is set
+    unless (exists $args{'ezmaxpartner_subscribe_v1_request'}) {
+      croak("Missing the required parameter 'ezmaxpartner_subscribe_v1_request' when calling ezmaxpartner_subscribe_v1");
     }
 
     # parse inputs
@@ -95,8 +95,8 @@ sub externalpartner_subscribe_v1 {
 
     my $_body_data;
     # body params
-    if ( exists $args{'documentation_subscribe_v1_request'}) {
-        $_body_data = $args{'documentation_subscribe_v1_request'};
+    if ( exists $args{'ezmaxpartner_subscribe_v1_request'}) {
+        $_body_data = $args{'ezmaxpartner_subscribe_v1_request'};
     }
 
     # authentication setting, if any
@@ -109,7 +109,7 @@ sub externalpartner_subscribe_v1 {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('DocumentationSubscribeV1Response', $response);
+    my $_response_object = $self->{api_client}->deserialize('EzmaxpartnerSubscribeV1Response', $response);
     return $_response_object;
 }
 

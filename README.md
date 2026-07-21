@@ -794,8 +794,6 @@ use EzmaxApi::Object::DiscussionmessageRequestCompound;
 use EzmaxApi::Object::DiscussionmessageRequestPatch;
 use EzmaxApi::Object::DiscussionmessageResponse;
 use EzmaxApi::Object::DiscussionmessageResponseCompound;
-use EzmaxApi::Object::DocumentationSubscribeV1Request;
-use EzmaxApi::Object::DocumentationSubscribeV1Response;
 use EzmaxApi::Object::DomainAutocompleteElementResponse;
 use EzmaxApi::Object::DomainCreateObjectV1Request;
 use EzmaxApi::Object::DomainCreateObjectV1Response;
@@ -915,6 +913,8 @@ use EzmaxApi::Object::EzmaxpartnerGetObjectV2Response;
 use EzmaxApi::Object::EzmaxpartnerGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzmaxpartnerResponse;
 use EzmaxApi::Object::EzmaxpartnerResponseCompound;
+use EzmaxApi::Object::EzmaxpartnerSubscribeV1Request;
+use EzmaxApi::Object::EzmaxpartnerSubscribeV1Response;
 use EzmaxApi::Object::EzmaxproductAutocompleteElementResponse;
 use EzmaxApi::Object::EzmaxproductGetAutocompleteV2Response;
 use EzmaxApi::Object::EzmaxproductGetAutocompleteV2ResponseMPayload;
@@ -2993,8 +2993,6 @@ use EzmaxApi::Object::DiscussionmessageRequestCompound;
 use EzmaxApi::Object::DiscussionmessageRequestPatch;
 use EzmaxApi::Object::DiscussionmessageResponse;
 use EzmaxApi::Object::DiscussionmessageResponseCompound;
-use EzmaxApi::Object::DocumentationSubscribeV1Request;
-use EzmaxApi::Object::DocumentationSubscribeV1Response;
 use EzmaxApi::Object::DomainAutocompleteElementResponse;
 use EzmaxApi::Object::DomainCreateObjectV1Request;
 use EzmaxApi::Object::DomainCreateObjectV1Response;
@@ -3114,6 +3112,8 @@ use EzmaxApi::Object::EzmaxpartnerGetObjectV2Response;
 use EzmaxApi::Object::EzmaxpartnerGetObjectV2ResponseMPayload;
 use EzmaxApi::Object::EzmaxpartnerResponse;
 use EzmaxApi::Object::EzmaxpartnerResponseCompound;
+use EzmaxApi::Object::EzmaxpartnerSubscribeV1Request;
+use EzmaxApi::Object::EzmaxpartnerSubscribeV1Response;
 use EzmaxApi::Object::EzmaxproductAutocompleteElementResponse;
 use EzmaxApi::Object::EzmaxproductGetAutocompleteV2Response;
 use EzmaxApi::Object::EzmaxproductGetAutocompleteV2ResponseMPayload;
@@ -4634,14 +4634,14 @@ my $api_instance = EzmaxApi::ExternalEzmaxpartnerApi->new(
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $documentation_subscribe_v1_request = EzmaxApi::Object::DocumentationSubscribeV1Request->new(); # DocumentationSubscribeV1Request | 
+my $ezmaxpartner_subscribe_v1_request = EzmaxApi::Object::EzmaxpartnerSubscribeV1Request->new(); # EzmaxpartnerSubscribeV1Request | 
 
 eval {
-    my $result = $api_instance->externalpartner_subscribe_v1(documentation_subscribe_v1_request => $documentation_subscribe_v1_request);
+    my $result = $api_instance->ezmaxpartner_subscribe_v1(ezmaxpartner_subscribe_v1_request => $ezmaxpartner_subscribe_v1_request);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ExternalEzmaxpartnerApi->externalpartner_subscribe_v1: $@\n";
+    warn "Exception when calling ExternalEzmaxpartnerApi->ezmaxpartner_subscribe_v1: $@\n";
 }
 
 ```
@@ -4652,7 +4652,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ExternalEzmaxpartnerApi* | [**externalpartner_subscribe_v1**](docs/ExternalEzmaxpartnerApi.md#externalpartner_subscribe_v1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage
+*ExternalEzmaxpartnerApi* | [**ezmaxpartner_subscribe_v1**](docs/ExternalEzmaxpartnerApi.md#ezmaxpartner_subscribe_v1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage
 *GlobalCustomerApi* | [**global_customer_get_endpoint_v1**](docs/GlobalCustomerApi.md#global_customer_get_endpoint_v1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
 *GlobalEzmaxclientApi* | [**global_ezmaxclient_version_v1**](docs/GlobalEzmaxclientApi.md#global_ezmaxclient_version_v1) | **GET** /1/ezmaxclient/{pksEzmaxclientOs}/version | Retrieve the latest version of the Ezmaxclient
 *GlobalEzmaxcustomerApi* | [**global_ezmaxcustomer_get_configuration_v1**](docs/GlobalEzmaxcustomerApi.md#global_ezmaxcustomer_get_configuration_v1) | **GET** /1/ezmaxcustomer/{pksEzmaxcustomerCode}/getConfiguration | Get ezmaxcustomer configuration
@@ -5642,8 +5642,6 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::DiscussionmessageRequestPatch](docs/DiscussionmessageRequestPatch.md)
  - [EzmaxApi::Object::DiscussionmessageResponse](docs/DiscussionmessageResponse.md)
  - [EzmaxApi::Object::DiscussionmessageResponseCompound](docs/DiscussionmessageResponseCompound.md)
- - [EzmaxApi::Object::DocumentationSubscribeV1Request](docs/DocumentationSubscribeV1Request.md)
- - [EzmaxApi::Object::DocumentationSubscribeV1Response](docs/DocumentationSubscribeV1Response.md)
  - [EzmaxApi::Object::DomainAutocompleteElementResponse](docs/DomainAutocompleteElementResponse.md)
  - [EzmaxApi::Object::DomainCreateObjectV1Request](docs/DomainCreateObjectV1Request.md)
  - [EzmaxApi::Object::DomainCreateObjectV1Response](docs/DomainCreateObjectV1Response.md)
@@ -5763,6 +5761,8 @@ Class | Method | HTTP request | Description
  - [EzmaxApi::Object::EzmaxpartnerGetObjectV2ResponseMPayload](docs/EzmaxpartnerGetObjectV2ResponseMPayload.md)
  - [EzmaxApi::Object::EzmaxpartnerResponse](docs/EzmaxpartnerResponse.md)
  - [EzmaxApi::Object::EzmaxpartnerResponseCompound](docs/EzmaxpartnerResponseCompound.md)
+ - [EzmaxApi::Object::EzmaxpartnerSubscribeV1Request](docs/EzmaxpartnerSubscribeV1Request.md)
+ - [EzmaxApi::Object::EzmaxpartnerSubscribeV1Response](docs/EzmaxpartnerSubscribeV1Response.md)
  - [EzmaxApi::Object::EzmaxproductAutocompleteElementResponse](docs/EzmaxproductAutocompleteElementResponse.md)
  - [EzmaxApi::Object::EzmaxproductGetAutocompleteV2Response](docs/EzmaxproductGetAutocompleteV2Response.md)
  - [EzmaxApi::Object::EzmaxproductGetAutocompleteV2ResponseMPayload](docs/EzmaxproductGetAutocompleteV2ResponseMPayload.md)

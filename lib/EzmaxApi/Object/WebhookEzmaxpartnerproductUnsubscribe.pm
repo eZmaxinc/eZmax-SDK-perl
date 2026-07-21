@@ -243,18 +243,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    's_external_id' => {
+        datatype => 'string',
+        base_name => 'sExternalID',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
     'obj_webhook' => 'CustomWebhookResponse',
     'a_obj_attempt' => 'ARRAY[AttemptResponseCompound]',
-    'obj_ezmaxpartnerproduct' => 'CustomEzmaxpartnerproductSubscribe'
+    'obj_ezmaxpartnerproduct' => 'CustomEzmaxpartnerproductSubscribe',
+    's_external_id' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     'obj_webhook' => 'objWebhook',
     'a_obj_attempt' => 'a_objAttempt',
-    'obj_ezmaxpartnerproduct' => 'objEzmaxpartnerproduct'
+    'obj_ezmaxpartnerproduct' => 'objEzmaxpartnerproduct',
+    's_external_id' => 'sExternalID'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
