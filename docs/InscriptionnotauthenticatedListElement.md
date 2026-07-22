@@ -20,23 +20,23 @@ Name | Type | Description | Notes
 **s_buyercontract_contract** | **string** | The number of the Buyercontract | [optional] 
 **e_inscription_step** | [**FieldEInscriptionStep**](FieldEInscriptionStep.md) |  | 
 **e_inscription_type** | [**FieldEInscriptionType**](FieldEInscriptionType.md) |  | 
-**s_inscription_civicend** | **string** | The civicend of the Inscription | 
+**s_inscription_civicend** | **string** | The address civic end of the Inscription | 
 **s_inscription_mls** | **string** | The mls of the Inscription | [optional] 
 **s_inscription_contract** | **string** | The sale contract number | [optional] 
 **d_inscription_saleprice** | **string** | The saleprice of the Inscription | 
-**d_inscription_rentprice** | **string** | The rentprice of the Inscription | 
+**d_inscription_rentprice** | **string** | The rent price of the Inscription | 
 **dt_inscription_date** | **string** | The date of the Inscription | [optional] 
-**dt_inscription_expirationdate** | **string** | The expirationdate of the Inscription | [optional] 
-**dt_inscription_notarydate** | **string** | The notarydate of the Inscription | [optional] 
+**dt_inscription_expirationdate** | **string** | The expiration date of the Inscription | [optional] 
+**dt_inscription_notarydate** | **string** | The notary date of the Inscription | [optional] 
 **b_inscription_inspection** | **boolean** | Whether the inscription can be acces by an inspector | [optional] 
 **b_inscription_isactive** | **boolean** | Whether the inscription is active or not | 
 **b_inscription_archived** | **boolean** | Whether the inscription is archived or not | 
-**dt_inscriptionnotauthenticated_notaryscheduledate** | **string** | The notaryscheduledate of the Inscriptionnotauthenticated | [optional] 
-**dt_inscriptionnotauthenticated_transactiondate** | **string** | The transactiondate of the Inscriptionnotauthenticated | [optional] 
-**dt_inscriptionnotauthenticated_transactiondate_real** | **string** | The transactiondatereal of the Inscriptionnotauthenticated | [optional] 
+**dt_inscriptionnotauthenticated_notaryscheduledate** | **string** | The notary schedule date of the Inscriptionnotauthenticated | [optional] 
+**dt_inscriptionnotauthenticated_transactiondate** | **string** | The transaction date of the Inscriptionnotauthenticated | [optional] 
+**dt_inscriptionnotauthenticated_transactiondate_real** | **string** | The real transactiondate of the Inscriptionnotauthenticated | [optional] 
 **b_inscriptionnotauthenticated_conditional** | **boolean** | Whether the inscriptionnotauthenticated is conditional | [optional] 
 **b_inscriptionnotauthenticated_isactive** | **boolean** | Whether the inscriptionnotauthenticated is active or not | [optional] 
-**b_inscriptionnotauthenticated_draft** | **boolean** | Whether the inscriptionnotauthenticated is a draft or not | [optional] 
+**b_inscriptionnotauthenticated_draft** | **boolean** | Whether the Inscriptionnotauthenticated is a draft or not | [optional] 
 **s_address_civic** | **string** | The Civic number. | [optional] 
 **s_address_street** | **string** | The Street Name | [optional] 
 **s_address_suite** | **string** | The Suite or appartment number | [optional] 
@@ -46,8 +46,8 @@ Name | Type | Description | Notes
 **s_province_name_x** | **string** | The name of the Province in the language of the requester | [optional] 
 **fki_country_id** | **int** | The unique ID of the Country.  Here are some common values (Complete list must be retrieved from API):  |Value|Description| |-|-| |1|Canada| |2|United-States| | [optional] 
 **s_country_name_x** | **string** | The name of the Country in the language of the requester | [optional] 
-**s_inscriptionnotauthenticated_offertopurchasenumber** | **string** | The Offer to purchase number | 
-**i_inscription_unit** | **int** | The unit of the Inscription | 
+**s_inscriptionnotauthenticated_offertopurchasenumber** | **string** | The offer to purchase number of the Inscriptionnotauthenticated | 
+**i_inscription_unit** | **int** | The number of unit for the Inscription | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

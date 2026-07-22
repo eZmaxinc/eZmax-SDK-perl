@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**inscription_get_communication_list_v1**](ObjectInscriptionApi.md#inscription_get_communication_list_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationList | Retrieve Communication list
 [**inscription_get_communicationrecipients_v1**](ObjectInscriptionApi.md#inscription_get_communicationrecipients_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationrecipients | Retrieve Inscription&#39;s Communicationrecipient
 [**inscription_get_communicationsenders_v1**](ObjectInscriptionApi.md#inscription_get_communicationsenders_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationsenders | Retrieve Inscription&#39;s Communicationsender
-[**inscription_get_inscriptionnotauthenticateds_v1**](ObjectInscriptionApi.md#inscription_get_inscriptionnotauthenticateds_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getInscriptionnotauthenticateds | Retrieve Inscriptionnotauthenticated list
+[**inscription_get_inscriptionnotauthenticateds_v1**](ObjectInscriptionApi.md#inscription_get_inscriptionnotauthenticateds_v1) | **GET** /1/object/inscription/{pkiInscriptionID}/getInscriptionnotauthenticateds | Retrieve Inscription&#39;s Inscriptionnotauthenticated
 [**inscription_get_list_v1**](ObjectInscriptionApi.md#inscription_get_list_v1) | **GET** /1/object/inscription/getList | Retrieve Inscription list
 [**inscription_get_object_v2**](ObjectInscriptionApi.md#inscription_get_object_v2) | **GET** /2/object/inscription/{pkiInscriptionID} | Retrieve an existing Inscription
 [**inscription_import_into_edmv1**](ObjectInscriptionApi.md#inscription_import_into_edmv1) | **POST** /1/object/inscription/{pkiInscriptionID}/importIntoEDM | Import attachments into the Inscription
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 # **inscription_get_inscriptionnotauthenticateds_v1**
 > InscriptionGetInscriptionnotauthenticatedsV1Response inscription_get_inscriptionnotauthenticateds_v1(pki_inscription_id => $pki_inscription_id)
 
-Retrieve Inscriptionnotauthenticated list
+Retrieve Inscription's Inscriptionnotauthenticated
 
 ### Example
 ```perl
