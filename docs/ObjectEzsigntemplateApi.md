@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**ezsigntemplate_get_autocomplete_v2**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_autocomplete_v2) | **GET** /2/object/ezsigntemplate/getAutocomplete/{sSelector} | Retrieve Ezsigntemplates and IDs
 [**ezsigntemplate_get_list_v1**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_list_v1) | **GET** /1/object/ezsigntemplate/getList | Retrieve Ezsigntemplate list
 [**ezsigntemplate_get_object_v3**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_object_v3) | **GET** /3/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate
+[**ezsigntemplate_get_object_v4**](ObjectEzsigntemplateApi.md#ezsigntemplate_get_object_v4) | **GET** /4/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate
 
 
 # **ezsigntemplate_copy_v1**
@@ -383,6 +384,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsigntemplateGetObjectV3Response**](EzsigntemplateGetObjectV3Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigntemplate_get_object_v4**
+> EzsigntemplateGetObjectV4Response ezsigntemplate_get_object_v4(pki_ezsigntemplate_id => $pki_ezsigntemplate_id)
+
+Retrieve an existing Ezsigntemplate
+
+
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEzsigntemplateApi;
+my $api_instance = EzmaxApi::ObjectEzsigntemplateApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_ezsigntemplate_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->ezsigntemplate_get_object_v4(pki_ezsigntemplate_id => $pki_ezsigntemplate_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEzsigntemplateApi->ezsigntemplate_get_object_v4: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_ezsigntemplate_id** | **int**|  | 
+
+### Return type
+
+[**EzsigntemplateGetObjectV4Response**](EzsigntemplateGetObjectV4Response.md)
 
 ### Authorization
 
