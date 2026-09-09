@@ -9,6 +9,8 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**rejectedoffertopurchase_batch_download_v1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_batch_download_v1) | **POST** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/batchDownload | Download multiples attachments from a Rejectedoffertopurchase
+[**rejectedoffertopurchase_get_attachments_v1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_get_attachments_v1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getAttachments | Retrieve Rejectedoffertopurchase&#39;s attachments
 [**rejectedoffertopurchase_get_communication_count_v1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_get_communication_count_v1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationCount | Retrieve Communication count
 [**rejectedoffertopurchase_get_communication_list_v1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_get_communication_list_v1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationList | Retrieve Communication list
 [**rejectedoffertopurchase_get_communicationrecipients_v1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_get_communicationrecipients_v1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationrecipients | Retrieve Rejectedoffertopurchase&#39;s Communicationrecipient
@@ -16,6 +18,106 @@ Method | HTTP request | Description
 [**rejectedoffertopurchase_get_list_v1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_get_list_v1) | **GET** /1/object/rejectedoffertopurchase/getList | Retrieve Rejectedoffertopurchase list
 [**rejectedoffertopurchase_import_into_edmv1**](ObjectRejectedoffertopurchaseApi.md#rejectedoffertopurchase_import_into_edmv1) | **POST** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/importIntoEDM | Import attachments into the Rejectedoffertopurchase
 
+
+# **rejectedoffertopurchase_batch_download_v1**
+> string rejectedoffertopurchase_batch_download_v1(pki_rejectedoffertopurchase_id => $pki_rejectedoffertopurchase_id, rejectedoffertopurchase_batch_download_v1_request => $rejectedoffertopurchase_batch_download_v1_request)
+
+Download multiples attachments from a Rejectedoffertopurchase
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectRejectedoffertopurchaseApi;
+my $api_instance = EzmaxApi::ObjectRejectedoffertopurchaseApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_rejectedoffertopurchase_id = 56; # int | 
+my $rejectedoffertopurchase_batch_download_v1_request = EzmaxApi::Object::RejectedoffertopurchaseBatchDownloadV1Request->new(); # RejectedoffertopurchaseBatchDownloadV1Request | 
+
+eval {
+    my $result = $api_instance->rejectedoffertopurchase_batch_download_v1(pki_rejectedoffertopurchase_id => $pki_rejectedoffertopurchase_id, rejectedoffertopurchase_batch_download_v1_request => $rejectedoffertopurchase_batch_download_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectRejectedoffertopurchaseApi->rejectedoffertopurchase_batch_download_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_rejectedoffertopurchase_id** | **int**|  | 
+ **rejectedoffertopurchase_batch_download_v1_request** | [**RejectedoffertopurchaseBatchDownloadV1Request**](RejectedoffertopurchaseBatchDownloadV1Request.md)|  | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/zip, text/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **rejectedoffertopurchase_get_attachments_v1**
+> RejectedoffertopurchaseGetAttachmentsV1Response rejectedoffertopurchase_get_attachments_v1(pki_rejectedoffertopurchase_id => $pki_rejectedoffertopurchase_id)
+
+Retrieve Rejectedoffertopurchase's attachments
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectRejectedoffertopurchaseApi;
+my $api_instance = EzmaxApi::ObjectRejectedoffertopurchaseApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_rejectedoffertopurchase_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->rejectedoffertopurchase_get_attachments_v1(pki_rejectedoffertopurchase_id => $pki_rejectedoffertopurchase_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectRejectedoffertopurchaseApi->rejectedoffertopurchase_get_attachments_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_rejectedoffertopurchase_id** | **int**|  | 
+
+### Return type
+
+[**RejectedoffertopurchaseGetAttachmentsV1Response**](RejectedoffertopurchaseGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **rejectedoffertopurchase_get_communication_count_v1**
 > RejectedoffertopurchaseGetCommunicationCountV1Response rejectedoffertopurchase_get_communication_count_v1(pki_rejectedoffertopurchase_id => $pki_rejectedoffertopurchase_id)

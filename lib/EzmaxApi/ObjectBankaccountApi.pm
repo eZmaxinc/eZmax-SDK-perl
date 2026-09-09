@@ -49,6 +49,156 @@ sub new {
 
 
 #
+# bankaccount_batch_download_v1
+#
+# Download multiples attachments from a Bankaccount
+#
+# @param int $pki_bankaccount_id  (required)
+# @param BankaccountBatchDownloadV1Request $bankaccount_batch_download_v1_request  (required)
+{
+    my $params = {
+    'pki_bankaccount_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'bankaccount_batch_download_v1_request' => {
+        data_type => 'BankaccountBatchDownloadV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'bankaccount_batch_download_v1' } = {
+        summary => 'Download multiples attachments from a Bankaccount',
+        params => $params,
+        returns => 'string',
+        };
+}
+# @return string
+#
+sub bankaccount_batch_download_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_bankaccount_id' is set
+    unless (exists $args{'pki_bankaccount_id'}) {
+      croak("Missing the required parameter 'pki_bankaccount_id' when calling bankaccount_batch_download_v1");
+    }
+
+    # verify the required parameter 'bankaccount_batch_download_v1_request' is set
+    unless (exists $args{'bankaccount_batch_download_v1_request'}) {
+      croak("Missing the required parameter 'bankaccount_batch_download_v1_request' when calling bankaccount_batch_download_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/bankaccount/{pkiBankaccountID}/batchDownload';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/zip', 'text/xml', 'application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_bankaccount_id'}) {
+        my $_base_variable = "{" . "pkiBankaccountID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_bankaccount_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'bankaccount_batch_download_v1_request'}) {
+        $_body_data = $args{'bankaccount_batch_download_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# bankaccount_get_attachments_v1
+#
+# Retrieve Bankaccount's attachments
+#
+# @param int $pki_bankaccount_id  (required)
+{
+    my $params = {
+    'pki_bankaccount_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'bankaccount_get_attachments_v1' } = {
+        summary => 'Retrieve Bankaccount&#39;s attachments',
+        params => $params,
+        returns => 'BankaccountGetAttachmentsV1Response',
+        };
+}
+# @return BankaccountGetAttachmentsV1Response
+#
+sub bankaccount_get_attachments_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_bankaccount_id' is set
+    unless (exists $args{'pki_bankaccount_id'}) {
+      croak("Missing the required parameter 'pki_bankaccount_id' when calling bankaccount_get_attachments_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/bankaccount/{pkiBankaccountID}/getAttachments';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_bankaccount_id'}) {
+        my $_base_variable = "{" . "pkiBankaccountID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_bankaccount_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('BankaccountGetAttachmentsV1Response', $response);
+    return $_response_object;
+}
+
+#
 # bankaccount_get_autocomplete_v2
 #
 # Retrieve Bankaccounts and IDs
@@ -145,6 +295,89 @@ sub bankaccount_get_autocomplete_v2 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('BankaccountGetAutocompleteV2Response', $response);
+    return $_response_object;
+}
+
+#
+# bankaccount_import_into_edmv1
+#
+# Import attachments into the Bankaccount
+#
+# @param int $pki_bankaccount_id  (required)
+# @param BankaccountImportIntoEDMV1Request $bankaccount_import_into_edmv1_request  (required)
+{
+    my $params = {
+    'pki_bankaccount_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'bankaccount_import_into_edmv1_request' => {
+        data_type => 'BankaccountImportIntoEDMV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'bankaccount_import_into_edmv1' } = {
+        summary => 'Import attachments into the Bankaccount',
+        params => $params,
+        returns => 'BankaccountImportIntoEDMV1Response',
+        };
+}
+# @return BankaccountImportIntoEDMV1Response
+#
+sub bankaccount_import_into_edmv1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_bankaccount_id' is set
+    unless (exists $args{'pki_bankaccount_id'}) {
+      croak("Missing the required parameter 'pki_bankaccount_id' when calling bankaccount_import_into_edmv1");
+    }
+
+    # verify the required parameter 'bankaccount_import_into_edmv1_request' is set
+    unless (exists $args{'bankaccount_import_into_edmv1_request'}) {
+      croak("Missing the required parameter 'bankaccount_import_into_edmv1_request' when calling bankaccount_import_into_edmv1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/bankaccount/{pkiBankaccountID}/importIntoEDM';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_bankaccount_id'}) {
+        my $_base_variable = "{" . "pkiBankaccountID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_bankaccount_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'bankaccount_import_into_edmv1_request'}) {
+        $_body_data = $args{'bankaccount_import_into_edmv1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('BankaccountImportIntoEDMV1Response', $response);
     return $_response_object;
 }
 

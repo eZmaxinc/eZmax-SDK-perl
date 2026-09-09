@@ -49,6 +49,156 @@ sub new {
 
 
 #
+# supplier_batch_download_v1
+#
+# Download multiples attachments from a Supplier
+#
+# @param int $pki_supplier_id  (required)
+# @param SupplierBatchDownloadV1Request $supplier_batch_download_v1_request  (required)
+{
+    my $params = {
+    'pki_supplier_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'supplier_batch_download_v1_request' => {
+        data_type => 'SupplierBatchDownloadV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'supplier_batch_download_v1' } = {
+        summary => 'Download multiples attachments from a Supplier',
+        params => $params,
+        returns => 'string',
+        };
+}
+# @return string
+#
+sub supplier_batch_download_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_supplier_id' is set
+    unless (exists $args{'pki_supplier_id'}) {
+      croak("Missing the required parameter 'pki_supplier_id' when calling supplier_batch_download_v1");
+    }
+
+    # verify the required parameter 'supplier_batch_download_v1_request' is set
+    unless (exists $args{'supplier_batch_download_v1_request'}) {
+      croak("Missing the required parameter 'supplier_batch_download_v1_request' when calling supplier_batch_download_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/supplier/{pkiSupplierID}/batchDownload';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/zip', 'text/xml', 'application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_supplier_id'}) {
+        my $_base_variable = "{" . "pkiSupplierID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_supplier_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'supplier_batch_download_v1_request'}) {
+        $_body_data = $args{'supplier_batch_download_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# supplier_get_attachments_v1
+#
+# Retrieve Supplier's attachments
+#
+# @param int $pki_supplier_id  (required)
+{
+    my $params = {
+    'pki_supplier_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'supplier_get_attachments_v1' } = {
+        summary => 'Retrieve Supplier&#39;s attachments',
+        params => $params,
+        returns => 'SupplierGetAttachmentsV1Response',
+        };
+}
+# @return SupplierGetAttachmentsV1Response
+#
+sub supplier_get_attachments_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_supplier_id' is set
+    unless (exists $args{'pki_supplier_id'}) {
+      croak("Missing the required parameter 'pki_supplier_id' when calling supplier_get_attachments_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/supplier/{pkiSupplierID}/getAttachments';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_supplier_id'}) {
+        my $_base_variable = "{" . "pkiSupplierID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_supplier_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('SupplierGetAttachmentsV1Response', $response);
+    return $_response_object;
+}
+
+#
 # supplier_get_list_v1
 #
 # Retrieve Supplier list

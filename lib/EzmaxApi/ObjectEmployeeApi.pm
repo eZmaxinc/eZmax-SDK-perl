@@ -49,6 +49,156 @@ sub new {
 
 
 #
+# employee_batch_download_v1
+#
+# Download multiples attachments from a Employee
+#
+# @param int $pki_employee_id  (required)
+# @param EmployeeBatchDownloadV1Request $employee_batch_download_v1_request  (required)
+{
+    my $params = {
+    'pki_employee_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'employee_batch_download_v1_request' => {
+        data_type => 'EmployeeBatchDownloadV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'employee_batch_download_v1' } = {
+        summary => 'Download multiples attachments from a Employee',
+        params => $params,
+        returns => 'string',
+        };
+}
+# @return string
+#
+sub employee_batch_download_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_employee_id' is set
+    unless (exists $args{'pki_employee_id'}) {
+      croak("Missing the required parameter 'pki_employee_id' when calling employee_batch_download_v1");
+    }
+
+    # verify the required parameter 'employee_batch_download_v1_request' is set
+    unless (exists $args{'employee_batch_download_v1_request'}) {
+      croak("Missing the required parameter 'employee_batch_download_v1_request' when calling employee_batch_download_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/employee/{pkiEmployeeID}/batchDownload';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/zip', 'text/xml', 'application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_employee_id'}) {
+        my $_base_variable = "{" . "pkiEmployeeID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_employee_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'employee_batch_download_v1_request'}) {
+        $_body_data = $args{'employee_batch_download_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# employee_get_attachments_v1
+#
+# Retrieve Employee's attachments
+#
+# @param int $pki_employee_id  (required)
+{
+    my $params = {
+    'pki_employee_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'employee_get_attachments_v1' } = {
+        summary => 'Retrieve Employee&#39;s attachments',
+        params => $params,
+        returns => 'EmployeeGetAttachmentsV1Response',
+        };
+}
+# @return EmployeeGetAttachmentsV1Response
+#
+sub employee_get_attachments_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_employee_id' is set
+    unless (exists $args{'pki_employee_id'}) {
+      croak("Missing the required parameter 'pki_employee_id' when calling employee_get_attachments_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/employee/{pkiEmployeeID}/getAttachments';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_employee_id'}) {
+        my $_base_variable = "{" . "pkiEmployeeID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_employee_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EmployeeGetAttachmentsV1Response', $response);
+    return $_response_object;
+}
+
+#
 # employee_get_list_v1
 #
 # Retrieve Employee list

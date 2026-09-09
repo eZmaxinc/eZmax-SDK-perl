@@ -9,10 +9,112 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**customer_batch_download_v1**](ObjectCustomerApi.md#customer_batch_download_v1) | **POST** /1/object/customer/{pkiCustomerID}/batchDownload | Download multiples attachments from a Customer
+[**customer_get_attachments_v1**](ObjectCustomerApi.md#customer_get_attachments_v1) | **GET** /1/object/customer/{pkiCustomerID}/getAttachments | Retrieve Customer&#39;s attachments
 [**customer_get_autocomplete_v2**](ObjectCustomerApi.md#customer_get_autocomplete_v2) | **GET** /2/object/customer/getAutocomplete/{sSelector} | Retrieve Customers and IDs
 [**customer_get_object_v2**](ObjectCustomerApi.md#customer_get_object_v2) | **GET** /2/object/customer/{pkiCustomerID} | Retrieve an existing Customer
 [**customer_import_into_edmv1**](ObjectCustomerApi.md#customer_import_into_edmv1) | **POST** /1/object/customer/{pkiCustomerID}/importIntoEDM | Import attachments into the Customer
 
+
+# **customer_batch_download_v1**
+> string customer_batch_download_v1(pki_customer_id => $pki_customer_id, customer_batch_download_v1_request => $customer_batch_download_v1_request)
+
+Download multiples attachments from a Customer
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectCustomerApi;
+my $api_instance = EzmaxApi::ObjectCustomerApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_customer_id = 56; # int | 
+my $customer_batch_download_v1_request = EzmaxApi::Object::CustomerBatchDownloadV1Request->new(); # CustomerBatchDownloadV1Request | 
+
+eval {
+    my $result = $api_instance->customer_batch_download_v1(pki_customer_id => $pki_customer_id, customer_batch_download_v1_request => $customer_batch_download_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectCustomerApi->customer_batch_download_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_customer_id** | **int**|  | 
+ **customer_batch_download_v1_request** | [**CustomerBatchDownloadV1Request**](CustomerBatchDownloadV1Request.md)|  | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/zip, text/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **customer_get_attachments_v1**
+> CustomerGetAttachmentsV1Response customer_get_attachments_v1(pki_customer_id => $pki_customer_id)
+
+Retrieve Customer's attachments
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectCustomerApi;
+my $api_instance = EzmaxApi::ObjectCustomerApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_customer_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->customer_get_attachments_v1(pki_customer_id => $pki_customer_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectCustomerApi->customer_get_attachments_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_customer_id** | **int**|  | 
+
+### Return type
+
+[**CustomerGetAttachmentsV1Response**](CustomerGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **customer_get_autocomplete_v2**
 > CustomerGetAutocompleteV2Response customer_get_autocomplete_v2(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language)

@@ -49,6 +49,156 @@ sub new {
 
 
 #
+# customer_batch_download_v1
+#
+# Download multiples attachments from a Customer
+#
+# @param int $pki_customer_id  (required)
+# @param CustomerBatchDownloadV1Request $customer_batch_download_v1_request  (required)
+{
+    my $params = {
+    'pki_customer_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'customer_batch_download_v1_request' => {
+        data_type => 'CustomerBatchDownloadV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'customer_batch_download_v1' } = {
+        summary => 'Download multiples attachments from a Customer',
+        params => $params,
+        returns => 'string',
+        };
+}
+# @return string
+#
+sub customer_batch_download_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_customer_id' is set
+    unless (exists $args{'pki_customer_id'}) {
+      croak("Missing the required parameter 'pki_customer_id' when calling customer_batch_download_v1");
+    }
+
+    # verify the required parameter 'customer_batch_download_v1_request' is set
+    unless (exists $args{'customer_batch_download_v1_request'}) {
+      croak("Missing the required parameter 'customer_batch_download_v1_request' when calling customer_batch_download_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/customer/{pkiCustomerID}/batchDownload';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/zip', 'text/xml', 'application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_customer_id'}) {
+        my $_base_variable = "{" . "pkiCustomerID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_customer_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'customer_batch_download_v1_request'}) {
+        $_body_data = $args{'customer_batch_download_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# customer_get_attachments_v1
+#
+# Retrieve Customer's attachments
+#
+# @param int $pki_customer_id  (required)
+{
+    my $params = {
+    'pki_customer_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'customer_get_attachments_v1' } = {
+        summary => 'Retrieve Customer&#39;s attachments',
+        params => $params,
+        returns => 'CustomerGetAttachmentsV1Response',
+        };
+}
+# @return CustomerGetAttachmentsV1Response
+#
+sub customer_get_attachments_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_customer_id' is set
+    unless (exists $args{'pki_customer_id'}) {
+      croak("Missing the required parameter 'pki_customer_id' when calling customer_get_attachments_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/customer/{pkiCustomerID}/getAttachments';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_customer_id'}) {
+        my $_base_variable = "{" . "pkiCustomerID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_customer_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('CustomerGetAttachmentsV1Response', $response);
+    return $_response_object;
+}
+
+#
 # customer_get_autocomplete_v2
 #
 # Retrieve Customers and IDs

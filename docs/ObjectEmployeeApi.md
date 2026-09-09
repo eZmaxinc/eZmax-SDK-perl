@@ -9,9 +9,111 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**employee_batch_download_v1**](ObjectEmployeeApi.md#employee_batch_download_v1) | **POST** /1/object/employee/{pkiEmployeeID}/batchDownload | Download multiples attachments from a Employee
+[**employee_get_attachments_v1**](ObjectEmployeeApi.md#employee_get_attachments_v1) | **GET** /1/object/employee/{pkiEmployeeID}/getAttachments | Retrieve Employee&#39;s attachments
 [**employee_get_list_v1**](ObjectEmployeeApi.md#employee_get_list_v1) | **GET** /1/object/employee/getList | Retrieve Employee list
 [**employee_import_into_edmv1**](ObjectEmployeeApi.md#employee_import_into_edmv1) | **POST** /1/object/employee/{pkiEmployeeID}/importIntoEDM | Import attachments into the Employee
 
+
+# **employee_batch_download_v1**
+> string employee_batch_download_v1(pki_employee_id => $pki_employee_id, employee_batch_download_v1_request => $employee_batch_download_v1_request)
+
+Download multiples attachments from a Employee
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEmployeeApi;
+my $api_instance = EzmaxApi::ObjectEmployeeApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_employee_id = 56; # int | 
+my $employee_batch_download_v1_request = EzmaxApi::Object::EmployeeBatchDownloadV1Request->new(); # EmployeeBatchDownloadV1Request | 
+
+eval {
+    my $result = $api_instance->employee_batch_download_v1(pki_employee_id => $pki_employee_id, employee_batch_download_v1_request => $employee_batch_download_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEmployeeApi->employee_batch_download_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_employee_id** | **int**|  | 
+ **employee_batch_download_v1_request** | [**EmployeeBatchDownloadV1Request**](EmployeeBatchDownloadV1Request.md)|  | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/zip, text/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **employee_get_attachments_v1**
+> EmployeeGetAttachmentsV1Response employee_get_attachments_v1(pki_employee_id => $pki_employee_id)
+
+Retrieve Employee's attachments
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectEmployeeApi;
+my $api_instance = EzmaxApi::ObjectEmployeeApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_employee_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->employee_get_attachments_v1(pki_employee_id => $pki_employee_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectEmployeeApi->employee_get_attachments_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_employee_id** | **int**|  | 
+
+### Return type
+
+[**EmployeeGetAttachmentsV1Response**](EmployeeGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **employee_get_list_v1**
 > EmployeeGetListV1Response employee_get_list_v1(e_order_by => $e_order_by, i_row_max => $i_row_max, i_row_offset => $i_row_offset, accept_language => $accept_language, s_filter => $s_filter)

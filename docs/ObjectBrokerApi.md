@@ -9,10 +9,112 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**broker_batch_download_v1**](ObjectBrokerApi.md#broker_batch_download_v1) | **POST** /1/object/broker/{pkiBrokerID}/batchDownload | Download multiples attachments from a Broker
+[**broker_get_attachments_v1**](ObjectBrokerApi.md#broker_get_attachments_v1) | **GET** /1/object/broker/{pkiBrokerID}/getAttachments | Retrieve Broker&#39;s attachments
 [**broker_get_autocomplete_v2**](ObjectBrokerApi.md#broker_get_autocomplete_v2) | **GET** /2/object/broker/getAutocomplete/{sSelector} | Retrieve Brokers and IDs
 [**broker_get_list_v1**](ObjectBrokerApi.md#broker_get_list_v1) | **GET** /1/object/broker/getList | Retrieve Broker list
 [**broker_import_into_edmv1**](ObjectBrokerApi.md#broker_import_into_edmv1) | **POST** /1/object/broker/{pkiBrokerID}/importIntoEDM | Import attachments into the Broker
 
+
+# **broker_batch_download_v1**
+> string broker_batch_download_v1(pki_broker_id => $pki_broker_id, broker_batch_download_v1_request => $broker_batch_download_v1_request)
+
+Download multiples attachments from a Broker
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectBrokerApi;
+my $api_instance = EzmaxApi::ObjectBrokerApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_broker_id = 56; # int | 
+my $broker_batch_download_v1_request = EzmaxApi::Object::BrokerBatchDownloadV1Request->new(); # BrokerBatchDownloadV1Request | 
+
+eval {
+    my $result = $api_instance->broker_batch_download_v1(pki_broker_id => $pki_broker_id, broker_batch_download_v1_request => $broker_batch_download_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectBrokerApi->broker_batch_download_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_broker_id** | **int**|  | 
+ **broker_batch_download_v1_request** | [**BrokerBatchDownloadV1Request**](BrokerBatchDownloadV1Request.md)|  | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/zip, text/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **broker_get_attachments_v1**
+> BrokerGetAttachmentsV1Response broker_get_attachments_v1(pki_broker_id => $pki_broker_id)
+
+Retrieve Broker's attachments
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectBrokerApi;
+my $api_instance = EzmaxApi::ObjectBrokerApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_broker_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->broker_get_attachments_v1(pki_broker_id => $pki_broker_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectBrokerApi->broker_get_attachments_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_broker_id** | **int**|  | 
+
+### Return type
+
+[**BrokerGetAttachmentsV1Response**](BrokerGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **broker_get_autocomplete_v2**
 > BrokerGetAutocompleteV2Response broker_get_autocomplete_v2(s_selector => $s_selector, e_filter_active => $e_filter_active, s_query => $s_query, accept_language => $accept_language)

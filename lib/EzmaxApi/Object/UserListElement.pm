@@ -229,6 +229,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'fki_agent_id' => {
+        datatype => 'int',
+        base_name => 'fkiAgentID',
+        description => 'The unique ID of the Agent.',
+        format => '',
+        read_only => '',
+            },
+    'fki_broker_id' => {
+        datatype => 'int',
+        base_name => 'fkiBrokerID',
+        description => 'The unique ID of the Broker.',
+        format => '',
+        read_only => '',
+            },
     's_user_firstname' => {
         datatype => 'string',
         base_name => 'sUserFirstname',
@@ -310,6 +324,8 @@ __PACKAGE__->method_documentation({
 
 __PACKAGE__->openapi_types( {
     'pki_user_id' => 'int',
+    'fki_agent_id' => 'int',
+    'fki_broker_id' => 'int',
     's_user_firstname' => 'string',
     's_user_lastname' => 'string',
     's_user_loginname' => 'string',
@@ -325,6 +341,8 @@ __PACKAGE__->openapi_types( {
 
 __PACKAGE__->attribute_map( {
     'pki_user_id' => 'pkiUserID',
+    'fki_agent_id' => 'fkiAgentID',
+    'fki_broker_id' => 'fkiBrokerID',
     's_user_firstname' => 'sUserFirstname',
     's_user_lastname' => 'sUserLastname',
     's_user_loginname' => 'sUserLoginname',

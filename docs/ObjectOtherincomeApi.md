@@ -9,6 +9,8 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**otherincome_batch_download_v1**](ObjectOtherincomeApi.md#otherincome_batch_download_v1) | **POST** /1/object/otherincome/{pkiOtherincomeID}/batchDownload | Download multiples attachments from a Otherincome
+[**otherincome_get_attachments_v1**](ObjectOtherincomeApi.md#otherincome_get_attachments_v1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getAttachments | Retrieve Otherincome&#39;s attachments
 [**otherincome_get_communication_count_v1**](ObjectOtherincomeApi.md#otherincome_get_communication_count_v1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationCount | Retrieve Communication count
 [**otherincome_get_communication_list_v1**](ObjectOtherincomeApi.md#otherincome_get_communication_list_v1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationList | Retrieve Communication list
 [**otherincome_get_communicationrecipients_v1**](ObjectOtherincomeApi.md#otherincome_get_communicationrecipients_v1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationrecipients | Retrieve Otherincome&#39;s Communicationrecipient
@@ -16,6 +18,106 @@ Method | HTTP request | Description
 [**otherincome_get_list_v1**](ObjectOtherincomeApi.md#otherincome_get_list_v1) | **GET** /1/object/otherincome/getList | Retrieve Otherincome list
 [**otherincome_import_into_edmv1**](ObjectOtherincomeApi.md#otherincome_import_into_edmv1) | **POST** /1/object/otherincome/{pkiOtherincomeID}/importIntoEDM | Import attachments into the Otherincome
 
+
+# **otherincome_batch_download_v1**
+> string otherincome_batch_download_v1(pki_otherincome_id => $pki_otherincome_id, otherincome_batch_download_v1_request => $otherincome_batch_download_v1_request)
+
+Download multiples attachments from a Otherincome
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectOtherincomeApi;
+my $api_instance = EzmaxApi::ObjectOtherincomeApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_otherincome_id = 56; # int | 
+my $otherincome_batch_download_v1_request = EzmaxApi::Object::OtherincomeBatchDownloadV1Request->new(); # OtherincomeBatchDownloadV1Request | 
+
+eval {
+    my $result = $api_instance->otherincome_batch_download_v1(pki_otherincome_id => $pki_otherincome_id, otherincome_batch_download_v1_request => $otherincome_batch_download_v1_request);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectOtherincomeApi->otherincome_batch_download_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_otherincome_id** | **int**|  | 
+ **otherincome_batch_download_v1_request** | [**OtherincomeBatchDownloadV1Request**](OtherincomeBatchDownloadV1Request.md)|  | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/zip, text/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **otherincome_get_attachments_v1**
+> OtherincomeGetAttachmentsV1Response otherincome_get_attachments_v1(pki_otherincome_id => $pki_otherincome_id)
+
+Retrieve Otherincome's attachments
+
+### Example
+```perl
+use Data::Dumper;
+use EzmaxApi::ObjectOtherincomeApi;
+my $api_instance = EzmaxApi::ObjectOtherincomeApi->new(
+
+    # Configure API key authorization: Authorization
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+);
+
+my $pki_otherincome_id = 56; # int | 
+
+eval {
+    my $result = $api_instance->otherincome_get_attachments_v1(pki_otherincome_id => $pki_otherincome_id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ObjectOtherincomeApi->otherincome_get_attachments_v1: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pki_otherincome_id** | **int**|  | 
+
+### Return type
+
+[**OtherincomeGetAttachmentsV1Response**](OtherincomeGetAttachmentsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **otherincome_get_communication_count_v1**
 > OtherincomeGetCommunicationCountV1Response otherincome_get_communication_count_v1(pki_otherincome_id => $pki_otherincome_id)

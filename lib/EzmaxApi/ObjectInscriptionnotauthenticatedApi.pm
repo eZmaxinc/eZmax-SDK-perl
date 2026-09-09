@@ -49,6 +49,89 @@ sub new {
 
 
 #
+# inscriptionnotauthenticated_batch_download_v1
+#
+# Download multiples attachments from a Inscriptionnotauthenticated
+#
+# @param int $pki_inscriptionnotauthenticated_id  (required)
+# @param InscriptionnotauthenticatedBatchDownloadV1Request $inscriptionnotauthenticated_batch_download_v1_request  (required)
+{
+    my $params = {
+    'pki_inscriptionnotauthenticated_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'inscriptionnotauthenticated_batch_download_v1_request' => {
+        data_type => 'InscriptionnotauthenticatedBatchDownloadV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'inscriptionnotauthenticated_batch_download_v1' } = {
+        summary => 'Download multiples attachments from a Inscriptionnotauthenticated',
+        params => $params,
+        returns => 'string',
+        };
+}
+# @return string
+#
+sub inscriptionnotauthenticated_batch_download_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_inscriptionnotauthenticated_id' is set
+    unless (exists $args{'pki_inscriptionnotauthenticated_id'}) {
+      croak("Missing the required parameter 'pki_inscriptionnotauthenticated_id' when calling inscriptionnotauthenticated_batch_download_v1");
+    }
+
+    # verify the required parameter 'inscriptionnotauthenticated_batch_download_v1_request' is set
+    unless (exists $args{'inscriptionnotauthenticated_batch_download_v1_request'}) {
+      croak("Missing the required parameter 'inscriptionnotauthenticated_batch_download_v1_request' when calling inscriptionnotauthenticated_batch_download_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/batchDownload';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/zip', 'text/xml', 'application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_inscriptionnotauthenticated_id'}) {
+        my $_base_variable = "{" . "pkiInscriptionnotauthenticatedID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_inscriptionnotauthenticated_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'inscriptionnotauthenticated_batch_download_v1_request'}) {
+        $_body_data = $args{'inscriptionnotauthenticated_batch_download_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
 # inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1
 #
 # Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
@@ -128,6 +211,73 @@ sub inscriptionnotauthenticated_fill_inscriptionnotauthenticatedcondition_v1 {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response', $response);
+    return $_response_object;
+}
+
+#
+# inscriptionnotauthenticated_get_attachments_v1
+#
+# Retrieve Inscriptionnotauthenticated's attachments
+#
+# @param int $pki_inscriptionnotauthenticated_id  (required)
+{
+    my $params = {
+    'pki_inscriptionnotauthenticated_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'inscriptionnotauthenticated_get_attachments_v1' } = {
+        summary => 'Retrieve Inscriptionnotauthenticated&#39;s attachments',
+        params => $params,
+        returns => 'InscriptionnotauthenticatedGetAttachmentsV1Response',
+        };
+}
+# @return InscriptionnotauthenticatedGetAttachmentsV1Response
+#
+sub inscriptionnotauthenticated_get_attachments_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_inscriptionnotauthenticated_id' is set
+    unless (exists $args{'pki_inscriptionnotauthenticated_id'}) {
+      croak("Missing the required parameter 'pki_inscriptionnotauthenticated_id' when calling inscriptionnotauthenticated_get_attachments_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getAttachments';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_inscriptionnotauthenticated_id'}) {
+        my $_base_variable = "{" . "pkiInscriptionnotauthenticatedID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_inscriptionnotauthenticated_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('InscriptionnotauthenticatedGetAttachmentsV1Response', $response);
     return $_response_object;
 }
 

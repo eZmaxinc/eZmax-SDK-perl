@@ -49,6 +49,89 @@ sub new {
 
 
 #
+# inscription_batch_download_v1
+#
+# Download multiples attachments from an Inscription
+#
+# @param int $pki_inscription_id  (required)
+# @param InscriptionBatchDownloadV1Request $inscription_batch_download_v1_request  (required)
+{
+    my $params = {
+    'pki_inscription_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'inscription_batch_download_v1_request' => {
+        data_type => 'InscriptionBatchDownloadV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'inscription_batch_download_v1' } = {
+        summary => 'Download multiples attachments from an Inscription',
+        params => $params,
+        returns => 'string',
+        };
+}
+# @return string
+#
+sub inscription_batch_download_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_inscription_id' is set
+    unless (exists $args{'pki_inscription_id'}) {
+      croak("Missing the required parameter 'pki_inscription_id' when calling inscription_batch_download_v1");
+    }
+
+    # verify the required parameter 'inscription_batch_download_v1_request' is set
+    unless (exists $args{'inscription_batch_download_v1_request'}) {
+      croak("Missing the required parameter 'inscription_batch_download_v1_request' when calling inscription_batch_download_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/inscription/{pkiInscriptionID}/batchDownload';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/zip', 'text/xml', 'application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_inscription_id'}) {
+        my $_base_variable = "{" . "pkiInscriptionID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_inscription_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'inscription_batch_download_v1_request'}) {
+        $_body_data = $args{'inscription_batch_download_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
 # inscription_get_attachments_v1
 #
 # Retrieve Inscription's Attachments

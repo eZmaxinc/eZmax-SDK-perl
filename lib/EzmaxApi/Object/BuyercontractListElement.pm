@@ -252,14 +252,14 @@ __PACKAGE__->method_documentation({
     'd_buyercontract_minimumprice' => {
         datatype => 'string',
         base_name => 'dBuyercontractMinimumprice',
-        description => 'The minimumprice of the Buyercontract',
+        description => 'The minimum price of the Buyercontract',
         format => '',
         read_only => '',
             },
     'd_buyercontract_maximumprice' => {
         datatype => 'string',
         base_name => 'dBuyercontractMaximumprice',
-        description => 'The maximumprice of the Buyercontract',
+        description => 'The maximum price of the Buyercontract',
         format => '',
         read_only => '',
             },
@@ -287,7 +287,7 @@ __PACKAGE__->method_documentation({
     'dt_buyercontract_expirationdate' => {
         datatype => 'string',
         base_name => 'dtBuyercontractExpirationdate',
-        description => 'The expirationdate of the Buyercontract',
+        description => 'The expiration date of the Buyercontract',
         format => '',
         read_only => '',
             },

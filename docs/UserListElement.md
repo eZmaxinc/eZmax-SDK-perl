@@ -9,6 +9,8 @@ use EzmaxApi::Object::UserListElement;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pki_user_id** | **int** | The unique ID of the User | 
+**fki_agent_id** | **int** | The unique ID of the Agent. | [optional] 
+**fki_broker_id** | **int** | The unique ID of the Broker. | [optional] 
 **s_user_firstname** | **string** | The first name of the user | 
 **s_user_lastname** | **string** | The last name of the user | 
 **s_user_loginname** | **string** | The login name of the User. | 

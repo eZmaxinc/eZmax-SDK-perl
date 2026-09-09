@@ -49,6 +49,156 @@ sub new {
 
 
 #
+# lead_batch_download_v1
+#
+# Download multiples attachments from a Lead
+#
+# @param int $pki_lead_id  (required)
+# @param LeadBatchDownloadV1Request $lead_batch_download_v1_request  (required)
+{
+    my $params = {
+    'pki_lead_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    'lead_batch_download_v1_request' => {
+        data_type => 'LeadBatchDownloadV1Request',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'lead_batch_download_v1' } = {
+        summary => 'Download multiples attachments from a Lead',
+        params => $params,
+        returns => 'string',
+        };
+}
+# @return string
+#
+sub lead_batch_download_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_lead_id' is set
+    unless (exists $args{'pki_lead_id'}) {
+      croak("Missing the required parameter 'pki_lead_id' when calling lead_batch_download_v1");
+    }
+
+    # verify the required parameter 'lead_batch_download_v1_request' is set
+    unless (exists $args{'lead_batch_download_v1_request'}) {
+      croak("Missing the required parameter 'lead_batch_download_v1_request' when calling lead_batch_download_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/lead/{pkiLeadID}/batchDownload';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/zip', 'text/xml', 'application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # path params
+    if ( exists $args{'pki_lead_id'}) {
+        my $_base_variable = "{" . "pkiLeadID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_lead_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'lead_batch_download_v1_request'}) {
+        $_body_data = $args{'lead_batch_download_v1_request'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# lead_get_attachments_v1
+#
+# Retrieve Lead's attachments
+#
+# @param int $pki_lead_id  (required)
+{
+    my $params = {
+    'pki_lead_id' => {
+        data_type => 'int',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'lead_get_attachments_v1' } = {
+        summary => 'Retrieve Lead&#39;s attachments',
+        params => $params,
+        returns => 'LeadGetAttachmentsV1Response',
+        };
+}
+# @return LeadGetAttachmentsV1Response
+#
+sub lead_get_attachments_v1 {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'pki_lead_id' is set
+    unless (exists $args{'pki_lead_id'}) {
+      croak("Missing the required parameter 'pki_lead_id' when calling lead_get_attachments_v1");
+    }
+
+    # parse inputs
+    my $_resource_path = '/1/object/lead/{pkiLeadID}/getAttachments';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'pki_lead_id'}) {
+        my $_base_variable = "{" . "pkiLeadID" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'pki_lead_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(Authorization )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('LeadGetAttachmentsV1Response', $response);
+    return $_response_object;
+}
+
+#
 # lead_get_list_v1
 #
 # Retrieve Lead list
